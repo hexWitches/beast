@@ -1,0 +1,26 @@
+@prefix : <https://w3id.org/beast/graph/> .
+@prefix beast: <https://w3id.org/beast/ontology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix viaf: <http://viaf.org/viaf/> .
+@prefix wd: <https://www.wikidata.org/entity/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a void:Dataset ;
+    dcterms:conformsTo <https://w3id.org/beast/ontology> ;
+    dcterms:created "2026-05-01"^^xsd:date ;
+    dcterms:creator "Maria Juliana Gamboa Nivia",
+        "Miriana Pinto",
+        "Sara Roggiani",
+        "Alice Spadavecchia" ;
+    dcterms:description ""@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://github.com/hexWitches> ;
+    dcterms:title "The BEAST Graph"@en ;
+    vann:preferredNamespacePrefix "" ;
+    void:dataDump <https://w3id.org/beast/graph.ttl> ;
+    void:vocabulary <https://w3id.org/beast/ontology> .

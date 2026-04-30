@@ -1,0 +1,31 @@
+@base <https://w3id.org/beast/ontology> .
+@prefix : <https://w3id.org/beast/ontology#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
+    dcterms:title ""@en ;
+    dcterms:description "An ontology for the description of bestiaries."@en ;
+    dcterms:creator "Maria Juliana Gamboa Nivia",
+        "Miriana Pinto",
+        "Sara Roggiani",
+        "Alice Spadavecchia" ;
+    dcterms:created "2026-05-01"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://github.com/hexWitches> ;
+    schema:codeRepository <> ;
+    vann:preferredNamespacePrefix "" ;
+    rdfs:comment ""@en .
+
+# ===== CLASSES ================
+
+
+# ===== OBJECT PROPERTIES ================
+
+
+# ===== DATA PROPERTIES ================
