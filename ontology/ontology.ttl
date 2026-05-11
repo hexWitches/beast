@@ -198,6 +198,16 @@
     rdfs:label "Real animal"@en ;
     rdfs:comment "A scientifically recognized biological animal that exists or existed in the natural world."@en .
 
+:Plant rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Plant"@en ;
+    rdfs:comment ""@en .
+
+:InanimateElement rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Inanimate element"@en ;
+    rdfs:comment ""@en .
+
 :AnatomicalPart rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "Anatomical part"@en ;
@@ -219,9 +229,9 @@
     rdfs:label "Real-world place"@en ;
     rdfs:comment "A geographic or ecological habitat that exists in the physical world. Class influenced by J. L. Borges' distinction bewteen biological reality and the imaginary spaces."@en .
 
-:MythologicalPlace rdf:type owl:Class ;
+:ImaginaryPlace rdf:type owl:Class ;
     rdfs:subClassOf :Habitat ;
-    rdfs:label "Mythological place"@en ;
+    rdfs:label "Imaginary place"@en ;
     rdfs:comment "A conceptual, magical, or purely literary space (e.g., the Garden of Eden or Hades). As noted by Borges, these spaces follow the laws of imagination rather than biology."@en .
 
 :Anomaly rdf:type owl:Class ;
@@ -234,6 +244,24 @@
     rdfs:label "Diet"@en ;
     rdfs:comment "The standard food consumption habits of a creature."@en .
 
+:Omnivorous rdf:type owl:Class ;
+    rdfs:subClassOf :Diet
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Omnivorous"@en ;
+    rdfs:comment "A diet consisting of both animal and plant matter."@en .
+
+:Herbivorous rdf:type owl:Class ;
+    rdfs:subClassOf :Diet
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Herbivorous"@en ;
+    rdfs:comment "A diet consisting primarily of plant matter."@en .
+
+:Carnivorous rdf:type owl:Class ;
+    rdfs:subClassOf :Diet
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Carnivorous"@en ;
+    rdfs:comment "A diet consisting primarily of animal tissue/meat."@en .
+
 # ===== OBJECT PROPERTIES ================
 :performsAction rdf:type owl:ObjectProperty ;
     rdfs:domain :Creature ;
@@ -244,10 +272,11 @@
 
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
     rdfs:domain :CompositeCreature ;
-    rdfs:range :RealAnimal ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has part of"@en ;
-    rdfs:comment "Indicates that a hybrid creature possesses anatomical or morphological features derived from a specific real animal."@en .
+    rdfs:comment "Indicates that a composite creature possesses anatomical or morphological features derived from a specific real animal, a plant or an inanimate element."@en .
 
 :hasHeadOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
@@ -276,13 +305,6 @@
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has tail of"@en ;
     rdfs:comment "Specifies the tail structure of a creature."@en .
-
-:belongsTo rdf:type owl:ObjectProperty ;
-    rdfs:domain :AnatomicalPart ;
-    rdfs:range :RealAnimal ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "belongs to"@en ;
-    rdfs:comment "Identifies the real animal that contributes to the creation of a composite creature."@en .
 
 :hasHabitat rdf:type owl:ObjectProperty ;
     rdfs:domain :Creature ;
@@ -651,20 +673,40 @@
     rdfs:label "Symbolic module" ;
     rdfs:comment "The module dedicated to analyzing the allegorical meanings, literary sources, and anthropological structures (e.g. Durand's imaginary) behind creatures."@en .
 
-:Omnivorous rdf:type owl:NamedIndividual,
+:Scavenger rdf:type owl:NamedIndividual,
                     :Diet ;
-    rdfs:label "Omnivorous"@en ;
-    rdfs:comment "A diet consisting of both animal and plant matter."@en .
+    rdfs:label "Scavenger"@en ;
+    rdfs:comment "Creatures that eat dead organic matter."@en .
 
-:Herbivorous rdf:type owl:NamedIndividual,
-                    :Diet ;
-    rdfs:label "Herbivorous"@en ;
-    rdfs:comment "A diet consisting primarily of plant matter."@en .
+:Hematophagous rdf:type owl:NamedIndividual,
+                    :Carnivorous ;
+    rdfs:label "Hematophagous"@en ;
+    rdfs:comment "Blood-drinkers."@en .
 
-:Carnivorous rdf:type owl:NamedIndividual,
+:Lithophagous rdf:type owl:NamedIndividual,
                     :Diet ;
-    rdfs:label "Carnivorous"@en ;
-    rdfs:comment "A diet consisting primarily of animal tissue/meat."@en .
+    rdfs:label "Lithophagous"@en ;
+    rdfs:comment "Stone-eaters."@en .
+
+:Elemental rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Elemental"@en ;
+    rdfs:comment "Creatures that eat things like fire, air, or even human souls."@en .
+
+:Terrestrial rdf:type owl:NamedIndividual,
+                    :RealWorldPlace ;
+    rdfs:label "Terrestrial"@en ;
+    rdfs:comment ""@en .
+
+:Aerial rdf:type owl:NamedIndividual,
+                    :RealWorldPlace ;
+    rdfs:label "Aerial"@en ;
+    rdfs:comment ""@en .
+
+:Acquatic rdf:type owl:NamedIndividual,
+                    :RealWorldPlace ;
+    rdfs:label "Acquatic"@en ;
+    rdfs:comment ""@en .
 
 :ScientificTaxonomy rdf:type owl:NamedIndividual,
                     :BestiaryGenre ;
