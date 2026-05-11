@@ -7,10 +7,13 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
-    dcterms:title ""@en ;
-    dcterms:description "An ontology for the description of bestiaries."@en ;
+    dcterms:title "BEAST Ontology"@en ;
+    dcterms:description "An ontology for the description of bestiaries and creatures, their historical terminology, biological components, and symbolic implications."@en ;
     dcterms:creator "Maria Juliana Gamboa Nivia",
         "Miriana Pinto",
         "Sara Roggiani",
@@ -18,14 +21,661 @@
     dcterms:created "2026-05-01"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher <https://github.com/hexWitches> ;
-    schema:codeRepository <> ;
-    vann:preferredNamespacePrefix "" ;
-    rdfs:comment ""@en .
+    schema:codeRepository <https://github.com/hexWitches/beast> ;
+    vann:preferredNamespacePrefix "beast" ;
+    rdfs:comment "The BEAST ontology is structured in three modules: Lexical module serves for terminology and etymology; Biological Module for anatomy of creatures and their features; Symbolic Module for allegorical and literaty structures."@en .
 
+# ===== BEAST ONTOLOGY ================
 # ===== CLASSES ================
+:Module rdf:type owl:Class ;
+    rdfs:label "Module" ;
+    rdfs:comment "Top level class for organizing the ontology architecture into distinct thematic layers (Lexical, Biological, Symbolic)."@en .
 
+# ===== MODULE 1 - LEXICAL AND CONCEPTUAL LAYER ================
+# ===== CLASSES ================
+:Term rdf:type owl:Class ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "Term"@en ;
+    rdfs:comment "A word from a specific language used to denote a creature within a bestiary."@en .
+
+:Etymology rdf:type owl:Class ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "Etymology"@en ;
+    rdfs:comment "The study and documentation of the origin and historical linguistic development of a Term."@en .
+
+:Language rdf:type owl:Class ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "Language"@en ;
+    rdfs:comment "The specific human language of origin for a given term (e.g. Latin, Ancient Greek)."@en .
+
+:Epoch rdf:type owl:Class ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "Epoch"@en ;
+    rdfs:comment "A specific historical period relevant to the bestiary tradition and the evolution of its terminology (e.g. Middle Ages, Renaissance)."@en .
+
+:SemanticShift rdf:type owl:Class ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "Semantic shift"@en ;
+    rdfs:comment "The process by which the meaning, usage, or cultural understanding of a term changes over historical epochs."@en .
 
 # ===== OBJECT PROPERTIES ================
+:hasEtymology rdf:type owl:ObjectProperty ;
+    rdfs:domain :Term ;
+    rdfs:range :Etymology ;
+    owl:inverseOf :isEtymologyOf ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "has etymology"@en ;
+    rdfs:comment "Links a specific linguistic term to the documented history of its origin."@en .
 
+:isEtymologyOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range :Term ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "is etymology of"@en ;
+    rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
+
+:derivesFromLanguage rdf:type owl:ObjectProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range :Language ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "derives from language"@en ;
+    rdfs:comment "Identifies the source language from which an etymological root originates."@en .
+
+:hasSemanticShift rdf:type owl:ObjectProperty ;
+    rdfs:domain :Term ;
+    rdfs:range :SemanticShift ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "has semantic shift"@en ;
+    rdfs:comment "Indicates that a term underwent a change in meaning over time."@en .
+
+:resultsInTerm rdf:type owl:ObjectProperty ;
+    rdfs:domain :SemanticShift ;
+    rdfs:range :Term ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "results in term"@en ;
+    rdfs:comment "Links a semantic shift to the newly emerged term or meaning that resulted from the change."@en .
+
+:startsIn rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ; # functional = only one
+    rdfs:domain :SemanticShift ;
+    rdfs:range :Epoch ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "starts in"@en ;
+    rdfs:comment "Specifies the historical epoch during which a semantic shift began."@en .
+
+:endsIn rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+    rdfs:domain :SemanticShift ;
+    rdfs:range :Epoch ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "ends in"@en ;
+    rdfs:comment "Specifies the historical epoch during which a semantic shift concluded or stabilized."@en .
+
+:precedes rdf:type owl:ObjectProperty ,
+                owl:TransitiveProperty ;
+    rdfs:domain :Epoch ;
+    rdfs:range :Epoch ;
+    owl:inverseOf :follows ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "precedes"@en ;
+    rdfs:comment "A transitive property to establish the chronological order of historical periods, indicating one epoch comes before another."@en .
+
+:follows rdf:type owl:ObjectProperty ,
+                  owl:TransitiveProperty ;
+    rdfs:domain :Epoch ;
+    rdfs:range :Epoch ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "follows"@en ;
+    rdfs:comment "A transitive property to establish the chronological order of historical periods, indicating one epoch comes after another."@en .
+
+:isDenotedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :Term ;
+    owl:inverseOf :denotes ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "is denoted by"@en ;
+    rdfs:comment "Connects a biological or mythological entity to the linguistic term used to name it."@en .
+
+:denotes rdf:type owl:ObjectProperty ;
+    rdfs:domain :Term ;
+    rdfs:range :Creature ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "denotes"@en ;
+    rdfs:comment "Connects a linguistic term to the actual creature or being it refers to."@en .
 
 # ===== DATA PROPERTIES ================
+:hasRootTerm rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "has root term"@en ;
+    rdfs:comment "The literal string representation of the original word."@en .
+    
+:hasOriginalMeaning rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:label "has original meaning"@en ;
+    rdfs:comment "The literal string translation or definition of the root term before any semantic shifts occurred."@en .
+
+# ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
+# ===== CLASSES ================
+:Creature rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Creature"@en ;
+    rdfs:comment "Any living entity, whether based in biological reality or mythological imagination, described within a bestiary."@en .
+
+:ImaginaryBeing rdf:type owl:Class ;
+    rdfs:subClassOf :Creature ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    owl:disjointWith :RealAnimal ;
+    rdfs:label "Imaginary being"@en ;
+    rdfs:comment "A creature that does not exist in the natural world, originating from folklore, myth, or literary invention."@en .
+
+:CompositeCreature rdf:type owl:Class ;
+    rdfs:subClassOf :ImaginaryBeing ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Composite creature"@en ;
+    rdfs:comment "A creature composed of disparate parts, whether those parts are from different animals or distinct materials."@en .
+
+:HybridCreature rdf:type owl:Class ;
+    rdfs:subClassOf :CompositeCreature ,
+        [
+            rdf:type owl:Restriction ;
+            owl:onProperty :hasPartDerivedFrom ;
+            owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+            owl:onClass :RealAnimal
+        ] ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Hybrid creature"@en ;
+    rdfs:comment "A specific type of imaginary being composed of anatomical parts from two or more distinct real animals."@en .
+
+:RealAnimal rdf:type owl:Class ;
+    rdfs:subClassOf :Creature ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Real animal"@en ;
+    rdfs:comment "A scientifically recognized biological animal that exists or existed in the natural world."@en .
+
+:AnatomicalPart rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Anatomical part"@en ;
+    rdfs:comment "An anatomical component of a creature's body, such as a head, limb, tail, or wing."@en .
+
+:Action rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Action"@en ;
+    rdfs:comment "A specific behavior, movement, or activity performed by a creature."@en .
+
+:Habitat rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Habitat"@en ;
+    rdfs:comment "The natural or mythological environment in which a creature lives or is commonly found."@en .
+
+:RealWorldPlace rdf:type owl:Class ;
+    rdfs:subClassOf :Habitat ;
+    owl:disjointWith :MythologicalGarden ;
+    rdfs:label "Real-world place"@en ;
+    rdfs:comment "A geographic or ecological habitat that exists in the physical world. Class influenced by J. L. Borges' distinction bewteen biological reality and the imaginary spaces."@en .
+
+:MythologicalPlace rdf:type owl:Class ;
+    rdfs:subClassOf :Habitat ;
+    rdfs:label "Mythological place"@en ;
+    rdfs:comment "A conceptual, magical, or purely literary space (e.g., the Garden of Eden or Hades). As noted by Borges, these spaces follow the laws of imagination rather than biology."@en .
+
+:Anomaly rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Anomaly"@en ;
+    rdfs:comment "A physical deformity or monstrous irregularity exhibited by a creature, distinguishing it from standard anatomy."@en .
+
+:Diet rdf:type owl:Class ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "Diet"@en ;
+    rdfs:comment "The standard food consumption habits of a creature."@en .
+
+# ===== OBJECT PROPERTIES ================
+:performsAction rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :Action ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "performs action"@en ;
+    rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
+
+:hasPartDerivedFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has part of"@en ;
+    rdfs:comment "Indicates that a hybrid creature possesses anatomical or morphological features derived from a specific real animal."@en .
+
+:hasHeadOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasPartDerivedFrom ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has head of"@en ;
+    rdfs:comment "Specifies the head structure of a creature."@en .
+
+:hasLimbsOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasPartDerivedFrom ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has limbs of"@en ;
+    rdfs:comment "Specifies the limbs (arms, legs, wings) of a creature."@en .
+
+:hasBodyOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasPartDerivedFrom ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has body of"@en ;
+    rdfs:comment "Specifies the main torso or body structure of a creature."@en .
+
+:hasTailOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasPartDerivedFrom ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has tail of"@en ;
+    rdfs:comment "Specifies the tail structure of a creature."@en .
+
+:belongsTo rdf:type owl:ObjectProperty ;
+    rdfs:domain :AnatomicalPart ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "belongs to"@en ;
+    rdfs:comment "Identifies the real animal that contributes to the creation of a composite creature."@en .
+
+:hasHabitat rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :Habitat ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has habitat"@en ;
+    rdfs:comment "Connects a creature to the environment it natively inhabits."@en .
+
+:hasDeformity rdf:type owl:ObjectProperty ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :Anomaly ;
+    rdfs:label "has deformity"@en ;
+    rdfs:comment "Indicates that a creature suffers from or exhibits a specific anomaly."@en .
+
+:affectsPart rdf:type owl:ObjectProperty ;
+    rdfs:domain :Anomaly ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:label "affects part" ;
+    rdfs:comment "Indicates the anatomical structure altered, deformed, duplicated, absent, or otherwise modified by an anomaly."@en .
+
+:hasDiet rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :Diet ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has diet"@en ;
+    rdfs:comment "Specifies the feeding classification (e.g. carnivorous) of the creature."@en .
+
+# ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
+# ===== CLASSES ================
+:CreatureOccurrence rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Creature occurrence"@en ;
+    rdfs:comment ""@en .
+
+:Source rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Source"@en ;
+    rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
+
+:Bestiary rdf:type owl:Class ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Bestiary"@en ;
+    rdfs:comment "A specific type of compendium cataloging various animals, birds, and imaginary creatures."@en .
+
+:BestiaryGenre rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Bestiary Genre"@en ;
+    rdfs:comment "The thematic or functional classification of a bestiary."@en .
+
+:CulturalTradition rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Cultural Tradition"@en ;
+    rdfs:comment "The specific cultural, mythological, or folkloric framework that spawned a creature."@en .
+
+:LiteraryWork rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Literary work"@en ;
+    rdfs:comment "A written source text, such as a poem or novel, in which a creature is described, cited, or appears."@en .
+
+:VisualArtwork rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Visual artwork"@en ;
+    rdfs:comment "A visual representation, such as an illumination, painting, or sculpture, depicting a creature."@en .
+
+:Movie rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Movie"@en ;
+    rdfs:comment "A cinematographic work serving as a modern source for creature depictions."@en .
+
+:Creator rdf:type owl:Class ;
+    rdfs:subClassOf prov:Agent ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Creator"@en ;
+    rdfs:comment "The historical or modern creator, writer, or illustrator of a Source."@en .
+
+:Color rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Color"@en ;
+    rdfs:comment "A hue symbolically associated with a creature."@en .
+
+:Element rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Element"@en ;
+    rdfs:comment "One of the classical elements (Earth, Water, Air, Fire) tied to a creature's symbolic domain."@en .
+
+:Archetype rdf:type owl:Class , 
+                    skos:Concept ;
+    rdfs:label "Archetype"@en ;
+    rdfs:comment "A universal, primal pattern or character prototype that a creature embodies."@en .
+
+# DURAND SCHEME
+:DurandImaginary rdf:type skos:ConceptScheme ;
+    dcterms:title "Durand's structures of the Imaginary"@en ;
+    skos:hasTopConcept :Regime .
+
+:Regime rdf:type owl:Class ,
+                skos:Concept ;
+    skos:inScheme :DurandImaginary ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Regime"@en ;
+    rdfs:comment "Gilbert Durand's high-level classification of the imaginary into diurnal and nocturnal regimes."@en .
+
+:NocturnalRegime rdf:type owl:Class , 
+                        skos:Concept ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :Regime ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    owl:disjointWith :DiurnalRegime ;
+    rdfs:label "Nocturnal Regime"@en ;
+    rdfs:comment "The regime associated with inclusion, cycles, darkness, the maternal, and the harmonization of opposites."@en .
+
+:DiurnalRegime rdf:type owl:Class ,
+                        skos:Concept ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :Regime ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Diurnal Regime"@en ;
+    rdfs:comment "The regime associated with distinction, light, weapons, elevation, and the heroic struggle against time and death."@en .
+
+:ImaginaryStructure rdf:type owl:Class ,
+                            skos:Concept ;
+    skos:inScheme :DurandImaginary ;
+    rdfs:label "Imaginary Structure"@en ;
+    rdfs:comment "The structural framework of the imaginary as defined by Durand, mapping how human anxiety regarding time is symbolically resolved."@en .
+
+:SchizomorphicStructure rdf:type owl:Class ;
+    rdfs:subClassOf :ImaginaryStructure ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :isGovernedBy ;
+          owl:someValuesFrom :DiurnalRegime ] ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :ImaginaryStructure ;
+    rdfs:label "Schizomorphic Structure (Heroic)"@en ;
+    rdfs:comment "Governed by the Diurnal Regime. Focuses on distinction, separation, weapons, verticality, and the heroic struggle against darkness and time."@en .
+
+:SyntheticStructure rdf:type owl:Class ;
+    rdfs:subClassOf :ImaginaryStructure ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :isGovernedBy ;
+          owl:someValuesFrom :NocturnalRegime ] ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :ImaginaryStructure ;
+    rdfs:label "Synthetic Structure (Dramatic)"@en ;
+    rdfs:comment "Governed by the Nocturnal Regime. Focuses on reconciliation, dramatic cycles, progress, and historical continuity."@en .
+
+:MysticalStructure rdf:type owl:Class ;
+    rdfs:subClassOf :ImaginaryStructure ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty :isGovernedBy ;
+          owl:someValuesFrom :NocturnalRegime ] ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :ImaginaryStructure ;
+    rdfs:label "Mystical Structure (Antiphrastic)"@en ;
+    rdfs:comment "Governed by the Nocturnal Regime. Focuses on intimacy, containment, protection, descent, and interiority."@en .
+
+:TeriomorphicSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Teriomorphic Symbol"@en ;
+    rdfs:comment "Symbols representing the terrifying aspect of animals, usually embodying biting, devouring, or feral chaos."@en .
+
+:NyctomorphicSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Nyctomorphic Symbol"@en ;
+    rdfs:comment "Symbols of darkness, blindness, and shadowy terrors."@en .
+
+:CatamorphicSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Catamorphic Symbol"@en ;
+    rdfs:comment "Symbols of falling, gravity, and the degradation of flesh."@en .
+
+:AscensionalSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Ascensional Symbol"@en ;
+    rdfs:comment "Heroic symbols of elevation, wings, verticality, and flight towards light."@en .
+
+:SpectacularSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Spectacular Symbol"@en ;
+    rdfs:comment "Symbols related to intense light, vision, the sun, and the heroic gaze."@en .
+
+:DiareticSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SchizomorphicStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Diaretic Symbol"@en ;
+    rdfs:comment "Symbols of cutting, weapons, purification, and absolute separation."@en .
+
+:InversionSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SyntheticStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SyntheticStructure ;
+    rdfs:label "Inversion Symbol"@en ;
+    rdfs:comment "Symbols dealing with turning a negative into a positive, such as using poison as a cure."@en .
+
+:CyclicalSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :SyntheticStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SyntheticStructure ;
+    rdfs:label "Cyclical Symbol"@en ;
+    rdfs:comment "Symbols representing the eternal return, seasons, the moon, and rebirth."@en .
+
+:IntimacySymbol rdf:type owl:Class ;
+    rdfs:subClassOf :MysticalStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :MysticalStructure ;
+    rdfs:label "Intimacy Symbol"@en ;
+    rdfs:comment "Symbols of the center, the home, the womb, hiding places, and protective shells."@en .
+
+# ALCHEMICAL SCHEME
+:AlchemicalMagnumOpus rdf:type skos:ConceptScheme ;
+    dcterms:title "Alchemical Magnum Opus Scheme"@en ;
+    skos:hasTopConcept :Nigredo .
+
+:Nigredo rdf:type owl:Class , skos:Concept ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    skos:inScheme :AlchemicalMagnumOpus ;
+    skos:prefLabel "Nigredo"@en ;
+    rdfs:comment "The initial stage involving decomposition, rotting, or reduction of the material to its prima materia. It represents breaking down the ego or purifying raw, chaotic material."@en .
+
+:Albedo rdf:type owl:Class , skos:Concept ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    skos:inScheme :AlchemicalMagnumOpus ;
+    skos:prefLabel "Albedo"@en ;
+    rdfs:comment "The purification phase, where the material is washed to remove impurities, representing the cleansing of the spirit."@en .
+
+:Citrinitas rdf:type owl:Class , skos:Concept ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    skos:inScheme :AlchemicalMagnumOpus ;
+    skos:prefLabel "Citrinitas"@en ;
+    rdfs:comment "The transmutation of the silver into gold, or the dawning of solar light. In later traditions (after the 15th century), this stage was often merged into Rubedo."@en .
+
+:Rubedo rdf:type owl:Class , skos:Concept ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    skos:inScheme :AlchemicalMagnumOpus ;
+    skos:prefLabel "Rubedo"@en ;
+    rdfs:comment " The final stage, often representing the final realization, the union of opposing forces (like spirit and matter), and the creation of the Philosopher's Stone."@en .
+
+# ===== OBJECT PROPERTIES ================
+:appearsIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :CreatureOccurrence ;
+    rdfs:range :Source ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "appears in"@en ;
+    rdfs:comment "Links a creature occurrence to the specific textual or visual source where it is mentioned."@en .
+
+:isOccurrenceOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :CreatureOccurrence ;
+    rdfs:range :Creature ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "is occurrence of"@en ;
+    rdfs:comment ""@en .
+
+:hasGenre rdf:type owl:ObjectProperty ;
+    rdfs:domain :Bestiary ;
+    rdfs:range :BestiaryGenre ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has genre"@en ;
+    rdfs:comment "Defines the primary intent or literary genre of the bestiary"@en .
+
+:symbolizes rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; 
+                  owl:unionOf (:Creature :AnatomicalPart :Action) ] ;
+    rdfs:range [ rdf:type owl:Class ; 
+                  owl:unionOf (:ImaginaryStructure :Archetype :Color :Element skos:Concept) ] ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "symbolizes"@en ;
+    rdfs:comment "The generic symbolic link between a biological entity (Creature, Part, or Action) and a conceptual meaning (Archetype, Structure, etc.)."@en .
+
+:isAssociatedWith rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    # the domain is inherited
+    rdfs:range :Color ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "is associated with"@en ;
+    rdfs:comment "Links a creature to a color that carries allegorical meaning in its mythology."@en .
+
+:hasElement rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:range :Element ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has element"@en ;
+    rdfs:comment "Links a creature to its symbolic classical element (Fire, Water, Air, Earth)."@en .
+
+:embodiesArchetype rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:range :Archetype ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "embodies archetype"@en ;
+    rdfs:comment "Indicates that a creature serves as a manifestation of a universal archetype."@en .
+
+:belongsToImaginaryStructure rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:range :ImaginaryStructure ;
+    rdfs:label "belongs to imaginary structure"@en ;
+    rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
+
+:isGovernedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :ImaginaryStructure ;
+    rdfs:range :Regime ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "is governed by"@en ;
+    rdfs:comment "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en .
+
+:hasCulturalOrigin rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :CulturalTradition ;
+    rdfs:label "has cultural origin"@en ;
+    rdfs:comment "Links a creature to its cultural tradition (e.g. greek mythology)."@en .
+
+:indicatesAlchemicalStage rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain [ rdf:type owl:Class ; 
+                  owl:unionOf (:Creature :AnatomicalPart :Action) ] ;
+    rdfs:range [ rdf:type owl:Class ; 
+                  owl:unionOf (:Nigredo :Albedo :Citrinitas :Rubedo) ] ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "indicates alchemical stage"@en ;
+    rdfs:comment "Links a creature, part, or action to a specific phase of the alchemical Magnum Opus."@en .
+
+:followsStage rdf:type owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:domain skos:Concept ;
+    rdfs:range skos:Concept ;
+    rdfs:label "follows stage"@en ;
+    rdfs:comment "Represents the chronological sequence of the alchemical work."@en .
+
+# ===== DATA PROPERTIES ================
+:dateOfAppearance rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range xsd:gYear ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "date of appearance"@en ;
+    rdfs:comment "The earliest historically recorded date or estimated period a creature first appears in literature or art."@en .
+
+# ===== INDIVIDUALS - Controlled Vocabulary ================
+:LexicalModule rdf:type owl:NamedIndividual,
+                        :Module ;
+    rdfs:label "Lexical module" ;
+    rdfs:comment "The module dedicated to tracking the linguistic evolution, terminology, and historical semantic shifts of creature definitions."@en .
+
+:BiologicalModule rdf:type owl:NamedIndividual ,
+                        :Module ;
+    rdfs:label "Biological module" ;
+    rdfs:comment "The module focused on the physical, structural, and behavioral traits of creatures, including anatomy, diet, and habitat."@en .
+
+:SymbolicModule rdf:type owl:NamedIndividual ,
+                        :Module ;
+    rdfs:label "Symbolic module" ;
+    rdfs:comment "The module dedicated to analyzing the allegorical meanings, literary sources, and anthropological structures (e.g. Durand's imaginary) behind creatures."@en .
+
+:Omnivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Omnivorous"@en ;
+    rdfs:comment "A diet consisting of both animal and plant matter."@en .
+
+:Herbivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Herbivorous"@en ;
+    rdfs:comment "A diet consisting primarily of plant matter."@en .
+
+:Carnivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Carnivorous"@en ;
+    rdfs:comment "A diet consisting primarily of animal tissue/meat."@en .
+
+:ScientificTaxonomy rdf:type owl:NamedIndividual,
+                    :BestiaryGenre ;
+    rdfs:label "Scientific Taxonomy" ;
+    rdfs:comment "A genre focused on the scientific categorization and biological documentation of animals (e.g. Aldrovandi)."@en .
+
+:LiteraryMetafiction rdf:type owl:NamedIndividual,
+                    :BestiaryGenre ;
+    rdfs:label "Literary Metafiction" ;
+    rdfs:comment "A post-modern or highly stylized genre where the bestiary is used as a narrative or literary device (e.g. Borges)."@en .
+
+:MoralAllegory rdf:type owl:NamedIndividual, :BestiaryGenre ;
+    rdfs:label "Moral Allegory" ;
+    rdfs:comment "The traditional medieval genre where creatures are described primarily for Christian theological or moral lessons."@en .

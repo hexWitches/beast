@@ -6,11 +6,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix viaf: <http://viaf.org/viaf/> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix wd: <https://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-: a void:Dataset ;
+<https://w3id.org/beast/graph/> a void:Dataset ;
     dcterms:conformsTo <https://w3id.org/beast/ontology> ;
     dcterms:created "2026-05-01"^^xsd:date ;
     dcterms:creator "Maria Juliana Gamboa Nivia",
@@ -20,7 +22,7 @@
     dcterms:description ""@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher <https://github.com/hexWitches> ;
-    dcterms:title "The BEAST Graph"@en ;
+    dcterms:title "BEAST Graph"@en ;
     vann:preferredNamespacePrefix "" ;
     void:dataDump <https://w3id.org/beast/graph.ttl> ;
     void:vocabulary <https://w3id.org/beast/ontology> .
