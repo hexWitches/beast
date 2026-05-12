@@ -9,7 +9,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix creon: <http://www.ontologydesignpatterns.org/ont/creativity/creon.owl#> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
     dcterms:title "BEAST Ontology"@en ;
@@ -406,14 +406,16 @@
 # DURAND SCHEME
 :DurandImaginary rdf:type skos:ConceptScheme ;
     dcterms:title "Durand's structures of the Imaginary"@en ;
-    skos:hasTopConcept :Regime .
+    skos:hasTopConcept :Regime ;
+    prov:wasDerivedFrom "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario introduzione all'archetipologia generale" ;
+    rdfs:comment "Concept scheme describing Gilbert Durand's structures of the imaginary defined in 'Les Structures Anthropologiques de l'Imaginaire'."@en .
 
 :Regime rdf:type owl:Class ,
                 skos:Concept ;
     skos:inScheme :DurandImaginary ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Regime"@en ;
-    rdfs:comment "Gilbert Durand's high-level classification of the imaginary into diurnal and nocturnal regimes."@en .
+    rdfs:comment "The fundamental high-level classification of Durand, organized around sensory-motor dominants (postural, digestive, cyclic). Regimes act as organizational systems of the imagination, condensing multiple symbolic meanings into a coherent structure."@en .
 
 :NocturnalRegime rdf:type owl:Class , 
                         skos:Concept ;
@@ -422,7 +424,8 @@
     rdfs:isDefinedBy :SymbolicModule ;
     owl:disjointWith :DiurnalRegime ;
     rdfs:label "Nocturnal Regime"@en ;
-    rdfs:comment "The regime associated with inclusion, cycles, darkness, the maternal, and the harmonization of opposites."@en .
+    rdfs:comment "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures.
+    Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en .
 
 :DiurnalRegime rdf:type owl:Class ,
                         skos:Concept ;
@@ -430,13 +433,13 @@
     skos:broader :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Diurnal Regime"@en ;
-    rdfs:comment "The regime associated with distinction, light, weapons, elevation, and the heroic struggle against time and death."@en .
+    rdfs:comment ""@en .
 
 :ImaginaryStructure rdf:type owl:Class ,
                             skos:Concept ;
     skos:inScheme :DurandImaginary ;
     rdfs:label "Imaginary Structure"@en ;
-    rdfs:comment "The structural framework of the imaginary as defined by Durand, mapping how human anxiety regarding time is symbolically resolved."@en .
+    rdfs:comment "The structural framework of the imaginary as defined by Durand in 'Les Structures Anthropologiques de l'Imaginaire', mapping how human anxiety regarding time is symbolically resolved."@en .
 
 :SchizomorphicStructure rdf:type owl:Class ;
     rdfs:subClassOf :ImaginaryStructure ,
@@ -456,7 +459,7 @@
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
     rdfs:label "Synthetic Structure (Dramatic)"@en ;
-    rdfs:comment "Governed by the Nocturnal Regime. Focuses on reconciliation, dramatic cycles, progress, and historical continuity."@en .
+    rdfs:comment "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."@en .
 
 :MysticalStructure rdf:type owl:Class ;
     rdfs:subClassOf :ImaginaryStructure ,
@@ -466,7 +469,7 @@
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
     rdfs:label "Mystical Structure (Antiphrastic)"@en ;
-    rdfs:comment "Governed by the Nocturnal Regime. Focuses on intimacy, containment, protection, descent, and interiority."@en .
+    rdfs:comment "Mystical structures include symbols of intimacy and calm, the search for light within darkness. The principles underlying mystical structures are analogy and similarity. Instead of battling against time, one enters into union with it. The mind takes images of terror and rewrites them positively, transforming them into refuge and protected space. Within this logic, opposites can coexist. In mystical structures one finds doubling and adherence rather than antithesis. It functions through inversion, doubling, and adherence, turning the devouring mouth of the diurnal regime into a protective container."@en .
 
 :TeriomorphicSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
@@ -511,7 +514,7 @@
     rdfs:comment "Symbols of cutting, weapons, purification, and absolute separation."@en .
 
 :InversionSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SyntheticStructure ;
+    rdfs:subClassOf :MysticalStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SyntheticStructure ;
     rdfs:label "Inversion Symbol"@en ;
@@ -522,7 +525,7 @@
     skos:inScheme :DurandImaginary ;
     skos:broader :SyntheticStructure ;
     rdfs:label "Cyclical Symbol"@en ;
-    rdfs:comment "Symbols representing the eternal return, seasons, the moon, and rebirth."@en .
+    rdfs:comment "Cyclical symbols represents time as a series of phases. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
 
 :IntimacySymbol rdf:type owl:Class ;
     rdfs:subClassOf :MysticalStructure ;
