@@ -23,6 +23,7 @@
     dcterms:publisher <https://github.com/hexWitches> ;
     schema:codeRepository <https://github.com/hexWitches/beast> ;
     vann:preferredNamespacePrefix "beast" ;
+    dcterms:bibliographicCitation "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale"
     rdfs:comment "The BEAST ontology is structured in three modules: Lexical module serves for terminology and etymology; Biological Module for anatomy of creatures and their features; Symbolic Module for allegorical and literaty structures."@en .
 
 # ===== BEAST ONTOLOGY ================
@@ -406,9 +407,9 @@
 # DURAND SCHEME
 :DurandImaginary rdf:type skos:ConceptScheme ;
     dcterms:title "Durand's structures of the Imaginary"@en ;
-    skos:hasTopConcept :Regime ;
-    prov:wasDerivedFrom "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario introduzione all'archetipologia generale" ;
-    rdfs:comment "Concept scheme describing Gilbert Durand's structures of the imaginary defined in 'Les Structures Anthropologiques de l'Imaginaire'."@en .
+    skos:hasTopConcept :Regime , :ImaginaryStructure ;
+    prov:wasDerivedFrom "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
+    rdfs:comment "A conceptual scheme providing a framework for the symbolic and anthropological analysis of creatures within bestiaries. It acts as the theoretical pivot of the Symbolic Module, allowing for the classification of beasts and their attributes based on their relationship with human anxiety regarding time and death. By applying Gilbert Durand's regimes and structures defined in 'Les Structures Anthropologiques de l'Imaginaire', 'beast' can map how physical biological traits - such as wings - serve as archetypal responses to mortality, transforming the creature from a mere biological entity into a profound cultural symbol."@en .
 
 :Regime rdf:type owl:Class ,
                 skos:Concept ;
@@ -433,13 +434,14 @@
     skos:broader :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Diurnal Regime"@en ;
-    rdfs:comment ""@en .
+    rdfs:comment "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time.
+    This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."@en .
 
 :ImaginaryStructure rdf:type owl:Class ,
                             skos:Concept ;
     skos:inScheme :DurandImaginary ;
     rdfs:label "Imaginary Structure"@en ;
-    rdfs:comment "The structural framework of the imaginary as defined by Durand in 'Les Structures Anthropologiques de l'Imaginaire', mapping how human anxiety regarding time is symbolically resolved."@en .
+    rdfs:comment "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."@en .
 
 :SchizomorphicStructure rdf:type owl:Class ;
     rdfs:subClassOf :ImaginaryStructure ,
@@ -448,8 +450,8 @@
           owl:someValuesFrom :DiurnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
-    rdfs:label "Schizomorphic Structure (Heroic)"@en ;
-    rdfs:comment "Governed by the Diurnal Regime. Focuses on distinction, separation, weapons, verticality, and the heroic struggle against darkness and time."@en .
+    rdfs:label "Schizomorphic Structure (or Heroic)"@en ;
+    rdfs:comment "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."@en .
 
 :SyntheticStructure rdf:type owl:Class ;
     rdfs:subClassOf :ImaginaryStructure ,
@@ -458,7 +460,7 @@
           owl:someValuesFrom :NocturnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
-    rdfs:label "Synthetic Structure (Dramatic)"@en ;
+    rdfs:label "Synthetic Structure (or Dramatic)"@en ;
     rdfs:comment "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."@en .
 
 :MysticalStructure rdf:type owl:Class ;
@@ -468,7 +470,7 @@
           owl:someValuesFrom :NocturnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
-    rdfs:label "Mystical Structure (Antiphrastic)"@en ;
+    rdfs:label "Mystical Structure (or Antiphrastic)"@en ;
     rdfs:comment "Mystical structures include symbols of intimacy and calm, the search for light within darkness. The principles underlying mystical structures are analogy and similarity. Instead of battling against time, one enters into union with it. The mind takes images of terror and rewrites them positively, transforming them into refuge and protected space. Within this logic, opposites can coexist. In mystical structures one finds doubling and adherence rather than antithesis. It functions through inversion, doubling, and adherence, turning the devouring mouth of the diurnal regime into a protective container."@en .
 
 :TeriomorphicSymbol rdf:type owl:Class ;
@@ -476,63 +478,63 @@
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Teriomorphic Symbol"@en ;
-    rdfs:comment "Symbols representing the terrifying aspect of animals, usually embodying biting, devouring, or feral chaos."@en .
+    rdfs:comment "Teriomorphic symbol represents the terrifying aspect of animals, embodying biting, devouring, and feral chaos. As 'enemy symbol' of anxiety and darkness, it is linked to the restlessness caused by rapid, undisciplined movement. It captures the chaos of fleeing from 'devouring time' and the archetype of the predatory jaws ready to strike."@en .
 
 :NyctomorphicSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Nyctomorphic Symbol"@en ;
-    rdfs:comment "Symbols of darkness, blindness, and shadowy terrors."@en .
+    rdfs:comment "Nyctomorphic symbol encapsulates the temporal symbolism of darkness, blindness, and shadows. Linked to the voracity of the night, it often incorporates the element of water - viewed here not as a source of life, but as an elusive, dark surface that doubles the abyss and reflects the formless terror of the unknown."@en .
 
 :CatamorphicSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Catamorphic Symbol"@en ;
-    rdfs:comment "Symbols of falling, gravity, and the degradation of flesh."@en .
+    rdfs:comment "Catamorphic symbol embodies falling, gravity, and the physical degradation of flesh. These dynamic images of transience represent the dazzling acceleration of time during a downward plunge. Catamorphic symbol captures the existential anxiety of the fall, where movement signifies the inescapable and rapid passage of time toward death."@en .
 
 :AscensionalSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Ascensional Symbol"@en ;
-    rdfs:comment "Heroic symbols of elevation, wings, verticality, and flight towards light."@en .
+    rdfs:comment "Ascensional symbol embodies heroic symbols of elevation, verticality, and transcendence. It represents the upward movement to escape the degradation of time and the symbolic refusal of death. In this structure, height is synonymous with the pure and the divine; the wing is the ascensional instrument that contradicts gravity. These symbols manifest a quest to regain lost power through movement toward metaphysical spaces (e.g., mountains), dazzling imagery (arrows, wings), and virile archetypes of celestial royalty and the warrior."@en .
 
 :SpectacularSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Spectacular Symbol"@en ;
-    rdfs:comment "Symbols related to intense light, vision, the sun, and the heroic gaze."@en .
+    rdfs:comment "Spectacular symbol relates to intense light, vision, and the heroic gaze. Standing in direct opposition to darkness, it emphasizes the triumph of clarity and the 'solar power' that makes the world intelligible and thus controllable. Sight is the supreme sense of the hero, as clear vision allows for the differentiation of things and the definition of clear boundaries. In this context, light functions as a sword, cutting through obscurity to define reality."@en .
 
 :DiareticSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SchizomorphicStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SchizomorphicStructure ;
     rdfs:label "Diaretic Symbol"@en ;
-    rdfs:comment "Symbols of cutting, weapons, purification, and absolute separation."@en .
-
-:InversionSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :MysticalStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SyntheticStructure ;
-    rdfs:label "Inversion Symbol"@en ;
-    rdfs:comment "Symbols dealing with turning a negative into a positive, such as using poison as a cure."@en .
+    rdfs:comment "Diaretic symbol embodies figures of cutting, weapons, and purification, derived from the Greek term 'diairesis' (division). They represent the human need for analysis, categorization, and absolute separation to overcome natural chaos. The hero's weapon is a dual symbol of power and purity; by cutting through confusion and separating the real from the imaginary, or good from evil, the hero gains mastery over the world. In this structure, the act of separation is the primary source of intellectual and spiritual power."@en .
 
 :CyclicalSymbol rdf:type owl:Class ;
     rdfs:subClassOf :SyntheticStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :SyntheticStructure ;
     rdfs:label "Cyclical Symbol"@en ;
-    rdfs:comment "Cyclical symbols represents time as a series of phases. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
+    rdfs:comment "Cyclical symbol represents the archetype of the Eternal Return and time as a series of phases. Using the moon as a primary model - being the first to die and the first to be reborn - these symbols suggest that time is a series of phases where opposites (life/death, light/dark) coexist. This 'lunar optimism' does not negate death but reintegrates it as an essential stage of an incessant, evolving movement where every sunset is a prelude to a new dawn. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
+
+:InversionSymbol rdf:type owl:Class ;
+    rdfs:subClassOf :MysticalStructure ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :MysticalStructure ;
+    rdfs:label "Inversion Symbol"@en ;
+    rdfs:comment "Inversion symbol exorcises the fear of time by turning negative images into positive ones. Through an involutive process, the devouring mouth of the Diurnal Regime is transmuted into a protective nest. Instead of a heroic battle against darkness, there is a mystical union with it. This defensive mechanism employs doubling and reassuring symbols of intimacy to transform a dangerous fall into a controlled descent into the secrets of becoming."@en .
 
 :IntimacySymbol rdf:type owl:Class ;
     rdfs:subClassOf :MysticalStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :MysticalStructure ;
     rdfs:label "Intimacy Symbol"@en ;
-    rdfs:comment "Symbols of the center, the home, the womb, hiding places, and protective shells."@en .
+    rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifyng world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
 
 # ALCHEMICAL SCHEME
 :AlchemicalMagnumOpus rdf:type skos:ConceptScheme ;
