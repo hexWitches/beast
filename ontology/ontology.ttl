@@ -23,8 +23,8 @@
     dcterms:publisher <https://github.com/hexWitches> ;
     schema:codeRepository <https://github.com/hexWitches/beast> ;
     vann:preferredNamespacePrefix "beast" ;
-    dcterms:bibliographicCitation "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale"
-    rdfs:comment "The BEAST ontology is structured in three modules: Lexical module serves for terminology and etymology; Biological Module for anatomy of creatures and their features; Symbolic Module for allegorical and literaty structures."@en .
+    dcterms:bibliographicCitation "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
+    rdfs:comment "The BEAST ontology is structured into three interconnected modules: the Lexical Module manages the linguistic evolution and etymology of creature terminology; the Biological Module defines the morphological and behavioral traits of both real and imaginary beings appearing within bestiaries; the Symbolic Module provides a multidimensional framework for the analysis of creatures across art and literature. By integrating Gilbert Durand's anthropological structures of the imaginary with the study of creative sources, this module interprets creatures not just as biological entitites, but as cultural and archetypal figures transforming the a biological reality into a symbolic reality."@en .
 
 # ===== BEAST ONTOLOGY ================
 # ===== CLASSES ================
@@ -666,17 +666,17 @@
 :LexicalModule rdf:type owl:NamedIndividual,
                         :Module ;
     rdfs:label "Lexical module" ;
-    rdfs:comment "The module dedicated to tracking the linguistic evolution, terminology, and historical semantic shifts of creature definitions."@en .
+    rdfs:comment "The Lexical Module documents the diachronic evolution of creature terminology, etymological roots, source languages, and the historical semantic shifts that occur as a term moves across different epochs and cultures."@en .
 
 :BiologicalModule rdf:type owl:NamedIndividual ,
                         :Module ;
     rdfs:label "Biological module" ;
-    rdfs:comment "The module focused on the physical, structural, and behavioral traits of creatures, including anatomy, diet, and habitat."@en .
-
+    rdfs:comment "The Biological Module is dedicated to the physical and behavioral traits of creatures - whether real or imaginary - as formalized in Bestiaries. It catalogs anatomy, habitats, and diets, serving as the primary 'sensory data' that is later transformed into symbolic meaning within the artistic and literary tradition."@en .
+    
 :SymbolicModule rdf:type owl:NamedIndividual ,
                         :Module ;
     rdfs:label "Symbolic module" ;
-    rdfs:comment "The module dedicated to analyzing the allegorical meanings, literary sources, and anthropological structures (e.g. Durand's imaginary) behind creatures."@en .
+    rdfs:comment "The Symbolic Module represents the analytical and allegorical layer of the ontology, where art, literature, and anthropology converge. It maps how creatures are represented in primary sources - from ancient imagery and medieval manuscripts to contemporary artworks - to decode the symbolic and archetypal logic behind their artistic creation."@en .
 
 :Scavenger rdf:type owl:NamedIndividual,
                     :Diet ;
