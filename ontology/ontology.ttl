@@ -10,6 +10,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix creon: <http://www.ontologydesignpatterns.org/ont/creativity/creon.owl#> .
+@prefix cito: <http://purl.org/spar/cito/> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
     dcterms:title "BEAST Ontology"@en ;
@@ -30,144 +31,171 @@
 # ===== CLASSES ================
 :Module rdf:type owl:Class ;
     rdfs:label "Module" ;
-    rdfs:comment "Top level class for organizing the ontology architecture into distinct thematic layers (Lexical, Biological, Symbolic)."@en .
+    rdfs:comment "Top level class for organizing the ontology architecture into three distinct layers (Lexical, Biological, Symbolic)."@en .
 
-# ===== MODULE 1 - LEXICAL AND CONCEPTUAL LAYER ================
+# ===== MODULE 1 - PROVENANCE AND IDENTITY LAYER ================
 # ===== CLASSES ================
 :Term rdf:type owl:Class ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Term"@en ;
     rdfs:comment "A word from a specific language used to denote a creature within a bestiary."@en .
 
 :Etymology rdf:type owl:Class ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Etymology"@en ;
-    rdfs:comment "The study and documentation of the origin and historical linguistic development of a Term."@en .
+    rdfs:comment "The etymology of a term denoting creatures within bestiaries."@en .
 
 :Language rdf:type owl:Class ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Language"@en ;
     rdfs:comment "The specific human language of origin for a given term (e.g. Latin, Ancient Greek)."@en .
 
 :Epoch rdf:type owl:Class ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Epoch"@en ;
     rdfs:comment "A specific historical period relevant to the bestiary tradition and the evolution of its terminology (e.g. Middle Ages, Renaissance)."@en .
 
-:SemanticShift rdf:type owl:Class ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "Semantic shift"@en ;
-    rdfs:comment "The process by which the meaning, usage, or cultural understanding of a term changes over historical epochs."@en .
+:Interpretation rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Interpretation"@en ;
+    rdfs:comment ""@en .
+
+:Source rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Source"@en ;
+    rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
+
+:Creature rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Creature"@en ;
+    rdfs:comment "Any living entity, whether based in biological reality or mythological imagination, described within a Source."@en .
+
+:Bestiary rdf:type owl:Class ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Bestiary"@en ;
+    rdfs:comment "A specific type of compendium cataloging various animals, birds, and imaginary creatures."@en .
+
+:BestiaryGenre rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Bestiary Genre"@en ;
+    rdfs:comment "The thematic or functional classification of a bestiary."@en .
+
+:CulturalTradition rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Cultural Tradition"@en ;
+    rdfs:comment "The specific cultural, mythological, or folkloric framework that spawned a creature."@en .
+
+:LiteraryWork rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Literary work"@en ;
+    rdfs:comment "A written source text, such as a poem or novel, in which a creature is described, cited, or appears."@en .
+
+:VisualArtwork rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Visual artwork"@en ;
+    rdfs:comment "A visual representation, such as an illumination, painting, or sculpture, depicting a creature."@en .
+
+:CinematicWork rdf:type owl:Class ;
+    rdfs:subClassOf creon:CreativeProduct ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "CinematicWork"@en ;
+    rdfs:comment "A cinematographic work serving as a modern source for creature depictions."@en .
 
 # ===== OBJECT PROPERTIES ================
 :hasEtymology rdf:type owl:ObjectProperty ;
     rdfs:domain :Term ;
     rdfs:range :Etymology ;
     owl:inverseOf :isEtymologyOf ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has etymology"@en ;
     rdfs:comment "Links a specific linguistic term to the documented history of its origin."@en .
 
 :isEtymologyOf rdf:type owl:ObjectProperty ;
     rdfs:domain :Etymology ;
     rdfs:range :Term ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "is etymology of"@en ;
     rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
+
+:hasRootTerm rdf:type owl:ObjectProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range :Term ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has root term"@en ;
+    rdfs:comment "The literal string representation of the original word."@en .
 
 :derivesFromLanguage rdf:type owl:ObjectProperty ;
     rdfs:domain :Etymology ;
     rdfs:range :Language ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "derives from language"@en ;
     rdfs:comment "Identifies the source language from which an etymological root originates."@en .
 
-:hasSemanticShift rdf:type owl:ObjectProperty ;
-    rdfs:domain :Term ;
-    rdfs:range :SemanticShift ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "has semantic shift"@en ;
-    rdfs:comment "Indicates that a term underwent a change in meaning over time."@en .
-
-:resultsInTerm rdf:type owl:ObjectProperty ;
-    rdfs:domain :SemanticShift ;
-    rdfs:range :Term ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "results in term"@en ;
-    rdfs:comment "Links a semantic shift to the newly emerged term or meaning that resulted from the change."@en .
-
-:startsIn rdf:type owl:ObjectProperty ,
-                    owl:FunctionalProperty ; # functional = only one
-    rdfs:domain :SemanticShift ;
-    rdfs:range :Epoch ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "starts in"@en ;
-    rdfs:comment "Specifies the historical epoch during which a semantic shift began."@en .
-
-:endsIn rdf:type owl:ObjectProperty ,
-                    owl:FunctionalProperty ;
-    rdfs:domain :SemanticShift ;
-    rdfs:range :Epoch ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "ends in"@en ;
-    rdfs:comment "Specifies the historical epoch during which a semantic shift concluded or stabilized."@en .
-
-:precedes rdf:type owl:ObjectProperty ,
-                owl:TransitiveProperty ;
-    rdfs:domain :Epoch ;
-    rdfs:range :Epoch ;
-    owl:inverseOf :follows ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "precedes"@en ;
-    rdfs:comment "A transitive property to establish the chronological order of historical periods, indicating one epoch comes before another."@en .
-
-:follows rdf:type owl:ObjectProperty ,
-                  owl:TransitiveProperty ;
-    rdfs:domain :Epoch ;
-    rdfs:range :Epoch ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "follows"@en ;
-    rdfs:comment "A transitive property to establish the chronological order of historical periods, indicating one epoch comes after another."@en .
-
-:isDenotedBy rdf:type owl:ObjectProperty ;
-    rdfs:domain :Creature ;
-    rdfs:range :Term ;
-    owl:inverseOf :denotes ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "is denoted by"@en ;
-    rdfs:comment "Connects a biological or mythological entity to the linguistic term used to name it."@en .
-
-:denotes rdf:type owl:ObjectProperty ;
-    rdfs:domain :Term ;
+:ofCreature rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Creature ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "denotes"@en ;
-    rdfs:comment "Connects a linguistic term to the actual creature or being it refers to."@en .
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "of creature"@en ;
+    rdfs:comment "The property linking an interpretation with a creature."@en .
+
+:appearsIn rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "appears in"@en ;
+    rdfs:comment "Links a creature occurrence to the specific textual or visual source where it is mentioned."@en .
+
+:hasGenre rdf:type owl:ObjectProperty ;
+    rdfs:domain :Bestiary ;
+    rdfs:range :BestiaryGenre ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has genre"@en ;
+    rdfs:comment "Defines the primary intent or literary genre of the bestiary"@en .
+
+:hasCulturalOrigin rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :CulturalTradition ;
+    rdfs:label "has cultural origin"@en ;
+    rdfs:comment "Links a creature to its cultural tradition (e.g. greek mythology)."@en .
+
+:cites rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf cito:cites ;
+    rdfs:domain :Source ;
+    rdfs:range :Source ;
+    rdfs:label "cites"@en ;
+    rdfs:comment ""@en .
+
+:usesTerm rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :Term ;
+    rdfs:label "uses term"@en ;
+    rdfs:comment ""@en .
 
 # ===== DATA PROPERTIES ================
-:hasRootTerm rdf:type owl:DatatypeProperty ;
+:dateOfAppearance rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range xsd:gYear ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "date of appearance"@en ;
+    rdfs:comment "The earliest historically recorded date or estimated period a creature first appears in literature or art."@en .
+  
+:hasMeaning rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf owl:topDataProperty ;
     rdfs:domain :Etymology ;
     rdfs:range xsd:string ;
-    rdfs:isDefinedBy :LexicalModule ;
-    rdfs:label "has root term"@en ;
-    rdfs:comment "The literal string representation of the original word."@en .
-    
-:hasOriginalMeaning rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdfs:domain :Etymology ;
-    rdfs:range xsd:string ;
-    rdfs:isDefinedBy :LexicalModule ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has original meaning"@en ;
-    rdfs:comment "The literal string translation or definition of the root term before any semantic shifts occurred."@en .
+    rdfs:comment "The literal string translation or definition of the root term."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================
-:Creature rdf:type owl:Class ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Creature"@en ;
-    rdfs:comment "Any living entity, whether based in biological reality or mythological imagination, described within a bestiary."@en .
-
 :ImaginaryBeing rdf:type owl:Class ;
     rdfs:subClassOf :Creature ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -336,59 +364,6 @@
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
-:CreatureOccurrence rdf:type owl:Class ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Creature occurrence"@en ;
-    rdfs:comment ""@en .
-
-:Source rdf:type owl:Class ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Source"@en ;
-    rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
-
-:Bestiary rdf:type owl:Class ;
-    rdfs:subClassOf :Source ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Bestiary"@en ;
-    rdfs:comment "A specific type of compendium cataloging various animals, birds, and imaginary creatures."@en .
-
-:BestiaryGenre rdf:type owl:Class ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Bestiary Genre"@en ;
-    rdfs:comment "The thematic or functional classification of a bestiary."@en .
-
-:CulturalTradition rdf:type owl:Class ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Cultural Tradition"@en ;
-    rdfs:comment "The specific cultural, mythological, or folkloric framework that spawned a creature."@en .
-
-:LiteraryWork rdf:type owl:Class ;
-    rdfs:subClassOf creon:CreativeProduct ;
-    rdfs:subClassOf :Source ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Literary work"@en ;
-    rdfs:comment "A written source text, such as a poem or novel, in which a creature is described, cited, or appears."@en .
-
-:VisualArtwork rdf:type owl:Class ;
-    rdfs:subClassOf creon:CreativeProduct ;
-    rdfs:subClassOf :Source ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Visual artwork"@en ;
-    rdfs:comment "A visual representation, such as an illumination, painting, or sculpture, depicting a creature."@en .
-
-:Movie rdf:type owl:Class ;
-    rdfs:subClassOf creon:CreativeProduct ;
-    rdfs:subClassOf :Source ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Movie"@en ;
-    rdfs:comment "A cinematographic work serving as a modern source for creature depictions."@en .
-
-:Creator rdf:type owl:Class ;
-    rdfs:subClassOf prov:Agent ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Creator"@en ;
-    rdfs:comment "The historical or modern creator, writer, or illustrator of a Source."@en .
-
 :Color rdf:type owl:Class ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Color"@en ;
@@ -566,27 +541,6 @@
     rdfs:comment " The final stage, often representing the final realization, the union of opposing forces (like spirit and matter), and the creation of the Philosopher's Stone."@en .
 
 # ===== OBJECT PROPERTIES ================
-:appearsIn rdf:type owl:ObjectProperty ;
-    rdfs:domain :CreatureOccurrence ;
-    rdfs:range :Source ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "appears in"@en ;
-    rdfs:comment "Links a creature occurrence to the specific textual or visual source where it is mentioned."@en .
-
-:isOccurrenceOf rdf:type owl:ObjectProperty ;
-    rdfs:domain :CreatureOccurrence ;
-    rdfs:range :Creature ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "is occurrence of"@en ;
-    rdfs:comment ""@en .
-
-:hasGenre rdf:type owl:ObjectProperty ;
-    rdfs:domain :Bestiary ;
-    rdfs:range :BestiaryGenre ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has genre"@en ;
-    rdfs:comment "Defines the primary intent or literary genre of the bestiary"@en .
-
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
                   owl:unionOf (:Creature :AnatomicalPart :Action) ] ;
@@ -598,7 +552,6 @@
 
 :isAssociatedWith rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
-    # the domain is inherited
     rdfs:range :Color ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "is associated with"@en ;
@@ -631,12 +584,6 @@
     rdfs:label "is governed by"@en ;
     rdfs:comment "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en .
 
-:hasCulturalOrigin rdf:type owl:ObjectProperty ;
-    rdfs:domain :Creature ;
-    rdfs:range :CulturalTradition ;
-    rdfs:label "has cultural origin"@en ;
-    rdfs:comment "Links a creature to its cultural tradition (e.g. greek mythology)."@en .
-
 :indicatesAlchemicalStage rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
     rdfs:domain [ rdf:type owl:Class ; 
@@ -653,25 +600,17 @@
     rdfs:label "follows stage"@en ;
     rdfs:comment "Represents the chronological sequence of the alchemical work."@en .
 
-# ===== DATA PROPERTIES ================
-:dateOfAppearance rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdfs:domain :Creature ;
-    rdfs:range xsd:gYear ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "date of appearance"@en ;
-    rdfs:comment "The earliest historically recorded date or estimated period a creature first appears in literature or art."@en .
-
 # ===== INDIVIDUALS - Controlled Vocabulary ================
-:LexicalModule rdf:type owl:NamedIndividual,
+:ProvenanceModule rdf:type owl:NamedIndividual,
                         :Module ;
-    rdfs:label "Lexical module" ;
-    rdfs:comment "The Lexical Module documents the diachronic evolution of creature terminology, etymological roots, source languages, and the historical semantic shifts that occur as a term moves across different epochs and cultures."@en .
+    rdfs:label "Provenance module (the Anchor)" ;
+    rdfs:comment "The Provenance Module connects a creature to the source in which it appears and documents the terminology used to name a specific beast.
+     evolution of creature terminology, etymological roots, source languages, and the historical semantic shifts that occur as a term moves across different epochs and cultures."@en .
 
 :BiologicalModule rdf:type owl:NamedIndividual ,
                         :Module ;
     rdfs:label "Biological module" ;
-    rdfs:comment "The Biological Module is dedicated to the physical and behavioral traits of creatures - whether real or imaginary - as formalized in Bestiaries. It catalogs anatomy, habitats, and diets, serving as the primary 'sensory data' that is later transformed into symbolic meaning within the artistic and literary tradition."@en .
+    rdfs:comment "The Biological Module is dedicated to the physical and behavioral traits of creatures - whether real or imaginary - as formalized in Bestiaries or other Sources. It catalogs anatomy, habitats, and diets, serving as the primary 'sensory data' that is later transformed into symbolic meaning within the artistic and literary tradition."@en .
     
 :SymbolicModule rdf:type owl:NamedIndividual ,
                         :Module ;
