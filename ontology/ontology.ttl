@@ -56,7 +56,7 @@
     rdfs:comment "A specific conceptualization, reading, or artistic depiction of a creature as conceived by a particular creator within a specific Source. It distinguishes the universal concept of a Creature from its specific variations, allowing researchers to document how a single beast's anatomy, behavior, or allegorical meaning mutates when handled by different authors, artists, or historical periods."@en .
 
 :Source rdf:type owl:Class ;
-    rdfs:subClass schema:CreativeWork ;
+    rdfs:subClassOf schema:CreativeWork ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Source"@en ;
     rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
@@ -175,7 +175,7 @@
     rdfs:comment "Indicates that a Source drew thematic, stylistic, or conceptual inspiration from an earlier work, even without a direct citation."@en .
 
 # ===== DATA PROPERTIES ================
-:hasRootTerm rdf:type owl:ObjectProperty ;
+:hasRootTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Etymology ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy :ProvenanceModule ;
@@ -187,7 +187,6 @@
     rdfs:domain [ rdf:type owl:Class ;
                     owl:unionOf (:Etymology :Interpretation :Archetype)] ;
     rdfs:range xsd:string ;
-    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has meaning"@en ;
     rdfs:comment "The literal string translation or definition of the root term."@en .
 
@@ -241,7 +240,7 @@
 
 :Ability rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Action"@en ;
+    rdfs:label "Ability"@en ;
     rdfs:comment "A specific behavior, movement, or activity performed by a creature."@en .
 
 :Habitat rdf:type owl:Class ;
@@ -251,7 +250,7 @@
 
 :RealWorldPlace rdf:type owl:Class ;
     rdfs:subClassOf :Habitat ;
-    owl:disjointWith :MythologicalGarden ;
+    owl:disjointWith :ImaginaryPlace ;
     rdfs:label "Real-world place"@en ;
     rdfs:comment "A geographic or ecological habitat that exists in the physical world. Class influenced by J. L. Borges' distinction bewteen biological reality and the imaginary spaces."@en .
 
@@ -270,33 +269,15 @@
     rdfs:label "Diet"@en ;
     rdfs:comment "The standard food consumption habits of a creature."@en .
 
-:Omnivorous rdf:type owl:Class ;
-    rdfs:subClassOf :Diet
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Omnivorous"@en ;
-    rdfs:comment "A diet consisting of both animal and plant matter."@en .
-
-:Herbivorous rdf:type owl:Class ;
-    rdfs:subClassOf :Diet
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Herbivorous"@en ;
-    rdfs:comment "A diet consisting primarily of plant matter."@en .
-
-:Carnivorous rdf:type owl:Class ;
-    rdfs:subClassOf :Diet
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Carnivorous"@en ;
-    rdfs:comment "A diet consisting primarily of animal meat."@en .
-
 [] rdf:type owl:AllDisjointClasses ;
     owl:members (:RealAnimal :Plant :InanimateElement) .
 
 # ===== OBJECT PROPERTIES ================
 :hasAbility rdf:type owl:ObjectProperty ;
     rdfs:domain :Creature ;
-    rdfs:range :Action ;
+    rdfs:range :Ability ;
     rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "performs action"@en ;
+    rdfs:label "has ability"@en ;
     rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
 
 :hasAnatomicalPart rdf:type owl:ObjectProperty ;
@@ -371,10 +352,6 @@
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
-:Divergence rdf:type owl:Class ,
-    rdfs:label "Divergence"@en ;
-    rdfs:comment "A conceptual, physical, or behavioral deviation where a specific Interpretation of a Creature differs significantly from its traditional representation as described in the BiologicalModule."@en .
-
 :Archetype rdf:type owl:Class , 
                     skos:Concept ;
     rdfs:label "Archetype"@en ;
@@ -542,32 +519,6 @@
     rdfs:comment " The final stage, often representing the final realization, the union of opposing forces (like spirit and matter), and the creation of the Philosopher's Stone."@en .
 
 # ===== OBJECT PROPERTIES ================
-:hasDivergence rdf:type owl:ObjectProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range :Divergence ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has divergence"@en ;
-    rdfs:comment "Superproperty linking a specific Interpretation to a Divergence, highlighting how this particular depiction breaks from established traditions."@en .
-
-:hasAnatomicalDivergence rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasDivergence ;
-    rdfs:range :Divergence ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has anatomical divergence"@en ;
-    rdfs:comment "Specifies a divergence related to the physical structure or appearance of the creature (e.g. giving wings to a traditionally wingless beast)."@en .
-
-:hasAbilityDivergence rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasDivergence ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has ability divergence"@en ;
-    rdfs:comment "Specifies a divergence related to the creature's actions, powers, or behavioral traits (e.g. a fire-breathing creature that instead breathes ice)."@en .
-
-:hasSymbolicDivergence rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasDivergence ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has symbolic divergence"@en ;
-    rdfs:comment "Specifies a divergence in the allegorical, moral, or cultural meaning assigned to the creature compared to its standard archetype."@en .
-
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
                   owl:unionOf (:Interpretation :AnatomicalPart :Ability) ] ;
@@ -600,7 +551,7 @@
 :indicatesAlchemicalStage rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
     rdfs:domain [ rdf:type owl:Class ; 
-                  owl:unionOf (:Creature :AnatomicalPart :Action) ] ;
+                  owl:unionOf (:Creature :AnatomicalPart :Ability) ] ;
     rdfs:range [ rdf:type owl:Class ; 
                   owl:unionOf (:Nigredo :Albedo :Citrinitas :Rubedo) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
@@ -612,6 +563,34 @@
     rdfs:range skos:Concept ;
     rdfs:label "follows stage"@en ;
     rdfs:comment "Represents the chronological sequence of the alchemical work."@en .
+
+# ===== DATA PROPERTIES ================
+:hasDivergence rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has divergence"@en ;
+    rdfs:comment "Links a specific Interpretation to a textual description of how it deviates from the creature's traditional representation, whether anatomically, behaviorally, or symbolically."@en .
+
+:hasAnatomicalDivergence rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has anatomical divergence"@en ;
+    rdfs:comment "Specifies a divergence related to the physical structure or appearance of the creature (e.g. giving wings to a traditionally wingless beast)."@en .
+
+:hasAbilityDivergence rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has ability divergence"@en ;
+    rdfs:comment "Specifies a divergence related to the creature's actions, powers, or behavioral traits (e.g. a fire-breathing creature that instead breathes ice)."@en .
+
+:hasSymbolicDivergence rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has symbolic divergence"@en ;
+    rdfs:comment "Specifies a divergence in the allegorical, moral, or cultural meaning assigned to the creature compared to its standard archetype."@en .
+
 
 # ===== INDIVIDUALS - Controlled Vocabulary ================
 :ProvenanceModule rdf:type owl:NamedIndividual,
@@ -628,6 +607,21 @@
                         :Module ;
     rdfs:label "Symbolic module" ;
     rdfs:comment "The Symbolic Module represents the analytical and allegorical layer of the ontology, where art, literature, and anthropology converge. It maps how creatures are represented in primary sources - from ancient imagery and medieval manuscripts to contemporary artworks - to decode the symbolic and archetypal logic behind their artistic creation."@en .
+
+:Omnivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Omnivorous"@en ;
+    rdfs:comment "A diet consisting of both animal and plant matter."@en .
+
+:Herbivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Herbivorous"@en ;
+    rdfs:comment "A diet consisting primarily of plant matter."@en .
+
+:Carnivorous rdf:type owl:NamedIndividual,
+                    :Diet ;
+    rdfs:label "Carnivorous"@en ;
+    rdfs:comment "A diet consisting primarily of animal meat."@en .
 
 :Scavenger rdf:type owl:NamedIndividual,
                     :Diet ;
@@ -676,5 +670,20 @@
     rdfs:label "Moral Allegory" ;
     rdfs:comment "The traditional medieval genre where creatures are described primarily for Christian theological or moral lessons."@en .
 
-[] rdf:type owl:AllDisjointClasses ;
-    owl:members (:ScientificTaxonomy :LiteraryMetafiction :MoralAllegory) .
+[] rdf:type owl:AllDifferent ;
+    owl:distinctMembers (
+        :ScientificTaxonomy
+        :LiteraryMetafiction
+        :MoralAllegory
+    ) .
+
+[] rdf:type owl:AllDifferent ;
+    owl:distinctMembers (
+        :Omnivorous
+        :Carnivorous
+        :Herbivorous
+        :Scavenger
+        :Hematophagous
+        :Lithophagous
+        :Elemental
+    ) .
