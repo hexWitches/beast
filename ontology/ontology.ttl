@@ -236,7 +236,7 @@
 :AnatomicalPart rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "Anatomical part"@en ;
-    rdfs:comment "An anatomical component of a creature's body, such as a head, limb or tail."@en .
+    rdfs:comment "A discrete physical feature of a creature's body, such as a head, limb or tail,that carries symbolic, allegorical, or analytical relevance across its tradition of representation."@en .
 
 :Ability rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -281,11 +281,11 @@
     rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
 
 :hasAnatomicalPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :Creature ;
+    rdfs:domain :Interpretation ;
     rdfs:range :AnatomicalPart ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has anatomical part"@en ;
-    rdfs:comment "Connects a creature to a specific structural or morphological component of its body."@en .
+    rdfs:comment "Links a specific Interpretation to a physically or symbolically distinctive anatomical feature that is meaningful within that Source."@en .
 
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
     rdfs:domain :CompositeCreature ;
