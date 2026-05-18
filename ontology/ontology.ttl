@@ -38,7 +38,7 @@
 :Nomenclature rdf:type owl:Class ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Nomenclature"@en ;
-    rdfs:comment "The precise linguistic term used within a Source to label an creature. Nomenclature functions at two levels of granularity: it can be assigned to a broad species (e.g. linking the class Creature to the standard term Lion), or it can be assigned directly to a source-specific Interpretation to capture contextual, poetic, or stylistic word choices used by a particular creator (e.g., labeling a specific textual variant as a Monster)."@en .
+    rdfs:comment "The precise linguistic term used within a Source to label a creature. Nomenclature functions at two levels of granularity: it can be assigned to a broad species (e.g. linking the class Creature to the standard term Lion), or it can be assigned directly to a source-specific Interpretation to capture contextual, poetic, or stylistic word choices used by a particular creator (e.g., labeling a specific textual variant as a Monster)."@en .
 
 :Etymology rdf:type owl:Class ;
     rdfs:isDefinedBy :ProvenanceModule ;
@@ -236,7 +236,7 @@
 :AnatomicalPart rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "Anatomical part"@en ;
-    rdfs:comment "A discrete physical feature of a creature's body, such as a head, limb or tail,that carries symbolic, allegorical, or analytical relevance across its tradition of representation."@en .
+    rdfs:comment "An anatomical component of a creature's body, such as a head, limb or tail."@en .
 
 :Ability rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -280,12 +280,12 @@
     rdfs:label "has ability"@en ;
     rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
 
-:hasAnatomicalPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range :AnatomicalPart ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has anatomical part"@en ;
-    rdfs:comment "Links a specific Interpretation to a physically or symbolically distinctive anatomical feature that is meaningful within that Source."@en .
+# :hasAnatomicalPart rdf:type owl:ObjectProperty ;
+#     rdfs:domain :Creature ;
+#     rdfs:range :AnatomicalPart ;
+#     rdfs:isDefinedBy :BiologicalModule ;
+#     rdfs:label "has anatomical part"@en ;
+#     rdfs:comment "Links a specific Interpretation to a physically or symbolically distinctive anatomical feature that is meaningful within that Source."@en .
 
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
     rdfs:domain :CompositeCreature ;
@@ -350,12 +350,23 @@
     rdfs:label "has diet"@en ;
     rdfs:comment "Specifies the feeding classification (e.g. carnivorous) of the creature."@en .
 
+# ===== DATA PROPERTIES ================
+:hasDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range xsd:string ;
+    rdfs:label "has description"@en .
+
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
 :Archetype rdf:type owl:Class , 
                     skos:Concept ;
     rdfs:label "Archetype"@en ;
     rdfs:comment "A universal, primordial pattern or character prototype residing in the collective human imagination. Within the ontology, the class serves as the ultimate analytical anchor that bridges the historical world with the symbolic world, linking a source-bound Interpretation of a Creature directly to its deeper allegorical, spiritual, or psychological meaning."@en .
+
+:SymbolicFeature rdf:type owl:Class ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Symbolic Feature"@en ;
+    rdfs:comment "A symbolic observation linking a specific anatomical feature to its allegorical meaning within a particular Interpretation."@en . 
 
 # DURAND SCHEME
 :DurandImaginary rdf:type skos:ConceptScheme ;
@@ -565,6 +576,20 @@
     rdfs:comment "Represents the chronological sequence of the alchemical work."@en .
 
 # ===== DATA PROPERTIES ================
+:hasSymbolicFeature rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :SymbolicFeature ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has symbolic feature"@en ;
+    rdfs:comment "Links a specific Interpretation to a SymbolicFeature, capturing the allegorical meaning of an anatomical part within that source."@en .
+
+:involvesAnatomicalPart rdf:type owl:ObjectProperty ;
+    rdfs:domain :SymbolicFeature ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "involves anatomical part"@en ;
+    rdfs:comment "Identifies the anatomical feature that is the vehicle for symbolic meaning within a SymbolicFeature observation."@en .
+
 :hasDivergence rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range xsd:string ;
