@@ -35,20 +35,10 @@
 
 # ===== MODULE 1 - PROVENANCE AND IDENTITY LAYER ================
 # ===== CLASSES ================
-:Nomenclature rdf:type owl:Class ;
+:Creature rdf:type owl:Class ;
     rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Nomenclature"@en ;
-    rdfs:comment "The precise linguistic term used within a Source to label a creature. Nomenclature functions at two levels of granularity: it can be assigned to a broad species (e.g. linking the class Creature to the standard term Lion), or it can be assigned directly to a source-specific Interpretation to capture contextual, poetic, or stylistic word choices used by a particular creator (e.g., labeling a specific textual variant as a Monster)."@en .
-
-:Etymology rdf:type owl:Class ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Etymology"@en ;
-    rdfs:comment "The etymology of a Nomenclature denoting creatures."@en .
-
-:Language rdf:type owl:Class ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Language"@en ;
-    rdfs:comment "The specific human language of origin for a given term (e.g. Latin, Ancient Greek)."@en .
+    rdfs:label "Creature"@en ;
+    rdfs:comment "Any living entity, whether based in biological reality or imagination, described within a Source. It serves as the central node tying together all historical, biological and symbolic variations."@en .
 
 :Interpretation rdf:type owl:Class ;
     rdfs:isDefinedBy :ProvenanceModule ;
@@ -60,11 +50,6 @@
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Source"@en ;
     rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
-
-:Creature rdf:type owl:Class ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Creature"@en ;
-    rdfs:comment "Any living entity, whether based in biological reality or imagination, described within a Source. It serves as the central node tying together all historical, biological and symbolic variations."@en .
 
 :Bestiary rdf:type owl:Class ;
     rdfs:subClassOf :Source ;
@@ -97,32 +82,25 @@
     rdfs:label "CinematicWork"@en ;
     rdfs:comment "A cinematographic work serving as a modern source for creature depictions."@en .
 
+:Nomenclature rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Nomenclature"@en ;
+    rdfs:comment "The precise linguistic term used within a Source to label a creature. Nomenclature functions at two levels of granularity: it can be assigned to a broad species (e.g. linking the class Creature to the standard term Lion), or it can be assigned directly to a source-specific Interpretation to capture contextual, poetic, or stylistic word choices used by a particular creator (e.g., labeling a specific textual variant as a Monster)."@en .
+
+:Etymology rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Etymology"@en ;
+    rdfs:comment "The etymology of a Nomenclature denoting creatures."@en .
+
+:Language rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Language"@en ;
+    rdfs:comment "The specific human language of origin for a given term (e.g. Latin, Ancient Greek)."@en .
+
 [] rdf:type owl:AllDisjointClasses ;
     owl:members (:Source :Creature :Interpretation) .
 
 # ===== OBJECT PROPERTIES ================
-:hasEtymology rdf:type owl:ObjectProperty ;
-    rdfs:domain :Nomenclature ;
-    rdfs:range :Etymology ;
-    owl:inverseOf :isEtymologyOf ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has etymology"@en ;
-    rdfs:comment "Links a specific linguistic term to the documented history of its origin."@en .
-
-:isEtymologyOf rdf:type owl:ObjectProperty ;
-    rdfs:domain :Etymology ;
-    rdfs:range :Nomenclature ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "is etymology of"@en ;
-    rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
-
-:derivesFromLanguage rdf:type owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:domain :Etymology ;
-    rdfs:range :Language ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "derives from language"@en ;
-    rdfs:comment "Identifies the source language from which an etymological root originates."@en .
-
 :ofCreature rdf:type owl:ObjectProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range :Creature ;
@@ -158,6 +136,36 @@
     rdfs:label "cites"@en ;
     rdfs:comment "Indicates an explicit intertextual relationship where one primary Source directly mentions, quotes, copies, or references an earlier primary Source."@en .
 
+:wasInfluencedBy rdf:type owl:ObjectProperty, owl:TransitiveProperty ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    rdfs:domain :Source ;
+    rdfs:range :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "was influenced by"@en ;
+    rdfs:comment "Indicates that a Source drew thematic, stylistic, or conceptual inspiration from an earlier work, even without a direct citation."@en .
+
+:hasEtymology rdf:type owl:ObjectProperty ;
+    rdfs:domain :Nomenclature ;
+    rdfs:range :Etymology ;
+    owl:inverseOf :isEtymologyOf ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has etymology"@en ;
+    rdfs:comment "Links a specific linguistic term to the documented history of its origin."@en .
+
+:isEtymologyOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range :Nomenclature ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "is etymology of"@en ;
+    rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
+
+:derivesFromLanguage rdf:type owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain :Etymology ;
+    rdfs:range :Language ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "derives from language"@en ;
+    rdfs:comment "Identifies the source language from which an etymological root originates."@en .
+
 :hasNomenclature rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ;
                     owl:unionOf (:Creature :Interpretation) ] ;
@@ -165,14 +173,6 @@
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "uses nomenclature"@en ;
     rdfs:comment "Links a general Creature or a specific Interpretation to the precise linguistic term used to identify it."@en .
-
-:wasInfluencedBy rdf:type owl:ObjectProperty, owl:TransitiveProperty ;      # transitive property means that if A was influenced by B, and B by C, then A was influenced by C
-    rdfs:subPropertyOf prov:wasInfluencedBy ;
-    rdfs:domain :Source ;
-    rdfs:range :Source ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "was influenced by"@en ;
-    rdfs:comment "Indicates that a Source drew thematic, stylistic, or conceptual inspiration from an earlier work, even without a direct citation."@en .
 
 # ===== DATA PROPERTIES ================
 :hasRootTerm rdf:type owl:DatatypeProperty ;
@@ -333,12 +333,14 @@
 :hasDeformity rdf:type owl:ObjectProperty ;
     rdfs:domain :RealAnimal ;
     rdfs:range :Anomaly ;
+    rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has deformity"@en ;
     rdfs:comment "Indicates that a creature suffers from or exhibits a specific anomaly."@en .
 
 :affectsPart rdf:type owl:ObjectProperty ;
     rdfs:domain :Anomaly ;
     rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "affects part" ;
     rdfs:comment "Indicates the anatomical structure altered, deformed, duplicated, absent, or otherwise modified by an anomaly."@en .
 
@@ -351,15 +353,22 @@
     rdfs:comment "Specifies the feeding classification (e.g. carnivorous) of the creature."@en .
 
 # ===== DATA PROPERTIES ================
-:hasDescription rdf:type owl:DatatypeProperty ;
+# :hasDescription rdf:type owl:DatatypeProperty ;
+#     rdfs:domain :Creature ;
+#     rdfs:range xsd:string ;
+#     rdfs:label "has description"@en .
+
+:hasVariantName rdf:type owl:DatatypeProperty ;
     rdfs:domain :Creature ;
     rdfs:range xsd:string ;
-    rdfs:label "has description"@en .
+    rdfs:Label "has variant name"@en ;
+    rdfs:comment ""@en .
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
 :Archetype rdf:type owl:Class , 
                     skos:Concept ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Archetype"@en ;
     rdfs:comment "A universal, primordial pattern or character prototype residing in the collective human imagination. Within the ontology, the class serves as the ultimate analytical anchor that bridges the historical world with the symbolic world, linking a source-bound Interpretation of a Creature directly to its deeper allegorical, spiritual, or psychological meaning."@en .
 
@@ -372,6 +381,7 @@
 :DurandImaginary rdf:type skos:ConceptScheme ;
     dcterms:title "Durand's structures of the Imaginary"@en ;
     skos:hasTopConcept :Regime , :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     prov:wasDerivedFrom "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
     rdfs:comment "A conceptual scheme providing a framework for the symbolic and anthropological analysis of creatures within bestiaries. It acts as the theoretical pivot of the Symbolic Module, allowing for the classification of beasts and their attributes based on their relationship with human anxiety regarding time and death. By applying Gilbert Durand's regimes and structures defined in 'Les Structures Anthropologiques de l'Imaginaire', 'beast' can map how physical biological traits - such as wings - serve as archetypal responses to mortality, transforming the creature from a mere biological entity into a profound cultural symbol."@en .
 
@@ -404,106 +414,54 @@
 :ImaginaryStructure rdf:type owl:Class ,
                             skos:Concept ;
     skos:inScheme :DurandImaginary ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Imaginary Structure"@en ;
     rdfs:comment "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."@en .
 
-:SchizomorphicStructure rdf:type owl:Class ;
+:SchizomorphicStructure rdf:type owl:Class, skos:Concept ;
     rdfs:subClassOf :ImaginaryStructure ,
         [ rdf:type owl:Restriction ;
           owl:onProperty :isGovernedBy ;
           owl:someValuesFrom :DiurnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Schizomorphic Structure (or Heroic)"@en ;
     rdfs:comment "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."@en .
 
-:SyntheticStructure rdf:type owl:Class ;
+:SyntheticStructure rdf:type owl:Class, skos:Concept;
     rdfs:subClassOf :ImaginaryStructure ,
         [ rdf:type owl:Restriction ;
           owl:onProperty :isGovernedBy ;
           owl:someValuesFrom :NocturnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Synthetic Structure (or Dramatic)"@en ;
     rdfs:comment "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."@en .
 
-:MysticalStructure rdf:type owl:Class ;
+:MysticalStructure rdf:type owl:Class, skos:Concept ;
     rdfs:subClassOf :ImaginaryStructure ,
         [ rdf:type owl:Restriction ;
           owl:onProperty :isGovernedBy ;
           owl:someValuesFrom :NocturnalRegime ] ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Mystical Structure (or Antiphrastic)"@en ;
     rdfs:comment "Mystical structures include symbols of intimacy and calm, the search for light within darkness. The principles underlying mystical structures are analogy and similarity. Instead of battling against time, one enters into union with it. The mind takes images of terror and rewrites them positively, transforming them into refuge and protected space. Within this logic, opposites can coexist. In mystical structures one finds doubling and adherence rather than antithesis. It functions through inversion, doubling, and adherence, turning the devouring mouth of the diurnal regime into a protective container."@en .
 
-:TeriomorphicSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
+:ImaginarySymbol rdf:type owl:Class, skos:Concept ;
     skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Teriomorphic Symbol"@en ;
-    rdfs:comment "Teriomorphic symbol represents the terrifying aspect of animals, embodying biting, devouring, and feral chaos. As 'enemy symbol' of anxiety and darkness, it is linked to the restlessness caused by rapid, undisciplined movement. It captures the chaos of fleeing from 'devouring time' and the archetype of the predatory jaws ready to strike."@en .
-
-:NyctomorphicSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Nyctomorphic Symbol"@en ;
-    rdfs:comment "Nyctomorphic symbol encapsulates the temporal symbolism of darkness, blindness, and shadows. Linked to the voracity of the night, it often incorporates the element of water - viewed here not as a source of life, but as an elusive, dark surface that doubles the abyss and reflects the formless terror of the unknown."@en .
-
-:CatamorphicSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Catamorphic Symbol"@en ;
-    rdfs:comment "Catamorphic symbol embodies falling, gravity, and the physical degradation of flesh. These dynamic images of transience represent the dazzling acceleration of time during a downward plunge. Catamorphic symbol captures the existential anxiety of the fall, where movement signifies the inescapable and rapid passage of time toward death."@en .
-
-:AscensionalSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Ascensional Symbol"@en ;
-    rdfs:comment "Ascensional symbol embodies heroic symbols of elevation, verticality, and transcendence. It represents the upward movement to escape the degradation of time and the symbolic refusal of death. In this structure, height is synonymous with the pure and the divine; the wing is the ascensional instrument that contradicts gravity. These symbols manifest a quest to regain lost power through movement toward metaphysical spaces (e.g., mountains), dazzling imagery (arrows, wings), and virile archetypes of celestial royalty and the warrior."@en .
-
-:SpectacularSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Spectacular Symbol"@en ;
-    rdfs:comment "Spectacular symbol relates to intense light, vision, and the heroic gaze. Standing in direct opposition to darkness, it emphasizes the triumph of clarity and the 'solar power' that makes the world intelligible and thus controllable. Sight is the supreme sense of the hero, as clear vision allows for the differentiation of things and the definition of clear boundaries. In this context, light functions as a sword, cutting through obscurity to define reality."@en .
-
-:DiareticSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SchizomorphicStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SchizomorphicStructure ;
-    rdfs:label "Diaretic Symbol"@en ;
-    rdfs:comment "Diaretic symbol embodies figures of cutting, weapons, and purification, derived from the Greek term 'diairesis' (division). They represent the human need for analysis, categorization, and absolute separation to overcome natural chaos. The hero's weapon is a dual symbol of power and purity; by cutting through confusion and separating the real from the imaginary, or good from evil, the hero gains mastery over the world. In this structure, the act of separation is the primary source of intellectual and spiritual power."@en .
-
-:CyclicalSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :SyntheticStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :SyntheticStructure ;
-    rdfs:label "Cyclical Symbol"@en ;
-    rdfs:comment "Cyclical symbol represents the archetype of the Eternal Return and time as a series of phases. Using the moon as a primary model - being the first to die and the first to be reborn - these symbols suggest that time is a series of phases where opposites (life/death, light/dark) coexist. This 'lunar optimism' does not negate death but reintegrates it as an essential stage of an incessant, evolving movement where every sunset is a prelude to a new dawn. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
-
-:InversionSymbol rdf:type owl:Class ;
-    rdfs:subClassOf :MysticalStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :MysticalStructure ;
-    rdfs:label "Inversion Symbol"@en ;
-    rdfs:comment "Inversion symbol exorcises the fear of time by turning negative images into positive ones. Through an involutive process, the devouring mouth of the Diurnal Regime is transmuted into a protective nest. Instead of a heroic battle against darkness, there is a mystical union with it. This defensive mechanism employs doubling and reassuring symbols of intimacy to transform a dangerous fall into a controlled descent into the secrets of becoming."@en .
-
-:IntimacySymbol rdf:type owl:Class ;
-    rdfs:subClassOf :MysticalStructure ;
-    skos:inScheme :DurandImaginary ;
-    skos:broader :MysticalStructure ;
-    rdfs:label "Intimacy Symbol"@en ;
-    rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifyng world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
+    skos:broader :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "Imaginary Symbol"@en ;
+    rdfs:comment ""@en .
 
 # ALCHEMICAL SCHEME
 :AlchemicalMagnumOpus rdf:type skos:ConceptScheme ;
     dcterms:title "Alchemical Magnum Opus Scheme"@en ;
-    skos:hasTopConcept :Nigredo .
+    skos:hasTopConcept :Nigredo, :Albedo, :Citrinitas, :Rubedo  .
 
 :Nigredo rdf:type owl:Class , skos:Concept ;
     rdfs:isDefinedBy :SymbolicModule ;
@@ -514,25 +472,28 @@
 :Albedo rdf:type owl:Class , skos:Concept ;
     rdfs:isDefinedBy :SymbolicModule ;
     skos:inScheme :AlchemicalMagnumOpus ;
+    :followsStage :Nigredo ;
     skos:prefLabel "Albedo"@en ;
     rdfs:comment "The purification phase, where the material is washed to remove impurities, representing the cleansing of the spirit."@en .
 
 :Citrinitas rdf:type owl:Class , skos:Concept ;
     rdfs:isDefinedBy :SymbolicModule ;
     skos:inScheme :AlchemicalMagnumOpus ;
+    :followsStage :Albedo ;
     skos:prefLabel "Citrinitas"@en ;
     rdfs:comment "The transmutation of the silver into gold, or the dawning of solar light. In later traditions (after the 15th century), this stage was often merged into Rubedo."@en .
 
 :Rubedo rdf:type owl:Class , skos:Concept ;
     rdfs:isDefinedBy :SymbolicModule ;
     skos:inScheme :AlchemicalMagnumOpus ;
+    :followsStage :Citrinitas ;
     skos:prefLabel "Rubedo"@en ;
     rdfs:comment " The final stage, often representing the final realization, the union of opposing forces (like spirit and matter), and the creation of the Philosopher's Stone."@en .
 
 # ===== OBJECT PROPERTIES ================
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
-                  owl:unionOf (:Interpretation :AnatomicalPart :Ability) ] ;
+                  owl:unionOf (:Creature :ImaginarySymbol :AnatomicalPart :Ability) ] ;
     rdfs:range [ rdf:type owl:Class ; 
                   owl:unionOf (:ImaginaryStructure :Archetype :SymbolicFeature) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
@@ -541,6 +502,7 @@
 
 :embodiesArchetype rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain :Creature ;
     rdfs:range :Archetype ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "embodies archetype"@en ;
@@ -548,9 +510,17 @@
 
 :belongsToImaginaryStructure rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain :Creature ;
     rdfs:range :ImaginaryStructure ;
     rdfs:label "belongs to imaginary structure"@en ;
     rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
+
+:belongsTo rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain :ImaginarySymbol ;
+    rdfs:range :ImaginaryStructure ;
+    rdfs:label "belongs to"@en ;
+    rdfs:comment "Specifically links a Symbolic Symbol to the broader Imaginary Structure."@en .
 
 :hasSymbolicFeature rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
@@ -649,7 +619,7 @@
     rdfs:comment "Creatures that eat dead organic matter."@en .
 
 :Hematophagous rdf:type owl:NamedIndividual,
-                    :Carnivorous ;
+                    :Diet ;
     rdfs:label "Hematophagous"@en ;
     rdfs:comment "Blood-drinkers."@en .
 
@@ -689,6 +659,60 @@
 :MoralAllegory rdf:type owl:NamedIndividual, :BestiaryType ;
     rdfs:label "Moral Allegory" ;
     rdfs:comment "The traditional medieval genre where creatures are described primarily for Christian theological or moral lessons."@en .
+
+:TeriomorphicSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Teriomorphic Symbol"@en ;
+    rdfs:comment "Teriomorphic symbol represents the terrifying aspect of animals, embodying biting, devouring, and feral chaos. As 'enemy symbol' of anxiety and darkness, it is linked to the restlessness caused by rapid, undisciplined movement. It captures the chaos of fleeing from 'devouring time' and the archetype of the predatory jaws ready to strike."@en .
+
+:NyctomorphicSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Nyctomorphic Symbol"@en ;
+    rdfs:comment "Nyctomorphic symbol encapsulates the temporal symbolism of darkness, blindness, and shadows. Linked to the voracity of the night, it often incorporates the element of water - viewed here not as a source of life, but as an elusive, dark surface that doubles the abyss and reflects the formless terror of the unknown."@en .
+
+:CatamorphicSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Catamorphic Symbol"@en ;
+    rdfs:comment "Catamorphic symbol embodies falling, gravity, and the physical degradation of flesh. These dynamic images of transience represent the dazzling acceleration of time during a downward plunge. Catamorphic symbol captures the existential anxiety of the fall, where movement signifies the inescapable and rapid passage of time toward death."@en .
+
+:AscensionalSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Ascensional Symbol"@en ;
+    rdfs:comment "Ascensional symbol embodies heroic symbols of elevation, verticality, and transcendence. It represents the upward movement to escape the degradation of time and the symbolic refusal of death. In this structure, height is synonymous with the pure and the divine; the wing is the ascensional instrument that contradicts gravity. These symbols manifest a quest to regain lost power through movement toward metaphysical spaces (e.g., mountains), dazzling imagery (arrows, wings), and virile archetypes of celestial royalty and the warrior."@en .
+
+:SpectacularSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Spectacular Symbol"@en ;
+    rdfs:comment "Spectacular symbol relates to intense light, vision, and the heroic gaze. Standing in direct opposition to darkness, it emphasizes the triumph of clarity and the 'solar power' that makes the world intelligible and thus controllable. Sight is the supreme sense of the hero, as clear vision allows for the differentiation of things and the definition of clear boundaries. In this context, light functions as a sword, cutting through obscurity to define reality."@en .
+
+:DiareticSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SchizomorphicStructure ;
+    rdfs:label "Diaretic Symbol"@en ;
+    rdfs:comment "Diaretic symbol embodies figures of cutting, weapons, and purification, derived from the Greek term 'diairesis' (division). They represent the human need for analysis, categorization, and absolute separation to overcome natural chaos. The hero's weapon is a dual symbol of power and purity; by cutting through confusion and separating the real from the imaginary, or good from evil, the hero gains mastery over the world. In this structure, the act of separation is the primary source of intellectual and spiritual power."@en .
+
+:CyclicalSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :SyntheticStructure ;
+    rdfs:label "Cyclical Symbol"@en ;
+    rdfs:comment "Cyclical symbol represents the archetype of the Eternal Return and time as a series of phases. Using the moon as a primary model - being the first to die and the first to be reborn - these symbols suggest that time is a series of phases where opposites (life/death, light/dark) coexist. This 'lunar optimism' does not negate death but reintegrates it as an essential stage of an incessant, evolving movement where every sunset is a prelude to a new dawn. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
+
+:InversionSymbol rdf:type owl:NamedIndividual, :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :MysticalStructure ;
+    rdfs:label "Inversion Symbol"@en ;
+    rdfs:comment "Inversion symbol exorcises the fear of time by turning negative images into positive ones. Through an involutive process, the devouring mouth of the Diurnal Regime is transmuted into a protective nest. Instead of a heroic battle against darkness, there is a mystical union with it. This defensive mechanism employs doubling and reassuring symbols of intimacy to transform a dangerous fall into a controlled descent into the secrets of becoming."@en .
+
+:IntimacySymbol rdf:type owl:NamedIndividual , :ImaginarySymbol ;
+    skos:inScheme :DurandImaginary ;
+    skos:broader :MysticalStructure ;
+    rdfs:label "Intimacy Symbol"@en ;
+    rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifyng world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
 
 [] rdf:type owl:AllDifferent ;
     owl:distinctMembers (
