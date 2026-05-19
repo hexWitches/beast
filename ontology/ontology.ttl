@@ -534,7 +534,7 @@
     rdfs:domain [ rdf:type owl:Class ; 
                   owl:unionOf (:Interpretation :AnatomicalPart :Ability) ] ;
     rdfs:range [ rdf:type owl:Class ; 
-                  owl:unionOf (:ImaginaryStructure :Archetype skos:Concept) ] ;
+                  owl:unionOf (:ImaginaryStructure :Archetype :SymbolicFeature) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "symbolizes"@en ;
     rdfs:comment "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), or a source-specific manifestation (Interpretation) serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
@@ -551,6 +551,21 @@
     rdfs:range :ImaginaryStructure ;
     rdfs:label "belongs to imaginary structure"@en ;
     rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
+
+:hasSymbolicFeature rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :SymbolicFeature ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has symbolic feature"@en ;
+    rdfs:comment "Links a specific Interpretation to a SymbolicFeature, capturing the allegorical meaning of an anatomical part within that source."@en .
+
+:involvesAnatomicalPart rdf:type owl:ObjectProperty ;
+    rdfs:domain :SymbolicFeature ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "involves anatomical part"@en ;
+    rdfs:comment "Identifies the anatomical feature that is the vehicle for symbolic meaning within a SymbolicFeature observation."@en .
 
 :isGovernedBy rdf:type owl:ObjectProperty ;
     rdfs:domain :ImaginaryStructure ;
@@ -576,20 +591,6 @@
     rdfs:comment "Represents the chronological sequence of the alchemical work."@en .
 
 # ===== DATA PROPERTIES ================
-:hasSymbolicFeature rdf:type owl:ObjectProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range :SymbolicFeature ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has symbolic feature"@en ;
-    rdfs:comment "Links a specific Interpretation to a SymbolicFeature, capturing the allegorical meaning of an anatomical part within that source."@en .
-
-:involvesAnatomicalPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :SymbolicFeature ;
-    rdfs:range :AnatomicalPart ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "involves anatomical part"@en ;
-    rdfs:comment "Identifies the anatomical feature that is the vehicle for symbolic meaning within a SymbolicFeature observation."@en .
-
 :hasDivergence rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range xsd:string ;
@@ -609,12 +610,6 @@
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "has ability divergence"@en ;
     rdfs:comment "Specifies a divergence related to the creature's actions, powers, or behavioral traits (e.g. a fire-breathing creature that instead breathes ice)."@en .
-
-:hasSymbolicDivergence rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf :hasDivergence ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has symbolic divergence"@en ;
-    rdfs:comment "Specifies a divergence in the allegorical, moral, or cultural meaning assigned to the creature compared to its standard archetype."@en .
 
 
 # ===== INDIVIDUALS - Controlled Vocabulary ================
