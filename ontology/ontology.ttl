@@ -52,6 +52,12 @@
     rdfs:label "Source"@en ;
     rdfs:comment "A primary text, manuscript, or artifact where a creature is described or depicted."@en .
 
+:Tradition rdf:type owl:Class ;
+    rdfs:subClassOf :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Tradition"@en ;
+    rdfs:comment "A cultural, mythological, or folkloric tradition functioning as the origin context for a creature, predating or existing independently of any identifiable written source."@en .
+
 :Bestiary rdf:type owl:Class ;
     rdfs:subClassOf :Source ;
     rdfs:isDefinedBy :ProvenanceModule ;
@@ -83,20 +89,10 @@
     rdfs:label "CinematicWork"@en ;
     rdfs:comment "A cinematographic work serving as a modern source for creature depictions."@en .
 
-:Nomenclature rdf:type owl:Class ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Nomenclature"@en ;
-    rdfs:comment "The precise linguistic term used within a Source to label a creature. Nomenclature functions at two levels of granularity: it can be assigned to a broad species (e.g. linking the class Creature to the standard term Lion), or it can be assigned directly to a source-specific Interpretation to capture contextual, poetic, or stylistic word choices used by a particular creator (e.g., labeling a specific textual variant as a Monster)."@en .
-
 :Etymology rdf:type owl:Class ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Etymology"@en ;
-    rdfs:comment "The etymology of a Nomenclature denoting creatures."@en .
-
-:Language rdf:type owl:Class ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "Language"@en ;
-    rdfs:comment "The specific human language of origin for a given term (e.g. Latin, Ancient Greek)."@en .
+    rdfs:comment "The documented linguistic origin of the name used to identify a Creature, capturing its root term, source language, and original meaning."@en .
 
 [] rdf:type owl:AllDisjointClasses ;
     owl:members (:Source :Creature :Interpretation) .
@@ -148,36 +144,34 @@
     rdfs:comment "Indicates that a Source drew thematic, stylistic, or conceptual inspiration from an earlier work, even without a direct citation."@en .
 
 :hasEtymology rdf:type owl:ObjectProperty ;
-    rdfs:domain :Nomenclature ;
+    rdfs:domain :Creature ;
     rdfs:range :Etymology ;
     owl:inverseOf :isEtymologyOf ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has etymology"@en ;
-    rdfs:comment "Links a specific linguistic term to the documented history of its origin."@en .
+    rdfs:comment "Links a Creature directly to the documented history of its name's linguistic origin."@en .
 
 :isEtymologyOf rdf:type owl:ObjectProperty ;
     rdfs:domain :Etymology ;
-    rdfs:range :Nomenclature ;
+    rdfs:range :Creature ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "is etymology of"@en ;
     rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
 
-:derivesFromLanguage rdf:type owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:domain :Etymology ;
-    rdfs:range :Language ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "derives from language"@en ;
-    rdfs:comment "Identifies the source language from which an etymological root originates."@en .
-
-:hasNomenclature rdf:type owl:ObjectProperty ;
-    rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf (:Creature :Interpretation) ] ;
-    rdfs:range :Nomenclature ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has nomenclature"@en ;
-    rdfs:comment "Links a general Creature or a specific Interpretation to the precise linguistic term used to identify it."@en .
+:hasOriginContext rdf:type owl:ObjectProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range :Source ;
+    rdfs:label "has origin context"@en ;
+    rdfs:comment "Links a creature to its earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
 
 # ===== DATA PROPERTIES ================
+:hasSourceTerm rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has source term"@en ;
+    rdfs:comment "The specific linguistic term used to identify the creature in a particular source, reflecting the terminological conventions of that tradition. For example, the same creature might be labeled 'monstrum' in a Latin text and 'prodigium' in another beastiary."@en .
+
 :hasRootTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Etymology ;
     rdfs:range rdfs:Literal ;
@@ -191,7 +185,15 @@
                     owl:unionOf (:Etymology :Interpretation :Archetype)] ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has meaning"@en ;
-    rdfs:comment "The literal string translation or definition of the root term."@en .
+    rdfs:comment "The literal string translation or definition of a term, concept, or archetypal figure."@en .
+
+:hasTextualReference rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has textual reference"@en ;
+    rdfs:comment "A verbatim or paraphrased passage from a Source that documents how a specific Interpretation of a creature is described by a particular author. It serves as the primary textual evidence anchoring an Interpretation to its source, capturing the author's own words or a close rendering of them before any symbolic or analytical interpretation is applied."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================

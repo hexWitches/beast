@@ -1,1 +1,2 @@
-creature_id,common_name,variantName,nomenclature_id,type,diet,habitat,abilities,head_of,body_of,tail_of,limbs_of,anomalies,description
+creature_id,Label,etymology_id,type,diet,habitat,abilities,head_of,body_of,tail_of,limbs_of,anomalies,origin_context
+creature_minotaur,Minotaur,etymology_minotaur,HybridCreature,Carnivorous,Terrestrial,,Bull,Human,Bull,Human,,GreekMythology
