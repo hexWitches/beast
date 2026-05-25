@@ -1,0 +1,5 @@
+habitat_id,label,type,description
+habitat_terrestrial,Terrestrial,RealWorldPlace,A physical habitat primarily located on solid ground.
+habitat_aquatic,Aquatic,RealWorldPlace,A physical habitat located in or around bodies of water such as oceans rivers or lakes.
+habitat_aerial,Aerial,RealWorldPlace,A physical habitat located in the sky clouds or upper atmosphere.
+habitat_labyrinth,Labyrinth,ImaginaryPlace,The mythological maze built by Daedalus in Crete to contain the Minotaur commissioned by King Minos.

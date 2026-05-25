@@ -363,11 +363,12 @@
 #     rdfs:range rdfs:Literal ;
 #     rdfs:label "has description"@en .
 
-:hasVariantName rdf:type owl:DatatypeProperty ;
+:hasAlternativeName rdf:type owl:DatatypeProperty ;
     rdfs:domain :Creature ;
     rdfs:range rdfs:Literal ;
-    rdfs:label "has variant name"@en ;
-    rdfs:comment "An alternative or regional name used for a creature across different sources or linguistic traditions, distinct from the formal Nomenclature linked via :hasNomenclature. This property is intended for simple string variants that do not warrant a full Nomenclature individual."@en .
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has alternative name"@en ;
+    rdfs:comment "An alternative proper name or alias by which a creature is known across different sources or traditions, distinct from its canonical label and source-specific terminology."@en .
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================

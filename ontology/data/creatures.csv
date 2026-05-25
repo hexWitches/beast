@@ -1,2 +1,2 @@
-creature_id,Label,etymology_id,type,diet,habitat,abilities,head_of,body_of,tail_of,limbs_of,anomalies,origin_context
-creature_minotaur,Minotaur,etymology_minotaur,HybridCreature,Carnivorous,Terrestrial,,Bull,Human,Bull,Human,,GreekMythology
+creature_id,label_en,alt_name,etymology_id,type,diet,habitat_id,abilities,head_of,body_of,tail_of,limbs_of,part_derived_from,anomalies,origin_context
+creature_minotaur,Minotaur,Asterion,etymology_minotaur,HybridCreature,Carnivorous,habitat_labyrinth,,Bull,Human,Bull,Human,,,GreekMythology
