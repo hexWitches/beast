@@ -94,6 +94,11 @@
     rdfs:label "Etymology"@en ;
     rdfs:comment "The documented linguistic origin of the name used to identify a Creature, capturing its root term, source language, and original meaning."@en .
 
+:Citation rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Citation"@en ;
+    rdfs:comment "A structured reference to a specific passage within a Source that documents a creature's appearance in a particular Interpretation, capturing both the precise textual location and the quoted or paraphrased content."@en .
+
 [] rdf:type owl:AllDisjointClasses ;
     owl:members (:Source :Creature :Interpretation) .
 
@@ -164,6 +169,22 @@
     rdfs:label "has origin context"@en ;
     rdfs:comment "Links a creature to its earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
 
+:hasTextualReference rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :Citation ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has textual reference"@en ;
+    rdfs:comment "Links an Interpretation to a structured Citation capturing the precise passage and location within a Source that documents the creature."@en .
+
+:hasTextualReference rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has textual reference"@en ;
+    rdfs:comment "A verbatim or paraphrased passage from a Source that documents how a specific Interpretation of a creature is described by a particular author. It serves as the primary textual evidence anchoring an Interpretation to its source, capturing the author's own words or a close rendering of them before any symbolic or analytical interpretation is applied."@en .
+
+
 # ===== DATA PROPERTIES ================
 :hasSourceTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
@@ -186,14 +207,6 @@
     rdfs:range rdfs:Literal ;
     rdfs:label "has meaning"@en ;
     rdfs:comment "The literal string translation or definition of a term, concept, or archetypal figure."@en .
-
-:hasTextualReference rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has textual reference"@en ;
-    rdfs:comment "A verbatim or paraphrased passage from a Source that documents how a specific Interpretation of a creature is described by a particular author. It serves as the primary textual evidence anchoring an Interpretation to its source, capturing the author's own words or a close rendering of them before any symbolic or analytical interpretation is applied."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================
