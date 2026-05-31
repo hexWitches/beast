@@ -1,2 +1,6 @@
 etymology_id,creature_id,root_term,language,meaning
 etymology_minotaur,creature_minotaur,Minṓtauros,grc,"""Compound of Minos (Μίνως) and tauros (ταῦρος) meaning bull. Literally Bull of Minos."""
+etymology_siren,creature_siren,Seirḗn,grc,"Siren derives from the ancient greek Seirēn, which indicated female mythological creatures endowed with enchanting and often dangerous powers for sailors."
+etymology_sphinx,creature_sphinx,Sphínx,grc,"The word originates from the Ancient Greek sphínx, which the Greeks likely derived from their own verb sphíngō, meaning to squeeze or to bind tight."
+etymology_satyr,creature_satyr,Sátyros,grc,"The word derives from the ancient greek sathe (σαθη), which refers to the male member and highlights the tendency of satyrs to always be prone to lust."
+etymology_unicorn,creature_unicorn,monokerōs,"grc ","The word come from ancient greek meanig ""one horn""  passing to latin to unicornis, fro uni- (single) and cornu-(horn) "

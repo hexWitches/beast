@@ -1,2 +1,6 @@
-creature_id,label_en,alt_name,etymology_id,type,diet,habitat_id,abilities,head_of,body_of,tail_of,limbs_of,part_derived_from,anomalies,origin_context
-creature_minotaur,Minotaur,Asterion,etymology_minotaur,HybridCreature,Carnivorous,habitat_labyrinth,,Bull,Human,Bull,Human,,,GreekMythology
+creature_id,label_en,alt_name,etymology_id,type,diet,habitat_id,abilities,head_of,body_of,tail_of,upper_limbs_of,lower_limbs_of,has_additional_part,part_derived_from,has_absence_of,has_duplication_of,has_modification_of,origin_context
+creature_minotaur,Minotaur,Asterion,etymology_minotaur,HybridCreature,Carnivorous,habitat_labyrinth,,creature_bull,creature_human,creature_bull,creature_human,creature_human,,,,,,GreekMythology
+creature_siren,Siren,"Mermaid, Tritonesses",etymology_siren,HybridCreature,Carnivorous,habitat_aquatic,to_sing,creature_human,creature_human,creature_fish,creature_human,,,,,,,MedievalFolklore
+creature_sphinx,Sphinx,"Sphinx, Phix",etymology_sphinx,HybridCreature,Carnivorous,habitat_terrestrial,posing_riddles,creature_human,ceature_lion,creature_lion,creature_lion,,part_wings,,,,,GreekMythology
+creature_satyr,Satyr,"Faun, Silenus",etymology_satyr,HybridCreature,Omnivorous,habitat_terrestrial,play_the_flute,creature_human,creature_human,creature_goat,,creature_goat,part_two_horns,,,,,GreekMythology
+creature_unicorn,Unicorn,Monocerus,etymology_unicorn,HybridCreature,Herbivorous,habitat_terrestrial,purify_water_or_poisson,creature_horse,creature_horse,,,,part_horn,,,,,GreekNaturalHistory

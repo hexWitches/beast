@@ -1,1 +1,8 @@
-source_id,type,title,creator,date_created,temporal_coverage,language,influenced_by,cites
+source_id,type,title,creator,date_created,temporal_coverage,language,influenced_by,cites,source_url
+source_oedipus_moureau,VisualArtwork,Œdipe et le Sphinx,Gustave Moureau,1864,,,,,https://www.metmuseum.org/art/collection/search/437153
+source_tentazione_antonio,LiteraryWork,La tentation de Saint-Antoine,Gustave Flaubert,1874,,fr,source_tentazione_brueghel
+source_mito_edipo,LiteraryWork,Biblioteca,Pseudo-Apollodoro,I BC,,grc
+source_tentazione_brueghel,VisualArtwork,La Tentation de Saint Antoine,Pieter Brueghel Le Jeune,1600,,,,,https://www.santantonioabate.afom.it/wp-content/uploads/GENOVA-Brueghel-giovane.jpg
+source_ovidius_metamorphoses,LiteraryWork,Metamorphoses,Publius Ovidius Naso
+source_dante_inferno,LiteraryWork,Inferno,Dante Alighieri,,,it
+source_gospodinov_fisica_della_malinconia,LiteraryWork,Fisica della malinconia,Georgi Gospodinov,2011,,bg

@@ -1,1 +1,3 @@
-interpretation_id,creature_id,source_id,source_term,textual_reference
+interpretation_id,creature_id,source_id,source_term,archetype_id,additional_part,removed_part,additional_ability,removed_ability,citation_id
+int_sphinx_flaubert,creature_sphinx,source_tentazione_antonio,,"archetype_dogmatic_truth, archetype_static_intellect",,,,,citation_flaubert_1
+int_minotaur_ovidius,creature_minotaur,source_ovidius_metamorphoses,,,,,,,citation_ovid_met_1; ciation_ovid_met_2
