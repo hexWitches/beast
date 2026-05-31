@@ -1,0 +1,134 @@
+{
+    "creatures.csv" : {
+        "primary_key": "creature_id",
+        "properties": {
+            "label_en": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "alt_name": {
+                "predicate": "beast:hasAlternativeName",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "etymology_id": {
+                "predicate": "beast:hasEtymology",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Etymology"
+            },
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:"
+            },
+            "diet": {
+                "predicate": "beast:hasDiet",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Diet"
+            },
+            "habitat_id": {
+                "predicate": "beast:hasHabitat",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Habitat"
+            },
+            "abilities": {
+                "predicate": "beast:hasAbility",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Ability"
+            },
+            "head_of": {
+                "predicate": "beast:hasHeadOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:RealAnimal"
+            },
+            "body_of": {
+                "predicate": "beast:hasBodyOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:RealAnimal"
+            },
+            "tail_of": {
+                "predicate": "beast:hasTailOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:RealAnimal"
+            },
+            "upper_limbs_of": {
+                "predicate": "beast:hasUpperLimbsOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:RealAnimal"
+            },
+            "lower_limbs_of": {
+                "predicate": "beast:hasLowerLimbsOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:RealAnimal"
+            },
+            "has_additional_part": {
+                "predicate": "beast:hasAdditionalPart",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "part_derived_from": {
+                "predicate": "beast:partDerivedFrom",
+                "type": "URI",
+                "prefix": "beast:"  
+            },
+            "has_absence_of": {
+                "predicate": "beast:hasAbsenceOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "has_duplication_of": {
+                "predicate": "beast:hasDuplicationOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "has_modification_of": {
+                "predicate": "beast:hasModificationOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "origin_context": {
+                "predicate": "beast:hasOriginContext",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Source"
+            }
+        }
+    },
+    "interpretations.csv" : {
+
+    },
+    "citation.csv" : {
+
+    },
+
+    "sources.csv" : {
+
+    },
+    "archetypes.csv" : {
+
+    },
+    "habitats.csv" : {
+
+    },
+    "functions" : {
+
+    },
+    "etymologies.csv" : {
+
+    }
+}
