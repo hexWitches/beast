@@ -26,7 +26,7 @@
     vann:preferredNamespacePrefix "beast" ;
     dcterms:bibliographicCitation "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
     dcterms:bibliographicCitation "Abraham, L. (1998). A Dictionary of Alchemical Imagery. Cambridge University Press." ;
-    rdfs:comment "The BEAST ontology is structured into three interconnected modules: the Provenance Module documents the textual sources, interpretations and linguistic evolution of creature terminology; the Biological Module defines the morphological and behavioral traits of both real and imaginary beings appearing within bestiaries; the Symbolic Module provides a multidimensional framework for the analysis of creatures across art and literature. By integrating Gilbert Durand's anthropological structures of the imaginary with the study of creative sources, this module interprets creatures not just as biological entitites, but as cultural and archetypal figures transforming biological reality into symbolic reality."@en .
+    rdfs:comment "The BEAST ontology is structured into three interconnected modules. The Provenance Module documents the historical and textual footprint of creatures, distinguishing between the universal concept of a beast (Creature) and its source-specific manifestations (Interpretation) across bestiaries, literary works, visual artworks, and cinematic works; it also tracks the diachronic evolution of creature terminology through Nomenclature and Etymology. The Biological Module defines the morphological and behavioural traits of both real and imaginary beings: it catalogs anatomical composition, habitats, diets, and abilities, and documents anomalies in real animals through a structured vocabulary of absence, duplication, and modification. The Symbolic Module provides a multidimensional framework for the analysis of creatures as cultural and archetypal figures. It integrates two analytical layers: Gilbert Durand's anthropological structures of the imaginary (DurandImaginary scheme) and an archetype and narrative function layer that distinguishes the universal psychological patterns creatures embody from the contextual roles they perform in specific sources. Together the three modules enable the ontology to trace a creature from its historical attestation in a primary text, through its biological description, to its deepest symbolic resonance in the collective imagination."@en .
 
 # ===== BEAST ONTOLOGY ================
 # ===== CLASSES ================
@@ -76,14 +76,12 @@
     rdfs:comment "A written source text, such as a poem or novel, in which a creature is described, cited, or appears."@en .
 
 :VisualArtwork rdf:type owl:Class ;
-    rdfs:subClassOf creon:CreativeProduct ;
     rdfs:subClassOf :Source ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Visual artwork"@en ;
     rdfs:comment "A visual representation, such as an illumination, painting, or sculpture, depicting a creature."@en .
 
 :CinematicWork rdf:type owl:Class ;
-    rdfs:subClassOf creon:CreativeProduct ;
     rdfs:subClassOf :Source ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "CinematicWork"@en ;
@@ -165,26 +163,31 @@
 
 :hasOriginContext rdf:type owl:ObjectProperty ;
     rdfs:domain :Creature ;
-    rdfs:range :Source ;
+    rdfs:range :Tradition ;
     rdfs:label "has origin context"@en ;
     rdfs:comment "Links a creature to its earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
+
+:isTextualReferenceOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Citation ;
+    rdfs:range :Interpretation ;
+    owl:inverseOf :hasTextualReference ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:comment "The inverse of :hasTextualReference. Links a Citation back to the Interpretation it documents, allowing navigation from a specific passage in a Source to the interpretive claim it supports. This inverse direction is useful for querying which interpretations are grounded in a particular passage — for example, retrieving all creature readings that depend on a single chapter of a bestiary."@en .
 
 :hasTextualReference rdf:type owl:ObjectProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range :Citation ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has textual reference"@en ;
-    rdfs:comment "Links an Interpretation to a structured Citation capturing the precise passage and location within a Source that documents the creature."@en .
+    rdfs:comment "Links a source-specific Interpretation to a Citation node that captures the precise textual or visual evidence on which that interpretation rests. Where :appearsIn links an Interpretation directly to a Source at the document level, :hasTextualReference provides the finer-grained link to the exact passage and location within that Source."@en .
 
-:hasTextualReference rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range rdfs:Literal ;
+:extractedFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :Citation ;
+    rdfs:range :Source ;
     rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has textual reference"@en ;
-    rdfs:comment "A verbatim or paraphrased passage from a Source that documents how a specific Interpretation of a creature is described by a particular author. It serves as the primary textual evidence anchoring an Interpretation to its source, capturing the author's own words or a close rendering of them before any symbolic or analytical interpretation is applied."@en .
-
-
+    rdfs:label "extracted from"@en ;
+    rdfs:comment "Links a Citation to the Source from which its passage was drawn. Where :hasTextualReference connects an Interpretation to a Citation, :extractedFrom connects that Citation upward to the Source document — completing the three-level provenance chain: Interpretation → Citation → Source. This property allows the ontology to answer questions such as 'which Sources contain direct textual evidence for this creature' by traversing the chain rather than asserting a direct link between Interpretation and Source."@en .
+    
 # ===== DATA PROPERTIES ================
 :hasSourceTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
@@ -207,6 +210,21 @@
     rdfs:range rdfs:Literal ;
     rdfs:label "has meaning"@en ;
     rdfs:comment "The literal string translation or definition of a term, concept, or archetypal figure."@en .
+
+:hasPassageText rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Citation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has passage text"@en ;
+    rdfs:comment "The transcribed text of the passage extracted from a Source in which a creature is described, named, or depicted. Stored as a plain literal, this property preserves the exact wording of the primary source evidence that grounds a given Interpretation, enabling philological comparison across different textual witnesses of the same creature."@en .
+
+:hasSequenceIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf fabio:hasSequenceIdentifier ;
+    rdfs:domain :Citation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has sequence identifier"@en ;
+    rdfs:comment "The specific locator identifying the position of a Citation within its Source — such as a page number, folio reference, chapter, canto, stanza, or verse. Declared as a subproperty of fabio:hasSequenceIdentifier, aligning the ontology with the FRBR-aligned bibliographic vocabulary. This property allows precise scholarly referencing and enables the comparison of how different editions or translations of the same work locate their creature passages differently."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================
@@ -277,11 +295,6 @@
     rdfs:label "Imaginary place"@en ;
     rdfs:comment "A conceptual, magical, or purely literary space (e.g. the Garden of Eden or Hades). As noted by Borges, these spaces follow the laws of imagination rather than biology."@en .
 
-:Anomaly rdf:type owl:Class ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "Anomaly"@en ;
-    rdfs:comment "A physical deformity or monstrous irregularity exhibited by a creature, distinguishing it from standard anatomy."@en .
-
 :Diet rdf:type owl:Class ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "Diet"@en ;
@@ -298,12 +311,43 @@
     rdfs:label "has ability"@en ;
     rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
 
-# :hasAnatomicalPart rdf:type owl:ObjectProperty ;
-#     rdfs:domain :Creature ;
-#     rdfs:range :AnatomicalPart ;
-#     rdfs:isDefinedBy :BiologicalModule ;
-#     rdfs:label "has anatomical part"@en ;
-#     rdfs:comment "Links a specific Interpretation to a physically or symbolically distinctive anatomical feature that is meaningful within that Source."@en .
+:hasPart rdf:type owl:ObjectProperty ;
+    rdfs:domain :ImaginaryBeing ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has part"@en ;
+    rdfs:comment "Links an ImaginaryBeing to a specific AnatomicalPart that constitutes its body, without asserting the biological origin of that part. Where :hasPartDerivedFrom links a CompositeCreature to the real animal or material from which a part originates, :hasPart simply records which anatomical components are present — useful for imaginary beings whose parts have no clear real-world derivation or whose source is not documented in the available sources."@en .
+
+:hasAnomaly rdf:type owl:ObjectProperty ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has anomaly"@en ;
+    rdfs:comment "Links a RealAnimal to an AnatomicalPart that exhibits a monstrous or pathological irregularity in a specific Source. For cases where the nature of the anomaly itself needs to be documented (e.g. whether it is a duplication, absence, or modification), use the subproperties :hasDuplicationOf, :hasAbsenceOf, and :hasModificationOf."@en .
+
+:hasAbsenceOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasAnomaly ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has absence of"@en ;
+    rdfs:comment "Indicates that a real animal, in a given Source or Interpretation, is missing an anatomical part that would normally be expected for its species. Records cases where the absence itself constitutes the anomaly — e.g. a serpent without a tongue, a bird without wings, or a humanoid creature lacking a face. Subproperty of :hasAnomaly."@en .
+
+:hasDuplicationOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasAnomaly ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has duplication of"@en ;
+    rdfs:comment "Indicates that a real animal, in a given Source or Interpretation, possesses a duplicated or multiplied instance of an anatomical part — e.g. a two-headed calf, a creature with six limbs, or an animal with a forked tail where one is canonical. Subproperty of :hasAnomaly."@en .
+
+:hasModificationOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasAnomaly ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has modification of"@en ;
+    rdfs:comment "Indicates that a real animal, in a given Source or Interpretation, exhibits an anatomical part in an altered or aberrant form — neither simply absent nor duplicated, but substantially changed in shape, size, material, or function. Examples include reversed feet, crystalline horns, or scales in place of fur. Subproperty of :hasAnomaly."@en .
 
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
     rdfs:domain :CompositeCreature ;
@@ -348,20 +392,6 @@
     rdfs:label "has habitat"@en ;
     rdfs:comment "Connects a creature to the environment it natively inhabits."@en .
 
-:hasDeformity rdf:type owl:ObjectProperty ;
-    rdfs:domain :RealAnimal ;
-    rdfs:range :Anomaly ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has deformity"@en ;
-    rdfs:comment "Indicates that a creature suffers from or exhibits a specific anomaly."@en .
-
-:affectsPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :Anomaly ;
-    rdfs:range :AnatomicalPart ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "affects part" ;
-    rdfs:comment "Indicates the anatomical structure altered, deformed, duplicated, absent, or otherwise modified by an anomaly."@en .
-
 :hasDiet rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
     rdfs:domain :Creature ;
@@ -370,12 +400,7 @@
     rdfs:label "has diet"@en ;
     rdfs:comment "Specifies the feeding classification (e.g. carnivorous) of the creature."@en .
 
-# ===== DATA PROPERTIES ================
-# :hasDescription rdf:type owl:DatatypeProperty ;
-#     rdfs:domain :Creature ;
-#     rdfs:range rdfs:Literal ;
-#     rdfs:label "has description"@en .
-
+# ===== DATA PROPERTIES ===============
 :hasAlternativeName rdf:type owl:DatatypeProperty ;
     rdfs:domain :Creature ;
     rdfs:range rdfs:Literal ;
@@ -390,10 +415,10 @@
     rdfs:label "Archetype"@en ;
     rdfs:comment "A universal, primordial pattern or character prototype residing in the collective human imagination. Within the ontology, the class serves as the ultimate analytical anchor that bridges the historical world with the symbolic world, linking a source-bound Interpretation of a Creature directly to its deeper allegorical, spiritual, or psychological meaning."@en .
 
-:SymbolicFeature rdf:type owl:Class ;
+:NarrativeFunction rdf:type owl:Class ;
     rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Symbolic Feature"@en ;
-    rdfs:comment "A symbolic observation linking a specific anatomical feature to its allegorical meaning within a particular Interpretation."@en . 
+    rdfs:label "Narrative Function"@en ;
+    rdfs:comment "A symbolic or thematic role that a creature fulfills within a specific Source, independent of its biological traits. Narrative functions capture the cultural and literary work that a beast performs in a given tradition — e.g. acting as a guardian or an emblem of divine power. Where :Archetype captures the universal psychological pattern, NarrativeFunction captures the contextual, source-specific role that pattern takes within a narrative or iconographic programme."@en . 
 
 # DURAND SCHEME
 :DurandImaginary rdf:type skos:ConceptScheme ;
@@ -488,44 +513,6 @@
     skos:prefLabel "Imaginary Symbol"@en ;
     rdfs:comment "The shared OWL class and intermediate SKOS concept grouping all specific symbolic categories recognised by Gilbert Durand within his structures of the imaginary. As an owl:Class it provides the common type for all symbol individuals (TeriomorphicSymbol, AscensionalSymbol, CyclicalSymbol, etc.), allowing properties such as :belongsTo to range over them uniformly. As a skos:Concept it sits between :ImaginaryStructure and the specific symbol individuals in the DurandImaginary thesaurus, making the three-level hierarchy (ImaginaryStructure → ImaginarySymbol → specific symbol) navigable via skos:broader."@en .
 
-
-# ALCHEMICAL SCHEME
-:AlchemicalScheme rdf:type skos:ConceptScheme ;
-    dcterms:title "Alchemical Magnum Opus Scheme"@en ;
-    skos:hasTopConcept :AlchemicalStage, :AlchemicalProcess, :AlchemicalPrinciple;
-    prov:wasDerivedFrom "Abraham, L. (1998). A Dictionary of Alchemical Imagery. Cambridge University Press." ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Alchemical Scheme"@en ;
-    rdfs:comment "A conceptual scheme organizing the symbolic vocabulary of the alchemical Magnum Opus for application to creatures. The scheme is structured along three parallel axes: Stage, the four successive phases of the opus (Nigredo, Albedo, Citrinitas, Rubedo); Process, the specific physical and symbolic operations enacted within each stage (e.g. Calcination or Dissolution); Principle, the three essential substances of the Tria Prima (Sulfur, Mercury, Salt). The sequential order of stages is encoded via the :followsStage property. Connecting creatures to this scheme via :indicatesAlchemicalStage, :undergoes, :embodiesPrinciple allows the ontology to map how a beast's biological traits function as symbolic vehicles for alchemical transformation."@en .
-
-:AlchemicalStage rdf:type owl:Class, skos:Concept ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:topConceptOf :AlchemicalScheme ;
-    rdfs:label "Alchemical Stage"@en ;
-    skos:prefLabel "Alchemical Stage"@en ;
-    rdfs:comment "The abstract class and top SKOS concept grouping the four successive phases of the Magnum Opus: Nigredo, Albedo, Citrinitas, and Rubedo. As an owl:Class it provides the shared type for the four stage individuals, enabling :occursIn and :indicatesAlchemicalStage to range over :AlchemicalStage rather than an unwieldy union. As a skos:Concept it acts as the root of the Stage branch in the AlchemicalScheme thesaurus, from which the four phases hang via skos:broader."@en .
-    
-:AlchemicalPrinciple rdf:type owl:Class, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:topConceptOf :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Alchemical Principle (Tria Prima)"@en ;
-    skos:prefLabel "Alchemical Principle"@en ;
-    skos:altLabel "Tria Prima"@en ;
-    rdfs:comment "The abstract class and top SKOS concept grouping the three essential substances of alchemy, known as the Tria Prima: Sulfur (the soul, active combustibility), Mercury (the spirit, volatile mediating principle), and Salt (the body, fixed material substrate). The Tria Prima provides a third symbolic axis alongside Stage and Process: where a Stage names the phase and a Process names the operation, a Principle names the elemental nature that a creature embodies. A creature linked to :Mercury via :embodiesPrinciple is identified as a vehicle of mediation, dissolution, and volatile transformation, regardless of which stage it primarily inhabits."@en .
-
-:AlchemicalProcess rdf:type owl:Class, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:topConceptOf :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "Alchemical Process"@en ;
-    skos:prefLabel "Alchemical Process"@en ;
-    rdfs:comment "The abstract class and top SKOS concept grouping the specific physical and symbolic operations performed during the Magnum Opus, such as Calcination, Dissolution, and Coagulation. Processes constitute the operational layer beneath the stage level: where a Stage names the phase, a Process names the specific transformation enacted within it. Linking a creature to a process via :undergoes enables finer-grained symbolic annotation than stage-level association alone — a Phoenix does not merely indicate Rubedo, it specifically undergoes Calcination (self-immolation) and Coagulation (resurrection into perfected form)."@en .
-    
-[] rdf:type owl:AllDisjointClasses ;
-    owl:members (:AlchemicalStage :AlchemicalProcess :AlchemicalPrinciple) .
-
 # ===== OBJECT PROPERTIES ================
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
@@ -534,20 +521,29 @@
                   owl:unionOf (:ImaginaryStructure :Archetype :SymbolicFeature :AlchemicalStage :AlchemicalProcess :AlchemicalPrinciple) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "symbolizes"@en ;
-    rdfs:comment "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), or a Creature serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
+    rdfs:comment "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), a Creature or its Interpretation serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
 
 :embodiesArchetype rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Creature ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Archetype ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "embodies archetype"@en ;
-    rdfs:comment "Indicates that a creature serves as a manifestation of a universal archetype."@en .
+    rdfs:comment "Links a source-specific Interpretation to the universal psychological pattern or primordial image that the creature instantiates. Where :hasNarrativeFunction captures what role the creature plays in a given text, :embodiesArchetype asserts what deep collective structure it expresses across all its manifestations — e.g. the Dragon as the Archetype of Chaos, the Phoenix as the Archetype of Renewal, the Unicorn as the Archetype of Purity."@en .
+
+:hasNarrativeFunction rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :NarrativeFunction ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has narrative function"@en ;
+    rdfs:comment "Links a source-specific Interpretation to the symbolic or thematic role that the creature fulfills within that Source. Unlike :embodiesArchetype — which asserts a universal psychological identity — :hasNarrativeFunction captures the contextual, plot-level, or iconographic function the beast performs in a particular text or artwork: guardian, omen, divine messenger, embodiment of sin, etc. The same creature may carry different narrative functions across different Interpretations."@en .
 
 # DURAND SCHEME
 :belongsToImaginaryStructure rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Creature ;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:Creature :AnatomicalPart :Ability) ] ;
     rdfs:range :ImaginaryStructure ;
     rdfs:label "belongs to imaginary structure"@en ;
     rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
@@ -559,21 +555,6 @@
     rdfs:label "belongs to"@en ;
     rdfs:comment "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en .
 
-:hasSymbolicFeature rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Interpretation ;
-    rdfs:range :SymbolicFeature ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has symbolic feature"@en ;
-    rdfs:comment "Links a specific Interpretation to a SymbolicFeature, capturing the allegorical meaning of an anatomical part within that source."@en .
-
-:involvesAnatomicalPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :SymbolicFeature ;
-    rdfs:range :AnatomicalPart ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "involves anatomical part"@en ;
-    rdfs:comment "Identifies the anatomical feature that is the vehicle for symbolic meaning within a SymbolicFeature observation."@en .
-
 :isGovernedBy rdf:type owl:ObjectProperty ;
     owl:propertyChainAxiom (:belongsTo :isGovernedBy) ;
     rdfs:domain [ rdf:type owl:Class ; owl:unionOf (:ImaginaryStructure :ImaginarySymbol) ] ;
@@ -582,105 +563,64 @@
     rdfs:label "is governed by"@en ;
     rdfs:comment "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en .
 
-# ALCHEMICAL SCHEME
-:indicatesAlchemicalStage rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Creature ;
-    rdfs:range :AlchemicalStage ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "indicates alchemical stage"@en ;
-    rdfs:comment "Links a creature to one of the four stages of the Magnum Opus, asserting that the entity symbolically embodies the transformative quality of that phase. Declared as a subproperty of :symbolizes, making every alchemical stage annotation also a general symbolic annotation."@en .
-
-:followsStage rdf:type owl:ObjectProperty , owl:TransitiveProperty ;
-    rdfs:domain :AlchemicalStage ;
-    rdfs:range :AlchemicalStage ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    owl:inverseOf :precedesStage ;
-    rdfs:label "follows stage"@en ;
-    rdfs:comment "Represents the chronological succession between phases of the Magnum Opus: the subject stage immediately follows the object stage (e.g. :Albedo :followsStage :Nigredo means Albedo comes after Nigredo). It is declared as a transitive property so that indirect succession is inferred automatically - Rubedo followsStage Nigredo is entailed through the chain."@en .
-    
-:precedesStage rdf:type owl:ObjectProperty, owl:TransitiveProperty ;
-    rdfs:domain :AlchemicalStage ;
-    rdfs:range :AlchemicalStage ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "precedes stage"@en ;
-    rdfs:comment "The inverse property of :followsStage. The subject stage immediately precedes the object stage (e.g. :Nigredo :precedesStage :Albedo)."@en .
-
-:occursIn rdf:type owl:ObjectProperty ;
-    rdfs:domain :AlchemicalProcess ;
-    rdfs:range :AlchemicalStage ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    owl:inverseOf :hasProcess ;
-    rdfs:label "occurs in"@en ;
-    rdfs:comment "Links an alchemical process to the stage of the Magnum Opus in which it primarily operates. Because a process may conceptually bridge two stages (e.g. Sublimation bridges Albedo and Citrinitas), this property names the principal association. The inverse :hasProcess is inferred automatically and allows querying which operations belong to a given stage."@en .
-    
-:hasProcess rdf:type owl:ObjectProperty ;
-    rdfs:domain :AlchemicalStage ;
-    rdfs:range :AlchemicalProcess ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has process"@en ;
-    rdfs:comment "The inverse of :occursIn, it links an alchemical stage to the specific operations that take place within it."@en .
-
-:undergoes rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Creature ;
-    rdfs:range :AlchemicalProcess ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "undergoes"@en ;
-    rdfs:comment "Indicates that a creature symbolically enacts a specific alchemical process. This property provides finer-grained symbolic annotation."@en .
-    
-:manifestsInStage rdf:type owl:ObjectProperty, owl:FunctionalProperty ;
-	rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :AlchemicalPrinciple ;
-    rdfs:range :AlchemicalStage ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "manifests in stage"@en ;
-    rdfs:comment "Links one of the three Tria Prima principles to the stage of the Magnum Opus in which it plays its primary symbolic role. Declared as a subproperty of :symbolizes, since a principle manifesting in a stage is itself a symbolic assertion. It includes three individuals: Mercury manifests primarily in Nigredo as the chaotic dissolving forces; Salt in Albedo as the purified material body; Sulfur in Rubedo as the solar, fiery agent of final perfection."@en .
-    
-:embodiesPrinciple rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Creature ;
-    rdfs:range :AlchemicalPrinciple ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "embodies principle"@en ;
-    rdfs:comment "Indicates that a creature is a traditional symbolic vehicle for one of the three Tria Prima principles. This property captures the creature's elemental identity rather than its stage or operational role, e.g. :Serpent :embodiesPrinciple :Mercury not because it belongs to Nigredo but because it is structurally a mediating, dissolving, dual-natured force."@en .
-
-# ===== DATA PROPERTIES ================
 :hasDivergence rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range [ rdf:type owl:Class ;
+                owl:unionOf (:AnatomicalPart :Ability) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "has divergence"@en ;
-    rdfs:comment "Links a specific Interpretation to a textual description of how it deviates from the creature's traditional representation, whether anatomically, behaviorally, or symbolically."@en .
+    rdfs:comment "The parent property for all divergence assertions linking a source-specific Interpretation to the biological feature — either an AnatomicalPart or an Ability — that differs from the creature's canonical description in that Source. Subproperties :additionalAbility, :removedAbility, :additionalPart, and :removedPart specialise the nature of the divergence. This structure allows the ontology to answer questions such as 'which interpretations add wings to a normally wingless creature' or 'which sources suppress a creature's canonical venom ability'."@en .
 
-:hasAnatomicalDivergence rdf:type owl:DatatypeProperty ;
+:additionalAbility rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range :Ability ;
     rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has anatomical divergence"@en ;
-    rdfs:comment "Specifies a divergence related to the physical structure or appearance of the creature (e.g. giving wings to a traditionally wingless beast)."@en .
+    rdfs:label "additional ability"@en ;
+    rdfs:comment "Links a source-specific Interpretation to an Ability that the creature possesses in that Source but which is absent from or not part of its standard biological description (Creature). Records additions to the creature's standard behavioural repertoire introduced by a specific author, artist, or tradition — e.g. a serpent that in one source is additionally credited with the power of hypnosis."@en .
 
-:hasAbilityDivergence rdf:type owl:DatatypeProperty ;
+:removedAbility rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range :Ability ;
     rdfs:isDefinedBy :SymbolicModule ;
-    rdfs:label "has ability divergence"@en ;
-    rdfs:comment "Specifies a divergence related to the creature's actions, powers, or behavioral traits (e.g. a fire-breathing creature that instead breathes ice)."@en .
+    rdfs:label "removed ability"@en ;
+    rdfs:comment "Links a source-specific Interpretation to an Ability that the creature typically possesses but which is deliberately absent in that particular Source. Documents reductive divergences from the standard behavioural description — e.g. a dragon that in a given medieval text lacks the ability to fly, inverting the conventional image."@en .
+
+:additionalPart rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "additional part"@en ;
+    rdfs:comment "Links a source-specific Interpretation to an AnatomicalPart that the creature possesses in that Source but which is not part of its canonical morphology. Records additive anatomical divergences introduced by a specific tradition — e.g. a lion that in one illumination is given wings absent from the standard description, shifting it toward a composite or hybrid morphology."@en .
+
+:removedPart rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range :AnatomicalPart ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "removed part"@en ;
+    rdfs:comment "Links a source-specific Interpretation to an AnatomicalPart  that the Creature canonically possesses but which is deliberately absent or suppressed in that particular Source. Documents reductive anatomical divergences — e.g. a griffin depicted without its eagle wings in a specific manuscript tradition, fundamentally altering its composite identity."@en .
+
+:relatedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:NarrativeFunction :Archetype) ] ;
+    rdfs:range [ rdf:type owl:Class ;
+                owl:unionOf (:NarrativeFunction :Archetype) ] ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "related to"@en ;
+    rdfs:comment "A symmetric associative property linking two NarrativeFunction or Archetype individuals that share thematic, structural, or symbolic overlap without one being a specialisation of the other. For example, the function of Guardian and the function of Threshold-Keeper are related but distinct; the Archetype of the Devourer and the Archetype of the Transformer share symbolic territory without subsumption. This property enables lateral navigation across the symbolic vocabulary of the ontology."@en .
+
 
 # ===== INDIVIDUALS - Controlled Vocabulary ================
-:ProvenanceModule rdf:type owl:NamedIndividual,
-                        :Module ;
-    rdfs:label "Provenance module (the Anchor)"@en ;
-    rdfs:comment "The Provenance Module documents the historical and textual footprint of a creature, distinguishing between the universal, abstract concept of a beast (Creature) and its specific manifestations (Interpretation) across various primary Sources. Furthermore, it tracks the diachronic evolution of the terminology used to name these entities, capturing etymologies and root languages."@en .
+:ProvenanceModule rdf:type owl:NamedIndividual , :Module ;
+    rdfs:label "Provenance Module (the Anchor)"@en ;
+    rdfs:comment "The Provenance Module documents the historical and textual footprint of every creature in the ontology. It distinguishes between the universal, abstract concept of a beast (Creature) and its source-specific manifestations (Interpretation), allowing the ontology to track how a single entity is described, depicted, or reinterpreted across different authors, periods, and media — from medieval manuscripts to contemporary film. It anchors each Interpretation to the primary Source in which it appears and classifies Sources by their genre and intertextual relationships through :cites and :wasInfluencedBy. It also tracks the diachronic evolution of the linguistic terms used to name creatures, capturing Nomenclature at both the species level and the source-specific level, and tracing each term back through Etymology to its root form and language of origin."@en .
 
-:BiologicalModule rdf:type owl:NamedIndividual ,
-                        :Module ;
-    rdfs:label "Biological module"@en ;
-    rdfs:comment "The Biological Module is dedicated to the physical and behavioral traits of creatures - whether real or imaginary - as formalized in Bestiaries or other Sources. It catalogs anatomy, habitats, and diets, serving as the primary 'sensory data' that is later transformed into symbolic meaning within the artistic and literary tradition."@en .
-    
-:SymbolicModule rdf:type owl:NamedIndividual ,
-                        :Module ;
-    rdfs:label "Symbolic module"@en ;
-    rdfs:comment "The Symbolic Module represents the analytical and allegorical layer of the ontology, where art, literature, and anthropology converge. It maps how creatures are represented in primary sources - from ancient imagery and medieval manuscripts to contemporary artworks - to decode the symbolic and archetypal logic behind their artistic creation."@en .
+:BiologicalModule rdf:type owl:NamedIndividual , :Module ;
+    rdfs:label "Biological Module"@en ;
+    rdfs:comment "The Biological Module catalogs the physical and behavioural traits of creatures — whether real or imaginary — as described in Bestiaries and other Sources. It distinguishes real animals from imaginary beings, and further classifies the latter into composite and hybrid creatures whose anatomy is derived from two or more biological sources. For real animals it documents deformities and monstrous irregularities through a structured vocabulary of anatomical anomaly: absence of a canonical part, duplication, and modification. For imaginary beings it records the anatomical parts they possess and the real animals, plants, or inanimate elements from which those parts are derived. Across all creatures the module captures habitats — distinguishing real geographic environments from mythological or imaginary spaces — diets, and abilities. This layer serves as the primary morphological record that the Symbolic Module then interprets as archetypal and cultural meaning."@en .
+
+:SymbolicModule rdf:type owl:NamedIndividual , :Module ;
+    rdfs:label "Symbolic Module"@en ;
+    rdfs:comment "The Symbolic Module represents the analytical and interpretive layer of the ontology, where art history, literary theory, depth psychology, and anthropology converge. It provides two interlocking frameworks for the symbolic analysis of creatures and their source-specific Interpretations. First, the DurandImaginary scheme applies Gilbert Durand's anthropological structures of the imaginary to classify creatures according to the Regime (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that governs their symbolic imagery. Second, the archetype and narrative function layer — through :Archetype, :NarrativeFunction, :embodiesArchetype, and :hasNarrativeFunction — distinguishes between the universal psychological pattern a creature instantiates across all its manifestations and the specific contextual role it performs within a given Source. The module also captures symbolic divergences at the level of Interpretation: the properties :additionalPart, :removedPart, :additionalAbility, and :removedAbility document how a specific author or tradition departs from the canonical image of a creature, and what symbolic meaning those departures carry."@en .
 
 :Omnivorous rdf:type owl:NamedIndividual,
                     :Diet ;
@@ -745,7 +685,7 @@
 :ScientificTaxonomy rdf:type owl:NamedIndividual, :BestiaryType ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "Scientific Taxonomy"@en ;
-    rdfs:comment "A genre focused on the scientific categorization and biological documentation of animals (e.g. Aldrovandi)."@en .
+    rdfs:comment "A genre focused on the scientific categorization and biological documentation of animals (e.g. Aldrovandi and Paré)."@en .
 
 :LiteraryMetafiction rdf:type owl:NamedIndividual, :BestiaryType ;
     rdfs:isDefinedBy :ProvenanceModule ;
@@ -839,133 +779,6 @@
     skos:prefLabel "Intimacy Symbol"@en ;
     rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifying world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
 
-# ALCHEMICAL INDIVIDUALS 	
-:Nigredo rdf:type owl:NamedIndividual, :AlchemicalStage, skos:Concept ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:broader :AlchemicalStage ;
-    skos:prefLabel "Nigredo"@en ;
-    skos:altLabel "Blackening"@en ;
-    skos:scopeNote "Canonical bestiary animals: Crow or Raven, Toad, Black Dragon."@en ;
-    rdfs:label "Nigredo" @en ;
-    rdfs:comment "The first and darkest phase of the Magnum Opus, in which the body of the impure metal is killed, putrefied, and dissolved into the prima materia so that it may be renovated and reborn in a new form. The dissolution that takes place at Nigredo is said to smell of the stench of graves and is frequently represented by the image of the bodies of the united lovers decaying together. Symbolically it corresponds to the death of the ego, the confrontation with the shadow, and the necessary disintegration of corrupt structures before transformation can begin. In bestiary tradition, creatures associated with blackness, decomposition, darkness, or subterranean habitats serve as natural emblems of this stage."@en .
-
-:Albedo rdf:type owl:NamedIndividual, :AlchemicalStage, skos:Concept ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:inScheme :AlchemicalScheme ;
-    :followsStage :Nigredo ;
-    skos:broader :AlchemicalStage ;
-    skos:prefLabel "Albedo"@en ;
-    skos:altLabel "Whitening"@en ;
-    skos:scopeNote "Canonical bestiary animals: Swan, Dove, Unicorn, Eagle."@en ;
-    rdfs:label "Albedo" @en ;
-    rdfs:comment "The second phase of the Magnum Opus, in which the blackened matter of the Nigredo is washed to whiteness by mercurial waters or purifying fire. It is the stage at which the alchemist achieves the white stone and the white elixir, which holds the power to transmute all imperfect metals to silver. Albedo is symbolized by all things pure, white, or silver — Luna, the swan, alabaster, salt — and corresponds psychologically to the purification of the unconscious contents released during Nigredo, the emergence of a clarified self from the dissolution. In bestiary tradition, creatures of immaculate whiteness, lunar association, or aquatic purification embody this stage."@en .
-
-:Citrinitas rdf:type owl:NamedIndividual, :AlchemicalStage, skos:Concept ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:inScheme :AlchemicalScheme ;
-    :followsStage :Albedo ;
-    skos:broader :AlchemicalStage ;
-    skos:prefLabel "Citrinitas"@en ;
-    skos:altLabel "Yellowing"@en ;
-    rdfs:label "Citrinitas" @en ;
-    rdfs:comment "The third phase of the Magnum Opus, representing the transmutation of the purified silver of Albedo into gold, and the dawning of solar light upon lunar consciousness. Citrinitas marks the transition from the passive, receptive mode of Albedo to the active, illuminating power of the solar principle. It is symbolized by the golden flower and the golden rose. In later alchemical traditions, from the 15th century onward, this stage was frequently collapsed into Rubedo, making its independent attestation rarer in post-Renaissance sources."@en .
-
-:Rubedo rdf:type owl:NamedIndividual, :AlchemicalStage, skos:Concept ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:inScheme :AlchemicalScheme ;
-    :followsStage :Citrinitas ;
-    skos:broader :AlchemicalStage ;
-    skos:prefLabel "Rubedo"@en ;
-    skos:altLabel "Reddening"@en ;
-    skos:scopeNote "Canonical bestiary animals: Phoenix, Red Lion, Basilisk."@en ;
-    rdfs:label "Rubedo" @en ;
-    rdfs:comment "The fourth and final phase of the Magnum Opus, in which the limited lunar consciousness of the Albedo receives the full illumination of the spiritual sun. At Rubedo the matter of the stone, purified and made spotless, is reunited with the spirit: their conjunction produces the Philosopher's Stone, representing the union of opposing forces — spirit and matter, sun and moon, masculine and feminine — and the achievement of incorruptible wholeness. It is symbolized by redness, gold, solar fire, and blood. In bestiary tradition, creatures of fire, resurrection, solar dominion, or miraculous transmutation are the primary vehicles of Rubedo symbolism."@en .
-
-:Sulfur rdf:type owl:NamedIndividual, :AlchemicalPrinciple, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:broader :AlchemicalPrinciple ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    :manifestsInStage :Rubedo ;
-    rdfs:label "Sulfur (Soul)"@en ;
-    skos:prefLabel "Sulfur"@en ;
-    skos:altLabel "Soul"@en ;
-    rdfs:comment "The active, fiery, combustible principle of the Tria Prima, corresponding to the soul of matter — its inner capacity for transformation through heat and will. Sulfur is the masculine, solar principle: it drives the opus toward its fiery completion at Rubedo, where spirit and matter are fused under the full power of the spiritual sun. In bestiary tradition, Sulfur is embodied by creatures of fire, aggression, solar dominion, and transformative destruction: the Red Lion, the Dragon, and the King are its canonical symbols."@en .
-
-:Mercury rdf:type owl:NamedIndividual, :AlchemicalPrinciple, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:broader :AlchemicalPrinciple ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    :manifestsInStage :Nigredo ;
-    rdfs:label "Mercury (Spirit)"@en ;
-    skos:prefLabel "Mercury"@en ;
-    skos:altLabel "Spirit"@en ;
-    rdfs:comment "The volatile, mediating principle of the Tria Prima, corresponding to the spirit — the intermediary between the fixed body (Salt) and the fiery soul (Sulfur), capable of dissolving and uniting opposites. Mercury is also called Mercurius and is the most complex of the three principles: it is simultaneously poison and medicine, darkness and light, chaos and the agent of purification. At the opening of the Nigredo, the poisonous serpent or Dragon — symbol of Mercurius — dissolves the impure metal into its first matter. In bestiary tradition, Mercury is embodied by creatures of duality, flight, and mediation: the Eagle, the Serpent, and the Unicorn are its canonical symbols."@en .
-
-:Salt rdf:type owl:NamedIndividual, :AlchemicalPrinciple, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    skos:broader :AlchemicalPrinciple ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    :manifestsInStage :Albedo ;
-    rdfs:label "Salt (Body)"@en ;
-    skos:prefLabel "Salt"@en ;
-    skos:altLabel "Body"@en ;
-    rdfs:comment "The fixed, stable, material principle of the Tria Prima, corresponding to the body — the base substance that receives purification and ultimately provides the physical substrate for the Philosopher's Stone. Salt is associated with crystalline form, whiteness, and the earth: it is the matter that endures through Dissolution and Sublimation to be reunited with soul and spirit at Coagulation. In bestiary tradition, Salt is embodied by earthbound, slow, material creatures: the Toad — whose body absorbs poisons from the earth and was said to carry a precious stone in its head — is its most canonical bestiary symbol."@en .
-
-:Calcination rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Nigredo ;
-    rdfs:label "Calcination"@en ;
-    skos:prefLabel "Calcination"@en ;
-    rdfs:comment "The reduction of a substance to powder or ash by the sustained application of intense heat, the first and most violent operation of the Magnum Opus. Calcination reduces the metallic body to its first matter and renders it porous so that it may more easily receive the influx of the divine tincture or spirit. Symbolically it corresponds to the burning away of ego, false attachment, and corrupt identity — the destructive fire that is the necessary precondition of renewal. Bestiary creatures associated with flame, self-immolation, or volcanic habitats (e.g. the Phoenix and the Salamander) are primary vehicles of Calcination."@en .
-
-:Dissolution rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Nigredo ;
-    rdfs:label "Dissolution"@en ;
-    skos:prefLabel "Dissolution"@en ;
-    rdfs:comment "The conversion of the calcined solid into a fluid substance - the process paired with Coagulation in the dictum solve et coagula. In Dissolution the metal or matter is killed and dissolved so that its soul and spirit are separated from its body, which is then cleansed of its impurity. Symbolically it represents the surrender of rigid structures to the unconscious, the opening of the self to formless transformation. Aquatic and amphibious creatures, or those associated with tears, floods, or melting, naturally embody this process."@en .
-
-:Coagulation rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Rubedo ;
-    rdfs:label "Coagulation"@en ;
-    skos:prefLabel "Coagulation"@en ;
-    rdfs:comment "The solidification of the dissolved and purified substance into a new, permanent, and perfected form; it is the complementary operation of Dissolution in the dictum solve et coagula. After Dissolution has cleansed the body of its impurity, the re-entry of the soul into the purified matter at the Conjunction gives it form and coagulates it. Coagulation corresponds to Rubedo: the final integration of spirit and matter, the achievement of the Philosopher's Stone. Bestiary creatures associated with solar fire and gold embody this operation."@en .
-
-:Sublimation rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Albedo ;
-    rdfs:label "Sublimation"@en ;
-    skos:prefLabel "Sublimation"@en ;
-    rdfs:comment "The purification and clarification of matter whereby the volatile spirit is extracted from the impure body through rapid vaporization by applied heat, followed by cooling and condensation. Sublimation bridges Albedo and Citrinitas: the rising vapor carries the purified essence upward, away from gross matter, toward the luminous solar principle. Symbolically it maps onto the elevation of consciousness, the refinement of the spirit toward its most transparent essence. Aerial creatures and those with ascensional symbolism are natural emblems of Sublimation."@en .
-
-:Putrefaction rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Nigredo ;
-    rdfs:label "Putrefaction"@en ;
-    skos:prefLabel "Putrefaction"@en ;
-    rdfs:comment "Putrefaction is the decomposition and corruption of the matter dissolved during Nigredo. The impure body of the metal is dissolved by the heat that stimulates its internal warmth, causing it to be reduced into blackness and into its prima materia. The alchemical principle of Putrefaction rests on the idea that nature is renewed only after first dying away: death and decay are not ends but necessary transitions. Bestiary creatures associated with darkness, subterranean habitats, or the stench of decay (e.g. the Crow, the Toad, the basilisk's lethal exhalation) are emblems of this process."@en .
-
-:Transmutation rdf:type owl:NamedIndividual, :AlchemicalProcess, skos:Concept ;
-    skos:inScheme :AlchemicalScheme ;
-    rdfs:isDefinedBy :SymbolicModule ;
-    skos:broader :AlchemicalProcess ;
-    :occursIn :Rubedo ;
-    rdfs:label "Transmutation"@en ;
-    skos:prefLabel "Transmutation"@en ;
-    rdfs:comment "The conversion of one substance into another through the agency of the Philosopher's Stone - in its highest form, the instantaneous change of base metal into silver or gold by the projection of the stone. Transmutation is the culminating operation of the entire Magnum Opus, the proof that the Work has been completed. In bestiary tradition, creatures credited with the power to transform matter by their presence, gaze, or touch are vehicles of this process, e.g. the Basilisk, said to transmute whatever its eye falls upon into corruption or stone, inverts the golden transmutation into its lethal shadow."@en .
-
 [] rdf:type owl:AllDifferent ;
     owl:distinctMembers (
         :ScientificTaxonomy
@@ -983,13 +796,3 @@
         :Lithophagous
         :Elemental
     ) .
-    
-[] rdf:type owl:AllDifferent ;
-    owl:distinctMembers (:Nigredo :Albedo :Citrinitas :Rubedo) .
-
-[] rdf:type owl:AllDifferent ;
-    owl:distinctMembers (:Sulfur :Mercury :Salt) .
-
-[] rdf:type owl:AllDifferent ;
-    owl:distinctMembers (:Calcination :Dissolution :Coagulation 
-                         :Sublimation :Putrefaction :Transmutation) .

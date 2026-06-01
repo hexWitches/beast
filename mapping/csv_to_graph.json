@@ -109,26 +109,286 @@
             }
         }
     },
-    "interpretations.csv" : {
-
+    "interpretations.csv": {
+        "primary_key": "interpretation_id",
+        "entity_class": "beast:Interpretation",
+        "properties": {
+            "creature_id": {
+                "predicate": "beast:ofCreature",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Creature"
+            },
+            "source_id": {
+                "predicate": "beast:appearsIn",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Source"
+            },
+            "source_term": {
+                "predicate": "beast:hasSourceTerm",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "archetype_id": {
+                "predicate": "beast:embodiesArchetype",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Archetype"
+            },
+            "additional_part": {
+                "predicate": "beast:additionalPart",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "removed_part": {
+                "predicate": "beast:removedPart",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:AnatomicalPart"
+            },
+            "additional_ability": {
+                "predicate": "beast:additionalAbility",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Ability"
+            },
+            "removed_ability": {
+                "predicate": "beast:removedAbility",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Ability"
+            },
+            "citation_id": {
+                "predicate": "beast:hasTextualReference",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Citation"
+            }
+        }
     },
-    "citation.csv" : {
-
+    "citations.csv": {
+        "primary_key": "citation_id",
+        "entity_class": "beast:Citation",
+        "properties": {
+            "interpretation_id": {
+                "predicate": "beast:isTextualReferenceOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Interpretation"
+            },
+            "source_id": {
+                "predicate": "beast:extractedFrom",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Source"
+            },
+            "sequence_identifier": {
+                "predicate": "beast:hasSequenceIdentifier",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "passage": {
+                "predicate": "beast:hasPassageText",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "dynamic_language_column": "language"
+            }
+        }
     },
-
-    "sources.csv" : {
-
+    "sources.csv": {
+        "primary_key": "source_id",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:"
+            },
+            "title": {
+                "predicate": "dcterms:title",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "dynamic_language_column": "language"
+            },
+            "creator": {
+                "predicate": "schema:creator",
+                "type": "URI",
+                "prefix": "schema",
+                "target_class": "schema:Person"
+            },
+            "date_created": {
+                "predicate": "schema:dateCreated",
+                "type": "date",
+                "datatype": "xsd:gYear"
+            },
+            "temporal_coverage": {
+                "predicate": "schema:temporalCoverage",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "influenced_by": {
+                "predicate": "beast:wasInfluencedBy",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Source"
+            },
+            "cites": {
+                "predicate": "beast:cites",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Source"
+            },
+            "source_url": {
+                "predicate": "schema:url",
+                "type": "Literal",
+                "datatype": "xsd:anyURI"
+            }
+        }
     },
-    "archetypes.csv" : {
-
+    "habitats.csv": {
+        "primary_key": "habitat_id",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Habitat"
+            },
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "description": {
+                "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
     },
-    "habitats.csv" : {
-
+    "functions.csv": {
+        "primary_key": "function_id",
+        "entity_class": "beast:NarrativeFunction",
+        "properties": {
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "has_meaning": {
+                "predicate": "beast:hasMeaning",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "related_to": {
+                "predicate": "beast:relatedTo",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:NarrativeFunction"
+            }
+        }
     },
-    "functions" : {
+    "archetypes.csv": {
+        "primary_key": "archetype_id",
+        "entity_class": "beast:Archetype",
+        "properties": {
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "has_meaning": {
+                "predicate": "beast:hasMeaning",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "related_to": {
+                "predicate": "beast:relatedTo",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Archetype"
 
+            }
+        }
     },
-    "etymologies.csv" : {
-
+    "etymologies.csv": {
+        "primary_key": "etymology_id",
+        "entity_class": "beast:Etymology",
+        "properties": {
+            "root_term": {
+                "predicate": "beast:hasRootTerm",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "language": {
+                "predicate": "dcterms:language",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "has_meaning": {
+                "predicate": "beast:hasMeaning",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "creature_id": {
+                "predicate": "beast:isEtymologyOf",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Creature"
+            }
+        }
+    },
+    "person.csv": {
+        "primary_key": "person_id",
+        "entity_class": "schema:Person",
+        "properties": {
+            "given_name": {
+                "predicate": "foaf:givenName",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "family_name": {
+                "predicate": "foaf:familyName",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "nationality": {
+                "predicate": "schema:nationality",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "birth_year": {
+                "predicate": "schema:birthDate",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "death_year": {
+                "predicate": "schema:deathDate",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "dates_display": {
+                "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "wiki_authority": {
+                "predicate": "schema:sameAs",
+                "type": "URI"
+            },
+            "viaf_authority": {
+                "predicate": "schema:sameAs",
+                "type": "URI"
+            }
+        }
     }
 }
