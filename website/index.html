@@ -38,7 +38,6 @@
             </button>
             <nav class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#the-project" class="nav-link-item">The Project</a></li>
                     <li><a href="#the-ontology" class="nav-link-item">The Ontology</a></li>
                     <li><a href="#the-knowledge-graph" class="nav-link-item">The Knowledge Graph</a></li>
                     <li><a href="explore.html" class="nav-link-item">BEASTiary</a></li>
@@ -49,23 +48,49 @@
 
         <main class="hero-wrapper">
 
-            <!-- The Project -->
-            <section class="explore-hero content-to-reveal" id="the-project">
-                <div class="explore-hero-inner">
-                    <h1 class="explore-title">The Project</h1>
-                    <p class="explore-subtitle">
-                        An ontological framework for the description of creatures, tracking their lexical provenance, biological traits, and symbolism.
-                    </p>
+        <!-- Hero Section -->
+        <section class="hero-section" style="min-height: 20vh; padding: 6rem 2rem 0; position: relative;">
+            <div class="hero-content" style="position: relative; z-index: 2;">
+                <h1 class="hero-title" style="font-size: 3.5rem; letter-spacing: 8px;">BEAST</h1>
+                <p class="hero-description" style="color: var(--old-gold); letter-spacing: 2px; font-size: 1.1rem; margin-top: -1rem;">Creatures, Sources and Symbols <br> Mapping the Imaginary Through Time</p>
+            </div>
+        </section>
+
+        <!-- The idea behind the project -->
+        <section class="info-section" id="the-project">
+            <div class="info-section__inner">
+                <div class="info-section__body">
+                    <h2 class="info-section__title">The idea behind the project</h2>
+                        <p class="info-section__text">
+                            Rather than fixing each creature as a single, finished image, this project traces how the same being is imagined, reshaped, and reinterpreted across <strong>sources, ages, and cultures</strong>. A dragon, phoenix, or elf is never a fixed figure: each gains and loses parts, abilities and meanings as it passes from one tradition to another. Such transformations are possible because creatures belong to one of humanity’s oldest imaginative practices: the endless recombination of forms through which cultures have sought to understand themselves and the world around them.
+                        </p>
+                        <p class="info-section__text">
+                            The possibilities of combinatory art are almost infinite — so Borges observed in his <i>Book of Imaginary Beings</i>, and creatures are its perfect demonstration. There is something in the image of a living being that resonates with the human mind, and so, across different ages and latitudes, the same impulse keeps giving rise to invented beings: gods and demons, prodigies and monsters, <strong>beasts both real and fantastic</strong>. They have always been interwoven with human creativity. Every culture has found itself imagining, decoding, or illustrating them — whether as a product of pure fantasy or as an interpretation of the natural world, a way of making the unknown familiar and drawing it into the realm of culture.
+                        </p>
+                        <p class="info-section__text">
+                            Across history these beings have never remained stable. The Greek <i>téras</i> was a divine sign; the Roman <i>monstrum</i> a warning; medieval bestiaries transformed inherited creatures into moral allegories; later centuries carried them into new geographies and new forms. Each age remade them according to its own imagination.
+                        </p>
+                        <p class="info-section__text">
+                            To organize the <strong>symbolic meanings</strong> that creatures carry, the project draws on the work of the French anthropologist Gilbert Durand, in particular his book <i>The Anthropological Structures of the Imaginary</i> (1960). Durand showed that beneath the endless variety of myths and works of art lie a small number of recurring structures: reservoirs of images and symbols that continue to shape how we think, live, and dream.
+                        </p>
+                        <p class="info-section__text">
+                            At the heart of Durand’s model are two symbolic regimes. The <strong>diurnal</strong> is the order of light, height, and separation, expressing the heroic confrontation with time and death. The <strong>nocturnal</strong> is the order of night, descent, and fusion, which instead of fighting time seeks to slow it, to merge with it, and to embrace the cycle. Durand's structures turn a scattered collection of symbolic readings into a coherent map of the imaginary — one that lets us trace not only how a creature's <i>form</i> changes across time, but how its <i>meaning</i> migrates between these two enduring poles of the human imagination.
+                        </p>
+                        <p class="info-section__text">
+                            This project is an attempt to read creatures again. Though their forms change across time and cultures, they continue to express recurring human concerns: fear and desire, death, order and chaos. To follow their transformations is therefore also to trace the history of the imagination itself.
+                        </p>
+                    </div>
                 </div>
             </section>
 
-
+            <!-- SECTION DIVIDER -->
+            <div class="subtle-divider" aria-hidden="true"></div>
 
             <!-- Ontology  -->
-            <section class="info-section" id="the-ontology">
+            <section class="info-section info-section--alt" id="the-ontology">
                 <div class="info-section__inner">
                     <div class="info-section__body">
-                        <h2 class="info-section__title">The BEAST Ontology</h2>
+                        <h2 class="info-section__title">The Ontology</h2>
                         <p class="info-section__text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat mi quis pretium semper. Proin luctus orci ac neque venenatis, quis commodo dolor posuere. Curabitur dignissim sapien quis cursus egestas. Donec blandit auctor arcu, nec pellentesque eros molestie eget. In consectetur aliquam hendrerit. Sed cursus mauris vitae ligula pellentesque, non pellentesque urna aliquet. Fusce placerat mauris enim, nec rutrum purus semper vel. Praesent tincidunt neque eu pellentesque pharetra. Fusce pellentesque est orci.
                         </p>
@@ -86,7 +111,7 @@
             <div class="subtle-divider" aria-hidden="true"></div>
 
             <!-- Knowledge graph -->
-            <section class="info-section info-section--alt" id="the-knowledge-graph">
+            <section class="info-section" id="the-knowledge-graph">
                 <div class="info-section__inner">
                     <div class="info-section__body">
                         <h2 class="info-section__title">The Knowledge Graph</h2>
@@ -225,6 +250,13 @@
                 </div>
             </footer>
         <!-- </footer> -->
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
