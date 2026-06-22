@@ -395,6 +395,23 @@ body {
     border-radius: 2px;
 }
 
+/* Ontology module blocks - styled to match the explore page etymology block */
+.ontology-module {
+    padding: 1.2rem 1.4rem;
+    border-left: 2px solid var(--old-gold);
+    background: rgba(207, 181, 59, 0.04);
+}
+
+.ontology-module-label {
+    font-family: var(--header-font);
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--old-gold);
+    display: block;
+    margin-bottom: 0.55rem;
+}
+
 /* Tags row */
 .info-section__tags {
     display: flex;
@@ -709,7 +726,7 @@ footer p, footer li {
 }
 
 /* ============================================================
-   EXPLORE PAGE — BEASTiary
+   EXPLORE PAGE - BEASTiary
    ============================================================ */
 
 /* Active nav link highlight  */
