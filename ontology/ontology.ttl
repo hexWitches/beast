@@ -516,7 +516,7 @@
 # ===== OBJECT PROPERTIES ================
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
-                  owl:unionOf (:Creature :ImaginarySymbol :AnatomicalPart :Ability) ] ;
+                  owl:unionOf (:Creature :ImaginarySymbol :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range [ rdf:type owl:Class ; 
                   owl:unionOf (:ImaginaryStructure :Archetype :SymbolicFeature :AlchemicalStage :AlchemicalProcess :AlchemicalPrinciple) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
@@ -543,7 +543,7 @@
 :belongsToImaginaryStructure rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
     rdfs:domain [ rdf:type owl:Class ;
-                owl:unionOf (:Creature :AnatomicalPart :Ability) ] ;
+                owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :ImaginaryStructure ;
     rdfs:label "belongs to imaginary structure"@en ;
     rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
@@ -608,11 +608,10 @@
     rdfs:label "related to"@en ;
     rdfs:comment "A symmetric associative property linking two NarrativeFunction or Archetype individuals that share thematic, structural, or symbolic overlap without one being a specialisation of the other. For example, the function of Guardian and the function of Threshold-Keeper are related but distinct; the Archetype of the Devourer and the Archetype of the Transformer share symbolic territory without subsumption. This property enables lateral navigation across the symbolic vocabulary of the ontology."@en .
 
-
 # ===== INDIVIDUALS - Controlled Vocabulary ================
 :ProvenanceModule rdf:type owl:NamedIndividual , :Module ;
     rdfs:label "Provenance Module (the Anchor)"@en ;
-    rdfs:comment "The Provenance Module documents the historical and textual footprint of every creature in the ontology. It distinguishes between the universal, abstract concept of a beast (Creature) and its source-specific manifestations (Interpretation), allowing the ontology to track how a single entity is described, depicted, or reinterpreted across different authors, periods, and media — from medieval manuscripts to contemporary film. It anchors each Interpretation to the primary Source in which it appears and classifies Sources by their genre and intertextual relationships through :cites and :wasInfluencedBy. It also tracks the diachronic evolution of the linguistic terms used to name creatures, capturing Nomenclature at both the species level and the source-specific level, and tracing each term back through Etymology to its root form and language of origin."@en .
+    rdfs:comment "The Provenance Module documents the historical and textual footprint of every creature in the ontology. It distinguishes between the universal, abstract concept of a beast (Creature) and its source-specific manifestations (Interpretation), allowing the ontology to track how a single entity is described, depicted, or reinterpreted across different authors, periods, and media — from medieval manuscripts to contemporary film. It anchors each Interpretation to the primary Source in which it appears and classifies Sources by their genre and intertextual relationships through :cites and :wasInfluencedBy."@en .
 
 :BiologicalModule rdf:type owl:NamedIndividual , :Module ;
     rdfs:label "Biological Module"@en ;
