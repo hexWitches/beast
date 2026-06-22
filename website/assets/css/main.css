@@ -195,28 +195,36 @@ body {
     animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+.hero-title-wrapper {
+    border: 1px solid rgba(207, 181, 59, 0.3);
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 5vw, 4rem);
+    border-radius: 8px;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
 .hero-title {
     font-family: var(--header-font);
     color: var(--old-gold);
-    font-size: 2.3rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: clamp(4px, 1.5vw, 8px);
     line-height: 1.2;
     margin: 0;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 .hero-description {
     font-family: var(--text-font);
     color: var(--egg-shell);
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
     font-weight: 500;
     line-height: 1.6;
-    letter-spacing: 0.5px;
-    max-width: 820px;
-    margin: 0 auto;
+    letter-spacing: clamp(1px, 0.5vw, 2px);
+    white-space: normal;
+    margin: 0;
     transform: translateY(20px);
     opacity: 0;
     animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
@@ -579,12 +587,12 @@ footer p, footer li {
     }
 
     .hero-title {
-        font-size: 2.8rem;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
         letter-spacing: 4px;
     }
 
     .hero-description {
-        font-size: 1.15rem;
+        font-size: clamp(0.85rem, 1.3vw, 1.1rem);
     }
 }
 
@@ -648,13 +656,19 @@ footer p, footer li {
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
         letter-spacing: 3px;
     }
 
     .hero-description {
-        font-size: 0.95rem;
+        font-size: clamp(0.8rem, 3.5vw, 0.95rem);
         line-height: 1.5;
+    }
+
+    .hero-title-wrapper {
+        padding: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .info-section__inner {
