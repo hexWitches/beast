@@ -1,138 +1,418 @@
 [
   {
+    "id": "creature-bull",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/bull.jpeg",
+      "alt": "Bull",
+      "caption": ""
+    },
+    "name": "Bull",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-cow",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/cow.jpeg",
+      "alt": "Cow",
+      "caption": ""
+    },
+    "name": "Cow",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-dragon",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/dragon.jpeg",
+      "alt": "Dragon",
+      "caption": ""
+    },
+    "name": "Dragon",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-eagle",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/eagle.jpeg",
+      "alt": "Eagle",
+      "caption": ""
+    },
+    "name": "Eagle",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-elf",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/elf.jpeg",
+      "alt": "Elf",
+      "caption": ""
+    },
+    "name": "Elf",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-fairy",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/fairy.jpeg",
+      "alt": "Fairy",
+      "caption": ""
+    },
+    "name": "Fairy",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-fish",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/fish.jpeg",
+      "alt": "Fish",
+      "caption": ""
+    },
+    "name": "Fish",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-giant",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/giant.jpeg",
+      "alt": "Giant",
+      "caption": ""
+    },
+    "name": "Giant",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-goat",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/goat.jpeg",
+      "alt": "Goat",
+      "caption": ""
+    },
+    "name": "Goat",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-hippogriff",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/hippogriff.jpeg",
+      "alt": "Hippogriff",
+      "caption": ""
+    },
+    "name": "Hippogriff",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-horse",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/horse.jpeg",
+      "alt": "Horse",
+      "caption": ""
+    },
+    "name": "Horse",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-lion",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/lion.jpeg",
+      "alt": "Lion",
+      "caption": ""
+    },
+    "name": "Lion",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-mandrake",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/mandrake.jpeg",
+      "alt": "Mandrake",
+      "caption": ""
+    },
+    "name": "Mandrake",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
     "id": "creature-manticore",
     "type": "HybridCreature",
-    "origin": "Persian",
+    "origin": "",
     "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Manticore_%281480%29.jpg",
-      "alt": "Manticore illustration from a medieval bestiary",
-      "caption": "A 15th-century depiction of a Manticore."
+      "src": "assets/images/creatures/manticore.jpeg",
+      "alt": "Manticore",
+      "caption": ""
     },
     "name": "Manticore",
-    "label_latin": "Manticora",
-    "etymology": "From Old Persian <em>martya-xvar</em> (man-eater).",
-    "tags": [
-      { "class": "tag-myth", "label": "Mythological" },
-      { "class": "tag-beast", "label": "Beast" }
-    ],
-    "traits": [
-      { "label": "Head", "value": "Human" },
-      { "label": "Body", "value": "Lion" },
-      { "label": "Tail", "value": "Scorpion" }
-    ],
-    "interpretations": [
-      {
-        "id": "interp-1",
-        "badge": "Pliny the Elder",
-        "title": "Naturalis Historia",
-        "body": "Described as a fierce beast from India with a human face, a lion's body, and a tail tipped with stings like a scorpion.",
-        "source": "<a href='#'>Natural History, Book VIII</a>",
-        "date": "77 AD"
-      },
-      {
-        "id": "interp-2",
-        "badge": "Bestiary",
-        "title": "Symbol of the Devil",
-        "body": "In Christian allegories, the manticore's alluring human face hiding its deadly nature was compared to the deceit of the devil.",
-        "source": "<a href='#'>Aberdeen Bestiary</a>",
-        "date": "1200 AD"
-      }
-    ]
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
   },
   {
-    "id": "creature-griffin",
+    "id": "creature-medusa",
     "type": "HybridCreature",
-    "origin": "Greek",
+    "origin": "",
     "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/8/87/Griffin_at_Saint_Mark%27s_Basilica.jpg",
-      "alt": "Griffin",
-      "caption": "Griffin from Saint Mark's Basilica."
+      "src": "assets/images/creatures/medusa.jpeg",
+      "alt": "Medusa",
+      "caption": ""
     },
-    "name": "Griffin",
-    "label_latin": "Gryphus",
-    "etymology": "From Greek <em>gryps</em>.",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }],
-    "traits": [{ "label": "Head", "value": "Eagle" }, { "label": "Body", "value": "Lion" }],
-    "interpretations": [{ "id": "interp-g1", "badge": "Herodotus", "title": "Histories", "body": "Guardians of gold.", "source": "Histories", "date": "430 BC" }]
-  },
-  {
-    "id": "creature-chimera",
-    "type": "HybridCreature",
-    "origin": "Greek",
-    "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Chimera_of_Arezzo.jpg",
-      "alt": "Chimera",
-      "caption": "Chimera of Arezzo bronze statue."
-    },
-    "name": "Chimera",
-    "label_latin": "Chimaera",
-    "etymology": "From Greek <em>khimaira</em> (she-goat).",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }],
-    "traits": [{ "label": "Head 1", "value": "Lion" }, { "label": "Head 2", "value": "Goat" }, { "label": "Tail", "value": "Snake" }],
-    "interpretations": [{ "id": "interp-c1", "badge": "Homer", "title": "Iliad", "body": "Lion in front, a snake behind, a goat in the middle.", "source": "Iliad VI", "date": "8th century BC" }]
-  },
-  {
-    "id": "creature-basilisk",
-    "type": "Mythological",
-    "origin": "Roman",
-    "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Basilisk_Aldrovandi.jpg",
-      "alt": "Basilisk",
-      "caption": "Woodcut of a Basilisk."
-    },
-    "name": "Basilisk",
-    "label_latin": "Basiliscus",
-    "etymology": "From Greek <em>basiliskos</em> (little king).",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }],
-    "traits": [{ "label": "Body", "value": "Serpent" }, { "label": "Head", "value": "Crested" }, { "label": "Gaze", "value": "Lethal" }],
-    "interpretations": [{ "id": "interp-b1", "badge": "Pliny", "title": "Naturalis Historia", "body": "Serpent king that kills with its stare.", "source": "Book VIII", "date": "77 AD" }]
-  },
-  {
-    "id": "creature-phoenix",
-    "type": "Mythological",
-    "origin": "Greek",
-    "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Phoenix-Fabelwesen.jpg",
-      "alt": "Phoenix",
-      "caption": "Illustration of the mythical Phoenix."
-    },
-    "name": "Phoenix",
-    "label_latin": "Phoenix",
-    "etymology": "From Greek <em>phoinix</em>.",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }, { "class": "tag-bird", "label": "Avian" }],
-    "traits": [{ "label": "Body", "value": "Bird" }, { "label": "Life", "value": "Immortal (rebirth)" }],
-    "interpretations": [{ "id": "interp-p1", "badge": "Ovid", "title": "Metamorphoses", "body": "Reborn from its own ashes.", "source": "Metamorphoses XV", "date": "8 AD" }]
-  },
-  {
-    "id": "creature-sphinx",
-    "type": "HybridCreature",
-    "origin": "Egyptian",
-    "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Great_Sphinx_of_Giza_-_20080716a.jpg",
-      "alt": "Sphinx",
-      "caption": "The Great Sphinx of Giza."
-    },
-    "name": "Sphinx",
-    "label_latin": "Sphinx",
-    "etymology": "From Greek <em>sphigx</em>.",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }],
-    "traits": [{ "label": "Head", "value": "Human" }, { "label": "Body", "value": "Lion" }],
-    "interpretations": [{ "id": "interp-s1", "badge": "Apollodorus", "title": "Bibliotheca", "body": "Riddling creature that terrorized Thebes.", "source": "Bibliotheca", "date": "2nd century AD" }]
+    "name": "Medusa",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
   },
   {
     "id": "creature-minotaur",
     "type": "HybridCreature",
-    "origin": "Greek",
+    "origin": "",
     "image": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/7/7b/The_Minotaur_-_George_Frederic_Watts.jpg",
+      "src": "assets/images/creatures/minotaur.jpeg",
       "alt": "Minotaur",
-      "caption": "Painting of the Minotaur by G.F. Watts."
+      "caption": ""
     },
     "name": "Minotaur",
-    "label_latin": "Minotaurus",
-    "etymology": "From Greek <em>Minotauros</em> (Bull of Minos).",
-    "tags": [{ "class": "tag-myth", "label": "Mythological" }, { "class": "tag-hybrid", "label": "HybridCreature" }],
-    "traits": [{ "label": "Head", "value": "Bull" }, { "label": "Body", "value": "Human" }],
-    "interpretations": [{ "id": "interp-m1", "badge": "Ovid", "title": "Metamorphoses", "body": "Imprisoned in the Labyrinth of Daedalus.", "source": "Metamorphoses VIII", "date": "8 AD" }]
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-ogre",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/ogre.jpeg",
+      "alt": "Ogre",
+      "caption": ""
+    },
+    "name": "Ogre",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-pegasus",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/pegasus.png",
+      "alt": "Pegasus",
+      "caption": ""
+    },
+    "name": "Pegasus",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-phoenix",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/phoenix.jpeg",
+      "alt": "Phoenix",
+      "caption": ""
+    },
+    "name": "Phoenix",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-satyr",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/satyr.jpeg",
+      "alt": "Satyr",
+      "caption": ""
+    },
+    "name": "Satyr",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-scorpion",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/scorpion.jpeg",
+      "alt": "Scorpion",
+      "caption": ""
+    },
+    "name": "Scorpion",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-siren",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/siren.jpeg",
+      "alt": "Siren",
+      "caption": ""
+    },
+    "name": "Siren",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-snake",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/snake.jpeg",
+      "alt": "Snake",
+      "caption": ""
+    },
+    "name": "Snake",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-sphinx",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/sphinx.jpeg",
+      "alt": "Sphinx",
+      "caption": ""
+    },
+    "name": "Sphinx",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-troll",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/troll.jpeg",
+      "alt": "Troll",
+      "caption": ""
+    },
+    "name": "Troll",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-unicorn",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/unicorn.jpeg",
+      "alt": "Unicorn",
+      "caption": ""
+    },
+    "name": "Unicorn",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
   }
 ]

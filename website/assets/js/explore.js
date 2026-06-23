@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const CREATURES_PER_PAGE = 5;
+    const CREATURES_PER_PAGE = 9;
 
     const filterBtns      = document.querySelectorAll(".filter-btn");
     const paginationEl    = document.getElementById("explore-pagination");
@@ -58,34 +58,34 @@ document.addEventListener("DOMContentLoaded", () => {
             img.src = data.image.src;
             img.alt = data.image.alt || "";
         } else {
-            img.src = "invalid-url"; 
+            img.src = "invalid-url";
         }
-        article.querySelector(".creature-img-caption").textContent = data.image.caption;
 
-        // Info
+        // Name & Latin
         article.querySelector(".creature-name").textContent = data.name;
-        article.querySelector(".creature-label-latin").textContent = data.label_latin;
-        article.querySelector(".etymology-text").innerHTML = data.etymology;
+        const latinEl = article.querySelector(".creature-label-latin");
+        if (data.label_latin) {
+            latinEl.textContent = data.label_latin;
+        } else {
+            latinEl.style.display = "none";
+        }
 
-        // Tags
-        const tagsContainer = article.querySelector(".creature-tags");
-        data.tags.forEach(t => {
-            const span = document.createElement("span");
-            span.className = `creature-tag ${t.class}`;
-            span.textContent = t.label;
-            tagsContainer.appendChild(span);
-        });
+        // Composition parts — derive from traits with label "Parts" or similar,
+        // or from a dedicated `parts` field if present
+        const partsContainer = article.querySelector(".creature-parts");
+        const parts = data.parts || [];
+        if (parts.length > 0) {
+            parts.forEach(p => {
+                const span = document.createElement("span");
+                span.className = "creature-part-tag";
+                span.textContent = p;
+                partsContainer.appendChild(span);
+            });
+        } else {
+            partsContainer.style.display = "none";
+        }
 
-        // Traits
-        const traitsContainer = article.querySelector(".creature-traits");
-        data.traits.forEach(t => {
-            const div = document.createElement("div");
-            div.className = "trait-item";
-            div.innerHTML = `<span class="trait-label">${t.label}</span><span class="trait-value">${t.value}</span>`;
-            traitsContainer.appendChild(div);
-        });
-
-        // Click event to open modal
+        // View button — always opens the modal
         const viewBtn = article.querySelector(".view-interp-btn");
         if (viewBtn) {
             viewBtn.addEventListener("click", () => openCreatureModal(data));
@@ -98,10 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function openCreatureModal(data) {
         if (!modalEl) return;
 
-        // Populate basic info
+        // Populate name & latin in header
         modalEl.querySelector(".creature-name").textContent = data.name;
-        modalEl.querySelector(".creature-label-latin").textContent = data.label_latin;
-        modalEl.querySelector(".etymology-text").innerHTML = data.etymology;
+        const modalLatin = modalEl.querySelector(".modal-latin");
+        if (modalLatin) {
+            modalLatin.textContent = data.label_latin || "";
+            modalLatin.style.display = data.label_latin ? "block" : "none";
+        }
 
         // Populate image
         const img = modalEl.querySelector(".modal-creature-img");
@@ -111,17 +114,31 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             img.src = "invalid-url";
         }
-        modalEl.querySelector(".creature-img-caption").textContent = data.image.caption;
+        modalEl.querySelector(".creature-img-caption").textContent = data.image.caption || "";
+
+        // Etymology block
+        const etymologyBlock = modalEl.querySelector("#modal-etymology");
+        const etymologyText  = etymologyBlock ? etymologyBlock.querySelector(".etymology-text") : null;
+        if (etymologyBlock) {
+            if (data.etymology) {
+                etymologyText.innerHTML = data.etymology;
+                etymologyBlock.style.display = "block";
+            } else {
+                etymologyBlock.style.display = "none";
+            }
+        }
 
         // Populate traits
         const traitsContainer = modalEl.querySelector(".creature-traits");
         traitsContainer.innerHTML = "";
-        data.traits.forEach(t => {
-            const div = document.createElement("div");
-            div.className = "trait-item";
-            div.innerHTML = `<span class="trait-label">${t.label}</span><span class="trait-value">${t.value}</span>`;
-            traitsContainer.appendChild(div);
-        });
+        if (data.traits && data.traits.length > 0) {
+            data.traits.forEach(t => {
+                const div = document.createElement("div");
+                div.className = "trait-item";
+                div.innerHTML = `<span class="trait-label">${t.label}</span><span class="trait-value">${t.value}</span>`;
+                traitsContainer.appendChild(div);
+            });
+        }
 
         // Populate interpretations
         const interpsContainer = modalEl.querySelector("#modal-interpretations-grid");

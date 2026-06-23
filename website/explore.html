@@ -73,33 +73,16 @@
             ════════════════════════════════════════════ -->
             <template id="creature-template">
                 <article class="creature-entry content-to-reveal">
-                    <div class="creature-main">
-                        <div class="creature-image-col">
-                            <div class="creature-image-frame">
-                                <img src="" alt="" class="creature-img" onerror="this.parentElement.classList.add('img-placeholder')">
-                                <div class="creature-img-caption"></div>
-                            </div>
+                    <div class="creature-image-frame">
+                        <img src="" alt="" class="creature-img" onerror="this.parentElement.classList.add('img-placeholder')">
+                    </div>
+                    <div class="creature-card-body">
+                        <h2 class="creature-name"></h2>
+                        <p class="creature-label-latin"></p>
+                        <div class="creature-parts">
+                            <!-- Composition parts will be injected here -->
                         </div>
-                        <div class="creature-info-col">
-                            <div class="creature-tags mb-3">
-                                <!-- Tags will be injected here -->
-                            </div>
-                            <h2 class="creature-name"></h2>
-                            <p class="creature-label-latin mb-4"></p>
-
-                            <div class="creature-etymology">
-                                <span class="etymology-label">Etymology</span>
-                                <p class="etymology-text"></p>
-                            </div>
-
-                            <div class="creature-traits">
-                                <!-- Traits will be injected here -->
-                            </div>
-
-                            <div class="mt-4">
-                                <button class="cta-btn cta-btn--ghost view-interp-btn">View Interpretations ✦</button>
-                            </div>
-                        </div>
+                        <button class="cta-btn cta-btn--ghost view-interp-btn">View ✦</button>
                     </div>
                 </article>
             </template>
@@ -121,7 +104,10 @@
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content creature-modal-content">
                         <div class="modal-header creature-modal-header border-0">
-                            <h2 class="modal-title creature-name" id="creatureModalLabel"></h2>
+                            <div>
+                                <h2 class="modal-title creature-name" id="creatureModalLabel"></h2>
+                                <p class="creature-label-latin modal-latin"></p>
+                            </div>
                             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body creature-modal-body">
@@ -133,9 +119,7 @@
                                     </div>
                                 </div>
                                 <div class="creature-info-col">
-                                    <p class="creature-label-latin mb-4"></p>
-
-                                    <div class="creature-etymology">
+                                    <div class="creature-etymology" id="modal-etymology">
                                         <span class="etymology-label">Etymology</span>
                                         <p class="etymology-text"></p>
                                     </div>
