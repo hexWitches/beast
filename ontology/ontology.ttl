@@ -9,7 +9,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix creon: <http://www.ontologydesignpatterns.org/ont/creativity/creon.owl#> .
 @prefix cito: <http://purl.org/spar/cito/> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
@@ -546,7 +545,15 @@
                 owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :ImaginaryStructure ;
     rdfs:label "belongs to imaginary structure"@en ;
-    rdfs:comment "Specifically links a creature or its parts to Durand's structures of the imaginary."@en .
+    rdfs:comment "Specifically links a creature, an ability, a part or an interpretation to Durand's structures of the imaginary."@en .
+
+:embodiesImaginarySymbol rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :symbolizes;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation ) ] ;
+    rdfs:range :ImaginarySymbol ;
+    rdfs:label "embodies imaginary symbol"@en ;
+    rdfs:comment "Specifically links a creature, an ability, a part or an interpretation to Durand's symbols of the imaginary."@en .
 
 :belongsTo rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
@@ -556,8 +563,8 @@
     rdfs:comment "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en .
 
 :isGovernedBy rdf:type owl:ObjectProperty ;
-    owl:propertyChainAxiom (:belongsTo :isGovernedBy) ;
-    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (:ImaginaryStructure :ImaginarySymbol) ] ;
+    owl:propertyChainAxiom (skos:broader :isGovernedBy) ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (:ImaginaryStructure :ImaginarySymbol :Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "is governed by"@en ;

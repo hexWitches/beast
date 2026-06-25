@@ -1,5 +1,5 @@
 {
-    "creatures.csv" : {
+    "creatures.csv": {
         "primary_key": "creature_id",
         "properties": {
             "label_en": {
@@ -16,7 +16,7 @@
             "etymology_id": {
                 "predicate": "beast:hasEtymology",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Etymology"
             },
             "type": {
@@ -33,78 +33,78 @@
             "habitat_id": {
                 "predicate": "beast:hasHabitat",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Habitat"
             },
             "abilities": {
                 "predicate": "beast:hasAbility",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Ability"
             },
             "head_of": {
                 "predicate": "beast:hasHeadOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
             "body_of": {
                 "predicate": "beast:hasBodyOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
             "tail_of": {
                 "predicate": "beast:hasTailOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
             "upper_limbs_of": {
-                "predicate": "beast:hasUpperLimbsOf",
+                "predicate": "beast:hasLimbsOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
             "lower_limbs_of": {
-                "predicate": "beast:hasLowerLimbsOf",
+                "predicate": "beast:hasLimbsOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
             "has_additional_part": {
-                "predicate": "beast:hasAdditionalPart",
+                "predicate": "beast:hasPart",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "part_derived_from": {
-                "predicate": "beast:partDerivedFrom",
+                "predicate": "beast:hasPartDerivedFrom",
                 "type": "URI",
-                "prefix": "beast:"  
+                "prefix": "beastiary:"
             },
             "has_absence_of": {
                 "predicate": "beast:hasAbsenceOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "has_duplication_of": {
                 "predicate": "beast:hasDuplicationOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "has_modification_of": {
                 "predicate": "beast:hasModificationOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "origin_context": {
                 "predicate": "beast:hasOriginContext",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Source"
             }
         }
@@ -116,13 +116,13 @@
             "creature_id": {
                 "predicate": "beast:ofCreature",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Creature"
             },
             "source_id": {
                 "predicate": "beast:appearsIn",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Source"
             },
             "source_term": {
@@ -133,38 +133,44 @@
             "archetype_id": {
                 "predicate": "beast:embodiesArchetype",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Archetype"
             },
             "additional_part": {
                 "predicate": "beast:additionalPart",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "removed_part": {
                 "predicate": "beast:removedPart",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:AnatomicalPart"
             },
             "additional_ability": {
                 "predicate": "beast:additionalAbility",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Ability"
             },
             "removed_ability": {
                 "predicate": "beast:removedAbility",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Ability"
             },
             "citation_id": {
                 "predicate": "beast:hasTextualReference",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Citation"
+            },
+            "narrative_function_id": {
+                "predicate": "beast:hasNarrativeFunction",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:NarrativeFunction"
             }
         }
     },
@@ -175,13 +181,13 @@
             "interpretation_id": {
                 "predicate": "beast:isTextualReferenceOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Interpretation"
             },
             "source_id": {
                 "predicate": "beast:extractedFrom",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Source"
             },
             "sequence_identifier": {
@@ -211,10 +217,10 @@
                 "datatype": "xsd:string",
                 "dynamic_language_column": "language"
             },
-            "creator": {
+            "person_id": {
                 "predicate": "schema:creator",
                 "type": "URI",
-                "prefix": "schema",
+                "prefix": "beastiary:",
                 "target_class": "schema:Person"
             },
             "date_created": {
@@ -230,13 +236,13 @@
             "influenced_by": {
                 "predicate": "beast:wasInfluencedBy",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Source"
             },
             "cites": {
                 "predicate": "beast:cites",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Source"
             },
             "source_url": {
@@ -269,7 +275,7 @@
             }
         }
     },
-    "functions.csv": {
+    "narrative_functions.csv": {
         "primary_key": "function_id",
         "entity_class": "beast:NarrativeFunction",
         "properties": {
@@ -288,7 +294,7 @@
             "related_to": {
                 "predicate": "beast:relatedTo",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:NarrativeFunction"
             }
         }
@@ -312,9 +318,8 @@
             "related_to": {
                 "predicate": "beast:relatedTo",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Archetype"
-
             }
         }
     },
@@ -332,7 +337,7 @@
                 "type": "Literal",
                 "datatype": "xsd:string"
             },
-            "has_meaning": {
+            "meaning": {
                 "predicate": "beast:hasMeaning",
                 "type": "Literal",
                 "datatype": "xsd:string",
@@ -341,7 +346,7 @@
             "creature_id": {
                 "predicate": "beast:isEtymologyOf",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Creature"
             }
         }
@@ -383,11 +388,30 @@
             },
             "wiki_authority": {
                 "predicate": "schema:sameAs",
-                "type": "URI"
+                "type": "URI",
+                "prefix": "wd"
             },
             "viaf_authority": {
                 "predicate": "schema:sameAs",
                 "type": "URI"
+            }
+        }
+    },
+    "durand_scheme.csv": {
+        "primary_key": "subject_id",
+        "entity_class": "subject_type",
+        "properties": {
+            "concept_id": {
+                "predicate": "beast:embodiesImaginarySymbol",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:ImaginarySymbol"
+            },
+            "description": {
+                "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
             }
         }
     }

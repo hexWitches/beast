@@ -1,1 +1,49 @@
-archetype_id,related_to,has_meaning
+archetype_id,label,related_to,has_meaning
+archetype_abandoned_child,Abandoned Child,,The exposed or forsaken infant left to fate yet often marked for a special destiny.
+archetype_androgynous,Androgynous,,"The androgynous is a symbol of unity and completeness, representing the integration and armonization of the polarities of the human being."
+archetype_anti_fairy_tale,Anti Fairy Tale,,Here the character subverts the traditional figure of the evil and goes over a personal and interior journey where it becomes the story hero.
+archetype_belief,Belief,,"The embodiment of belief without belief, her magic fades, that things exist only so long as we believe in them."
+archetype_chaos,Chaos,archetype_violence,"It represents confusion and darkness, symbolizing primordial nature and the indefinitive principle from which everything arises."
+archetype_christmas_elf,Christmas Elf,,"Lives with Santa Claus at the North Pole and acts as his helper. Christmas elves are usually depicted as green- or red-clad, with large, pointy ears and wearing pointy hats."
+archetype_constancy,Constancy,,"Steadfast faithfulness and devotion, unwavering even unto death."
+archetype_cosmic,Cosmic,,"The universal principle or force operating on a cosmic scale, beyond the human."
+archetype_darkness,Darkness,,"They are often linked to shadows, darkness, and the chthonic aspects of the world, such as death, magic, and the hidden forces of nature."
+archetype_defiance,Defiance,,"The figure that stands against oppressive patriarchal symbols of power, an empowered figure of defiance."
+archetype_divine_power,Divine Power,"archetype_semi_divine, archetype_cosmic","The manifestation of godhead and sacred might, the power proper to a deity."
+archetype_divine_punishment,Divine Punishment,,"Retribution inflicted by the gods for transgression, the sacred sanction against hubris."
+archetype_emasculation,Emasculation,,"Privation of the vital force, sovereignty, or active identity. It represents the transition from a place of autonomy and force to a state of submission, fragmentation, or sterile softness."
+archetype_enigma,Enigma,,"The riddle-bearer, embodying hidden knowledge and the demand for interpretation."
+archetype_evil,Evil,,The embodiment of malevolence and moral corruption.
+archetype_exotic_marvel,Exotic Marvel,,"Represents the classic archetype of geographic alterità, other countries seen as spaces full of weird creatures to document and organize."
+archetype_fertility,Fertility,,"The generative principle of abundance, reproduction, and the renewal of life."
+archetype_godmother,Godmother,,The benevolent supernatural protector who guides and aids the protagonist.
+archetype_guardian_hell,Guardian of Hell,archetype_evil,The infernal gatekeeper who guards the threshold of the underworld.
+archetype_healing,Healing,,"The restorative power that cures, mends, and brings back to health."
+archetype_immortality,Immortality,archetype_rebirth,"Deathlessness, the state of never dying or perishing."
+archetype_innocent,Innocent,archetype_purity,"The pure, guiltless figure untouched by malice or corruption."
+archetype_justice,Justice,,The principle of right order and equitable judgment.
+archetype_love,Love,,"The embodiment of devoted, transcendent love."
+archetype_magic_folk,Magic Folk,,The race of magical beings standing apart from ordinary humanity.
+archetype_metamorphosis,Metamorphosis,,The principle of transformation and change of form as such.
+archetype_mourner,Mourner,archetype_mourner,The figure defined by grief and lament for a loss.
+archetype_natural_man,Natural Man,,"A human being reconducted to his biological state and primordial existence, deprived from cultural superstructure."
+archetype_natural_marvel,Natural Marvel,,The wonder of the natural world rationalized as a marvel rather than a monster.
+archetype_parasite,Parasite,,"An organism whose life depends on the exploitation of another being, causing damage to it."
+archetype_poetic_inspiration,Poetic Inspiration,,Represents the poetic inspiration that the muses give to have the spontaneous artistic and intellectual brilliance.
+archetype_power,Power,,"Worldly sovereignty and dynastic might, the power of rule and dominion."
+archetype_pride,Pride,,"Overweening self-exaltation, the vice of superbia, the base substance of transformation."
+archetype_prima_materia,Prima Materia,archetype_cosmic,The alchemical first matter.
+archetype_protection,Protection,,The role of shielding and safeguarding from harm.
+archetype_purity,Purity,,In medieval times it represents moral purity and the untouchable nature of the soul also related to verginity.
+archetype_raw_instinct,Raw Instinct,,"Represents raw and primal fears like famine, lack of intelligence and the danger of the wilderness, sometimes also misunderstood outcast."
+archetype_rebirth,Rebirth,archetype_metamorphosis,Death reintegrated as a prelude to renewal; the cycle of dying and returning to new life.
+archetype_resilience,Resilience,archetype_defiance,The figure of endurance that withstands and recovers from oppression or adversity.
+archetype_seduction,Seduction,archetype_raw_instinct,"Someone who tries to induce or attract someone to guilt, sin, or to do something that one should not; the danger of untamed mundane passions and the uncontrolled urges of the flesh."
+archetype_semi_divine,Semi-Divine,,"Represents immortal beings, of noble character and superior skills."
+archetype_spirit,Spirit,,"The numinous animating presence, a being of pure spirit or nature."
+archetype_strenght,Strength,archetype_protection,Heroic physical power and might.
+archetype_sublime,Sublime,,The fusion of terror and beauty into an overwhelming aesthetic.
+archetype_uncanny,Uncanny,archetype_sublime,The unsettling familiarity-in-strangeness that provokes dread.
+archetype_victim,Victim,archetype_abandoned_child,"The wronged or suffering figure, harmed and made vulnerable by others."
+archetype_violence,Violence,,Brute destructive force and aggression.
+archetype_wisdom,Wisdom,archetype_enigma,"Deep knowledge, insight, sagacity, and the grasp of truth."
