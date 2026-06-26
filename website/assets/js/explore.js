@@ -22,15 +22,330 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentFilter = "all";
     let currentPage   = 1;
 
+    const imageMap = {
+        "androgino": "androgino.jpg",
+        "bull": "bull.jpg",
+        "cow": "cow.jpeg",
+        "dragon": "dragon.jpg",
+        "eagle": "eagle.jpg",
+        "elf": "elf.jpg",
+        "fairy": "fairy.jpg",
+        "fish": "fish.jpeg",
+        "giant": "giant.jpg",
+        "goat": "goat.jpeg",
+        "hippogriff": "hippogriff.jpg",
+        "horse": "horse.jpeg",
+        "lion": "lion.jpg",
+        "mandrake": "mandrake.jpg",
+        "manticore": "manticore.jpg",
+        "medusa": "medusa.jpg",
+        "minotaur": "minotaur.jpg",
+        "ogre": "ogre.jpg",
+        "pegasus": "pegasus.png",
+        "phoenix": "phoenix.jpg",
+        "satyr": "satyr.jpg",
+        "scorpion": "scorpion.jpeg",
+        "siren": "siren.jpeg",
+        "snake": "snake.jpg",
+        "sphinx": "sphinx.jpg",
+        "troll": "troll.jpg",
+        "unicorn": "unicorn.jpg",
+        "hermaphrodite": "androgino.jpg"
+    };
+
+    // Helper functions to handle the JSON-LD structure safely
+    function asArray(val) {
+        if (!val) return [];
+        return Array.isArray(val) ? val : [val];
+    }
+    
+    function getValue(val) {
+        if (!val) return "";
+        if (typeof val === "string") return val;
+        if (val["@value"]) return val["@value"];
+        return "";
+    }
+    
+    function getId(val) {
+        if (!val) return null;
+        if (typeof val === "string") return val;
+        if (val["@id"]) return val["@id"];
+        return null;
+    }
+
     // ── Fetch Data and Initialize ──────────────────────────────────────────
-    d3.json("assets/data/placeholder_creatures.json").then(data => {
-        if (!data || data.length === 0) {
+    d3.json("assets/data/graph.jsonld").then(rawData => {
+        const graphData = rawData["@graph"] || rawData;
+        if (!graphData || !Array.isArray(graphData) || graphData.length === 0) {
             listingSection.innerHTML = "<p style='text-align:center; color:rgba(207,181,59,0.5);'>No creatures found in the BEASTiary yet.</p>";
             paginationEl.style.display = "none";
             return;
         }
+
+        // Map graph data by @id for easy lookup
+        const graphMap = {};
+        graphData.forEach(node => {
+            if (node["@id"]) {
+                graphMap[node["@id"]] = node;
+            }
+        });
+
+        const creaturesNodes = graphData.filter(node => {
+            const types = asArray(node["@type"]);
+            return types.includes("beast:Creature") || types.includes("beast:HybridCreature") || types.includes("beast:RealAnimal");
+        });
+
+        const parsedCreatures = creaturesNodes.map(node => {
+            const idUri = node["@id"];
+            const baseId = idUri.split("_").pop(); // e.g. "dragon" from "beastiary:creature_dragon"
+            const types = asArray(node["@type"]);
+            const type = types.includes("beast:HybridCreature") ? "HybridCreature" : "Mythological";
+            
+            // Name
+            let name = getValue(node["http://www.w3.org/2000/01/rdf-schema#label"]);
+            if (!name) name = baseId.charAt(0).toUpperCase() + baseId.slice(1);
+            
+            const altName = getValue(node["beast:hasAlternativeName"]);
+            const label_latin = altName || ""; 
+
+            // Image
+            const imgFilename = imageMap[baseId] || `${baseId}.jpg`;
+            const image = {
+                src: `assets/images/creatures/${imgFilename}`,
+                alt: name,
+                caption: ""
+            };
+
+            // Parts
+            const parts = [];
+            asArray(node["beast:hasPart"]).forEach(p => {
+                const pId = getId(p);
+                if (pId) {
+                    const pNode = graphMap[pId];
+                    if (pNode && pNode["http://www.w3.org/2000/01/rdf-schema#label"]) {
+                        parts.push(getValue(pNode["http://www.w3.org/2000/01/rdf-schema#label"]));
+                    } else {
+                        let partStr = pId.split(":").pop().split("_").join(" ");
+                        partStr = partStr.replace(/^part /i, '');
+                        parts.push(partStr);
+                    }
+                }
+            });
+
+            // Traits
+            const traits = [];
+            const addTrait = (predicate, label) => {
+                asArray(node[predicate]).forEach(t => {
+                    const tId = getId(t);
+                    if (tId) {
+                        const tNode = graphMap[tId];
+                        let val = "";
+                        if (tNode && tNode["http://www.w3.org/2000/01/rdf-schema#label"]) {
+                            val = getValue(tNode["http://www.w3.org/2000/01/rdf-schema#label"]);
+                        } else {
+                            val = tId.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
+                        }
+                        traits.push({ label, value: val });
+                    }
+                });
+            };
+            addTrait("beast:hasAbility", "Ability");
+            addTrait("beast:hasDiet", "Diet");
+            addTrait("beast:hasHabitat", "Habitat");
+
+            // Etymology
+            let etymology = "";
+            const etyRefs = asArray(node["beast:hasEtymology"]);
+            if (etyRefs.length > 0) {
+                const etyId = getId(etyRefs[0]);
+                const etyNode = graphMap[etyId];
+                if (etyNode) {
+                    etymology = getValue(etyNode["beast:hasMeaning"]);
+                }
+            }
+            if (!etymology && node["http://www.w3.org/2000/01/rdf-schema#comment"]) {
+                etymology = getValue(node["http://www.w3.org/2000/01/rdf-schema#comment"]);
+            }
+
+            // Origin
+            let origin = "";
+            const originRefs = asArray(node["beast:hasOriginContext"]);
+            if (originRefs.length > 0) {
+                const originId = getId(originRefs[0]);
+                origin = originId.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
+            }
+
+            // Interpretations
+            const interpretations = [];
+            graphData.forEach(gNode => {
+                if (asArray(gNode["@type"]).includes("beast:Interpretation")) {
+                    const ofCreatureRefs = asArray(gNode["beast:ofCreature"]);
+                    if (ofCreatureRefs.some(ref => getId(ref) === idUri)) {
+                        
+                        let interpTitle = getValue(gNode["http://www.w3.org/2000/01/rdf-schema#label"]) || "";
+                        let interpBody = getValue(gNode["http://www.w3.org/2000/01/rdf-schema#comment"]);
+                        let interpSource = "";
+                        let interpDate = "";
+                        let interpBadge = "Source";
+                        let interpAuthor = "";
+                        let interpViaf = "";
+                        let interpWikidata = "";
+                        let sourceUrl = "";
+                        let isVisualOrMovie = false;
+
+                        const sourceRefs = asArray(gNode["beast:appearsIn"]);
+                        if (sourceRefs.length > 0) {
+                            const sourceId = getId(sourceRefs[0]);
+                            const sourceNode = graphMap[sourceId];
+                            if (sourceNode) {
+                                interpSource = getValue(sourceNode["dcterms:title"]) || getValue(sourceNode["http://www.w3.org/2000/01/rdf-schema#label"]);
+                                interpDate = getValue(sourceNode["schema:dateCreated"]);
+                                sourceUrl = getValue(sourceNode["schema:url"]);
+                                const sourceTypes = asArray(sourceNode["@type"]).map(getId);
+                                
+                                const specificType = sourceTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source");
+                                if (specificType) {
+                                    interpBadge = specificType.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
+                                }
+
+                                if (sourceTypes.includes("beast:Movie") || sourceTypes.includes("beast:VisualArtwork") || sourceTypes.includes("beast:Film")) {
+                                    isVisualOrMovie = true;
+                                }
+
+                                // Extract author name
+                                const creatorRefs = asArray(sourceNode["schema:creator"]);
+                                if (creatorRefs.length > 0) {
+                                    const creatorId = getId(creatorRefs[0]);
+                                    const creatorNode = graphMap[creatorId];
+                                    if (creatorNode) {
+                                        const given = getValue(creatorNode["foaf:givenName"]) || "";
+                                        const family = getValue(creatorNode["foaf:familyName"]) || "";
+                                        interpAuthor = [given, family].filter(Boolean).join(" ");
+
+                                        // Extract authority file links
+                                        const sameAsRefs = asArray(creatorNode["schema:sameAs"]);
+                                        sameAsRefs.forEach(ref => {
+                                            const refId = getId(ref);
+                                            if (refId) {
+                                                if (refId.startsWith("http://viaf.org") || refId.startsWith("https://viaf.org")) {
+                                                    interpViaf = refId;
+                                                } else if (refId.startsWith("wd:")) {
+                                                    interpWikidata = "https://www.wikidata.org/wiki/" + refId.slice(3);
+                                                }
+                                            }
+                                        });
+                                    }
+                                }
+
+                                if (!interpTitle) {
+                                    interpTitle = interpSource;
+                                }
+                            }
+                        }
+
+                        // Textual References (also extract source from citation's extractedFrom if needed)
+                        const textRefs = asArray(gNode["beast:hasTextualReference"]);
+                        if (textRefs.length > 0) {
+                            const textId = getId(textRefs[0]);
+                            const textNode = graphMap[textId];
+                            if (textNode) {
+                                if (!interpBody) {
+                                    interpBody = getValue(textNode["beast:hasPassageText"]);
+                                }
+                                // If no source was found via appearsIn, extract it from the citation
+                                if (!interpSource) {
+                                    const extractedFromRefs = asArray(textNode["beast:extractedFrom"]);
+                                    if (extractedFromRefs.length > 0) {
+                                        const srcId = getId(extractedFromRefs[0]);
+                                        const srcNode = graphMap[srcId];
+                                        if (srcNode) {
+                                            interpSource = getValue(srcNode["dcterms:title"]) || getValue(srcNode["http://www.w3.org/2000/01/rdf-schema#label"]);
+                                            interpDate = getValue(srcNode["schema:dateCreated"]);
+                                            sourceUrl = getValue(srcNode["schema:url"]);
+                                            const srcTypes = asArray(srcNode["@type"]).map(getId);
+                                            const specificType = srcTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source");
+                                            if (specificType) {
+                                                interpBadge = specificType.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
+                                            }
+                                            if (srcTypes.includes("beast:Movie") || srcTypes.includes("beast:VisualArtwork") || srcTypes.includes("beast:Film")) {
+                                                isVisualOrMovie = true;
+                                            }
+                                            const creatorRefs2 = asArray(srcNode["schema:creator"]);
+                                            if (creatorRefs2.length > 0 && !interpAuthor) {
+                                                const creatorNode2 = graphMap[getId(creatorRefs2[0])];
+                                                if (creatorNode2) {
+                                                    const given = getValue(creatorNode2["foaf:givenName"]) || "";
+                                                    const family = getValue(creatorNode2["foaf:familyName"]) || "";
+                                                    interpAuthor = [given, family].filter(Boolean).join(" ");
+                                                    asArray(creatorNode2["schema:sameAs"]).forEach(ref => {
+                                                        const refId = getId(ref);
+                                                        if (refId) {
+                                                            if (refId.startsWith("http://viaf.org") || refId.startsWith("https://viaf.org")) interpViaf = refId;
+                                                            else if (refId.startsWith("wd:")) interpWikidata = "https://www.wikidata.org/wiki/" + refId.slice(3);
+                                                        }
+                                                    });
+                                                }
+                                            }
+                                            if (!interpTitle) interpTitle = interpSource;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        // Convert / to line breaks in passage text
+                        if (interpBody) {
+                            interpBody = interpBody.replace(/\s*\/\s*/g, '<br>');
+                        }
+
+                        // Divergent parts
+                        const formatDiv = ref => {
+                            const pId = getId(ref);
+                            if (!pId) return null;
+                            const pNode = graphMap[pId];
+                            return (pNode && pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
+                                ? getValue(pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
+                                : pId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ').replace(/^part /i, '').replace(/^ability /i, '');
+                        };
+                        const addedParts = asArray(gNode["beast:additionalPart"]).map(formatDiv).filter(Boolean);
+                        const removedParts = asArray(gNode["beast:removedPart"]).map(formatDiv).filter(Boolean);
+                        const addedAbilities = asArray(gNode["beast:additionalAbility"]).map(formatDiv).filter(Boolean);
+                        const removedAbilities = asArray(gNode["beast:removedAbility"]).map(formatDiv).filter(Boolean);
+
+                        interpretations.push({
+                            id: gNode["@id"],
+                            badge: interpBadge,
+                            title: interpTitle,
+                            body: interpBody || "No description provided.",
+                            author: interpAuthor,
+                            viafUrl: interpViaf,
+                            wikidataUrl: interpWikidata,
+                            date: interpDate,
+                            sourceUrl: isVisualOrMovie ? sourceUrl : "",
+                            divergent: { addedParts, removedParts, addedAbilities, removedAbilities }
+                        });
+                    }
+                }
+            });
+
+            return {
+                id: "creature-" + baseId,
+                type,
+                origin,
+                image,
+                name,
+                label_latin,
+                etymology,
+                tags: [],
+                parts,
+                traits,
+                interpretations
+            };
+        });
+
+        // Alphabetize creatures by name
+        parsedCreatures.sort((a, b) => a.name.localeCompare(b.name));
         
-        data.forEach(creature => {
+        parsedCreatures.forEach(creature => {
             const el = createCreatureElement(creature);
             listingSection.appendChild(el);
         });
@@ -70,15 +385,14 @@ document.addEventListener("DOMContentLoaded", () => {
             latinEl.style.display = "none";
         }
 
-        // Composition parts — derive from traits with label "Parts" or similar,
-        // or from a dedicated `parts` field if present
         const partsContainer = article.querySelector(".creature-parts");
         const parts = data.parts || [];
         if (parts.length > 0) {
             parts.forEach(p => {
                 const span = document.createElement("span");
                 span.className = "creature-part-tag";
-                span.textContent = p;
+                // Capitalize first letter
+                span.textContent = p.charAt(0).toUpperCase() + p.slice(1);
                 partsContainer.appendChild(span);
             });
         } else {
@@ -154,9 +468,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 iCard.querySelector(".interp-source-badge").textContent = interp.badge;
                 iCard.querySelector(".interp-card-title").textContent = interp.title;
                 iCard.querySelector(".interp-card-body").innerHTML = interp.body;
-                iCard.querySelector(".interp-source").innerHTML = interp.source;
+                
+                const authorBlockEl = iCard.querySelector(".interp-author-block");
+                const authorEl = iCard.querySelector(".interp-author");
+                if (interp.author) {
+                    authorEl.textContent = interp.author;
+                    authorBlockEl.style.display = "block";
+                }
+
+                const authorityEl = iCard.querySelector(".interp-authority");
+                const viafEl = iCard.querySelector(".interp-viaf");
+                const wikidataEl = iCard.querySelector(".interp-wikidata");
+                if (interp.viafUrl || interp.wikidataUrl) {
+                    authorityEl.style.display = "flex";
+                    if (interp.viafUrl) {
+                        viafEl.href = interp.viafUrl;
+                        viafEl.style.display = "inline-block";
+                    }
+                    if (interp.wikidataUrl) {
+                        wikidataEl.href = interp.wikidataUrl;
+                        wikidataEl.style.display = "inline-block";
+                    }
+                }
+
                 iCard.querySelector(".interp-date").textContent = interp.date;
                 
+                const urlEl = iCard.querySelector(".interp-url");
+                if (interp.sourceUrl) {
+                    urlEl.href = interp.sourceUrl;
+                    urlEl.style.display = "inline-block";
+                }
+
+                const divEl = iCard.querySelector(".interp-divergent");
+                const divList = iCard.querySelector(".divergent-list");
+                let divItems = [];
+                interp.divergent.addedParts.forEach(p => divItems.push(`<li>Added part: <span style="color:var(--egg-shell);">${p}</span></li>`));
+                interp.divergent.removedParts.forEach(p => divItems.push(`<li>Removed part: <span style="color:var(--egg-shell);">${p}</span></li>`));
+                interp.divergent.addedAbilities.forEach(p => divItems.push(`<li>Added ability: <span style="color:var(--egg-shell);">${p}</span></li>`));
+                interp.divergent.removedAbilities.forEach(p => divItems.push(`<li>Removed ability: <span style="color:var(--egg-shell);">${p}</span></li>`));
+                
+                if (divItems.length > 0) {
+                    divList.innerHTML = divItems.join("");
+                    divEl.style.display = "block";
+                }
+
                 // Add staggered animation delay inside modal
                 iCard.style.transitionDelay = `${index * 60}ms`;
                 interpsContainer.appendChild(iCard);

@@ -170,18 +170,22 @@ beastiary:source_book_imaginary_beings a beast:LiteraryWork ;
     schema:dateCreated "1957"^^xsd:gYear .
 
 beastiary:ability_courage a beast:Ability ;
+    rdfs:label "Courage"@en ;
     rdfs:comment "Courage belongs to the ascensional register of virile, heroic archetypes (the warrior, celestial royalty); it is the upward, transcendent virtue that confronts and rises above fear and the threat of time."@en ;
     beast:embodiesImaginarySymbol beast:ascensional_symbol .
 
 beastiary:ability_dance a beast:Ability ;
+    rdfs:label "Dance"@en ;
     rdfs:comment "Rhythmic, repetitive movement embodies the cyclical \"rhythmic constants that govern natural phenomena,\" the patterned return that reconciles the imagination with passing time."@en ;
     beast:embodiesImaginarySymbol beast:cyclical_symbol .
 
 beastiary:ability_deadly_scream a beast:Ability ;
+    rdfs:label "Deadly scream"@en ;
     rdfs:comment "The lethal cry is formless sonic terror erupting from the unknown, enacting the nyctomorphic voracity of night that dissolves the listener into the abyss."@en ;
     beast:embodiesImaginarySymbol beast:nyctomorphic_symbol .
 
 beastiary:ability_fire_breathing a beast:Ability ;
+    rdfs:label "Fire breathing"@en ;
     rdfs:comment "Fire-breathing is the consuming, devouring jaw of the beast, fitting the teriomorphic register of feral, annihilating chaos."@en ;
     beast:embodiesImaginarySymbol beast:teriomorphic_symbol .
 
@@ -194,16 +198,24 @@ beastiary:ability_hypnotic_gaze a beast:Ability ;
     beast:embodiesImaginarySymbol beast:nyctomorphic_symbol .
 
 beastiary:ability_petrifying_gaze a beast:Ability ;
+    rdfs:label "Petrifying gaze"@en ;
     rdfs:comment "Turning living flesh to stone is the catamorphic degradation of flesh: the body fixed, fallen, and hardened out of life."@en ;
     beast:embodiesImaginarySymbol beast:catamorphic_symbol .
 
+beastiary:ability_play_the_flute rdfs:label "Play the flute"@en .
+
+beastiary:ability_purify_water_or_poisson rdfs:label "Purify water or poison"@en .
+
 beastiary:ability_self-renewal a beast:Ability ;
+    rdfs:label "Self-renewal"@en ;
     rdfs:comment "Self-renewal is the cyclical symbol itself: death reintegrated as a necessary phase of an incessant movement in which every ending is the prelude to rebirth."@en ;
     beast:embodiesImaginarySymbol beast:cyclical_symbol .
 
 beastiary:ability_shapeshifting a beast:Ability ;
     rdfs:comment "Shapeshifting enacts the inversive logic of transformation and doubling, by which a single being turns into its other."@en ;
     beast:embodiesImaginarySymbol beast:inversion_symbol .
+
+beastiary:ability_swim rdfs:label "Swim"@en .
 
 beastiary:archetype_androgynous a beast:Archetype ;
     rdfs:label "Androgynous"@en ;
@@ -2236,9 +2248,14 @@ beastiary:source_vase a beast:VisualArtwork ;
     beast:cites beastiary:source_odissea_omero ;
     beast:wasInfluencedBy beastiary:source_odissea_omero .
 
+beastiary:ability_accumulate_treasures rdfs:label "Accumulate treasures"@en .
+
 beastiary:ability_immortal a beast:Ability ;
+    rdfs:label "Immortal"@en ;
     rdfs:comment "Deathlessness expresses the ascensional refusal of mortality, the upward transcendence that escapes the degradation of time."@en ;
     beast:embodiesImaginarySymbol beast:ascensional_symbol .
+
+beastiary:ability_magical_powers rdfs:label "Magical powers"@en .
 
 beastiary:archetype_abandoned_child a beast:Archetype ;
     rdfs:label "Abandoned Child"@en ;
@@ -2598,10 +2615,12 @@ beastiary:source_unendliche_geschichte a beast:LiteraryWork ;
     schema:dateCreated "1979"^^xsd:gYear .
 
 beastiary:ability_poisonous a beast:Ability ;
+    rdfs:label "Poisonous"@en ;
     rdfs:comment "Aggressive natural weaponry expresses the teriomorphic \"enemy symbol\" of feral chaos and the bestial threat of the striking attack."@en ;
     beast:embodiesImaginarySymbol beast:teriomorphic_symbol .
 
 beastiary:ability_sing a beast:Ability ;
+    rdfs:label "Sing"@en ;
     rdfs:comment "Song as harmonious, rhythmic utterance expresses the cyclical register of patterned, reassuring repetition."@en ;
     beast:embodiesImaginarySymbol beast:cyclical_symbol .
 
@@ -2666,6 +2685,7 @@ beastiary:source_peer_gynt a beast:Play ;
     beast:wasInfluencedBy beastiary:source_norske_folkeeventyr .
 
 beastiary:ability_strenght a beast:Ability ;
+    rdfs:label "Strength"@en ;
     rdfs:comment "Heroic, virile strenght belongs to the ascensional repertoire of warrior and royal archetypes, it indicates the power to overcome the forces of time."@en ;
     beast:embodiesImaginarySymbol beast:ascensional_symbol .
 
@@ -2773,6 +2793,7 @@ beastiary:ability_posing_riddles a beast:Ability ;
     beast:embodiesImaginarySymbol beast:diaretic_symbol .
 
 beastiary:ability_speed a beast:Ability ;
+    rdfs:label "Speed"@en ;
     rdfs:comment "Durand's scheme ties the teriomorphic directly to \"restlessness caused by rapid, undisciplined movement\" and \"fleeing from devouring time,\" making animal speed a near-definitional fit."@en ;
     beast:embodiesImaginarySymbol beast:teriomorphic_symbol .
 
@@ -3052,6 +3073,7 @@ beastiary:source_biblioteca a beast:LiteraryWork ;
     schema:temporalCoverage "I - II a.C."^^xsd:string .
 
 beastiary:ability_fly a beast:Ability ;
+    rdfs:label "Fly"@en ;
     rdfs:comment "Flight enacts the same ascensional drive as the wing: an upward movement toward the pure, the divine, and the metaphysical heights, expressing the symbolic refusal of death through elevation"@en ;
     beast:embodiesImaginarySymbol beast:ascensional_symbol .
 

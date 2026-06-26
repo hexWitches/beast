@@ -397,6 +397,29 @@
             }
         }
     },
+    "abilities.csv": {
+        "primary_key": "ability_id",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Ability"
+            },
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "description": {
+                "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
+    },
     "durand_scheme.csv": {
         "primary_key": "subject_id",
         "entity_class": "subject_type",

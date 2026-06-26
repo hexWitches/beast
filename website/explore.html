@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="keywords" content="Ontology, Bestiari, Knowledge Representation and Extraction, Creatures, Bestiary">
-        <meta name="description" content="Explore the creatures of the BEAST knowledge graph - hybrid beings from ancient bestiaries, their biological traits, etymologies, and cross-cultural interpretations.">
+        <meta name="description" content="Explore the creatures of the BEASTiary knowledge graph">
         <meta name="author" content="Maria Juliana Gamboa Nivia, Miriana Pinto, Sara Roggiani, Alice Spadavecchia">
 
         <!-- Favicon -->
@@ -53,7 +53,7 @@
                 <div class="explore-hero-inner">
                     <h1 class="explore-title">Explore the BEASTiary</h1>
                     <p class="explore-subtitle">
-                        Browse the creatures catalogued through the BEAST ontology - each entry traces the creature's anatomy, etymology, and the spectrum of meanings attributed to it across time and sources.
+                        Browse the creatures catalogued through the BEAST ontology - each entry traces the creature's anatomy, etymology, and the spectrum of interpretations  across time and sources.
                     </p>
                     <div class="explore-filter-bar" role="toolbar" aria-label="Filter creatures">
                         <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
@@ -91,10 +91,21 @@
                 <div class="interpretation-card content-to-reveal">
                     <div class="interp-source-badge"></div>
                     <h4 class="interp-card-title"></h4>
+                    <div class="interp-author-block" style="display: none; margin-bottom: 0.5rem;">
+                        <span class="interp-author" style="font-size: 0.78rem; font-family: var(--header-font); letter-spacing: 1.2px; color: var(--egg-shell);"></span>
+                        <div class="interp-authority" style="display: none; gap: 0.4rem; margin-top: 0.3rem;">
+                            <a href="" target="_blank" class="interp-viaf" style="display: none; font-size: 0.65rem; font-family: var(--header-font); letter-spacing: 1px; color: rgba(207,181,59,0.6); text-decoration: none; border: 1px solid rgba(207,181,59,0.25); padding: 0.1rem 0.4rem;">VIAF</a>
+                            <a href="" target="_blank" class="interp-wikidata" style="display: none; font-size: 0.65rem; font-family: var(--header-font); letter-spacing: 1px; color: rgba(207,181,59,0.6); text-decoration: none; border: 1px solid rgba(207,181,59,0.25); padding: 0.1rem 0.4rem;">Wikidata</a>
+                        </div>
+                    </div>
                     <p class="interp-card-body"></p>
+                    <div class="interp-divergent" style="display: none;">
+                        <span class="divergent-title" style="font-size: 0.75rem; font-family: var(--header-font); color: var(--old-gold);">DIVERGENT ELEMENTS</span>
+                        <ul class="divergent-list" style="margin-top: 0.4rem; padding-left: 1.2rem; font-size: 0.8rem; color: rgba(244, 235, 216, 0.8);"></ul>
+                    </div>
                     <div class="interp-meta">
-                        <span class="interp-source"></span>
                         <span class="interp-date"></span>
+                        <a href="" target="_blank" class="interp-url" style="display: none; color: var(--old-gold); margin-left: auto; font-size: 0.8rem; text-decoration: underline;">View Source</a>
                     </div>
                 </div>
             </template>
