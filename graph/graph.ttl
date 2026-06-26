@@ -2721,7 +2721,7 @@ beastiary:creature_minotaur a beast:HybridCreature ;
     beast:hasOriginContext beastiary:GreekMythology ;
     beast:hasTailOf beastiary:creature_bull .
 
-beastiary:creature_ogre a beast:ImaginaryCreature ;
+beastiary:creature_ogre a beast:ImaginaryBeing ;
     rdfs:label "Ogre"@en ;
     beast:hasAbility beastiary:ability_strenght ;
     beast:hasBodyOf beastiary:creature_human ;
@@ -2732,7 +2732,7 @@ beastiary:creature_ogre a beast:ImaginaryCreature ;
     beast:hasOriginContext beastiary:MedievalFolklore .
 
 beastiary:creature_pegasus a beast:Creature,
-        beast:ImaginaryCreature ;
+        beast:ImaginaryBeing ;
     rdfs:label "Pegasus"@en ;
     rdfs:comment "The winged horse embodies the ascensional drive toward verticality and the heavens, the upward flight that transcends earthly gravity and time"@en ;
     beast:embodiesImaginarySymbol beast:ascensional_symbol ;
@@ -2802,7 +2802,7 @@ beastiary:archetype_immortality a beast:Archetype ;
     beast:hasMeaning "Deathlessness, the state of never dying or perishing."@en ;
     beast:relatedTo beastiary:archetype_rebirth .
 
-beastiary:creature_elf a beast:ImaginaryCreature ;
+beastiary:creature_elf a beast:ImaginaryBeing ;
     rdfs:label "Elf"@en ;
     beast:hasAbility beastiary:ability_immortal ;
     beast:hasDiet beast:Omnivorous ;
@@ -2810,7 +2810,7 @@ beastiary:creature_elf a beast:ImaginaryCreature ;
     beast:hasHabitat beastiary:habitat_terrestrial ;
     beast:hasOriginContext beastiary:NordicFolklore .
 
-beastiary:creature_fairy a beast:ImaginaryCreature ;
+beastiary:creature_fairy a beast:ImaginaryBeing ;
     rdfs:label "Fairy"@en ;
     beast:hasAbility beastiary:ability_fly,
         beastiary:ability_magical_powers ;
@@ -2950,7 +2950,7 @@ beastiary:creature_snake a beast:RealAnimal ;
     beast:hasHabitat beastiary:habitat_terrestrial .
 
 beastiary:creature_troll a beast:Creature,
-        beast:ImaginaryCreature ;
+        beast:ImaginaryBeing ;
     rdfs:label "Troll"@en ;
     beast:embodiesImaginarySymbol beast:nyctomorphic_symbol ;
     beast:hasAbility beastiary:ability_accumulate_treasures ;
@@ -2979,7 +2979,7 @@ beastiary:source_orlando_furioso a beast:LiteraryWork ;
     schema:dateCreated "1516"^^xsd:gYear .
 
 beastiary:creature_giant a beast:Creature,
-        beast:ImaginaryCreature ;
+        beast:ImaginaryBeing ;
     rdfs:label "Giant"@en ;
     beast:embodiesImaginarySymbol beast:catamorphic_symbol ;
     beast:hasAbility beastiary:ability_strenght ;
@@ -3090,7 +3090,7 @@ beastiary:source_aberdeen_bestiary a beast:Bestiary ;
     schema:creator beastiary:Unknown ;
     schema:dateCreated "c. 1200"^^xsd:gYear .
 
-beastiary:creature_dragon a beast:ImaginaryCreature ;
+beastiary:creature_dragon a beast:ImaginaryBeing ;
     rdfs:label "Dragon"@en ;
     beast:hasAbility beastiary:ability_fire_breathing,
         beastiary:ability_fly ;
@@ -3114,7 +3114,7 @@ beastiary:source_fantastic_beasts a beast:LiteraryWork ;
     schema:dateCreated "2001"^^xsd:gYear .
 
 beastiary:creature_phoenix a beast:Creature,
-        beast:ImaginaryCreature ;
+        beast:ImaginaryBeing ;
     rdfs:label "Phoenix"@en ;
     rdfs:comment "The phoenix is the supreme cyclical symbol: its death-and-rebirth from ashes is the very image of the Eternal Return, where death is reintegrated as a stage of incessant renewal."@en ;
     beast:embodiesImaginarySymbol beast:cyclical_symbol ;

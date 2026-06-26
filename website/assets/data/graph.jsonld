@@ -17,7 +17,7 @@
       "@id": "beastiary:creature_phoenix",
       "@type": [
         "beast:Creature",
-        "beast:ImaginaryCreature"
+        "beast:ImaginaryBeing"
       ],
       "beast:embodiesImaginarySymbol": {
         "@id": "beast:cyclical_symbol"
@@ -133,7 +133,7 @@
     },
     {
       "@id": "beastiary:creature_elf",
-      "@type": "beast:ImaginaryCreature",
+      "@type": "beast:ImaginaryBeing",
       "beast:hasAbility": {
         "@id": "beastiary:ability_immortal"
       },
@@ -1558,7 +1558,7 @@
     },
     {
       "@id": "beastiary:creature_ogre",
-      "@type": "beast:ImaginaryCreature",
+      "@type": "beast:ImaginaryBeing",
       "beast:hasAbility": {
         "@id": "beastiary:ability_strenght"
       },
@@ -2041,7 +2041,7 @@
       "@id": "beastiary:creature_pegasus",
       "@type": [
         "beast:Creature",
-        "beast:ImaginaryCreature"
+        "beast:ImaginaryBeing"
       ],
       "beast:embodiesImaginarySymbol": {
         "@id": "beast:ascensional_symbol"
@@ -3211,7 +3211,7 @@
     },
     {
       "@id": "beastiary:creature_fairy",
-      "@type": "beast:ImaginaryCreature",
+      "@type": "beast:ImaginaryBeing",
       "beast:hasAbility": [
         {
           "@id": "beastiary:ability_fly"
@@ -3928,7 +3928,7 @@
       "@id": "beastiary:creature_troll",
       "@type": [
         "beast:Creature",
-        "beast:ImaginaryCreature"
+        "beast:ImaginaryBeing"
       ],
       "beast:embodiesImaginarySymbol": {
         "@id": "beast:nyctomorphic_symbol"
@@ -4952,7 +4952,7 @@
       "@id": "beastiary:creature_giant",
       "@type": [
         "beast:Creature",
-        "beast:ImaginaryCreature"
+        "beast:ImaginaryBeing"
       ],
       "beast:embodiesImaginarySymbol": {
         "@id": "beast:catamorphic_symbol"
@@ -7097,7 +7097,7 @@
     },
     {
       "@id": "beastiary:creature_dragon",
-      "@type": "beast:ImaginaryCreature",
+      "@type": "beast:ImaginaryBeing",
       "beast:hasAbility": [
         {
           "@id": "beastiary:ability_fire_breathing"

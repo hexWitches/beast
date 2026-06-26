@@ -90,16 +90,26 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        const IMAGINARY_TYPES = [
+            "beast:HybridCreature",
+            "beast:CompositeCreature",
+            "beast:ImaginaryCreature",
+            "beast:ImaginaryBeing"
+        ];
+
         const creaturesNodes = graphData.filter(node => {
             const types = asArray(node["@type"]);
-            return types.includes("beast:Creature") || types.includes("beast:HybridCreature") || types.includes("beast:RealAnimal");
+            return types.includes("beast:Creature")
+                || types.includes("beast:RealAnimal")
+                || IMAGINARY_TYPES.some(t => types.includes(t));
         });
 
         const parsedCreatures = creaturesNodes.map(node => {
             const idUri = node["@id"];
             const baseId = idUri.split("_").pop(); // e.g. "dragon" from "beastiary:creature_dragon"
             const types = asArray(node["@type"]);
-            const type = types.includes("beast:HybridCreature") ? "HybridCreature" : "Mythological";
+            const isImaginary = IMAGINARY_TYPES.some(t => types.includes(t));
+            const type = isImaginary ? "HybridCreature" : "Mythological";
             
             // Name
             let name = getValue(node["http://www.w3.org/2000/01/rdf-schema#label"]);
@@ -203,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 sourceUrl = getValue(sourceNode["schema:url"]);
                                 const sourceTypes = asArray(sourceNode["@type"]).map(getId);
                                 
-                                const specificType = sourceTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source");
+                                const specificType = sourceTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source" && t !== "beast:Citation");
                                 if (specificType) {
                                     interpBadge = specificType.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
                                 }
@@ -263,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                             interpDate = getValue(srcNode["schema:dateCreated"]);
                                             sourceUrl = getValue(srcNode["schema:url"]);
                                             const srcTypes = asArray(srcNode["@type"]).map(getId);
-                                            const specificType = srcTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source");
+                                            const specificType = srcTypes.find(t => t && t.startsWith("beast:") && t !== "beast:Source" && t !== "beast:Citation");
                                             if (specificType) {
                                                 interpBadge = specificType.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
                                             }

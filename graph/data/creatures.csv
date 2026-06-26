@@ -1,12 +1,12 @@
 creature_id,label_en,alt_name,etymology_id,type,diet,habitat_id,abilities,head_of,body_of,tail_of,upper_limbs_of,lower_limbs_of,has_additional_part,part_derived_from,has_absence_of,has_duplication_of,has_modification_of,origin_context
 creature_bull,Bull,,etymology_bull,RealAnimal,Herbivorous,habitat_terrestrial,,,,,,,,,,,,
 creature_cow,Cow,,etymology_cow,RealAnimal,Herbivorous,habitat_terrestrial,,,,,,,,,,,,
-creature_dragon,Dragon,,etymology_dragon,ImaginaryCreature,Carnivorous,"habitat_terrestrial, habitat_aerial","ability_fly, ability_fire_breathing",,creature_snake,,,,"part_wings, part_crest",,,,,GreekMythology
+creature_dragon,Dragon,,etymology_dragon,ImaginaryBeing,Carnivorous,"habitat_terrestrial, habitat_aerial","ability_fly, ability_fire_breathing",,creature_snake,,,,"part_wings, part_crest",,,,,GreekMythology
 creature_eagle,Eagle,,etymology_eagle,RealAnimal,Carnivorous,habitat_aerial,ability_fly,,,,,,,,,,,
-creature_elf,Elf,,etymology_elf,ImaginaryCreature,Omnivorous,habitat_terrestrial,ability_immortal,,,,,,,,,,,NordicFolklore
-creature_fairy,"Fairy ",,etymology_fairy,ImaginaryCreature,Herbivorous,habitat_terrestrial,"ability_magical_powers, ability_fly",,creature_human,,,,part_wings,,,,,CelticFolklore
+creature_elf,Elf,,etymology_elf,ImaginaryBeing,Omnivorous,habitat_terrestrial,ability_immortal,,,,,,,,,,,NordicFolklore
+creature_fairy,"Fairy ",,etymology_fairy,ImaginaryBeing,Herbivorous,habitat_terrestrial,"ability_magical_powers, ability_fly",,creature_human,,,,part_wings,,,,,CelticFolklore
 creature_fish,Fish,,etymology_fish,RealAnimal,Omnivorous,habitat_aquatic,ability_swim
-creature_giant,"Giant ",,etymology_giant,ImaginaryCreature,Omnivorous,habitat_terrestrial,ability_strenght,,creature_human,,,,,,,,,GreekMythology
+creature_giant,"Giant ",,etymology_giant,ImaginaryBeing,Omnivorous,habitat_terrestrial,ability_strenght,,creature_human,,,,,,,,,GreekMythology
 creature_goat,Goat,,etymology_goat,RealAnimal,Herbivorous,habitat_terrestrial
 creature_hermaphrodite,Hermaphrodite,Androgynous,etymology_hermaphrodite,HybridCreature,Elemental,habitat_terrestrial,ability_strenght,,creature_human,,,,"male_genitals, breasts","creature_female, creature_male",,,,GreekMythology
 creature_hippogriff,Hippogriff,Hippogryph,etymology_hippogriff,HybridCreature,Omnivorous,"habitat_terrestrial, habitat_aerial",ability_fly,creature_eagle,creature_horse,creature_horse,creature_eagle,creature_horse,part_wings,,,,,Renaissance
@@ -16,13 +16,13 @@ creature_mandrake,Mandrake,Mandragora,etymology_mandrake,CompositeCreature,,habi
 creature_manticore,Manticore,,etymology_manticore,HybridCreature,"Carnivorous, man-eater","habitat_terrestrial, India",ability_poisonous,creature_human,creature_lion,creature_scorpion,,,part_three_lines_of_teeth,,,,,PersianMythology
 creature_medusa,Medusa,Gorgon,etymology_medusa,HybridCreature,,habitat_terrestrial,ability_petrifying_gaze,creature_human,creature_human,,,,part_snake_hair,,,,,GreekMythology
 creature_minotaur,Minotaur,Asterion,etymology_minotaur,HybridCreature,Carnivorous,habitat_labyrinth,,creature_bull,creature_human,creature_bull,creature_human,creature_human,,,,,,GreekMythology
-creature_ogre,Ogre,,etymology_ogre,ImaginaryCreature,Carnivorous,"habitat_terrestrial ",ability_strenght,creature_human,creature_human,,,,,,,,,MedievalFolklore
-creature_pegasus,Pegasus,,etymology_pegasus,ImaginaryCreature,Herbivorous,habitat_terrestrial,ability_fly,,creature_horse,,,,part_wings,,,,,GreekMythology
-creature_phoenix,Phoenix,,etymology_phoenix,ImaginaryCreature,Herbivorous,"habitat_terrestrial, habitat_aerial","ability_immortal, ability_self-renewal",,,,,,part_red_and_gold_feathers,creature_eagle,,,,GreekMythology
+creature_ogre,Ogre,,etymology_ogre,ImaginaryBeing,Carnivorous,"habitat_terrestrial ",ability_strenght,creature_human,creature_human,,,,,,,,,MedievalFolklore
+creature_pegasus,Pegasus,,etymology_pegasus,ImaginaryBeing,Herbivorous,habitat_terrestrial,ability_fly,,creature_horse,,,,part_wings,,,,,GreekMythology
+creature_phoenix,Phoenix,,etymology_phoenix,ImaginaryBeing,Herbivorous,"habitat_terrestrial, habitat_aerial","ability_immortal, ability_self-renewal",,,,,,part_red_and_gold_feathers,creature_eagle,,,,GreekMythology
 creature_satyr,Satyr,"Faun, Silenus",etymology_satyr,HybridCreature,Omnivorous,habitat_terrestrial,"ability_play_the_flute, ability_dance",creature_human,creature_human,creature_goat,,creature_goat,part_two_horns,,,,,GreekMythology
 creature_scorpion,Scorpion,,etymology_scorpion,RealAnimal,Carnivorous,habitat_terrestrial,ability_poisonous
 creature_siren,Siren,"Mermaid, Tritonesses",etymology_siren,HybridCreature,Carnivorous,habitat_aquatic,ability_sing,creature_human,creature_human,creature_fish,creature_human,,,,,,,MedievalFolklore
 creature_snake,Snake,,etymology_snake,RealAnimal,Carnivorous,habitat_terrestrial,ability_poisonous
 creature_sphinx,Sphinx,"Great Sphinx of Giza,  Androsphinx",etymology_sphinx,HybridCreature,Carnivorous,habitat_terrestrial,,creature_human,ceature_lion,creature_lion,creature_lion,creature_lion,,,,,,AncientEgypt
-creature_troll,Troll,,etymology_troll,ImaginaryCreature,Carnivorous,"habitat_terrestrial ",ability_accumulate_treasures,creature_human,creature_human,creature_cow,creature_human,creature_human,,,,,,NordicFolklore
+creature_troll,Troll,,etymology_troll,ImaginaryBeing,Carnivorous,"habitat_terrestrial ",ability_accumulate_treasures,creature_human,creature_human,creature_cow,creature_human,creature_human,,,,,,NordicFolklore
 creature_unicorn,Unicorn,Monocerus,etymology_unicorn,HybridCreature,Herbivorous,habitat_terrestrial,ability_purify_water_or_poisson,creature_horse,creature_horse,,,,part_horn,,,,,GreekNaturalHistory
