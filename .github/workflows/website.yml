@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+      - name: Copy ontology and graph data
+        uses: cp -r ontology graph website/
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact

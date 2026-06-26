@@ -3,7 +3,7 @@ from rdflib import Graph
 
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    ttl_path = os.path.join(base_dir, "ontology", "graph.ttl")
+    ttl_path = os.path.join(base_dir, "graph", "graph.ttl")
     output_path = os.path.join(base_dir, "website", "assets", "data", "graph.jsonld")
 
     if not os.path.exists(ttl_path):

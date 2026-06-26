@@ -57,7 +57,7 @@ def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     mapping_path = os.path.join(base_dir, "mapping", "csv_to_graph.json")
     data_dir = os.path.join(base_dir, "ontology", "data")
-    output_path = os.path.join(base_dir, "ontology", "graph.ttl")
+    output_path = os.path.join(base_dir, "graph", "graph.ttl")
 
     # Initialize Graph
     g = Graph()
