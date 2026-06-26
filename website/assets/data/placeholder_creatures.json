@@ -1,0 +1,418 @@
+[
+  {
+    "id": "creature-bull",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/bull.jpeg",
+      "alt": "Bull",
+      "caption": ""
+    },
+    "name": "Bull",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-cow",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/cow.jpeg",
+      "alt": "Cow",
+      "caption": ""
+    },
+    "name": "Cow",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-dragon",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/dragon.jpeg",
+      "alt": "Dragon",
+      "caption": ""
+    },
+    "name": "Dragon",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-eagle",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/eagle.jpeg",
+      "alt": "Eagle",
+      "caption": ""
+    },
+    "name": "Eagle",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-elf",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/elf.jpeg",
+      "alt": "Elf",
+      "caption": ""
+    },
+    "name": "Elf",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-fairy",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/fairy.jpeg",
+      "alt": "Fairy",
+      "caption": ""
+    },
+    "name": "Fairy",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-fish",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/fish.jpeg",
+      "alt": "Fish",
+      "caption": ""
+    },
+    "name": "Fish",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-giant",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/giant.jpeg",
+      "alt": "Giant",
+      "caption": ""
+    },
+    "name": "Giant",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-goat",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/goat.jpeg",
+      "alt": "Goat",
+      "caption": ""
+    },
+    "name": "Goat",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-hippogriff",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/hippogriff.jpeg",
+      "alt": "Hippogriff",
+      "caption": ""
+    },
+    "name": "Hippogriff",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-horse",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/horse.jpeg",
+      "alt": "Horse",
+      "caption": ""
+    },
+    "name": "Horse",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-lion",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/lion.jpeg",
+      "alt": "Lion",
+      "caption": ""
+    },
+    "name": "Lion",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-mandrake",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/mandrake.jpeg",
+      "alt": "Mandrake",
+      "caption": ""
+    },
+    "name": "Mandrake",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-manticore",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/manticore.jpeg",
+      "alt": "Manticore",
+      "caption": ""
+    },
+    "name": "Manticore",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-medusa",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/medusa.jpeg",
+      "alt": "Medusa",
+      "caption": ""
+    },
+    "name": "Medusa",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-minotaur",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/minotaur.jpeg",
+      "alt": "Minotaur",
+      "caption": ""
+    },
+    "name": "Minotaur",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-ogre",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/ogre.jpeg",
+      "alt": "Ogre",
+      "caption": ""
+    },
+    "name": "Ogre",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-pegasus",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/pegasus.png",
+      "alt": "Pegasus",
+      "caption": ""
+    },
+    "name": "Pegasus",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-phoenix",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/phoenix.jpeg",
+      "alt": "Phoenix",
+      "caption": ""
+    },
+    "name": "Phoenix",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-satyr",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/satyr.jpeg",
+      "alt": "Satyr",
+      "caption": ""
+    },
+    "name": "Satyr",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-scorpion",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/scorpion.jpeg",
+      "alt": "Scorpion",
+      "caption": ""
+    },
+    "name": "Scorpion",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-siren",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/siren.jpeg",
+      "alt": "Siren",
+      "caption": ""
+    },
+    "name": "Siren",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-snake",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/snake.jpeg",
+      "alt": "Snake",
+      "caption": ""
+    },
+    "name": "Snake",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-sphinx",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/sphinx.jpeg",
+      "alt": "Sphinx",
+      "caption": ""
+    },
+    "name": "Sphinx",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-troll",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/troll.jpeg",
+      "alt": "Troll",
+      "caption": ""
+    },
+    "name": "Troll",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  },
+  {
+    "id": "creature-unicorn",
+    "type": "HybridCreature",
+    "origin": "",
+    "image": {
+      "src": "assets/images/creatures/unicorn.jpeg",
+      "alt": "Unicorn",
+      "caption": ""
+    },
+    "name": "Unicorn",
+    "label_latin": "",
+    "etymology": "",
+    "tags": [],
+    "traits": [],
+    "interpretations": []
+  }
+]

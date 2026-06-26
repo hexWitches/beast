@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>BEAST</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Ontology, Bestiari, Knowledge Representation and Extraction">
+        <meta name="description" content="">
+        <meta name="author" content="Maria Juliana Gamboa Nivia, Miriana Pinto, Sara Roggiani, Alice Spadavecchia">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/main.css">
+
+        <!-- D3.js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <body class="homepage">
+
+        <header class="header-container">
+            <a href="#" class="brand-section">
+                <img src="assets/images/logo.png" alt="BEAST Logo" class="brand-logo">
+                <span class="brand-title">BEAST</span>
+            </a>
+            <button class="hamburger-btn" aria-label="Toggle menu" id="hamburger-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#the-ontology" class="nav-link-item">The Ontology</a></li>
+                    <li><a href="#the-knowledge-graph" class="nav-link-item">The Knowledge Graph</a></li>
+                    <li><a href="explore.html" class="nav-link-item">BEASTiary</a></li>
+                    <li><a href="#" class="nav-link-item">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="hero-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section" style="min-height: 20vh; padding: 6rem 2rem 0; position: relative;">
+            <div class="hero-content" style="position: relative; z-index: 2;">
+                <div class="hero-title-wrapper">
+                    <h1 class="hero-title">BEAST</h1>
+                    <p class="hero-description" style="color: var(--old-gold); letter-spacing: 2px; margin-top: 1rem;">Creatures, Sources and Symbols <br> Mapping the Imaginary Through Time</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The idea behind the project -->
+        <section class="info-section" id="the-project">
+            <div class="info-section__inner">
+                <div class="info-section__body">
+                    <h2 class="info-section__title">The idea behind the project</h2>
+                        <p class="info-section__text">
+                            Rather than fixing each creature as a single, finished image, this project traces how the same being is imagined, reshaped, and reinterpreted across <strong>sources, ages, and cultures</strong>. A dragon, phoenix, or elf is never a fixed figure: each gains and loses parts, abilities and meanings as it passes from one tradition to another. Such transformations are possible because creatures belong to one of humanity’s oldest imaginative practices: the endless recombination of forms through which cultures have sought to understand themselves and the world around them.
+                        </p>
+                        <p class="info-section__text">
+                            The possibilities of combinatory art are almost infinite - so Borges observed in his <i>Book of Imaginary Beings</i>, and creatures are its perfect demonstration. There is something in the image of a living being that resonates with the human mind, and so, across different ages and latitudes, the same impulse keeps giving rise to invented beings: gods and demons, prodigies and monsters, <strong>beasts both real and fantastic</strong>. They have always been interwoven with human creativity. Every culture has found itself imagining, decoding, or illustrating them - whether as a product of pure fantasy or as an interpretation of the natural world, a way of making the unknown familiar and drawing it into the realm of culture.
+                        </p>
+                        <p class="info-section__text">
+                            Across history these beings have never remained stable. The Greek <i>téras</i> was a divine sign; the Roman <i>monstrum</i> a warning; medieval bestiaries transformed inherited creatures into moral allegories; later centuries carried them into new geographies and new forms. Each age remade them according to its own imagination.
+                        </p>
+                        <p class="info-section__text">
+                            To organize the <strong>symbolic meanings</strong> that creatures carry, the project draws on the work of the French anthropologist Gilbert Durand, in particular his book <i>The Anthropological Structures of the Imaginary</i> (1960). Durand showed that beneath the endless variety of myths and works of art lie a small number of recurring structures: reservoirs of images and symbols that continue to shape how we think, live, and dream.
+                        </p>
+                        <p class="info-section__text">
+                            At the heart of Durand’s model are two symbolic regimes. The <strong>diurnal</strong> is the order of light, height, and separation, expressing the heroic confrontation with time and death. The <strong>nocturnal</strong> is the order of night, descent, and fusion, which instead of fighting time seeks to slow it, to merge with it, and to embrace the cycle. Durand's structures turn a scattered collection of symbolic readings into a coherent map of the imaginary - one that lets us trace not only how a creature's <i>form</i> changes across time, but how its <i>meaning</i> migrates between these two enduring poles of the human imagination.
+                        </p>
+                        <p class="info-section__text">
+                            This project is an attempt to read creatures again. Though their forms change across time and cultures, they continue to express recurring human concerns: fear and desire, death, order and chaos. To follow their transformations is therefore also to trace the history of the imagination itself.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION DIVIDER -->
+            <div class="subtle-divider" aria-hidden="true"></div>
+
+            <!-- Ontology  -->
+            <section class="info-section info-section--alt" id="the-ontology">
+                <div class="info-section__inner">
+                    <div class="info-section__body">
+                        <h2 class="info-section__title">The Ontology</h2>
+                        <p class="info-section__text">
+                            The BEAST Ontology is designed to provide a formal representation of creatures, whether real or imaginary, together with their textual attestations, morphological characteristics, etymological origins, and symbolic meanings. Implemented in <strong>OWL</strong>, it models entities through a structured set of classes and properties, while a complementary <strong>SKOS</strong> concept scheme represents Gilbert Durand's structures of the imaginary. The resulting framework integrates formal knowledge representation with a layer dedicated to symbolic and cultural interpretation.
+                        </p>
+                        <p class="info-section__text">
+                            The Ontology is structured into <strong>three modules</strong>, each representing a distinct layer of knowledge organization. Together, these modules allow the ontology to trace a creature from its historical attestation in a primary text, through its biological description, to its deepest symbolic resonance in the collective imagination.
+                        </p>
+
+                        <div class="ontology-module">
+                            <span class="ontology-module-label">The Provenance Module</span>
+                            <p class="info-section__text">
+                                The Provenance Module documents the historical and textual footprint of every creature in the ontology. It distinguishes between the universal, abstract concept of a beast (<code>:Creature</code>) and its source-specific manifestations (<code>:Interpretation</code>), allowing the ontology to track how a single entity is described, depicted, or reinterpreted across different authors, periods, and media - from medieval manuscripts to contemporary film. It anchors each interpretation to the primary <code>:Source</code> in which it appears and classifies sources by their genre and intertextual relationships through <code>:cites</code> and <code>:wasInfluencedBy</code>.
+                            </p>
+                        </div>
+
+                        <div class="ontology-module">
+                            <span class="ontology-module-label">The Biological Module</span>
+                            <p class="info-section__text">
+                                The Biological Module catalogs the physical and behavioural traits of creatures - whether real or imaginary - as described in Bestiaries and other Sources. It distinguishes <code>:RealAnimal</code> from <code>:ImaginaryBeing</code>, and further classifies the latter into <code>:CompositeCreature</code> and <code>:HybridCreature</code> whose anatomy is derived from two or more real animals. For real animals it documents deformities and monstrous irregularities through a structured vocabulary of anatomical anomaly: absence of a canonical part, duplication, and modification. For imaginary beings it records the anatomical parts they possess and the real animals, plants, or inanimate elements from which those parts are derived. Across all creatures the module captures habitats - distinguishing real geographic environments from mythological or imaginary spaces - diets, and abilities. This layer serves as the primary morphological record that the Symbolic Module then interprets as archetypal and cultural meaning.
+                            </p>
+                        </div>
+
+                        <div class="ontology-module">
+                            <span class="ontology-module-label">The Symbolic Module</span>
+                            <p class="info-section__text">
+                                The Symbolic Module represents the analytical and interpretive layer of the ontology, where art history, literary theory, depth psychology, and anthropology converge. It provides two interlocking frameworks for the symbolic analysis of creatures and their source-specific Interpretations. First, the <code>:DurandImaginary</code> scheme applies Gilbert Durand's anthropological structures of the imaginary to classify creatures according to the Regime (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that governs their symbolic imagery. Second, the archetype and narrative function layer - through <code>:Archetype</code>, <code>:NarrativeFunction</code>, <code>:embodiesArchetype</code>, and <code>:hasNarrativeFunction</code> - distinguishes between the universal psychological pattern a creature instantiates across all its manifestations and the specific contextual role it performs within a given <code>:Source</code>. The module also captures divergences at the level of <code>:Interpretation</code>: the properties <code>:additionalPart</code>, <code>:removedPart</code>, <code>:additionalAbility</code>, and <code>:removedAbility</code> document how a specific author or tradition departs from the canonical image of a creature, and what symbolic meaning those departures carry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION DIVIDER -->
+            <div class="subtle-divider" aria-hidden="true"></div>
+
+            <!-- Knowledge graph -->
+            <section class="info-section" id="the-knowledge-graph">
+                <div class="info-section__inner">
+                    <div class="info-section__body">
+                        <h2 class="info-section__title">The Knowledge Graph</h2>
+                        <p class="info-section__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat mi quis pretium semper. Proin luctus orci ac neque venenatis, quis commodo dolor posuere. Curabitur dignissim sapien quis cursus egestas. Donec blandit auctor arcu, nec pellentesque eros molestie eget. In consectetur aliquam hendrerit. Sed cursus mauris vitae ligula pellentesque, non pellentesque urna aliquet. Fusce placerat mauris enim, nec rutrum purus semper vel. Praesent tincidunt neque eu pellentesque pharetra. Fusce pellentesque est orci.
+                        </p>
+                        <p class="info-section__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat mi quis pretium semper. Proin luctus orci ac neque venenatis, quis commodo dolor posuere. Curabitur dignissim sapien quis cursus egestas. Donec blandit auctor arcu, nec pellentesque eros molestie eget. In consectetur aliquam hendrerit. Sed cursus mauris vitae ligula pellentesque, non pellentesque urna aliquet. Fusce placerat mauris enim, nec rutrum purus semper vel. Praesent tincidunt neque eu pellentesque pharetra. Fusce pellentesque est orci.
+                        </p>
+                        <div class="info-section__actions" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="explore.html" class="cta-btn cta-btn--primary">Explore the BEASTiary</a>
+                            <a href="#" class="cta-btn cta-btn--primary">Query the SPARQL endpoint</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <!-- <footer class="text-white text-center content-to-reveal" id="footer">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">About the project</h5>
+                        <p>
+                            
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-0">Creators</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <a class="fw-bold" href="https://github.com/MariaJGamboa">Maria Juliana Gamboa Nivia</a>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                    </svg>
+                                    mariajuliana.gamboa@studio.unibo.it
+                                </p>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <a class="fw-bold" href="https://github.com/mir-pin">Miriana Pinto</a>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                    </svg>
+                                    miriana.pinto@studio.unibo.it
+                                </p>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <a class="fw-bold" href="https://github.com/sararoggi">Sara Roggiani</a>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                    </svg>
+                                    sara.roggiani2@studio.unibo.it
+                                </p>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-github" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                                <a class="fw-bold" href="https://github.com/alispada">Alice Spadavecchia</a>
+                                <p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                    </svg>
+                                    alice.spadavecchia2@studio.unibo.it
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Copyright -->
+            <!-- <div class="text-center p-3 copyright-text" style="background-color: rgba(0, 0, 0, 0.2);">
+                <p>
+                    All copyrights and related rights on the content remain with their original owners. <br>All copyright on
+                    the typographic and layout choices are 2026 © <a href="https://github.com/hexWitches/beast" target="_blank">BEAST</a>.
+                </p>
+            </div> -->
+
+
+            <footer class="footer">
+                <div class="footer-inner">
+                <div class="footer-brand-row">
+                    <div class="footer-brand">BEAST</div>
+                    <ul class="footer-inline-links">
+                    <li><a target="_blank" rel="noopener" href="">Ontology</a></li>
+                    <li><a target="_blank" rel="noopener" href="">Graph</a></li>
+                    <li><a target="_blank" rel="noopener" href="">SPARQL</a></li>
+                    </ul>
+                </div>
+                <ul class="footer-links">
+                    <li>
+                    <a class="github-link" href="https://github.com/hexWitches/beast" target="_blank" rel="noopener"
+                        aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.1" stroke-linecap="round"
+                        stroke-linejoin="round" fill="none" aria-hidden="true">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                    </li>
+                </ul>
+                <div class="footer-copy">&copy; 2026 &middot; CC BY 4.0</div>
+                </div>
+            </footer>
+        <!-- </footer> -->
+
+        <!-- Scroll to Top Button -->
+        <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Scroll to top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
