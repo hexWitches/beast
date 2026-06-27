@@ -13,7 +13,7 @@
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
     dcterms:title "BEAST Ontology"@en ;
-    dcterms:description "An ontology for the description of bestiaries and creatures, their historical terminology, biological components, and symbolic implications."@en ;
+    dcterms:description "An ontology for the description of creatures, their provenance, biological components and symbolic meanings."@en ;
     dcterms:creator "Maria Juliana Gamboa Nivia",
         "Miriana Pinto",
         "Sara Roggiani",
@@ -205,7 +205,7 @@
 :hasMeaning rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf owl:topDataProperty ;
     rdfs:domain [ rdf:type owl:Class ;
-                    owl:unionOf (:Etymology :Interpretation :Archetype)] ;
+                    owl:unionOf (:Etymology :Interpretation :Archetype :NarrativeFunction)] ;
     rdfs:range rdfs:Literal ;
     rdfs:label "has meaning"@en ;
     rdfs:comment "The literal string translation or definition of a term, concept, or archetypal figure."@en .
@@ -363,12 +363,19 @@
     rdfs:label "has head of"@en ;
     rdfs:comment "Specifies the head structure of a creature."@en .
 
-:hasLimbsOf rdf:type owl:ObjectProperty ;
+:hasUpperLimbsOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
     rdfs:range :RealAnimal ;
     rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has limbs of"@en ;
-    rdfs:comment "Specifies the limbs (arms, legs, wings) of a creature."@en .
+    rdfs:label "has upper limbs of"@en ;
+    rdfs:comment "Specifies the upper limbs (arms, legs, wings) of a creature."@en .
+
+:hasLowerLimbsOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasPartDerivedFrom ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has lower of"@en ;
+    rdfs:comment "Specifies the lower limbs (arms, legs, wings) of a creature."@en .
 
 :hasBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
@@ -515,16 +522,17 @@
 # ===== OBJECT PROPERTIES ================
 :symbolizes rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ; 
-                  owl:unionOf (:Creature :ImaginarySymbol :AnatomicalPart :Ability :Interpretation) ] ;
+                  owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range [ rdf:type owl:Class ; 
-                  owl:unionOf (:ImaginaryStructure :Archetype :SymbolicFeature :AlchemicalStage :AlchemicalProcess :AlchemicalPrinciple) ] ;
+                  owl:unionOf (:Archetype :NarrativeFunction :Imaginaire :ImaginaryStructure) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "symbolizes"@en ;
     rdfs:comment "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), a Creature or its Interpretation serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
 
 :embodiesArchetype rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Interpretation ;
+    rdfs:domain [rdf:type owl:Class ;
+                owl:unionOf (:Interpretation :Ability :AnatomicalPart :Creature) ] ;
     rdfs:range :Archetype ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "embodies archetype"@en ;
@@ -532,7 +540,8 @@
 
 :hasNarrativeFunction rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :symbolizes ;
-    rdfs:domain :Interpretation ;
+    rdfs:domain [rdf:type owl:Class ;
+                owl:unionOf (:Interpretation :Ability :AnatomicalPart :Creature) ] ;
     rdfs:range :NarrativeFunction ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "has narrative function"@en ;
@@ -564,7 +573,8 @@
 
 :isGovernedBy rdf:type owl:ObjectProperty ;
     owl:propertyChainAxiom (skos:broader :isGovernedBy) ;
-    rdfs:domain [ rdf:type owl:Class ; owl:unionOf (:ImaginaryStructure :ImaginarySymbol :Creature :AnatomicalPart :Ability :Interpretation) ] ;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:ImaginaryStructure :ImaginarySymbol :Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "is governed by"@en ;
@@ -573,7 +583,7 @@
 :hasDivergence rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range [ rdf:type owl:Class ;
-                owl:unionOf (:AnatomicalPart :Ability) ] ;
+                owl:unionOf (:AnatomicalPart :Ability :Habitat :Diet ) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "has divergence"@en ;
     rdfs:comment "The parent property for all divergence assertions linking a source-specific Interpretation to the biological feature — either an AnatomicalPart or an Ability — that differs from the creature's canonical description in that Source. Subproperties :additionalAbility, :removedAbility, :additionalPart, and :removedPart specialise the nature of the divergence. This structure allows the ontology to answer questions such as 'which interpretations add wings to a normally wingless creature' or 'which sources suppress a creature's canonical venom ability'."@en .
@@ -606,6 +616,20 @@
     rdfs:label "removed part"@en ;
     rdfs:comment "Links a source-specific Interpretation to an AnatomicalPart  that the Creature canonically possesses but which is deliberately absent or suppressed in that particular Source. Documents reductive anatomical divergences — e.g. a griffin depicted without its eagle wings in a specific manuscript tradition, fundamentally altering its composite identity."@en .
 
+:alternativeHabitat rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range :Habitat ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "alternative habitat"@en ;
+    rdfs:comment "Links a source-specific Interpretation to a Habitat that the Creature canonically does not possess but which is depicted in a particular Source."@en .
+
+:alternativeDiet rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasDivergence ;
+    rdfs:range :Diet ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "alternative diet"@en ;
+    rdfs:comment "Links a source-specific Interpretation to a Diet that the Creature canonically does not possess but which is depicted in a particular Source."@en .
+
 :relatedTo rdf:type owl:ObjectProperty ;
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:NarrativeFunction :Archetype) ] ;
@@ -626,7 +650,7 @@
 
 :SymbolicModule rdf:type owl:NamedIndividual , :Module ;
     rdfs:label "Symbolic Module"@en ;
-    rdfs:comment "The Symbolic Module represents the analytical and interpretive layer of the ontology, where art history, literary theory, depth psychology, and anthropology converge. It provides two interlocking frameworks for the symbolic analysis of creatures and their source-specific Interpretations. First, the DurandImaginary scheme applies Gilbert Durand's anthropological structures of the imaginary to classify creatures according to the Regime (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that governs their symbolic imagery. Second, the archetype and narrative function layer — through :Archetype, :NarrativeFunction, :embodiesArchetype, and :hasNarrativeFunction — distinguishes between the universal psychological pattern a creature instantiates across all its manifestations and the specific contextual role it performs within a given Source. The module also captures symbolic divergences at the level of Interpretation: the properties :additionalPart, :removedPart, :additionalAbility, and :removedAbility document how a specific author or tradition departs from the canonical image of a creature, and what symbolic meaning those departures carry."@en .
+    rdfs:comment "The Symbolic Module represents the analytical and interpretive layer of the ontology, where art history, literary theory, depth psychology, and anthropology converge. It provides two interlocking frameworks for the symbolic analysis of creatures and their source-specific Interpretations. First, the DurandImaginary scheme applies Gilbert Durand's anthropological structures of the imaginary to classify creatures according to the Regime (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that governs their symbolic imagery. Second, the archetype and narrative function layer — through :Archetype, :NarrativeFunction, :embodiesArchetype, and :hasNarrativeFunction — distinguishes between the universal psychological pattern a creature instantiates across all its manifestations and the specific contextual role it performs within a given Source. The module also captures symbolic divergences at the level of Interpretation: the properties :additionalPart, :removedPart, :additionalAbility, :removedAbility, :alternativeDiet and :alternativeHabitat document how a specific author or tradition departs from the canonical image of a creature, and what symbolic meaning those departures carry."@en .
 
 :Omnivorous rdf:type owl:NamedIndividual,
                     :Diet ;

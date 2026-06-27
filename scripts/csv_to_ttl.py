@@ -13,6 +13,7 @@ VANN = Namespace("http://purl.org/vocab/vann/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 CITO = Namespace("http://purl.org/spar/cito/")
 BEASTIARY = Namespace("https://w3id.org/beast/graph/")
+VIAF = Namespace("http://viaf.org/viaf/")
 
 NAMESPACES = {
     "beast:": BEAST,
@@ -28,7 +29,8 @@ NAMESPACES = {
     "owl:": OWL,
     "vann:": VANN,
     "prov:": PROV,
-    "cito:": CITO
+    "cito:": CITO,
+    "viaf": VIAF
 }
 
 def clean_uri_part(part):
@@ -56,7 +58,7 @@ def resolve_predicate(predicate_str):
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     mapping_path = os.path.join(base_dir, "mapping", "csv_to_graph.json")
-    data_dir = os.path.join(base_dir, "ontology", "data")
+    data_dir = os.path.join(base_dir, "graph", "data")
     output_path = os.path.join(base_dir, "graph", "graph.ttl")
 
     # Initialize Graph
@@ -72,6 +74,7 @@ def main():
     g.bind("vann", VANN)
     g.bind("prov", PROV)
     g.bind("cito", CITO)
+    g.bind("viaf", VIAF)
 
     # Load mapping
     with open(mapping_path, 'r', encoding='utf-8') as f:

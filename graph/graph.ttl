@@ -4,6 +4,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix viaf: <http://viaf.org/viaf/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -1710,7 +1711,7 @@ beastiary:person__øvredal a schema:Person ;
     foaf:givenName "André"^^xsd:string ;
     schema:birthDate "1973"^^xsd:string ;
     schema:nationality "Norwegian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/288292099>,
+    schema:sameAs viaf:288292099,
         wd:Q2848912 .
 
 beastiary:person_adamson a schema:Person ;
@@ -1718,7 +1719,7 @@ beastiary:person_adamson a schema:Person ;
     foaf:givenName "Andrew"^^xsd:string ;
     schema:birthDate "1966"^^xsd:string ;
     schema:nationality "New Zealander"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/23252298>,
+    schema:sameAs viaf:23252298,
         wd:Q432845 .
 
 beastiary:person_aldrovandi a schema:Person ;
@@ -1727,7 +1728,7 @@ beastiary:person_aldrovandi a schema:Person ;
     schema:birthDate "1522"^^xsd:string ;
     schema:deathDate "1605"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100190422>,
+    schema:sameAs viaf:100190422,
         wd:Q321358 .
 
 beastiary:person_andersen a schema:Person ;
@@ -1736,7 +1737,7 @@ beastiary:person_andersen a schema:Person ;
     schema:birthDate "1805"^^xsd:string ;
     schema:deathDate "1875"^^xsd:string ;
     schema:nationality "Danish"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/4925902>,
+    schema:sameAs viaf:4925902,
         wd:Q5673 .
 
 beastiary:person_ariosto a schema:Person ;
@@ -1745,7 +1746,7 @@ beastiary:person_ariosto a schema:Person ;
     schema:birthDate "1474"^^xsd:string ;
     schema:deathDate "1533"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/71386455>,
+    schema:sameAs viaf:71386455,
         wd:Q48900 .
 
 beastiary:person_asbjørnsen a schema:Person ;
@@ -1754,7 +1755,7 @@ beastiary:person_asbjørnsen a schema:Person ;
     schema:birthDate "1812"^^xsd:string ;
     schema:deathDate "1885"^^xsd:string ;
     schema:nationality "Norwegian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/116587918>,
+    schema:sameAs viaf:116587918,
         wd:Q355485 .
 
 beastiary:person_bierce a schema:Person ;
@@ -1763,7 +1764,7 @@ beastiary:person_bierce a schema:Person ;
     schema:birthDate "1842"^^xsd:string ;
     schema:deathDate "1914"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/232144783035948358100>,
+    schema:sameAs viaf:232144783035948358100,
         wd:Q191050 .
 
 beastiary:person_borges a schema:Person ;
@@ -1772,7 +1773,7 @@ beastiary:person_borges a schema:Person ;
     schema:birthDate "1899"^^xsd:string ;
     schema:deathDate "1986"^^xsd:string ;
     schema:nationality "Argentine"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/88919448>,
+    schema:sameAs viaf:88919448,
         wd:Q909 .
 
 beastiary:person_brueghel_jeune a schema:Person ;
@@ -1781,7 +1782,7 @@ beastiary:person_brueghel_jeune a schema:Person ;
     schema:birthDate "1564"^^xsd:string ;
     schema:deathDate "1638"^^xsd:string ;
     schema:nationality "Dutch"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/106974142>,
+    schema:sameAs viaf:106974142,
         wd:Q255828 .
 
 beastiary:person_caravaggio a schema:Person ;
@@ -1790,7 +1791,7 @@ beastiary:person_caravaggio a schema:Person ;
     schema:birthDate "1571"^^xsd:string ;
     schema:deathDate "1610"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/87679282>,
+    schema:sameAs viaf:87679282,
         wd:Q42207 .
 
 beastiary:person_chaucer a schema:Person ;
@@ -1799,7 +1800,7 @@ beastiary:person_chaucer a schema:Person ;
     schema:birthDate "1343"^^xsd:string ;
     schema:deathDate "1400"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100185203>,
+    schema:sameAs viaf:100185203,
         wd:Q5683 .
 
 beastiary:person_chen a schema:Person ;
@@ -1808,7 +1809,7 @@ beastiary:person_chen a schema:Person ;
     schema:birthDate "1200"^^xsd:string ;
     schema:deathDate "1266"^^xsd:string ;
     schema:nationality "Chinese"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/96607916>,
+    schema:sameAs viaf:96607916,
         wd:Q2739948 .
 
 beastiary:person_chretien a schema:Person ;
@@ -1817,7 +1818,7 @@ beastiary:person_chretien a schema:Person ;
     schema:birthDate "1130"^^xsd:string ;
     schema:deathDate "1191"^^xsd:string ;
     schema:nationality "French"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/87681171>,
+    schema:sameAs viaf:87681171,
         wd:Q4302 .
 
 beastiary:person_claudio a schema:Person ;
@@ -1826,7 +1827,7 @@ beastiary:person_claudio a schema:Person ;
     schema:birthDate "c. 370"^^xsd:string ;
     schema:deathDate "c. 404"^^xsd:string ;
     schema:nationality "Ancient Rome"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/246763674>,
+    schema:sameAs viaf:246763674,
         wd:Q205947 .
 
 beastiary:person_clements a schema:Person ;
@@ -1834,7 +1835,7 @@ beastiary:person_clements a schema:Person ;
     foaf:givenName "Ron"^^xsd:string ;
     schema:birthDate "1953"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/69022925>,
+    schema:sameAs viaf:69022925,
         wd:Q930209 .
 
 beastiary:person_columbus a schema:Person ;
@@ -1842,7 +1843,7 @@ beastiary:person_columbus a schema:Person ;
     foaf:givenName "Chris"^^xsd:string ;
     schema:birthDate "1958"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/119396580>,
+    schema:sameAs viaf:119396580,
         wd:Q75079 .
 
 beastiary:person_ctesias a schema:Person ;
@@ -1850,7 +1851,7 @@ beastiary:person_ctesias a schema:Person ;
     schema:birthDate "V BC"^^xsd:string ;
     schema:deathDate "V BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/192092583>,
+    schema:sameAs viaf:192092583,
         wd:Q296325 .
 
 beastiary:person_ende a schema:Person ;
@@ -1859,7 +1860,7 @@ beastiary:person_ende a schema:Person ;
     schema:birthDate "1929"^^xsd:string ;
     schema:deathDate "1995"^^xsd:string ;
     schema:nationality "German"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/34456245>,
+    schema:sameAs viaf:34456245,
         wd:Q76498 .
 
 beastiary:person_erodoto a schema:Person ;
@@ -1867,7 +1868,7 @@ beastiary:person_erodoto a schema:Person ;
     schema:birthDate "484 BC"^^xsd:string ;
     schema:deathDate "c. 425 BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100225976>,
+    schema:sameAs viaf:100225976,
         wd:Q26825 .
 
 beastiary:person_flaubert a schema:Person ;
@@ -1876,7 +1877,7 @@ beastiary:person_flaubert a schema:Person ;
     schema:birthDate "1821"^^xsd:string ;
     schema:deathDate "1880"^^xsd:string ;
     schema:nationality "French"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/9846192>,
+    schema:sameAs viaf:9846192,
         wd:Q43444 .
 
 beastiary:person_g_martin a schema:Person ;
@@ -1884,7 +1885,7 @@ beastiary:person_g_martin a schema:Person ;
     foaf:givenName "George R. R."^^xsd:string ;
     schema:birthDate "1984"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/98636170>,
+    schema:sameAs viaf:98636170,
         wd:Q181677 .
 
 beastiary:person_ibsen a schema:Person ;
@@ -1893,7 +1894,7 @@ beastiary:person_ibsen a schema:Person ;
     schema:birthDate "1828"^^xsd:string ;
     schema:deathDate "1906"^^xsd:string ;
     schema:nationality "Norwegian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/71378383>,
+    schema:sameAs viaf:71378383,
         wd:Q36661 .
 
 beastiary:person_idsidor a schema:Person ;
@@ -1902,7 +1903,7 @@ beastiary:person_idsidor a schema:Person ;
     schema:birthDate "560"^^xsd:string ;
     schema:deathDate "636"^^xsd:string ;
     schema:nationality "Spanish"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/803890>,
+    schema:sameAs viaf:803890,
         wd:Q166876 .
 
 beastiary:person_isayama a schema:Person ;
@@ -1910,7 +1911,7 @@ beastiary:person_isayama a schema:Person ;
     foaf:givenName "Hajime"^^xsd:string ;
     schema:birthDate "1986"^^xsd:string ;
     schema:nationality "Japanese"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/171550535>,
+    schema:sameAs viaf:171550535,
         wd:Q3782468 .
 
 beastiary:person_jackson a schema:Person ;
@@ -1919,7 +1920,7 @@ beastiary:person_jackson a schema:Person ;
     schema:birthDate "1906"^^xsd:string ;
     schema:deathDate "1988"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/76511055>,
+    schema:sameAs viaf:76511055,
         wd:Q1385379 .
 
 beastiary:person_lattanzio a schema:Person ;
@@ -1928,7 +1929,7 @@ beastiary:person_lattanzio a schema:Person ;
     schema:birthDate "c. 240 AC"^^xsd:string ;
     schema:deathDate "c. 320 AC"^^xsd:string ;
     schema:nationality "Roman"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100198064>,
+    schema:sameAs viaf:100198064,
         wd:Q209102 .
 
 beastiary:person_maier a schema:Person ;
@@ -1937,7 +1938,7 @@ beastiary:person_maier a schema:Person ;
     schema:birthDate "1568"^^xsd:string ;
     schema:deathDate "1622"^^xsd:string ;
     schema:nationality "German"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/103210603>,
+    schema:sameAs viaf:103210603,
         wd:Q901303 .
 
 beastiary:person_miyazaki a schema:Person ;
@@ -1945,7 +1946,7 @@ beastiary:person_miyazaki a schema:Person ;
     foaf:givenName "Hayao"^^xsd:string ;
     schema:birthDate "1941"^^xsd:string ;
     schema:nationality "Japanese"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/85117053>,
+    schema:sameAs viaf:85117053,
         wd:Q55400 .
 
 beastiary:person_moe a schema:Person ;
@@ -1954,7 +1955,7 @@ beastiary:person_moe a schema:Person ;
     schema:birthDate "1813"^^xsd:string ;
     schema:deathDate "1882"^^xsd:string ;
     schema:nationality "Norwegian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/36968998>,
+    schema:sameAs viaf:36968998,
         wd:Q470002 .
 
 beastiary:person_moore a schema:Person ;
@@ -1963,7 +1964,7 @@ beastiary:person_moore a schema:Person ;
     schema:birthDate "1779"^^xsd:string ;
     schema:deathDate "1863"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/9864972>,
+    schema:sameAs viaf:9864972,
         wd:Q2978887 .
 
 beastiary:person_moreau a schema:Person ;
@@ -1972,7 +1973,7 @@ beastiary:person_moreau a schema:Person ;
     schema:birthDate "1826"^^xsd:string ;
     schema:deathDate "1898"^^xsd:string ;
     schema:nationality "French"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/46844904>,
+    schema:sameAs viaf:46844904,
         wd:Q203828 .
 
 beastiary:person_musker a schema:Person ;
@@ -1980,7 +1981,7 @@ beastiary:person_musker a schema:Person ;
     foaf:givenName "John"^^xsd:string ;
     schema:birthDate "1953"^^xsd:string ;
     schema:nationality "American"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/14864511>,
+    schema:sameAs viaf:14864511,
         wd:Q735440 .
 
 beastiary:person_nietzsche a schema:Person ;
@@ -1989,7 +1990,7 @@ beastiary:person_nietzsche a schema:Person ;
     schema:birthDate "1844"^^xsd:string ;
     schema:deathDate "1900"^^xsd:string ;
     schema:nationality "German"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/89798474>,
+    schema:sameAs viaf:89798474,
         wd:Q9358 .
 
 beastiary:person_omero a schema:Person ;
@@ -1997,7 +1998,7 @@ beastiary:person_omero a schema:Person ;
     schema:birthDate "IX BC"^^xsd:string ;
     schema:deathDate "8 BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/224924963>,
+    schema:sameAs viaf:224924963,
         wd:Q6691 .
 
 beastiary:person_ovid a schema:Person ;
@@ -2006,7 +2007,7 @@ beastiary:person_ovid a schema:Person ;
     schema:birthDate "43 BC"^^xsd:string ;
     schema:deathDate "17/18 AD"^^xsd:string ;
     schema:nationality "Ancient Rome"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/88342447>,
+    schema:sameAs viaf:88342447,
         wd:Q7198 .
 
 beastiary:person_percy_shelley a schema:Person ;
@@ -2015,7 +2016,7 @@ beastiary:person_percy_shelley a schema:Person ;
     schema:birthDate "1792"^^xsd:string ;
     schema:deathDate "1822"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/95159449>,
+    schema:sameAs viaf:95159449,
         wd:Q93343 .
 
 beastiary:person_plato a schema:Person ;
@@ -2023,7 +2024,7 @@ beastiary:person_plato a schema:Person ;
     schema:birthDate "427 BC"^^xsd:string ;
     schema:deathDate "347 BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/108159964>,
+    schema:sameAs viaf:108159964,
         wd:Q859 .
 
 beastiary:person_plinio a schema:Person ;
@@ -2031,7 +2032,7 @@ beastiary:person_plinio a schema:Person ;
     schema:birthDate "AD 23/24"^^xsd:string ;
     schema:deathDate "AD 79"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100219162>,
+    schema:sameAs viaf:100219162,
         wd:Q82778 .
 
 beastiary:person_polycles a schema:Person ;
@@ -2039,7 +2040,7 @@ beastiary:person_polycles a schema:Person ;
     schema:birthDate "160 BC"^^xsd:string ;
     schema:deathDate "120 BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/96494745>,
+    schema:sameAs viaf:96494745,
         wd:Q3286930 .
 
 beastiary:person_rembrandt a schema:Person ;
@@ -2048,7 +2049,7 @@ beastiary:person_rembrandt a schema:Person ;
     schema:birthDate "1606"^^xsd:string ;
     schema:deathDate "1669"^^xsd:string ;
     schema:nationality "Dutch"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/64013650>,
+    schema:sameAs viaf:64013650,
         wd:Q5598 .
 
 beastiary:person_richardson a schema:Person ;
@@ -2062,7 +2063,7 @@ beastiary:person_romano a schema:Person ;
     schema:birthDate "1499"^^xsd:string ;
     schema:deathDate "1546"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/74007636>,
+    schema:sameAs viaf:74007636,
         wd:Q215305 .
 
 beastiary:person_sturluson a schema:Person ;
@@ -2071,7 +2072,7 @@ beastiary:person_sturluson a schema:Person ;
     schema:birthDate "1179"^^xsd:string ;
     schema:deathDate "1241"^^xsd:string ;
     schema:nationality "Icelandic"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/89085541>,
+    schema:sameAs viaf:89085541,
         wd:Q102323 .
 
 beastiary:person_swinburne a schema:Person ;
@@ -2080,7 +2081,7 @@ beastiary:person_swinburne a schema:Person ;
     schema:birthDate "1837"^^xsd:string ;
     schema:deathDate "1909"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/41846937>,
+    schema:sameAs viaf:41846937,
         wd:Q315511 .
 
 beastiary:person_tasso a schema:Person ;
@@ -2089,7 +2090,7 @@ beastiary:person_tasso a schema:Person ;
     schema:birthDate "1544"^^xsd:string ;
     schema:deathDate "1595"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/4936996>,
+    schema:sameAs viaf:4936996,
         wd:Q168962 .
 
 beastiary:person_thomas_cantimpre a schema:Person ;
@@ -2098,7 +2099,7 @@ beastiary:person_thomas_cantimpre a schema:Person ;
     schema:birthDate "1201"^^xsd:string ;
     schema:deathDate "1272"^^xsd:string ;
     schema:nationality "Flemish"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/1878151778206818130004>,
+    schema:sameAs viaf:1878151778206818130004,
         wd:Q572799 .
 
 beastiary:person_topsell a schema:Person ;
@@ -2107,7 +2108,7 @@ beastiary:person_topsell a schema:Person ;
     schema:birthDate "c. 1572"^^xsd:string ;
     schema:deathDate "1625"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/37823643>,
+    schema:sameAs viaf:37823643,
         wd:Q3048705 .
 
 beastiary:source_abduction_ganymede a beast:VisualArtwork ;
@@ -2368,7 +2369,7 @@ beastiary:person_dante a schema:Person ;
     schema:birthDate "1265"^^xsd:string ;
     schema:deathDate "1321"^^xsd:string ;
     schema:nationality "Italian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/97105654>,
+    schema:sameAs viaf:97105654,
         wd:Q1067 .
 
 beastiary:person_doré a schema:Person ;
@@ -2377,14 +2378,14 @@ beastiary:person_doré a schema:Person ;
     schema:birthDate "1832"^^xsd:string ;
     schema:deathDate "1883"^^xsd:string ;
     schema:nationality "French"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/41839207>,
+    schema:sameAs viaf:41839207,
         wd:Q6682 .
 
 beastiary:person_esiodo a schema:Person ;
     foaf:givenName "Esiodo"^^xsd:string ;
     schema:birthDate "776 BC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/122220717>,
+    schema:sameAs viaf:122220717,
         wd:Q44233 .
 
 beastiary:person_ingres a schema:Person ;
@@ -2393,7 +2394,7 @@ beastiary:person_ingres a schema:Person ;
     schema:birthDate "1780"^^xsd:string ;
     schema:deathDate "1867"^^xsd:string ;
     schema:nationality "French"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/76327826>,
+    schema:sameAs viaf:76327826,
         wd:Q23380 .
 
 beastiary:person_p_apollodoro a schema:Person ;
@@ -2401,7 +2402,7 @@ beastiary:person_p_apollodoro a schema:Person ;
     schema:birthDate "180 AC"^^xsd:string ;
     schema:deathDate "110 AC"^^xsd:string ;
     schema:nationality "Greek"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/100219535>,
+    schema:sameAs viaf:100219535,
         wd:Q12506564 .
 
 beastiary:person_rubens a schema:Person ;
@@ -2410,7 +2411,7 @@ beastiary:person_rubens a schema:Person ;
     schema:birthDate "1577"^^xsd:string ;
     schema:deathDate "1640"^^xsd:string ;
     schema:nationality "Flemish"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/56647196>,
+    schema:sameAs viaf:56647196,
         wd:Q5599 .
 
 beastiary:person_shakespeare a schema:Person ;
@@ -2419,7 +2420,7 @@ beastiary:person_shakespeare a schema:Person ;
     schema:birthDate "1564"^^xsd:string ;
     schema:deathDate "1616"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/96994048>,
+    schema:sameAs viaf:96994048,
         wd:Q692 .
 
 beastiary:person_tolkien a schema:Person ;
@@ -2428,7 +2429,7 @@ beastiary:person_tolkien a schema:Person ;
     schema:birthDate "1892"^^xsd:string ;
     schema:deathDate "1973"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/95218067>,
+    schema:sameAs viaf:95218067,
         wd:Q892 .
 
 beastiary:source_barbie a beast:Movie ;
@@ -2660,7 +2661,7 @@ beastiary:person_rowling a schema:Person ;
     foaf:givenName "J. K."^^xsd:string ;
     schema:birthDate "1965"^^xsd:string ;
     schema:nationality "English"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/116796842>,
+    schema:sameAs viaf:116796842,
         wd:Q34660 .
 
 beastiary:source_andersen a beast:LiteraryWork ;
