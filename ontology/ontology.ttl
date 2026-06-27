@@ -10,6 +10,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix cito: <http://purl.org/spar/cito/> .
+@prefix fabio: <http://purl.org/spar/fabio> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
     dcterms:title "BEAST Ontology"@en ;
@@ -188,13 +189,6 @@
     rdfs:comment "Links a Citation to the Source from which its passage was drawn. Where :hasTextualReference connects an Interpretation to a Citation, :extractedFrom connects that Citation upward to the Source document — completing the three-level provenance chain: Interpretation → Citation → Source. This property allows the ontology to answer questions such as 'which Sources contain direct textual evidence for this creature' by traversing the chain rather than asserting a direct link between Interpretation and Source."@en .
     
 # ===== DATA PROPERTIES ================
-:hasSourceTerm rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Interpretation ;
-    rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has source term"@en ;
-    rdfs:comment "The specific linguistic term used to identify the creature in a particular source, reflecting the terminological conventions of that tradition. For example, the same creature might be labeled 'monstrum' in a Latin text and 'prodigium' in another beastiary."@en .
-
 :hasRootTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Etymology ;
     rdfs:range rdfs:Literal ;
@@ -416,7 +410,7 @@
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
-:Archetype rdf:type owl:Class , 
+:Archetype rdf:type owl:Class ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Archetype"@en ;
     rdfs:comment "A universal, primordial pattern or character prototype residing in the collective human imagination. Within the ontology, the class serves as the ultimate analytical anchor that bridges the historical world with the symbolic world, linking a source-bound Interpretation of a Creature directly to its deeper allegorical, spiritual, or psychological meaning."@en .
@@ -553,6 +547,7 @@
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "belongs to imaginary structure"@en ;
     rdfs:comment "Specifically links a creature, an ability, a part or an interpretation to Durand's structures of the imaginary."@en .
 
@@ -561,6 +556,7 @@
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation ) ] ;
     rdfs:range :ImaginarySymbol ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "embodies imaginary symbol"@en ;
     rdfs:comment "Specifically links a creature, an ability, a part or an interpretation to Durand's symbols of the imaginary."@en .
 
@@ -568,6 +564,7 @@
     rdfs:subPropertyOf :symbolizes ;
     rdfs:domain :ImaginarySymbol ;
     rdfs:range :ImaginaryStructure ;
+    rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "belongs to"@en ;
     rdfs:comment "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en .
 
