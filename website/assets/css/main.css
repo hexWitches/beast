@@ -548,6 +548,91 @@ footer p, footer li {
     color: var(--egg-shell);
 }
 
+/* ─── Team Section (About Page) ────────────────────────────── */
+.team-section {
+    padding: 4rem clamp(1.5rem, 5vw, 8rem);
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card .creature-image-frame {
+    aspect-ratio: 1/1;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.team-card .creature-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.team-card .creature-card-body {
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.team-card .creature-name {
+    font-size: 1.05rem;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+/* Responsive team cards */
+@media (max-width: 1024px) {
+    .team-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }
+    
+    .team-card .creature-card-body {
+        padding: 1rem;
+    }
+    
+    .team-card .creature-name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .team-section {
+        padding: 2rem 1rem;
+    }
+}
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.team-cards .creature-name {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+}
+
 .footer-links {
     display: flex;
     gap: 24px;
@@ -1471,4 +1556,15 @@ footer p, footer li {
 .scroll-to-top svg {
     width: 24px;
     height: 24px;
+}
+
+
+.zoomable-image {
+    cursor: zoom-in !important;
+    transition: opacity 0.2s ease;
+}
+
+
+.zoomable-image:hover {
+    opacity: 0.85; 
 }
