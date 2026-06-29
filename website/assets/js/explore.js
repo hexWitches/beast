@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     d3.json("assets/data/graph.jsonld").then(rawData => {
         const graphData = rawData["@graph"] || rawData;
         if (!graphData || !Array.isArray(graphData) || graphData.length === 0) {
-            listingSection.innerHTML = "<p style='text-align:center; color:rgba(207,181,59,0.5);'>No creatures found in the BEASTiary yet.</p>";
+            listingSection.innerHTML = "<p class=\'empty-listing-msg\'>No creatures found in the BEASTiary yet.</p>";
             paginationEl.style.display = "none";
             return;
         }
@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderPage();
     }).catch(err => {
         console.error("Error loading creatures data:", err);
-        listingSection.innerHTML = "<p style='text-align:center; color:red;'>Failed to load creature data.</p>";
+        listingSection.innerHTML = "<p class=\'error-listing-msg\'>Failed to load creature data.</p>";
     });
 
     // ── Template Instantiation ───────────────────────────────────────────
@@ -512,10 +512,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 const divEl = iCard.querySelector(".interp-divergent");
                 const divList = iCard.querySelector(".divergent-list");
                 let divItems = [];
-                interp.divergent.addedParts.forEach(p => divItems.push(`<li>Added part: <span style="color:var(--egg-shell);">${p}</span></li>`));
-                interp.divergent.removedParts.forEach(p => divItems.push(`<li>Removed part: <span style="color:var(--egg-shell);">${p}</span></li>`));
-                interp.divergent.addedAbilities.forEach(p => divItems.push(`<li>Added ability: <span style="color:var(--egg-shell);">${p}</span></li>`));
-                interp.divergent.removedAbilities.forEach(p => divItems.push(`<li>Removed ability: <span style="color:var(--egg-shell);">${p}</span></li>`));
+                interp.divergent.addedParts.forEach(p => divItems.push(`<li>Added part: <span class="highlight-part">${p}</span></li>`));
+                interp.divergent.removedParts.forEach(p => divItems.push(`<li>Removed part: <span class="highlight-part">${p}</span></li>`));
+                interp.divergent.addedAbilities.forEach(p => divItems.push(`<li>Added ability: <span class="highlight-part">${p}</span></li>`));
+                interp.divergent.removedAbilities.forEach(p => divItems.push(`<li>Removed ability: <span class="highlight-part">${p}</span></li>`));
                 
                 if (divItems.length > 0) {
                     divList.innerHTML = divItems.join("");

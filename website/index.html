@@ -41,7 +41,7 @@
                     <li><a href="#the-ontology" class="nav-link-item">The Ontology</a></li>
                     <li><a href="#the-knowledge-graph" class="nav-link-item">The Knowledge Graph</a></li>
                     <li><a href="explore.html" class="nav-link-item">BEASTiary</a></li>
-                    <li><a href="about.html" class="nav-link-item">About</a></li>
+                    <li><a href="about.html" class="nav-link-item">Team</a></li>
                 </ul>
             </nav>
         </header>
@@ -49,11 +49,11 @@
         <main class="hero-wrapper">
 
         <!-- Hero Section -->
-        <section class="hero-section" style="min-height: 20vh; padding: 6rem 2rem 0; position: relative;">
-            <div class="hero-content" style="position: relative; z-index: 2;">
+        <section class="hero-section hero-section-custom">
+            <div class="hero-content hero-content-custom">
                 <div class="hero-title-wrapper">
                     <h1 class="hero-title">BEAST</h1>
-                    <p class="hero-description" style="color: var(--old-gold); letter-spacing: 2px; margin-top: 1rem;">Creatures, Sources and Symbols <br> Mapping the Imaginary Through Time</p>
+                    <p class="hero-description hero-description-custom">Creatures, Sources and Symbols <br> Mapping the Imaginary Through Time</p>
                 </div>
             </div>
         </section>
@@ -92,7 +92,12 @@
             <section class="info-section info-section--alt" id="the-ontology">
                 <div class="info-section__inner">
                     <div class="info-section__body">
-                        <h2 class="info-section__title">The Ontology</h2>
+                        <h2 class="info-section__title info-section__title--flex">
+                            The Ontology
+                            <a href="https://w3id.org/beast/ontology" target="_blank" rel="noopener" class="w3id-badge">
+                                permanent id
+                            </a>
+                        </h2>
                         <p class="info-section__text">
                             The BEAST Ontology is designed to provide a formal representation of creatures, whether real or imaginary, together with their textual attestations, morphological characteristics, etymological origins, and symbolic meanings. Implemented in <strong>OWL</strong>, it models entities through a structured set of classes and properties, while a complementary <strong>SKOS</strong> concept scheme represents Gilbert Durand's structures of the imaginary. The resulting framework integrates formal knowledge representation with a layer dedicated to symbolic and cultural interpretation.
                         </p>
@@ -105,7 +110,10 @@
                             <p class="info-section__text">
                                 The Provenance Module documents the historical and textual footprint of every creature in the ontology. It distinguishes between the universal, abstract concept of a beast (<code>:Creature</code>) and its source-specific manifestations (<code>:Interpretation</code>), allowing the ontology to track how a single entity is described, depicted, or reinterpreted across different authors, periods, and media - from medieval manuscripts to contemporary film. It anchors each interpretation to the primary <code>:Source</code> in which it appears and classifies sources by their genre and intertextual relationships through <code>:cites</code> and <code>:wasInfluencedBy</code>.
                             </p>
-                            <img src="assets/images/svg-grafoo/module1.svg" alt="provenanceModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module1.svg" style="margin-top: 20px;">
+                            <div class="ontology-module-svg-box ontology-svg-wrapper">
+                                <img src="assets/images/svg-grafoo/module1.svg" alt="provenanceModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module1.svg">
+                            </div>
+                            <button class="linguetta-btn" onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View Graph ✦</button>
                         </div>
 
                         <div class="ontology-module">
@@ -113,15 +121,21 @@
                             <p class="info-section__text">
                                 The Biological Module catalogs the physical and behavioural traits of creatures - whether real or imaginary - as described in Bestiaries and other Sources. It distinguishes <code>:RealAnimal</code> from <code>:ImaginaryBeing</code>, and further classifies the latter into <code>:CompositeCreature</code> and <code>:HybridCreature</code> whose anatomy is derived from two or more real animals. For real animals it documents deformities and monstrous irregularities through a structured vocabulary of anatomical anomaly: absence of a canonical part, duplication, and modification. For imaginary beings it records the anatomical parts they possess and the real animals, plants, or inanimate elements from which those parts are derived. Across all creatures the module captures habitats - distinguishing real geographic environments from mythological or imaginary spaces - diets, and abilities. This layer serves as the primary morphological record that the Symbolic Module then interprets as archetypal and cultural meaning.
                             </p>
-                                <img src="assets/images/svg-grafoo/module2.svg" alt="provenanceModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module2.svg" style="margin-top: 20px;">
+                            <div class="ontology-module-svg-box ontology-svg-wrapper">
+                                <img src="assets/images/svg-grafoo/module2.svg" alt="biologicalModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module2.svg">
+                            </div>
+                            <button class="linguetta-btn" onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View Graph ✦</button>
                         </div>
 
                         <div class="ontology-module">
                             <span class="ontology-module-label">The Symbolic Module</span>
                             <p class="info-section__text">
                                 The Symbolic Module represents the analytical and interpretive layer of the ontology, where art history, literary theory, depth psychology, and anthropology converge. It provides two interlocking frameworks for the symbolic analysis of creatures and their source-specific Interpretations. First, the <code>:DurandImaginary</code> scheme applies Gilbert Durand's anthropological structures of the imaginary to classify creatures according to the Regime (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that governs their symbolic imagery. Second, the archetype and narrative function layer - through <code>:Archetype</code>, <code>:NarrativeFunction</code>, <code>:embodiesArchetype</code>, and <code>:hasNarrativeFunction</code> - distinguishes between the universal psychological pattern a creature instantiates across all its manifestations and the specific contextual role it performs within a given <code>:Source</code>. The module also captures divergences at the level of <code>:Interpretation</code>: the properties <code>:additionalPart</code>, <code>:removedPart</code>, <code>:additionalAbility</code>, and <code>:removedAbility</code> document how a specific author or tradition departs from the canonical image of a creature, and what symbolic meaning those departures carry.
-                                <img src="assets/images/svg-grafoo/module3.svg" alt="provenanceModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module1.svg" style="margin-top: 20px;">
                             </p>
+                            <div class="ontology-module-svg-box ontology-svg-wrapper">
+                                <img src="assets/images/svg-grafoo/module3.svg" alt="symbolicModule" width="100%" height="auto" class="zoomable-image img-fluid border" data-zoom-src="assets/images/svg-grafoo/module3.svg">
+                            </div>
+                            <button class="linguetta-btn" onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View Graph ✦</button>
                         </div>
                     </div>
                 </div>
@@ -134,15 +148,38 @@
             <section class="info-section" id="the-knowledge-graph">
                 <div class="info-section__inner">
                     <div class="info-section__body">
-                        <h2 class="info-section__title">The Knowledge Graph</h2>
+                        <h2 class="info-section__title info-section__title--flex">
+                            The Knowledge Graph
+                            <a href="https://w3id.org/beast/graph" target="_blank" rel="noopener" class="w3id-badge">
+                                permanent id
+                            </a>
+                        </h2>
                         <p class="info-section__text">
-                        The knowledge graph aims to gather, integrate and formalize heterogeneous data collected from different sources across various cultures, traditions and historical periods. By leveraging network relations, it connects the three ontological modules, linking each creature's abstract identity to its specific textual interpretations, morphological characteristics and archetypal meanings. Furthermore, by formalizing Gilbert Durand's structures of the imaginary alongside cross-cultural motifs, the graph enables complex semantic associations such as connecting how an anatomical anomaly correlates with a specific symbolic structure in the anthropologist's interpretation. The knowledge graph fosters the discovery of the symbolic world of creatures, encouraging advanced information retrieval and semantic reasoning through its dedicated SPARQL endpoint. 
+                            The knowledge graph aims to gather, integrate and formalize heterogeneous data collected from different sources across various cultures, traditions and historical periods. By leveraging network relations, it <strong>connects the three ontological modules</strong>, linking each creature's abstract identity to its specific textual interpretations, morphological characteristics and archetypal meanings.
                         </p>
                         <p class="info-section__text">
+                            Furthermore, by formalizing Gilbert Durand's structures of the imaginary alongside cross-cultural motifs, the graph enables complex <strong>semantic associations</strong> such as connecting how an anatomical anomaly correlates with a specific symbolic structure in the anthropologist's interpretation. The knowledge graph fosters the discovery of the symbolic world of creatures, encouraging advanced information retrieval and semantic reasoning through its dedicated SPARQL endpoint.
                         </p>
-                        <div class="info-section__actions" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <p class="info-section__text">
+                            Querying the knowledge graph it is possible to <strong>extract latent knowledge</strong>, surface patterns that span sources and centuries, and answer specific research questions that would remain invisible. One might trace how a single creature mutates across its interpretations — gaining and losing parts and meanings as it travels from antiquity to the present — or ask which symbolic structures recur across otherwise unrelated traditions. Because the data is formalized rather than merely collected, these questions become answerable as SPARQL queries: RQs. The graph thus becomes not only a repository but an <strong>instrument of discovery</strong>, where comparison and interpretation are carried out by exploring the relations themselves.
+                        </p>
+                        <div class="research-questions-section research-questions-wrapper">
+                            <h3 class="ontology-module-label rq-label-custom">Research Questions</h3>
+                            <div class="rq-grid">
+                                <div class="rq-box rq-box-styled">
+                                    [Research Question Placeholder 1]
+                                </div>
+                                <div class="rq-box rq-box-styled">
+                                    [Research Question Placeholder 2]
+                                </div>
+                                <div class="rq-box rq-box-styled">
+                                    [Research Question Placeholder 3]
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-section__actions info-section__actions--flex">
                             <a href="explore.html" class="cta-btn cta-btn--primary">Explore the BEASTiary</a>
-                            <a href="#" class="cta-btn cta-btn--primary">Query the SPARQL endpoint</a>
+                            <a href="https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql" class="cta-btn cta-btn--primary" target="_blank">Query the SPARQL endpoint</a>
                         </div>
                     </div>
                 </div>
@@ -151,123 +188,31 @@
         </main>
 
         <!-- Footer -->
-        <!-- <footer class="text-white text-center content-to-reveal" id="footer">
-            <div class="container p-4">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">About the project</h5>
-                        <p>
-                            
-                        </p>
-                    </div>
-
-                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-0">Creators</h5>
-
-                        <ul class="list-unstyled">
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                                </svg>
-                                <a class="fw-bold" href="https://github.com/MariaJGamboa">Maria Juliana Gamboa Nivia</a>
-                                <p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-envelope" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                                    </svg>
-                                    mariajuliana.gamboa@studio.unibo.it
-                                </p>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                                </svg>
-                                <a class="fw-bold" href="https://github.com/mir-pin">Miriana Pinto</a>
-                                <p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-envelope" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                                    </svg>
-                                    miriana.pinto@studio.unibo.it
-                                </p>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                                </svg>
-                                <a class="fw-bold" href="https://github.com/sararoggi">Sara Roggiani</a>
-                                <p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-envelope" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                                    </svg>
-                                    sara.roggiani2@studio.unibo.it
-                                </p>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-github" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                                </svg>
-                                <a class="fw-bold" href="https://github.com/alispada">Alice Spadavecchia</a>
-                                <p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-envelope" viewBox="0 0 16 16">
-                                        <path
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-                                    </svg>
-                                    alice.spadavecchia2@studio.unibo.it
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- Copyright -->
-            <!-- <div class="text-center p-3 copyright-text" style="background-color: rgba(0, 0, 0, 0.2);">
-                <p>
-                    All copyrights and related rights on the content remain with their original owners. <br>All copyright on
-                    the typographic and layout choices are 2026 © <a href="https://github.com/hexWitches/beast" target="_blank">BEAST</a>.
-                </p>
-            </div> -->
-
-
-            <footer class="footer">
-                <div class="footer-inner">
-                <div class="footer-brand-row">
-                    <div class="footer-brand">BEAST</div>
-                    <ul class="footer-inline-links">
-                    <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/ontology">Ontology</a></li>
-                    <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/graph">Graph</a></li>
-                    <li><a target="_blank" rel="noopener" href="">SPARQL</a></li>
-                    </ul>
-                </div>
-                <ul class="footer-links">
-                    <li>
-                    <a class="github-link" href="https://github.com/hexWitches/beast" target="_blank" rel="noopener"
-                        aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.1" stroke-linecap="round"
-                        stroke-linejoin="round" fill="none" aria-hidden="true">
-                        <path
-                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                        </svg>
-                    </a>
-                    </li>
+        <footer class="footer">
+            <div class="footer-inner">
+            <div class="footer-brand-row">
+                <div class="footer-brand">BEAST</div>
+                <ul class="footer-inline-links">
+                <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/ontology">Ontology</a></li>
+                <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/graph">Graph</a></li>
+                <li><a target="_blank" rel="noopener" href="https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql">SPARQL</a></li>
                 </ul>
-                <div class="footer-copy">&copy; 2026 &middot; CC BY 4.0</div>
-                </div>
-            </footer>
+            </div>
+            <ul class="footer-links">
+                <li>
+                <a class="github-link" href="https://github.com/hexWitches/beast" target="_blank" rel="noopener"
+                    aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.1" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" aria-hidden="true">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                </a>
+                </li>
+            </ul>
+            <div class="footer-copy">&copy; 2026 &middot; CC BY 4.0</div>
+            </div>
+        </footer>
         <!-- </footer> -->
 
         <!-- Scroll to Top Button -->
@@ -280,8 +225,8 @@
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/main.js"></script>
-        <div id="imageModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.9);">
-            <img id="modalImage" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); max-width:90%; max-height:90%; cursor:grab;">
+        <div id="imageModal" class="modal-overlay">
+            <img id="modalImage" class="modal-image-content">
         </div>
     </body>
 </html>
