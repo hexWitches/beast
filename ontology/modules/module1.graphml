@@ -149,17 +149,6 @@
     <node id="n12">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="43.0" width="126.0949682107173" x="349.2336853778619" y="516.7453217224836"/>
-          <y:Fill color="#CCFFCC" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="c" textColor="#000000" verticalTextPosition="bottom" visible="true" width="87.78125" x="19.15685910535865" xml:space="preserve" y="10.078125">rdfs:Literal</y:NodeLabel>
-          <y:Shape type="parallelogram"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n13">
-      <data key="d6">
-        <y:ShapeNode>
           <y:Geometry height="43.0" width="126.0949682107173" x="1484.7923401071853" y="453.6485190184662"/>
           <y:Fill color="#CCFFCC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
@@ -168,7 +157,7 @@
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n14">
+    <node id="n13">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="43.0" width="126.0949682107173" x="331.0460122362219" y="1100.1249969357348"/>
@@ -179,7 +168,7 @@
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n15">
+    <node id="n14">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="44.0" width="121.96822102864604" x="388.5473250178287" y="397.1738148012158"/>
@@ -190,7 +179,7 @@
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n16">
+    <node id="n15">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="43.0" width="126.0949682107173" x="-18.857202274863567" y="125.15089030594277"/>
@@ -201,7 +190,7 @@
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n17">
+    <node id="n16">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="53.99854726991782" width="214.08334637005964" x="-62.85139135453477" y="300.5141526796871"/>
@@ -212,7 +201,7 @@
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n18">
+    <node id="n17">
       <data key="d6">
         <y:ShapeNode>
           <y:Geometry height="43.0" width="126.0949682107173" x="-18.857202274863596" y="210.85116034343162"/>
@@ -388,20 +377,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e13" source="n0" target="n12">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="710.0436306541029" y="538.2453217224836"/>
-          </y:Path>
-          <y:LineStyle color="#008000" type="line" width="1.0"/>
-          <y:Arrows source="transparent_circle" target="white_delta"/>
-          <y:EdgeLabel alignment="center" backgroundColor="#FFFFFF" distance="2.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasLineColor="false" height="22.84375" horizontalTextPosition="center" iconTextGap="4" modelName="centered" modelPosition="center" preferredPlacement="anywhere" ratio="0.5" textColor="#008000" verticalTextPosition="bottom" visible="true" width="170.4921875" x="-250.99342330834645" xml:space="preserve" y="-99.9645171447039">beast:hasSourceTerm<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e14" source="n2" target="n13">
+    <edge id="e13" source="n2" target="n12">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -414,7 +390,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e15" source="n3" target="n14">
+    <edge id="e14" source="n3" target="n13">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -427,7 +403,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e16" source="n1" target="n2">
+    <edge id="e15" source="n1" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -440,7 +416,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e17" source="n0" target="n15">
+    <edge id="e16" source="n0" target="n14">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -453,7 +429,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e18" source="n15" target="n2">
+    <edge id="e17" source="n14" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -467,7 +443,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e19" source="n15" target="n16">
+    <edge id="e18" source="n14" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -480,7 +456,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e20" source="n15" target="n17">
+    <edge id="e19" source="n14" target="n16">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -493,7 +469,7 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e21" source="n15" target="n18">
+    <edge id="e20" source="n14" target="n17">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">

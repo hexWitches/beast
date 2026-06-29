@@ -125,11 +125,6 @@
                 "prefix": "beastiary:",
                 "target_class": "beast:Source"
             },
-            "source_term": {
-                "predicate": "beast:hasSourceTerm",
-                "type": "Literal",
-                "datatype": "xsd:string"
-            },
             "archetype_id": {
                 "predicate": "beast:embodiesArchetype",
                 "type": "URI",
@@ -159,6 +154,18 @@
                 "type": "URI",
                 "prefix": "beastiary:",
                 "target_class": "beast:Ability"
+            },
+            "alternative_diet": {
+                "predicate": "beast:alternativeDiet",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Diet"
+            },
+            "alternative_habitat": {
+                "predicate": "beast:alternativeHabitat",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Habitat"
             },
             "citation_id": {
                 "predicate": "beast:hasTextualReference",
@@ -198,8 +205,7 @@
             "passage": {
                 "predicate": "beast:hasPassageText",
                 "type": "Literal",
-                "datatype": "xsd:string",
-                "dynamic_language_column": "language"
+                "datatype": "xsd:string"
             }
         }
     },
@@ -211,11 +217,21 @@
                 "type": "URI",
                 "prefix": "beast:"
             },
+            "bestiary_type": {
+                "predicate": "hasBestiaryType",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Bestiary"
+            },
             "title": {
                 "predicate": "dcterms:title",
                 "type": "Literal",
-                "datatype": "xsd:string",
-                "dynamic_language_column": "language"
+                "datatype": "xsd:string"
+            },
+            "language": {
+                "predicate": "dcterms:language",
+                "type": "Literal",
+                "datatype": "xsd:string"
             },
             "person_id": {
                 "predicate": "schema:creator",
@@ -266,6 +282,18 @@
                 "type": "Literal",
                 "datatype": "xsd:string",
                 "language": "en"
+            },
+            "category": {
+                "predicate": "beast:habitatCategory",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Habitat"
+            },
+            "origin_context": {
+                "predicate": "beast:hasOriginContext",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:Source"
             },
             "description": {
                 "predicate": "rdfs:comment",
@@ -330,12 +358,8 @@
             "root_term": {
                 "predicate": "beast:hasRootTerm",
                 "type": "Literal",
-                "datatype": "xsd:string"
-            },
-            "language": {
-                "predicate": "dcterms:language",
-                "type": "Literal",
-                "datatype": "xsd:string"
+                "datatype": "xsd:string",
+                "dynamic_language_column": "language"
             },
             "meaning": {
                 "predicate": "beast:hasMeaning",
@@ -424,11 +448,52 @@
         "primary_key": "subject_id",
         "entity_class": "subject_type",
         "properties": {
-            "concept_id": {
+            "regime_id": {
+                "predicate": "beast:isGovernedBy",
+                "type": "URI",
+                "prefix": "beast",
+                "target_class": "beast:Regime"
+            },
+            "symbol_id": {
                 "predicate": "beast:embodiesImaginarySymbol",
                 "type": "URI",
                 "prefix": "beast:",
                 "target_class": "beast:ImaginarySymbol"
+            },
+            "structure_id": {
+                "predicate": "beast:belongsToImaginaryStructure",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:ImaginaryStructure"
+            },
+            "description": {
+                "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
+    },
+    "diets.csv": {
+        "primary_key": "diet_id",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Diet"
+            },
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            },
+            "category": {
+                "predicate": "beast:dietCategory",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Diet"
             },
             "description": {
                 "predicate": "rdfs:comment",

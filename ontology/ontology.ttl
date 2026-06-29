@@ -162,10 +162,12 @@
     rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en .
 
 :hasOriginContext rdf:type owl:ObjectProperty ;
-    rdfs:domain :Creature ;
-    rdfs:range :Tradition ;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:Creature :ImaginaryPlace) ] ;
+    rdfs:range :Source ;
+    rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has origin context"@en ;
-    rdfs:comment "Links a creature to its earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
+    rdfs:comment "Links a creature or an imaginary place to their earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
 
 :isTextualReferenceOf rdf:type owl:ObjectProperty ;
     rdfs:domain :Citation ;
@@ -392,6 +394,13 @@
     rdfs:label "has habitat"@en ;
     rdfs:comment "Connects a creature to the environment it natively inhabits."@en .
 
+:habitatCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain :Habitat ;
+    rdfs:range :Habitat ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "habitat category"@en ;
+    rdfs:comment "Connects an Habitat to its specific habitat individual."@en .
+
 :hasDiet rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
     rdfs:domain :Creature ;
@@ -399,6 +408,13 @@
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has diet"@en ;
     rdfs:comment "Specifies the feeding classification (e.g. carnivorous) of the creature."@en .
+
+:dietCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain :Diet ;
+    rdfs:range :Diet ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "diet category"@en ;
+    rdfs:comment "Connects a Diet to its specific diet individual."@en .
 
 # ===== DATA PROPERTIES ===============
 :hasAlternativeName rdf:type owl:DatatypeProperty ;
