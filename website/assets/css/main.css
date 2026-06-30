@@ -918,10 +918,9 @@ footer p, footer li {
     padding: 4rem 2rem 6rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: max-content; /* FOR SAFARI:*/
     gap: 2rem;
-    align-items: stretch;
-
-     min-height: 0; /*fix for safari*/
+    align-items: stretch;    
 
 }
 
@@ -952,14 +951,13 @@ footer p, footer li {
 /* Card image fills top */
 .creature-entry .creature-image-frame {
     width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
     border: none;
     padding: 0;
     border-radius: 0;
-    aspect-ratio: 1 / 1;
     overflow: hidden;
     
-    min-height: 0; /*fix for safari*/
-    display: block;
 }
 /*fix for safari*/
 .creature-image-frame img {
