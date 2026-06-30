@@ -202,6 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         let interpWikidata = "";
                         let sourceUrl = "";
                         let isVisualOrMovie = false;
+                        let artworkImageSrc = "";
+                        let isCinematic = false;
 
                         const sourceRefs = asArray(gNode["beast:appearsIn"]);
                         if (sourceRefs.length > 0) {
@@ -220,6 +222,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                                 if (sourceTypes.includes("beast:Movie") || sourceTypes.includes("beast:VisualArtwork") || sourceTypes.includes("beast:Film")) {
                                     isVisualOrMovie = true;
+                                }
+
+                                // Derive artwork image path from source @id for VisualArtwork & Cinematic works
+                                if (sourceTypes.includes("beast:VisualArtwork")) {
+                                    const artworkKey = sourceId.split(":").pop(); // e.g. "source_oedipus_moureau"
+                                    artworkImageSrc = `assets/images/visual_artworks/${artworkKey}`;
+                                } else if (sourceTypes.includes("beast:Movie") || sourceTypes.includes("beast:Film")) {
+                                    const cinematicKey = sourceId.split(":").pop();
+                                    artworkImageSrc = `assets/images/cinematic_works/${cinematicKey}`;
+                                    isCinematic = true;
                                 }
 
                                 // Extract author name
@@ -280,6 +292,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                             if (srcTypes.includes("beast:Movie") || srcTypes.includes("beast:VisualArtwork") || srcTypes.includes("beast:Film")) {
                                                 isVisualOrMovie = true;
                                             }
+
+                                            // Derive artwork image path from source @id for VisualArtwork (fallback path)
+                                            if (srcTypes.includes("beast:VisualArtwork") && !artworkImageSrc) {
+                                                const artworkKey = srcId.split(":").pop();
+                                                artworkImageSrc = `assets/images/visual_artworks/${artworkKey}`;
+                                            }
                                             const creatorRefs2 = asArray(srcNode["schema:creator"]);
                                             if (creatorRefs2.length > 0 && !interpAuthor) {
                                                 const creatorNode2 = graphMap[getId(creatorRefs2[0])];
@@ -325,12 +343,14 @@ document.addEventListener("DOMContentLoaded", () => {
                             id: gNode["@id"],
                             badge: interpBadge,
                             title: interpTitle,
-                            body: interpBody || "No description provided.",
+                            body: interpBody || (isVisualOrMovie ? "" : "No description provided."),
                             author: interpAuthor,
                             viafUrl: interpViaf,
                             wikidataUrl: interpWikidata,
                             date: interpDate,
                             sourceUrl: isVisualOrMovie ? sourceUrl : "",
+                            artworkImageSrc: artworkImageSrc || "",
+                            isCinematic: isCinematic || false,
                             divergent: { addedParts, removedParts, addedAbilities, removedAbilities }
                         });
                     }
@@ -501,6 +521,45 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
+                // Artwork image (VisualArtwork sources only)
+                const artworkImgWrap = iCard.querySelector(".interp-artwork-img-wrap");
+                const artworkImgEl   = iCard.querySelector(".interp-artwork-img");
+                if (interp.artworkImageSrc && artworkImgWrap && artworkImgEl) {
+                    // We don't know the extension ahead of time, so try to load it and
+                    // fall back through jpg → jpeg → png on error.
+                    const bases = [interp.artworkImageSrc + ".jpg",
+                                   interp.artworkImageSrc + ".jpeg",
+                                   interp.artworkImageSrc + ".png"];
+                    let attempt = 0;
+                    const tryLoad = () => {
+                        if (attempt >= bases.length) {
+                            artworkImgWrap.style.display = "none";
+                            return;
+                        }
+                        artworkImgEl.src = bases[attempt];
+                        artworkImgEl.alt = interp.title || "Visual artwork";
+                    };
+                    artworkImgEl.onerror = () => { attempt++; tryLoad(); };
+                    artworkImgEl.onload  = () => { 
+                        artworkImgWrap.style.display = "block"; 
+                        // Re-check overflow since the new image took up space
+                        const bodyContainer = iCard.querySelector('.interp-body-container');
+                        const btn = iCard.querySelector('.read-more-btn');
+                        if (bodyContainer && btn && bodyContainer.scrollHeight > bodyContainer.clientHeight + 2) {
+                            btn.style.display = 'block';
+                        }
+                    };
+                    
+                    if (interp.isCinematic) {
+                        artworkImgEl.classList.add("cinematic-img");
+                    }
+                    
+                    artworkImgWrap.style.display = "none"; // hidden until loaded
+                    tryLoad();
+                } else if (artworkImgWrap) {
+                    artworkImgWrap.style.display = "none";
+                }
+
                 iCard.querySelector(".interp-date").textContent = interp.date;
                 
                 const urlEl = iCard.querySelector(".interp-url");
@@ -520,6 +579,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (divItems.length > 0) {
                     divList.innerHTML = divItems.join("");
                     divEl.style.display = "block";
+                }
+
+                // Read more button logic
+                const readMoreBtn = iCard.querySelector(".read-more-btn");
+                if (readMoreBtn) {
+                    readMoreBtn.addEventListener("click", () => {
+                        const isExpanded = iCard.classList.toggle("expanded");
+                        readMoreBtn.textContent = isExpanded ? "Read less" : "Read more";
+                        readMoreBtn.setAttribute("aria-expanded", isExpanded);
+                    });
                 }
 
                 // Add staggered animation delay inside modal
@@ -615,6 +684,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 target.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         }, 600); // Increased delay to account for fetch
+    }
+
+    // ── Check overflow for Read More button when modal is shown ───────────
+    if (modalEl) {
+        modalEl.addEventListener('shown.bs.modal', function () {
+            const cards = this.querySelectorAll('.interpretation-card');
+            cards.forEach(card => {
+                const bodyContainer = card.querySelector('.interp-body-container');
+                const btn = card.querySelector('.read-more-btn');
+                if (bodyContainer && btn) {
+                    // Check if the container's scrollHeight is greater than its clientHeight
+                    // We add a small tolerance (e.g., 2px) to prevent precision issues
+                    if (bodyContainer.scrollHeight > bodyContainer.clientHeight + 2) {
+                        btn.style.display = 'block';
+                    } else {
+                        btn.style.display = 'none';
+                    }
+                }
+            });
+        });
     }
 
 });
