@@ -920,6 +920,9 @@ footer p, footer li {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: stretch;
+
+     min-height: 0; /*fix for safari*/
+
 }
 
 /* Single creature entry */
@@ -933,7 +936,7 @@ footer p, footer li {
     transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
     overflow: hidden;
     
-    min-height: 0; /*fix for safari*/
+   
 }
 
 .creature-entry:hover {
@@ -956,6 +959,13 @@ footer p, footer li {
     overflow: hidden;
     
     min-height: 0; /*fix for safari*/
+    display: block;
+}
+/*fix for safari*/
+.creature-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
