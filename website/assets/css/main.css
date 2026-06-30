@@ -932,6 +932,8 @@ footer p, footer li {
     flex-direction: column;
     transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
     overflow: hidden;
+    
+    min-height: 0; /*fix for safari*/
 }
 
 .creature-entry:hover {
@@ -952,6 +954,9 @@ footer p, footer li {
     border-radius: 0;
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    
+    min-height: 0; /*fix for safari*/
+    display: block;
 }
 
 /* Card body */
