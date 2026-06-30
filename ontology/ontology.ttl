@@ -365,26 +365,26 @@
     rdfs:label "has head of"@en ;
     rdfs:comment "Specifies the head structure of a creature."@en .
 
-:hasUpperLimbsOf rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:range :RealAnimal ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has upper limbs of"@en ;
-    rdfs:comment "Specifies the upper limbs (arms, legs, wings) of a creature."@en .
-
-:hasLowerLimbsOf rdf:type owl:ObjectProperty ;
-    rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:range :RealAnimal ;
-    rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has lower of"@en ;
-    rdfs:comment "Specifies the lower limbs (arms, legs, wings) of a creature."@en .
-
 :hasBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
     rdfs:range :RealAnimal ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has body of"@en ;
-    rdfs:comment "Specifies the main torso or body structure of a creature."@en .
+    rdfs:comment "Specifies the main torso or body structure of a creature. May be asserted directly for creatures with a single undivided body source, or indirectly through its subproperties hasUpperBodyOf and hasLowerBodyOf for creatures whose body is split into distinct segments."@en .
+
+:hasUpperBodyOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasBodyOf ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has upper body of"@en ;
+    rdfs:comment "Specifies the upper body, torso, or anterior segment of a creature characterized by a segmented body structure."@en .
+
+:hasLowerBodyOf rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf :hasBodyOf ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has lower body of"@en ;
+    rdfs:comment "Specifies the lower body, hindquarters, or posterior segment of a creature characterized by a segmented body structure."@en .
 
 :hasTailOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;

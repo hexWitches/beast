@@ -54,20 +54,20 @@
                 "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
             },
+            "has_upper_body_of": {
+                "predicate": "beast:hasUpperBodyOf",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:RealAnimal"
+            },
+            "has_lower_body_of": {
+                "predicate": "beast:hasLowerBodyOf",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:RealAnimal"
+            },
             "tail_of": {
                 "predicate": "beast:hasTailOf",
-                "type": "URI",
-                "prefix": "beastiary:",
-                "target_class": "beast:RealAnimal"
-            },
-            "upper_limbs_of": {
-                "predicate": "beast:hasLimbsOf",
-                "type": "URI",
-                "prefix": "beastiary:",
-                "target_class": "beast:RealAnimal"
-            },
-            "lower_limbs_of": {
-                "predicate": "beast:hasLimbsOf",
                 "type": "URI",
                 "prefix": "beastiary:",
                 "target_class": "beast:RealAnimal"
