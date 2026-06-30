@@ -131,6 +131,11 @@
                 "prefix": "beastiary:",
                 "target_class": "beast:Archetype"
             },
+            "personal_name": {
+                "predicate": "beast:hasPersonalName",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
             "additional_part": {
                 "predicate": "beast:additionalPart",
                 "type": "URI",

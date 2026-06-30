@@ -427,6 +427,10 @@ body {
 /* Actions row */
 .info-section__actions {
     margin-top: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
 }
 
 /* ─── Animations ─────────────────────────────────────────────── */
@@ -761,7 +765,17 @@ footer p, footer li {
         gap: 1.2rem;
     }
 
-    
+    .info-section__title--flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .w3id-badge {
+        align-self: flex-start;
+        font-size: 0.6rem;
+        padding: 0.2rem 0.7rem;
+    }
 
     .info-section {
         padding: 4rem 1.5rem;
@@ -788,6 +802,16 @@ footer p, footer li {
 
     .footer-copy {
         justify-self: center;
+    }
+
+    .info-section__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .info-section__actions .cta-btn {
+        text-align: center;
+        width: 100%;
     }
 }
 
