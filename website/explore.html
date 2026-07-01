@@ -91,6 +91,7 @@
                 <div class="interpretation-card content-to-reveal">
                     <div class="interp-source-badge"></div>
                     <h4 class="interp-card-title"></h4>
+                    <h5 class="interp-personal-name" style="display: none; color: var(--text-muted); font-size: 0.95rem; margin-top: -0.25rem; margin-bottom: 0.75rem; font-style: italic;"></h5>
                     <div class="interp-author-block interp-author-block-styled">
                         <span class="interp-author interp-author-styled"></span>
                         <div class="interp-authority interp-authority-styled">
@@ -105,9 +106,21 @@
                         <p class="interp-card-body"></p>
                     </div>
                     <button class="read-more-btn" aria-expanded="false">Read more</button>
-                    <div class="interp-divergent interp-divergent-styled">
-                        <span class="divergent-title divergent-title-styled">DIVERGENT ELEMENTS</span>
-                        <ul class="divergent-list divergent-list-styled"></ul>
+                    <div class="interp-divergent interp-divergent-styled" aria-label="Divergent elements">
+                        <button class="symbolic-toggle divergent-toggle" aria-expanded="false">
+                            <span class="symbolic-toggle-icon">◈</span>
+                            Divergent Elements
+                            <svg class="symbolic-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="symbolic-body divergent-body"></div>
+                    </div>
+                    <div class="interp-symbolic" aria-label="Symbolic reading">
+                        <button class="symbolic-toggle" aria-expanded="false">
+                            <span class="symbolic-toggle-icon">✦</span>
+                            Symbolic Reading
+                            <svg class="symbolic-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="symbolic-body"></div>
                     </div>
                     <div class="interp-meta">
                         <span class="interp-date"></span>
@@ -143,6 +156,9 @@
 
                                     <div class="creature-traits">
                                         <!-- Traits will be injected here -->
+                                    </div>
+                                    <div class="creature-symbolic-container mt-4" style="display: none;">
+                                        <!-- Creature-level symbolic meanings will be injected here -->
                                     </div>
                                 </div>
                             </div>

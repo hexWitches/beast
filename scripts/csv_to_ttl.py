@@ -30,7 +30,7 @@ NAMESPACES = {
     "vann:": VANN,
     "prov:": PROV,
     "cito:": CITO,
-    "viaf": VIAF
+    "viaf:": VIAF
 }
 
 def clean_uri_part(part):
@@ -92,6 +92,9 @@ def main():
 
         with open(csv_path, 'r', encoding='utf-8-sig') as f:
             reader = csv.DictReader(f)
+            # Strip whitespace from column headers to handle accidental spaces
+            if reader.fieldnames:
+                reader.fieldnames = [h.strip() for h in reader.fieldnames]
             for row_num, row in enumerate(reader):
                 subject_id = row.get(primary_key_col)
                 if not subject_id:
@@ -117,6 +120,10 @@ def main():
                     cell_value = row[col_name]
                     if not cell_value:
                         continue
+                    # Strip surrounding double quotes if present
+                    cell_value = cell_value.strip()
+                    if cell_value.startswith('"') and cell_value.endswith('"') and len(cell_value) >= 2:
+                        cell_value = cell_value[1:-1]
                         
                     if prop_config.get("predicate") in ["beast:hasPassageText", "rdfs:comment", "dcterms:title", "dcterms:language", "beast:hasSourceTerm", "beast:hasMeaning"]:
                         values = [cell_value.strip()]
@@ -173,6 +180,15 @@ def main():
                             # Special handling for dates if needed
                             datatype_str = prop_config.get("datatype", "xsd:gYear")
                             datatype_uri = XSD[datatype_str.split(":", 1)[1]] if datatype_str.startswith("xsd:") else URIRef(datatype_str)
+                            # xsd:gYear requires a 4-digit numeric string; skip non-numeric, zero-pad short years
+                            if datatype_uri == XSD.gYear:
+                                negative = val.startswith("-")
+                                digits = val.lstrip("-")
+                                if not digits.isdigit():
+                                    print(f"Warning: Skipping invalid gYear value '{val}' (subject: {subject_id})")
+                                    continue
+                                # Zero-pad to at least 4 digits
+                                val = ("-" if negative else "") + digits.zfill(4)
                             g.add((subject_uri, predicate_uri, Literal(val, datatype=datatype_uri)))
 
     # Durand Scheme

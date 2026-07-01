@@ -24,7 +24,8 @@ def main():
         "owl": "http://www.w3.org/2002/07/owl#",
         "vann": "http://purl.org/vocab/vann/",
         "prov": "http://www.w3.org/ns/prov#",
-        "cito": "http://purl.org/spar/cito/"
+        "cito": "http://purl.org/spar/cito/",
+        "viaf": "http://viaf.org/viaf/"
     }
 
     g.serialize(destination=output_path, format="json-ld", context=context, indent=2)

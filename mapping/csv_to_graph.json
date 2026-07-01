@@ -106,6 +106,11 @@
                 "type": "URI",
                 "prefix": "beastiary:",
                 "target_class": "beast:Source"
+            },
+            "distinctive_trait": {
+                "predicate": "beast:hasDistinctiveTrait",
+                "type": "Literal",
+                "datatype": "xsd:string"
             }
         }
     },
@@ -133,6 +138,11 @@
             },
             "personal_name": {
                 "predicate": "beast:hasPersonalName",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "distinctive_trait": {
+                "predicate": "beast:hasDistinctiveTrait",
                 "type": "Literal",
                 "datatype": "xsd:string"
             },
@@ -223,7 +233,7 @@
                 "prefix": "beast:"
             },
             "bestiary_type": {
-                "predicate": "hasBestiaryType",
+                "predicate": "beast:hasBestiaryType",
                 "type": "URI",
                 "prefix": "beast:",
                 "target_class": "beast:Bestiary"
@@ -309,7 +319,7 @@
         }
     },
     "narrative_functions.csv": {
-        "primary_key": "function_id",
+        "primary_key": "narrative_function_id",
         "entity_class": "beast:NarrativeFunction",
         "properties": {
             "label": {
@@ -342,7 +352,7 @@
                 "datatype": "xsd:string",
                 "language": "en"
             },
-            "has_meaning": {
+            "meaning": {
                 "predicate": "beast:hasMeaning",
                 "type": "Literal",
                 "datatype": "xsd:string",
@@ -418,11 +428,12 @@
             "wiki_authority": {
                 "predicate": "schema:sameAs",
                 "type": "URI",
-                "prefix": "wd"
+                "prefix": "wd:"
             },
             "viaf_authority": {
                 "predicate": "schema:sameAs",
-                "type": "URI"
+                "type": "URI",
+                "prefix": "viaf:"
             }
         }
     },
@@ -456,7 +467,7 @@
             "regime_id": {
                 "predicate": "beast:isGovernedBy",
                 "type": "URI",
-                "prefix": "beast",
+                "prefix": "beast:",
                 "target_class": "beast:Regime"
             },
             "symbol_id": {

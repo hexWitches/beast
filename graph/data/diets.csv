@@ -1,0 +1,5 @@
+diet_id,label,category,description
+diet_man_eater,Man eater,Carnivorous,"""A carnivorous diet directed especially at human flesh; the creature preys on people by preference, beyond ordinary predation on animals."""
+diet_elephant_blood,Elephant blood,Carnivorous,"""A specialized carnivorous diet of elephant blood, sought by the dragon of Pliny's tradition to cool its own heat; the creature lies in wait to drain the elephant."""
+diet_autotrophic,Autotrophic,,"""Self-nourishing through sunlight and nutrients drawn from the soil rather than by consuming other organisms; the mode proper to plant-creatures such as the mandrake."""
+diet_crabs_eater,Crabs eater,,"""A diet consisting of crabs and similar shellfish; the creature feeds on crustaceans."""

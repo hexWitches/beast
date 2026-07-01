@@ -96,9 +96,6 @@
     rdfs:label "Citation"@en ;
     rdfs:comment "A structured reference to a specific passage within a Source that documents a creature's appearance in a particular Interpretation, capturing both the precise textual location and the quoted or paraphrased content."@en .
 
-[] rdf:type owl:AllDisjointClasses ;
-    owl:members (:Source :Creature :Interpretation) .
-
 # ===== OBJECT PROPERTIES ================
 :ofCreature rdf:type owl:ObjectProperty ;
     rdfs:domain :Interpretation ;
@@ -115,12 +112,20 @@
     rdfs:label "has interpretation"@en ;
     rdfs:comment "Links a universal creature concept to its specific occurrences in a Source."@en .
 
-:appearsIn rdf:type owl:ObjectProperty ;
+:appearsIn rdf:type owl:ObjectProperty, owl:FunctionalProperty ;
     rdfs:domain :Interpretation ;
     rdfs:range :Source ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "appears in"@en ;
-    rdfs:comment "Links a creature occurrence to the specific Source where it is mentioned."@en .
+    rdfs:comment "Links an Interpretation to the specific Source where it is mentioned."@en .
+
+:containsInterpretation rdf:type owl:ObjectProperty ;
+    rdfs:domain :Source ;
+    rdfs:range :Interpretation ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    owl:inverseOf :appearsIn ;
+    rdfs:label "contains interpretation"@en ;
+    rdfs:comment "Links a Source to the interpretations of creatures that appear within it."@en .
 
 :hasBestiaryType rdf:type owl:ObjectProperty ;
     rdfs:domain :Bestiary ;
@@ -225,7 +230,14 @@
     rdfs:range rdfs:Literal ;
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has personal name"@en ;
-    rdfs:comment "The personal name of a creature as it appears in a Source."@en .
+    rdfs:comment "Records the proper name given to a creature in a specific interpretation, distinguishing a named individual from the generic species to which it belongs. It applies at the level of the interpretation, since a personal name is typically conferred by a particular source rather than shared across all manifestations of the creature."@en .
+
+:hasAlternativeName rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Creature ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has alternative name"@en ;
+    rdfs:comment "An alternative proper name or alias by which a creature is known across different sources or traditions, distinct from its canonical label and source-specific terminology."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================
@@ -301,9 +313,6 @@
     rdfs:label "Diet"@en ;
     rdfs:comment "The standard food consumption habits of a creature."@en .
 
-[] rdf:type owl:AllDisjointClasses ;
-    owl:members (:RealAnimal :Plant :InanimateElement) .
-
 # ===== OBJECT PROPERTIES ================
 :hasAbility rdf:type owl:ObjectProperty ;
     rdfs:domain :Creature ;
@@ -360,35 +369,45 @@
 
 :hasHeadOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:range :RealAnimal ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has head of"@en ;
     rdfs:comment "Specifies the head structure of a creature."@en .
 
 :hasBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:range :RealAnimal ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has body of"@en ;
     rdfs:comment "Specifies the main torso or body structure of a creature. May be asserted directly for creatures with a single undivided body source, or indirectly through its subproperties hasUpperBodyOf and hasLowerBodyOf for creatures whose body is split into distinct segments."@en .
 
 :hasUpperBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasBodyOf ;
-    rdfs:range :RealAnimal ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has upper body of"@en ;
     rdfs:comment "Specifies the upper body, torso, or anterior segment of a creature characterized by a segmented body structure."@en .
 
 :hasLowerBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasBodyOf ;
-    rdfs:range :RealAnimal ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has lower body of"@en ;
     rdfs:comment "Specifies the lower body, hindquarters, or posterior segment of a creature characterized by a segmented body structure."@en .
 
 :hasTailOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:range :RealAnimal ;
+    rdfs:domain :CompositeCreature ;
+    rdfs:range [ rdf:type owl:Class ;
+            owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has tail of"@en ;
     rdfs:comment "Specifies the tail structure of a creature."@en .
@@ -405,7 +424,7 @@
     rdfs:range :Habitat ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "habitat category"@en ;
-    rdfs:comment "Connects an Habitat to its specific habitat individual."@en .
+    rdfs:comment "Assigns a specific habitat to its broader environmental class, grouping particular places under a general category (such as Aquatic). It provides the higher-level classification through which individual habitats are organised."@en .
 
 :hasDiet rdf:type owl:ObjectProperty ,
                     owl:FunctionalProperty ;
@@ -420,15 +439,16 @@
     rdfs:range :Diet ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "diet category"@en ;
-    rdfs:comment "Connects a Diet to its specific diet individual."@en .
+    rdfs:comment "Assigns a specific diet to its broader dietary class, grouping particular diets under a general category (such as Carnivorous). It provides the higher-level classification through which fine-grained diets are organised."@en .
 
 # ===== DATA PROPERTIES ===============
-:hasAlternativeName rdf:type owl:DatatypeProperty ;
-    rdfs:domain :Creature ;
+:hasDistinctiveTrait rdf:type owl: ;
+    rdfs:domain [ rdf:type owl:Class ;
+                owl:unionOf (:Creature :Interpretation) ] ;
     rdfs:range rdfs:Literal ;
-    rdfs:isDefinedBy :ProvenanceModule ;
-    rdfs:label "has alternative name"@en ;
-    rdfs:comment "An alternative proper name or alias by which a creature is known across different sources or traditions, distinct from its canonical label and source-specific terminology."@en .
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "has distinctive trait"@en ;
+    rdfs:comment "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."@en .
 
 # ===== MODULE 3 - SYMBOLIC AND ANALYSIS LAYER ================
 # ===== CLASSES ================
@@ -467,8 +487,7 @@
     owl:disjointWith :DiurnalRegime ;
     rdfs:label "Nocturnal Regime"@en ;
     skos:prefLabel "Nocturnal Regime"@en ;
-    rdfs:comment "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures.
-    Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en .
+    rdfs:comment "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures. Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en .
 
 :DiurnalRegime rdf:type owl:Class ,
                         skos:Concept ;
@@ -477,8 +496,7 @@
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Diurnal Regime"@en ;
     skos:prefLabel "Diurnal Regime"@en ;
-    rdfs:comment "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time.
-    This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."@en .
+    rdfs:comment "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time. This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."@en .
 
 :ImaginaryStructure rdf:type owl:Class ,
                             skos:Concept ;
@@ -540,7 +558,7 @@
     rdfs:domain [ rdf:type owl:Class ; 
                   owl:unionOf (:Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range [ rdf:type owl:Class ; 
-                  owl:unionOf (:Archetype :NarrativeFunction :Imaginaire :ImaginaryStructure) ] ;
+                  owl:unionOf (:Archetype :NarrativeFunction :ImaginarySymbol :ImaginaryStructure) ] ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "symbolizes"@en ;
     rdfs:comment "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), a Creature or its Interpretation serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
@@ -609,6 +627,7 @@
 
 :additionalAbility rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Ability ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "additional ability"@en ;
@@ -616,6 +635,7 @@
 
 :removedAbility rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Ability ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "removed ability"@en ;
@@ -623,6 +643,7 @@
 
 :additionalPart rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :AnatomicalPart ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "additional part"@en ;
@@ -630,6 +651,7 @@
 
 :removedPart rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :AnatomicalPart ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "removed part"@en ;
@@ -637,19 +659,21 @@
 
 :alternativeHabitat rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Habitat ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "alternative habitat"@en ;
-    rdfs:comment "Links a source-specific Interpretation to a Habitat that the Creature canonically does not possess but which is depicted in a particular Source."@en .
+    rdfs:comment "Records a habitat attributed to a creature in a specific interpretation that departs from its canonical habitat, documenting how a particular source or tradition relocates the creature. It captures source-specific habitat divergence at the level of the individual interpretation."@en .
 
 :alternativeDiet rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasDivergence ;
+    rdfs:domain :Interpretation ;
     rdfs:range :Diet ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "alternative diet"@en ;
-    rdfs:comment "Links a source-specific Interpretation to a Diet that the Creature canonically does not possess but which is depicted in a particular Source."@en .
+    rdfs:comment "Records a diet attributed to a creature in a specific interpretation that departs from its canonical diet, documenting how a particular source or tradition reimagines what the creature consumes. It captures source-specific dietary divergence at the level of the individual interpretation."@en .
 
-:relatedTo rdf:type owl:ObjectProperty ;
+:relatedTo rdf:type owl:ObjectProperty, owl:SymmetricProperty ;
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:NarrativeFunction :Archetype) ] ;
     rdfs:range [ rdf:type owl:Class ;
@@ -827,6 +851,20 @@
     rdfs:label "Intimacy Symbol"@en ;
     skos:prefLabel "Intimacy Symbol"@en ;
     rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifying world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
+
+# ===== GENERAL AXIOMS ================
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members (:LiteraryWork :VisualArtwork :CinematicWork) .
+
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members (:Source :Creature :Interpretation) .
+
+[] rdf:type owl:AllDisjointClasses ;
+    owl:members (:RealAnimal :Plant :InanimateElement) .
+
+
+[] rdf:type owl:AllDisjointClasses ;
+   owl:members ( :SchizomorphicStructure :SyntheticStructure :MysticalStructure ) .
 
 [] rdf:type owl:AllDifferent ;
     owl:distinctMembers (

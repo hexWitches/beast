@@ -1,18 +1,32 @@
 ability_id,label,description
-ability_fly,Fly,
-ability_fire_breathing,Fire breathing,
-ability_immortal,Immortal,
-ability_magical_powers,Magical powers,
-ability_swim,Swim,
-ability_strenght,Strength,
-ability_speed,Speed,
-ability_courage,Courage,
-ability_deadly_scream,Deadly scream,
-ability_poisonous,Poisonous,
-ability_petrifying_gaze,Petrifying gaze,
-ability_self-renewal,Self-renewal,
-ability_play_the_flute,Play the flute,
-ability_dance,Dance,
-ability_sing,Sing,
-ability_accumulate_treasures,Accumulate treasures,
-ability_purify_water_or_poisson,Purify water or poison,
+ ability_compassion,Compassion,"""The capacity for mercy and restraint toward the vulnerable; the creature spares those it has overcome, releases captives, and refrains from harming the weak."""
+ability_accumulate_treasures,Treasure hoarding,"""The behavioral tendency to collect and guard valuable objects such as gold or precious stones."""
+ability_archery,Archery,"""Exceptional skill with a bow and arrow."""
+ability_blindness,Blindness,"""The condition of impaired or absent sight, whether innate, induced, or afflicting the creature; the inability to see, sometimes overcome by remedies or compensated by other senses."""
+ability_courage,Courage,"""A behavioral disposition toward fearlessness and boldness in the face of danger, often attributed symbolically rather than as a physical trait."""
+ability_dance,Dance,"""Rhythmic movement attributed to the creature, often in mythological or allegorical contexts."""
+ability_deadly_scream,Deadly scream,"""A vocalization so powerful it causes death or severe harm to those who hear it."""
+ability_extinct,Extinct,"""The condition of having died out entirely, with no living members of the kind remaining; the creature is known only through past attestation rather than present existence."""
+ability_fire_breathing,Fire breathing,"""The ability to exhale fire or intense heat, capable of burning living beings and objects."""
+ability_fly,Flight,"""The capacity to move through the air using wings or other supernatural means."""
+ability_healing,Healing,"""The ability to treat wounds and diseases through knowledge of herbs plants and natural remedies."""
+ability_immortal,Immortality,"""The creature does not die of natural causes and may be immune to conventional means of harm."""
+ability_killing_gaze,Killing gaze,"""The ability to cause instant death through direct eye contact, distinct from petrification."""
+ability_lethal_breath,Lethal breath,"""Exhalation capable of killing living beings, scorching vegetation, and breaking stones."""
+ability_lethal_hiss,Lethal hiss,"""A hissing sound capable of causing death or severe harm."""
+ability_lethal_odor,Lethal odor,"""A smell so toxic it kills serpents and other creatures in proximity."""
+ability_magical_powers,Magical powers,"""A general capacity to perform supernatural acts beyond the laws of nature, including enchantments, transformations, or other arcane feats."""
+ability_petrifying_gaze,Petrifying gaze,"""The ability to turn living beings to stone through direct eye contact."""
+ability_play_the_flute,Play the flute,"""The ability to play a musical instrument, attributed symbolically or as a marker of the creature's connection to music and nature."""
+ability_poisonous,Venomous,"""The creature produces or secretes a toxic substance capable of harming or killing through bite, touch, or breath."""
+ability_purify_water,Water purification,"""The ability to cleanse or sanctify bodies of water through presence or touch."""
+ability_resolution,Resolution,"""Firmness of will and steadfast determination; the creature's resolute, unyielding disposition, located by the bestiaries in the head as the seat of its resolve."""
+ability_self_renewal,Self-renewal,"""The capacity to regenerate, rejuvenate, or be reborn, often cyclically."""
+ability_sing,Singing,"""The ability to produce melodious vocalizations, often with enchanting or symbolic effects on listeners."""
+ability_skin_shedding,Skin Shedding,"""The periodic sloughing of the outer skin to renew the body, by which the creature casts off its old self and regains its youth, as the snake squeezes through a narrow crack to shed its skin."""
+ability_speak_black_speech,Speak Black Speech,"""The capacity to speak the dark tongue of evil or infernal beings; articulate speech in a malign or forbidden language."""
+ability_speed,Speed,"""Exceptional swiftness of movement on land, in water, or in the air."""
+ability_strength,Strength,"""Exceptional physical power, allowing the creature to overpower prey or enemies through brute force."""
+ability_sunlight_petrification,Sunlight Petrification,"""The power, or vulnerability, by which exposure to sunlight turns a creature to stone; petrifaction induced by daylight."""
+ability_swim,Swimming,"""The ability to move efficiently through water."""
+ability_swim_in_air,Swim in the air,"""The capacity to move through the air as though swimming through water, flying in constant, fluid motion without the aid of wings."""

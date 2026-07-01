@@ -24,7 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imageMap = {
         "androgino": "androgino.jpg",
+        "ant": "ant.jpeg",
+        "antlion": "mirmicoleone.jpg",
+        "basilisk": "basilisk.jpg",
         "bull": "bull.jpg",
+        "centaur": "centaur.jpeg",
+        "chimera": "chimera.jpeg",
         "cow": "cow.jpeg",
         "dragon": "dragon.jpg",
         "eagle": "eagle.jpg",
@@ -40,7 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "manticore": "manticore.jpg",
         "medusa": "medusa.jpg",
         "minotaur": "minotaur.jpg",
+        "mirmicoleone": "mirmicoleone.jpg",
         "ogre": "ogre.jpg",
+        "onager": "onager.jpeg",
+        "onocentaur": "onocentaur.jpg",
         "pegasus": "pegasus.png",
         "phoenix": "phoenix.jpg",
         "satyr": "satyr.jpg",
@@ -153,7 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (tNode && tNode["http://www.w3.org/2000/01/rdf-schema#label"]) {
                             val = getValue(tNode["http://www.w3.org/2000/01/rdf-schema#label"]);
                         } else {
-                            val = tId.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
+                            val = tId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ');
+                            val = val.replace(/\s*(diet|habitat|ability)\s*/gi, ' ').trim();
+                            val = val.charAt(0).toUpperCase() + val.slice(1);
                         }
                         traits.push({ label, value: val });
                     }
@@ -185,8 +195,54 @@ document.addEventListener("DOMContentLoaded", () => {
                 origin = originId.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
             }
 
+            // Creature-level Symbolic meanings
+            const formatDurandCreature = (str) => {
+                if (!str) return "";
+                str = str.replace(/symbol|structure|regime/gi, '');
+                return str.replace(/([A-Z])/g, ' $1').trim().toLowerCase();
+            };
+
+            const getCreatureDurandItems = (predicate) => {
+                return asArray(node[predicate]).map(ref => {
+                    const sId = getId(ref);
+                    if (!sId) return null;
+                    const sNode = graphMap[sId];
+                    const rawLabel = sNode ? getValue(sNode["http://www.w3.org/2000/01/rdf-schema#label"]) : "";
+                    let label = rawLabel || sId.split(":").pop();
+                    label = label.replace(/_(symbol|structure|regime)$/i, '').replace(/_/g, '');
+                    label = formatDurandCreature(label);
+                    const meaning = sNode ? getValue(sNode["beast:hasMeaning"]) || getValue(sNode["http://www.w3.org/2000/01/rdf-schema#comment"]) : "";
+                    return { label: label.charAt(0).toUpperCase() + label.slice(1), meaning };
+                }).filter(Boolean);
+            };
+
+            const creatureDurandSymbols = getCreatureDurandItems("beast:embodiesImaginarySymbol");
+            const creatureDurandStructures = getCreatureDurandItems("beast:belongsToImaginaryStructure");
+            const creatureDurandRegimes = getCreatureDurandItems("beast:isGovernedBy");
+
+            const getCreatureSymbolicItems = (predicate) => {
+                return asArray(node[predicate]).map(ref => {
+                    const aId = getId(ref);
+                    if (!aId) return null;
+                    const aNode = graphMap[aId];
+                    const rawLabel = aNode ? getValue(aNode["http://www.w3.org/2000/01/rdf-schema#label"]) : "";
+                    let label = rawLabel || aId.split(":").pop();
+                    label = label.replace(/_(archetype|function)$/i, '').replace(/_/g, ' ');
+                    label = label.replace(/\s*(archetype|function)\s*/gi, ' ').trim();
+                    const meaning = aNode ? getValue(aNode["beast:hasMeaning"]) : "";
+                    return { label: label.charAt(0).toUpperCase() + label.slice(1), meaning };
+                }).filter(Boolean);
+            };
+            
+            const creatureArchetypes = getCreatureSymbolicItems("beast:embodiesArchetype");
+            const creatureNarratives = getCreatureSymbolicItems("beast:hasNarrativeFunction");
+
             // Interpretations
             const interpretations = [];
+            
+            // extract the durand reference / comment
+            const creatureDescription = getValue(node["http://www.w3.org/2000/01/rdf-schema#comment"]);
+
             graphData.forEach(gNode => {
                 if (asArray(gNode["@type"]).includes("beast:Interpretation")) {
                     const ofCreatureRefs = asArray(gNode["beast:ofCreature"]);
@@ -330,19 +386,90 @@ document.addEventListener("DOMContentLoaded", () => {
                             const pId = getId(ref);
                             if (!pId) return null;
                             const pNode = graphMap[pId];
-                            return (pNode && pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
+                            let val = (pNode && pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
                                 ? getValue(pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
-                                : pId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ').replace(/^part /i, '').replace(/^ability /i, '');
+                                : pId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ');
+                            val = val.replace(/\s*(part|ability)\s*/gi, ' ').trim();
+                            return val.charAt(0).toUpperCase() + val.slice(1);
                         };
                         const addedParts = asArray(gNode["beast:additionalPart"]).map(formatDiv).filter(Boolean);
                         const removedParts = asArray(gNode["beast:removedPart"]).map(formatDiv).filter(Boolean);
                         const addedAbilities = asArray(gNode["beast:additionalAbility"]).map(formatDiv).filter(Boolean);
                         const removedAbilities = asArray(gNode["beast:removedAbility"]).map(formatDiv).filter(Boolean);
 
+                        const formatAlt = ref => {
+                            const pId = getId(ref);
+                            if (!pId) return null;
+                            const pNode = graphMap[pId];
+                            let val = (pNode && pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
+                                ? getValue(pNode["http://www.w3.org/2000/01/rdf-schema#label"]) 
+                                : pId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ');
+                            val = val.replace(/\s*(diet|habitat)\s*/gi, ' ').trim();
+                            return val.charAt(0).toUpperCase() + val.slice(1);
+                        };
+                        const altDiets = asArray(gNode["beast:alternativeDiet"]).map(formatAlt).filter(Boolean);
+                        const altHabitats = asArray(gNode["beast:alternativeHabitat"]).map(formatAlt).filter(Boolean);
+
+                        // ── Symbolic data ──────────────────────────────────
+                        // Archetype
+                        const archetypeRefs = asArray(gNode["beast:embodiesArchetype"]);
+                        const archetypes = archetypeRefs.map(ref => {
+                            const aId = getId(ref);
+                            if (!aId) return null;
+                            const aNode = graphMap[aId];
+                            const rawLabel = aNode ? getValue(aNode["http://www.w3.org/2000/01/rdf-schema#label"]) : "";
+                            let label = rawLabel || aId.split(":").pop();
+                            label = label.replace(/_(archetype)$/i, '').replace(/_/g, ' ');
+                            label = label.replace(/\s*(archetype)\s*/gi, ' ').trim();
+                            const meaning = aNode ? getValue(aNode["beast:hasMeaning"]) : "";
+                            return { label: label.charAt(0).toUpperCase() + label.slice(1), meaning };
+                        }).filter(Boolean);
+
+                        // Narrative function
+                        const narrativeFnRefs = asArray(gNode["beast:hasNarrativeFunction"]);
+                        const narrativeFunctions = narrativeFnRefs.map(ref => {
+                            const nId = getId(ref);
+                            if (!nId) return null;
+                            const nNode = graphMap[nId];
+                            const rawLabel = nNode ? getValue(nNode["http://www.w3.org/2000/01/rdf-schema#label"]) : "";
+                            let label = rawLabel || nId.split(":").pop();
+                            label = label.replace(/_(function)$/i, '').replace(/_/g, ' ');
+                            label = label.replace(/\s*(function)\s*/gi, ' ').trim();
+                            const meaning = nNode ? getValue(nNode["beast:hasMeaning"]) : "";
+                            return { label: label.charAt(0).toUpperCase() + label.slice(1), meaning };
+                        }).filter(Boolean);
+
+                        // Durand imaginary items (symbols, structures, regimes)
+                        const formatDurand = (str) => {
+                            if (!str) return "";
+                            str = str.replace(/symbol|structure|regime/gi, '');
+                            return str.replace(/([A-Z])/g, ' $1').trim().toLowerCase();
+                        };
+
+                        const getDurandItems = (predicate) => {
+                            return asArray(gNode[predicate]).map(ref => {
+                                const sId = getId(ref);
+                                if (!sId) return null;
+                                const sNode = graphMap[sId];
+                                const rawLabel = sNode ? getValue(sNode["http://www.w3.org/2000/01/rdf-schema#label"]) : "";
+                                let label = rawLabel || sId.split(":").pop();
+                                // if it's like "TeriomorphicSymbol", remove "_symbol", "_structure", "_regime" at the end if present, then format
+                                label = label.replace(/_(symbol|structure|regime)$/i, '').replace(/_/g, '');
+                                label = formatDurand(label);
+                                const meaning = sNode ? getValue(sNode["beast:hasMeaning"]) || getValue(sNode["http://www.w3.org/2000/01/rdf-schema#comment"]) : "";
+                                return { label: label.charAt(0).toUpperCase() + label.slice(1), meaning };
+                            }).filter(Boolean);
+                        };
+
+                        const durandSymbols = getDurandItems("beast:embodiesImaginarySymbol");
+                        const durandStructures = getDurandItems("beast:belongsToImaginaryStructure");
+                        const durandRegimes = getDurandItems("beast:isGovernedBy");
+
                         interpretations.push({
                             id: gNode["@id"],
                             badge: interpBadge,
                             title: interpTitle,
+                            personalName: getValue(gNode["beast:hasPersonalName"]),
                             body: interpBody || (isVisualOrMovie ? "" : "No description provided."),
                             author: interpAuthor,
                             viafUrl: interpViaf,
@@ -351,7 +478,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             sourceUrl: isVisualOrMovie ? sourceUrl : "",
                             artworkImageSrc: artworkImageSrc || "",
                             isCinematic: isCinematic || false,
-                            divergent: { addedParts, removedParts, addedAbilities, removedAbilities }
+                            divergent: { addedParts, removedParts, addedAbilities, removedAbilities, altDiets, altHabitats },
+                            symbolic: { archetypes, narrativeFunctions, durandSymbols, durandStructures, durandRegimes }
                         });
                     }
                 }
@@ -368,7 +496,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 tags: [],
                 parts,
                 traits,
-                interpretations
+                interpretations,
+                symbolic: { 
+                    description: creatureDescription,
+                    archetypes: creatureArchetypes,
+                    narrativeFunctions: creatureNarratives,
+                    durandSymbols: creatureDurandSymbols, 
+                    durandStructures: creatureDurandStructures, 
+                    durandRegimes: creatureDurandRegimes 
+                }
             };
         });
 
@@ -484,6 +620,39 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
+        // Populate creature symbolic meanings
+        const creatureSymbolicContainer = modalEl.querySelector(".creature-symbolic-container");
+        if (creatureSymbolicContainer) {
+            creatureSymbolicContainer.innerHTML = "";
+            const { description, archetypes, narrativeFunctions, durandSymbols, durandStructures, durandRegimes } = data.symbolic;
+            const hasAny = archetypes.length > 0 || narrativeFunctions.length > 0 || durandSymbols.length > 0 || durandStructures.length > 0 || durandRegimes.length > 0 || description;
+            
+            if (hasAny) {
+                let symbolHtml = '';
+                const makeGroup = (items, categoryLabel, pillClass) => {
+                    if (!items.length) return '';
+                    const pills = items.map(item => {
+                        const tipAttr = item.meaning ? ` title="${item.meaning.replace(/"/g, '&quot;')}"` : '';
+                        return `<span class="symbolic-pill ${pillClass}"${tipAttr}>${item.label}</span>`;
+                    }).join('');
+                    return `<div class="symbolic-group"><span class="symbolic-row-label">${categoryLabel}</span><div class="symbolic-pills">${pills}</div></div>`;
+                };
+
+                symbolHtml += makeGroup(archetypes, 'Archetype', 'pill-archetype');
+                symbolHtml += makeGroup(narrativeFunctions, 'Narrative', 'pill-narrative');
+                symbolHtml += makeGroup(durandRegimes, 'Regime', 'pill-durand');
+                symbolHtml += makeGroup(durandStructures, 'Structure', 'pill-durand');
+                symbolHtml += makeGroup(durandSymbols, 'Symbol', 'pill-durand');
+                symbolHtml = `<div class="symbolic-groups">${symbolHtml}</div>`;
+
+                let descHtml = description ? `<p class="symbolic-description">${description}</p>` : '';
+                creatureSymbolicContainer.innerHTML = `<h5 class="symbolic-heading">Symbolic Meaning</h5><div class="symbolic-body-static">${symbolHtml}${descHtml}</div>`;
+                creatureSymbolicContainer.style.display = "block";
+            } else {
+                creatureSymbolicContainer.style.display = "none";
+            }
+        }
+
         // Populate interpretations
         const interpsContainer = modalEl.querySelector("#modal-interpretations-grid");
         interpsContainer.innerHTML = "";
@@ -497,6 +666,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 iCard.id = interp.id;
                 iCard.querySelector(".interp-source-badge").textContent = interp.badge;
                 iCard.querySelector(".interp-card-title").textContent = interp.title;
+                
+                const personalNameEl = iCard.querySelector(".interp-personal-name");
+                if (interp.personalName) {
+                    personalNameEl.textContent = interp.personalName;
+                    personalNameEl.style.display = "block";
+                } else {
+                    personalNameEl.style.display = "none";
+                }
+
                 iCard.querySelector(".interp-card-body").innerHTML = interp.body;
                 
                 const authorBlockEl = iCard.querySelector(".interp-author-block");
@@ -569,16 +747,71 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const divEl = iCard.querySelector(".interp-divergent");
-                const divList = iCard.querySelector(".divergent-list");
-                let divItems = [];
-                interp.divergent.addedParts.forEach(p => divItems.push(`<li>Added part: <span class="highlight-part">${p}</span></li>`));
-                interp.divergent.removedParts.forEach(p => divItems.push(`<li>Removed part: <span class="highlight-part">${p}</span></li>`));
-                interp.divergent.addedAbilities.forEach(p => divItems.push(`<li>Added ability: <span class="highlight-part">${p}</span></li>`));
-                interp.divergent.removedAbilities.forEach(p => divItems.push(`<li>Removed ability: <span class="highlight-part">${p}</span></li>`));
-                
-                if (divItems.length > 0) {
-                    divList.innerHTML = divItems.join("");
+                const divBody = iCard.querySelector(".divergent-body");
+                const divToggle = iCard.querySelector(".divergent-toggle");
+
+                const makeDivPills = (items, categoryLabel, pillClass) => {
+                    if (!items.length) return '';
+                    const pills = items.map(item => `<span class="symbolic-pill ${pillClass}">${item}</span>`).join('');
+                    return `<div class="symbolic-row"><span class="symbolic-row-label">${categoryLabel}</span><div class="symbolic-pills">${pills}</div></div>`;
+                };
+
+                let divHtml = '';
+                divHtml += makeDivPills(interp.divergent.addedParts, 'Added', 'pill-added');
+                divHtml += makeDivPills(interp.divergent.removedParts, 'Removed', 'pill-removed');
+                divHtml += makeDivPills(interp.divergent.addedAbilities, 'Ability+', 'pill-added');
+                divHtml += makeDivPills(interp.divergent.removedAbilities, 'Ability−', 'pill-removed');
+                divHtml += makeDivPills(interp.divergent.altDiets, 'Diet', 'pill-added');
+                divHtml += makeDivPills(interp.divergent.altHabitats, 'Habitat', 'pill-added');
+
+                if (divHtml) {
+                    divBody.innerHTML = divHtml;
                     divEl.style.display = "block";
+                    if (divToggle) {
+                        divToggle.addEventListener('click', () => {
+                            const isOpen = divEl.classList.toggle('symbolic-open');
+                            divToggle.setAttribute('aria-expanded', isOpen);
+                        });
+                    }
+                }
+
+                // ── Symbolic section ──────────────────────────────────────
+                const symbolicEl = iCard.querySelector(".interp-symbolic");
+                const symbolicToggle = iCard.querySelector(".interp-symbolic .symbolic-toggle");
+                const symbolicBody = iCard.querySelector(".interp-symbolic .symbolic-body");
+
+                if (symbolicEl && symbolicBody && interp.symbolic) {
+                    const { archetypes, narrativeFunctions, durandSymbols, durandStructures, durandRegimes } = interp.symbolic;
+                    const hasAny = archetypes.length > 0 || narrativeFunctions.length > 0 || durandSymbols.length > 0 || durandStructures.length > 0 || durandRegimes.length > 0;
+
+                    if (hasAny) {
+                        let symbolHtml = '';
+
+                        const makePills = (items, categoryLabel, pillClass) => {
+                            if (!items.length) return '';
+                            const pills = items.map(item => {
+                                const tipAttr = item.meaning ? ` title="${item.meaning.replace(/"/g, '&quot;')}"` : '';
+                                return `<span class="symbolic-pill ${pillClass}"${tipAttr}>${item.label}</span>`;
+                            }).join('');
+                            return `<div class="symbolic-row"><span class="symbolic-row-label">${categoryLabel}</span><div class="symbolic-pills">${pills}</div></div>`;
+                        };
+
+                        symbolHtml += makePills(archetypes, 'Archetype', 'pill-archetype');
+                        symbolHtml += makePills(narrativeFunctions, 'Narrative', 'pill-narrative');
+                        symbolHtml += makePills(durandRegimes, 'Regime', 'pill-durand');
+                        symbolHtml += makePills(durandStructures, 'Structure', 'pill-durand');
+                        symbolHtml += makePills(durandSymbols, 'Symbol', 'pill-durand');
+
+                        symbolicBody.innerHTML = symbolHtml;
+                        symbolicEl.style.display = 'block';
+
+                        if (symbolicToggle) {
+                            symbolicToggle.addEventListener('click', () => {
+                                const isOpen = symbolicEl.classList.toggle('symbolic-open');
+                                symbolicToggle.setAttribute('aria-expanded', isOpen);
+                            });
+                        }
+                    }
                 }
 
                 // Read more button logic
@@ -588,6 +821,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         const isExpanded = iCard.classList.toggle("expanded");
                         readMoreBtn.textContent = isExpanded ? "Read less" : "Read more";
                         readMoreBtn.setAttribute("aria-expanded", isExpanded);
+                        if (isExpanded) {
+                            iCard.style.height = 'auto';
+                        } else {
+                            iCard.style.height = '';
+                        }
                     });
                 }
 

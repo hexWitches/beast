@@ -1030,6 +1030,12 @@ footer p, footer li {
     padding: 2rem 2rem 1.5rem;
 }
 
+.creature-modal-header > div {
+    flex: 1;
+    min-width: 0;
+    padding-right: 1rem;
+}
+
 .modal-latin {
     font-family: var(--text-font);
     font-size: 0.82rem;
@@ -1172,8 +1178,10 @@ footer p, footer li {
     font-weight: 700;
     color: var(--old-gold);
     letter-spacing: 4px;
-    line-height: 1;
+    line-height: 1.2;
     margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .creature-label-latin {
@@ -1583,6 +1591,19 @@ footer p, footer li {
     .interpretations-grid {
         grid-template-columns: 1fr;
     }
+
+    .creature-modal-header {
+        padding: 1.5rem 1rem 1.2rem;
+    }
+
+    .creature-modal-body {
+        padding: 1.5rem 1rem;
+    }
+
+    .creature-name {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+        letter-spacing: 2px;
+    }
 }
 
 /* Scroll to Top Button */
@@ -1761,19 +1782,12 @@ footer p, footer li {
 
 .interp-divergent-styled {
     display: none;
+    border-top: 1px solid rgba(207, 181, 59, 0.12);
+    margin-top: 0.9rem;
 }
 
-.divergent-title-styled {
-    font-size: 0.75rem;
-    font-family: var(--header-font);
-    color: var(--old-gold);
-}
-
-.divergent-list-styled {
-    margin-top: 0.4rem;
-    padding-left: 1.2rem;
-    font-size: 0.8rem;
-    color: rgba(244, 235, 216, 0.8);
+.interp-divergent-styled.symbolic-open .symbolic-chevron {
+    transform: rotate(180deg);
 }
 
 .interp-url-styled {
@@ -1801,4 +1815,201 @@ footer p, footer li {
 .rq-label-custom {
     margin-bottom: 1rem;
     color: var(--old-gold);
+}
+
+/* ─── Symbolic Reading Section ────────────────────────────────────────── */
+.interp-symbolic {
+    display: none; /* shown by JS when data exists */
+    border-top: 1px solid rgba(207, 181, 59, 0.12);
+    margin-top: 0.9rem;
+}
+
+/* Toggle button */
+.symbolic-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.7rem 0 0.5rem;
+    cursor: pointer;
+    font-family: var(--header-font);
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(207, 181, 59, 0.65);
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.symbolic-toggle:hover {
+    color: var(--old-gold);
+}
+
+.symbolic-toggle-icon {
+    font-size: 0.55rem;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.symbolic-chevron {
+    width: 13px;
+    height: 13px;
+    margin-left: auto;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    stroke: currentColor;
+}
+
+.interp-symbolic.symbolic-open .symbolic-chevron {
+    transform: rotate(180deg);
+}
+
+/* Body: hidden by default, revealed on toggle */
+.symbolic-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    padding-bottom: 0;
+}
+
+/* Static variant: always visible, used for the creature-level Symbolic Meaning
+   block in the modal (no toggle button, so it must not rely on .symbolic-open) */
+.symbolic-body-static {
+    display: block;
+    margin-top: 0;
+}
+
+/* Heading for the creature-level Symbolic Meaning block, matching the
+   site's other section labels (etymology-label / trait-label style) */
+.symbolic-heading {
+    font-family: var(--header-font);
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--old-gold);
+    border-bottom: 1px solid rgba(207, 181, 59, 0.2);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+/* Categories laid out side by side, wrapping to new line only if needed */
+.symbolic-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.2rem;
+}
+
+.symbolic-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.symbolic-group .symbolic-row-label {
+    margin-top: 0;
+    min-width: 0;
+    padding-top: 0;
+}
+
+.symbolic-description {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(244, 235, 216, 0.7);
+    font-family: var(--text-font);
+}
+
+.interp-symbolic.symbolic-open .symbolic-body,
+.interp-divergent-styled.symbolic-open .symbolic-body {
+    max-height: 2000px;
+    opacity: 1;
+    padding-bottom: 0.8rem;
+}
+
+/* Each row: a category label + pills */
+.symbolic-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: 0.55rem;
+    flex-wrap: wrap;
+}
+
+.symbolic-body-static .symbolic-row {
+    margin-top: 0.75rem;
+}
+
+.symbolic-row-label {
+    font-family: var(--header-font);
+    font-size: 0.52rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(207, 181, 59, 0.45);
+    white-space: nowrap;
+    margin-top: 0.2rem;
+    min-width: 60px;
+    padding-top: 0.15rem;
+}
+
+.symbolic-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.symbolic-pill {
+    display: inline-block;
+    font-family: var(--header-font);
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    border: 1px solid;
+    cursor: default;
+    transition: opacity 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.symbolic-pill:hover {
+    opacity: 0.85;
+    box-shadow: 0 0 8px rgba(207, 181, 59, 0.2);
+}
+
+
+/* Archetype — warm gold */
+.pill-archetype {
+    color: var(--old-gold);
+    border-color: rgba(207, 181, 59, 0.35);
+    background: rgba(207, 181, 59, 0.07);
+}
+
+/* Narrative Function — cooler, silver-tinted */
+.pill-narrative {
+    color: rgba(200, 215, 230, 0.82);
+    border-color: rgba(180, 200, 220, 0.28);
+    background: rgba(180, 200, 220, 0.06);
+}
+
+/* Durand — muted sage / amber */
+.pill-durand {
+    color: rgba(190, 200, 165, 0.85);
+    border-color: rgba(160, 180, 130, 0.28);
+    background: rgba(160, 180, 130, 0.06);
+}
+/* Divergent added — green-tinted */
+.pill-added {
+    color: rgba(170, 210, 170, 0.88);
+    border-color: rgba(130, 185, 130, 0.28);
+    background: rgba(130, 185, 130, 0.06);
+}
+
+/* Divergent removed — rose-tinted */
+.pill-removed {
+    color: rgba(220, 170, 165, 0.88);
+    border-color: rgba(200, 130, 125, 0.28);
+    background: rgba(200, 130, 125, 0.06);
 }
