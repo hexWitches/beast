@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     interpBadge = specificType.split(":").pop().replace(/([A-Z])/g, ' $1').trim();
                                 }
 
-                                if (sourceTypes.includes("beast:Movie") || sourceTypes.includes("beast:VisualArtwork") || sourceTypes.includes("beast:Film")) {
+                                if (sourceTypes.includes("beast:CinematicWork") || sourceTypes.includes("beast:VisualArtwork")) {
                                     isVisualOrMovie = true;
                                 }
 
@@ -284,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 if (sourceTypes.includes("beast:VisualArtwork")) {
                                     const artworkKey = sourceId.split(":").pop(); // e.g. "source_oedipus_moureau"
                                     artworkImageSrc = `assets/images/visual_artworks/${artworkKey}`;
-                                } else if (sourceTypes.includes("beast:Movie") || sourceTypes.includes("beast:Film")) {
+                                } else if (sourceTypes.includes("beast:CinematicWork")) {
                                     const cinematicKey = sourceId.split(":").pop();
                                     artworkImageSrc = `assets/images/cinematic_works/${cinematicKey}`;
                                     isCinematic = true;
