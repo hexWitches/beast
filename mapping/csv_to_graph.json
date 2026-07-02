@@ -13,6 +13,12 @@
                 "type": "Literal",
                 "datatype": "xsd:string"
             },
+            "type_of_creature": {
+                "predicate": "beast:isOfSpecies",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:RealAnimal"
+            },
             "etymology_id": {
                 "predicate": "beast:hasEtymology",
                 "type": "URI",
@@ -259,10 +265,25 @@
                 "type": "date",
                 "datatype": "xsd:gYear"
             },
-            "temporal_coverage": {
+            "temporal_coverage_iso": {
                 "predicate": "schema:temporalCoverage",
                 "type": "Literal",
                 "datatype": "xsd:string"
+            },
+            "temporal_coverage_text": {
+                "predicate": "schema:temporalCoverage",
+                "type": "Literal",
+                "datatype": "xsd:string"
+            },
+            "start_year": {
+                "predicate": "schema:startDate",
+                "type": "Literal",
+                "datatype": "xsd:gYear"
+            },
+            "end_year": {
+                "predicate": "schema:endDate",
+                "type": "Literal",
+                "datatype": "xsd:gYear"
             },
             "influenced_by": {
                 "predicate": "beast:wasInfluencedBy",
@@ -275,6 +296,12 @@
                 "type": "URI",
                 "prefix": "beastiary:",
                 "target_class": "beast:Source"
+            },
+            "interpretation_id": {
+                "predicate": "beast:containsInterpretation",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:Interpretation"
             },
             "source_url": {
                 "predicate": "schema:url",
@@ -408,22 +435,22 @@
                 "predicate": "schema:nationality",
                 "type": "Literal",
                 "datatype": "xsd:string"
-            },
-            "birth_year": {
-                "predicate": "schema:birthDate",
-                "type": "Literal",
-                "datatype": "xsd:string"
-            },
-            "death_year": {
-                "predicate": "schema:deathDate",
-                "type": "Literal",
-                "datatype": "xsd:string"
-            },
+            }, 
             "dates_display": {
                 "predicate": "rdfs:comment",
                 "type": "Literal",
                 "datatype": "xsd:string",
                 "language": "en"
+            },
+            "birth_year": {
+                "predicate": "schema:birthDate",
+                "type": "Literal",
+                "datatype": "xsd:gYear"
+            },
+            "death_year": {
+                "predicate": "schema:deathDate",
+                "type": "Literal",
+                "datatype": "xsd:gYear"
             },
             "wiki_authority": {
                 "predicate": "schema:sameAs",

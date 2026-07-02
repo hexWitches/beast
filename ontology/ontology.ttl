@@ -10,7 +10,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix cito: <http://purl.org/spar/cito/> .
-@prefix fabio: <http://purl.org/spar/fabio> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
     dcterms:title "BEAST Ontology"@en ;
@@ -24,7 +24,12 @@
     dcterms:publisher <https://github.com/hexWitches> ;
     schema:codeRepository <https://github.com/hexWitches/beast> ;
     vann:preferredNamespacePrefix "beast" ;
-    dcterms:bibliographicCitation "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
+    dcterms:bibliographicCitation "Gamboa Nivia, M.J., Pinto, M., Roggiani, S., Spadavecchia, A. (2026). BEAST Ontology. https://w3id.org/beast/ontology"@en ;
+    dcterms:references "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
+    owl:imports <http://www.w3.org/2004/02/skos/core#> ,
+        <http://www.w3.org/ns/prov-o#> ,
+        <http://purl.org/spar/cito> ,
+        <http://purl.org/spar/fabio> ;
     rdfs:comment "The BEAST ontology is structured into three interconnected modules. The Provenance Module documents the historical and textual footprint of creatures, distinguishing between the universal concept of a beast (Creature) and its source-specific manifestations (Interpretation) across bestiaries, literary works, visual artworks, and cinematic works; it also tracks the diachronic evolution of creature terminology through Nomenclature and Etymology. The Biological Module defines the morphological and behavioural traits of both real and imaginary beings: it catalogs anatomical composition, habitats, diets, and abilities, and documents anomalies in real animals through a structured vocabulary of absence, duplication, and modification. The Symbolic Module provides a multidimensional framework for the analysis of creatures as cultural and archetypal figures. It integrates two analytical layers: Gilbert Durand's anthropological structures of the imaginary (DurandImaginary scheme) and an archetype and narrative function layer that distinguishes the universal psychological patterns creatures embody from the contextual roles they perform in specific sources. Together the three modules enable the ontology to trace a creature from its historical attestation in a primary text, through its biological description, to its deepest symbolic resonance in the collective imagination."@en .
 
 # ===== BEAST ONTOLOGY ================
@@ -440,6 +445,13 @@
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "diet category"@en ;
     rdfs:comment "Assigns a specific diet to its broader dietary class, grouping particular diets under a general category (such as Carnivorous). It provides the higher-level classification through which fine-grained diets are organised."@en .
+
+:isOfSpecies rdf:type owl:ObjectProperty ;
+    rdfs:domain :RealAnimal ;
+    rdfs:range :RealAnimal ;
+    rdfs:isDefinedBy :BiologicalModule ;
+    rdfs:label "is of species"@en ;
+    rdfs:comment "Links a real animal individual to the base biological species it belongs to, used particularly for creatures that exhibit anomalies or deformities but remain fundamentally members of a recognizable species."@en .
 
 # ===== DATA PROPERTIES ===============
 :hasDistinctiveTrait rdf:type owl: ;
