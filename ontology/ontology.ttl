@@ -101,6 +101,16 @@
     rdfs:label "Citation"@en ;
     rdfs:comment "A structured reference to a specific passage within a Source that documents a creature's appearance in a particular Interpretation, capturing both the precise textual location and the quoted or paraphrased content."@en .
 
+:Genesis rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Genesis"@en ;
+    rdfs:comment "A source-specific account of a creature's origin or birth, capturing the parent(s) or progenitor(s) involved, and/or a circumstantial or causal explanation. Because genealogical and origin narratives frequently vary or conflict across sources, Genesis is modelled at the level of Interpretation rather than Creature, allowing multiple, potentially divergent, origin accounts to coexist for the same universal creature concept without asserting a single canonical explanation."@en .
+
+:MythologicalFigure rdf:type owl:Class ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "Mythological Figure"@en ;
+    rdfs:comment "A deity, hero, personified force, or other agent from myth or tradition."@en .
+
 # ===== OBJECT PROPERTIES ================
 :ofCreature rdf:type owl:ObjectProperty ;
     rdfs:domain :Interpretation ;
@@ -198,7 +208,37 @@
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "extracted from"@en ;
     rdfs:comment "Links a Citation to the Source from which its passage was drawn. Where :hasTextualReference connects an Interpretation to a Citation, :extractedFrom connects that Citation upward to the Source document — completing the three-level provenance chain: Interpretation → Citation → Source. This property allows the ontology to answer questions such as 'which Sources contain direct textual evidence for this creature' by traversing the chain rather than asserting a direct link between Interpretation and Source."@en .
-    
+
+:hasGenesis rdf:type owl:ObjectProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :Genesis ;
+    owl:inverseOf :isGenesisOf ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has genesis"@en ;
+    rdfs:comment "Links a source-specific Interpretation to the account of the creature's origin or birth as told in that Source."@en .
+
+:isGenesisOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Genesis ;
+    rdfs:range :Interpretation ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "is genesis of"@en ;
+    rdfs:comment "Links a Genesis account back to the Interpretation it describes the origin of."@en .
+
+:involvesParent rdf:type owl:ObjectProperty ;
+    rdfs:domain :Genesis ;
+    rdfs:range [ rdf:type owl:Class ;
+                owl:unionOf (:Creature :MythologicalFigure) ] ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "involves parent"@en ;
+    rdfs:comment "Links a Genesis account to a Creature or MythologicalFigure identified as a parent or progenitor within that account."@en .
+
+:hasSibling rdf:type owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:domain :Interpretation ;
+    rdfs:range :Interpretation ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has sibling"@en ;
+    rdfs:comment "Indicates that two Interpretations' Genesis accounts share a common parent or progenitor, as documented within the same source tradition." @en .
+
 # ===== DATA PROPERTIES ================
 :hasRootTerm rdf:type owl:DatatypeProperty ;
     rdfs:domain :Etymology ;
@@ -243,6 +283,13 @@
     rdfs:isDefinedBy :ProvenanceModule ;
     rdfs:label "has alternative name"@en ;
     rdfs:comment "An alternative proper name or alias by which a creature is known across different sources or traditions, distinct from its canonical label and source-specific terminology."@en .
+
+:hasGenesisDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Genesis ;
+    rdfs:range rdfs:Literal ;
+    rdfs:isDefinedBy :ProvenanceModule ;
+    rdfs:label "has genesis description"@en ;
+    rdfs:comment "A free-text narrative summary of a creature's origin as told in a specific Interpretation."@en .
 
 # ===== MODULE 2 - BIOLOGICAL AND STRUCTURAL LAYER ================
 # ===== CLASSES ================
@@ -327,7 +374,7 @@
     rdfs:comment "Links a creature to a specific behavior or physical action it is known for."@en .
 
 :hasPart rdf:type owl:ObjectProperty ;
-    rdfs:domain :ImaginaryBeing ;
+    rdfs:domain :Creature ;
     rdfs:range :AnatomicalPart ;
     rdfs:isDefinedBy :BiologicalModule ;
     rdfs:label "has part"@en ;
@@ -869,7 +916,7 @@
     owl:members (:LiteraryWork :VisualArtwork :CinematicWork) .
 
 [] rdf:type owl:AllDisjointClasses ;
-    owl:members (:Source :Creature :Interpretation) .
+    owl:members (:Source :Creature :Interpretation :Genesis :MythologicalFigure) .
 
 [] rdf:type owl:AllDisjointClasses ;
     owl:members (:RealAnimal :Plant :InanimateElement) .
