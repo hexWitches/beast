@@ -23,13 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentPage   = 1;
 
     const imageMap = {
-        "androgino": "androgino.jpg",
+        "acephalus": "acephalus.jpeg",
         "ant": "ant.jpeg",
         "antlion": "mirmicoleone.jpg",
         "basilisk": "basilisk.jpg",
         "bull": "bull.jpg",
         "centaur": "centaur.jpeg",
         "chimera": "chimera.jpeg",
+        "conjoined": "creature_conjoined.jpeg",
         "cow": "cow.jpeg",
         "dragon": "dragon.jpg",
         "eagle": "eagle.jpg",
@@ -38,14 +39,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "fish": "fish.jpeg",
         "giant": "giant.jpg",
         "goat": "goat.jpeg",
+        "haiit": "haiit.jpeg",
+        "hairy_girl": "hairy_girl.jpeg",
+        "hermaphrodite": "androgino.jpg",
         "hippogriff": "hippogriff.jpg",
         "horse": "horse.jpeg",
+        "human_dog": "creature_human_dog.jpg",
         "lion": "lion.jpg",
         "mandrake": "mandrake.jpg",
         "manticore": "manticore.jpg",
         "medusa": "medusa.jpg",
         "minotaur": "minotaur.jpg",
         "mirmicoleone": "mirmicoleone.jpg",
+        "mostro_strabiliante": "mostro_strabiliante.png",
         "ogre": "ogre.jpg",
         "onager": "onager.jpeg",
         "onocentaur": "onocentaur.jpg",
@@ -53,12 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "phoenix": "phoenix.jpg",
         "satyr": "satyr.jpg",
         "scorpion": "scorpion.jpeg",
+        "sea_horse": "sea_horse.jpeg",
         "siren": "siren.jpeg",
+        "polymelic_cat": "six_footed_cat.jpeg",
         "snake": "snake.jpg",
         "sphinx": "sphinx.jpg",
+        "polycephalus_sheep": "three_head_sheep.jpeg",
         "troll": "troll.jpg",
         "unicorn": "unicorn.jpg",
-        "hermaphrodite": "androgino.jpg"
     };
 
     // Helper functions to handle the JSON-LD structure safely
@@ -70,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function getValue(val) {
         if (!val) return "";
         if (typeof val === "string") return val;
+        if (Array.isArray(val)) {
+            return val.map(v => typeof v === "string" ? v : (v["@value"] || "")).filter(Boolean).join(", ");
+        }
         if (val["@value"]) return val["@value"];
         return "";
     }
@@ -114,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const parsedCreatures = creaturesNodes.map(node => {
             const idUri = node["@id"];
-            const baseId = idUri.split("_").pop(); // e.g. "dragon" from "beastiary:creature_dragon"
+            const baseId = idUri.replace(/^.*:creature_/, ""); // e.g. "dragon" from "beastiary:creature_dragon"
             const types = asArray(node["@type"]);
             const isImaginary = IMAGINARY_TYPES.some(t => types.includes(t));
             const type = isImaginary ? "HybridCreature" : "Mythological";
