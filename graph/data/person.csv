@@ -1,68 +1,72 @@
-person_id,given_name,family_name,nationality,birth_year,dates_display,death_year,wiki_authority,viaf_authority
-person_ øvredal,André, Øvredal,Norwegian,1973,,,Q2848912,http://viaf.org/viaf/288292099
-person_adamson,Andrew ,Adamson,New Zealander ,1966,,,Q432845,http://viaf.org/viaf/23252298
-person_aldrovandi,Ulisse,Aldrovandi,Italian,1522,,1605,Q321358,http://viaf.org/viaf/100190422
-person_andersen,Hans Christian , Andersen,Danish,1805,,1875,Q5673,http://viaf.org/viaf/4925902
-person_ariosto,Ludovico,Ariosto,Italian,1474,,1533,Q48900,http://viaf.org/viaf/71386455
-person_asbjørnsen,Peter Christen,Asbjørnsen,Norwegian,1812,,1885,Q355485,http://viaf.org/viaf/116587918
-person_bierce,Ambrose,Bierce,American,1842,,1914,Q191050,http://viaf.org/viaf/232144783035948358100
-person_borges,Jorge Luis,Borges,Argentine,1899,,1986,Q909,http://viaf.org/viaf/88919448
-person_brueghel_jeune,Pieter,Brueghel,Dutch,1564,,1638,Q255828,http://viaf.org/viaf/106974142
-person_canova,Antonio,Canova,Italian,1757,,1822,Q5547,http://viaf.org/viaf/36965536
-person_cantimpre,Thomas,Cantimpré,Flemish,,c. 1200-1272,,Q572799,http://viaf.org/viaf/1878151778206818130004
-person_caravaggio,Michelangelo,Merisi,Italian,1571,,1610,Q42207,http://viaf.org/viaf/87679282
-person_chaucer,Geoffrey ,Chaucer,English ,1343,,1400,Q5683,http://viaf.org/viaf/100185203
-person_chen,Chen,Rong,Chinese,1200,,1266,Q2739948,http://viaf.org/viaf/96607916
-person_chretien,Chrétien,de Troyes,French,1130,,1191,Q4302,http://viaf.org/viaf/87681171
-person_claudio,Claudio,Claudiano,Ancient Rome,,c. 370-404,,Q205947,http://viaf.org/viaf/246763674
-person_clements,Ron,Clements,American,1953,,,Q930209,http://viaf.org/viaf/69022925
-person_columbus,Chris,Columbus,American,1958,,,Q75079,http://viaf.org/viaf/119396580
-person_ctesias,Ctesias,,Greek,,V BC,,Q296325,http://viaf.org/viaf/192092583
-person_dante,Dante,Alighieri,Italian,1265,,1321,Q1067,http://viaf.org/viaf/97105654
-person_doré,Gustave,Doré,French,1832,,1883,Q6682,http://viaf.org/viaf/41839207
-person_ende,Michael,Ende,German,1929,,1995,Q76498,http://viaf.org/viaf/34456245
-person_erodoto,Erodoto,,Greek,,c. 484-425 BC,,Q26825,http://viaf.org/viaf/100225976
-person_esiodo,Esiodo,,Greek,,VIII BC,,Q44233,http://viaf.org/viaf/122220717
-person_flaubert,Gustave,Flaubert,French,1821,,1880,Q43444,http://viaf.org/viaf/9846192
-person_g_martin,George R. R.,Martin,American,1984,,,Q181677,http://viaf.org/viaf/98636170
-person_gospodinov,Georgi,Gospodinov,Bulgarian,1968,,,Q1509177,http://viaf.org/viaf/54360545
-person_ibsen,Henrik,Ibsen,Norwegian,1828,,1906,Q36661,http://viaf.org/viaf/71378383
-person_ingres,Jean-Auguste-Dominique,Ingres,French,1780,,1867,Q23380,http://viaf.org/viaf/76327826
-person_isayama,Hajime,Isayama,Japanese,1986,,,Q3782468,http://viaf.org/viaf/171550535
-person_isidore,Isidore,of Seville ,Spanish ,560,,636,Q166876,http://viaf.org/viaf/803890
-person_jackson,Wilfred ,Jackson ,American ,1906,,1988,Q1385379,http://viaf.org/viaf/76511055
-person_lattanzio,Lucio Cecilio,Lattanzio,Ancient Rome,,c. 240-320 AC,,Q209102,http://viaf.org/viaf/100198064
-person_lucano,Marco Anneo,Lucano,Ancient Rome,,I AC,,Q188646,http://viaf.org/viaf/100902938
-person_machiavelli,Niccolò,Machiavelli,Italian,1469,,1527,Q1399,http://viaf.org/viaf/95151646
-person_maier,Michael,Maier,German,1568,,1622,Q901303,http://viaf.org/viaf/103210603
-person_miyazaki,Hayao,Miyazaki,Japanese,1941,,,Q55400,http://viaf.org/viaf/85117053
-person_moe,Jørgen ,Moe,Norwegian,1813,,1882,Q470002,http://viaf.org/viaf/36968998
-person_moore,Clement Clarke,Moore,American,1779,,1863,Q2978887,http://viaf.org/viaf/9864972
-person_moreau,Gustave,Moreau,French,1826,,1898,Q203828,http://viaf.org/viaf/46844904
-person_musker,John,Musker,American,1953,,,Q735440,http://viaf.org/viaf/14864511
-person_nietzsche,Friedrich ,Nietzsche ,German,1844,,1900,Q9358,http://viaf.org/viaf/89798474
-person_omero,Omero,,Greek,,VIII BC,,Q6691,http://viaf.org/viaf/224924963
-person_ovid,Publius Naso,Ovidius,Ancient Rome,,I BC,,Q7198,http://viaf.org/viaf/88342447
-person_p_apollodoro,Apollodorus,,Greek,,180-110 AC,,Q12506564,http://viaf.org/viaf/100219535
-person_percy_shelley,Percy Bysshe,Shelley,English,1792,,1822,Q93343,http://viaf.org/viaf/95159449
-person_perrault,Charles,Perrault,French,1628,,1703,Q128460,http://viaf.org/viaf/34461426
-person_picasso,Pablo,Picasso,Spanish ,1881,,1973,Q5593,http://viaf.org/viaf/15873
-person_plato,Platone,,Greek,,427-347 BC,,Q859,http://viaf.org/viaf/108159964
-person_plinio,Pliny the Elder,,Italian,,I AC,,Q82778,http://viaf.org/viaf/100219162
-person_polycles ,Polycles ,,Greek,,160-120 BC,,Q3286930,http://viaf.org/viaf/96494745
-person_rembrandt,Rembrandt,Van Rijn,Dutch,1606,,1669,Q5598,http://viaf.org/viaf/64013650
-person_richardson ,Greg ,Richardson,American,,,,,
-person_romano,Giulio,Romano,Italian,1499,,1546,Q215305,http://viaf.org/viaf/74007636
-person_rowling,J. K.,Rowling,English,1965,,,Q34660,http://viaf.org/viaf/116796842
-person_rubens,Pieter Paul,Rubens,Flemish,1577,,1640,Q5599,http://viaf.org/viaf/56647196
-person_shakespeare,William,Shakespeare,English,1564,,1616,Q692,http://viaf.org/viaf/96994048
-person_siren_painter,Siren Painter,,Greek,,500-480 BC,,Q7530113,http://viaf.org/viaf/95989493
-person_sturluson,Snorri,Sturluson ,Icelandic,1179,,1241,Q102323,http://viaf.org/viaf/89085541
-person_swinburne,Algernon Charles,Swinburne,English,1837,,1909,Q315511,http://viaf.org/viaf/41846937
-person_tasso,Torquato,Tasso,Italian,1544,,1595,Q168962,http://viaf.org/viaf/4936996
-person_thaon,Philippe ,de Thaon,Anglo-Norman,,XII century,,Q326195,http://viaf.org/viaf/51677712
-person_theophilus,Theophilus,Presbyter,Dtch,,XII century,,Q143854,http://viaf.org/viaf/37718393
-person_thomas_cantimpre,Thomas,de Cantimpré ,Flemish,1201,,1272,Q572799,http://viaf.org/viaf/1878151778206818130004
-person_tolkien ,J. R. R,Tolkien ,English ,1892,,1973,Q892,http://viaf.org/viaf/95218067
-person_topsell,Edward,Topsell,English,1572,,1625,Q3048705,http://viaf.org/viaf/37823643
-person_watts,George Frederic,Watts,English,1817,,1904,Q183245,http://viaf.org/viaf/10095477
+person_id,given_name,family_name,nationality,dates_display,birth_year,death_year,wiki_authority,viaf_authority
+person_adamson,Andrew ,Adamson,New Zealander ,1966 – present,1966,,Q432845,http://viaf.org/viaf/23252298
+person_aldrovandi,Ulisse,Aldrovandi,Italian,1522 – 1605,1522,1605,Q321358,http://viaf.org/viaf/100190422
+person_andersen,Hans Christian , Andersen,Danish,1805 – 1875,1805,1875,Q5673,http://viaf.org/viaf/4925902
+person_ariosto,Ludovico,Ariosto,Italian,1474 – 1533,1474,1533,Q48900,http://viaf.org/viaf/71386455
+person_asbjørnsen,Peter Christen,Asbjørnsen,Norwegian,1812 – 1885,1812,1885,Q355485,http://viaf.org/viaf/116587918
+person_bierce,Ambrose,Bierce,American,1842 – 1914,1842,1914,Q191050,http://viaf.org/viaf/232144783035948358100
+person_brueghel_jeune,Pieter,Brueghel,Dutch,1564 – 1638,1564,1638,Q255828,http://viaf.org/viaf/106974142
+person_canova,Antonio,Canova,Italian,1757 – 1822,1757,1822,Q5547,http://viaf.org/viaf/36965536
+person_cantimpre,Thomas,Cantimpré,Flemish,c. 1200 – 1272,1200,1272,Q572799,http://viaf.org/viaf/1878151778206818130004
+person_caravaggio,Michelangelo,Merisi,Italian,1571 – 1610,1571,1610,Q42207,http://viaf.org/viaf/87679282
+person_chaucer,Geoffrey ,Chaucer,English ,1343 – 1400,1343,1400,Q5683,http://viaf.org/viaf/100185203
+person_chen,Chen,Rong,Chinese,1200 – 1266,1200,1266,Q2739948,http://viaf.org/viaf/96607916
+person_chretien,Chrétien,de Troyes,French,1130 – 1191,1130,1191,Q4302,http://viaf.org/viaf/87681171
+person_claudio,Claudio,Claudiano,Ancient Rome,c. 370 – 404,370,404,Q205947,http://viaf.org/viaf/246763674
+person_clements,Ron,Clements,American,1953 – present,1953,,Q930209,http://viaf.org/viaf/69022925
+person_columbus,Chris,Columbus,American,1958 – present,1958,,Q75079,http://viaf.org/viaf/119396580
+person_ctesias,Ctesias,,Greek,5th century BCE,-499,-400,Q296325,http://viaf.org/viaf/192092583
+person_dante,Dante,Alighieri,Italian,1265 – 1321,1265,1321,Q1067,http://viaf.org/viaf/97105654
+person_doré,Gustave,Doré,French,1832 – 1833,1832,1883,Q6682,http://viaf.org/viaf/41839207
+person_ende,Michael,Ende,German,1929 – 1995,1929,1995,Q76498,http://viaf.org/viaf/34456245
+person_erodoto,Erodoto,,Greek,c. 484 – 425 BCE,-484,-425,Q26825,http://viaf.org/viaf/100225976
+person_esiodo,Esiodo,,Greek,8th century BCE,-799,-700,Q44233,http://viaf.org/viaf/122220717
+person_flaubert,Gustave,Flaubert,French,1821 – 1880,1821,1880,Q43444,http://viaf.org/viaf/9846192
+person_g_martin,George R. R.,Martin,American,1984 – present,1984,,Q181677,http://viaf.org/viaf/98636170
+person_gospodinov,Georgi,Gospodinov,Bulgarian,1968 – present,1968,,Q1509177,http://viaf.org/viaf/54360545
+person_ibsen,Henrik,Ibsen,Norwegian,1828 – 1906,1828,1906,Q36661,http://viaf.org/viaf/71378383
+person_ingres,Jean-Auguste-Dominique,Ingres,French,1780 – 1867,1780,1867,Q23380,http://viaf.org/viaf/76327826
+person_isayama,Hajime,Isayama,Japanese,1986 – present,1986,,Q3782468,http://viaf.org/viaf/171550535
+person_isidore,Isidore,of Seville ,Spanish ,560 – 636,560,636,Q166876,http://viaf.org/viaf/803890
+person_jackson,Wilfred ,Jackson ,American ,1906 – 1988,1906,1988,Q1385379,http://viaf.org/viaf/76511055
+person_lattanzio,Lucio Cecilio,Lattanzio,Ancient Rome,c. 240 – 320 ,240,320,Q209102,http://viaf.org/viaf/100198064
+person_lucano,Marco Anneo,Lucano,Ancient Rome,39 – 65,39,65,Q188646,http://viaf.org/viaf/100902938
+person_machiavelli,Niccolò,Machiavelli,Italian,1469 – 1527,1469,1527,Q1399,http://viaf.org/viaf/95151646
+person_maier,Michael,Maier,German,1568 – 1622,1568,1622,Q901303,http://viaf.org/viaf/103210603
+person_miyazaki,Hayao,Miyazaki,Japanese,1941 – present,1941,,Q55400,http://viaf.org/viaf/85117053
+person_moe,Jørgen ,Moe,Norwegian,1813 – 1882,1813,1882,Q470002,http://viaf.org/viaf/36968998
+person_moore,Clement Clarke,Moore,American,1779 – 1863,1779,1863,Q2978887,http://viaf.org/viaf/9864972
+person_moreau,Gustave,Moreau,French,1826 – 1898,1826,1898,Q203828,http://viaf.org/viaf/46844904
+person_musker,John,Musker,American,1953 – present,1953,,Q735440,http://viaf.org/viaf/14864511
+person_nietzsche,Friedrich ,Nietzsche ,German,1844 – 1900,1844,1900,Q9358,http://viaf.org/viaf/89798474
+person_omero,Omero,,Greek,8th century BCE,-799,-700,Q6691,http://viaf.org/viaf/224924963
+person_ovid,Publius Naso,Ovidius,Ancient Rome,43 BCE - 17,-43,17,Q7198,http://viaf.org/viaf/88342447
+person_ovredal,André,Øvredal,Norwegian,1973 - present,1973,,Q2848912,http://viaf.org/viaf/288292099
+person_p_apollodoro,Apollodorus,,Greek,180 – 110 BCE,-180,-110,Q12506564,http://viaf.org/viaf/100219535
+person_paré,Ambroise,Paré,French,1510 – 1590,1510,1590,Q276480,http://viaf.org/viaf/73958939
+person_percy_shelley,Percy Bysshe,Shelley,English,1792 – 1822,1792,1822,Q93343,http://viaf.org/viaf/95159449
+person_perrault,Charles,Perrault,French,1628 – 1703,1628,1703,Q128460,http://viaf.org/viaf/34461426
+person_picasso,Pablo,Picasso,Spanish ,1881 – 1973,1881,1973,Q5593,http://viaf.org/viaf/15873
+person_plato,Platone,,Greek,427 – 347 BCE,-427,-347,Q859,http://viaf.org/viaf/108159964
+person_plinio,Pliny the Elder,,Italian,23 – 79,23,79,Q82778,http://viaf.org/viaf/100219162
+person_polycles ,Polycles ,,Greek,160 – 120 BCE,-160,-120,Q3286930,http://viaf.org/viaf/96494745
+person_rembrandt,Rembrandt,Van Rijn,Dutch,1606 – 1669,1606,1669,Q5598,http://viaf.org/viaf/64013650
+person_richardson ,Greg ,Richardson,American,1973 – present,1973,,Q97693011,http://viaf.org/viaf/29815562
+person_romano,Giulio,Romano,Italian,1499 – 1546,1499,1546,Q215305,http://viaf.org/viaf/74007636
+person_rowling,J. K.,Rowling,English,1965 – present,1965,,Q34660,http://viaf.org/viaf/116796842
+person_rubens,Pieter Paul,Rubens,Flemish,1577 – 1640,1577,1640,Q5599,http://viaf.org/viaf/56647196
+person_shakespeare,William,Shakespeare,English,1564 – 1616,1564,1616,Q692,http://viaf.org/viaf/96994048
+person_siren_painter,Siren Painter,,Greek,500 – 480 BCE,-500,-480,Q7530113,http://viaf.org/viaf/95989493
+person_sturluson,Snorri,Sturluson ,Icelandic,1179 – 1241,1179,1241,Q102323,http://viaf.org/viaf/89085541
+person_swinburne,Algernon Charles,Swinburne,English,1837 – 1909,1837,1909,Q315511,http://viaf.org/viaf/41846937
+person_tasso,Torquato,Tasso,Italian,1544 – 1595,1544,1595,Q168962,http://viaf.org/viaf/4936996
+person_thaon,Philippe ,de Thaon,Anglo-Norman,12th century,1101,1200,Q326195,http://viaf.org/viaf/51677712
+person_theophilus,Theophilus,Presbyter,Dtch,12th century,1101,1200,Q143854,http://viaf.org/viaf/37718393
+person_tolkien ,J. R. R,Tolkien ,English ,1892 – 1973,1892,1973,Q892,http://viaf.org/viaf/95218067
+person_topsell,Edward,Topsell,English,1572 – 1625,1572,1625,Q3048705,http://viaf.org/viaf/37823643
+person_watts,George Frederic,Watts,English,1817 – 1904,1817,1904,Q183245,http://viaf.org/viaf/10095477
+person_araki,Tetsurō,Araki,Japanese,1976 –  present,1976,,Q1101038,http://viaf.org/viaf/172249995
+person_koizuka,Masashi,Koizuka,Japanese,1980 –  present,1980,,Q17130285,
+person_hayashi,Yūichirō,Hayashi,Japanese,,,,Q106447941,
+person_shishido,Jun,Shishido,Japanese,1976 – present,1976,,"
+Q18817638",http://viaf.org/viaf/533144928078554341261

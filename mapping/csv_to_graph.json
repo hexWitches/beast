@@ -261,29 +261,14 @@
                 "target_class": "schema:Person"
             },
             "date_created": {
-                "predicate": "schema:dateCreated",
-                "type": "date",
+                "predicate": "dcterms:created",
+                "type": "Literal",
                 "datatype": "xsd:gYear"
             },
-            "temporal_coverage_iso": {
-                "predicate": "schema:temporalCoverage",
+            "date_display": {
+                "predicate": "rdfs:comment",
                 "type": "Literal",
                 "datatype": "xsd:string"
-            },
-            "temporal_coverage_text": {
-                "predicate": "schema:temporalCoverage",
-                "type": "Literal",
-                "datatype": "xsd:string"
-            },
-            "start_year": {
-                "predicate": "schema:startDate",
-                "type": "Literal",
-                "datatype": "xsd:gYear"
-            },
-            "end_year": {
-                "predicate": "schema:endDate",
-                "type": "Literal",
-                "datatype": "xsd:gYear"
             },
             "influenced_by": {
                 "predicate": "beast:wasInfluencedBy",
@@ -470,7 +455,7 @@
             "type": {
                 "predicate": "rdf:type",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Ability"
             },
             "label": {
@@ -523,7 +508,7 @@
             "type": {
                 "predicate": "rdf:type",
                 "type": "URI",
-                "prefix": "beast:",
+                "prefix": "beastiary:",
                 "target_class": "beast:Diet"
             },
             "label": {
@@ -540,6 +525,59 @@
             },
             "description": {
                 "predicate": "rdfs:comment",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
+    },
+    "genesis.csv": {
+        "primary_key": "genesis_id",
+        "entity_class": "beast:Genesis",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:Genesis"
+            },
+            "interpretation_id": {
+                "predicate": "beast:isGenesisOf",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:Interpretation"
+            },
+            "involves_parent": {
+                "predicate": "beast:involvesParent",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:Creature|beast:MythologicalFigure"
+            },
+            "siblings": {
+                "predicate": "beast:hasSibling",
+                "type": "URI",
+                "prefix": "beastiary:",
+                "target_class": "beast:Creature"
+            },
+            "genesis_description": {
+                "predicate": "beast:hasGenesisDescription",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
+    },
+    "myth_figures.csv": {
+        "primary_key": "mythological_figure_id",
+        "properties": {
+            "type": {
+                "predicate": "rdf:type",
+                "type": "URI",
+                "prefix": "beast:",
+                "target_class": "beast:MythologicalFigure"
+            },
+            "label": {
+                "predicate": "rdfs:label",
                 "type": "Literal",
                 "datatype": "xsd:string",
                 "language": "en"

@@ -125,7 +125,7 @@ def main():
                     if cell_value.startswith('"') and cell_value.endswith('"') and len(cell_value) >= 2:
                         cell_value = cell_value[1:-1]
                         
-                    if prop_config.get("predicate") in ["beast:hasPassageText", "rdfs:comment", "dcterms:title", "dcterms:language", "beast:hasSourceTerm", "beast:hasMeaning"]:
+                    if prop_config.get("predicate") in ["beast:hasPassageText", "rdfs:comment", "dcterms:title", "dcterms:language", "beast:hasMeaning"]:
                         values = [cell_value.strip()]
                     else:
                         cell_value = cell_value.replace(";", ",")

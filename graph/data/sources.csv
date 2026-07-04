@@ -1,91 +1,97 @@
-source_id,type,bestiary_type,title,person_id,date_created,temporal_coverage,language,influenced_by,cites,source_url
-source_abduction_ganymede,VisualArtwork,,The Abduction of Ganymede,person_rembrandt,1635,,,,source_ovidius_metamorphoses,https://artsandculture.google.com/asset/the-abduction-of-ganymede/2gGzDAOK1Yk7xg?hl=en
-source_aberdeen_bestiary,Bestiary,MoralAllegory,The Aberdeen Bestiary,Unknown,,c. 1200,la,,,
-source_andersen,LiteraryWork,,Den lille Havfrue,person_andersen,1837,,da,,,
-source_atalanta_fugiens,LiteraryWork,,Atalanta Fugiens,person_maier,1617,,la,,source_mito_edipo,
-source_attack_on_titan,LiteraryWork,,Attack on Titan,person_isayama,,9/09/2009 - 9/04/2021,ja,,,
-source_ave_phoenice,LiteraryWork,,De Ave Phoenice,person_lattanzio,,c. 300 AC,la,,,
-source_barbie,CinematicWork,,Barbie and the Magic of Pegasus,person_richardson ,2005,,en ,,,https://www.imdb.com/it/title/tt0480345/?ref_=ext_shr_lnk
-source_beowulf,LiteraryWork,,Beowulf,Unknown,,VIII century,ang,,,
-source_bible,LiteraryWork,,Bible,Unknown,,1000 a.C - 125 d.C.,"hbo, arc, grc",,,
-source_biblioteca,LiteraryWork,,Biblioteca,person_p_apollodoro,,I - II BC,grc,,,
-source_book_imaginary_beings,LiteraryWork,,Book of Imaginary Beings ,person_borges,1957,,es,,,
-source_book_of_invations,LiteraryWork,,The Book of Invasions,Unknown,,XI century,mga,,,
-source_camera_giganti,VisualArtwork,,Camera dei Giganti,person_romano,,1532-1535,,source_biblioteca;source_ovidius_metamorphoses,,https://www.centropalazzote.it/camera-dei-giganti/
-source_canterbury_tales,LiteraryWork,,The Canterbury Tales,person_chaucer,1400,,en ,,,
-source_cinderella_perrault,LiteraryWork,,Stories or Tales from Past Times,person_perrault,1697,,fr,,,
-source_chimera_d_arezzo_statue,VIsualArtwork,,Chimera d'Arezzo,Unknown,,IV BC,,source_teogonia,,https://catalogo.beniculturali.it/detail/ArchaeologicalProperty/0900512595
-source_chimera_moreau,VisualArtwork,,The Chimera,person_moreau,1867,,,,,https://hvrd.art/o/230201
-source_claudio_phoenix,LiteraryWork,,Phoenix,person_claudio,,,la,source_ovidius_metamorphoses,,
-source_dante_inferno,LiteraryWork,,Inferno,person_dante,,,it,source_ovidius_metamorphoses,,
-source_dante_paradiso,LiteraryWork,,Paradiso,person_dante,,,it,source_ovidius_metamorphoses,,
-source_destruction_doré,VisualArtwork,,The Destruction of Leviathan,person_doré,1865,,,,,https://upload.wikimedia.org/wikipedia/commons/9/9d/Destruction_of_Leviathan.png
-source_devil_dictionary,LiteraryWork,,The Devil's Dictionary,person_bierce,1906,,en,,,
-source_erodoto_histories,LiteraryWork,,Histories,person_erodoto,,440-429 BC,grc,AncientEgypt,,
-source_etymologies,LiteraryWork,,Etymologiae,person_isidore,625,,la,,,
-source_fantastic_beasts,LiteraryWork,,Fantastic Beasts and Where to Find Them,person_rowling,2001,,en,,,
-source_frammenti_esiodo,LiteraryWork,,Del catalogo delle donne,person_esiodo,,VII BC,grc,,,
-source_gospodinov_fisica_della_malinconia,LiteraryWork,,Fisica della malinconia,person_gospodinov,2011,,bg,,,
-source_got_2,LiteraryWork,,A Clash of Kings,person_g_martin,1998,,en,,,
-source_great_sphinx,VisualArtwork,,Great Sphinx of Giza,Unknown,,c. 2500 BC,,,,https://www.britannica.com/topic/Great-Sphinx
-source_harry_potter_book_1,LiteraryWork,,Harry Potter and the Philosopher's Stone,person_rowling,1997,,en,source_fantastic_beasts,,
-source_harry_potter_book_2,LiteraryWork,,Harry Potter and the Chamber of Secrets,person_rowling,1998,,en,source_fantastic_beasts,,
-source_harry_potter_book_3,LiteraryWork,,Harry Potter and the Prisoner of Azkaban,person_rowling,1999,,en,source_fantastic_beasts,,
-source_harry_potter_book_4,LiteraryWork,,Harry Potter and the Goblet of Fire,person_rowling,2000,,en,source_fantastic_beasts,,
-source_harry_potter_movie_2,CinematicWork,,Harry Potter and the Chamber of Secrets,person_columbus,2002,,en,,,https://www.imdb.com/it/title/tt0295297/
-source_head_of_medusa,VisualArtwork,,The Head of Medusa,person_rubens,,1617-1618 ,,,,https://www.khm.at/en/artworks/the-head-of-medusa-1626
-source_hercules_nemean_lion,VisualArtwork,,Hercules Strangling the Nemean Lion,person_rubens,1639,,,,source_biblioteca,https://harvardartmuseums.org/collections/object/178555
-source_hermafrodite_statue,VisualArtwork,,Hermaphroditus,person_polycles ,,II AC,,source_ovidius_metamorphoses,source_ovidius_metamorphoses,https://www.uffizi.it/en/artworks/hermaphroditus
-source_history_of_four_footed_beasts,Bestiary,ScientificTaxonomy,The History of Four-Footed Beasts,person_topsell,1658,,en,,,
-source_iliade_omero,,,Iliade,person_omero,,VIII BC,grc,,,
-source_indika,LiteraryWork,,Indika,person_ctesias,,V BC,gr,sourc_oral_tales,,
-source_liber_de_natura_rerum,Bestiary,ScientificTaxonomy,Liber de natura reurm ,person_cantimpre,1240,,la,,,
-source_liber_monstrorum,LiteraryWork,MoralAllegory,Liber monstrorum de diversis generibus,Unknown,,VIII century,la,source_odissea_omero,,
-source_lotr,LiteraryWork,,The Lord of the Rings,person_tolkien ,1954,,en,,,
-source_mandragola,LiteraryWork,,Mandragola,person_machiavelli,,1512-1520,it,,,
-source_medusa_caravaggio,VisualArtwork,,Medusa,person_caravaggio,,c. 1598,,,,https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900289175
-source_minotaur_canova,VisualArtwork,,Theseus and the Minotaur,person_canova,1782,,,source_ovidius_metamorphoses,,https://collections.vam.ac.uk/item/O96376/theseus-and-the-minotaur-statue-canova-antonio/
-source_minotaur_watts,VisualArtwork,,The Minotaur,person_watts,1885,,,,,https://www.tate.org.uk/art/artworks/watts-the-minotaur-n01634
-source_minotauromachy_picasso,VisualArtwork,,Minotauromachy,person_picasso,1935,,,,,https://www.moma.org/collection/works/60110
-source_mito_edipo,LiteraryWork,,Biblioteca,person_p_apollodoro,,I BC,grc,,,
-source_mondo_creato,LiteraryWork,,Il Mondo Creato,person_tasso,1605,,it,source_ave_phoenice,,
-source_monstrorum_historia_aldrovandi,LiteraryWork,,Monstrorum Historia,person_aldrovandi,1642,,la,,source_ovidius_metamorphoses,
-source_musker_clements,CinematicWork,,The Little Mermaid,"person_musker, person_clements",1989,,en,source_andersen,,https://www.imdb.com/title/tt0097757/
-source_naturalis_historia,Bestiary,ScientificTaxonomy,Naturalis Historia,person_plinio,,77–79 AD,la,,source_great_sphinx,
-source_nietzsche_ndt,LiteraryWork,,"La nascita della tragedia dallo spirito della musica, ovvero grecità e pessimismo",person_nietzsche,1872,,de,,,
-source_nine_dragons_chen,VisualArtwork,,Nine Dragons,person_chen,1244,,,,,https://upload.wikimedia.org/wikipedia/commons/1/1c/Chen_Rong_-_Nine_Dragons.jpg
-source_norske_folkeeventyr,LiteraryWork,,Norske folkeeventyr,"person_asbjørnsen, person_moe",1841,,no,,,
-source_odissea_omero,LiteraryWork,,Odissea,person_omero,,VIII BC,grc,,,
-source_oedipus_ingres,VisualArtwork,,Œdipe explique l'énigme du sphinx,person_ingres,1808,,,,,https://www.nationalgallery.org.uk/paintings/jean-auguste-dominique-ingres-oedipus-and-the-sphinx
-source_oedipus_moureau,VisualArtwork,,Œdipe et le Sphinx,person_moreau,1864,,,,,https://www.metmuseum.org/art/collection/search/437153
-source_on_the_medusa,LiteraryWork,,On the Medusa of Leonardo Da Vinci in the Florentine Gallery,person_percy_shelley,1824,,,,,
-source_orlando_furioso,LiteraryWork,,Orlando Furioso,person_ariosto,1516,,it,,,
-source_orlando_furioso_doré,VisualArtwork,,Ruggiero rescuing Angelica,person_doré,,1880-1881,,source_orlando_furioso,,https://upload.wikimedia.org/wikipedia/commons/f/f3/Orlando_Furioso_20.jpg
-source_ovidius_metamorphoses,LiteraryWork,,Metamorphoses,person_ovid,,,,,,
-source_peer_gynt,LiteraryWork,,Peer Gynt,person_ibsen,1867,,da,source_norske_folkeeventyr,,
-source_percival,LiteraryWork,,"Perceval, li contes del gaal ",person_chretien,,XII century,fr,source_history_of_kings-of britain,,
-source_peter_pan ,CinematicWork,,Peter Pan ,person_jackson,1953,,en ,,,https://www.imdb.com/it/title/tt0046183/?ref_=ext_shr_lnk
-source_pharsalia,LiteraryWork,,Pharsalia (Bellum civile),person_lucano,,61 - 65 d.C.,la,,,
-source_phoenix_and_turtle_shakespeare,LiteraryWork,,The Phoenix and the Turtle,person_shakespeare,1601,,en,,,
-source_physiologus,Bestiary,MoralAllegory,Physiologus,Uknown ,,II AD,grc,,,
-source_poem_hermaphroditus,LiteraryWork,,Hermaphroditus,person_swinburne,1863,,en,source_ovidius_metamorphoses,,
-source_prose_edda,LiteraryWork,,"Prose Edda",person_sturluson,,XIII ,non,,,
-source_rochester_bestiary,Bestiary,MoralAllegory,Rochester Bestiary,Unknown,,c. 1230,la,source_naturalis_historia;source_physiologus,,
-source_roger_délivrant_angélique,VisualArtwork,,Roger délivrant Angélique,person_ingres,1819,,,source_orlando_furioso,,https://www.nationalgallery.org.uk/paintings/jean-auguste-dominique-ingres-angelica-saved-by-ruggiero
-source_romeo_and_juliet,LiteraryWork,,Romeo and Juliet,person_shakespeare,,1594-1596,en,,,
-source_satyr_statue,VisualArtwork,,Dancing satyr,Unknown,,I AC,,,,https://www.uffizi.it/opere/satiro-danzante
-source_schedula_theophilus,LiteraryWork,,Schedula diversarum artium,person_theophilus,,XI-XII,la,,,
-source_septuagint,LiteraryWork,,Septuagint,Uknown ,,III-II BC,grc,,,
-source_shrek,CinematicWork,,Shrek,person_adamson,2001,,en,,,https://www.imdb.com/it/title/tt0126029/?ref_=ext_shr_lnk
-source_spirited_away,CinematicWork,,Spirited Away,person_miyazaki,2001,,ja,,,
-source_st_Nicholas,LiteraryWork,,A Visit from St. Nicholas,person_moore,1823,,en,,,
-source_symposium,LiteraryWork,,Symposium,person_plato,,IV BC,grc,,source_teogonia,
-source_tacuinum_sanitatis,VisualArtwork,,Fructus Mandragorae in Tacuinum Sanitatis in Medicina (Vienna),Unknown,1390,,,,,https://upload.wikimedia.org/wikipedia/commons/6/68/Tacuinum_Sanitatis_Mandrake_Dog.jpg
-source_tentazione_antonio,LiteraryWork,,La tentation de Saint-Antoine,person_flaubert,1874,,fr,source_tentazione_brueghel,,
-source_tentazione_brueghel,VisualArtwork,,La Tentation de Saint Antoine,person_brueghel_jeune,1600,,,,,https://www.santantonioabate.afom.it/wp-content/uploads/GENOVA-Brueghel-giovane.jpg
-source_teogonia,LiteraryWork,,Toeogonia,person_esiodo,,700 BC,grc,,,
-source_thaon_bestiary,Bestiary,Adaptation,Le Bestiaire de Philippe de Thaün,person_thaon,,1121-1139,fro,source_physiologus;source_etymologies,source_physiologus;source_etymologies,
-source_the_hobbit,LiteraryWork,,The Hobbit,person_tolkien ,1937,,en,,,
-source_troll_hunter,CinematicWork,,Troll Hunter,person_ øvredal,2010,,"en, no",source_norske_folkeeventyr;source_peer_gynt,,https://www.imdb.com/it/title/tt1740707/?ref_=ext_shr_lnk
-source_unendliche_geschichte,LiteraryWork,,Die unendliche Geschichte,person_ende,1979,,de,,,
-source_vase,VisualArtwork,,The Siren Vase,person_siren_painter,,c. 480 BC - 470 BC,,source_odissea_omero,source_odissea_omero,https://www.britishmuseum.org/collection/object/G_1843-1103-31
+source_id,type,bestiary_type,title,person_id,date_created,date_display,language,influenced_by,cites,interpretation_id,source_url
+source_abduction_ganymede,VisualArtwork,,The Abduction of Ganymede,person_rembrandt,1635,1635,,,source_ovidius_metamorphoses,int_eagle_rembrandt,https://artsandculture.google.com/asset/the-abduction-of-ganymede/2gGzDAOK1Yk7xg?hl=en
+source_aberdeen_bestiary,Bestiary,MoralAllegory,The Aberdeen Bestiary,,1200,c. 1200,la,,,int_eagle_aberdeen;int_lion_aberdeen;int_phoenix_aberdeen;int_snake_aberdeen;int_unicorn_aberdeen,
+source_andersen,LiteraryWork,,Den lille Havfrue,person_andersen,1837,1837,da,,,int_siren_andersen,
+source_atalanta_fugiens,LiteraryWork,,Atalanta Fugiens,person_maier,1617,1617,la,,source_mito_edipo,int_sphinx_maier;int_lion_maier,
+source_attack_on_titan,CinematicWork,,Attack on Titan,"person_araki, person_koizuka, person_hayashi, person_shishido",2013/2023,2013 - 2023,ja,,,int_giant_attack_on_titan,
+source_ave_phoenice,LiteraryWork,,De Ave Phoenice,person_lattanzio,299,c. 300 ,la,,,int_phoenix_lattanzio,
+source_barbie,CinematicWork,,Barbie and the Magic of Pegasus,person_richardson ,2005,2005,en ,,,int_pegaso_barbie,https://www.imdb.com/it/title/tt0480345/?ref_=ext_shr_lnk
+source_beowulf,LiteraryWork,,Beowulf,,701/800,8th century,ang,,,int_dragon_beowulf,
+source_bible,LiteraryWork,,Bible,,-999/125,1000 BCE – 125 AD,"hbo, arc, grc",,,int_giant_bible,
+source_biblioteca,LiteraryWork,,Biblioteca,person_p_apollodoro,-199/0,1st – 2nd century BCE,grc,,,int_giant_apollodorus;int_lion_apollodorus;int_medusa_apollodoro,
+source_book_of_invations,LiteraryWork,,The Book of Invasions,,1001/1100,11th century,mga,,,int_fairy_celtic,
+source_camera_giganti,VisualArtwork,,Camera dei Giganti,person_romano,1532/1535,1532 – 1535,,source_biblioteca;source_ovidius_metamorphoses,,int_giant_camera_dei_giganti,https://www.centropalazzote.it/camera-dei-giganti/
+source_canterbury_tales,LiteraryWork,,The Canterbury Tales,person_chaucer,1400,1400,en ,,,int_fairy_chaucer,
+source_chimera_d_arezzo_statue,VIsualArtwork,,Chimera d'Arezzo,,-399/-300,4th century BCE,,source_teogonia,,int_chimera_statue,https://catalogo.beniculturali.it/detail/ArchaeologicalProperty/0900512595
+source_chimera_moreau,VisualArtwork,,The Chimera,person_moreau,1867,1867,,,,int_chimera_moreau,https://hvrd.art/o/230201
+source_cinderella_perrault,LiteraryWork,,Stories or Tales from Past Times,person_perrault,1697,1697,fr,,,int_fairy_perrault,
+source_claudio_phoenix,LiteraryWork,,Phoenix,person_claudio,400,c. 400,la,source_ovidius_metamorphoses,,int_phoenix_claudio,
+source_dante_inferno,LiteraryWork,,Inferno,person_dante,1308,c. 1308,it,source_ovidius_metamorphoses,,int_centaur_dante;int_centaur_dante2;int_lion_dante;int_medusa_dante;int_minotaur_dante;int_phoenix_dante;int_snake_dante,
+source_dante_paradiso,LiteraryWork,,Paradiso,person_dante,1321,c. 1321,it,source_ovidius_metamorphoses,,int_eagle_dante,
+source_destruction_doré,VisualArtwork,,The Destruction of Leviathan,person_doré,1865,1865,,,,int_dragon_doré,https://upload.wikimedia.org/wikipedia/commons/9/9d/Destruction_of_Leviathan.png
+source_devil_dictionary,LiteraryWork,,The Devil's Dictionary,person_bierce,1906,1906,en,,,int_hippogriff_bierce,
+source_erodoto_histories,LiteraryWork,,Histories,person_erodoto,-439/-428,440 – 429 BCE,grc,AncientEgypt,,int_phoenix_erodoto,
+source_etymologies,LiteraryWork,,Etymologiae,person_isidore,625,625,la,,,int_antlion_isidore;int_basilisk_isidore;int_centaur_isidore;int_fish_isidore;int_goat_isidore;int_onocentaur_isidore;int_scorpion_isidore;int_unicorn_isidore,
+source_fantastic_beasts,LiteraryWork,,Fantastic Beasts and Where to Find Them,person_rowling,2001,2001,en,,,int_basilisk_rowling_fantastic;int_centaur_rowling_fantastic;int_dragon_rowling_fantastic;int_hippogriff_rowling_fantastic;int_phoenix_rowling;int_sphinx_rowling_fantastic,
+source_flaubert_tentation,LiteraryWork,,La tentation de Saint-Antoine,person_flaubert,1874,1874,fr,source_tentazione_brueghel,,int_antlion_flaubert;int_manticore_flaubert;int_sphinx_flaubert,
+source_frammenti_esiodo,LiteraryWork,,Del catalogo delle donne,person_esiodo,-699/-600,7th century BCE,grc,,,int_satyr_esiodo,
+source_gospodinov_fisica_della_malinconia,LiteraryWork,,Fisica della malinconia,person_gospodinov,2011,2011,bg,,,int_minotaur_gospodinov,
+source_got_2,LiteraryWork,,A Clash of Kings,person_g_martin,1998,1998,en,,,int_dragon_martin,
+source_great_sphinx,VisualArtwork,,Great Sphinx of Giza,,-2499,c. 2500 BCE,,,,int_sphinx_egypt,https://www.britannica.com/topic/Great-Sphinx
+source_harry_potter_book_1,LiteraryWork,,Harry Potter and the Philosopher's Stone,person_rowling,1997,1997,en,source_fantastic_beasts,,int_centaur_rowling_harry,
+source_harry_potter_book_2,LiteraryWork,,Harry Potter and the Chamber of Secrets,person_rowling,1998,1998,en,source_fantastic_beasts,,int_basilisk_rowling_harry,
+source_harry_potter_book_3,LiteraryWork,,Harry Potter and the Prisoner of Azkaban,person_rowling,1999,1999,en,source_fantastic_beasts,,int_hippogriff_rowling_harry,
+source_harry_potter_book_4,LiteraryWork,,Harry Potter and the Goblet of Fire,person_rowling,2000,2000,en,source_fantastic_beasts,,int_dragon_rowling_harry;int_sphinx_rowling_harry,
+source_harry_potter_movie_2,CinematicWork,,Harry Potter and the Chamber of Secrets,person_columbus,2002,2002,en,,,int_mandrake_rowling,https://www.imdb.com/it/title/tt0295297/
+source_head_of_medusa,VisualArtwork,,The Head of Medusa,person_rubens,1617/1618 ,1617 – 1618 ,,,,int_medusa_rubens,https://www.khm.at/en/artworks/the-head-of-medusa-1626
+source_hercules_nemean_lion,VisualArtwork,,Hercules Strangling the Nemean Lion,person_rubens,1639,1639,,,source_biblioteca,int_lion_rubens,https://harvardartmuseums.org/collections/object/178555
+source_hermafrodite_statue,VisualArtwork,,Hermaphroditus,person_polycles ,-199/-100,2nd century BCE,,source_ovidius_metamorphoses,source_ovidius_metamorphoses,int_hermaphrodite_statue,https://www.uffizi.it/en/artworks/hermaphroditus
+source_history_of_four_footed_beasts,Bestiary,ScientificTaxonomy,The History of Four-Footed Beasts,person_topsell,1658,1658,en,,,int_manticore_topsell,
+source_iliade_omero,,,Iliade,person_omero,-799/-700,8th century BCE,grc,,,int_chimera_omero,
+source_indika,LiteraryWork,,Indika,person_ctesias,-499/-400,5th century BCE,gr,sourc_oral_tales,,int_unicorn_ctesias,
+source_liber_de_natura_rerum,Bestiary,ScientificTaxonomy,Liber de natura reurm ,person_cantimpre,1240,1240,la,,,int_bull_cantimpre;int_goat_cantimpre;int_pegaso_cantimpre;int_scorpion_cantimpre;int_unicorn_cantimpre,
+source_liber_monstrorum,LiteraryWork,MoralAllegory,Liber monstrorum de diversis generibus,,701/800,8th century,la,source_odissea_omero,,int_siren_anonymous,
+source_lotr,LiteraryWork,,The Lord of the Rings,person_tolkien ,1954,1954,en,,,int_troll_tolkien;int_elf_tolkien,
+source_mandragola,LiteraryWork,,Mandragola,person_machiavelli,1512/1520,1512 – 1520,it,,,int_mandrake_machiavelli,
+source_medusa_caravaggio,VisualArtwork,,Medusa,person_caravaggio,1598,c. 1598,,,,int_medusa_caravaggio,https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900289175
+source_minotaur_canova,VisualArtwork,,Theseus and the Minotaur,person_canova,1782,1782,,source_ovidius_metamorphoses,,int_minotaur_canova,https://collections.vam.ac.uk/item/O96376/theseus-and-the-minotaur-statue-canova-antonio/
+source_minotaur_watts,VisualArtwork,,The Minotaur,person_watts,1885,1885,,,,int_minotaur_watts,https://www.tate.org.uk/art/artworks/watts-the-minotaur-n01634
+source_minotauromachy_picasso,VisualArtwork,,Minotauromachy,person_picasso,1935,1935,,,,int_minotaur_picasso,https://www.moma.org/collection/works/60110
+source_mito_edipo,LiteraryWork,,Biblioteca,person_p_apollodoro,-99/0,1st century BCE,grc,,,int_sphinx_apollodoro,
+source_mondo_creato,LiteraryWork,,Il Mondo Creato,person_tasso,1605,1605,it,source_ave_phoenice,,int_phoenix_tasso,
+source_monstres_prodiges,Bestiary,ScientificTaxonomy,Des monstres et prodiges,person_paré,1573,1573,fr,,,int_mostro_paré_1;int_anomaly_paré_1;int_mostro_paré_2;int_mostro_paré_3;int_anomaly_paré_2;int_mostro_paré_4;int_mostro_paré_5;int_anomaly_paré_3;int_anomaly_paré_4,
+source_monstrorum_historia_aldrovandi,Bestiary,ScientificTaxonomy,Monstrorum Historia,person_aldrovandi,1642,1642,la,,source_ovidius_metamorphoses,int_satyr_aldrovandi;int_mandrake_aldrovandi;int_hermaphrodite_aldrovandi;int_anomaly_aldrovandi_1;int_mostro_aldrovandi_1;int_anomaly_aldrovandi_2;int_anomaly_aldrovandi_3;int_mostro_aldrovandi_2;int_mostro_aldrovandi_3;int_mostro_aldrovandi_4;int_mostro_aldrovandi_5,
+source_musker_clements,CinematicWork,,The Little Mermaid,person_musker;person_clements,1989,1989,en,source_andersen,,int_siren_musker_clements,https://www.imdb.com/title/tt0097757/
+source_naturalis_historia,Bestiary,ScientificTaxonomy,Naturalis Historia,person_plinio,77/79,77 – 79,la,,source_great_sphinx,int_basilisk_plinio;int_dragon_plinio;int_goat_plinio;int_manticore_plinio;int_phoenix_plinio;int_satyr_pliny;int_scorpion_plinio;int_sphinx_plinio,
+source_nietzsche_ndt,LiteraryWork,,"La nascita della tragedia dallo spirito della musica, ovvero grecità e pessimismo",person_nietzsche,1872,1872,de,,,int_satyr_nietzsche,
+source_nine_dragons_chen,VisualArtwork,,Nine Dragons,person_chen,1244,1244,,,,int_dragon_chen,https://upload.wikimedia.org/wikipedia/commons/1/1c/Chen_Rong_-_Nine_Dragons.jpg
+source_norske_folkeeventyr,LiteraryWork,,Norske folkeeventyr,"person_asbjørnsen, person_moe",1841,1841,no,,,int_troll_norske_folkeeventyr,
+source_odissea_omero,LiteraryWork,,Odissea,person_omero,-799/-700,8th century BCE,grc,,,int_siren_omero,
+source_oedipus_ingres,VisualArtwork,,Œdipe explique l'énigme du sphinx,person_ingres,1808,1808,,,,int_sphinx_ingres,https://www.nationalgallery.org.uk/paintings/jean-auguste-dominique-ingres-oedipus-and-the-sphinx
+source_oedipus_moureau,VisualArtwork,,Œdipe et le Sphinx,person_moreau,1864,1864,,,,int_sphinx_moureau,https://www.metmuseum.org/art/collection/search/437153
+source_on_the_medusa,LiteraryWork,,On the Medusa of Leonardo Da Vinci in the Florentine Gallery,person_percy_shelley,1824,1824,,,,int_medusa_shelley,
+source_orlando_furioso,LiteraryWork,,Orlando Furioso,person_ariosto,1516,1516,it,,,int_hippogriff_ariosto;int_ogre_ariosto,
+source_orlando_furioso_doré,VisualArtwork,,Ruggiero rescuing Angelica,person_doré,1880/1881,1880 – 1881,,source_orlando_furioso,,int_hippogriff_doré,https://upload.wikimedia.org/wikipedia/commons/f/f3/Orlando_Furioso_20.jpg
+source_ovidius_metamorphoses,LiteraryWork,,Metamorphoses,person_ovid,8,8,,,,int_bull_ovid;int_centaur_ovid;int_eagle_ovid;int_giant_ovidius;int_hermaphrodite_ovidius;int_medusa_ovid;int_minotaur_ovidius;int_phoenix_ovidius;int_siren_ovidius;int_snake_ovid;int_snake_ovid_2,
+source_peer_gynt,LiteraryWork,,Peer Gynt,person_ibsen,1867,1867,da,source_norske_folkeeventyr,,int_troll_ibsen,
+source_percival,LiteraryWork,,"Perceval, li contes del gaal ",person_chretien,1101/1200,12th century,fr,source_history_of_kings-of britain,,int_ogre_chretien,
+source_peter_pan ,CinematicWork,,Peter Pan ,person_jackson,1953,1953,en ,,,int_fairy_disney,https://www.imdb.com/it/title/tt0046183/?ref_=ext_shr_lnk
+source_pharsalia,LiteraryWork,,Pharsalia (Bellum civile),person_lucano,61/65,61 – 65,la,,,int_basilisk_lucano,
+source_phoenix_and_turtle_shakespeare,LiteraryWork,,The Phoenix and the Turtle,person_shakespeare,1601,1601,en,,,int_phoenix_shakespeare,
+source_physiologus,Bestiary,MoralAllegory,Physiologus,,101/200,2nd century,grc,,,int_antlion_physiologus,
+source_poem_hermaphroditus,LiteraryWork,,Hermaphroditus,person_swinburne,1863,1863,en,source_ovidius_metamorphoses,,int_hermaphrodite_swinburne,
+source_prose_edda,LiteraryWork,,"Prose Edda",person_sturluson,1201/1300,13th century,non,,,int_elf_sturluson_1;int_elf_sturluson_2;int_troll_prose_edda,
+source_rochester_bestiary,Bestiary,MoralAllegory,Rochester Bestiary,,1230,c. 1230,la,source_naturalis_historia;source_physiologus,,int_manticore_rochester,
+source_roger_délivrant_angélique,VisualArtwork,,Roger délivrant Angélique,person_ingres,1819,1819,,source_orlando_furioso,,int_hippogriff_ingres,https://www.nationalgallery.org.uk/paintings/jean-auguste-dominique-ingres-angelica-saved-by-ruggiero
+source_romeo_and_juliet,LiteraryWork,,Romeo and Juliet,person_shakespeare,1594/1596,1594 – 1596,en,,,int_mandrake_shakespeare,
+source_satyr_statue,VisualArtwork,,Dancing satyr,,-99/0,1st century BCE,,,,int_satyr_statue,https://www.uffizi.it/opere/satiro-danzante
+source_schedula_theophilus,LiteraryWork,,Schedula diversarum artium,person_theophilus,1001/1200,11th – 12th century,la,,,int_basilisk_theophilus,
+source_septuagint,LiteraryWork,,Septuagint,,-299/-100,3rd – 2nd century BCE,grc,source_bible,,int_antlion_septuagint,
+source_shrek,CinematicWork,,Shrek,person_adamson,2001,2001,en,,,int_ogre_shrek,https://www.imdb.com/it/title/tt0126029/?ref_=ext_shr_lnk
+source_spirited_away,CinematicWork,,Spirited Away,person_miyazaki,2001,2001,ja,,,int_dragon_miyazaki,
+source_st_Nicholas,LiteraryWork,,A Visit from St. Nicholas,person_moore,1823,1823,en,,,int_elf_moore,
+source_symposium,LiteraryWork,,Symposium,person_plato,-399/-300,4th century BCE,grc,,source_teogonia,int_hermaphrodite_plato,
+source_tacuinum_sanitatis,VisualArtwork,,Fructus Mandragorae in Tacuinum Sanitatis in Medicina (Vienna),,1390,1390,,,,int_mandrake_herbal,https://upload.wikimedia.org/wikipedia/commons/6/68/Tacuinum_Sanitatis_Mandrake_Dog.jpg
+source_teogonia,LiteraryWork,,Toeogonia,person_esiodo,-699,700 BCE,grc,,,int_chimera_esiodo;int_giant_teogonia;int_medusa_esiodo;int_pegaso_esiodo,
+source_thaon_bestiary,Bestiary,Adaptation,Le Bestiaire de Philippe de Thaün,person_thaon,1121/1139,1121 – 1139,fro,source_physiologus;source_etymologies,source_physiologus;source_etymologies,int_onocentaur_thaon,
+source_the_hobbit,LiteraryWork,,The Hobbit,person_tolkien ,1937,1937,en,,,int_dragon_tolkien,
+source_troll_hunter,CinematicWork,,Troll Hunter,person_ ovredal,2010,2010,"en, no",source_norske_folkeeventyr;source_peer_gynt,,int_troll_hunter,https://www.imdb.com/it/title/tt1740707/?ref_=ext_shr_lnk
+source_unendliche_geschichte,LiteraryWork,,Die unendliche Geschichte,person_ende,1979,1979,de,,,int_sphinx_ende;int_dragon_ende,
+source_vase,VisualArtwork,,The Siren Vase,person_siren_painter,-479/-469,c. 480 – 470 BCE,,source_odissea_omero,source_odissea_omero,int_siren_vase,https://www.britishmuseum.org/collection/object/G_1843-1103-31
+source_greek_natural_history,Tradition,,,,,,,,,,
+source_greek_mythology,Tradition,,,,,,,,,,
+source_nordic_folklore,Tradition,,,,,,,,,,
+source_celtic_folklore,Tradition,,,,,,,,,,
+source_renaissance,Tradition,,,,,,,,,,
+source_medieval_folklore,Tradition,,,,,,,,,,
+source_ancient_egypt,Tradition,,,,,,,,,,

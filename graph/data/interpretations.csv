@@ -1,149 +1,166 @@
-interpretation_id,creature_id ,source_id,personal_name,distinctive_trait,archetype_id,narrative_function_id,additional_part,removed_part,additional_ability,removed_ability,alternative_diet ,alternative_habitat,citation_id
-int_antlion_flaubert,creature_antlion,source_flaubert_tentation,,,,,part_genitals_reversed,,,,,,citation_flaubert_3
-int_antlion_isidore,creature_antlion,source_etymologies,,,,,,,,,,,citation_isidore_5
-int_antlion_physiologus,creature_antlion,source_physiologus,,,,,,,,,Starvation,,
-int_antlion_septuagint,creature_antlion,source_septuagint,,,,,,,,,,,citation_job_4_11
-int_basilisk_isidore,creature_basilisk,source_etymologies,,,,,,,,,,,citation_isidore_6
-int_basilisk_lucano,creature_basilisk,source_pharsalia,,,,,,,,,,,citation_pharsalia_1
-int_basilisk_plinio,creature_basilisk,source_naturalis_historia,,,,,,,,,,,citation_plinio_8
-int_basilisk_rowling_fantastic,creature_basilisk,source_fantastic_beasts,,,,,,,,,,,
-int_basilisk_rowling_harry,creature_basilisk,source_harry_potter_book_2,,,archetype_guardian_threshold,function_guardian,,,ability_petrifying_gaze,,,habitat_chamber_of_secrets,
-int_basilisk_theophilus,creature_basilisk,source_schedula_theophilus,,,,,"part_cock_body, part_cock_head",part_serpent_body,,,,,citation_theophilus_1
-int_bull_cantimpre,creature_bull,source_liber_de_natura_rerum,,,archetype_emasculation,,,,,,,,citation_cantimpre_3
-int_bull_ovid,creature_bull,source_ovidius_metamorphoses,,,archetype_divine_power,function_agent,,,,,,,citation_ovid_met_11
-int_centaur_dante,creature_centaur,source_dante_inferno,Chirone ,,archetype_guardian_hell;archetype_wisdom,function_guide,,,ability_healing,,,habitat_hell,citation_dante_inferno_7
-int_centaur_dante2,creature_centaur,source_dante_inferno,Nesso,,archetype_guardian_hell;archetype_violence;archetype_predatory_lust,,,,,,,habitat_hell,citation_dante_inferno_6
-int_centaur_isidore,creature_centaur,source_etymologies,,,,,,,,,,,citation_isidore_7
-int_centaur_ovid,creature_centaur,source_ovidius_metamorphoses,Eurytus,,archetype_raw_instinct;archetype_predatory_lust;archetype_violence,function_instigator,,,,,,,citation_ovid_met_12
-int_centaur_rowling_fantastic,creature_centaur,source_fantastic_beasts,,,archetype_enigma;archetype_wisdom,,,,ability_healing;ability_magical_powers,,,,citation_rowling_9
-int_centaur_rowling_harry,creature_centaur,source_harry_potter_book_1,Firenze,,archetype_enigma;archetype_wisdom,function_guide;function_protector,,,,,,,citation_rowling_10
-int_chimera_esiodo,creature_chimera,source_teogonia,,,archetype_chaos;archetype_violence;archetype_shameful_offspring,,,,,,,,citation_esiodo_5
-int_chimera_omero,creature_chimera,source_iliade_omero,,,archetype_divine_punishment;archetype_violence,function_obstacle,part_dragon_tail,part_snake_tail;part_goat_head,,,,,citation_omero_2
-int_chimera_statue,creature_chimera,source_chimera_d_arezzo_statue,,,,,,,,,,,
-int_chimera_fullmetal_alchemist,creature_chimera,source_fullmetal_alchemist,,"The chimera is produced through human transmutation, a forbidden alchemical act. The product is a new, combined creature which inherits features and attributes from both of its original base organisms.",archetype_shameful_offspring;archetype_scientific_transgression,function_guardian,part_lizard_lower_body;part_lizard_tail,part_goat_lower_body;part_snake_tail,,ability_fire_breathing,,,
-int_chimera_moreau,creature_chimera,source_chimera_moreau,The Chimera,,archetype_sublime;archetype_seduction,,part_human_upper_body;part_horse_lower_body;part_wings,part_lion_upper_body;part_lion_head;part_goat_lower_body;part_snake_tail,ability_fly,ability_fire_breathing,,,
-int_dragon_beowulf,creature_dragon,source_beowulf,,,archetype_evil,,,,ability_accumulate_treasures,,,,citation_beowulf_1
-int_dragon_chen,creature_dragon,source_nine_dragons_chen,,,archetype_divine_power,,,part_wings,ability_weather_control,ability_fire_breathing,,,
-int_dragon_doré,creature_dragon,source_destruction_doré,,,archetype_chaos,function_antagonist,,part_wings;part_legs,,,,habitat_aquatic,
-int_dragon_ende,creature_dragon,source_unendliche_geschichte,Falkor,,,function_guide;function_protector,part_lower_limbs;part_lion_head,part_wings,ability_sing;ability_swim_in_air,ability_fly,,habitat_fantastica;habitat_aerial,citation_ende_2
-int_dragon_martin,creature_dragon,source_got_2,"Drogon, Rhaegal, Viserion",,archetype_power,function_weapon,,part_legs,ability_rebirth_from_fire,,,,citation_martin_1
-int_dragon_miyazaki,creature_dragon,source_spirited_away,Haku,,archetype_spirit,function_protector;function_guide,part_barbels;part_mane,part_wings,ability_shapeshifting,fire_breathing,,habitat_river,
-int_dragon_plinio,creature_dragon,source_naturalis_historia,,,,,,part_wings;part_crest,ability_fight_elephant,fire_breathing,diet_elephant_blood,,citation_plinio_4
-int_dragon_rowling_fantastic,creature_dragon,source_fantastic_beasts,,,,,part_horn,,ability_magical_powers;ability_venomous,,,,citation_rowling_6
-int_dragon_rowling_harry,creature_dragon,source_harry_potter_book_4,,,,,,,,,,,citation_rowling_7
-int_dragon_tolkien,creature_dragon,source_the_hobbit,Smaug,,,function_guardian;function_antagonist,part_underbelly_gems,,ability_speech;ability_hypnotic_gaze,,,habitat_subterranean,citation_tolkien_1
-int_eagle_aberdeen,creature_eagle,source_aberdeen_bestiary,,,archetype_rebirth,function_exemplum,part_sharp_eyes,,,,,,citation_aberdeen_3
-int_eagle_dante,creature_eagle,source_dante_paradiso,,,archetype_justice,function_guide,,,,,,habitat_heaven_of_jupyter,citation_dante_paradiso_1
-int_eagle_ovid,creature_eagle,source_ovidius_metamorphoses,,,archetype_divine_power,function_agent,,,,,,,citation_ovid_met_8
-int_eagle_rembrandt,creature_eagle,source_abduction_ganymede,,,,,,,,,,,
-int_elf_moore,creature_elf,source_st_Nicholas,,,archetype_christmas_elf ,function_guide,,,,,,habitat_north_pole,citation_moore_1
-int_elf_sturluson_1,creature_elf,source_prose_edda,,,archetype_semi_divine,function_sacred_symbol,part_dark_elves,,,,,,citation_sturluson_2
-int_elf_sturluson_2,creature_elf,source_prose_edda,,,archetype_darkness ,,,,,,,habitat_subterranean,citation_sturluson_2
-int_elf_tolkien,creature_elf,source_lotr,,,archetype_semi_divine,function_exemplum,,,,,,habitat_middle_earth ,citation_tolkien_3
-int_fairy_celtic,creature_fairy,source_book_of_invations,,,archetype_immortality,,,,,,,,citation_book_of_invation_1
-int_fairy_chaucer,creature_fairy,source_canterbury_tales,,,archetype_magic_folk,,,,,,,,citation_chaucer_1
-int_fairy_disney,creature_fairy,source_peter_pan ,,,archetype_belief,function_guide,part_wings,,ability_fly,,,habitat_neverland,citation_peter_pan_1
-int_fairy_perrault,creature_fairy,source_cinderella_perrault,,,archetype_magic_folk;archetype_godmother,function_guide,,,ability_magic,,,,citation_perrault_1
-int_fish_isidore,creature_fish,source_etymologies,,,,,,,,,,,citation_poem_hermaphroditus_1
-int_giant_apollodorus,creature_giant,source_biblioteca,,,archetype_chaos,,part_scales_dragon,part_feet,ability_immortality,,,,citation_apollodorus_2
-int_giant_attack_on_titan,creature_giant,source_attack_on_titan,,,archetype_chaos,,part_multiple_dentition,part_genitals;part_digestive_system;part_skin,ability_speed;ability_agility;ability_regenerate_lost_limbs,,,,
-int_giant_bible,creature_giant,source_bible,,,,,,,,,,,citation_bible_1
-int_giant_camera_dei_giganti,creature_giant,source_camera_giganti,,,archetype_chaos,,,,,,,,
-int_giant_ovidius,creature_giant,source_ovidius_metamorphoses,,,archetype_chaos,,,,,,,,citation_ovid_met_4
-int_giant_teogonia,creature_giant,source_teogonia,,,,,,,,,,,citation_esiodo_1
-int_goat_cantimpre,creature_goat,source_liber_de_natura_rerum,,,archetype_wisdom,,,,,,,,citation_cantimpre_4
-int_goat_isidore,creature_goat,source_etymologies,,,,,,,,,,,citation_isidore_2
-int_goat_plinio,creature_goat,source_naturalis_historia,,,archetype_healing;archetype_wisdom,,,,,,diet_crabs_eater,,citation_plinio_6
-int_hermaphrodite_aldrovandi,creature_hermaphrodite,source_monstrorum_historia_aldrovandi,,,,,part_female_genitals;part_breasts,,,,,,
-int_hermaphrodite_ovidius,creature_hermaphrodite,source_ovidius_metamorphoses,Hermaphrodite,,archetype_emasculation,,,part_masculinity,,,,,citation_ovid_met_5
-int_hermaphrodite_plato,creature_hermaphrodite,source_symposium,,,archetype_androgynous,,part_four_hands;part_four_feet;part_two_faces;part_four_ears;part_two_genitals,,,,,,citation_plato_1
-int_hermaphrodite_statue,creature_hermaphrodite,source_hermafrodite_statue,,,archetype_emasculation,,,part_masculinity,,,,,citation_aldrovandi_2
-int_hermaphrodite_swinburne,creature_hermaphrodite,source_poem_hermaphroditus,,,archetype_emasculation;archetype_divine_punishment,,,part_masculinity,,,,,citation_poem_hermaphroditus
-int_hippogriff_ariosto,creature_hippogriff,source_orlando_furioso,,,,,,,,,,habitat_riphean_mountains,citation_ariosto_1
-int_hippogriff_bierce,creature_hippogriff,source_devil_dictionary,,,,,,,ability_extinct,,,,citation_bierce_1
-int_hippogriff_doré,creature_hippogriff,source_orlando_furioso_doré,,,,,,,,,,,
-int_hippogriff_ingres,creature_hippogriff,source_roger_délivrant_angélique,,,,,,,,,,,
-int_hippogriff_rowling_fantastic,creature_hippogriff,source_fantastic_beasts,,,,,,,,,,,citation_rowling_5
-int_hippogriff_rowling_harry,creature_hippogriff,source_harry_potter_book_3,Buckbeak,,,,,,,,,,citation_rowling_2
-int_lion_aberdeen,creature_lion,source_aberdeen_bestiary,,,archetype_divine_power,function_exemplum,part_curly_mane;part_straight_mane,,ability_resolution;ability_compassion,,,habitat_mountains,citation_aberdeen_2
-int_lion_apollodorus,creature_lion,source_biblioteca,Nemean Lion,,,function_antagonist,,,,,,habitat_cave,citation_apollodorus_4
-int_lion_dante,creature_lion,source_dante_inferno,,,archetype_pride;archetype_violence,function_obstacle;function_antagonist,,,,,,,citation_dante_inferno_4
-int_lion_maier,creature_lion,source_atalanta_fugiens,,,archetype_prima_materia;archetype_cosmic,,,,,,,,citation_maier_2
-int_lion_rubens,creature_lion,source_hercules_nemean_lion,,,,function_antagonist,,,,,,,
-int_mandrake_aldrovandi,creature_mandrake,source_monstrorum_historia_aldrovandi,,,archetype_natural_marvel,,,,,,,,citation_aldrovandi_3
-int_mandrake_herbal,creature_mandrake,source_tacuinum_sanitatis,,,,,part_leaves;part_fruits,,,,,habitat_underground,
-int_mandrake_machiavelli,creature_mandrake,source_mandragola,,,archetype_fertility,,,,ability_fertility,deadly_scream,,,citation_machiavelli_1
-int_mandrake_rowling,creature_mandrake,source_harry_potter_movie_2,,,archetype_healing,,,,,,,,
-int_mandrake_shakespeare,creature_mandrake,source_romeo_and_juliet,,,,,,,ability_soporific,,,,citation_shakespeare_2
-int_manticore_flaubert,creature_manticore,source_tentazione_antonio,,,archetype_seduction,,,,ability_plague_spreading;ability_speech,,,habitat_desert,citation_flaubert_2
-int_manticore_plinio,creature_manticore,source_naturalis_historia,,,,,,,ability_speed;ability_trumpet_voice,,,,citation_plinio_5
-int_manticore_rochester,creature_manticore,source_rochester_bestiary,,,,,,,ability_speed;ability_trumpet_voice,,,,citation_rochester_1
-int_manticore_topsell,creature_manticore,source_history_of_four_footed_beasts,,,,,,,ability_speed;ability_trumpet_voice;ability_untameable,,,,citation_topsell_1
-int_medusa_apollodoro,creature_medusa,source_biblioteca,,,,,part_bronze_hands;part_wings,,,,,habitat_ocean,citation_apollodorus_3
-int_medusa_caravaggio,creature_medusa,source_medusa_caravaggio,,,archetype_victim,function_apotropaic,,,,,,,
-int_medusa_dante,creature_medusa,source_dante_inferno,,,,function_obstacle,,,,,,habitat_hell,citation_dante_inferno_3
-int_medusa_esiodo,creature_medusa,source_teogonia,,,,,,,,,,habitat_edge_of_world,citation_esiodo_2
-int_medusa_ovid,creature_medusa,source_ovidius_metamorphoses,,,archetype_victim,,,,,,,,citation_ovid_met_7
-int_medusa_rubens,creature_medusa,source_head_of_medusa,,,archetype_uncanny,,,,,,,,
-int_medusa_shelley,creature_medusa,source_on_the_medusa,,,archetype_sublime,,,,,,,,citation_shelley_1
-int_minotaur_canova,creature_minotaur,source_minotaur_canova,,,,,,,,,,,
-int_minotaur_dante,creature_minotaur,source_dante_inferno,,,archetype_guardian_hell;archetype_violence,,,,,,,,citation_dante_inferno_1
-int_minotaur_gospodinov,creature_minotaur,source_gospodinov_fisica_della_malinconia,,,archetype_abandoned_child;archetype_shameful_offspring,,,,,,,,citation_gospodinov_1
-int_minotaur_ovidius,creature_minotaur,source_ovidius_metamorphoses,,,archetype_shameful_offspring,,,,,,,,citation_ovid_met_1;citation_ovid_met_2
-int_minotaur_picasso,creature_minotaur,source_minotauromachy_picasso,,,archetype_violence;archetype_divided_self,,,,,,,,
-int_minotaur_watts,creature_minotaur,source_minotaur_watts,,,archetype_predatory_lust;archetype_divided_self,,,,,,,,
-int_ogre_ariosto,creature_ogre,source_orlando_furioso,,,archetype_raw_instinct,,sea_monster ,,,,,,citation_ariosto_2
-int_ogre_chretien,creature_ogre,source_percival,,,archetype_raw_instinct,,,,,,,,citation_chretien_1
-int_ogre_shrek,creature_ogre,source_shrek,,,archetype_anti_fairy_tale,function_exemplum,part_green_skin,,,,,habitat_duloc_swamp,citation_shrek_1
-int_onocentaur_isidore,creature_onocentaur,source_etymologies,,,,,,,,,,,citation_isidore_8
-int_onocentaur_thaon,creature_onocentaur,source_thaon_bestiary,,,archetype_hypocrisy;archetype_predatory_lust,,,,,,,,citation_thaon_1
-int_pegaso_barbie,creature_pegasus,source_barbie,,,archetype_resilience;archetype_defiance,function_exemplum,,,,,,habitay_cloud_kingdom ,citation_barbie_1
-int_pegaso_cantimpre,creature_pegasus,source_liber_de_natura_rerum,,,,,part_two_horns,,,,,,citation_cantimpre_2
-int_pegaso_esiodo,creature_pegasus,source_teogonia,,,archetype_poetic_inspiration ,,,,,,,habitat_olympus,citation_esiodo_3
-int_phoenix_aberdeen,creature_phoenix,source_aberdeen_bestiary,,,,,,,ability_rebirth_from_fire,,,habitat_arabia,citation_aberdeen_1
-int_phoenix_claudio,creature_phoenix,source_claudio_phoenix,,,archetype_immortality;archetype_rebirth,,part_purple_legs,,ability_rebirth_from_fire,,,,citation_claudio_1
-int_phoenix_dante,creature_phoenix,source_dante_inferno,,,,,,,ability_rebirth_from_fire,,Scavenger,habitat_hell,citation_dante_inferno_2
-int_phoenix_erodoto,creature_phoenix,source_erodoto_histories,,,archetype_immortality,,,,,,,,citation_erodoto_1
-int_phoenix_lattanzio,creature_phoenix,source_ave_phoenice,,,archetype_immortality;archetype_rebirth,function_sacred_symbol,,,"ability_rebirth_from_fire, ability_sing",,Elemental,,citation_lattanzio_1
-int_phoenix_ovidius,creature_phoenix,source_ovidius_metamorphoses,,,,,,,,,Scavenger,,citation_ovid_met_6
-int_phoenix_plinio,creature_phoenix,source_naturalis_historia,,,,,,,,,,,citation_plinio_3
-int_phoenix_rowling,creature_phoenix,source_fantastic_beasts,Fawkes,,,,,,ability_magical_song;ability_healing_tears;ability_rebirth_from_fire,,,,citation_rowling_3
-int_phoenix_shakespeare,creature_phoenix,source_phoenix_and_turtle_shakespeare,,,archetype_love;archetype_constancy,,,,ability_rebirth_from_fire,,,,citation_shakespeare_1
-int_phoenix_tasso,creature_phoenix,source_mondo_creato,,,archetype_immortality;archetype_rebirth,function_sacred_symbol,,,"ability_rebirth_from_fire, ability_sing",,Elemental,,citation_tasso_1
-int_satyr_aldrovandi,creature_satyr,source_monstrorum_historia_aldrovandi,,,archetype_natural_man,,,,,,,,citation_aldrovandi_1
-int_satyr_esiodo,creature_satyr,source_frammenti_esiodo,,,archetype_natural_man,,,,,,,,citation_esiodo_4
-int_satyr_nietzsche,creature_satyr,source_nietzsche_ndt,,,archetype_natural_man,,,,,,,,citation_nietzsche_1
-int_satyr_pliny,creature_satyr,source_naturalis_historia,,,archetype_natural_man,,,,,,,,citation_plinio_2
-int_satyr_statue,creature_satyr,source_satyr_statue,,,,,,part_two_horns,ability_play_foot_castanet,,,,
-int_scorpion_cantimpre,creature_scorpion,source_liber_de_natura_rerum,,,archetype_seduction;archetype_raw_instinct,,part_wings,,ability_fly,,,habitat_aerial,citation_cantimpre_5
-int_scorpion_isidore,creature_scorpion,source_etymologies,,,archetype_metamorphosis,,,,,,,,citation_isidore_3
-int_scorpion_plinio,creature_scorpion,source_naturalis_historia,,,archetype_evil;archetype_raw_instinct,,part_wings,,ability_fly,,,habitat_aerial,citation_plinio_7
-int_siren_andersen,creature_siren,source_andersen,,,archetype_innocence,,,,,,,,citation_andersen_1
-int_siren_anonymous,creature_siren,source_liber_monstrorum,,,archetype_seduction,,,,,,,,citation_anonymous
-int_siren_musker_clements,creature_siren,source_musker_clements,Ariel,,archetype_innocence,,,,,,,,
-int_siren_omero,creature_siren,source_odissea_omero,,,archetype_seduction,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,citation_omero_1
-int_siren_ovidius,creature_siren,source_ovidius_metamorphoses,,,archetype_mourner,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,citation_ovid_met_3
-int_siren_vase,creature_siren,source_vase,,,,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,
-int_snake_aberdeen,creature_snake,source_aberdeen_bestiary,,,archetype_rebirth,function_exemplum,part_eyes_on_temples;part_moist_body,,ability_blindness;ability_skin_shedding,,,,citation_aberdeen_4
-int_snake_dante,creature_snake,source_dante_inferno,,,,function_punisher,,,,,,habitat_hell,citation_dante_inferno_5
-int_snake_ovid,creature_snake,source_ovidius_metamorphoses,Cadmus and Harmonia,,archetype_metamorphosis,function_transformation,,,,,,,citation_ovid_met_9
-int_snake_ovid_2,creature_snake,source_ovidius_metamorphoses,,,archetype_chaos,function_antagonist,,,,,,,citation_ovid_met_10
-int_sphinx_apollodoro,creature_sphinx,source_mito_edipo,,,archetype_divine_punishment;archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_mount_phicium,citation_apollodorus_1
-int_sphinx_egypt,creature_sphinx,source_great_sphinx,,,archetype_strength;archetype_wisdom;archetype_protection,,,,,,,habitat_desert,
-int_sphinx_ende,creature_sphinx,source_unendliche_geschichte,,,,function_guardian,part_wings,,ability_posing_riddles;ability_lethal_gaze,,,habitat_great_riddle_gate;habitat_fantastica,citation_ende_1
-int_sphinx_flaubert,creature_sphinx,source_tentazione_antonio,,,archetype_wisdom,,,,ability_fire_breathing,,,habitat_desert,citation_flaubert_1
-int_sphinx_ingres,creature_sphinx,source_oedipus_ingres,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,
-int_sphinx_maier,creature_sphinx,source_atalanta_fugiens,,,archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_desert,citation_maier_1
-int_sphinx_moureau,creature_sphinx,source_oedipus_moureau,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,
-int_sphinx_plinio,creature_sphinx,source_naturalis_historia,,,archetype_exotic_marvel,,,,,,,,citation_plinio_1
-int_sphinx_rowling_fantastic,creature_sphinx,source_fantastic_beasts,,,,function_guardian,,,ability_posing_riddles,,,,citation_rowling_4
-int_sphinx_rowling_harry,creature_sphinx,source_harry_potter_book_4,,,,function_guardian,part_wings,,ability_posing_riddles,,,,citation_rowling_1
-int_troll_hunter,creature_troll,archetype_magic_folk;archetype_godmother,,,archetype_raw_instinct,,heads,,ability_sunlight_petrification,,Litophagous;Carnivorous,,
-int_troll_ibsen,creature_troll,source_peer_gynt,,,archetype_raw_instinct,,,,ability_manipulation,,,,citation_ibsen_1
-int_troll_norske_folkeeventyr,creature_troll,source_norske_folkeeventyr,,,archetype_raw_instinct,,part_big_eyes,,,intellect,,,citation_norske_folkeeventyr_1
-int_troll_prose_edda,creature_troll,source_prose_edda,,,archetype_guardian_hell;archetype_parasite,,,,,,,,citation_sturluson_1
-int_troll_tolkien,creature_troll,source_lotr,,,archetype_evil,,,,ability_speak_black_speech,,,,ciation_tolkien_2
-int_unicorn_aberdeen,creature_unicorn,source_aberdeen_bestiary,,,archetype_purity,,,,,,,,citation_aberdeen_5
-int_unicorn_cantimpre,creature_unicorn,source_liber_de_natura_rerum,,,archetype_purity,function_sacred_symbol,,,,,,,citation_cantimpre_1
-int_unicorn_ctesias,creature_unicorn,source_indika,,,,,,,,,,,citation_ctesias_1
-int_unicorn_isidore,creature_unicorn,source_etymologies,,,archetype_purity,function_sacred_symbol,,,,,,,citation_isidore_1
+interpretation_id,creature_id ,source_id,personal_name,distinctive_trait,archetype_id,narrative_function_id,additional_part,removed_part,additional_ability,removed_ability,alternative_diet ,alternative_habitat,has_genesis,citation_id
+int_anomaly_aldrovandi_1,creature_hairy_girl,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_4
+int_anomaly_aldrovandi_2,creature_acephalus,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_10
+int_anomaly_aldrovandi_3,creature_conjoined,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_11
+int_anomaly_paré_1,creature_hairy_girl,source_monstres_prodiges,,,,,,,,,,,genesis_anomaly_paré_1,citation_paré_2
+int_anomaly_paré_2,creature_polycephalus_sheep,source_monstres_prodiges,,,,,,,,,,,,citation_paré_5
+int_anomaly_paré_3,creature_acephalus,source_monstres_prodiges,,,,,,,,,,,genesis_anomaly_paré_3,citation_paré_8
+int_anomaly_paré_4,creature_conjoined,source_monstres_prodiges,,,,,,,,,,,genesis_anomaly_paré_4,citation_paré_9
+int_antlion_flaubert,creature_antlion,source_flaubert_tentation,,,,,part_genitals_reversed,,,,,,,citation_flaubert_3
+int_antlion_isidore,creature_antlion,source_etymologies,,,,,,,,,,,,citation_isidore_5
+int_antlion_physiologus,creature_antlion,source_physiologus,,,,,,,,,Starvation,,,citation_physiologus_1
+int_antlion_septuagint,creature_antlion,source_septuagint,,,,,,,,,,,,citation_job_4_11
+int_basilisk_isidore,creature_basilisk,source_etymologies,,,,,,,,,,,,citation_isidore_6
+int_basilisk_lucano,creature_basilisk,source_pharsalia,,,,,,,,,,,,citation_pharsalia_1
+int_basilisk_plinio,creature_basilisk,source_naturalis_historia,,,,,,,,,,,,citation_plinio_8
+int_basilisk_rowling_fantastic,creature_basilisk,source_fantastic_beasts,,,,,,,,,,,,
+int_basilisk_rowling_harry,creature_basilisk,source_harry_potter_book_2,,,archetype_guardian_threshold,function_guardian,,,ability_petrifying_gaze,,,habitat_chamber_of_secrets,,
+int_basilisk_theophilus,creature_basilisk,source_schedula_theophilus,,,,,"part_cock_body, part_cock_head",part_serpent_body,,,,,,citation_theophilus_1
+int_bull_cantimpre,creature_bull,source_liber_de_natura_rerum,,,archetype_emasculation,,,,,,,,,citation_cantimpre_3
+int_bull_ovid,creature_bull,source_ovidius_metamorphoses,,,archetype_divine_power,function_agent,,,,,,,,citation_ovid_met_11
+int_centaur_dante,creature_centaur,source_dante_inferno,Chirone ,,archetype_guardian_hell;archetype_wisdom,function_guide,,,ability_healing,,,habitat_hell,,citation_dante_inferno_7
+int_centaur_dante2,creature_centaur,source_dante_inferno,Nesso,,archetype_guardian_hell;archetype_violence;archetype_predatory_lust,,,,,,,habitat_hell,,citation_dante_inferno_6
+int_centaur_isidore,creature_centaur,source_etymologies,,,,,,,,,,,,citation_isidore_7
+int_centaur_ovid,creature_centaur,source_ovidius_metamorphoses,Eurytus,,archetype_raw_instinct;archetype_predatory_lust;archetype_violence,function_instigator,,,,,,,genesis_centaur_ovid,citation_ovid_met_12
+int_centaur_rowling_fantastic,creature_centaur,source_fantastic_beasts,,,archetype_enigma;archetype_wisdom,,,,ability_healing;ability_magical_powers,,,,,citation_rowling_9
+int_centaur_rowling_harry,creature_centaur,source_harry_potter_book_1,Firenze,,archetype_enigma;archetype_wisdom,function_guide;function_protector,,,,,,,,citation_rowling_10
+int_chimera_esiodo,creature_chimera,source_teogonia,,,archetype_chaos;archetype_violence;archetype_shameful_offspring,,,,,,,,genesis_chimera_esiodo,citation_esiodo_5
+int_chimera_fullmetal_alchemist,creature_chimera,source_fullmetal_alchemist,,"The chimera is produced through human transmutation, a forbidden alchemical act. The product is a new, combined creature which inherits features and attributes from both of its original base organisms.",archetype_shameful_offspring;archetype_scientific_transgression,function_guardian,part_lizard_lower_body;part_lizard_tail,part_goat_lower_body;part_snake_tail,,ability_fire_breathing,,,genesis_chimera_fullmetal,
+int_chimera_moreau,creature_chimera,source_chimera_moreau,The Chimera,,archetype_sublime;archetype_seduction,,part_human_upper_body;part_horse_lower_body;part_wings,part_lion_upper_body;part_lion_head;part_goat_lower_body;part_snake_tail,ability_fly,ability_fire_breathing,,,,
+int_chimera_omero,creature_chimera,source_iliade_omero,,,archetype_divine_punishment;archetype_violence,function_obstacle,part_dragon_tail,part_snake_tail;part_goat_head,,,,,,citation_omero_2
+int_chimera_statue,creature_chimera,source_chimera_d_arezzo_statue,,,,,,,,,,,,
+int_dragon_beowulf,creature_dragon,source_beowulf,,,archetype_evil,,,,ability_accumulate_treasures,,,,,citation_beowulf_1
+int_dragon_chen,creature_dragon,source_nine_dragons_chen,,,archetype_divine_power,,,part_wings,ability_weather_control,ability_fire_breathing,,,,
+int_dragon_doré,creature_dragon,source_destruction_doré,,,archetype_chaos,function_antagonist,,part_wings;part_legs,,,,habitat_aquatic,,
+int_dragon_ende,creature_dragon,source_unendliche_geschichte,Falkor,,,function_guide;function_protector,part_lower_limbs;part_lion_head,part_wings,ability_sing;ability_swim_in_air,ability_fly,,habitat_fantastica;habitat_aerial,,citation_ende_2
+int_dragon_martin,creature_dragon,source_got_2,"Drogon, Rhaegal, Viserion","""Three individually named dragons, each with its own distinct colouring and temperament.""",archetype_power,function_weapon,,part_legs,ability_rebirth_from_fire,,,,,citation_martin_1
+int_dragon_miyazaki,creature_dragon,source_spirited_away,Haku,,archetype_spirit,function_protector;function_guide,part_barbels;part_mane,part_wings,ability_shapeshifting,fire_breathing,,habitat_river,,
+int_dragon_plinio,creature_dragon,source_naturalis_historia,,"""They fight with elephant; the battle ends with both the creatures dying, since the dragon kills the elephant, and the elephant falling dead crushes over the dragon, killing it.""",,,,part_wings;part_crest,ability_fight_elephant,fire_breathing,diet_elephant_blood,,,citation_plinio_4
+int_dragon_rowling_fantastic,creature_dragon,source_fantastic_beasts,,"""A classified magical species whose hide, blood, heart, liver, and horn are prized for their magical properties. The species is said to comprise ten distinct breeds, treated in the naturalist, taxonomic manner of a wizarding textbook.""",,,part_horn,,ability_magical_powers;ability_venomous,,,,,citation_rowling_6
+int_dragon_rowling_harry,creature_dragon,source_harry_potter_book_4,,,,,,,,,,,,citation_rowling_7
+int_dragon_tolkien,creature_dragon,source_the_hobbit,Smaug,,,function_guardian;function_antagonist,part_underbelly_gems,,ability_speech;ability_hypnotic_gaze,,,habitat_subterranean,,citation_tolkien_1
+int_eagle_aberdeen,creature_eagle,source_aberdeen_bestiary,,,archetype_rebirth,function_exemplum,part_sharp_eyes,,,,,,,citation_aberdeen_3
+int_eagle_dante,creature_eagle,source_dante_paradiso,,,archetype_justice,function_guide,,,,,,habitat_heaven_of_jupyter,,citation_dante_paradiso_1
+int_eagle_ovid,creature_eagle,source_ovidius_metamorphoses,,,archetype_divine_power,function_agent,,,,,,,,citation_ovid_met_8
+int_eagle_rembrandt,creature_eagle,source_abduction_ganymede,,,,,,,,,,,,
+int_elf_moore,creature_elf,source_st_Nicholas,,"Here the Elves are described as tiny jolly companions with twinkling eyes, rosy cheeks, a cherry-like nose",archetype_christmas_elf ,function_guide,,,,,,habitat_north_pole,,citation_moore_1
+int_elf_sturluson_1,creature_elf,source_prose_edda,,,archetype_semi_divine,function_sacred_symbol,,,,,,,,citation_sturluson_2
+int_elf_sturluson_2,creature_elf,source_prose_edda,,,archetype_darkness ,,,,,,,habitat_subterranean,,citation_sturluson_2
+int_elf_tolkien,creature_elf,source_lotr,,,archetype_semi_divine,function_exemplum,,,,,,habitat_middle_earth ,,citation_tolkien_3
+int_fairy_celtic,creature_fairy,source_book_of_invations,,,archetype_immortality,,,,,,,,,citation_book_of_invation_1
+int_fairy_chaucer,creature_fairy,source_canterbury_tales,,,archetype_magic_folk,,,,,,,,,citation_chaucer_1
+int_fairy_disney,creature_fairy,source_peter_pan ,,Tinker Bell is described as a very tiny fairy that has the magic dust to make the character fly,archetype_belief,function_guide,part_wings,,ability_fly,,,habitat_neverland,,citation_peter_pan_1
+int_fairy_perrault,creature_fairy,source_cinderella_perrault,,,archetype_magic_folk;archetype_godmother,function_guide,,,ability_magic,,,,,citation_perrault_1
+int_fish_isidore,creature_fish,source_etymologies,,,,,,,,,,,,citation_isidore_4
+int_giant_apollodorus,creature_giant,source_biblioteca,,,archetype_chaos,,part_scales_dragon,part_feet,ability_immortality,,,,,citation_apollodorus_2
+int_giant_attack_on_titan,creature_giant,source_attack_on_titan,,,archetype_chaos,,part_multiple_dentition,part_genitals;part_digestive_system;part_skin,ability_speed;ability_agility;ability_regenerate_lost_limbs,,,,,
+int_giant_bible,creature_giant,source_bible,,,,,,,,,,,,citation_bible_1
+int_giant_camera_dei_giganti,creature_giant,source_camera_giganti,,,archetype_chaos,,,,,,,,,
+int_giant_ovidius,creature_giant,source_ovidius_metamorphoses,,,archetype_chaos,,,,,,,,,citation_ovid_met_4
+int_giant_teogonia,creature_giant,source_teogonia,,,,,,,,,,,genesis_giant_teogonia,citation_esiodo_1
+int_goat_cantimpre,creature_goat,source_liber_de_natura_rerum,,,archetype_wisdom,,,,,,,,,citation_cantimpre_4
+int_goat_isidore,creature_goat,source_etymologies,,,,,,,,,,,,citation_isidore_2
+int_goat_plinio,creature_goat,source_naturalis_historia,,,archetype_healing;archetype_wisdom,,,,,,diet_crabs_eater,,,citation_plinio_6
+int_hermaphrodite_aldrovandi,creature_hermaphrodite,source_monstrorum_historia_aldrovandi,,,,,part_female_genitals;part_breasts,,,,,,,
+int_hermaphrodite_ovidius,creature_hermaphrodite,source_ovidius_metamorphoses,Hermaphrodite,,archetype_emasculation,,,part_masculinity,,,,,genesis_hermaphrodite_ovidius,citation_ovid_met_5
+int_hermaphrodite_plato,creature_hermaphrodite,source_symposium,,,archetype_androgynous,,part_four_hands;part_four_feet;part_two_faces;part_four_ears;part_two_genitals,,,,,,,citation_plato_1
+int_hermaphrodite_statue,creature_hermaphrodite,source_hermafrodite_statue,,,archetype_emasculation,,,part_masculinity,,,,,,citation_aldrovandi_2
+int_hermaphrodite_swinburne,creature_hermaphrodite,source_poem_hermaphroditus,,,archetype_emasculation;archetype_divine_punishment,,,part_masculinity,,,,,,citation_poem_hermaphroditus
+int_hippogriff_ariosto,creature_hippogriff,source_orlando_furioso,,,,,,,,,,habitat_riphean_mountains,,citation_ariosto_1
+int_hippogriff_bierce,creature_hippogriff,source_devil_dictionary,,"""The hippogriff is said to be extinct.""",,,,,,,,,,citation_bierce_1
+int_hippogriff_doré,creature_hippogriff,source_orlando_furioso_doré,,,,,,,,,,,,
+int_hippogriff_ingres,creature_hippogriff,source_roger_délivrant_angélique,,,,,,,,,,,,
+int_hippogriff_rowling_fantastic,creature_hippogriff,source_fantastic_beasts,,,,,,,,,,,,citation_rowling_5
+int_hippogriff_rowling_harry,creature_hippogriff,source_harry_potter_book_3,Buckbeak,,,,,,,,,,,citation_rowling_2
+int_lion_aberdeen,creature_lion,source_aberdeen_bestiary,,,archetype_divine_power,function_exemplum,part_curly_mane;part_straight_mane,,ability_resolution;ability_compassion,,,habitat_mountains,,citation_aberdeen_2
+int_lion_apollodorus,creature_lion,source_biblioteca,Nemean Lion,,,function_antagonist,,,,,,habitat_cave,,citation_apollodorus_4
+int_lion_dante,creature_lion,source_dante_inferno,,,archetype_pride;archetype_violence,function_obstacle;function_antagonist,,,,,,,,citation_dante_inferno_4
+int_lion_maier,creature_lion,source_atalanta_fugiens,,,archetype_prima_materia;archetype_cosmic,,,,,,,,,citation_maier_2
+int_lion_rubens,creature_lion,source_hercules_nemean_lion,,,,function_antagonist,,,,,,,,
+int_mandrake_aldrovandi,creature_mandrake,source_monstrorum_historia_aldrovandi,,,archetype_natural_marvel,,,,,,,,,citation_aldrovandi_3
+int_mandrake_herbal,creature_mandrake,source_tacuinum_sanitatis,,,,,part_leaves;part_fruits,,,,,habitat_underground,,
+int_mandrake_machiavelli,creature_mandrake,source_mandragola,,"""The mandrake appears not as a creature but purely as a botanical ingredient, used to prepare a fertility potion.""",archetype_fertility,,,,ability_fertility,deadly_scream,,,,citation_machiavelli_1
+int_mandrake_rowling,creature_mandrake,source_harry_potter_movie_2,,,archetype_healing,,,,,,,,,
+int_mandrake_shakespeare,creature_mandrake,source_romeo_and_juliet,,,,,,,ability_soporific,,,,,citation_shakespeare_2
+int_manticore_flaubert,creature_manticore,source_flaubert_tentation,,,archetype_seduction,,,,ability_plague_spreading;ability_speech,,,habitat_desert,,citation_flaubert_2
+int_manticore_plinio,creature_manticore,source_naturalis_historia,,,,,,,ability_speed;ability_trumpet_voice,,,,,citation_plinio_5
+int_manticore_rochester,creature_manticore,source_rochester_bestiary,,,,,,,ability_speed;ability_trumpet_voice,,,,,citation_rochester_1
+int_manticore_topsell,creature_manticore,source_history_of_four_footed_beasts,,,,,,,ability_speed;ability_trumpet_voice;ability_untameable,,,,,citation_topsell_1
+int_medusa_apollodoro,creature_medusa,source_biblioteca,,,,,part_bronze_hands;part_wings,,,,,habitat_ocean,,citation_apollodorus_3
+int_medusa_caravaggio,creature_medusa,source_medusa_caravaggio,,,archetype_victim,function_apotropaic,,,,,,,,
+int_medusa_dante,creature_medusa,source_dante_inferno,,,,function_obstacle,,,,,,habitat_hell,,citation_dante_inferno_3
+int_medusa_esiodo,creature_medusa,source_teogonia,,,,,,,,,,habitat_edge_of_world,genesis_medusa_esiodo,citation_esiodo_2
+int_medusa_ovid,creature_medusa,source_ovidius_metamorphoses,,,archetype_victim,,,,,,,,genesis_medusa_ovid,citation_ovid_met_7
+int_medusa_rubens,creature_medusa,source_head_of_medusa,,,archetype_uncanny,,,,,,,,,
+int_medusa_shelley,creature_medusa,source_on_the_medusa,,,archetype_sublime,,,,,,,,,citation_shelley_1
+int_minotaur_canova,creature_minotaur,source_minotaur_canova,,,,,,,,,,,,
+int_minotaur_dante,creature_minotaur,source_dante_inferno,,,archetype_guardian_hell;archetype_violence,,,,,,,,,citation_dante_inferno_1
+int_minotaur_gospodinov,creature_minotaur,source_gospodinov_fisica_della_malinconia,,,archetype_abandoned_child;archetype_shameful_offspring,,,,,,,,,citation_gospodinov_1
+int_minotaur_ovidius,creature_minotaur,source_ovidius_metamorphoses,,,archetype_shameful_offspring,,,,,,,,genesis_minotaur_ovidius,citation_ovid_met_1;citation_ovid_met_2
+int_minotaur_picasso,creature_minotaur,source_minotauromachy_picasso,,,archetype_violence;archetype_divided_self,,,,,,,,,
+int_minotaur_watts,creature_minotaur,source_minotaur_watts,,,archetype_predatory_lust;archetype_divided_self,,,,,,,,,
+int_mostro_aldrovandi_1,creature_mostro_strabiliante,source_monstrorum_historia_aldrovandi,,,archetype_vice,,,,,,,,,citation_aldrovandi_5
+int_mostro_aldrovandi_2,creature_sea_horse,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_6
+int_mostro_aldrovandi_3,creature_haiit,source_monstrorum_historia_aldrovandi,,"""The creature is said to be very slow.""",,,,,,,,,,citation_aldrovandi_7
+int_mostro_aldrovandi_4,creature_sea_horse,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_8
+int_mostro_aldrovandi_5,creature_polymelic_cat,source_monstrorum_historia_aldrovandi,,,,,,,,,,,,citation_aldrovandi_9
+int_mostro_paré_1,creature_mostro_strabiliante,source_monstres_prodiges,,,,,,,,,,,genesis_mostro_paré_1,citation_paré_1
+int_mostro_paré_2,creature_haiit,source_monstres_prodiges,,,,,,,,,,,,citation_paré_3
+int_mostro_paré_3,creature_human_dog,source_monstres_prodiges,,,,,,,,,,,genesis_mostro_paré_3,citation_paré_4
+int_mostro_paré_4,creature_sea_horse,source_monstres_prodiges,,,,,part_two_horns;part_long_ears,,,,,,,citation_paré_6
+int_mostro_paré_5,creature_sea_horse,source_monstres_prodiges,,,,,,,,,,,,citation_paré_7
+int_ogre_ariosto,creature_ogre,source_orlando_furioso,,In Ariosto the ogre is more similar to a sea monster,archetype_raw_instinct,,,,,,,,,citation_ariosto_2
+int_ogre_chretien,creature_ogre,source_percival,,,archetype_raw_instinct,,,,,,,,,citation_chretien_1
+int_ogre_shrek,creature_ogre,source_shrek,,,archetype_anti_fairy_tale,function_exemplum,part_green_skin,,,,,habitat_duloc_swamp,,citation_shrek_1
+int_onocentaur_isidore,creature_onocentaur,source_etymologies,,,,,,,,,,,,citation_isidore_8
+int_onocentaur_thaon,creature_onocentaur,source_thaon_bestiary,,,archetype_hypocrisy;archetype_predatory_lust,,,,,,,,,citation_thaon_1
+int_pegaso_barbie,creature_pegasus,source_barbie,,,archetype_resilience;archetype_defiance,function_exemplum,,,,,,habitay_cloud_kingdom ,,citation_barbie_1
+int_pegaso_cantimpre,creature_pegasus,source_liber_de_natura_rerum,,,,,part_two_horns,,,,,,,citation_cantimpre_2
+int_pegaso_esiodo,creature_pegasus,source_teogonia,,,archetype_poetic_inspiration ,,,,,,,habitat_olympus,genesis_pegaso_esiodo,citation_esiodo_3
+int_phoenix_aberdeen,creature_phoenix,source_aberdeen_bestiary,,,,,,,ability_rebirth_from_fire,,,habitat_arabia,,citation_aberdeen_1
+int_phoenix_claudio,creature_phoenix,source_claudio_phoenix,,,archetype_immortality;archetype_rebirth,,part_purple_legs,,ability_rebirth_from_fire,,,,genesis_phoenix_claudio,citation_claudio_1
+int_phoenix_dante,creature_phoenix,source_dante_inferno,,,,,,,ability_rebirth_from_fire,,Scavenger,habitat_hell,,citation_dante_inferno_2
+int_phoenix_erodoto,creature_phoenix,source_erodoto_histories,,,archetype_immortality,,,,,,,,,citation_erodoto_1
+int_phoenix_lattanzio,creature_phoenix,source_ave_phoenice,,,archetype_immortality;archetype_rebirth,function_sacred_symbol,,,ability_rebirth_from_fire;ability_sing,,Elemental,,,citation_lattanzio_1
+int_phoenix_ovidius,creature_phoenix,source_ovidius_metamorphoses,,,,,,,,,Scavenger,,,citation_ovid_met_6
+int_phoenix_plinio,creature_phoenix,source_naturalis_historia,,,,,,,,,,,,citation_plinio_3
+int_phoenix_rowling,creature_phoenix,source_fantastic_beasts,Fawkes,,,,,,ability_magical_song;ability_healing_tears;ability_rebirth_from_fire,,,,,citation_rowling_3
+int_phoenix_shakespeare,creature_phoenix,source_phoenix_and_turtle_shakespeare,,,archetype_love;archetype_constancy,,,,ability_rebirth_from_fire,,,,,citation_shakespeare_1
+int_phoenix_tasso,creature_phoenix,source_mondo_creato,,,archetype_immortality;archetype_rebirth,function_sacred_symbol,,,ability_rebirth_from_fire;ability_sing,,Elemental,,,citation_tasso_1
+int_satyr_aldrovandi,creature_satyr,source_monstrorum_historia_aldrovandi,,,archetype_natural_man,,,,,,,,,citation_aldrovandi_1
+int_satyr_esiodo,creature_satyr,source_frammenti_esiodo,,,archetype_natural_man,,,,,,,,,citation_esiodo_4
+int_satyr_nietzsche,creature_satyr,source_nietzsche_ndt,,,archetype_natural_man,,,,,,,,,citation_nietzsche_1
+int_satyr_pliny,creature_satyr,source_naturalis_historia,,,archetype_natural_man,,,,,,,,,citation_plinio_2
+int_satyr_statue,creature_satyr,source_satyr_statue,,,,,,part_two_horns,ability_play_foot_castanet,,,,,
+int_scorpion_cantimpre,creature_scorpion,source_liber_de_natura_rerum,,,archetype_seduction;archetype_raw_instinct,,part_wings,,ability_fly,,,habitat_aerial,,citation_cantimpre_5
+int_scorpion_isidore,creature_scorpion,source_etymologies,,,archetype_metamorphosis,,,,,,,,,citation_isidore_3
+int_scorpion_plinio,creature_scorpion,source_naturalis_historia,,,archetype_evil;archetype_raw_instinct,,part_wings,,ability_fly,,,habitat_aerial,,citation_plinio_7
+int_siren_andersen,creature_siren,source_andersen,,,archetype_innocence,,,,,,,,,citation_andersen_1
+int_siren_anonymous,creature_siren,source_liber_monstrorum,,,archetype_seduction,,,,,,,,,citation_anonymous
+int_siren_musker_clements,creature_siren,source_musker_clements,Ariel,,archetype_innocence,,,,,,,,,
+int_siren_omero,creature_siren,source_odissea_omero,,,archetype_seduction,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,,citation_omero_1
+int_siren_ovidius,creature_siren,source_ovidius_metamorphoses,,,archetype_mourner,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,genesis_siren_ovidius,citation_ovid_met_3
+int_siren_vase,creature_siren,source_vase,,,,,part_bird_wings;part_bird_limbs,part_fish_tail,ability_fly,,,,,
+int_snake_aberdeen,creature_snake,source_aberdeen_bestiary,,,archetype_rebirth,function_exemplum,part_eyes_on_temples;part_moist_body,,ability_blindness;ability_skin_shedding,,,,,citation_aberdeen_4
+int_snake_dante,creature_snake,source_dante_inferno,,,,function_punisher,,,,,,habitat_hell,,citation_dante_inferno_5
+int_snake_ovid,creature_snake,source_ovidius_metamorphoses,Cadmus and Harmonia,,archetype_metamorphosis,function_transformation,,,,,,,,citation_ovid_met_9
+int_snake_ovid_2,creature_snake,source_ovidius_metamorphoses,,,archetype_chaos,function_antagonist,,,,,,,,citation_ovid_met_10
+int_sphinx_apollodoro,creature_sphinx,source_mito_edipo,,,archetype_divine_punishment;archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_mount_phicium,genesis_sphinx_apollodoro,citation_apollodorus_1
+int_sphinx_egypt,creature_sphinx,source_great_sphinx,,,archetype_strength;archetype_wisdom;archetype_protection,,,,,,,habitat_desert,,
+int_sphinx_ende,creature_sphinx,source_unendliche_geschichte,,,,function_guardian,part_wings,,ability_posing_riddles;ability_lethal_gaze,,,habitat_great_riddle_gate;habitat_fantastica,,citation_ende_1
+int_sphinx_flaubert,creature_sphinx,source_flaubert_tentation,,,archetype_wisdom,,,,ability_fire_breathing,,,habitat_desert,,citation_flaubert_1
+int_sphinx_ingres,creature_sphinx,source_oedipus_ingres,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,,
+int_sphinx_maier,creature_sphinx,source_atalanta_fugiens,,,archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_desert,,citation_maier_1
+int_sphinx_moureau,creature_sphinx,source_oedipus_moureau,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,,
+int_sphinx_plinio,creature_sphinx,source_naturalis_historia,,,archetype_exotic_marvel,,,,,,,,,citation_plinio_1
+int_sphinx_rowling_fantastic,creature_sphinx,source_fantastic_beasts,,,,function_guardian,,,ability_posing_riddles,,,,,citation_rowling_4
+int_sphinx_rowling_harry,creature_sphinx,source_harry_potter_book_4,,,,function_guardian,part_wings,,ability_posing_riddles,,,,,citation_rowling_1
+int_troll_hunter,creature_troll,source_troll_hunter,,,archetype_raw_instinct,,part_multiple_heads,,ability_sunlight_petrification,,Litophagous;Carnivorous,,,
+int_troll_ibsen,creature_troll,source_peer_gynt,,,archetype_raw_instinct,,,,ability_manipulation,,,,,citation_ibsen_1
+int_troll_norske_folkeeventyr,creature_troll,source_norske_folkeeventyr,,,archetype_raw_instinct,,part_big_eyes,,,intellect,,,,citation_norske_folkeeventyr_1
+int_troll_prose_edda,creature_troll,source_prose_edda,,,archetype_guardian_hell;archetype_parasite,,,,,,,,,citation_sturluson_1
+int_troll_tolkien,creature_troll,source_lotr,,,archetype_evil,,,,ability_speak_black_speech,,,,,ciation_tolkien_2
+int_unicorn_aberdeen,creature_unicorn,source_aberdeen_bestiary,,,archetype_purity,,,,,,,,,citation_aberdeen_5
+int_unicorn_cantimpre,creature_unicorn,source_liber_de_natura_rerum,,,archetype_purity,function_sacred_symbol,,,,,,,,citation_cantimpre_1
+int_unicorn_ctesias,creature_unicorn,source_indika,,,,,,,,,,,,citation_ctesias_1
+int_unicorn_isidore,creature_unicorn,source_etymologies,,,archetype_purity,function_sacred_symbol,,,,,,,,citation_isidore_1

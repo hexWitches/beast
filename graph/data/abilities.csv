@@ -21,6 +21,7 @@ ability_play_the_flute,Play the flute,"""The ability to play a musical instrumen
 ability_poisonous,Venomous,"""The creature produces or secretes a toxic substance capable of harming or killing through bite, touch, or breath."""
 ability_purify_water,Water purification,"""The ability to cleanse or sanctify bodies of water through presence or touch."""
 ability_resolution,Resolution,"""Firmness of will and steadfast determination; the creature's resolute, unyielding disposition, located by the bestiaries in the head as the seat of its resolve."""
+ability_self_destructive,Self-destruction,"""The creature is driven to destroy itself due to its internally contradictory nature, whether physiological, psychological, or ontological."""
 ability_self_renewal,Self-renewal,"""The capacity to regenerate, rejuvenate, or be reborn, often cyclically."""
 ability_sing,Singing,"""The ability to produce melodious vocalizations, often with enchanting or symbolic effects on listeners."""
 ability_skin_shedding,Skin Shedding,"""The periodic sloughing of the outer skin to renew the body, by which the creature casts off its old self and regains its youth, as the snake squeezes through a narrow crack to shed its skin."""
@@ -30,3 +31,4 @@ ability_strength,Strength,"""Exceptional physical power, allowing the creature t
 ability_sunlight_petrification,Sunlight Petrification,"""The power, or vulnerability, by which exposure to sunlight turns a creature to stone; petrifaction induced by daylight."""
 ability_swim,Swimming,"""The ability to move efficiently through water."""
 ability_swim_in_air,Swim in the air,"""The capacity to move through the air as though swimming through water, flying in constant, fluid motion without the aid of wings."""
+ability_wine_drinking,Wine Drinking,"""An exceptional or culturally distinctive relationship with wine consumption, often associated with loss of rational control, festivity, or ritual behavior."""
