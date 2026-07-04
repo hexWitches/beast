@@ -249,7 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (ofCreatureRefs.some(ref => getId(ref) === idUri)) {
                         
                         let interpTitle = getValue(gNode["http://www.w3.org/2000/01/rdf-schema#label"]) || "";
-                        let interpBody = getValue(gNode["http://www.w3.org/2000/01/rdf-schema#comment"]);
+                        // interpBody is ONLY sourced from beast:hasPassageText (via beast:hasTextualReference).
+                        // rdfs:comment on an interpretation node is the DurandScheme description and
+                        // must never be used as the displayed card body text.
+                        let interpBody = "";
                         let interpSource = "";
                         let interpDate = "";
                         let interpBadge = "Source";
@@ -321,14 +324,17 @@ document.addEventListener("DOMContentLoaded", () => {
                             }
                         }
 
-                        // Textual References (also extract source from citation's extractedFrom if needed)
+                        // Textual References — beast:hasPassageText is the actual citation/quote
+                        // and always takes priority over rdfs:comment (which is DurandScheme description)
                         const textRefs = asArray(gNode["beast:hasTextualReference"]);
                         if (textRefs.length > 0) {
                             const textId = getId(textRefs[0]);
                             const textNode = graphMap[textId];
                             if (textNode) {
-                                if (!interpBody) {
-                                    interpBody = getValue(textNode["beast:hasPassageText"]);
+                                // Always prefer the passage text as the displayed body
+                                const passageText = getValue(textNode["beast:hasPassageText"]);
+                                if (passageText) {
+                                    interpBody = passageText;
                                 }
                                 // If no source was found via appearsIn, extract it from the citation
                                 if (!interpSource) {
