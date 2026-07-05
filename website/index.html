@@ -261,6 +261,13 @@
                         of creatures, encouraging advanced information retrieval and semantic reasoning through its
                         dedicated SPARQL endpoint.
                     </p>
+                    <div id="kg-visualization" class="kg-visualization-wrapper">
+                        <div class="kg-chart-layout">
+                            <div id="kg-chart-container" class="kg-chart-container"></div>
+                            <div id="kg-legend" class="kg-legend-container"></div>
+                        </div>
+                        <div id="kg-tooltip" class="kg-tooltip" style="display: none;"></div>
+                    </div>
                     <p class="info-section__text">
                         Querying the dataset it is possible to <strong>extract knowledge</strong>; the interpretations,
                         divergences, and symbolic mappings gathered here become queryable patterns, letting us move from
@@ -277,17 +284,21 @@
                         <div class="rq-grid">
                             <a href="sparql.html#rq1" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    Which category of feature diverges most across interpretations - i.e., when a creature is reinterpreted, is it most often its anatomy, abilities, habitat, diet, or symbolic meaning that changes?
+                                    Which category of feature diverges most across interpretations - i.e., when a
+                                    creature is reinterpreted, is it most often its anatomy, abilities, habitat, diet,
+                                    or symbolic meaning that changes?
                                 </div>
                             </a>
                             <a href="sparql.html#rq2" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    Which :RealAnimal most frequently contributes a body part to composite/hybrid creatures?
+                                    Which :RealAnimal most frequently contributes a body part to composite/hybrid
+                                    creatures?
                                 </div>
                             </a>
                             <a href="sparql.html#rq3" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    Do composite creatures share symbolic structures with the real animals from which their parts derive?
+                                    Do composite creatures share symbolic structures with the real animals from which
+                                    their parts derive?
                                 </div>
                             </a>
                             <a href="sparql.html#rq4" style="text-decoration: none; color: inherit;">
@@ -297,20 +308,22 @@
                             </a>
                             <a href="sparql.html#rq5" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    Which creatures have changed the most physically across time, sources and interpretations?
+                                    Which creatures have changed the most physically across time, sources and
+                                    interpretations?
                                 </div>
                             </a>
                             <a href="sparql.html#rq6" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    From all the beasts present in Harry Potter find the oldest source that narrates the origin of the beast.
+                                    From all the beasts present in Harry Potter find the oldest source that narrates the
+                                    origin of the beast.
                                 </div>
                             </a>
                         </div>
                     </div>
                     <div class="info-section__actions info-section__actions--flex">
                         <a href="explore.html" class="cta-btn cta-btn--primary">Explore the BEASTiary</a>
-                        <a href="sparql.html"
-                            class="cta-btn cta-btn--primary" target="_blank">Query the SPARQL endpoint</a>
+                        <a href="sparql.html" class="cta-btn cta-btn--primary" target="_blank">Query the SPARQL
+                            endpoint</a>
                     </div>
                 </div>
             </div>
@@ -330,20 +343,20 @@
                             href="https://triplydb.com/sararoggi/The-BEAST-Graph-1/sparql#query=select%20%2A%20where%20%7B%0A%20%20%3Fs%20%3Fp%20%3Fo.%0A%7D%20limit%2010&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2Fsararoggi%2FThe-BEAST-Graph-1%2Fsparql&tabTitle=Query&outputFormat=Table&outputSettings=%7B%7D"">SPARQL</a></li>
                 </ul>
             </div>
-            <ul class="footer-links">
-                <li>
-                    <a class="github-link" href="https://github.com/hexWitches/beast" target="_blank" rel="noopener"
-                        aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.1"
-                            stroke-linecap="round" stroke-linejoin="round" fill="none" aria-hidden="true">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-            <div class="footer-copy">&copy; 2026 &middot; CC BY 4.0</div>
-        </div>
+            <ul class=" footer-links">
+                    <li>
+                        <a class="github-link" href="https://github.com/hexWitches/beast" target="_blank" rel="noopener"
+                            aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.1"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" aria-hidden="true">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-copy">&copy; 2026 &middot; CC BY 4.0</div>
+            </div>
     </footer>
     <!-- </footer> -->
 
@@ -358,6 +371,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/graph-visualization.js"></script>
     <div id="imageModal" class="modal-overlay">
         <img id="modalImage" class="modal-image-content">
     </div>
