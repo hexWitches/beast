@@ -19,6 +19,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 body {
@@ -346,6 +347,21 @@ body {
     line-height: 1.8;
     color: rgba(244, 235, 216, 0.85);
     margin: 0;
+}
+
+.info-section__text a {
+    color: var(--old-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.info-section__text a:hover {
+    color: var(--egg-shell);
+}
+
+section[id^="rq"] .info-section__inner {
+    max-width: 1100px;
 }
 
 .info-section__text em {
@@ -2028,4 +2044,741 @@ footer p, footer li {
     color: rgba(220, 170, 165, 0.88);
     border-color: rgba(200, 130, 125, 0.28);
     background: rgba(200, 130, 125, 0.06);
+}
+
+
+/* ─── SPARQL Page ────────────────────────────────────────────── */
+
+/* Research Question results table */
+.rq-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--text-font);
+    font-size: 0.9rem;
+    color: var(--egg-shell);
+}
+
+.rq-table th {
+    background-color: var(--dark-khaki);
+    color: var(--old-gold);
+    border-bottom: 2px solid var(--old-gold);
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.rq-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(207, 181, 59, 0.2);
+}
+
+.rq-table tbody tr:nth-child(even) {
+    background-color: rgba(207, 181, 59, 0.05);
+}
+
+.rq-table tbody tr:hover {
+    background-color: rgba(207, 181, 59, 0.1);
+}
+
+/* SPARQL code preview block */
+.sparql-code-block {
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--old-gold);
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+}
+
+.sparql-code-block code {
+    font-family: "Courier New", Courier, monospace;
+    color: #d1d1d1;
+    font-size: 0.85rem;
+}
+
+.keyword {
+    color: #CFB53B;
+    font-weight: bold;
+}
+
+.variable {
+    color: #8FBC8F;
+}
+
+.prefix {
+    color: #A0C0D0;
+}
+
+/* ─── Yasgui Theme Overrides for BEAST ──────────────────────── */
+.yasgui {
+    font-family: var(--text-font) !important;
+}
+
+.yasgui .tabsList {
+    border-bottom: 2px solid var(--old-gold) !important;
+}
+
+.yasgui .tabsList .tab {
+    background-color: rgba(207, 181, 59, 0.1) !important;
+    color: var(--old-gold) !important;
+    border: 1px solid rgba(207, 181, 59, 0.3) !important;
+    border-bottom: none !important;
+}
+
+.yasgui .tabsList .tab.active {
+    background-color: var(--old-gold) !important;
+    color: var(--darker-khaki) !important;
+}
+
+.yasgui .tabsList .tab.addTab {
+    background-color: transparent !important;
+}
+
+/* Add Tab (+) icon */
+.yasgui .tabsList .addTab,
+.yasgui .tabsList .addTab span {
+    color: var(--old-gold) !important;
+    fill: var(--old-gold) !important;
+}
+
+/* SVG icons color */
+.yasgui .svgImg,
+.yasr .svgImg {
+    fill: var(--old-gold) !important;
+}
+
+/* Endpoint URL input styling */
+.yasgui .controlbar .endpointText,
+.yasgui .endpointText {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+/* ─── Yasqe (editor) ─────────────────────────────────────────── */
+.yasqe .CodeMirror {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.3) !important;
+    border-radius: 4px;
+}
+
+.yasqe .CodeMirror-gutters {
+    background-color: var(--dark-khaki) !important;
+    border-right: 1px solid rgba(207, 181, 59, 0.3) !important;
+}
+
+.yasqe .CodeMirror-cursor {
+    border-left: 2px solid var(--old-gold) !important;
+}
+
+.yasqe .CodeMirror-linenumber {
+    color: #8a968a !important;
+}
+
+/* Resizer handle */
+.yasgui .CodeMirror-resizer,
+.yasgui .yasqe_resizer {
+    background: var(--dark-khaki) !important;
+    border-top: 1px solid rgba(207, 181, 59, 0.3) !important;
+    border-bottom: 1px solid rgba(207, 181, 59, 0.3) !important;
+}
+
+/* Run query button */
+.yasqe_buttons .yasqe_queryButton {
+    background-color: transparent !important;
+    color: var(--darker-khaki) !important;
+}
+
+.yasqe_buttons .yasqe_queryButton:hover {
+    background-color: rgba(207, 181, 59, 0.12) !important;
+}
+
+/* Yasqe Syntax Highlighting for Dark Theme */
+.yasqe .cm-keyword {
+    color: #CFB53B !important;
+    font-weight: bold;
+}
+
+.yasqe .cm-variable {
+    color: var(--egg-shell) !important;
+}
+
+.yasqe .cm-variable-2 {
+    color: #8FBC8F !important;
+}
+
+.yasqe .cm-atom {
+    color: #D2B48C !important;
+}
+
+.yasqe .cm-string {
+    color: #E9967A !important;
+}
+
+.yasqe .cm-comment {
+    color: #8a968a !important;
+    font-style: italic;
+}
+
+.yasqe .cm-operator {
+    color: var(--egg-shell) !important;
+}
+
+.yasqe .cm-punc {
+    color: var(--egg-shell) !important;
+}
+
+.yasqe .cm-bracket {
+    color: var(--egg-shell) !important;
+}
+
+.yasqe .cm-property {
+    color: #CFB53B !important;
+}
+
+/* ─── Yasr (results panel) ───────────────────────────────────── */
+.yasr {
+    background-color: rgba(207, 181, 59, 0.02) !important;
+    border: 1px solid rgba(207, 181, 59, 0.2) !important;
+    margin-top: 10px;
+    color: var(--egg-shell) !important;
+    border-radius: 4px;
+}
+
+.yasr .yasr_header {
+    background: transparent !important;
+    color: var(--egg-shell) !important;
+}
+
+.yasr .dataTables_wrapper .dataTables_length,
+.yasr .dataTables_wrapper .dataTables_filter,
+.yasr .dataTables_wrapper .dataTables_info,
+.yasr .dataTables_wrapper .dataTables_processing,
+.yasr .dataTables_wrapper .dataTables_paginate {
+    color: var(--egg-shell) !important;
+}
+
+.yasr .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: var(--old-gold) !important;
+}
+
+.yasr table.dataTable {
+    border-collapse: collapse !important;
+    color: var(--egg-shell) !important;
+}
+
+.yasr table.dataTable thead th {
+    background-color: var(--dark-khaki) !important;
+    color: var(--old-gold) !important;
+    border-bottom: 2px solid var(--old-gold) !important;
+    padding: 10px !important;
+}
+
+.yasr table.dataTable tbody tr {
+    background-color: rgba(207, 181, 59, 0.05) !important;
+}
+
+.yasr table.dataTable tbody tr.odd {
+    background-color: rgba(207, 181, 59, 0.02) !important;
+}
+
+.yasr table.dataTable tbody tr:hover {
+    background-color: rgba(207, 181, 59, 0.1) !important;
+}
+
+.yasr table.dataTable tbody td {
+    border-bottom: 1px solid rgba(207, 181, 59, 0.2) !important;
+    padding: 8px 10px !important;
+}
+
+/* Fix table cell links in yasr */
+.yasr table.dataTable a {
+    color: #A0C0D0 !important;
+    text-decoration: none !important;
+}
+
+.yasr table.dataTable a:hover {
+    color: var(--egg-shell) !important;
+    text-decoration: underline !important;
+}
+
+/* Yasr plugin tabs (like "Table") */
+.yasr .select_yasr_plugin.active,
+.yasr .yasr_btn.active {
+    color: var(--old-gold) !important;
+    border-bottom: 2px solid var(--old-gold) !important;
+    border-color: var(--old-gold) !important;
+}
+
+.yasr .select_yasr_plugin,
+.yasr .yasr_btn {
+    color: var(--egg-shell) !important;
+}
+
+.yasr .yasr_response_chip,
+.yasr .yasr_fallback_info,
+.yasr .response_info {
+    background-color: rgba(207, 181, 59, 0.1) !important;
+    color: var(--old-gold) !important;
+    border: 1px solid var(--old-gold) !important;
+}
+
+/* ─── Yasgui inputs & form controls ─────────────────────────── */
+.yasgui input,
+.yasr input,
+.yasgui select,
+.yasr select {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+/* Checkboxes */
+.yasgui input[type="checkbox"] {
+    accent-color: var(--old-gold) !important;
+}
+
+/* ─── Settings (Cog) Menu, Endpoint Dropdowns, Autocomplete ─── */
+.yasgui .cogMenu,
+.yasgui .popover,
+.yasgui .autocompleteWrapper,
+.yasgui .endpointText.dropdown-menu {
+    background-color: var(--dark-khaki) !important;
+    border: 1px solid var(--old-gold) !important;
+    color: var(--egg-shell) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.yasgui .cogMenu *,
+.yasgui .popover * {
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .cogMenu span,
+.yasgui .cogMenu div,
+.yasgui .cogMenu label {
+    color: var(--egg-shell) !important;
+}
+
+/* GET / POST toggle and other active states */
+.yasgui .cogMenu .btn,
+.yasgui .cogMenu button {
+    background-color: transparent !important;
+    color: var(--egg-shell) !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+.yasgui .cogMenu .btn.active,
+.yasgui .cogMenu button.active,
+.yasgui .cogMenu .selected {
+    color: var(--old-gold) !important;
+    border-bottom: 2px solid var(--old-gold) !important;
+}
+
+.yasgui .cogMenu input,
+.yasgui .cogMenu select,
+.yasgui .popover input,
+.yasgui .popover select {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+/* Autocomplete dropdowns */
+.yasgui .CodeMirror-hints,
+.yasgui .autocompleteWrapper {
+    background-color: var(--darker-khaki) !important;
+    border: 1px solid var(--old-gold) !important;
+}
+
+.yasgui .CodeMirror-hint {
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .CodeMirror-hint-active {
+    background-color: rgba(207, 181, 59, 0.2) !important;
+    color: var(--old-gold) !important;
+}
+
+/* ─── Global overrides for Yasgui popups (injected into body) ── */
+.popover,
+.popover-content,
+.popover-title,
+.popover-body,
+.yas-popup,
+.yasgui .tabMenu,
+.yasgui.context-menu,
+.yasqe .yasqe_sharePopup,
+.yasgui .autocompleteList {
+    background-color: var(--dark-khaki) !important;
+    border-color: var(--old-gold) !important;
+    color: var(--egg-shell) !important;
+}
+
+.popover *,
+.yas-popup *,
+.yasgui .tabMenu *,
+.yasgui.context-menu *,
+.yasqe .yasqe_sharePopup *,
+.yasgui .autocompleteList * {
+    color: var(--egg-shell) !important;
+}
+
+.popover .btn,
+.popover button,
+.yas-popup .btn,
+.yas-popup button,
+.yasgui .tabMenu .btn,
+.yasgui .tabMenu button {
+    background-color: transparent !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+.popover .btn.active,
+.popover .btn.selected,
+.yas-popup .btn.active,
+.yas-popup .selected,
+.yasgui .tabMenu .btn.active,
+.yasgui .tabMenu .selected {
+    color: var(--old-gold) !important;
+    border-bottom: 2px solid var(--old-gold) !important;
+}
+
+.popover input,
+.popover select,
+.yas-popup input,
+.yas-popup select,
+.yasgui .tabMenu input,
+.yasgui .tabMenu select {
+    background-color: var(--darker-khaki) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+    color: var(--egg-shell) !important;
+}
+
+.dropdown-menu,
+.ui-autocomplete {
+    background-color: var(--dark-khaki) !important;
+    border: 1px solid var(--old-gold) !important;
+}
+
+.dropdown-menu > li > a,
+.dropdown-item,
+.ui-menu-item {
+    color: var(--egg-shell) !important;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-item:hover,
+.ui-state-active {
+    background-color: rgba(207, 181, 59, 0.2) !important;
+    color: var(--old-gold) !important;
+}
+
+/* Arrow colors for popovers */
+.popover.bottom .arrow::after,
+.popover.bs-popover-bottom .arrow::after {
+    border-bottom-color: var(--dark-khaki) !important;
+}
+
+.popover.top .arrow::after,
+.popover.bs-popover-top .arrow::after {
+    border-top-color: var(--dark-khaki) !important;
+}
+
+/* ─── Yasgui Settings Panel (cog menu) background fix ────────── */
+/* Target the floating settings panel that Yasgui injects */
+.yasqe_settings,
+.yasqe .yasqe_settings,
+.yasgui .yasqe_settings,
+.yasqe_extraBar,
+.yasgui .yasqe_extraBar {
+    background-color: var(--dark-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.yasqe_settings *,
+.yasqe_extraBar * {
+    color: var(--egg-shell) !important;
+}
+
+.yasqe_settings input,
+.yasqe_settings select,
+.yasqe_extraBar input,
+.yasqe_extraBar select {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+/* Broad catch-all: any direct child panel/popup inside the yasgui wrapper */
+.yasgui > div[class*="settings"],
+.yasgui > div[class*="popup"],
+.yasgui > div[class*="menu"],
+.yasqe > div[class*="settings"],
+.yasqe > div[class*="popup"] {
+    background-color: var(--dark-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+/* Override any remaining white backgrounds Yasgui injects globally */
+.yasgui,
+.yasgui *:not(svg):not(path):not(polyline):not(circle):not(rect) {
+    background-color: inherit;
+}
+
+.yasqe_buttons .yasqe_sharePopup,
+.yasqe_buttons .yasqe_sharePopup *:not(input) {
+    background-color: var(--dark-khaki) !important;
+    color: var(--egg-shell) !important;
+    border-color: rgba(207, 181, 59, 0.4) !important;
+}
+
+/* ─── Yasgui tab context / settings popup (tabContextMenu) ────── */
+.tabContextMenu {
+    background-color: var(--dark-khaki) !important;
+    border: 1px solid rgba(207, 181, 59, 0.35) !important;
+    color: var(--egg-shell) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.tabContextMenu * {
+    color: var(--egg-shell) !important;
+}
+
+.tabContextMenu label,
+.tabContextMenu .label {
+    color: var(--old-gold) !important;
+    font-weight: 600;
+}
+
+.tabContextMenu input,
+.tabContextMenu select,
+.tabContextMenu textarea {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.tabContextMenu button,
+.tabContextMenu .selectorButton {
+    background-color: transparent !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.3) !important;
+}
+
+.tabContextMenu button:hover,
+.tabContextMenu .selectorButton:hover {
+    background-color: rgba(207, 181, 59, 0.15) !important;
+    color: var(--old-gold) !important;
+}
+
+.tabContextMenu .selectorButton.selected,
+.tabContextMenu button.selected,
+.tabContextMenu button.active {
+    background-color: var(--old-gold) !important;
+    color: var(--darker-khaki) !important;
+    border-color: var(--old-gold) !important;
+}
+
+/* ─── Yasgui Tab Menu / Settings Panel ───────────────────────── */
+/* .tabMenu is the actual class used for the settings popup in Yasgui */
+.yasgui .tabMenu {
+    background: var(--dark-khaki) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .tabMenu .requestConfigWrapper {
+    background: var(--dark-khaki) !important;
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .tabMenu .requestConfigWrapper .selectorButton {
+    background-color: transparent !important;
+    color: var(--egg-shell) !important;
+    border-bottom: 1px solid rgba(207, 181, 59, 0.3) !important;
+}
+
+.yasgui .tabMenu .requestConfigWrapper .selectorButton:hover {
+    color: var(--old-gold) !important;
+    border-color: var(--old-gold) !important;
+}
+
+.yasgui .tabMenu .requestConfigWrapper .selectorButton.selected {
+    color: var(--old-gold) !important;
+    border-bottom: 2px solid var(--old-gold) !important;
+}
+
+.yasgui .tabMenu .label {
+    color: var(--old-gold) !important;
+}
+
+.yasgui .tabMenu .textSetting .label {
+    color: var(--old-gold) !important;
+}
+
+.yasgui .tabMenu input,
+.yasgui .tabMenu select,
+.yasgui .tabMenu textarea {
+    background: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.yasgui .tabMenu .textSetting .removeButton {
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .tabMenu .textSetting .removeButton:hover {
+    color: var(--old-gold) !important;
+}
+
+/* ─── Yasgui context-menu (right-click tab menu) ─────────────── */
+.yasgui.context-menu {
+    background: var(--dark-khaki) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+.yasgui.context-menu .context-menu-item {
+    color: var(--egg-shell) !important;
+}
+
+.yasgui.context-menu .context-menu-item:hover {
+    background-color: rgba(207, 181, 59, 0.15) !important;
+    color: var(--old-gold) !important;
+}
+
+/* ─── Autocomplete list ───────────────────────────────────────── */
+.yasgui .autocompleteList {
+    background: var(--dark-khaki) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.yasgui .autocompleteList .autoComplete_result {
+    color: var(--egg-shell) !important;
+}
+
+.yasgui .autocompleteList .autoComplete_result.autoComplete_selected,
+.yasgui .autocompleteList .autoComplete_result:hover {
+    background: rgba(207, 181, 59, 0.15) !important;
+    color: var(--old-gold) !important;
+}
+
+/* ─── Yasgui settings panel: classless div after the cog button ── */
+/* The settings panel rendered by Yasgui has no class — target via sibling */
+.tabContextButton + div,
+.tabContextButton ~ div {
+    background-color: var(--dark-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.35) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+.tabContextButton + div *,
+.tabContextButton ~ div * {
+    color: var(--egg-shell) !important;
+}
+
+.tabContextButton + div label,
+.tabContextButton ~ div label,
+.tabContextButton + div .label,
+.tabContextButton ~ div .label {
+    color: var(--old-gold) !important;
+}
+
+.tabContextButton + div input,
+.tabContextButton ~ div input,
+.tabContextButton + div select,
+.tabContextButton ~ div select,
+.tabContextButton + div textarea,
+.tabContextButton ~ div textarea {
+    background-color: var(--darker-khaki) !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.tabContextButton + div button,
+.tabContextButton ~ div button,
+.tabContextButton + div .selectorButton,
+.tabContextButton ~ div .selectorButton {
+    background-color: transparent !important;
+    color: var(--egg-shell) !important;
+    border: 1px solid rgba(207, 181, 59, 0.3) !important;
+}
+
+.tabContextButton + div button:hover,
+.tabContextButton ~ div button:hover,
+.tabContextButton + div .selectorButton:hover,
+.tabContextButton ~ div .selectorButton:hover {
+    background-color: rgba(207, 181, 59, 0.15) !important;
+    color: var(--old-gold) !important;
+}
+
+.tabContextButton + div .selectorButton.selected,
+.tabContextButton ~ div .selectorButton.selected,
+.tabContextButton + div button.selected,
+.tabContextButton ~ div button.selected,
+.tabContextButton + div button.active,
+.tabContextButton ~ div button.active {
+    background-color: var(--old-gold) !important;
+    color: var(--darker-khaki) !important;
+    border-color: var(--old-gold) !important;
+}
+
+/* ─── Yasgui Play & Share button — gold theme ────────────────── */
+
+/* Play (run query) button: the SVG triangle icon */
+.yasqe .yasqe_buttons .yasqe_queryButton svg,
+.yasqe .yasqe_buttons .yasqe_queryButton .queryIcon svg {
+    fill: var(--old-gold) !important;
+    color: var(--old-gold) !important;
+}
+
+.yasqe .yasqe_buttons .yasqe_queryButton:hover svg,
+.yasqe .yasqe_buttons .yasqe_queryButton:hover .queryIcon svg {
+    fill: #e0c850 !important;
+}
+
+/* Share button: the SVG icon */
+.yasqe .yasqe_buttons .yasqe_share svg {
+    fill: var(--old-gold) !important;
+    color: var(--old-gold) !important;
+    stroke: var(--old-gold) !important;
+}
+
+.yasqe .yasqe_buttons .yasqe_share:hover svg {
+    fill: #e0c850 !important;
+    stroke: #e0c850 !important;
+}
+
+/* Download / help icon buttons in the yasr footer */
+.yasqe .yasqe_buttons svg,
+.yasr .yasr_btn svg {
+    fill: var(--old-gold) !important;
+    color: var(--old-gold) !important;
+}
+
+/* Generic yasqe button base (overrides the grey #333 default) */
+.yasqe .yasqe_btn {
+    color: var(--old-gold) !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(207, 181, 59, 0.4) !important;
+}
+
+.yasqe .yasqe_btn:hover {
+    background-color: rgba(207, 181, 59, 0.12) !important;
+    border-color: var(--old-gold) !important;
+    color: #e0c850 !important;
+}
+
+.yasqe .yasqe_btn.selected,
+.yasqe .yasqe_btn:focus {
+    background-color: var(--old-gold) !important;
+    border-color: var(--old-gold) !important;
+    color: var(--darker-khaki) !important;
 }

@@ -44,6 +44,7 @@
                 <li><a href="#the-ontology" class="nav-link-item">The Ontology</a></li>
                 <li><a href="#the-knowledge-graph" class="nav-link-item">The Knowledge Graph</a></li>
                 <li><a href="explore.html" class="nav-link-item">BEASTiary</a></li>
+                <li><a href="sparql.html" class="nav-link-item">SPARQL endpoint</a></li>
                 <li><a href="about.html" class="nav-link-item">Team</a></li>
             </ul>
         </nav>
@@ -274,20 +275,41 @@
                     <div class="research-questions-section research-questions-wrapper">
                         <h3 class="ontology-module-label rq-label-custom">Research Questions</h3>
                         <div class="rq-grid">
-                            <div class="rq-box rq-box-styled">
-                                [Research Question Placeholder 1]
-                            </div>
-                            <div class="rq-box rq-box-styled">
-                                [Research Question Placeholder 2]
-                            </div>
-                            <div class="rq-box rq-box-styled">
-                                [Research Question Placeholder 3]
-                            </div>
+                            <a href="sparql.html#rq1" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    Which category of feature diverges most across interpretations - i.e., when a creature is reinterpreted, is it most often its anatomy, abilities, habitat, diet, or symbolic meaning that changes?
+                                </div>
+                            </a>
+                            <a href="sparql.html#rq2" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    Which :RealAnimal most frequently contributes a body part to composite/hybrid creatures?
+                                </div>
+                            </a>
+                            <a href="sparql.html#rq3" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    Do composite creatures share symbolic structures with the real animals from which their parts derive?
+                                </div>
+                            </a>
+                            <a href="sparql.html#rq4" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    How the modern interpretation of each beast has evolved from its earliest version?
+                                </div>
+                            </a>
+                            <a href="sparql.html#rq5" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    Which creatures have changed the most physically across time, sources and interpretations?
+                                </div>
+                            </a>
+                            <a href="sparql.html#rq6" style="text-decoration: none; color: inherit;">
+                                <div class="rq-box rq-box-styled">
+                                    From all the beasts present in Harry Potter find the oldest source that narrates the origin of the beast.
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="info-section__actions info-section__actions--flex">
                         <a href="explore.html" class="cta-btn cta-btn--primary">Explore the BEASTiary</a>
-                        <a href="https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql"
+                        <a href="sparql.html"
                             class="cta-btn cta-btn--primary" target="_blank">Query the SPARQL endpoint</a>
                     </div>
                 </div>
@@ -305,7 +327,7 @@
                     <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/ontology">Ontology</a></li>
                     <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/graph">Graph</a></li>
                     <li><a target="_blank" rel="noopener"
-                            href="https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql">SPARQL</a></li>
+                            href="https://triplydb.com/sararoggi/The-BEAST-Graph-1/sparql#query=select%20%2A%20where%20%7B%0A%20%20%3Fs%20%3Fp%20%3Fo.%0A%7D%20limit%2010&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2Fsararoggi%2FThe-BEAST-Graph-1%2Fsparql&tabTitle=Query&outputFormat=Table&outputSettings=%7B%7D"">SPARQL</a></li>
                 </ul>
             </div>
             <ul class="footer-links">

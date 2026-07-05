@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             val = getValue(tNode["http://www.w3.org/2000/01/rdf-schema#label"]);
                         } else {
                             val = tId.split(":").pop().replace(/([A-Z])/g, ' $1').trim().replace(/_/g, ' ');
-                            val = val.replace(/\s*(diet|habitat|ability)\s*/gi, ' ').trim();
+                            val = val.replace(/\s*(diet|habitat|ability|part)\s*/gi, ' ').trim();
                             val = val.charAt(0).toUpperCase() + val.slice(1);
                         }
                         traits.push({ label, value: val });
@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
             addTrait("beast:hasAbility", "Ability");
             addTrait("beast:hasDiet", "Diet");
             addTrait("beast:hasHabitat", "Habitat");
+            addTrait("beast:hasModificationOf", "Anomaly");
 
             // Etymology
             let etymology = "";
