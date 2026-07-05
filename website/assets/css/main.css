@@ -379,6 +379,29 @@ section[id^="rq"] .info-section__inner {
     border-radius: 2px;
 }
 
+.sparql-code-block code {
+    display: block;
+    white-space: pre;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(207, 181, 59, 0.25);
+    color: var(--egg-shell);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    overflow-x: auto;
+}
+
+.sparql-code-block .keyword {
+    color: var(--old-gold);
+    font-weight: 700;
+}
+
+.sparql-code-block .variable {
+    color: #8fd9ff;
+}
+
 /* Ontology module blocks - styled to match the explore page etymology block */
 .ontology-module {
     padding: 1.2rem 1.4rem;
@@ -2050,6 +2073,32 @@ footer p, footer li {
 /* ─── SPARQL Page ────────────────────────────────────────────── */
 
 /* Research Question results table */
+.table-responsive {
+    max-height: 220px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid rgba(207, 181, 59, 0.2);
+    border-radius: 6px;
+}
+
+.table-responsive::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: rgba(21, 24, 9, 0.7);
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--old-gold);
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #e0c850;
+}
+
 .rq-table {
     width: 100%;
     border-collapse: collapse;

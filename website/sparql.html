@@ -274,35 +274,214 @@
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Physical Changes Across Time</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance
-                            for the project's analysis of mythological creatures and their representations across
-                            sources.]
+                            Focusing on the physical appearance of the creatures represented in the bestiary graph, it's interesting to understand which of them have undergone the greatest physical changes over time and their appearance in various sources. The results of this question can help identify creatures with a more malleable physical appearance and a less deeply rooted tradition within historical sources. It also highlights on which occasions has the creative flair of the authors led to new and different interpretations of the physical characteristics of a creature.
+                        </p>
+                        <p class="info-section__text mt-3"> 
+                            The data provided by the answer shows the creatures that have undergone physical changes over time. The one that has undergone the greatest change is the chimera, which, in just five documented sources within the bestiary, demonstrates modifications in 11 aspects of its conformation. This may be due to its unique physicality, which combines body parts of many different real animals such as the lion, the goat, the snake, the dragon, and many others. The combination of multiple creatures naturally leads different authors to modify the chimera's physicality, adapting its characteristics to their own interpretations of the creature. 
                         </p>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <p class="info-section__text mb-2">Which creatures have changed the most physically across time, sources and interpretations?</p>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
+<span class="keyword">PREFIX</span> rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+
+<span class="keyword">SELECT</span> <span class="variable">?creature</span> <span class="variable">?creatureLabel</span>
+       (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?interp</span>) <span class="keyword">AS</span> <span class="variable">?nInterpretations</span>)
+       (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?addPart</span>) <span class="keyword">AS</span> <span class="variable">?nAdditionalParts</span>)
+       (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?remPart</span>) <span class="keyword">AS</span> <span class="variable">?nRemovedParts</span>)
+       ((<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?addPart</span>) + <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?remPart</span>)) <span class="keyword">AS</span> <span class="variable">?totalChanges</span>)
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
-}</code>
+  <span class="variable">?interp</span> beast:ofCreature <span class="variable">?creature</span> .
+  <span class="variable">?creature</span> rdfs:label <span class="variable">?creatureLabel</span> .
+  <span class="keyword">OPTIONAL</span> { <span class="variable">?interp</span> beast:additionalPart <span class="variable">?addPart</span> . }
+  <span class="keyword">OPTIONAL</span> { <span class="variable">?interp</span> beast:removedPart <span class="variable">?remPart</span> . }
+}
+<span class="keyword">GROUP BY</span> <span class="variable">?creature</span> <span class="variable">?creatureLabel</span>
+<span class="keyword">HAVING</span> (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?addPart</span>) + <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?remPart</span>) &gt; 0)
+<span class="keyword">ORDER BY</span> <span class="keyword">DESC</span>(<span class="variable">?totalChanges</span>)</code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">
                                 <thead>
                                     <tr>
-                                        <th>col1 title</th>
-                                        <th>col2 title</th>
+                                        <th>creature</th>
+                                        <th>creatureLabel</th>
+                                        <th>nInterpretations</th>
+                                        <th>nAdditionalParts</th>
+                                        <th>nRemovedParts</th>
+                                        <th>TotalChanges</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_chimera</td>
+                                        <td>Chimera</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>11</td>
                                     </tr>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_dragon</td>
+                                        <td>Dragon</td>
+                                        <td>10</td>
+                                        <td>6</td>
+                                        <td>3</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_hermaphrodite</td>
+                                        <td>Hermaphrodite</td>
+                                        <td>5</td>
+                                        <td>7</td>
+                                        <td>1</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_giant</td>
+                                        <td>Giant</td>
+                                        <td>6</td>
+                                        <td>2</td>
+                                        <td>4</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_basilisk</td>
+                                        <td>Basilisk</td>
+                                        <td>6</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_siren</td>
+                                        <td>Siren</td>
+                                        <td>6</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_lion</td>
+                                        <td>Lion</td>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_mandrake</td>
+                                        <td>Mandrake</td>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_medusa</td>
+                                        <td>Medusa</td>
+                                        <td>7</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_sea_horse</td>
+                                        <td>Sea Horse</td>
+                                        <td>4</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_snake</td>
+                                        <td>Snake</td>
+                                        <td>4</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_troll</td>
+                                        <td>Troll</td>
+                                        <td>5</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_antlion</td>
+                                        <td>Ant-Lion</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_eagle</td>
+                                        <td>Eagle</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_fairy</td>
+                                        <td>Fairy</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_ogre</td>
+                                        <td>Orge</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_pegasus</td>
+                                        <td>Pegasus</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_phoenix</td>
+                                        <td>Phoenix</td>
+                                        <td>10</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_scorpion</td>
+                                        <td>Scorpion</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_sphinx</td>
+                                        <td>Sphinx</td>
+                                        <td>10</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_satyr</td>
+                                        <td>Satyr</td>
+                                        <td>5</td>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>
