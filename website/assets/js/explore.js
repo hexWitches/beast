@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "basilisk": "basilisk.jpg",
         "bull": "bull.jpg",
         "centaur": "centaur.jpeg",
+        "cerberus": "cerberus.jpg",
         "chimera": "chimera.jpeg",
         "conjoined": "creature_conjoined.jpeg",
         "cow": "cow.jpeg",
