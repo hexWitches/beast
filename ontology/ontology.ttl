@@ -355,6 +355,11 @@
     rdfs:label "Real-world place"@en ;
     rdfs:comment "A geographic or ecological habitat that exists in the physical world. Class influenced by J. L. Borges' distinction between biological reality and the imaginary spaces."@en .
 
+:GeographicPlace rdf:type owl:Class ;
+    rdfs:subClassOf :RealWorldPlace ;
+    rdfs:label "Geographic place"@en ;
+    rdfs:comment "A specific, real-world named location (e.g. a country, region, or city) that serves as a creature's habitat or place of origin, as distinct from a general ecological biome type."@en .
+
 :ImaginaryPlace rdf:type owl:Class ;
     rdfs:subClassOf :Habitat ;
     rdfs:label "Imaginary place"@en ;

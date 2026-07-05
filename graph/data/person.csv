@@ -2,9 +2,11 @@ person_id,given_name,family_name,nationality,dates_display,birth_year,death_year
 person_adamson,Andrew ,Adamson,New Zealander ,1966 – present,1966,,Q432845,http://viaf.org/viaf/23252298
 person_aldrovandi,Ulisse,Aldrovandi,Italian,1522 – 1605,1522,1605,Q321358,http://viaf.org/viaf/100190422
 person_andersen,Hans Christian , Andersen,Danish,1805 – 1875,1805,1875,Q5673,http://viaf.org/viaf/4925902
+person_araki,Tetsurō,Araki,Japanese,1976 –  present,1976,,Q1101038,http://viaf.org/viaf/172249995
 person_ariosto,Ludovico,Ariosto,Italian,1474 – 1533,1474,1533,Q48900,http://viaf.org/viaf/71386455
 person_asbjørnsen,Peter Christen,Asbjørnsen,Norwegian,1812 – 1885,1812,1885,Q355485,http://viaf.org/viaf/116587918
 person_bierce,Ambrose,Bierce,American,1842 – 1914,1842,1914,Q191050,http://viaf.org/viaf/232144783035948358100
+person_blake,William ,Blake,English,1757 – 1827,1757,1827,Q41513,http://viaf.org/viaf/54144439
 person_brueghel_jeune,Pieter,Brueghel,Dutch,1564 – 1638,1564,1638,Q255828,http://viaf.org/viaf/106974142
 person_canova,Antonio,Canova,Italian,1757 – 1822,1757,1822,Q5547,http://viaf.org/viaf/36965536
 person_cantimpre,Thomas,Cantimpré,Flemish,c. 1200 – 1272,1200,1272,Q572799,http://viaf.org/viaf/1878151778206818130004
@@ -24,11 +26,14 @@ person_esiodo,Esiodo,,Greek,8th century BCE,-799,-700,Q44233,http://viaf.org/via
 person_flaubert,Gustave,Flaubert,French,1821 – 1880,1821,1880,Q43444,http://viaf.org/viaf/9846192
 person_g_martin,George R. R.,Martin,American,1984 – present,1984,,Q181677,http://viaf.org/viaf/98636170
 person_gospodinov,Georgi,Gospodinov,Bulgarian,1968 – present,1968,,Q1509177,http://viaf.org/viaf/54360545
+person_hayashi,Yūichirō,Hayashi,Japanese,,,,Q106447941,
 person_ibsen,Henrik,Ibsen,Norwegian,1828 – 1906,1828,1906,Q36661,http://viaf.org/viaf/71378383
 person_ingres,Jean-Auguste-Dominique,Ingres,French,1780 – 1867,1780,1867,Q23380,http://viaf.org/viaf/76327826
+person_irie,Yasuhiro,Irie,Japanese,1971 – present,1971,,Q8049983,http://viaf.org/viaf/226112296
 person_isayama,Hajime,Isayama,Japanese,1986 – present,1986,,Q3782468,http://viaf.org/viaf/171550535
 person_isidore,Isidore,of Seville ,Spanish ,560 – 636,560,636,Q166876,http://viaf.org/viaf/803890
 person_jackson,Wilfred ,Jackson ,American ,1906 – 1988,1906,1988,Q1385379,http://viaf.org/viaf/76511055
+person_koizuka,Masashi,Koizuka,Japanese,1980 –  present,1980,,Q17130285,
 person_lattanzio,Lucio Cecilio,Lattanzio,Ancient Rome,c. 240 – 320 ,240,320,Q209102,http://viaf.org/viaf/100198064
 person_lucano,Marco Anneo,Lucano,Ancient Rome,39 – 65,39,65,Q188646,http://viaf.org/viaf/100902938
 person_machiavelli,Niccolò,Machiavelli,Italian,1469 – 1527,1469,1527,Q1399,http://viaf.org/viaf/95151646
@@ -56,6 +61,8 @@ person_romano,Giulio,Romano,Italian,1499 – 1546,1499,1546,Q215305,http://viaf.
 person_rowling,J. K.,Rowling,English,1965 – present,1965,,Q34660,http://viaf.org/viaf/116796842
 person_rubens,Pieter Paul,Rubens,Flemish,1577 – 1640,1577,1640,Q5599,http://viaf.org/viaf/56647196
 person_shakespeare,William,Shakespeare,English,1564 – 1616,1564,1616,Q692,http://viaf.org/viaf/96994048
+person_shishido,Jun,Shishido,Japanese,1976 – present,1976,,"
+Q18817638",http://viaf.org/viaf/533144928078554341261
 person_siren_painter,Siren Painter,,Greek,500 – 480 BCE,-500,-480,Q7530113,http://viaf.org/viaf/95989493
 person_sturluson,Snorri,Sturluson ,Icelandic,1179 – 1241,1179,1241,Q102323,http://viaf.org/viaf/89085541
 person_swinburne,Algernon Charles,Swinburne,English,1837 – 1909,1837,1909,Q315511,http://viaf.org/viaf/41846937
@@ -64,9 +71,5 @@ person_thaon,Philippe ,de Thaon,Anglo-Norman,12th century,1101,1200,Q326195,http
 person_theophilus,Theophilus,Presbyter,Dtch,12th century,1101,1200,Q143854,http://viaf.org/viaf/37718393
 person_tolkien ,J. R. R,Tolkien ,English ,1892 – 1973,1892,1973,Q892,http://viaf.org/viaf/95218067
 person_topsell,Edward,Topsell,English,1572 – 1625,1572,1625,Q3048705,http://viaf.org/viaf/37823643
+person_virgil,Publius Vergilius,Maro,Ancient Rome,70 – 19 BCE,-70,-19,Q1398,http://viaf.org/viaf/8194433
 person_watts,George Frederic,Watts,English,1817 – 1904,1817,1904,Q183245,http://viaf.org/viaf/10095477
-person_araki,Tetsurō,Araki,Japanese,1976 –  present,1976,,Q1101038,http://viaf.org/viaf/172249995
-person_koizuka,Masashi,Koizuka,Japanese,1980 –  present,1980,,Q17130285,
-person_hayashi,Yūichirō,Hayashi,Japanese,,,,Q106447941,
-person_shishido,Jun,Shishido,Japanese,1976 – present,1976,,"
-Q18817638",http://viaf.org/viaf/533144928078554341261

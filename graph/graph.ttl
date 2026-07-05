@@ -28,38 +28,6 @@ beastiary:archetype_strenght a beast:Archetype ;
     beast:hasMeaning "Heroic physical power and might."@en ;
     beast:relatedTo beastiary:archetype_protection .
 
-beastiary:citation_rowling_8 a beast:Citation ;
-    beast:extractedFrom beastiary:source_fantastic_beasts ;
-    beast:hasPassageText "[…] a chicken egg hatched beneath a toad would produce a gigantic serpent possessed of extraordinarily dangerous powers. The Basilisk is a brilliant green serpent that may reach up to fifty feet in length. The male has a scarlet plume upon its head. It has exceptionally venomous fangs but its most dangerous means of attack is the gaze of its large yellow eyes. Anyone looking directly into these will suffer instant death."^^xsd:string ;
-    beast:isTextualReferenceOf beastiary:int_basilisk_rowling_fantastic .
-
-beastiary:citation_tolkien_2 a beast:Citation ;
-    beast:extractedFrom beastiary:source_lotr ;
-    beast:hasPassageText "Trolls they were, but filled with the evil will of their master: a fell race, strong, agile, fierce and cunning, but harder than stone. Unlike the older race of the Twilight they could endure the Sun, so long as the will of Sauron held sway over them. They spoke little, and the only tongue that they knew was the Black Speech of Barad-dûr."^^xsd:string ;
-    beast:hasSequenceIdentifier "Appendix F"^^xsd:string ;
-    beast:isTextualReferenceOf beastiary:int_troll_tolkien .
-
-beastiary:diet_autotrophic rdfs:label "Autotrophic"@en ;
-    rdfs:comment "Self-nourishing through sunlight and nutrients drawn from the soil rather than by consuming other organisms; the mode proper to plant-creatures such as the mandrake."@en .
-
-beastiary:diet_crabs_eater rdfs:label "Crabs eater"@en ;
-    rdfs:comment "A diet consisting of crabs and similar shellfish; the creature feeds on crustaceans."@en .
-
-beastiary:diet_elephant_blood rdfs:label "Elephant blood"@en ;
-    rdfs:comment "A specialized carnivorous diet of elephant blood, sought by the dragon of Pliny's tradition to cool its own heat; the creature lies in wait to drain the elephant."@en ;
-    beast:dietCategory beast:Carnivorous .
-
-beastiary:diet_man_eater rdfs:label "Man eater"@en ;
-    rdfs:comment "A carnivorous diet directed especially at human flesh; the creature preys on people by preference, beyond ordinary predation on animals."@en ;
-    beast:dietCategory beast:Carnivorous .
-
-beastiary:diet_none rdfs:label "Starvation"@en ;
-    rdfs:comment "A creature physiologically incapable of sustaining itself, unable to digest any food due to its contradictory hybrid nature."@en .
-
-beastiary:diet_wind rdfs:label "Wind"@en ;
-    rdfs:comment "A creature sustaining itself entirely by consuming air or wind, rather than solid food or water."@en ;
-    beast:dietCategory beast:Elemental .
-
 beastiary:etymology_amelic a beast:Etymology ;
     beast:hasMeaning "The term amelic comes from the Greek prefix a- (without) and mélos (limb), combined with the suffix -ic."@en ;
     beast:hasRootTerm "a + mélos"@grc ;
@@ -95,6 +63,14 @@ beastiary:genesis_centaur_ovid a beast:Genesis ;
     beast:involvesParent beastiary:myth_ixion,
         beastiary:myth_nephele ;
     beast:isGenesisOf beastiary:int_centaur_ovid .
+
+beastiary:genesis_cerberus_esiodo a beast:Genesis ;
+    beast:hasGenesisDescription "Offspring of Echidna and Typhon"@en,
+        "one of the monstrous brood born to the two primordial serpent-giants."@en ;
+    beast:hasSibling beastiary:creature_chimera ;
+    beast:involvesParent beastiary:myth_echidna,
+        beastiary:myth_typhon ;
+    beast:isGenesisOf beastiary:int_cerberus_esiodo .
 
 beastiary:genesis_chimera_esiodo a beast:Genesis ;
     beast:hasGenesisDescription "Offspring of Echidna and Typhon"@en,
@@ -178,122 +154,25 @@ beastiary:genesis_sphinx_apollodoro a beast:Genesis ;
         beastiary:myth_typhon ;
     beast:isGenesisOf beastiary:int_sphinx_apollodoro .
 
-beastiary:habitat_arabia a beast:RealWorldPlace ;
-    rdfs:label "Arabia"@en ;
-    rdfs:comment "The arid lands of the Arabian peninsula, a remote eastern region of deserts and aromatic groves traditionally held to be the dwelling of the phoenix, which there builds its spice-laden nest of frankincense and myrrh."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
-
-beastiary:habitat_cave a beast:RealWorldPlace ;
-    rdfs:label "Cave"@en ;
-    rdfs:comment "A natural rocky hollow or cavern."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
-
-beastiary:habitat_chamber_of_secrets a beast:ImaginaryPlace ;
-    rdfs:label "Chamber of Secrets"@en ;
-    rdfs:comment "A vast underground chamber hidden beneath Hogwarts School of Witchcraft and Wizardry, built by Salazar Slytherin in the 10th century to conceal his basilisk."@en ;
-    beast:hasOriginContext beastiary:source_harry_potter_book_2 .
-
 beastiary:habitat_cloud_kingdom a beast:ImaginaryPlace ;
     rdfs:label "Cloud Kingdom"@en ;
     rdfs:comment "The Cloud Kingdom is the mystical kingdom floating high above the earth among the clouds location where the movie takes place."@en ;
-    beast:habitatCategory beast:habitat_aerial ;
+    beast:habitatCategory beast:Aerial ;
     beast:hasOriginContext beastiary:source_barbie .
-
-beastiary:habitat_desert a beast:RealWorldPlace ;
-    rdfs:label "Desert"@en ;
-    rdfs:comment "An arid expanse of sand and barren ground."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
-
-beastiary:habitat_duloc_swamp a beast:ImaginaryPlace ;
-    rdfs:label "Swamp"@en ;
-    rdfs:comment "The magical swamp is surrounded by dense trees and mossy water, home of Shrek."@en ;
-    beast:habitatCategory beast:habitat_terrestrial ;
-    beast:hasOriginContext beastiary:source_shrek .
-
-beastiary:habitat_edge_of_world a beast:ImaginaryPlace ;
-    rdfs:label "Edge of the World"@en ;
-    rdfs:comment "The far western limit of the cosmos in Hesiod's Theogony, beyond glorious Ocean toward Night and near the Hesperides, where the Gorgons dwell at the boundary of the known world."@en ;
-    beast:hasOriginContext beastiary:source_teogonia .
-
-beastiary:habitat_fantastica a beast:ImaginaryPlace ;
-    rdfs:label "Fantastica"@en ;
-    rdfs:comment "Fantastica is the limitless realm of imagination in 'The Neverending Story', ruled by the Childlike Empress, home to all imagined creatures, and sustained by human dreams - threatened by the Nothing when people cease to believe."@en ;
-    beast:hasOriginContext beastiary:source_unendliche_geschichte .
-
-beastiary:habitat_great_riddle_gate a beast:ImaginaryPlace ;
-    rdfs:label "Great Riddle Gate"@en ;
-    rdfs:comment "The Great Riddle Gate is the first of three gates leading to the Southern Oracle in Fantastica, formed by two facing sphinxes whose gaze freezes the unworthy in place, condemning them to solve all the world's riddles or perish."@en ;
-    beast:hasOriginContext beastiary:source_unendliche_geschichte .
-
-beastiary:habitat_heaven_of_jupyter a beast:ImaginaryPlace ;
-    rdfs:label "Heaven of Jupiter"@en ;
-    rdfs:comment "The sixth celestial sphere of Dante's Paradise, the heaven of just rulers, where the souls of the righteous compose the figure of the Eagle of divine justice."@en ;
-    beast:hasOriginContext beastiary:source_dante_paradiso .
-
-beastiary:habitat_hell a beast:ImaginaryPlace ;
-    rdfs:label "Hell"@en ;
-    rdfs:comment "The infernal underworld of Dante's Inferno, realm of the damned."@en ;
-    beast:hasOriginContext beastiary:source_dante_inferno .
 
 beastiary:habitat_lonely_mountain a beast:ImaginaryPlace ;
     rdfs:label "Lonely Mountain (Erebor)"@en ;
     rdfs:comment "The solitary mountain of Erebor in Tolkien's legendarium, whose excavated halls house the dwarves' kingdom and, after its seizure, the dragon Smaug and his hoard."@en ;
     beast:hasOriginContext beastiary:source_the_hobbit .
 
-beastiary:habitat_middle_earth a beast:ImaginaryPlace ;
-    rdfs:label "Middle Earth"@en ;
-    rdfs:comment "Middle-earth is fictional continent in J.R.R. Tolkien’s fantasy world, as our actual Earth in a mythical, pre-historic past."@en ;
-    beast:habitatCategory beast:habitat_terrestrial ;
-    beast:hasOriginContext beastiary:source_lotr .
-
-beastiary:habitat_mount_phicium a beast:RealWorldPlace ;
-    rdfs:label "Mount Phicium (Thebes)"@en ;
-    rdfs:comment "The mountain near Thebes."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
-
-beastiary:habitat_neverland a beast:ImaginaryPlace ;
-    rdfs:label "Neverland"@en ;
-    rdfs:comment "Neverland is a fictional, magical island where children never grow up, inhabited by fairies (like Tinker Bell), mermaids, the Lost Boys (Peter Pan), pirates, and Native Americans."@en ;
-    beast:habitatCategory beast:habitat_terrestrial ;
-    beast:hasOriginContext beastiary:source_peter_pan .
-
-beastiary:habitat_north_pole a beast:RealWorldPlace ;
-    rdfs:label "North Pole"@en ;
-    rdfs:comment "The North Pole, is the the northernmost point on Earth, located at the exact intersection of the planet's axis and its surface, known by its very cold temperatures all year round."@en ;
-    beast:habitatCategory beast:habitat_terrestrial ;
-    beast:hasOriginContext beastiary:source_st_Nicholas .
-
-beastiary:habitat_ocean a beast:RealWorldPlace ;
-    rdfs:label "Ocean"@en ;
-    rdfs:comment "The vast salt sea."@en ;
-    beast:habitatCategory beast:habitat_acquatic .
-
-beastiary:habitat_olympus a beast:ImaginaryPlace ;
-    rdfs:label "Olympus"@en ;
-    rdfs:comment "Mount Olympus in greek mythology is the place were the gods live."@en ;
-    beast:habitatCategory beast:habitat_aerial ;
-    beast:hasOriginContext beastiary:source_teogonia .
-
-beastiary:habitat_riphean_mountains a beast:ImaginaryPlace ;
-    rdfs:label "Riphean Mountains"@en ;
-    rdfs:comment "The Riphean Mountains, a remote and semi-legendary range placed at the far north of the world, beyond the frozen seas; in Ariosto's Orlando Furioso the rare native haunt from which the hippogriff comes."@en ;
-    beast:hasOriginContext beastiary:source_orlando_furioso .
-
-beastiary:habitat_river a beast:RealWorldPlace ;
-    rdfs:label "River"@en ;
-    rdfs:comment "A flowing freshwater watercourse."@en ;
-    beast:habitatCategory beast:habitat_acquatic .
-
-beastiary:habitat_subterranean a beast:RealWorldPlace ;
-    rdfs:label "Subterranean"@en ;
-    rdfs:comment "The underground realm of caves, tunnels, and buried depths, beneath the surface of the earth."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
-
 beastiary:int_unicorn_isidor a beast:Interpretation ;
     rdfs:comment "Isidore writes that the unicorn is so strong no hunter can catch it, however when the virgin girl approaches, the beast forgets its ferocity, lays its head in her lap, and falls asleep and it can be captured following a intimacy scene."@en ;
     beast:belongsToImaginaryStructure beast:MysticalStructure ;
     beast:embodiesImaginarySymbol beast:IntimacySymbol ;
     beast:isGovernedBy beast:NocturnalRegime .
+
+beastiary:myth_poseidon a beast:MythologicalFigure ;
+    rdfs:label "Poseidon"@en .
 
 beastiary:person_brueghel_jeune a schema:Person ;
     rdfs:comment "1564 – 1638"@en ;
@@ -643,6 +522,13 @@ beastiary:citation_apollodorus_4 a beast:Citation ;
         "chapter 5"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_lion_apollodorus .
 
+beastiary:citation_apollodorus_5 a beast:Citation ;
+    beast:extractedFrom beastiary:source_biblioteca ;
+    beast:hasPassageText "Come dodicesima fatica gli fu imposto di portare via Cerbero dall'Ade. Cerbero aveva tre teste di cane, una coda di drago e lungo la schiena gli spuntavano teste di serpente di ogni tipo."^^xsd:string ;
+    beast:hasSequenceIdentifier "\"Book II"^^xsd:string,
+        "chapter 5\""^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_cerberus_apollodorus .
+
 beastiary:citation_ariosto_1 a beast:Citation ;
     beast:extractedFrom beastiary:source_orlando_furioso ;
     beast:hasPassageText "Non è finto il destrier, ma naturale, / ch’una giumenta generò d’un grifo: / simile al padre avea la piuma e l’ale, / li piedi anteriori, il capo e il grifo; / in tutte l’altre membra parea quale / era la madre, e chiamasi ippogrifo; / che nei monti Rifei vengon, ma rari, / molto di lá dagli aghiacciati mari."^^xsd:string ;
@@ -786,6 +672,13 @@ beastiary:citation_dante_inferno_7 a beast:Citation ;
         "verses 70-71"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_centaur_dante .
 
+beastiary:citation_dante_inferno_8 a beast:Citation ;
+    beast:extractedFrom beastiary:source_dante_inferno ;
+    beast:hasPassageText "Cerbero, fiera crudele e diversa, / con tre gole caninamente latra / sovra la gente che quivi è sommersa. / Li occhi ha vermigli, la barba unta e atra, / e ’l ventre largo, e unghiate le mani; / graffia li spirti, ed iscoia ed isquatra."^^xsd:string ;
+    beast:hasSequenceIdentifier "Canto VI"^^xsd:string,
+        "verses 13-18"^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_cerberus_dante .
+
 beastiary:citation_dante_paradiso_1 a beast:Citation ;
     beast:extractedFrom beastiary:source_dante_paradiso ;
     beast:hasPassageText "Parea dinanzi a me con l’ali aperte / la bella image che nel dolce frui / liete facevan l’anime conserte; / parea ciascuna rubinetto in cui / raggio di sole ardesse sì acceso, / che ne’ miei occhi rifrangesse lui. / E quel che mi convien ritrar testeso, / non portò voce mai, né scrisse incostro, / né fu per fantasia già mai compreso; / ch’io vidi e anche udi’ parlar lo rostro, / e sonar ne la voce e «io» e «mio», / quand’ era nel concetto e ’noi’ e ’nostro’."^^xsd:string ;
@@ -841,6 +734,12 @@ beastiary:citation_esiodo_5 a beast:Citation ;
     beast:hasPassageText "Essa partorì Chimera spirante un fuoco irresistibile, / tremenda e grande e veloce e forte, / che aveva tre teste: una di leone dagli occhi fieri, / un'altra di capra, un'altra ancora di serpente, di forte drago, / [davanti leone, dietro serpente, in mezzo capra, / spirante impeto terribile di fuoco ardente]. / La uccisero Pegaso e il valoroso Bellerofonte.'"^^xsd:string ;
     beast:hasSequenceIdentifier "Lines 319-325"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_chimera_esiodo .
+
+beastiary:citation_esiodo_6 a beast:Citation ;
+    beast:extractedFrom beastiary:source_teogonia ;
+    beast:hasPassageText "poi per secondo partoriva l'imbattibile, indicibile, / Cerbero feroce, di Ade il cane dalla voce di bronzo, / con cinquanta teste, spietato e violento"^^xsd:string ;
+    beast:hasSequenceIdentifier "\"Lines 310-12\""^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_cerberus_esiodo .
 
 beastiary:citation_flaubert_1 a beast:Citation ;
     beast:extractedFrom beastiary:source_flaubert_tentation ;
@@ -996,13 +895,6 @@ beastiary:citation_ovid_met_1 a beast:Citation ;
     beast:hasSequenceIdentifier "Book VIII"^^xsd:string,
         "verses 155-156"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_minotaur_ovidius .
-
-beastiary:citation_ovid_met_10 a beast:Citation ;
-    beast:extractedFrom beastiary:source_ovidius_metamorphoses ;
-    beast:hasPassageText "C'era una foresta antica, inviolata dalla scure, e in mezzo, tra un intrico di rami e virgulti, una spelonca, dove, sotto una bassa volta sorretta da un ammasso di pietre, sgorgava abbondante l'acqua. Qui stava rintanato un serpente generato da Marte e screziato di squame d'oro: saettano fuoco gli occhi, gonfio tutto di veleno è il suo corpo, e in mezzo a tre file di denti guizzano tre lingue. In questo bosco per sventura s'inoltrò la gente venuta da Tiro. L'anfora calata nell'acqua fece un tonfo, ed ecco che livido il serpente dal fondo dell'antro trae fuori il capo vomitando sibili orrendi. Sfuggono le anfore dalle mani, esangue si fa il corpo e un tremito improvviso pervade le membra irrigidite. Con rapide volute il mostro avvolge in spire le sue squame e con un guizzo si tende in archi immensi; ergendosi con oltre metà del suo corpo nel vuoto dell'aria, domina tutto il bosco: tanto è grande, se tu lo vedessi intero, quanto il Serpente che separa le due Orse. Poi di colpo s'avventa sui Fenici, o che s'apprestino a combattere, a fuggire o che il terrore impedisca loro entrambe le azioni: e questi li uccide coi morsi, quelli tendendo le spire, altri infine infettandoli col miasma mortale del suo veleno. Già il sole altissimo aveva ridotto le ombre a un filo: stupito del ritardo dei compagni, il figlio di Agenore allora si mise a cercarli. Addosso portava la pelle strappata a un leone, per armi un'asta smagliante di ferro, un dardo e, più efficace di qualsiasi arma, il suo coraggio. Come penetrò nel bosco e vide i cadaveri e su questi lo smisurato avversario che vittorioso leccava le macabre ferite con la lingua lorda di sangue: 'O vendicherò la vostra morte, fedelissimi miei,' esclamò, 'o vi sarò compagno'. Disse, e con la destra sollevò un macigno e grande quant'era con gran furia lo scagliò. Quell'urto avrebbe raso al suolo anche le mura più massicce con le sue torri svettanti: incolume rimase il serpente; le squame compatte della sua pelle nera, che lo proteggevano come una corazza, respinsero quel colpo spaventoso. Ma la sua corazza non valse contro il dardo, che si conficcò in mezzo alla spina dorsale, dove questa flettendosi s'inarca, e penetrò con tutto il ferro nelle viscere. Pazzo di dolore il serpente torse il capo verso il dorso e scorta la ferita, addentò l'asta che vi era confitta e, dopo averla scossa con violenza da ogni parte, alla fine la divelse, ma il ferro gli rimase nelle ossa. Allora che al suo furore abituale si aggiunse nuovo sprone, un flusso di sangue gli gonfiò la gola, una bava biancastra gli spumeggiò intorno alle fauci letali; graffiata dalle sue squame la terra stridette e l'alito nero che gli usciva dalla bocca infernale ammorbò di fetore l'aria. Ora si raggomitola in spire che descrivono archi immensi, mentre a volte s'inerpica più dritto di un alto fusto, ora con impeto immane, come un fiume ingrossato dalle piogge, si lancia e col petto abbatte ogni ostacolo che nella selva incontra. Il figlio di Agenore arretra un po' e nelle spoglie del leone sostiene l'assalto, con la lancia protesa tiene a bada la bocca che lo incalza. Quello infuria, a vuoto avventa morsi contro il duro ferro e ficca i suoi denti nella punta. Dal suo palato gonfio di veleno ormai il sangue cominciava a stillare, schizzando di macchie il verde dell'erba. Ma era ferita leggera, perché il mostro sfuggiva ai colpi piegando indietro il collo offeso e arretrando impediva all'arma di piantarsi e di penetrare più a fondo; finché il figlio di Agenore, puntandogli l'asta contro la gola, non lo incalzò da presso e, quando alle sue spalle nel ritrarsi si parò una quercia, insieme trafisse collo e tronco."^^xsd:string ;
-    beast:hasSequenceIdentifier "Book II"^^xsd:string,
-        "verses 28-92"^^xsd:string ;
-    beast:isTextualReferenceOf beastiary:int_snake_ovid_2 .
 
 beastiary:citation_ovid_met_11 a beast:Citation ;
     beast:extractedFrom beastiary:source_ovidius_metamorphoses ;
@@ -1269,10 +1161,10 @@ beastiary:citation_rowling_7 a beast:Citation ;
     beast:hasSequenceIdentifier "Chapter 19"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_dragon_rowling_harry .
 
-beastiary:citation_rowling_9 a beast:Citation ;
+beastiary:citation_rowling_8 a beast:Citation ;
     beast:extractedFrom beastiary:source_fantastic_beasts ;
-    beast:hasPassageText "The centaur has a human head, torso and arms joined to a horse’s body which may be any of several colours. Being intellinge and capable of speech, it should not strictly speaking be termed a beast […]. The centaur is forest-dwelling. […] They live in herds ranging in size from ten to fifty members. They are reputed to be well-versed in magical healing, divination, archery and astronomy.'"^^xsd:string ;
-    beast:isTextualReferenceOf beastiary:int_centaur_rowling_fantastic .
+    beast:hasPassageText "[…] a chicken egg hatched beneath a toad would produce a gigantic serpent possessed of extraordinarily dangerous powers. The Basilisk is a brilliant green serpent that may reach up to fifty feet in length. The male has a scarlet plume upon its head. It has exceptionally venomous fangs but its most dangerous means of attack is the gaze of its large yellow eyes. Anyone looking directly into these will suffer instant death."^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_basilisk_rowling_fantastic .
 
 beastiary:citation_shakespeare_1 a beast:Citation ;
     beast:extractedFrom beastiary:source_phoenix_and_turtle_shakespeare ;
@@ -1325,6 +1217,12 @@ beastiary:citation_tolkien_1 a beast:Citation ;
     beast:hasSequenceIdentifier "Chapter 12"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_dragon_tolkien .
 
+beastiary:citation_tolkien_2 a beast:Citation ;
+    beast:extractedFrom beastiary:source_lotr ;
+    beast:hasPassageText "Trolls they were, but filled with the evil will of their master: a fell race, strong, agile, fierce and cunning, but harder than stone. Unlike the older race of the Twilight they could endure the Sun, so long as the will of Sauron held sway over them. They spoke little, and the only tongue that they knew was the Black Speech of Barad-dûr."^^xsd:string ;
+    beast:hasSequenceIdentifier "Appendix F"^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_troll_tolkien .
+
 beastiary:citation_tolkien_3 a beast:Citation ;
     beast:extractedFrom beastiary:source_lotr ;
     beast:hasPassageText "The doom of the Elves is to be immortal, to love the beauty of the world, to bring it to full flower with their gifts of delicacy and perfection, to last while it lasts, never leaving it even when slain."^^xsd:string ;
@@ -1337,6 +1235,13 @@ beastiary:citation_topsell_1 a beast:Citation ;
     beast:hasSequenceIdentifier "Volume 1"^^xsd:string,
         "chapter: Of the Mantichora"^^xsd:string ;
     beast:isTextualReferenceOf beastiary:int_manticore_topsell .
+
+beastiary:citation_virgil_1 a beast:Citation ;
+    beast:extractedFrom beastiary:source_aeneid ;
+    beast:hasPassageText "Giunti che furo, il gran Cerbero udiro / Abbaiar con tre gole, e ’l buio regno / Intonar tutto; indi in un antro immenso / Sel vider pria giacer disteso avanti, / Poi sorger, digrignar, rabido farsi, / Con tre colli arruffarsi, e mille serpi / Squassarsi intorno."^^xsd:string ;
+    beast:hasSequenceIdentifier "Book 6"^^xsd:string,
+        "verses 612-618"^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_cerberus_virgil .
 
 beastiary:creature_human_dog a beast:HybridCreature ;
     rdfs:label "Half human"@en,
@@ -1354,6 +1259,20 @@ beastiary:creature_polymelic_cat a beast:RealAnimal ;
     beast:hasModificationOf beastiary:part_multiple_limbs ;
     beast:hasOriginContext beastiary:source_monstrorum_historia_aldrovandi ;
     beast:isOfSpecies beastiary:creature_cat .
+
+beastiary:diet_autotrophic rdfs:label "Autotrophic"@en ;
+    rdfs:comment "Self-nourishing through sunlight and nutrients drawn from the soil rather than by consuming other organisms; the mode proper to plant-creatures such as the mandrake."@en .
+
+beastiary:diet_crabs_eater rdfs:label "Crabs eater"@en ;
+    rdfs:comment "A diet consisting of crabs and similar shellfish; the creature feeds on crustaceans."@en .
+
+beastiary:diet_elephant_blood rdfs:label "Elephant blood"@en ;
+    rdfs:comment "A specialized carnivorous diet of elephant blood, sought by the dragon of Pliny's tradition to cool its own heat; the creature lies in wait to drain the elephant."@en ;
+    beast:dietCategory beast:Carnivorous .
+
+beastiary:diet_wind rdfs:label "Wind"@en ;
+    rdfs:comment "A creature sustaining itself entirely by consuming air or wind, rather than solid food or water."@en ;
+    beast:dietCategory beast:Elemental .
 
 beastiary:etymology_acephalus a beast:Etymology ;
     beast:hasMeaning "Acephalus originates from the Late Latin acephalus. It is rooted in the Ancient Greek aképhalos, which breaks down into the prefix a- (without or not) and kephalē (head)."@en ;
@@ -1385,6 +1304,11 @@ beastiary:etymology_centaur a beast:Etymology ;
     beast:hasMeaning "From Ancient Greek kentauros (Κένταυρος), of disputed etymology. The most accepted derivation compounds ken- (possibly related to kentein, 'to prick' or 'to spur') and tauros ('bull'), suggesting 'bull-piercer' or 'bull-slayer', possibly referencing early Thessalian horsemen who hunted bulls. Alternative proposals derive it from a pre-Greek substrate language. First attested in Homer's Iliad and Hesiod's Theogony."@en ;
     beast:hasRootTerm "Kentauros"@grc ;
     beast:isEtymologyOf beastiary:creature_centaur .
+
+beastiary:etymology_cerberus a beast:Etymology ;
+    beast:hasMeaning "The etymology of Cerberus (the Latinized form of the Greek Kerberos) is ultimately unknown."@en ;
+    beast:hasRootTerm "Kerberos"@grc ;
+    beast:isEtymologyOf beastiary:creature_cerberus .
 
 beastiary:etymology_chimera a beast:Etymology ;
     beast:hasMeaning "From Ancient Greek Khímaira (Χίμαιρα), literally 'she-goat', derived from khímaros (male goat), linked to kheîma (winter), as goats were used to mark the passing of a year. The monster is first attested in Homer's Iliad (VIII century BCE), where it is described as lion in front, serpent behind, and goat in the middle. The name's broader meaning of 'wild impossible fantasy' developed in early modern European languages through Latin Chimaera and Old French Chimere."@en ;
@@ -1555,37 +1479,142 @@ beastiary:function_punisher a beast:NarrativeFunction ;
 beastiary:function_transformation a beast:NarrativeFunction ;
     beast:hasMeaning "The creature embodies or undergoes metamorphosis, the change of form that is itself the narrative event."@en .
 
-beastiary:habitat_africa a beast:RealWorldPlace ;
+beastiary:habitat_africa a beast:GeographicPlace ;
     rdfs:label "Africa"@en ;
     rdfs:comment "The African continent invoked in classical and medieval sources as the remote homeland of exotic and monstrous creatures. In the ancient and medieval imagination, Africa was a space of geographic otherness."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_arabia a beast:GeographicPlace ;
+    rdfs:label "Arabia"@en ;
+    rdfs:comment "The arid lands of the Arabian peninsula, a remote eastern region of deserts and aromatic groves traditionally held to be the dwelling of the phoenix, which there builds its spice-laden nest of frankincense and myrrh."@en ;
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_cave a beast:RealWorldPlace ;
+    rdfs:label "Cave"@en ;
+    rdfs:comment "A natural rocky hollow or cavern."@en ;
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_chamber_of_secrets a beast:ImaginaryPlace ;
+    rdfs:label "Chamber of Secrets"@en ;
+    rdfs:comment "A vast underground chamber hidden beneath Hogwarts School of Witchcraft and Wizardry, built by Salazar Slytherin in the 10th century to conceal his basilisk."@en ;
+    beast:hasOriginContext beastiary:source_harry_potter_book_2 .
 
 beastiary:habitat_dry_places a beast:RealWorldPlace ;
     rdfs:label "Dry places"@en ;
     rdfs:comment "Arid dry environment with scarce vegetation."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_duloc_swamp a beast:ImaginaryPlace ;
+    rdfs:label "Swamp"@en ;
+    rdfs:comment "The magical swamp is surrounded by dense trees and mossy water, home of Shrek."@en ;
+    beast:habitatCategory beast:Terrestrial ;
+    beast:hasOriginContext beastiary:source_shrek .
+
+beastiary:habitat_edge_of_world a beast:ImaginaryPlace ;
+    rdfs:label "Edge of the World"@en ;
+    rdfs:comment "The far western limit of the cosmos in Hesiod's Theogony, beyond glorious Ocean toward Night and near the Hesperides, where the Gorgons dwell at the boundary of the known world."@en ;
+    beast:hasOriginContext beastiary:source_teogonia .
+
+beastiary:habitat_great_riddle_gate a beast:ImaginaryPlace ;
+    rdfs:label "Great Riddle Gate"@en ;
+    rdfs:comment "The Great Riddle Gate is the first of three gates leading to the Southern Oracle in Fantastica, formed by two facing sphinxes whose gaze freezes the unworthy in place, condemning them to solve all the world's riddles or perish."@en ;
+    beast:hasOriginContext beastiary:source_unendliche_geschichte .
+
+beastiary:habitat_heaven_of_jupyter a beast:ImaginaryPlace ;
+    rdfs:label "Heaven of Jupiter"@en ;
+    rdfs:comment "The sixth celestial sphere of Dante's Paradise, the heaven of just rulers, where the souls of the righteous compose the figure of the Eagle of divine justice."@en ;
+    beast:hasOriginContext beastiary:source_dante_paradiso .
+
+beastiary:habitat_india a beast:GeographicPlace ;
+    rdfs:label "India"@en ;
+    beast:habitatCategory beast:Terrestrial .
 
 beastiary:habitat_labyrinth a beast:ImaginaryPlace ;
     rdfs:label "Labyrinth"@en ;
     rdfs:comment "The mythological maze built by Daedalus in Crete to contain the Minotaur commissioned by King Minos."@en .
 
-beastiary:habitat_ravenna a beast:RealWorldPlace ;
+beastiary:habitat_middle_earth a beast:ImaginaryPlace ;
+    rdfs:label "Middle Earth"@en ;
+    rdfs:comment "Middle-earth is fictional continent in J.R.R. Tolkien’s fantasy world, as our actual Earth in a mythical, pre-historic past."@en ;
+    beast:habitatCategory beast:Terrestrial ;
+    beast:hasOriginContext beastiary:source_lotr .
+
+beastiary:habitat_neverland a beast:ImaginaryPlace ;
+    rdfs:label "Neverland"@en ;
+    rdfs:comment "Neverland is a fictional, magical island where children never grow up, inhabited by fairies (like Tinker Bell), mermaids, the Lost Boys (Peter Pan), pirates, and Native Americans."@en ;
+    beast:habitatCategory beast:Terrestrial ;
+    beast:hasOriginContext beastiary:source_peter_pan .
+
+beastiary:habitat_north_pole a beast:GeographicPlace ;
+    rdfs:label "North Pole"@en ;
+    rdfs:comment "The North Pole, is the the northernmost point on Earth, located at the exact intersection of the planet's axis and its surface, known by its very cold temperatures all year round."@en ;
+    beast:habitatCategory beast:Terrestrial ;
+    beast:hasOriginContext beastiary:source_st_Nicholas .
+
+beastiary:habitat_ocean a beast:RealWorldPlace ;
+    rdfs:label "Ocean"@en ;
+    rdfs:comment "The vast salt sea."@en ;
+    beast:habitatCategory beast:Aquatic .
+
+beastiary:habitat_olympus a beast:ImaginaryPlace ;
+    rdfs:label "Olympus"@en ;
+    rdfs:comment "Mount Olympus in greek mythology is the place were the gods live."@en ;
+    beast:habitatCategory beast:Aerial ;
+    beast:hasOriginContext beastiary:source_teogonia .
+
+beastiary:habitat_ravenna a beast:GeographicPlace ;
     rdfs:label "Ravenna"@en ;
     rdfs:comment "The city of Ravenna in northern Italy."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_riphean_mountains a beast:ImaginaryPlace ;
+    rdfs:label "Riphean Mountains"@en ;
+    rdfs:comment "The Riphean Mountains, a remote and semi-legendary range placed at the far north of the world, beyond the frozen seas; in Ariosto's Orlando Furioso the rare native haunt from which the hippogriff comes."@en ;
+    beast:hasOriginContext beastiary:source_orlando_furioso .
+
+beastiary:habitat_river a beast:RealWorldPlace ;
+    rdfs:label "River"@en ;
+    rdfs:comment "A flowing freshwater watercourse."@en ;
+    beast:habitatCategory beast:Aquatic .
+
+beastiary:habitat_underworld a beast:ImaginaryPlace ;
+    rdfs:label "Underworld (Hades)"@en ;
+    rdfs:comment "The subterranean realm of the dead in Greek mythology, ruled by Hades, whose gates are guarded by Cerberus to prevent the dead from leaving."@en ;
+    beast:hasOriginContext beastiary:source_greek_mythology .
 
 beastiary:int_basilisk_plinio a beast:Interpretation ;
     beast:appearsIn beastiary:source_naturalis_historia ;
     beast:hasTextualReference beastiary:citation_plinio_8 ;
     beast:ofCreature beastiary:creature_basilisk .
 
-beastiary:int_basilisk_rowling_harry a beast:Interpretation ;
-    beast:additionalAbility beastiary:ability_petrifying_gaze ;
-    beast:alternativeHabitat beast:habitat_chamber_of_secrets ;
-    beast:appearsIn beastiary:source_harry_potter_book_2 ;
-    beast:embodiesArchetype beastiary:archetype_guardian_threshold ;
+beastiary:int_cerberus_apollodorus a beast:Interpretation ;
+    beast:appearsIn beastiary:source_biblioteca ;
+    beast:embodiesArchetype beastiary:archetype_guardian_hell ;
+    beast:hasNarrativeFunction beastiary:function_obstacle ;
+    beast:hasTextualReference beastiary:citation_apollodorus_5 ;
+    beast:ofCreature beastiary:creature_cerberus .
+
+beastiary:int_cerberus_blake a beast:Interpretation ;
+    beast:appearsIn beastiary:source_cerberus_blake ;
+    beast:ofCreature beastiary:creature_cerberus .
+
+beastiary:int_cerberus_dante a beast:Interpretation ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
+    beast:appearsIn beastiary:source_dante_inferno ;
+    beast:embodiesArchetype beastiary:archetype_guardian_hell ;
+    beast:hasDistinctiveTrait "Il mostro è descritto con occhi rossi"^^xsd:string,
+        "emette latrati che assordano i dannati e ciò acuisce il loro tormento."^^xsd:string,
+        "i peli del muso sporchi e neri"^^xsd:string,
+        "il ventre largo e le zampe artigliate"^^xsd:string ;
     beast:hasNarrativeFunction beastiary:function_guardian ;
-    beast:ofCreature beastiary:creature_basilisk .
+    beast:hasTextualReference beastiary:citation_dante_inferno_8 ;
+    beast:ofCreature beastiary:creature_cerberus .
+
+beastiary:int_cerberus_ovid a beast:Interpretation ;
+    beast:additionalAbility beastiary:ability_poisonous ;
+    beast:appearsIn beastiary:source_ovidius_metamorphoses ;
+    beast:hasTextualReference beastiary:citation_ovid_met_10 ;
+    beast:ofCreature beastiary:creature_cerberus .
 
 beastiary:int_chimera_fullmetal_alchemist a beast:Interpretation ;
     beast:additionalPart beastiary:part_lizard_lower_body,
@@ -1636,7 +1665,7 @@ beastiary:int_dragon_chen a beast:Interpretation ;
     beast:removedPart beastiary:part_wings .
 
 beastiary:int_dragon_doré a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_aquatic ;
+    beast:alternativeHabitat beast:Aquatic ;
     beast:appearsIn beastiary:source_destruction_doré ;
     beast:embodiesArchetype beastiary:archetype_chaos ;
     beast:hasNarrativeFunction beastiary:function_antagonist ;
@@ -1648,7 +1677,7 @@ beastiary:int_dragon_miyazaki a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_shapeshifting ;
     beast:additionalPart beastiary:part_barbels,
         beastiary:part_mane ;
-    beast:alternativeHabitat beast:habitat_river ;
+    beast:alternativeHabitat beastiary:habitat_river ;
     beast:appearsIn beastiary:source_spirited_away ;
     beast:embodiesArchetype beastiary:archetype_spirit ;
     beast:hasNarrativeFunction beastiary:function_guide,
@@ -1675,7 +1704,7 @@ beastiary:int_elf_sturluson_1 a beast:Interpretation ;
 
 beastiary:int_elf_sturluson_2 a beast:Interpretation ;
     rdfs:comment "In Sturluson the division of elves, the dark-elves represent the catamorphic threat, living in subterranean depths where darkness swallows form"@en ;
-    beast:alternativeHabitat beast:habitat_subterranean ;
+    beast:alternativeHabitat beastiary:habitat_subterranean ;
     beast:appearsIn beastiary:source_prose_edda ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_darkness ;
@@ -1726,7 +1755,7 @@ beastiary:int_lion_aberdeen a beast:Interpretation ;
         beastiary:ability_resolution ;
     beast:additionalPart beastiary:part_curly_mane,
         beastiary:part_straight_mane ;
-    beast:alternativeHabitat beast:habitat_mountains ;
+    beast:alternativeHabitat beastiary:habitat_mountains ;
     beast:appearsIn beastiary:source_aberdeen_bestiary ;
     beast:belongsToImaginaryStructure beast:SyntheticStructure ;
     beast:embodiesArchetype beastiary:archetype_divine_power ;
@@ -1744,7 +1773,7 @@ beastiary:int_lion_rubens a beast:Interpretation ;
 beastiary:int_mandrake_herbal a beast:Interpretation ;
     beast:additionalPart beastiary:part_fruits,
         beastiary:part_leaves ;
-    beast:alternativeHabitat beast:habitat_underground ;
+    beast:alternativeHabitat beastiary:habitat_underground ;
     beast:appearsIn beastiary:source_tacuinum_sanitatis ;
     beast:ofCreature beastiary:creature_mandrake .
 
@@ -1805,7 +1834,7 @@ beastiary:int_siren_vase a beast:Interpretation ;
 
 beastiary:int_sphinx_egypt a beast:Interpretation ;
     rdfs:comment "The Egyptian sphinx is a spectacular symbol: a solar, luminous guardian whose monumental gaze embodies the heroic clarity and royal vision that define and command the world."@en ;
-    beast:alternativeHabitat beast:habitat_desert ;
+    beast:alternativeHabitat beastiary:habitat_desert ;
     beast:appearsIn beastiary:source_great_sphinx ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_protection,
@@ -1817,14 +1846,14 @@ beastiary:int_sphinx_egypt a beast:Interpretation ;
 
 beastiary:int_sphinx_ingres a beast:Interpretation ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_mount_phicium ;
+    beast:alternativeHabitat beastiary:habitat_mount_phicium ;
     beast:appearsIn beastiary:source_oedipus_ingres ;
     beast:embodiesArchetype beastiary:archetype_seduction ;
     beast:ofCreature beastiary:creature_sphinx .
 
 beastiary:int_sphinx_moureau a beast:Interpretation ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_mount_phicium ;
+    beast:alternativeHabitat beastiary:habitat_mount_phicium ;
     beast:appearsIn beastiary:source_oedipus_moureau ;
     beast:embodiesArchetype beastiary:archetype_seduction ;
     beast:ofCreature beastiary:creature_sphinx .
@@ -1832,11 +1861,41 @@ beastiary:int_sphinx_moureau a beast:Interpretation ;
 beastiary:int_troll_hunter a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_sunlight_petrification ;
     beast:additionalPart beastiary:part_multiple_heads ;
-    beast:alternativeDiet beast:Carnivorous,
-        beast:Litophagous ;
+    beast:alternativeDiet beastiary:Litophagous,
+        beast:Carnivorous ;
     beast:appearsIn beastiary:source_troll_hunter ;
     beast:embodiesArchetype beastiary:archetype_raw_instinct ;
     beast:ofCreature beastiary:creature_troll .
+
+beastiary:myth_achelous a beast:MythologicalFigure ;
+    rdfs:label "Achelous"@en .
+
+beastiary:myth_aphrodite a beast:MythologicalFigure ;
+    rdfs:label "Aphrodite"@en .
+
+beastiary:myth_ceto a beast:MythologicalFigure ;
+    rdfs:label "Ceto"@en .
+
+beastiary:myth_gaia a beast:MythologicalFigure ;
+    rdfs:label "Gaia"@en .
+
+beastiary:myth_hermes a beast:MythologicalFigure ;
+    rdfs:label "Hermes"@en .
+
+beastiary:myth_ixion a beast:MythologicalFigure ;
+    rdfs:label "Ixion"@en .
+
+beastiary:myth_nephele a beast:MythologicalFigure ;
+    rdfs:label "Nephele"@en .
+
+beastiary:myth_pasiphae a beast:MythologicalFigure ;
+    rdfs:label "Pasiphaë"@en .
+
+beastiary:myth_phorcys a beast:MythologicalFigure ;
+    rdfs:label "Phorcys"@en .
+
+beastiary:myth_uranus a beast:MythologicalFigure ;
+    rdfs:label "Uranus"@en .
 
 beastiary:part_snake_hair a beast:AnatomicalPart ;
     rdfs:comment "The snake is a teriomorphic animal in Durand's Imaginary, and Medusa's writhing serpent-locks embed feral, biting animal terror directly into the body."@en ;
@@ -1917,6 +1976,16 @@ beastiary:person_bierce a schema:Person ;
     schema:nationality "American"^^xsd:string ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/232144783035948358100>,
         wd:Q191050 .
+
+beastiary:person_blake a schema:Person ;
+    rdfs:comment "1757 – 1827"@en ;
+    foaf:familyName "Blake"^^xsd:string ;
+    foaf:givenName "William"^^xsd:string ;
+    schema:birthDate "1757"^^xsd:gYear ;
+    schema:deathDate "1827"^^xsd:gYear ;
+    schema:nationality "English"^^xsd:string ;
+    schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/54144439>,
+        wd:Q41513 .
 
 beastiary:person_canova a schema:Person ;
     rdfs:comment "1757 – 1822"@en ;
@@ -2077,6 +2146,15 @@ beastiary:person_ibsen a schema:Person ;
     schema:nationality "Norwegian"^^xsd:string ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/71378383>,
         wd:Q36661 .
+
+beastiary:person_irie a schema:Person ;
+    rdfs:comment "1971 – present"@en ;
+    foaf:familyName "Irie"^^xsd:string ;
+    foaf:givenName "Yasuhiro"^^xsd:string ;
+    schema:birthDate "1971"^^xsd:gYear ;
+    schema:nationality "Japanese"^^xsd:string ;
+    schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/226112296>,
+        wd:Q8049983 .
 
 beastiary:person_isidore a schema:Person ;
     rdfs:comment "560 – 636"@en ;
@@ -2378,6 +2456,16 @@ beastiary:person_topsell a schema:Person ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/37823643>,
         wd:Q3048705 .
 
+beastiary:person_virgil a schema:Person ;
+    rdfs:comment "70 – 19 BCE"@en ;
+    foaf:familyName "Maro"^^xsd:string ;
+    foaf:givenName "Publius Vergilius"^^xsd:string ;
+    schema:birthDate "-70"^^xsd:gYear ;
+    schema:deathDate "-19"^^xsd:gYear ;
+    schema:nationality "Ancient Rome"^^xsd:string ;
+    schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/8194433>,
+        wd:Q1398 .
+
 beastiary:person_watts a schema:Person ;
     rdfs:comment "1817 – 1904"@en ;
     foaf:familyName "Watts"^^xsd:string ;
@@ -2422,7 +2510,16 @@ beastiary:source_camera_giganti a beast:VisualArtwork ;
 
 beastiary:source_celtic_folklore a beast:Tradition .
 
-beastiary:source_chimera_d_arezzo_statue a beast:VIsualArtwork ;
+beastiary:source_cerberus_blake a beast:VisualArtwork ;
+    dcterms:created "1824/7"^^xsd:gYear ;
+    dcterms:title "Cerberus"^^xsd:string ;
+    rdfs:comment "1824 – 7"^^xsd:string ;
+    schema:creator beastiary:person_blake ;
+    schema:url "https://www.tate.org.uk/art/artworks/blake-cerberus-n03354"^^xsd:anyURI ;
+    beast:containsInterpretation beastiary:int_cerberus_blake ;
+    beast:wasInfluencedBy beastiary:source_dante_inferno .
+
+beastiary:source_chimera_d_arezzo_statue a beast:VisualArtwork ;
     dcterms:created "-399/-300"^^xsd:gYear ;
     dcterms:title "Chimera d'Arezzo"^^xsd:string ;
     rdfs:comment "4th century BCE"^^xsd:string ;
@@ -2445,6 +2542,13 @@ beastiary:source_destruction_doré a beast:VisualArtwork ;
     schema:creator beastiary:person_doré ;
     schema:url "https://upload.wikimedia.org/wikipedia/commons/9/9d/Destruction_of_Leviathan.png"^^xsd:anyURI ;
     beast:containsInterpretation beastiary:int_dragon_doré .
+
+beastiary:source_fullmetal_alchemist a beast:CinematicWork ;
+    dcterms:created "2009/2010"^^xsd:gYear ;
+    dcterms:language "ja"^^xsd:string ;
+    dcterms:title "Fullmetal Alchemist: Brotherhood"^^xsd:string ;
+    rdfs:comment "2009 – 2010"^^xsd:string ;
+    schema:creator beastiary:person_irie .
 
 beastiary:source_harry_potter_movie_2 a beast:CinematicWork ;
     dcterms:created "2002"^^xsd:gYear ;
@@ -2663,6 +2767,26 @@ beastiary:archetype_victim a beast:Archetype ;
     beast:hasMeaning "The wronged or suffering figure, harmed and made vulnerable by others."@en ;
     beast:relatedTo beastiary:archetype_abandoned_child .
 
+beastiary:citation_ovid_met_10 a beast:Citation ;
+    beast:extractedFrom beastiary:source_ovidius_metamorphoses ;
+    beast:hasPassageText "C'era una foresta antica, inviolata dalla scure, e in mezzo, tra un intrico di rami e virgulti, una spelonca, dove, sotto una bassa volta sorretta da un ammasso di pietre, sgorgava abbondante l'acqua. Qui stava rintanato un serpente generato da Marte e screziato di squame d'oro: saettano fuoco gli occhi, gonfio tutto di veleno è il suo corpo, e in mezzo a tre file di denti guizzano tre lingue. In questo bosco per sventura s'inoltrò la gente venuta da Tiro. L'anfora calata nell'acqua fece un tonfo, ed ecco che livido il serpente dal fondo dell'antro trae fuori il capo vomitando sibili orrendi. Sfuggono le anfore dalle mani, esangue si fa il corpo e un tremito improvviso pervade le membra irrigidite. Con rapide volute il mostro avvolge in spire le sue squame e con un guizzo si tende in archi immensi; ergendosi con oltre metà del suo corpo nel vuoto dell'aria, domina tutto il bosco: tanto è grande, se tu lo vedessi intero, quanto il Serpente che separa le due Orse. Poi di colpo s'avventa sui Fenici, o che s'apprestino a combattere, a fuggire o che il terrore impedisca loro entrambe le azioni: e questi li uccide coi morsi, quelli tendendo le spire, altri infine infettandoli col miasma mortale del suo veleno. Già il sole altissimo aveva ridotto le ombre a un filo: stupito del ritardo dei compagni, il figlio di Agenore allora si mise a cercarli. Addosso portava la pelle strappata a un leone, per armi un'asta smagliante di ferro, un dardo e, più efficace di qualsiasi arma, il suo coraggio. Come penetrò nel bosco e vide i cadaveri e su questi lo smisurato avversario che vittorioso leccava le macabre ferite con la lingua lorda di sangue: 'O vendicherò la vostra morte, fedelissimi miei,' esclamò, 'o vi sarò compagno'. Disse, e con la destra sollevò un macigno e grande quant'era con gran furia lo scagliò. Quell'urto avrebbe raso al suolo anche le mura più massicce con le sue torri svettanti: incolume rimase il serpente; le squame compatte della sua pelle nera, che lo proteggevano come una corazza, respinsero quel colpo spaventoso. Ma la sua corazza non valse contro il dardo, che si conficcò in mezzo alla spina dorsale, dove questa flettendosi s'inarca, e penetrò con tutto il ferro nelle viscere. Pazzo di dolore il serpente torse il capo verso il dorso e scorta la ferita, addentò l'asta che vi era confitta e, dopo averla scossa con violenza da ogni parte, alla fine la divelse, ma il ferro gli rimase nelle ossa. Allora che al suo furore abituale si aggiunse nuovo sprone, un flusso di sangue gli gonfiò la gola, una bava biancastra gli spumeggiò intorno alle fauci letali; graffiata dalle sue squame la terra stridette e l'alito nero che gli usciva dalla bocca infernale ammorbò di fetore l'aria. Ora si raggomitola in spire che descrivono archi immensi, mentre a volte s'inerpica più dritto di un alto fusto, ora con impeto immane, come un fiume ingrossato dalle piogge, si lancia e col petto abbatte ogni ostacolo che nella selva incontra. Il figlio di Agenore arretra un po' e nelle spoglie del leone sostiene l'assalto, con la lancia protesa tiene a bada la bocca che lo incalza. Quello infuria, a vuoto avventa morsi contro il duro ferro e ficca i suoi denti nella punta. Dal suo palato gonfio di veleno ormai il sangue cominciava a stillare, schizzando di macchie il verde dell'erba. Ma era ferita leggera, perché il mostro sfuggiva ai colpi piegando indietro il collo offeso e arretrando impediva all'arma di piantarsi e di penetrare più a fondo; finché il figlio di Agenore, puntandogli l'asta contro la gola, non lo incalzò da presso e, quando alle sue spalle nel ritrarsi si parò una quercia, insieme trafisse collo e tronco."^^xsd:string,
+        "S'era portata anche dietro un succo mirabile e tossico: Ia bava delle fauci di Cerbero, il veleno di Echidna"^^xsd:string ;
+    beast:hasSequenceIdentifier "Book II"^^xsd:string,
+        "Book IV"^^xsd:string,
+        "verses 28-92"^^xsd:string,
+        "verses 500-501"^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_cerberus_ovid,
+        beastiary:int_snake_ovid_2 .
+
+beastiary:citation_rowling_9 a beast:Citation ;
+    beast:extractedFrom beastiary:source_fantastic_beasts,
+        beastiary:source_harry_potter_book_2 ;
+    beast:hasPassageText "Of the many fearsome beasts and monsters that roam our land, there is none more curious or more deadly than the Basilisk, known also as the King of Serpents. This snake, which may reach gigantic size, and live many hundreds of years, is born from a chicken’s egg, hatched beneath a toad. Its methods of killing are most wondrous, for aside from its deadly and venomous fangs, the Basilisk has a murderous stare, and all who are fixed with the beam of its eye shall suffer instant death. Spiders flee before the Basilisk, for it is their mortal enemy, and the Basilisk flees only from the crowing of the rooster, which is fatal to it."^^xsd:string,
+        "The centaur has a human head, torso and arms joined to a horse’s body which may be any of several colours. Being intellinge and capable of speech, it should not strictly speaking be termed a beast […]. The centaur is forest-dwelling. […] They live in herds ranging in size from ten to fifty members. They are reputed to be well-versed in magical healing, divination, archery and astronomy.'"^^xsd:string ;
+    beast:hasSequenceIdentifier "Chapter 16"^^xsd:string ;
+    beast:isTextualReferenceOf beastiary:int_basilisk_rowling_harry,
+        beastiary:int_centaur_rowling_fantastic .
+
 beastiary:citation_sturluson_2 a beast:Citation ;
     beast:extractedFrom beastiary:source_prose_edda ;
     beast:hasPassageText "There is one place that is called Álfheimr. There live the folk called Light-Elves, but the Dark-Elves live down in the ground, and they are unlike them in appearance, and even more unlike them in nature. Light-Elves are fairer than the sun to look at, but Dark-Elves are blacker than pitch."^^xsd:string ;
@@ -2672,7 +2796,7 @@ beastiary:creature_ant a beast:RealAnimal ;
     rdfs:label "Ant"@en ;
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_ant ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_conjoined a beast:RealAnimal ;
     rdfs:label "Conjoined"@en ;
@@ -2685,13 +2809,13 @@ beastiary:creature_cow a beast:RealAnimal ;
     rdfs:label "Cow"@en ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_cow ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_haiit a beast:HybridCreature ;
     rdfs:label "Haiit"@en ;
     beast:hasAlternativeName "Animale pigro"^^xsd:string,
         "Haut"^^xsd:string ;
-    beast:hasDiet beast:diet_wind ;
+    beast:hasDiet beastiary:diet_wind ;
     beast:hasDistinctiveTrait "It is grey in colour"^^xsd:string,
         "with three claws on each paw and a tail only three fingers long."^^xsd:string ;
     beast:hasHabitat beastiary:habitat_africa ;
@@ -2702,7 +2826,7 @@ beastiary:creature_haiit a beast:HybridCreature ;
 
 beastiary:creature_hairy_girl a beast:RealAnimal ;
     rdfs:label "Hairy Girl"@en ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasModificationOf beastiary:part_fluff_skin ;
     beast:hasOriginContext beastiary:source_scientific_taxonomy ;
     beast:isOfSpecies beastiary:creature_human .
@@ -2727,10 +2851,13 @@ beastiary:creature_polycephalus_sheep a beast:RealAnimal ;
     beast:hasAlternativeName "Three-headed sheep"^^xsd:string ;
     beast:hasDistinctiveTrait "The creature has three head."^^xsd:string ;
     beast:hasEtymology beastiary:etymology_polycephalus ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasModificationOf beastiary:part_multiple_head ;
     beast:hasOriginContext beastiary:source_monstres_prodiges ;
     beast:isOfSpecies beastiary:creature_sheep .
+
+beastiary:diet_none rdfs:label "Starvation"@en ;
+    rdfs:comment "A creature physiologically incapable of sustaining itself, unable to digest any food due to its contradictory hybrid nature."@en .
 
 beastiary:function_apotropaic a beast:NarrativeFunction ;
     beast:hasMeaning "The creature, or its image, serves to ward off evil and protect against harm."@en .
@@ -2738,6 +2865,16 @@ beastiary:function_apotropaic a beast:NarrativeFunction ;
 beastiary:function_weapon a beast:NarrativeFunction ;
     beast:hasMeaning "The creature is deployed as an instrument of war or destruction, a tool of power wielded against others."@en ;
     beast:relatedTo beastiary:function_agent .
+
+beastiary:habitat_fantastica a beast:ImaginaryPlace ;
+    rdfs:label "Fantastica"@en ;
+    rdfs:comment "Fantastica is the limitless realm of imagination in 'The Neverending Story', ruled by the Childlike Empress, home to all imagined creatures, and sustained by human dreams - threatened by the Nothing when people cease to believe."@en ;
+    beast:hasOriginContext beastiary:source_unendliche_geschichte .
+
+beastiary:habitat_subterranean a beast:RealWorldPlace ;
+    rdfs:label "Subterranean"@en ;
+    rdfs:comment "The underground realm of caves, tunnels, and buried depths, beneath the surface of the earth."@en ;
+    beast:habitatCategory beast:Terrestrial .
 
 beastiary:int_anomaly_aldrovandi_1 a beast:Interpretation ;
     beast:appearsIn beastiary:source_monstrorum_historia_aldrovandi ;
@@ -2771,7 +2908,7 @@ beastiary:int_antlion_isidore a beast:Interpretation ;
     beast:ofCreature beastiary:creature_antlion .
 
 beastiary:int_antlion_physiologus a beast:Interpretation ;
-    beast:alternativeDiet beast:Starvation ;
+    beast:alternativeDiet beastiary:diet_none ;
     beast:appearsIn beastiary:source_physiologus ;
     beast:hasTextualReference beastiary:citation_physiologus_1 ;
     beast:ofCreature beastiary:creature_antlion .
@@ -2788,6 +2925,16 @@ beastiary:int_basilisk_isidore a beast:Interpretation ;
 
 beastiary:int_basilisk_rowling_fantastic a beast:Interpretation ;
     beast:appearsIn beastiary:source_fantastic_beasts ;
+    beast:hasTextualReference beastiary:citation_rowling_8 ;
+    beast:ofCreature beastiary:creature_basilisk .
+
+beastiary:int_basilisk_rowling_harry a beast:Interpretation ;
+    beast:additionalAbility beastiary:ability_petrifying_gaze ;
+    beast:alternativeHabitat beastiary:habitat_chamber_of_secrets ;
+    beast:appearsIn beastiary:source_harry_potter_book_2 ;
+    beast:embodiesArchetype beastiary:archetype_guardian_threshold ;
+    beast:hasNarrativeFunction beastiary:function_guardian ;
+    beast:hasTextualReference beastiary:citation_rowling_9 ;
     beast:ofCreature beastiary:creature_basilisk .
 
 beastiary:int_bull_cantimpre a beast:Interpretation ;
@@ -2806,7 +2953,7 @@ beastiary:int_bull_ovid a beast:Interpretation ;
 beastiary:int_centaur_dante a beast:Interpretation ;
     rdfs:comment "\"Dante's Chiron is set apart from the violent centaurs he commands: as wise guide and healer he channels his hybrid nature upward into knowledge and guardianship rather than downward into bestial appetite, an ascensional transcendence of the teriomorphic baseline.”"@en ;
     beast:additionalAbility beastiary:ability_healing ;
-    beast:alternativeHabitat beast:habitat_hell ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
     beast:appearsIn beastiary:source_dante_inferno ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_guardian_hell,
@@ -2819,7 +2966,7 @@ beastiary:int_centaur_dante a beast:Interpretation ;
     beast:ofCreature beastiary:creature_centaur .
 
 beastiary:int_centaur_dante2 a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_hell ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
     beast:appearsIn beastiary:source_dante_inferno ;
     beast:embodiesArchetype beastiary:archetype_guardian_hell,
         beastiary:archetype_predatory_lust,
@@ -2856,6 +3003,23 @@ beastiary:int_centaur_rowling_harry a beast:Interpretation ;
     beast:isGovernedBy beast:DiurnalRegime ;
     beast:ofCreature beastiary:creature_centaur .
 
+beastiary:int_cerberus_esiodo a beast:Interpretation ;
+    beast:additionalPart beastiary:part_fifty_dog_heads ;
+    beast:appearsIn beastiary:source_teogonia ;
+    beast:embodiesArchetype beastiary:archetype_guardian_hell ;
+    beast:hasNarrativeFunction beastiary:function_guardian ;
+    beast:hasTextualReference beastiary:citation_esiodo_6 ;
+    beast:ofCreature beastiary:creature_cerberus ;
+    beast:removedPart beastiary:part_snakes_hair,
+        beastiary:part_three_heads_dog .
+
+beastiary:int_cerberus_virgil a beast:Interpretation ;
+    beast:appearsIn beastiary:source_aeneid ;
+    beast:embodiesArchetype beastiary:archetype_guardian_hell ;
+    beast:hasNarrativeFunction beastiary:function_obstacle ;
+    beast:hasTextualReference beastiary:citation_virgil_1 ;
+    beast:ofCreature beastiary:creature_cerberus .
+
 beastiary:int_chimera_omero a beast:Interpretation ;
     rdfs:comment "In the Iliad the chimera is an instrument of divine punishment and a deadly obstacle for Bellerophon, its dragon and serpent tail and goat head concentrating the teriomorphic register of violent, devouring animality that the hero must defeat."@en ;
     beast:additionalPart beastiary:part_dragon_tail ;
@@ -2883,8 +3047,8 @@ beastiary:int_dragon_ende a beast:Interpretation ;
         beastiary:ability_swim_in_air ;
     beast:additionalPart beastiary:part_lion_head,
         beastiary:part_lower_limbs ;
-    beast:alternativeHabitat beast:habitat_aerial,
-        beast:habitat_fantastica ;
+    beast:alternativeHabitat beastiary:habitat_fantastica,
+        beast:Aerial ;
     beast:appearsIn beastiary:source_unendliche_geschichte ;
     beast:hasNarrativeFunction beastiary:function_guide,
         beastiary:function_protector ;
@@ -2910,7 +3074,7 @@ beastiary:int_dragon_martin a beast:Interpretation ;
 
 beastiary:int_dragon_plinio a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_fight_elephant ;
-    beast:alternativeDiet beast:diet_elephant_blood ;
+    beast:alternativeDiet beastiary:diet_elephant_blood ;
     beast:appearsIn beastiary:source_naturalis_historia ;
     beast:hasDistinctiveTrait "They fight with elephant"^^xsd:string,
         "and the elephant falling dead crushes over the dragon"^^xsd:string,
@@ -2947,7 +3111,7 @@ beastiary:int_dragon_tolkien a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_hypnotic_gaze,
         beastiary:ability_speech ;
     beast:additionalPart beastiary:part_underbelly_gems ;
-    beast:alternativeHabitat beast:habitat_subterranean ;
+    beast:alternativeHabitat beastiary:habitat_subterranean ;
     beast:appearsIn beastiary:source_the_hobbit ;
     beast:hasNarrativeFunction beastiary:function_antagonist,
         beastiary:function_guardian ;
@@ -2964,7 +3128,7 @@ beastiary:int_eagle_aberdeen a beast:Interpretation ;
     beast:ofCreature beastiary:creature_eagle .
 
 beastiary:int_eagle_dante a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_heaven_of_jupyter ;
+    beast:alternativeHabitat beastiary:habitat_heaven_of_jupyter ;
     beast:appearsIn beastiary:source_dante_paradiso ;
     beast:embodiesArchetype beastiary:archetype_justice ;
     beast:hasNarrativeFunction beastiary:function_guide ;
@@ -2980,7 +3144,7 @@ beastiary:int_eagle_ovid a beast:Interpretation ;
 
 beastiary:int_elf_moore a beast:Interpretation ;
     rdfs:comment "In Moore the elf is shrunk down to a tiny, non-threatening size following a cyclic symbol since it appears strictly at midnight on the winter solstice, directly tied to the calendar, the cold season, and the promise of festive renewal."@en ;
-    beast:alternativeHabitat beast:habitat_north_pole ;
+    beast:alternativeHabitat beastiary:habitat_north_pole ;
     beast:appearsIn beastiary:source_st_Nicholas ;
     beast:belongsToImaginaryStructure beast:SyntheticStructure ;
     beast:embodiesArchetype beastiary:archetype_christmas_elf ;
@@ -2996,7 +3160,7 @@ beastiary:int_elf_moore a beast:Interpretation ;
 
 beastiary:int_elf_tolkien a beast:Interpretation ;
     rdfs:comment "In Sturluson the division of elves, the light-elves are ultimate spectacular symbols of solar clarity, floating high up in the branches of the world tree. In Tolkien they do not decay or wrinkle with time. They escape the 'gravitational pull' of human mortality."@en ;
-    beast:alternativeHabitat beast:habitat_middle_earth ;
+    beast:alternativeHabitat beastiary:habitat_middle_earth ;
     beast:appearsIn beastiary:source_lotr ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_semi_divine ;
@@ -3030,7 +3194,7 @@ beastiary:int_fairy_disney a beast:Interpretation ;
     rdfs:comment "In Peter Pan, Tinker Bell represents an ascensional symbol, without her dust characters cannot fly and are bound by the mortal gravity of growing up"@en ;
     beast:additionalAbility beastiary:ability_fly ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_neverland ;
+    beast:alternativeHabitat beastiary:habitat_neverland ;
     beast:appearsIn beastiary:source_peter_pan ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_belief ;
@@ -3091,7 +3255,7 @@ beastiary:int_goat_isidore a beast:Interpretation ;
     beast:ofCreature beastiary:creature_goat .
 
 beastiary:int_goat_plinio a beast:Interpretation ;
-    beast:alternativeDiet beast:diet_crabs_eater ;
+    beast:alternativeDiet beastiary:diet_crabs_eater ;
     beast:appearsIn beastiary:source_naturalis_historia ;
     beast:embodiesArchetype beastiary:archetype_healing,
         beastiary:archetype_wisdom ;
@@ -3135,7 +3299,7 @@ beastiary:int_hermaphrodite_swinburne a beast:Interpretation ;
     beast:removedPart beastiary:part_masculinity .
 
 beastiary:int_hippogriff_ariosto a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_riphean_mountains ;
+    beast:alternativeHabitat beastiary:habitat_riphean_mountains ;
     beast:appearsIn beastiary:source_orlando_furioso ;
     beast:hasTextualReference beastiary:citation_ariosto_1 ;
     beast:ofCreature beastiary:creature_hippogriff .
@@ -3159,7 +3323,7 @@ beastiary:int_hippogriff_rowling_harry a beast:Interpretation ;
 
 beastiary:int_lion_apollodorus a beast:Interpretation ;
     rdfs:comment "The Nemean lion is the invulnerable, devouring chaos-beast born of Typhon, the feral monster the hero must overcome; it concentrates the teriomorphic terror of predatory jaws and bestial violence."@en ;
-    beast:alternativeHabitat beast:habitat_cave ;
+    beast:alternativeHabitat beastiary:habitat_cave ;
     beast:appearsIn beastiary:source_biblioteca ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
@@ -3223,7 +3387,7 @@ beastiary:int_manticore_flaubert a beast:Interpretation ;
     rdfs:comment "Flaubert preserves the teriomorphic devourer but adds a catamorphic register through its plague-breath and army-consuming death, the degradation and downward dissolution of bodies in the desert."@en ;
     beast:additionalAbility beastiary:ability_plague_spreading,
         beastiary:ability_speech ;
-    beast:alternativeHabitat beast:habitat_desert ;
+    beast:alternativeHabitat beastiary:habitat_desert ;
     beast:appearsIn beastiary:source_flaubert_tentation ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_seduction ;
@@ -3258,13 +3422,13 @@ beastiary:int_manticore_topsell a beast:Interpretation ;
 beastiary:int_medusa_apollodoro a beast:Interpretation ;
     beast:additionalPart beastiary:part_bronze_hands,
         beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_ocean ;
+    beast:alternativeHabitat beastiary:habitat_ocean ;
     beast:appearsIn beastiary:source_biblioteca ;
     beast:hasTextualReference beastiary:citation_apollodorus_3 ;
     beast:ofCreature beastiary:creature_medusa .
 
 beastiary:int_medusa_dante a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_hell ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
     beast:appearsIn beastiary:source_dante_inferno ;
     beast:hasNarrativeFunction beastiary:function_obstacle ;
     beast:hasTextualReference beastiary:citation_dante_inferno_3 ;
@@ -3364,7 +3528,7 @@ beastiary:int_ogre_chretien a beast:Interpretation ;
 beastiary:int_ogre_shrek a beast:Interpretation ;
     rdfs:comment "Shrek is the example of inversion symbols whre the monstrous ogre is actually the protector of peace, while the noble prince (Farquaad) is a insecure tyrant."@en ;
     beast:additionalPart beastiary:part_green_skin ;
-    beast:alternativeHabitat beast:habitat_duloc_swamp ;
+    beast:alternativeHabitat beastiary:habitat_duloc_swamp ;
     beast:appearsIn beastiary:source_shrek ;
     beast:belongsToImaginaryStructure beast:MysticalStructure ;
     beast:embodiesArchetype beastiary:archetype_anti_fairy_tale ;
@@ -3388,7 +3552,7 @@ beastiary:int_onocentaur_thaon a beast:Interpretation ;
 
 beastiary:int_pegaso_barbie a beast:Interpretation ;
     rdfs:comment "In Barbie Pegasus is not the wild beast but an enchated woman where the kingndom of the clouds are a safe and farytale santuary and the events follow an intimate space."@en ;
-    beast:alternativeHabitat beast:habitay_cloud_kingdom ;
+    beast:alternativeHabitat beastiary:habitay_cloud_kingdom ;
     beast:appearsIn beastiary:source_barbie ;
     beast:belongsToImaginaryStructure beast:MysticalStructure ;
     beast:embodiesArchetype beastiary:archetype_defiance,
@@ -3411,7 +3575,7 @@ beastiary:int_pegaso_cantimpre a beast:Interpretation ;
 
 beastiary:int_phoenix_aberdeen a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_rebirth_from_fire ;
-    beast:alternativeHabitat beast:habitat_arabia ;
+    beast:alternativeHabitat beastiary:habitat_arabia ;
     beast:appearsIn beastiary:source_aberdeen_bestiary ;
     beast:hasTextualReference beastiary:citation_aberdeen_1 ;
     beast:ofCreature beastiary:creature_phoenix .
@@ -3419,7 +3583,7 @@ beastiary:int_phoenix_aberdeen a beast:Interpretation ;
 beastiary:int_phoenix_dante a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_rebirth_from_fire ;
     beast:alternativeDiet beast:Scavenger ;
-    beast:alternativeHabitat beast:habitat_hell ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
     beast:appearsIn beastiary:source_dante_inferno ;
     beast:hasTextualReference beastiary:citation_dante_inferno_2 ;
     beast:ofCreature beastiary:creature_phoenix .
@@ -3507,7 +3671,7 @@ beastiary:int_satyr_pliny a beast:Interpretation ;
 beastiary:int_scorpion_cantimpre a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_fly ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_aerial ;
+    beast:alternativeHabitat beast:Aerial ;
     beast:appearsIn beastiary:source_liber_de_natura_rerum ;
     beast:embodiesArchetype beastiary:archetype_raw_instinct,
         beastiary:archetype_seduction ;
@@ -3523,7 +3687,7 @@ beastiary:int_scorpion_isidore a beast:Interpretation ;
 beastiary:int_scorpion_plinio a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_fly ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_aerial ;
+    beast:alternativeHabitat beast:Aerial ;
     beast:appearsIn beastiary:source_naturalis_historia ;
     beast:embodiesArchetype beastiary:archetype_evil,
         beastiary:archetype_raw_instinct ;
@@ -3581,7 +3745,7 @@ beastiary:int_snake_aberdeen a beast:Interpretation ;
 
 beastiary:int_snake_dante a beast:Interpretation ;
     rdfs:comment "Dante's serpents bite, poison, and devour the thieves, instruments of an animal terror that dissolves human identity; the biting, venomous reptile is the teriomorphic beast par excellence."@en ;
-    beast:alternativeHabitat beast:habitat_hell ;
+    beast:alternativeHabitat beastiary:habitat_hell ;
     beast:appearsIn beastiary:source_dante_inferno ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
@@ -3618,8 +3782,8 @@ beastiary:int_sphinx_ende a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_lethal_gaze,
         beastiary:ability_posing_riddles ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_fantastica,
-        beast:habitat_great_riddle_gate ;
+    beast:alternativeHabitat beastiary:habitat_fantastica,
+        beastiary:habitat_great_riddle_gate ;
     beast:appearsIn beastiary:source_unendliche_geschichte ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:DiareticSymbol,
@@ -3631,7 +3795,7 @@ beastiary:int_sphinx_ende a beast:Interpretation ;
 
 beastiary:int_sphinx_flaubert a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_fire_breathing ;
-    beast:alternativeHabitat beast:habitat_desert ;
+    beast:alternativeHabitat beastiary:habitat_desert ;
     beast:appearsIn beastiary:source_flaubert_tentation ;
     beast:embodiesArchetype beastiary:archetype_wisdom ;
     beast:hasTextualReference beastiary:citation_flaubert_1 ;
@@ -3640,7 +3804,7 @@ beastiary:int_sphinx_flaubert a beast:Interpretation ;
 beastiary:int_sphinx_maier a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_posing_riddles ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_desert ;
+    beast:alternativeHabitat beastiary:habitat_desert ;
     beast:appearsIn beastiary:source_atalanta_fugiens ;
     beast:embodiesArchetype beastiary:archetype_enigma ;
     beast:hasTextualReference beastiary:citation_maier_1 ;
@@ -3701,7 +3865,7 @@ beastiary:int_troll_tolkien a beast:Interpretation ;
     beast:additionalAbility beastiary:ability_speak_black_speech ;
     beast:appearsIn beastiary:source_lotr ;
     beast:embodiesArchetype beastiary:archetype_evil ;
-    beast:hasTextualReference beastiary:ciation_tolkien_2 ;
+    beast:hasTextualReference beastiary:citation_tolkien_2 ;
     beast:ofCreature beastiary:creature_troll .
 
 beastiary:int_unicorn_aberdeen a beast:Interpretation ;
@@ -3834,6 +3998,14 @@ beastiary:person_tolkien a schema:Person ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/95218067>,
         wd:Q892 .
 
+beastiary:source_aeneid a beast:LiteraryWork ;
+    dcterms:created "-29/-18"^^xsd:gYear ;
+    dcterms:language "la"^^xsd:string ;
+    dcterms:title "Aeneid"^^xsd:string ;
+    rdfs:comment "29 – 18 BCE"^^xsd:string ;
+    schema:creator beastiary:person_virgil ;
+    beast:containsInterpretation beastiary:int_cerberus_virgil .
+
 beastiary:source_beowulf a beast:LiteraryWork ;
     dcterms:created "701/800"^^xsd:gYear ;
     dcterms:language "ang"^^xsd:string ;
@@ -3932,15 +4104,6 @@ beastiary:source_harry_potter_book_1 a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_centaur_rowling_harry ;
     beast:wasInfluencedBy beastiary:source_fantastic_beasts .
 
-beastiary:source_harry_potter_book_2 a beast:LiteraryWork ;
-    dcterms:created "1998"^^xsd:gYear ;
-    dcterms:language "en"^^xsd:string ;
-    dcterms:title "Harry Potter and the Chamber of Secrets"^^xsd:string ;
-    rdfs:comment "1998"^^xsd:string ;
-    schema:creator beastiary:person_rowling ;
-    beast:containsInterpretation beastiary:int_basilisk_rowling_harry ;
-    beast:wasInfluencedBy beastiary:source_fantastic_beasts .
-
 beastiary:source_harry_potter_book_3 a beast:LiteraryWork ;
     dcterms:created "1999"^^xsd:gYear ;
     dcterms:language "en"^^xsd:string ;
@@ -3959,7 +4122,8 @@ beastiary:source_history_of_four_footed_beasts a beast:Bestiary ;
     beast:containsInterpretation beastiary:int_manticore_topsell ;
     beast:hasBestiaryType beast:ScientificTaxonomy .
 
-beastiary:source_iliade_omero dcterms:created "-799/-700"^^xsd:gYear ;
+beastiary:source_iliade_omero a beast:LiteraryWork ;
+    dcterms:created "-799/-700"^^xsd:gYear ;
     dcterms:language "grc"^^xsd:string ;
     dcterms:title "Iliade"^^xsd:string ;
     rdfs:comment "8th century BCE"^^xsd:string ;
@@ -4138,7 +4302,7 @@ beastiary:creature_onager a beast:RealAnimal ;
     rdfs:label "Onager"@en ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_onager ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_onocentaur a beast:HybridCreature ;
     rdfs:label "Onocentaur"@en ;
@@ -4149,6 +4313,10 @@ beastiary:creature_onocentaur a beast:HybridCreature ;
     beast:hasTailOf beastiary:creature_onager ;
     beast:hasUpperBodyOf beastiary:creature_human .
 
+beastiary:diet_man_eater rdfs:label "Man eater"@en ;
+    rdfs:comment "A carnivorous diet directed especially at human flesh; the creature preys on people by preference, beyond ordinary predation on animals."@en ;
+    beast:dietCategory beast:Carnivorous .
+
 beastiary:function_agent a beast:NarrativeFunction ;
     beast:hasMeaning "The creature acts as the instrument of another's will, carrying out a god's or character's purpose."@en ;
     beast:relatedTo beastiary:function_weapon .
@@ -4156,10 +4324,10 @@ beastiary:function_agent a beast:NarrativeFunction ;
 beastiary:function_protector a beast:NarrativeFunction ;
     beast:hasMeaning "The creature shields and safeguards a person or place from harm, actively defending its charge against threats"@en .
 
-beastiary:habitat_mountains a beast:RealWorldPlace ;
-    rdfs:label "Mountains"@en ;
-    rdfs:comment "High altitude rocky terrain."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
+beastiary:habitat_mount_phicium a beast:RealWorldPlace ;
+    rdfs:label "Mount Phicium (Thebes)"@en ;
+    rdfs:comment "The mountain near Thebes."@en ;
+    beast:habitatCategory beast:Terrestrial .
 
 beastiary:int_anomaly_paré_1 a beast:Interpretation ;
     beast:appearsIn beastiary:source_monstres_prodiges ;
@@ -4234,7 +4402,7 @@ beastiary:int_hermaphrodite_ovidius a beast:Interpretation ;
     beast:removedPart beastiary:part_masculinity .
 
 beastiary:int_medusa_esiodo a beast:Interpretation ;
-    beast:alternativeHabitat beast:habitat_edge_of_world ;
+    beast:alternativeHabitat beastiary:habitat_edge_of_world ;
     beast:appearsIn beastiary:source_teogonia ;
     beast:hasTextualReference beastiary:citation_esiodo_2 ;
     beast:ofCreature beastiary:creature_medusa .
@@ -4257,7 +4425,7 @@ beastiary:int_mostro_paré_3 a beast:Interpretation ;
 
 beastiary:int_pegaso_esiodo a beast:Interpretation ;
     rdfs:comment "Pegasus represents the ascensional symbol since it is an explosion of solar light out of primordial darkness (medusa head), it rejects the heavy, muddy earth, soaring straight to Mount Olympus."@en ;
-    beast:alternativeHabitat beast:habitat_olympus ;
+    beast:alternativeHabitat beastiary:habitat_olympus ;
     beast:appearsIn beastiary:source_teogonia ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_poetic_inspiration ;
@@ -4293,7 +4461,7 @@ beastiary:int_sphinx_apollodoro a beast:Interpretation ;
     rdfs:comment "The Theban sphinx fuses the diaretic riddle - the intellectual cut that separates truth from death - with the teriomorphic terror of the devouring monster who consumes those who fail to answer"@en ;
     beast:additionalAbility beastiary:ability_posing_riddles ;
     beast:additionalPart beastiary:part_wings ;
-    beast:alternativeHabitat beast:habitat_mount_phicium ;
+    beast:alternativeHabitat beastiary:habitat_mount_phicium ;
     beast:appearsIn beastiary:source_mito_edipo ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_divine_punishment,
@@ -4303,6 +4471,12 @@ beastiary:int_sphinx_apollodoro a beast:Interpretation ;
     beast:hasTextualReference beastiary:citation_apollodorus_1 ;
     beast:isGovernedBy beast:DiurnalRegime ;
     beast:ofCreature beastiary:creature_sphinx .
+
+beastiary:myth_echidna a beast:MythologicalFigure ;
+    rdfs:label "Echidna"@en .
+
+beastiary:myth_typhon a beast:MythologicalFigure ;
+    rdfs:label "Typhon"@en .
 
 beastiary:part_horn a beast:AnatomicalPart ;
     rdfs:comment "The horn rises vertically toward the heavens, aligning with ascensional verticality and the purifying, transcendent power traditionally attached to it."@en ;
@@ -4350,6 +4524,15 @@ beastiary:source_dante_paradiso a beast:LiteraryWork ;
     schema:creator beastiary:person_dante ;
     beast:containsInterpretation beastiary:int_eagle_dante ;
     beast:wasInfluencedBy beastiary:source_ovidius_metamorphoses .
+
+beastiary:source_harry_potter_book_2 a beast:LiteraryWork ;
+    dcterms:created "1998"^^xsd:gYear ;
+    dcterms:language "en"^^xsd:string ;
+    dcterms:title "Harry Potter and the Chamber of Secrets"^^xsd:string ;
+    rdfs:comment "1998"^^xsd:string ;
+    schema:creator beastiary:person_rowling ;
+    beast:containsInterpretation beastiary:int_basilisk_rowling_harry ;
+    beast:wasInfluencedBy beastiary:source_fantastic_beasts .
 
 beastiary:source_mito_edipo a beast:LiteraryWork ;
     dcterms:created "-99/0"^^xsd:gYear ;
@@ -4402,14 +4585,6 @@ beastiary:source_the_hobbit a beast:LiteraryWork ;
     schema:creator beastiary:person_tolkien ;
     beast:containsInterpretation beastiary:int_dragon_tolkien .
 
-beastiary:ability_poisonous a beast:Ability ;
-    rdfs:label "Venomous"@en ;
-    rdfs:comment "Aggressive natural weaponry expresses the teriomorphic 'enemy symbol' of feral chaos and the bestial threat of the striking attack."@en,
-        "The creature produces or secretes a toxic substance capable of harming or killing through bite, touch, or breath."@en ;
-    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
-    beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
-    beast:isGovernedBy beast:DiurnalRegime .
-
 beastiary:ability_sing a beast:Ability ;
     rdfs:label "Singing"@en ;
     rdfs:comment "Song as harmonious, rhythmic utterance expresses the cyclical register of patterned, reassuring repetition."@en,
@@ -4443,11 +4618,10 @@ beastiary:creature_ogre a beast:ImaginaryBeing ;
     rdfs:label "Ogre"@en ;
     beast:hasAbility beastiary:ability_strenght ;
     beast:hasBodyOf beastiary:creature_human ;
-    beast:hasDiet beast:diet_man_eater ;
+    beast:hasDiet beastiary:diet_man_eater ;
     beast:hasDistinctiveTrait "Immense body"^^xsd:string ;
     beast:hasEtymology beastiary:etymology_ogre ;
-    beast:hasHabitat beastiary:habitat_forests,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_forests ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_medieval_folklore .
 
@@ -4461,19 +4635,29 @@ beastiary:creature_pegasus a beast:Creature,
     beast:hasBodyOf beastiary:creature_horse ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_pegasus ;
-    beast:hasHabitat beastiary:habitat_aerial ;
+    beast:hasHabitat beast:Aerial ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_wings ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:creature_sea_horse a beast:HybridCreature ;
     rdfs:label "Sea Horse"@en ;
-    beast:hasHabitat beastiary:habitat_acquatic ;
+    beast:hasHabitat beast:Aquatic ;
     beast:hasHeadOf beastiary:creature_horse ;
     beast:hasLowerBodyOf beastiary:creature_fish ;
     beast:hasOriginContext beastiary:source_monstres_prodiges ;
     beast:hasTailOf beastiary:creature_fish ;
     beast:hasUpperBodyOf beastiary:creature_horse .
+
+beastiary:habitat_desert a beast:RealWorldPlace ;
+    rdfs:label "Desert"@en ;
+    rdfs:comment "An arid expanse of sand and barren ground."@en ;
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_mountains a beast:RealWorldPlace ;
+    rdfs:label "Mountains"@en ;
+    rdfs:comment "High altitude rocky terrain."@en ;
+    beast:habitatCategory beast:Terrestrial .
 
 beastiary:int_minotaur_ovidius a beast:Interpretation ;
     beast:appearsIn beastiary:source_ovidius_metamorphoses ;
@@ -4519,6 +4703,14 @@ beastiary:source_septuagint a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_antlion_septuagint ;
     beast:wasInfluencedBy beastiary:source_bible .
 
+beastiary:ability_poisonous a beast:Ability ;
+    rdfs:label "Venomous"@en ;
+    rdfs:comment "Aggressive natural weaponry expresses the teriomorphic 'enemy symbol' of feral chaos and the bestial threat of the striking attack."@en,
+        "The creature produces or secretes a toxic substance capable of harming or killing through bite, touch, or breath."@en ;
+    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
+    beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
+    beast:isGovernedBy beast:DiurnalRegime .
+
 beastiary:ability_posing_riddles a beast:Ability ;
     rdfs:comment "The riddle performs an intellectual diairesis, forcing the separation of truth from falsehood and embodying the diaretic drive toward analysis and absolute distinction."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
@@ -4536,10 +4728,6 @@ beastiary:ability_speed a beast:Ability ;
 beastiary:archetype_enigma a beast:Archetype ;
     beast:hasMeaning "The riddle-bearer, embodying hidden knowledge and the demand for interpretation."@en .
 
-beastiary:archetype_guardian_hell a beast:Archetype ;
-    beast:hasMeaning "The infernal gatekeeper who guards the threshold of the underworld."@en ;
-    beast:relatedTo beastiary:archetype_evil .
-
 beastiary:archetype_immortality a beast:Archetype ;
     beast:hasMeaning "Deathlessness, the state of never dying or perishing."@en ;
     beast:relatedTo beastiary:archetype_rebirth .
@@ -4548,9 +4736,9 @@ beastiary:creature_antlion a beast:HybridCreature ;
     rdfs:label "Ant-Lion"@en ;
     beast:hasAbility beastiary:ability_self_destructive ;
     beast:hasAlternativeName "Myrmecoleon"^^xsd:string ;
-    beast:hasDiet beast:diet_none ;
+    beast:hasDiet beastiary:diet_none ;
     beast:hasEtymology beastiary:etymology_antlion ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_lion ;
     beast:hasLowerBodyOf beastiary:creature_ant ;
     beast:hasOriginContext beastiary:source_septuagint ;
@@ -4561,8 +4749,7 @@ beastiary:creature_elf a beast:ImaginaryBeing ;
     beast:hasAbility beastiary:ability_immortal ;
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_elf ;
-    beast:hasHabitat beastiary:habitat_forests,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_forests ;
     beast:hasOriginContext beastiary:source_nordic_folklore .
 
 beastiary:creature_fairy a beast:ImaginaryBeing ;
@@ -4572,8 +4759,7 @@ beastiary:creature_fairy a beast:ImaginaryBeing ;
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_fairy ;
-    beast:hasHabitat beastiary:habitat_forests,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_forests ;
     beast:hasOriginContext beastiary:source_celtic_folklore ;
     beast:hasPart beastiary:part_wings .
 
@@ -4582,7 +4768,7 @@ beastiary:creature_fish a beast:RealAnimal ;
     beast:hasAbility beastiary:ability_swim ;
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_fish ;
-    beast:hasHabitat beastiary:habitat_aquatic .
+    beast:hasHabitat beast:Aquatic .
 
 beastiary:creature_manticore a beast:Creature,
         beast:HybridCreature ;
@@ -4592,11 +4778,11 @@ beastiary:creature_manticore a beast:Creature,
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
     beast:hasAbility beastiary:ability_poisonous ;
     beast:hasBodyOf beastiary:creature_lion ;
-    beast:hasDiet beast:diet_man_eater ;
+    beast:hasDiet beastiary:diet_man_eater ;
     beast:hasDistinctiveTrait "Defined by its three interlocking rows of teeth and its relentless craving for human flesh."^^xsd:string ;
     beast:hasEtymology beastiary:etymology_manticore ;
-    beast:hasHabitat beastiary:India,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_india,
+        beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_persian_mythology ;
     beast:hasPart beastiary:part_three_lines_of_teeth ;
@@ -4608,7 +4794,7 @@ beastiary:creature_scorpion a beast:RealAnimal ;
     beast:hasAbility beastiary:ability_poisonous ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_scorpion ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_unicorn a beast:HybridCreature ;
     rdfs:label "Unicorn"@en ;
@@ -4617,16 +4803,10 @@ beastiary:creature_unicorn a beast:HybridCreature ;
     beast:hasBodyOf beastiary:creature_horse ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_unicorn ;
-    beast:hasHabitat beastiary:habitat_forests,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_forests ;
     beast:hasHeadOf beastiary:creature_horse ;
     beast:hasOriginContext beastiary:source_greek_natural_history ;
     beast:hasPart beastiary:part_horn .
-
-beastiary:function_obstacle a beast:NarrativeFunction ;
-    beast:hasMeaning "The creature blocks the protagonist's progress as a barrier to be passed, without necessarily acting as a personal enemy."@en ;
-    beast:relatedTo beastiary:function_antagonist,
-        beastiary:function_guardian .
 
 beastiary:function_sacred_symbol a beast:NarrativeFunction ;
     beast:hasMeaning "The creature functions as a venerated emblem or sign of the sacred, divine, or transcendent."@en .
@@ -4683,12 +4863,6 @@ beastiary:ability_fire_breathing a beast:Ability ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
 
-beastiary:ability_strenght a beast:Ability ;
-    rdfs:comment "Heroic, virile strenght belongs to the ascensional repertoire of warrior and royal archetypes, it indicates the power to overcome the forces of time."@en ;
-    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
-    beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
-    beast:isGovernedBy beast:DiurnalRegime .
-
 beastiary:archetype_rebirth a beast:Archetype ;
     beast:hasMeaning "Death reintegrated as a prelude to renewal; the cycle of dying and returning to new life."@en ;
     beast:relatedTo beastiary:archetype_metamorphosis .
@@ -4706,7 +4880,7 @@ beastiary:creature_bull a beast:Creature,
     beast:hasAbility beastiary:ability_strenght ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_bull ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasPart beastiary:part_two_horns ;
     beast:isGovernedBy beast:DiurnalRegime .
 
@@ -4716,7 +4890,7 @@ beastiary:creature_hermaphrodite a beast:RealAnimal ;
     beast:hasAlternativeName "Androgynous"^^xsd:string ;
     beast:hasDiet beast:Elemental ;
     beast:hasEtymology beastiary:etymology_hermaphrodite ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasModificationOf beastiary:part_body ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_breasts,
@@ -4734,9 +4908,9 @@ beastiary:creature_mandrake a beast:CompositeCreature,
     beast:hasAbility beastiary:ability_deadly_scream ;
     beast:hasAlternativeName "Mandragora"^^xsd:string ;
     beast:hasBodyOf beastiary:Plant ;
-    beast:hasDiet beast:diet_autotrophic ;
+    beast:hasDiet beastiary:diet_autotrophic ;
     beast:hasEtymology beastiary:etymology_mandrake ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasLowerBodyOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
@@ -4756,7 +4930,6 @@ beastiary:creature_satyr a beast:Creature,
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_satyr ;
     beast:hasHabitat beastiary:habitat_mountain,
-        beastiary:habitat_terrestrial,
         beastiary:habitat_woods ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasLowerBodyOf beastiary:creature_goat ;
@@ -4776,8 +4949,7 @@ beastiary:creature_troll a beast:Creature,
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_troll ;
-    beast:hasHabitat beastiary:habitat_terrestrial,
-        beastiary:habitat_woods ;
+    beast:hasHabitat beastiary:habitat_woods ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_nordic_folklore ;
     beast:hasPart beastiary:huge_nose,
@@ -4792,7 +4964,12 @@ beastiary:function_exemplum a beast:NarrativeFunction ;
 beastiary:habitat_forests a beast:RealWorldPlace ;
     rdfs:label "Forests"@en ;
     rdfs:comment "A dense woodland environment characterized by thick tree cover, serving as a natural habitat for many creatures."@en ;
-    beast:habitatCategory beast:habitat_terrestrial .
+    beast:habitatCategory beast:Terrestrial .
+
+beastiary:habitat_hell a beast:ImaginaryPlace ;
+    rdfs:label "Hell"@en ;
+    rdfs:comment "The infernal underworld of Dante's Inferno, realm of the damned."@en ;
+    beast:hasOriginContext beastiary:source_dante_inferno .
 
 beastiary:source_flaubert_tentation a beast:LiteraryWork ;
     dcterms:created "1874"^^xsd:gYear ;
@@ -4813,6 +4990,12 @@ beastiary:source_unendliche_geschichte a beast:LiteraryWork ;
     schema:creator beastiary:person_ende ;
     beast:containsInterpretation beastiary:int_dragon_ende,
         beastiary:int_sphinx_ende .
+
+beastiary:ability_strenght a beast:Ability ;
+    rdfs:comment "Heroic, virile strenght belongs to the ascensional repertoire of warrior and royal archetypes, it indicates the power to overcome the forces of time."@en ;
+    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
+    beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
+    beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:archetype_chaos a beast:Archetype ;
     beast:hasMeaning "It represents confusion and darkness, symbolizing primordial nature and the indefinitive principle from which everything arises."@en ;
@@ -4871,24 +5054,25 @@ beastiary:creature_centaur a beast:Creature,
     beast:hasUpperBodyOf beastiary:creature_human ;
     beast:isGovernedBy beast:DiurnalRegime .
 
-beastiary:creature_chimera a beast:Creature,
+beastiary:creature_cerberus a beast:Creature,
         beast:HybridCreature ;
-    rdfs:label "Chimera"@en ;
-    rdfs:comment "The chimera is a paradigmatic teriomorphic monster across its sources, condensing multiple predatory jaws – lion, goat and serpent – into a single composite terror that the hero must confront and overcome."@en ;
+    rdfs:label "Cerberus"@en ;
+    rdfs:comment "Cerberus embodies the teriomorphic symbol of devouring jaws and feral chaos, guarding the threshold of the underworld against the passage of the living and the escape of the dead."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
-    beast:hasAbility beastiary:ability_fire_breathing ;
-    beast:hasAlternativeName "Chimaera"^^xsd:string ;
+    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAlternativeName "Kérberos"^^xsd:string ;
+    beast:hasBodyOf beastiary:creature_dog ;
     beast:hasDiet beast:Carnivorous ;
-    beast:hasEtymology beastiary:etymology_chimera ;
-    beast:hasHabitat beastiary:habitat_mountains ;
-    beast:hasHeadOf beastiary:creature_lion ;
-    beast:hasLowerBodyOf beastiary:creature_goat ;
-    beast:hasOriginContext beastiary:source_greek_mythology ;
-    beast:hasPart beastiary:part_goat_head,
-        beastiary:part_snake_head ;
+    beast:hasDistinctiveTrait "Kerberos was depicted as a three-headed dog of giant size with its mane bristling with serpents and its tail ending in a serpent's head."^^xsd:string ;
+    beast:hasEtymology beastiary:etymology_cerberus ;
+    beast:hasHabitat beastiary:habitat_underworld ;
+    beast:hasHeadOf beastiary:creature_dog ;
+    beast:hasLowerBodyOf beastiary:creature_dog ;
+    beast:hasPart beastiary:part_snakes_hair,
+        beastiary:part_three_heads_dog ;
     beast:hasTailOf beastiary:creature_snake ;
-    beast:hasUpperBodyOf beastiary:creature_lion ;
+    beast:hasUpperBodyOf beastiary:creature_dog ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:creature_giant a beast:Creature,
@@ -4901,7 +5085,7 @@ beastiary:creature_giant a beast:Creature,
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_giant ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:isGovernedBy beast:DiurnalRegime .
 
@@ -4922,7 +5106,7 @@ beastiary:creature_hippogriff a beast:Creature,
     beast:hasBodyOf beastiary:creature_horse ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_hippogriff ;
-    beast:hasHabitat beastiary:habitat_aerial ;
+    beast:hasHabitat beast:Aerial ;
     beast:hasHeadOf beastiary:creature_eagle ;
     beast:hasLowerBodyOf beastiary:creature_horse ;
     beast:hasOriginContext beastiary:source_renaissance ;
@@ -4941,7 +5125,7 @@ beastiary:creature_minotaur a beast:Creature,
     beast:hasAbility beastiary:ability_strenght ;
     beast:hasAlternativeName "Asterion"^^xsd:string ;
     beast:hasBodyOf beastiary:creature_human ;
-    beast:hasDiet beast:diet_man_eater ;
+    beast:hasDiet beastiary:diet_man_eater ;
     beast:hasEtymology beastiary:etymology_minotaur ;
     beast:hasHabitat beastiary:habitat_labyrinth ;
     beast:hasHeadOf beastiary:creature_bull ;
@@ -4956,16 +5140,16 @@ beastiary:creature_siren a beast:HybridCreature ;
         "Tritonesses"^^xsd:string ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_siren ;
-    beast:hasHabitat beastiary:habitat_aquatic ;
+    beast:hasHabitat beast:Aquatic ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_medieval_folklore ;
     beast:hasTailOf beastiary:creature_fish ;
     beast:hasUpperBodyOf beastiary:creature_human .
 
-beastiary:function_guardian a beast:NarrativeFunction ;
-    beast:hasMeaning "The creature protects a place, treasure, or person, guarding a threshold or boundary against intruders."@en ;
-    beast:relatedTo beastiary:function_apotropaic,
-        beastiary:function_obstacle .
+beastiary:function_obstacle a beast:NarrativeFunction ;
+    beast:hasMeaning "The creature blocks the protagonist's progress as a barrier to be passed, without necessarily acting as a personal enemy."@en ;
+    beast:relatedTo beastiary:function_antagonist,
+        beastiary:function_guardian .
 
 beastiary:source_orlando_furioso a beast:LiteraryWork ;
     dcterms:created "1516"^^xsd:gYear ;
@@ -4976,6 +5160,26 @@ beastiary:source_orlando_furioso a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_hippogriff_ariosto,
         beastiary:int_ogre_ariosto .
 
+beastiary:creature_chimera a beast:Creature,
+        beast:HybridCreature ;
+    rdfs:label "Chimera"@en ;
+    rdfs:comment "The chimera is a paradigmatic teriomorphic monster across its sources, condensing multiple predatory jaws – lion, goat and serpent – into a single composite terror that the hero must confront and overcome."@en ;
+    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
+    beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
+    beast:hasAbility beastiary:ability_fire_breathing ;
+    beast:hasAlternativeName "Chimaera"^^xsd:string ;
+    beast:hasDiet beast:Carnivorous ;
+    beast:hasEtymology beastiary:etymology_chimera ;
+    beast:hasHabitat beastiary:habitat_mountains ;
+    beast:hasHeadOf beastiary:creature_lion ;
+    beast:hasLowerBodyOf beastiary:creature_goat ;
+    beast:hasOriginContext beastiary:source_greek_mythology ;
+    beast:hasPart beastiary:part_goat_head,
+        beastiary:part_snake_head ;
+    beast:hasTailOf beastiary:creature_snake ;
+    beast:hasUpperBodyOf beastiary:creature_lion ;
+    beast:isGovernedBy beast:DiurnalRegime .
+
 beastiary:creature_eagle a beast:Creature,
         beast:RealAnimal ;
     rdfs:label "Eagle"@en ;
@@ -4985,7 +5189,7 @@ beastiary:creature_eagle a beast:Creature,
     beast:hasAbility beastiary:ability_fly ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_eagle ;
-    beast:hasHabitat beastiary:habitat_aerial ;
+    beast:hasHabitat beast:Aerial ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:function_antagonist a beast:NarrativeFunction ;
@@ -4995,21 +5199,20 @@ beastiary:function_antagonist a beast:NarrativeFunction ;
 beastiary:function_guide a beast:NarrativeFunction ;
     beast:hasMeaning "The creature leads, accompanies, or directs the protagonist, offering aid or direction on their path."@en .
 
-beastiary:source_biblioteca a beast:LiteraryWork ;
-    dcterms:created "-199/0"^^xsd:gYear ;
-    dcterms:language "grc"^^xsd:string ;
-    dcterms:title "Biblioteca"^^xsd:string ;
-    rdfs:comment "1st – 2nd century BCE"^^xsd:string ;
-    schema:creator beastiary:person_p_apollodoro ;
-    beast:containsInterpretation beastiary:int_giant_apollodorus,
-        beastiary:int_lion_apollodorus,
-        beastiary:int_medusa_apollodoro .
+beastiary:archetype_guardian_hell a beast:Archetype ;
+    beast:hasMeaning "The infernal gatekeeper who guards the threshold of the underworld."@en ;
+    beast:relatedTo beastiary:archetype_evil .
 
 beastiary:archetype_raw_instinct a beast:Archetype ;
     beast:hasMeaning "Represents raw and primal fears like famine, lack of intelligence and the danger of the wilderness, sometimes also misunderstood outcast."@en .
 
 beastiary:archetype_violence a beast:Archetype ;
     beast:hasMeaning "Brute destructive force and aggression."@en .
+
+beastiary:function_guardian a beast:NarrativeFunction ;
+    beast:hasMeaning "The creature protects a place, treasure, or person, guarding a threshold or boundary against intruders."@en ;
+    beast:relatedTo beastiary:function_apotropaic,
+        beastiary:function_obstacle .
 
 beastiary:creature_medusa a beast:Creature,
         beast:HybridCreature ;
@@ -5024,18 +5227,11 @@ beastiary:creature_medusa a beast:Creature,
     beast:hasDistinctiveTrait "A once-beautiful woman transformed into a monster whose gaze turns the living to stone"^^xsd:string,
         "her hair replaced by living serpents. It is the only one Gorgon to be mortal."^^xsd:string ;
     beast:hasEtymology beastiary:etymology_medusa ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_snake_hair ;
     beast:isGovernedBy beast:DiurnalRegime .
-
-beastiary:creature_snake a beast:RealAnimal ;
-    rdfs:label "Snake"@en ;
-    beast:hasAbility beastiary:ability_poisonous ;
-    beast:hasDiet beast:Carnivorous ;
-    beast:hasEtymology beastiary:etymology_snake ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
 
 beastiary:source_aberdeen_bestiary a beast:Bestiary ;
     dcterms:created "1200"^^xsd:gYear ;
@@ -5048,6 +5244,16 @@ beastiary:source_aberdeen_bestiary a beast:Bestiary ;
         beastiary:int_snake_aberdeen,
         beastiary:int_unicorn_aberdeen ;
     beast:hasBestiaryType beast:MoralAllegory .
+
+beastiary:source_biblioteca a beast:LiteraryWork ;
+    dcterms:created "-199/0"^^xsd:gYear ;
+    dcterms:language "grc"^^xsd:string ;
+    dcterms:title "Biblioteca"^^xsd:string ;
+    rdfs:comment "1st – 2nd century BCE"^^xsd:string ;
+    schema:creator beastiary:person_p_apollodoro ;
+    beast:containsInterpretation beastiary:int_giant_apollodorus,
+        beastiary:int_lion_apollodorus,
+        beastiary:int_medusa_apollodoro .
 
 beastiary:source_liber_de_natura_rerum a beast:Bestiary ;
     dcterms:created "1240"^^xsd:gYear ;
@@ -5070,7 +5276,7 @@ beastiary:creature_dragon a beast:ImaginaryBeing ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasDistinctiveTrait "A creature of extreme divergence - the fire-breathing chaos-monster of the West and the benevolent water-spirit of the East."^^xsd:string ;
     beast:hasEtymology beastiary:etymology_dragon ;
-    beast:hasHabitat beastiary:habitat_aerial ;
+    beast:hasHabitat beast:Aerial ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_crest,
         beastiary:part_wings .
@@ -5080,9 +5286,14 @@ beastiary:creature_horse a beast:RealAnimal ;
     beast:hasAbility beastiary:ability_speed ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_horse ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
-beastiary:source_greek_mythology a beast:Tradition .
+beastiary:creature_snake a beast:RealAnimal ;
+    rdfs:label "Snake"@en ;
+    beast:hasAbility beastiary:ability_poisonous ;
+    beast:hasDiet beast:Carnivorous ;
+    beast:hasEtymology beastiary:etymology_snake ;
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_lion a beast:RealAnimal ;
     rdfs:label "Lion"@en ;
@@ -5090,7 +5301,7 @@ beastiary:creature_lion a beast:RealAnimal ;
         beastiary:ability_strenght ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_lion ;
-    beast:hasHabitat beastiary:habitat_terrestrial .
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_phoenix a beast:Creature,
         beast:ImaginaryBeing ;
@@ -5103,23 +5314,13 @@ beastiary:creature_phoenix a beast:Creature,
     beast:hasDiet beast:Elemental ;
     beast:hasDistinctiveTrait "Phoenix is known for being immortal - it regenerates from its own ashes or from the father's body depending on the source."^^xsd:string ;
     beast:hasEtymology beastiary:etymology_phoenix ;
-    beast:hasHabitat beastiary:habitat_forests,
-        beastiary:habitat_terrestrial ;
+    beast:hasHabitat beastiary:habitat_forests ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_red_and_gold_feathers ;
     beast:hasPartDerivedFrom beastiary:creature_eagle ;
     beast:isGovernedBy beast:NocturnalRegime .
 
-beastiary:source_teogonia a beast:LiteraryWork ;
-    dcterms:created "-699"^^xsd:gYear ;
-    dcterms:language "grc"^^xsd:string ;
-    dcterms:title "Toeogonia"^^xsd:string ;
-    rdfs:comment "700 BCE"^^xsd:string ;
-    schema:creator beastiary:person_esiodo ;
-    beast:containsInterpretation beastiary:int_chimera_esiodo,
-        beastiary:int_giant_teogonia,
-        beastiary:int_medusa_esiodo,
-        beastiary:int_pegaso_esiodo .
+beastiary:source_greek_mythology a beast:Tradition .
 
 beastiary:ability_fly a beast:Ability ;
     rdfs:label "Flight"@en ;
@@ -5136,25 +5337,21 @@ beastiary:creature_sphinx a beast:HybridCreature ;
     beast:hasBodyOf beastiary:ceature_lion ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_sphinx ;
-    beast:hasHabitat beastiary:habitat_terrestrial ;
+    beast:hasHabitat beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_ancient_egypt ;
     beast:hasTailOf beastiary:creature_lion .
 
-beastiary:source_dante_inferno a beast:LiteraryWork ;
-    dcterms:created "1308"^^xsd:gYear ;
-    dcterms:language "it"^^xsd:string ;
-    dcterms:title "Inferno"^^xsd:string ;
-    rdfs:comment "c. 1308"^^xsd:string ;
-    schema:creator beastiary:person_dante ;
-    beast:containsInterpretation beastiary:int_centaur_dante,
-        beastiary:int_centaur_dante2,
-        beastiary:int_lion_dante,
-        beastiary:int_medusa_dante,
-        beastiary:int_minotaur_dante,
-        beastiary:int_phoenix_dante,
-        beastiary:int_snake_dante ;
-    beast:wasInfluencedBy beastiary:source_ovidius_metamorphoses .
+beastiary:source_teogonia a beast:LiteraryWork ;
+    dcterms:created "-699"^^xsd:gYear ;
+    dcterms:language "grc"^^xsd:string ;
+    dcterms:title "Toeogonia"^^xsd:string ;
+    rdfs:comment "700 BCE"^^xsd:string ;
+    schema:creator beastiary:person_esiodo ;
+    beast:containsInterpretation beastiary:int_chimera_esiodo,
+        beastiary:int_giant_teogonia,
+        beastiary:int_medusa_esiodo,
+        beastiary:int_pegaso_esiodo .
 
 beastiary:source_fantastic_beasts a beast:LiteraryWork ;
     dcterms:created "2001"^^xsd:gYear ;
@@ -5185,6 +5382,21 @@ beastiary:source_naturalis_historia a beast:Bestiary ;
         beastiary:int_scorpion_plinio,
         beastiary:int_sphinx_plinio ;
     beast:hasBestiaryType beast:ScientificTaxonomy .
+
+beastiary:source_dante_inferno a beast:LiteraryWork ;
+    dcterms:created "1308"^^xsd:gYear ;
+    dcterms:language "it"^^xsd:string ;
+    dcterms:title "Inferno"^^xsd:string ;
+    rdfs:comment "c. 1308"^^xsd:string ;
+    schema:creator beastiary:person_dante ;
+    beast:containsInterpretation beastiary:int_centaur_dante,
+        beastiary:int_centaur_dante2,
+        beastiary:int_lion_dante,
+        beastiary:int_medusa_dante,
+        beastiary:int_minotaur_dante,
+        beastiary:int_phoenix_dante,
+        beastiary:int_snake_dante ;
+    beast:wasInfluencedBy beastiary:source_ovidius_metamorphoses .
 
 beastiary:source_etymologies a beast:LiteraryWork ;
     dcterms:created "625"^^xsd:gYear ;

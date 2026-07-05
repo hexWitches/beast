@@ -33,13 +33,11 @@
             "diet": {
                 "predicate": "beast:hasDiet",
                 "type": "URI",
-                "prefix": "beast:",
                 "target_class": "beast:Diet"
             },
             "habitat_id": {
                 "predicate": "beast:hasHabitat",
                 "type": "URI",
-                "prefix": "beastiary:",
                 "target_class": "beast:Habitat"
             },
             "abilities": {
@@ -179,13 +177,11 @@
             "alternative_diet": {
                 "predicate": "beast:alternativeDiet",
                 "type": "URI",
-                "prefix": "beast:",
                 "target_class": "beast:Diet"
             },
             "alternative_habitat": {
                 "predicate": "beast:alternativeHabitat",
                 "type": "URI",
-                "prefix": "beast:",
                 "target_class": "beast:Habitat"
             },
             "citation_id": {
@@ -569,6 +565,7 @@
     },
     "myth_figures.csv": {
         "primary_key": "mythological_figure_id",
+        "entity_class": "beast:MythologicalFigure",
         "properties": {
             "type": {
                 "predicate": "rdf:type",

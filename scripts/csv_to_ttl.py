@@ -33,6 +33,9 @@ NAMESPACES = {
     "viaf:": VIAF
 }
 
+CONTROLLED_DIETS = {"Omnivorous", "Herbivorous", "Carnivorous", "Scavenger", "Hematophagous", "Lithophagous", "Elemental"}
+CONTROLLED_HABITATS = {"Terrestrial", "Aerial", "Aquatic"}
+
 def clean_uri_part(part):
     return part.strip().replace(' ', '_')
 
@@ -54,6 +57,18 @@ def resolve_predicate(predicate_str):
         if prefix in NAMESPACES:
             return NAMESPACES[prefix][parts[1]]
     return URIRef(predicate_str)
+
+def resolve_diet_uri(val):
+    clean_val = clean_uri_part(val)
+    if clean_val in CONTROLLED_DIETS:
+        return BEAST[clean_val]
+    return BEASTIARY[clean_val]
+
+def resolve_habitat_uri(val):
+    clean_val = clean_uri_part(val)
+    if clean_val in CONTROLLED_HABITATS:
+        return BEAST[clean_val]
+    return BEASTIARY[clean_val]
 
 def main():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -136,11 +151,12 @@ def main():
 
                     for val in values:
                         if prop_type == "URI":
-                            prefix = prop_config.get("prefix", "")
-                            # For rdf:type from CSV columns, handle properly
-                            if prop_config["predicate"] == "rdf:type":
-                                obj_uri = resolve_uri(val, prefix)
+                            if prop_config["predicate"] in ("beast:hasDiet", "beast:alternativeDiet"):
+                                obj_uri = resolve_diet_uri(val)
+                            elif prop_config["predicate"] in ("beast:hasHabitat", "beast:alternativeHabitat"):
+                                obj_uri = resolve_habitat_uri(val)
                             else:
+                                prefix = prop_config.get("prefix", "")
                                 obj_uri = resolve_uri(val, prefix)
                             g.add((subject_uri, predicate_uri, obj_uri))
                             
