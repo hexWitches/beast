@@ -134,7 +134,10 @@
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Real Animals in Composite Creatures</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance for the project's analysis of mythological creatures and their representations across sources.]
+                           Composite and hybrid creatures are assembled from the parts of real animals. This question treats those donor animals as a network and asks which real animal recurs most often as raw material for the imagination. The answer exposes the building blocks of the monstrous: the handful of creatures - predator, raptor, reptile - whose recognizable, charged anatomies are drawn upon again and again to compose new beings. It is a question only a graph can answer, since it depends on tracing the :hasPartDerivedFrom relation across the entire population of hybrids at once.  
+                        </p>
+                        <p class="info-section__text mt-3">
+                           The result show how the real animal with contributes the most to the physical conformation of other imaginary creature is the human, donating his part to eleven creatures in total, with eighteen body parts borrowed from it. The prevalence of human as a donor highlights how many of the creatures documented in bestiaries had anthropomorphic characteristics. The creation of creatures somewhat similar to humans but divergent may have been a creative expedient to distort their nature and attribute the resulting bestiality to their new form, projecting onto these creatures the bestial and anomalous characteristics of humans in an amplified manner. In some way a means for humans to distance certain bestial behaviors from their nature and attribute them to fantastic beings. 
                         </p>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
@@ -180,35 +183,82 @@
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Shared Symbolic
                             Structures</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance
-                            for the project's analysis of mythological creatures and their representations across
-                            sources.]
+                            If a creature borrows the lion's body, does it also borrow the lion's symbolism? This question tests whether composite creatures share the symbolic structures - Durand symbols  - of the real animals from which their parts derive, by measuring the overlap between a hybrid's symbolic profile and those of its donor animals. A high overlap would suggest that symbolic meaning is inherited along with anatomy. 
+                        </p>
+                        <p class="info-section__text mt-3">
+                           By analysing the data retrieved through this query we find out that six creatures demonstrate to share a symbolic meaning with the animal they borrow body parts from. The hippogriff is one of them sharing with the eagle the ascensional symbol, which is connected to the wings, the physical feature that allows the creature to fly and elevate towards metaphysical heights. Other creatures described in the bestiary also inherit features from real animals' physicality, acquiring the symbolic meaning historically attributed to them as well. The most recurring symbol is evidently the teriomorphic, associated with agitated movement, archetype of the caos. Durand explains this symbol by referring to the uncontrollable dynamism of animals like the bull, the horse and the snake which are also the animals from which creatures such as the Minotaur, the Centaur, the Cerberus, the Chimera, and the Manticore inherit their symbolism. From this we can deduce that it is very common for composite creatures to inevitably carry with them all the symbolism of their physical donor. The physical conformation of the beast is already in itself a symptom of its character and temperament, demonstrating how it is historically established that certain characteristics carry with them a meaning that goes beyond mere physicality. 
                         </p>
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <p class="info-section__text mb-2">Do composite creatures share symbolic structures with the real animals from which their parts derive?</p>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
+
+<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="variable">?composite</span> <span class="variable">?realAnimal</span> <span class="variable">?sharedSymbol</span>
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
+  <span class="variable">?composite</span> a beast:HybridCreature .
+
+  { <span class="variable">?composite</span> beast:hasPartDerivedFrom <span class="variable">?realAnimal</span> }
+  <span class="keyword">UNION</span> { <span class="variable">?composite</span> beast:hasHeadOf <span class="variable">?realAnimal</span> }
+  <span class="keyword">UNION</span> { <span class="variable">?composite</span> beast:hasBodyOf <span class="variable">?realAnimal</span> }
+  <span class="keyword">UNION</span> { <span class="variable">?composite</span> beast:hasUpperBodyOf <span class="variable">?realAnimal</span> }
+  <span class="keyword">UNION</span> { <span class="variable">?composite</span> beast:hasLowerBodyOf <span class="variable">?realAnimal</span> }
+  <span class="keyword">UNION</span> { <span class="variable">?composite</span> beast:hasTailOf <span class="variable">?realAnimal</span> }
+
+  <span class="variable">?realAnimal</span> a beast:RealAnimal .
+
+  {
+    <span class="variable">?composite</span> beast:embodiesImaginarySymbol <span class="variable">?sharedSymbol</span> .
+    <span class="variable">?realAnimal</span> beast:embodiesImaginarySymbol <span class="variable">?sharedSymbol</span> .
+  }
+  <span class="keyword">UNION</span>
+  {
+    <span class="variable">?composite</span> beast:embodiesImaginarySymbol <span class="variable">?sharedSymbol</span> .
+    <span class="variable">?realAnimal</span> beast:hasAbility <span class="variable">?ability</span> .
+    <span class="variable">?ability</span> beast:embodiesImaginarySymbol <span class="variable">?sharedSymbol</span> .
+  }
 }</code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">
                                 <thead>
                                     <tr>
-                                        <th>col1 title</th>
-                                        <th>col2 title</th>
+                                        <th>composite</th>
+                                        <th>realAnimal</th>
+                                        <th>sharedSymbol</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_hippogriff</td>
+                                        <td>beastiary:creature_eagle</td>
+                                        <td>beast:AscensionalSymbol</td>
                                     </tr>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_minotaur</td>
+                                        <td>beastiary:creature_bull</td>
+                                        <td>beast:TeriomorphicSymbol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_centaur</td>
+                                        <td>beastiary:creature_horse</td>
+                                        <td>beast:TeriomorphicSymbol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_cerberus</td>
+                                        <td>beastiary:creature_snake</td>
+                                        <td>beast:TeriomorphicSymbol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_chimera</td>
+                                        <td>beastiary:creature_snake</td>
+                                        <td>beast:TeriomorphicSymbol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_manticore</td>
+                                        <td>beastiary:creature_scorpion</td>
+                                        <td>beast:TeriomorphicSymbol</td>
                                     </tr>
                                 </tbody>
                             </table>
