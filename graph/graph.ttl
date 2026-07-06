@@ -6,6 +6,25 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+beastiary: rdf:type owl:Ontology,
+                void:Dataset ;
+    dcterms:conformsTo <https://w3id.org/beast/ontology> ;
+    dcterms:created "2026-05-01"^^xsd:date ;
+    dcterms:creator "Maria Juliana Gamboa Nivia",
+        "Miriana Pinto",
+        "Sara Roggiani",
+        "Alice Spadavecchia" ;
+    dcterms:description "A dataset describing creatures, their interpretations and biological composition, the sources in which the creatures are depicted. The BEASTiary knowledge graph is aligned with the BEAST ontology."@en ;
+    owl:imports <https://w3id.org/beast/ontology> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://github.com/hexWitches> ;
+    dcterms:title "The BEAST Graph"@en ;
+    vann:preferredNamespacePrefix "beastiary" ;
+    void:dataDump <https://w3id.org/beast/graph/graph.ttl> ;
+    void:vocabulary <https://w3id.org/beast/ontology> .
 
 beastiary:ability_extinct rdfs:label "Extinct"@en ;
     rdfs:comment "The condition of having died out entirely, with no living members of the kind remaining; the creature is known only through past attestation rather than present existence."@en .
@@ -67,7 +86,6 @@ beastiary:genesis_centaur_ovid a beast:Genesis ;
 beastiary:genesis_cerberus_esiodo a beast:Genesis ;
     beast:hasGenesisDescription "Offspring of Echidna and Typhon"@en,
         "one of the monstrous brood born to the two primordial serpent-giants."@en ;
-    beast:hasSibling beastiary:creature_chimera ;
     beast:involvesParent beastiary:myth_echidna,
         beastiary:myth_typhon ;
     beast:isGenesisOf beastiary:int_cerberus_esiodo .
@@ -75,7 +93,6 @@ beastiary:genesis_cerberus_esiodo a beast:Genesis ;
 beastiary:genesis_chimera_esiodo a beast:Genesis ;
     beast:hasGenesisDescription "Offspring of Echidna and Typhon"@en,
         "one of the monstrous brood born to the two primordial serpent-giants."@en ;
-    beast:hasSibling beastiary:creature_sphinx ;
     beast:involvesParent beastiary:myth_echidna,
         beastiary:myth_typhon ;
     beast:isGenesisOf beastiary:int_chimera_esiodo .
@@ -83,7 +100,6 @@ beastiary:genesis_chimera_esiodo a beast:Genesis ;
 beastiary:genesis_chimera_fullmetal a beast:Genesis ;
     beast:hasGenesisDescription "Produced through human transmutation"@en,
         "a forbidden alchemical act combining two base organisms into a new composite creature."@en ;
-    beast:hasSibling beastiary:creature_sphinx ;
     beast:isGenesisOf beastiary:int_chimera_fullmetal_alchemist .
 
 beastiary:genesis_giant_teogonia a beast:Genesis ;
@@ -149,7 +165,6 @@ beastiary:genesis_siren_ovidius a beast:Genesis ;
 beastiary:genesis_sphinx_apollodoro a beast:Genesis ;
     beast:hasGenesisDescription "Daughter of Echidna and Typhon"@en,
         "sent to Thebes as an instrument of divine punishment."@en ;
-    beast:hasSibling beastiary:creature_chimera ;
     beast:involvesParent beastiary:myth_echidna,
         beastiary:myth_typhon ;
     beast:isGenesisOf beastiary:int_sphinx_apollodoro .
@@ -4884,6 +4899,26 @@ beastiary:creature_bull a beast:Creature,
     beast:hasPart beastiary:part_two_horns ;
     beast:isGovernedBy beast:DiurnalRegime .
 
+beastiary:creature_chimera a beast:Creature,
+        beast:HybridCreature ;
+    rdfs:label "Chimera"@en ;
+    rdfs:comment "The chimera is a paradigmatic teriomorphic monster across its sources, condensing multiple predatory jaws – lion, goat and serpent – into a single composite terror that the hero must confront and overcome."@en ;
+    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
+    beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
+    beast:hasAbility beastiary:ability_fire_breathing ;
+    beast:hasAlternativeName "Chimaera"^^xsd:string ;
+    beast:hasDiet beast:Carnivorous ;
+    beast:hasEtymology beastiary:etymology_chimera ;
+    beast:hasHabitat beastiary:habitat_mountains ;
+    beast:hasHeadOf beastiary:creature_lion ;
+    beast:hasLowerBodyOf beastiary:creature_goat ;
+    beast:hasOriginContext beastiary:source_greek_mythology ;
+    beast:hasPart beastiary:part_goat_head,
+        beastiary:part_snake_head ;
+    beast:hasTailOf beastiary:creature_snake ;
+    beast:hasUpperBodyOf beastiary:creature_lion ;
+    beast:isGovernedBy beast:DiurnalRegime .
+
 beastiary:creature_hermaphrodite a beast:RealAnimal ;
     rdfs:label "Hermaphrodite"@en ;
     beast:hasAbility beastiary:ability_strenght ;
@@ -4895,8 +4930,6 @@ beastiary:creature_hermaphrodite a beast:RealAnimal ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
     beast:hasPart beastiary:part_breasts,
         beastiary:part_male_genitals ;
-    beast:hasPartDerivedFrom beastiary:part_female,
-        beastiary:part_male ;
     beast:isOfSpecies beastiary:creature_human .
 
 beastiary:creature_mandrake a beast:CompositeCreature,
@@ -5160,26 +5193,6 @@ beastiary:source_orlando_furioso a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_hippogriff_ariosto,
         beastiary:int_ogre_ariosto .
 
-beastiary:creature_chimera a beast:Creature,
-        beast:HybridCreature ;
-    rdfs:label "Chimera"@en ;
-    rdfs:comment "The chimera is a paradigmatic teriomorphic monster across its sources, condensing multiple predatory jaws – lion, goat and serpent – into a single composite terror that the hero must confront and overcome."@en ;
-    beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
-    beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
-    beast:hasAbility beastiary:ability_fire_breathing ;
-    beast:hasAlternativeName "Chimaera"^^xsd:string ;
-    beast:hasDiet beast:Carnivorous ;
-    beast:hasEtymology beastiary:etymology_chimera ;
-    beast:hasHabitat beastiary:habitat_mountains ;
-    beast:hasHeadOf beastiary:creature_lion ;
-    beast:hasLowerBodyOf beastiary:creature_goat ;
-    beast:hasOriginContext beastiary:source_greek_mythology ;
-    beast:hasPart beastiary:part_goat_head,
-        beastiary:part_snake_head ;
-    beast:hasTailOf beastiary:creature_snake ;
-    beast:hasUpperBodyOf beastiary:creature_lion ;
-    beast:isGovernedBy beast:DiurnalRegime .
-
 beastiary:creature_eagle a beast:Creature,
         beast:RealAnimal ;
     rdfs:label "Eagle"@en ;
@@ -5295,6 +5308,18 @@ beastiary:creature_snake a beast:RealAnimal ;
     beast:hasEtymology beastiary:etymology_snake ;
     beast:hasHabitat beast:Terrestrial .
 
+beastiary:creature_sphinx a beast:HybridCreature ;
+    rdfs:label "Sphinx"@en ;
+    beast:hasAlternativeName "Androsphinx"^^xsd:string,
+        "Great Sphinx of Giza"^^xsd:string ;
+    beast:hasBodyOf beastiary:ceature_lion ;
+    beast:hasDiet beast:Carnivorous ;
+    beast:hasEtymology beastiary:etymology_sphinx ;
+    beast:hasHabitat beast:Terrestrial ;
+    beast:hasHeadOf beastiary:creature_human ;
+    beast:hasOriginContext beastiary:source_ancient_egypt ;
+    beast:hasTailOf beastiary:creature_lion .
+
 beastiary:creature_lion a beast:RealAnimal ;
     rdfs:label "Lion"@en ;
     beast:hasAbility beastiary:ability_courage,
@@ -5329,18 +5354,6 @@ beastiary:ability_fly a beast:Ability ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
-
-beastiary:creature_sphinx a beast:HybridCreature ;
-    rdfs:label "Sphinx"@en ;
-    beast:hasAlternativeName "Androsphinx"^^xsd:string,
-        "Great Sphinx of Giza"^^xsd:string ;
-    beast:hasBodyOf beastiary:ceature_lion ;
-    beast:hasDiet beast:Carnivorous ;
-    beast:hasEtymology beastiary:etymology_sphinx ;
-    beast:hasHabitat beast:Terrestrial ;
-    beast:hasHeadOf beastiary:creature_human ;
-    beast:hasOriginContext beastiary:source_ancient_egypt ;
-    beast:hasTailOf beastiary:creature_lion .
 
 beastiary:source_teogonia a beast:LiteraryWork ;
     dcterms:created "-699"^^xsd:gYear ;

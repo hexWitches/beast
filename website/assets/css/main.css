@@ -2848,15 +2848,15 @@ footer p, footer li {
 
 .kg-chart-layout {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 2.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .kg-chart-container {
-    flex: 1 1 480px;
-    min-width: 300px;
+    flex: 1 1 auto;
+    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2870,8 +2870,9 @@ footer p, footer li {
 }
 
 .kg-legend-container {
-    flex: 1 1 320px;
-    max-width: 480px;
+    flex: 0 1 340px;
+    min-width: 260px;
+    max-width: 380px;
     max-height: 580px;
     overflow-y: auto;
     padding: 1.5rem;
@@ -3001,6 +3002,13 @@ footer p, footer li {
     }
 
     .kg-chart-layout {
+        flex-wrap: wrap;
         gap: 1.5rem;
+    }
+
+    .kg-chart-container,
+    .kg-legend-container {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
