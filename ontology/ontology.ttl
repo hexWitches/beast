@@ -495,7 +495,7 @@
     rdfs:comment "Links a real animal individual to the base biological species it belongs to, used particularly for creatures that exhibit anomalies or deformities but remain fundamentally members of a recognizable species."@en .
 
 # ===== DATA PROPERTIES ===============
-:hasDistinctiveTrait rdf:type owl: ;
+:hasDistinctiveTrait rdf:type owl:DatatypeProperty ;
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:Creature :Interpretation) ] ;
     rdfs:range rdfs:Literal ;
@@ -532,8 +532,8 @@
     skos:prefLabel "Regime"@en ;
     rdfs:comment "The fundamental high-level classification of Durand, organized around sensory-motor dominants (postural, digestive, cyclic). Regimes act as organizational systems of the imagination, condensing multiple symbolic meanings into a coherent structure."@en .
 
-:NocturnalRegime rdf:type owl:Class , 
-                        skos:Concept ;
+:NocturnalRegime rdf:type owl:Class, skos:Concept ;
+    rdfs:subClassOf :Regime ;
     skos:inScheme :DurandImaginary ;
     skos:broader :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
@@ -542,8 +542,8 @@
     skos:prefLabel "Nocturnal Regime"@en ;
     rdfs:comment "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures. Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en .
 
-:DiurnalRegime rdf:type owl:Class ,
-                        skos:Concept ;
+:DiurnalRegime rdf:type owl:Class, skos:Concept ;
+    rdfs:subClassOf :Regime ;
     skos:inScheme :DurandImaginary ;
     skos:broader :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;

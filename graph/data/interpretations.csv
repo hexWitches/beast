@@ -84,7 +84,7 @@ int_lion_dante,creature_lion,source_dante_inferno,,,archetype_pride;archetype_vi
 int_lion_maier,creature_lion,source_atalanta_fugiens,,,archetype_prima_materia;archetype_cosmic,,,,,,,,,citation_maier_2
 int_lion_rubens,creature_lion,source_hercules_nemean_lion,,,,function_antagonist,,,,,,,,
 int_mandrake_aldrovandi,creature_mandrake,source_monstrorum_historia_aldrovandi,,,archetype_natural_marvel,,,,,,,,,citation_aldrovandi_3
-int_mandrake_herbal,creature_mandrake,source_tacuinum_sanitatis,,,,,part_leaves;part_fruits,,,,,habitat_underground,,
+int_mandrake_herbal,creature_mandrake,source_tacuinum_sanitatis,,,,,part_leaves;part_fruits,,,,,habitat_subterranean,,
 int_mandrake_machiavelli,creature_mandrake,source_mandragola,,"""The mandrake appears not as a creature but purely as a botanical ingredient, used to prepare a fertility potion.""",archetype_fertility,,,,ability_fertility,deadly_scream,,,,citation_machiavelli_1
 int_mandrake_rowling,creature_mandrake,source_harry_potter_movie_2,,,archetype_healing,,,,,,,,,
 int_mandrake_shakespeare,creature_mandrake,source_romeo_and_juliet,,,,,,,ability_soporific,,,,,citation_shakespeare_2
@@ -120,7 +120,7 @@ int_ogre_chretien,creature_ogre,source_percival,,,archetype_raw_instinct,,,,,,,,
 int_ogre_shrek,creature_ogre,source_shrek,,,archetype_anti_fairy_tale,function_exemplum,part_green_skin,,,,,habitat_duloc_swamp,,citation_shrek_1
 int_onocentaur_isidore,creature_onocentaur,source_etymologies,,,,,,,,,,,,citation_isidore_8
 int_onocentaur_thaon,creature_onocentaur,source_thaon_bestiary,,,archetype_hypocrisy;archetype_predatory_lust,,,,,,,,,citation_thaon_1
-int_pegaso_barbie,creature_pegasus,source_barbie,,,archetype_resilience;archetype_defiance,function_exemplum,,,,,,habitay_cloud_kingdom ,,citation_barbie_1
+int_pegaso_barbie,creature_pegasus,source_barbie,,,archetype_resilience;archetype_defiance,function_exemplum,,,,,,habitat_cloud_kingdom ,,citation_barbie_1
 int_pegaso_cantimpre,creature_pegasus,source_liber_de_natura_rerum,,,,,part_two_horns,,,,,,,citation_cantimpre_2
 int_pegaso_esiodo,creature_pegasus,source_teogonia,,,archetype_poetic_inspiration ,,,,,,,habitat_olympus,genesis_pegaso_esiodo,citation_esiodo_3
 int_phoenix_aberdeen,creature_phoenix,source_aberdeen_bestiary,,,,,,,ability_rebirth_from_fire,,,habitat_arabia,,citation_aberdeen_1
@@ -161,7 +161,7 @@ int_sphinx_moureau,creature_sphinx,source_oedipus_moureau,,,archetype_seduction,
 int_sphinx_plinio,creature_sphinx,source_naturalis_historia,,,archetype_exotic_marvel,,,,,,,,,citation_plinio_1
 int_sphinx_rowling_fantastic,creature_sphinx,source_fantastic_beasts,,,,function_guardian,,,ability_posing_riddles,,,,,citation_rowling_4
 int_sphinx_rowling_harry,creature_sphinx,source_harry_potter_book_4,,,,function_guardian,part_wings,,ability_posing_riddles,,,,,citation_rowling_1
-int_troll_hunter,creature_troll,source_troll_hunter,,,archetype_raw_instinct,,part_multiple_heads,,ability_sunlight_petrification,,Litophagous;Carnivorous,,,
+int_troll_hunter,creature_troll,source_troll_hunter,,,archetype_raw_instinct,,part_multiple_heads,,ability_sunlight_petrification,,Lithophagous;Carnivorous,,,
 int_troll_ibsen,creature_troll,source_peer_gynt,,,archetype_raw_instinct,,,,ability_manipulation,,,,,citation_ibsen_1
 int_troll_norske_folkeeventyr,creature_troll,source_norske_folkeeventyr,,,archetype_raw_instinct,,part_big_eyes,,,intellect,,,,citation_norske_folkeeventyr_1
 int_troll_prose_edda,creature_troll,source_prose_edda,,,archetype_guardian_hell;archetype_parasite,,,,,,,,,citation_sturluson_1

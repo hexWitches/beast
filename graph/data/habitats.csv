@@ -20,7 +20,7 @@ habitat_middle_earth ,Middle Earth ,ImaginaryPlace,source_lotr,Terrestrial,"""Mi
 habitat_mount_phicium,Mount Phicium (Thebes),RealWorldPlace,,Terrestrial,"""The mountain near Thebes."""
 habitat_mountains,Mountains,RealWorldPlace,,Terrestrial,"""High altitude rocky terrain."""
 habitat_neverland,Neverland ,ImaginaryPlace,source_peter_pan ,Terrestrial,"""Neverland is a fictional, magical island where children never grow up, inhabited by fairies (like Tinker Bell), mermaids, the Lost Boys (Peter Pan), pirates, and Native Americans."""
-habitat_north_pole,North Pole ,GeographicPlace,source_st_Nicholas,Terrestrial,"""The North Pole, is the the northernmost point on Earth, located at the exact intersection of the planet's axis and its surface, known by its very cold temperatures all year round."""
+habitat_north_pole,North Pole ,GeographicPlace,,Terrestrial,"""The North Pole, is the the northernmost point on Earth, located at the exact intersection of the planet's axis and its surface, known by its very cold temperatures all year round."""
 habitat_ocean,Ocean,RealWorldPlace,,Aquatic,"""The vast salt sea."""
 habitat_olympus,Olympus ,ImaginaryPlace,source_teogonia,Aerial,"""Mount Olympus in greek mythology is the place were the gods live."""
 habitat_ravenna,Ravenna,GeographicPlace,,Terrestrial,"""The city of Ravenna in northern Italy."""

@@ -79,7 +79,8 @@ source_pharsalia,LiteraryWork,,Pharsalia (Bellum civile),person_lucano,61/65,61 
 source_phoenix_and_turtle_shakespeare,LiteraryWork,,The Phoenix and the Turtle,person_shakespeare,1601,1601,en,,,int_phoenix_shakespeare,
 source_physiologus,Bestiary,MoralAllegory,Physiologus,,101/200,2nd century,grc,,,int_antlion_physiologus,
 source_poem_hermaphroditus,LiteraryWork,,Hermaphroditus,person_swinburne,1863,1863,en,source_ovidius_metamorphoses,,int_hermaphrodite_swinburne,
-source_prose_edda,LiteraryWork,,"Prose Edda",person_sturluson,1201/1300,13th century,non,,,int_elf_sturluson_1;int_elf_sturluson_2;int_troll_prose_edda,
+source_prose_edda,LiteraryWork,,"Prose Edda
+",person_sturluson,1201/1300,13th century,non,,,int_elf_sturluson_1;int_elf_sturluson_2;int_troll_prose_edda,
 source_renaissance,Tradition,,,,,,,,,,
 source_rochester_bestiary,Bestiary,MoralAllegory,Rochester Bestiary,,1230,c. 1230,la,source_naturalis_historia;source_physiologus,,int_manticore_rochester,
 source_roger_délivrant_angélique,VisualArtwork,,Roger délivrant Angélique,person_ingres,1819,1819,,source_orlando_furioso,,int_hippogriff_ingres,https://www.nationalgallery.org.uk/paintings/jean-auguste-dominique-ingres-angelica-saved-by-ruggiero
@@ -93,7 +94,7 @@ source_st_Nicholas,LiteraryWork,,A Visit from St. Nicholas,person_moore,1823,182
 source_symposium,LiteraryWork,,Symposium,person_plato,-399/-300,4th century BCE,grc,,source_teogonia,int_hermaphrodite_plato,
 source_tacuinum_sanitatis,VisualArtwork,,Fructus Mandragorae in Tacuinum Sanitatis in Medicina (Vienna),,1390,1390,,,,int_mandrake_herbal,https://upload.wikimedia.org/wikipedia/commons/6/68/Tacuinum_Sanitatis_Mandrake_Dog.jpg
 source_teogonia,LiteraryWork,,Toeogonia,person_esiodo,-699,700 BCE,grc,,,int_chimera_esiodo;int_giant_teogonia;int_medusa_esiodo;int_pegaso_esiodo,
-source_thaon_bestiary,Bestiary,Adaptation,Le Bestiaire de Philippe de Thaün,person_thaon,1121/1139,1121 – 1139,fro,source_physiologus;source_etymologies,source_physiologus;source_etymologies,int_onocentaur_thaon,
+source_thaon_bestiary,Bestiary,MoralAllegory,Le Bestiaire de Philippe de Thaün,person_thaon,1121/1139,1121 – 1139,fro,source_physiologus;source_etymologies,source_physiologus;source_etymologies,int_onocentaur_thaon,
 source_the_hobbit,LiteraryWork,,The Hobbit,person_tolkien ,1937,1937,en,,,int_dragon_tolkien,
 source_troll_hunter,CinematicWork,,Troll Hunter,person_ ovredal,2010,2010,"en, no",source_norske_folkeeventyr;source_peer_gynt,,int_troll_hunter,https://www.imdb.com/it/title/tt1740707/?ref_=ext_shr_lnk
 source_unendliche_geschichte,LiteraryWork,,Die unendliche Geschichte,person_ende,1979,1979,de,,,int_sphinx_ende;int_dragon_ende,
