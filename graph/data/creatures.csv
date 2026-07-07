@@ -45,6 +45,4 @@ creature_snake,Snake,,,etymology_snake,RealAnimal,Carnivorous,Terrestrial,abilit
 creature_sphinx,Sphinx,"Great Sphinx of Giza, Androsphinx",,etymology_sphinx,HybridCreature,Carnivorous,Terrestrial,,creature_human,ceature_lion,,,creature_lion,,,,,,,source_ancient_egypt,
 creature_troll,Troll,,,etymology_troll,ImaginaryBeing,Carnivorous,"habitat_forests",ability_accumulate_treasures,creature_human,creature_human,,,creature_cow,,part_four_fingers;huge_nose;rough_skin,,,,,source_nordic_folklore,
 creature_unicorn,Unicorn,Monocerus,,etymology_unicorn,HybridCreature,Herbivorous,habitat_forests,ability_purify_water,creature_horse,creature_horse,,,,,part_horn,,,,,source_greek_natural_history,
-,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,source_greek_mythology,
 creature_human,Human,"Homo sapiens",,etymology_human,RealAnimal,Omnivorous,Terrestrial,,,,,,,,,,,,,,
