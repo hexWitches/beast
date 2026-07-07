@@ -561,24 +561,20 @@
     rdfs:comment "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."@en .
 
 :SchizomorphicStructure rdf:type owl:Class, skos:Concept ;
-    rdfs:subClassOf :ImaginaryStructure ,
-        [ rdf:type owl:Restriction ;
-          owl:onProperty :isGovernedBy ;
-          owl:someValuesFrom :DiurnalRegime ] ;
+    rdfs:subClassOf :ImaginaryStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    :isGovernedBy :DiurnalRegime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Schizomorphic Structure (or Heroic)"@en ;
     skos:prefLabel "Schizomorphic Structure (or Heroic)"@en ;
     rdfs:comment "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."@en .
 
 :SyntheticStructure rdf:type owl:Class, skos:Concept;
-    rdfs:subClassOf :ImaginaryStructure ,
-        [ rdf:type owl:Restriction ;
-          owl:onProperty :isGovernedBy ;
-          owl:someValuesFrom :NocturnalRegime ] ;
+    rdfs:subClassOf :ImaginaryStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    :isGovernedBy :NocturnalRegime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Synthetic Structure (or Dramatic)"@en ;
     skos:prefLabel "Synthetic Structure"@en ;
@@ -586,12 +582,10 @@
     rdfs:comment "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."@en .
 
 :MysticalStructure rdf:type owl:Class, skos:Concept ;
-    rdfs:subClassOf :ImaginaryStructure ,
-        [ rdf:type owl:Restriction ;
-          owl:onProperty :isGovernedBy ;
-          owl:someValuesFrom :NocturnalRegime ] ;
+    rdfs:subClassOf :ImaginaryStructure ;
     skos:inScheme :DurandImaginary ;
     skos:broader :ImaginaryStructure ;
+    :isGovernedBy :NocturnalRegime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "Mystical Structure (or Antiphrastic)"@en ;
     skos:prefLabel "Mystical Structure"@en ;
@@ -657,18 +651,37 @@
     rdfs:subPropertyOf :symbolizes ;
     rdfs:domain :ImaginarySymbol ;
     rdfs:range :ImaginaryStructure ;
+    owl:inverseOf :hasImaginarySymbol ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "belongs to"@en ;
     rdfs:comment "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en .
 
+:hasImaginarySymbol rdf:type owl:ObjectProperty ;
+    rdfs:domain :ImaginaryStructure ;
+    rdfs:range :ImaginarySymbol ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    rdfs:label "has imaginary symbol"@en ;
+    rdfs:comment "Inverse of :belongsTo. Links an Imaginary Structure to the imaginary symbols that belong to it."@en .
+
 :isGovernedBy rdf:type owl:ObjectProperty ;
-    owl:propertyChainAxiom (skos:broader :isGovernedBy) ;
+    owl:propertyChainAxiom ( :belongsTo :isGovernedBy ) ;
+    owl:propertyChainAxiom ( :belongsToImaginaryStructure :isGovernedBy ) ;
+    owl:propertyChainAxiom ( :embodiesImaginarySymbol :isGovernedBy ) ;
     rdfs:domain [ rdf:type owl:Class ;
                 owl:unionOf (:ImaginaryStructure :ImaginarySymbol :Creature :AnatomicalPart :Ability :Interpretation) ] ;
     rdfs:range :Regime ;
     rdfs:isDefinedBy :SymbolicModule ;
     rdfs:label "is governed by"@en ;
     rdfs:comment "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en .
+
+:governs rdf:type owl:ObjectProperty ;
+    rdfs:domain :Regime ;
+    rdfs:range [ rdf:type owl:Class ;
+                 owl:unionOf (:ImaginaryStructure :ImaginarySymbol :Creature :AnatomicalPart :Ability :Interpretation) ] ;
+    rdfs:isDefinedBy :SymbolicModule ;
+    owl:inverseOf :isGovernedBy ;
+    rdfs:label "governs"@en ;
+    rdfs:comment "Inverse of :isGovernedBy. Links a Regime to the structures, symbols, creatures, parts, abilities, or interpretations it governs."@en .
 
 :hasDivergence rdf:type owl:DatatypeProperty ;
     rdfs:domain :Interpretation ;

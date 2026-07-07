@@ -101,15 +101,6 @@
                         of images and symbols that continue to shape how we think, live, and dream.
                     </p>
                     <p class="info-section__text">
-                        At the heart of Durand’s model are two symbolic regimes. The <strong>diurnal</strong> is the
-                        order of light, height, and separation, expressing the heroic confrontation with time and death.
-                        The <strong>nocturnal</strong> is the order of night, descent, and fusion, which instead of
-                        fighting time seeks to slow it, to merge with it, and to embrace the cycle. Durand's structures
-                        turn a scattered collection of symbolic readings into a coherent map of the imaginary - one that
-                        lets us trace not only how a creature's <i>form</i> changes across time, but how its
-                        <i>meaning</i> migrates between these two enduring poles of the human imagination.
-                    </p>
-                    <p class="info-section__text">
                         This project is an attempt to read creatures again. Though their forms change across time and
                         cultures, they continue to express recurring human concerns: fear and desire, death, order and
                         chaos. To follow their transformations is therefore also to trace the history of the imagination
@@ -161,7 +152,7 @@
                             (<code>:Creature</code>) and its source-specific manifestations
                             (<code>:Interpretation</code>), allowing the ontology to track how a single entity is
                             described, depicted, or reinterpreted across different authors, periods, and media - from
-                            medieval manuscripts to contemporary film. It anchors each interpretation to the primary
+                            medieval manuscripts to contemporary movies. It anchors each interpretation to the primary
                             <code>:Source</code> in which it appears and classifies sources by their genre and
                             intertextual relationships through <code>:cites</code> and <code>:wasInfluencedBy</code>.
                         </p>
@@ -171,7 +162,7 @@
                                 data-zoom-src="assets/images/svg_grafoo/module1.svg">
                         </div>
                         <button class="linguetta-btn"
-                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View
+                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'block' ? 'none' : 'block';">View
                             Graph ✦</button>
                     </div>
 
@@ -182,9 +173,7 @@
                             real or imaginary - as described in Bestiaries and other Sources. It distinguishes
                             <code>:RealAnimal</code> from <code>:ImaginaryBeing</code>, and further classifies the
                             latter into <code>:CompositeCreature</code> and <code>:HybridCreature</code> whose anatomy
-                            is derived from two or more real animals. For real animals it documents deformities and
-                            monstrous irregularities through a structured vocabulary of anatomical anomaly: absence of a
-                            canonical part, duplication, and modification. For imaginary beings it records the
+                            is derived from two or more real animals. For real animals it documents irregularities through a structured vocabulary of anatomical anomaly: absence of a part, duplication, and modification. For imaginary beings it records the
                             anatomical parts they possess and the real animals, plants, or inanimate elements from which
                             those parts are derived. Across all creatures the module captures habitats - distinguishing
                             real geographic environments from mythological or imaginary spaces - diets, and abilities.
@@ -197,7 +186,7 @@
                                 data-zoom-src="assets/images/svg_grafoo/module2.svg">
                         </div>
                         <button class="linguetta-btn"
-                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View
+                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'block' ? 'none' : 'block';">View
                             Graph ✦</button>
                     </div>
 
@@ -205,12 +194,11 @@
                         <span class="ontology-module-label">The Symbolic Module</span>
                         <p class="info-section__text">
                             The Symbolic Module represents the analytical and interpretive layer of the ontology, where
-                            art history, literary theory, depth psychology, and anthropology converge. It provides two
+                            art history, literary theory, and anthropology converge. It provides two
                             interlocking frameworks for the symbolic analysis of creatures and their source-specific
                             Interpretations. First, the <code>:DurandImaginary</code> scheme applies Gilbert Durand's
                             anthropological structures of the imaginary to classify creatures according to the Regime
-                            (Diurnal or Nocturnal) and structural logic (Schizomorphic, Mystical, or Synthetic) that
-                            governs their symbolic imagery. Second, the archetype and narrative function layer - through
+                            and structural logic that governs their symbolic imagery. Second, the archetype and narrative function layer - through
                             <code>:Archetype</code>, <code>:NarrativeFunction</code>, <code>:embodiesArchetype</code>,
                             and <code>:hasNarrativeFunction</code> - distinguishes between the universal psychological
                             pattern a creature instantiates across all its manifestations and the specific contextual
@@ -226,7 +214,21 @@
                                 data-zoom-src="assets/images/svg_grafoo/module3.svg">
                         </div>
                         <button class="linguetta-btn"
-                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'none' ? 'block' : 'none';">View
+                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'block' ? 'none' : 'block';">View
+                            Graph ✦</button>
+                    </div>
+                    <div class="ontology-module">
+                        <span class="ontology-module-label">The Durand Scheme</span>
+                        <p class="info-section__text">
+                            The Durand Scheme provides the symbolic and anthropological framework through which creatures are interpreted within the ontology. Unlike the other modules, which are implemented primarily through OWL classes and properties, the Durand Scheme is modeled as a SKOS <code>:ConceptScheme</code>, reflecting its role as a structured vocabulary of symbolic categories rather than a formal taxonomy of entities. Durand’s theory is grounded in the idea that symbolic images emerge as cultural responses to the fundamental human experience of time, mortality, and change. Within this framework, biological traits are not interpreted merely as physical characteristics but as symbolic expressions. <br> At the heart of the scheme are <strong>two symbolic regimes</strong>. The <code>:DiurnalRegime</code> is associated with light, height, separation, and opposition, expressing the heroic confrontation with time and death through images of ascent, purification, and victory. The <code>:NocturnalRegime</code>, by contrast, is associated with darkness, descent, fusion, and cyclical renewal; rather than opposing time, it seeks reconciliation with it through images of enclosure, transformation, regeneration, and return. <br> In addition, the Durand Scheme defines three fundamental <strong>structures of the imaginary</strong>: <code>:SchizomorphicStructure</code>, <code>:MysticalStructure</code>, and <code>:SyntheticStructure</code>. These operate as an intermediate layer between biological traits and cultural meaning. They describe the archetypal logic through which physical and behavioural characteristics are organized into coherent symbolic systems. Together, these structures enable the ontology to move from the description of a creature’s morphology to the interpretation of its symbolic and cultural significance.
+                        </p>
+                        <div class="ontology-module-svg-box ontology-svg-wrapper">
+                            <img src="assets/images/svg_grafoo/durandScheme.svg" alt="symbolicModule" width="100%"
+                                height="auto" class="zoomable-image img-fluid border"
+                                data-zoom-src="assets/images/svg_grafoo/durandScheme.svg">
+                        </div>
+                        <button class="linguetta-btn"
+                            onclick="const box = this.parentElement.querySelector('.ontology-module-svg-box'); box.style.display = box.style.display === 'block' ? 'none' : 'block';">View
                             Graph ✦</button>
                     </div>
                 </div>

@@ -193,12 +193,15 @@ function endDrag() {
 }
 
 // Mouse wheel zoom
-document.getElementById('modalImage').addEventListener('wheel', function(e) {
-    e.preventDefault();
-    if (e.deltaY < 0) {
-        zoomIn();
-    } else {
-        zoomOut();
-    }
-});
+const modalImageEl = document.getElementById('modalImage');
+if (modalImageEl) {
+    modalImageEl.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+            zoomIn();
+        } else {
+            zoomOut();
+        }
+    });
+}
 // ----------------------------- //

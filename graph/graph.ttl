@@ -6,25 +6,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-
-beastiary: rdf:type owl:Ontology,
-                void:Dataset ;
-    dcterms:conformsTo <https://w3id.org/beast/ontology> ;
-    dcterms:created "2026-05-01"^^xsd:date ;
-    dcterms:creator "Maria Juliana Gamboa Nivia",
-        "Miriana Pinto",
-        "Sara Roggiani",
-        "Alice Spadavecchia" ;
-    dcterms:description "A dataset describing creatures, their interpretations and biological composition, the sources in which the creatures are depicted. The BEASTiary knowledge graph is aligned with the BEAST ontology."@en ;
-    owl:imports <https://w3id.org/beast/ontology> ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:publisher <https://github.com/hexWitches> ;
-    dcterms:title "The BEAST Graph"@en ;
-    vann:preferredNamespacePrefix "beastiary" ;
-    void:dataDump <https://w3id.org/beast/graph/graph.ttl> ;
-    void:vocabulary <https://w3id.org/beast/ontology> .
 
 beastiary:ability_extinct rdfs:label "Extinct"@en ;
     rdfs:comment "The condition of having died out entirely, with no living members of the kind remaining; the creature is known only through past attestation rather than present existence."@en .
@@ -37,17 +18,9 @@ beastiary:ability_self_renewal a beast:Ability ;
     beast:embodiesImaginarySymbol beast:CyclicalSymbol ;
     beast:isGovernedBy beast:NocturnalRegime .
 
-beastiary:ability_strength rdfs:label "Strength"@en ;
-    rdfs:comment "Exceptional physical power, allowing the creature to overpower prey or enemies through brute force."@en .
-
 beastiary:archetype_chritsmas_elf a beast:Archetype ;
     rdfs:label "Christmas Elf"@en ;
     beast:hasMeaning "Lives with Santa Claus at the North Pole and acts as his helper. Christmas elves are usually depicted as green- or red-clad, with large, pointy ears and wearing pointy hats."@en .
-
-beastiary:archetype_strenght a beast:Archetype ;
-    rdfs:label "Strenght"@en ;
-    beast:hasMeaning "Heroic physical power and might."@en ;
-    beast:relatedTo beastiary:archetype_protection .
 
 beastiary:etymology_amelic a beast:Etymology ;
     beast:hasMeaning "The term amelic comes from the Greek prefix a- (without) and mélos (limb), combined with the suffix -ic."@en ;
@@ -252,13 +225,17 @@ beastiary:ability_deadly_scream a beast:Ability ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:ability_healing_tears a beast:Ability ;
-    rdfs:comment "Healing turns wound into refuge and harm into shelter, aligning the intimacy symbol's movement from the fear of being swallowed to the comfort of being contained."@en ;
+    rdfs:label "Healing tears"@en ;
+    rdfs:comment "Healing turns wound into refuge and harm into shelter, aligning the intimacy symbol's movement from the fear of being swallowed to the comfort of being contained."@en,
+        "The unique medicinal property attributed to the secretions or lacrimal fluids of a creature, possessing the power to mend wounds, cure afflictions, or restore vitality to those they touch, often highlighting the creature's paradoxical nature as a source of both danger and salvation."@en ;
     beast:belongsToImaginaryStructure beast:MysticalStructure ;
     beast:embodiesImaginarySymbol beast:IntimacySymbol ;
     beast:isGovernedBy beast:NocturnalRegime .
 
 beastiary:ability_hypnotic_gaze a beast:Ability ;
-    rdfs:comment "The entrancing gaze draws its victim down into shadow, sleep, and loss of self, enacting the nyctomorphic engulfment by darkness."@en ;
+    rdfs:label "Hypnotic_gaze"@en ;
+    rdfs:comment "The capacity to exert control over the will, perceptions, or motor functions of another through direct visual contact; it induces a state of trance, paralysis, or psychological subjugation that renders the subject vulnerable to the creature's intent."@en,
+        "The entrancing gaze draws its victim down into shadow, sleep, and loss of self, enacting the nyctomorphic engulfment by darkness."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:NyctomorphicSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
@@ -298,7 +275,9 @@ beastiary:ability_self_destructive a beast:Ability ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:ability_shapeshifting a beast:Ability ;
-    rdfs:comment "Shapeshifting enacts the inversive logic of transformation and doubling, by which a single being turns into its other."@en ;
+    rdfs:label "Shape shifting"@en ;
+    rdfs:comment "Shapeshifting enacts the inversive logic of transformation and doubling, by which a single being turns into its other."@en,
+        "he inherent biological or magical fluidity allowing a creature to alter its physical appearance, form, or species identity, effectively blurring the lines of its original manifestation to deceive, escape, or adapt to different environments."@en ;
     beast:belongsToImaginaryStructure beast:MysticalStructure ;
     beast:embodiesImaginarySymbol beast:InversionSymbol ;
     beast:isGovernedBy beast:NocturnalRegime .
@@ -404,6 +383,10 @@ beastiary:archetype_prima_materia a beast:Archetype ;
     rdfs:label "Prima Materia"@en ;
     beast:hasMeaning "The role of shielding and safeguarding from harm."@en ;
     beast:relatedTo beastiary:archetype_cosmic .
+
+beastiary:archetype_protection a beast:Archetype ;
+    rdfs:label "Protection"@en ;
+    beast:hasMeaning "The role of shielding and safeguarding from harm."@en .
 
 beastiary:archetype_resilience a beast:Archetype ;
     rdfs:label "Resilience"@en ;
@@ -1421,6 +1404,11 @@ beastiary:etymology_horse a beast:Etymology ;
     beast:hasRootTerm "Harss"@gem ;
     beast:isEtymologyOf beastiary:creature_horse .
 
+beastiary:etymology_human a beast:Etymology ;
+    beast:hasMeaning "The word derives from humain, humaigne, 'human', from Old French humain, umain (adj.) 'of or belonging to man' (12c.), from Latin humanus 'of man, human', also 'humane, philanthropic, kind, gentle, polite; learned, refined, civilized.'"@en ;
+    beast:hasRootTerm "Humains"@fro ;
+    beast:isEtymologyOf beastiary:creature_human .
+
 beastiary:etymology_lion a beast:Etymology ;
     beast:hasMeaning "The word originated from the latin word 'leo' which means leopard. The word traces back to the ancient greek 'leon' which also meant leopard and has evolved over time to describe the lion, animal belonging to the family of felines."@en ;
     beast:hasRootTerm "Leo"@grc,
@@ -1520,13 +1508,16 @@ beastiary:etymology_unicorn a beast:Etymology ;
     beast:isEtymologyOf beastiary:creature_unicorn .
 
 beastiary:function_instigator a beast:NarrativeFunction ;
+    rdfs:label "Instigator"@en ;
     beast:hasMeaning "The creature's own action precipitates a conflict or catastrophe, setting events in motion through its own transgression."@en ;
     beast:relatedTo beastiary:function_antagonist .
 
 beastiary:function_punisher a beast:NarrativeFunction ;
+    rdfs:label "Punisher"@en ;
     beast:hasMeaning "The creature enacts punishment or retribution, serving as the instrument of justice or contrapasso."@en .
 
 beastiary:function_transformation a beast:NarrativeFunction ;
+    rdfs:label "Transformation"@en ;
     beast:hasMeaning "The creature embodies or undergoes metamorphosis, the change of form that is itself the narrative event."@en .
 
 beastiary:habitat_africa a beast:GeographicPlace ;
@@ -1893,7 +1884,6 @@ beastiary:int_sphinx_egypt a beast:Interpretation ;
     beast:appearsIn beastiary:source_great_sphinx ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_protection,
-        beastiary:archetype_strength,
         beastiary:archetype_wisdom ;
     beast:embodiesImaginarySymbol beast:SpectacularSymbol ;
     beast:isGovernedBy beast:DiurnalRegime ;
@@ -2815,10 +2805,6 @@ beastiary:archetype_magic_folk a beast:Archetype ;
     rdfs:label "Magic Folk"@en ;
     beast:hasMeaning "The race of magical beings standing apart from ordinary humanity."@en .
 
-beastiary:archetype_protection a beast:Archetype ;
-    rdfs:label "Protection"@en ;
-    beast:hasMeaning "The role of shielding and safeguarding from harm."@en .
-
 beastiary:archetype_victim a beast:Archetype ;
     rdfs:label "Victim"@en ;
     beast:hasMeaning "The wronged or suffering figure, harmed and made vulnerable by others."@en ;
@@ -2917,9 +2903,11 @@ beastiary:diet_none rdfs:label "Starvation"@en ;
     rdfs:comment "A creature physiologically incapable of sustaining itself, unable to digest any food due to its contradictory hybrid nature."@en .
 
 beastiary:function_apotropaic a beast:NarrativeFunction ;
+    rdfs:label "Apotropaic"@en ;
     beast:hasMeaning "The creature, or its image, serves to ward off evil and protect against harm."@en .
 
 beastiary:function_weapon a beast:NarrativeFunction ;
+    rdfs:label "Weapon"@en ;
     beast:hasMeaning "The creature is deployed as an instrument of war or destruction, a tool of power wielded against others."@en ;
     beast:relatedTo beastiary:function_agent .
 
@@ -4385,10 +4373,12 @@ beastiary:diet_man_eater rdfs:label "Man eater"@en ;
     beast:dietCategory beast:Carnivorous .
 
 beastiary:function_agent a beast:NarrativeFunction ;
+    rdfs:label "Agent"@en ;
     beast:hasMeaning "The creature acts as the instrument of another's will, carrying out a god's or character's purpose."@en ;
     beast:relatedTo beastiary:function_weapon .
 
 beastiary:function_protector a beast:NarrativeFunction ;
+    rdfs:label "Protector"@en ;
     beast:hasMeaning "The creature shields and safeguards a person or place from harm, actively defending its charge against threats"@en .
 
 beastiary:habitat_mount_phicium a beast:RealWorldPlace ;
@@ -4686,7 +4676,7 @@ beastiary:archetype_purity a beast:Archetype ;
 
 beastiary:creature_ogre a beast:ImaginaryBeing ;
     rdfs:label "Ogre"@en ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beastiary:diet_man_eater ;
     beast:hasDistinctiveTrait "Immense body"^^xsd:string ;
@@ -4777,7 +4767,9 @@ beastiary:ability_poisonous a beast:Ability ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:ability_posing_riddles a beast:Ability ;
-    rdfs:comment "The riddle performs an intellectual diairesis, forcing the separation of truth from falsehood and embodying the diaretic drive toward analysis and absolute distinction."@en ;
+    rdfs:label "Posing Riddles"@en ;
+    rdfs:comment "The intellectual capacity to challenge others through cryptic questions or complex linguistic puzzles; it functions as a test of wisdom or a mechanism for defense, requiring the interlocutor to provide a specific solution to avoid misfortune."@en,
+        "The riddle performs an intellectual diairesis, forcing the separation of truth from falsehood and embodying the diaretic drive toward analysis and absolute distinction."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:DiareticSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
@@ -4876,6 +4868,7 @@ beastiary:creature_unicorn a beast:HybridCreature ;
     beast:hasPart beastiary:part_horn .
 
 beastiary:function_sacred_symbol a beast:NarrativeFunction ;
+    rdfs:label "Sacred Symbol"@en ;
     beast:hasMeaning "The creature functions as a venerated emblem or sign of the sacred, divine, or transcendent."@en .
 
 beastiary:habitat_mountains a beast:RealWorldPlace ;
@@ -4951,7 +4944,7 @@ beastiary:creature_bull a beast:Creature,
     rdfs:comment "The bull embodies the teriomorphic terror of untamed animality. The image of the “roaring bull” evokes deep-rooted human anxiety, alarm and the instinct to flee from violent, animated forces of nature."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasEtymology beastiary:etymology_bull ;
     beast:hasHabitat beast:Terrestrial ;
@@ -4980,7 +4973,7 @@ beastiary:creature_chimera a beast:Creature,
 
 beastiary:creature_hermaphrodite a beast:RealAnimal ;
     rdfs:label "Hermaphrodite"@en ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasAlternativeName "Androgynous"^^xsd:string ;
     beast:hasDiet beast:Elemental ;
     beast:hasEtymology beastiary:etymology_hermaphrodite ;
@@ -5051,6 +5044,7 @@ beastiary:creature_troll a beast:Creature,
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:function_exemplum a beast:NarrativeFunction ;
+    rdfs:label "Exemplum"@en ;
     beast:hasMeaning "The creature functions as a moral or didactic example, illustrating a lesson or spiritual truth."@en .
 
 beastiary:habitat_hell a beast:ImaginaryPlace ;
@@ -5078,8 +5072,10 @@ beastiary:source_unendliche_geschichte a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_dragon_ende,
         beastiary:int_sphinx_ende .
 
-beastiary:ability_strenght a beast:Ability ;
-    rdfs:comment "Heroic, virile strenght belongs to the ascensional repertoire of warrior and royal archetypes, it indicates the power to overcome the forces of time."@en ;
+beastiary:ability_strength a beast:Ability ;
+    rdfs:label "Strength"@en ;
+    rdfs:comment "Exceptional physical power, allowing the creature to overpower prey or enemies through brute force."@en,
+        "Heroic, virile strength belongs to the ascensional repertoire of warrior and royal archetypes, it indicates the power to overcome the forces of time."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
@@ -5150,7 +5146,7 @@ beastiary:creature_cerberus a beast:Creature,
     rdfs:comment "Cerberus embodies the teriomorphic symbol of devouring jaws and feral chaos, guarding the threshold of the underworld against the passage of the living and the escape of the dead."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasAlternativeName "Kérberos"^^xsd:string ;
     beast:hasBodyOf beastiary:creature_dog ;
     beast:hasDiet beast:Carnivorous ;
@@ -5171,7 +5167,7 @@ beastiary:creature_giant a beast:Creature,
     rdfs:comment "Giants, in different interpretation, are symbols of the primordial chaos that needs to be reordered in order to bring balance to the universe. They stick to the nyctomorphic symbolism by representing the dark times of humanity. While in Attack on Titan this caos manifest as a terrifying voracitiy, where giands devour human bodies, in classical interpretation and art it is represented by the trauma of the fall and cosmic cataclysm."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:NyctomorphicSymbol ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beast:Omnivorous ;
     beast:hasEtymology beastiary:etymology_giant ;
@@ -5211,7 +5207,7 @@ beastiary:creature_minotaur a beast:Creature,
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:CatamorphicSymbol,
         beast:TeriomorphicSymbol ;
-    beast:hasAbility beastiary:ability_strenght ;
+    beast:hasAbility beastiary:ability_strength ;
     beast:hasAlternativeName "Asterion"^^xsd:string ;
     beast:hasBodyOf beastiary:creature_human ;
     beast:hasDiet beastiary:diet_man_eater ;
@@ -5236,6 +5232,7 @@ beastiary:creature_siren a beast:HybridCreature ;
     beast:hasUpperBodyOf beastiary:creature_human .
 
 beastiary:function_obstacle a beast:NarrativeFunction ;
+    rdfs:label "Obastacle"@en ;
     beast:hasMeaning "The creature blocks the protagonist's progress as a barrier to be passed, without necessarily acting as a personal enemy."@en ;
     beast:relatedTo beastiary:function_antagonist,
         beastiary:function_guardian .
@@ -5262,10 +5259,12 @@ beastiary:creature_eagle a beast:Creature,
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:function_antagonist a beast:NarrativeFunction ;
+    rdfs:label "Antagonist"@en ;
     beast:hasMeaning "The creature opposes the protagonist as an active adversary to be confronted or overcome."@en ;
     beast:relatedTo beastiary:function_obstacle .
 
 beastiary:function_guide a beast:NarrativeFunction ;
+    rdfs:label "Guide"@en ;
     beast:hasMeaning "The creature leads, accompanies, or directs the protagonist, offering aid or direction on their path."@en .
 
 beastiary:habitat_forests a beast:RealWorldPlace ;
@@ -5287,6 +5286,7 @@ beastiary:archetype_violence a beast:Archetype ;
     beast:hasMeaning "Brute destructive force and aggression."@en .
 
 beastiary:function_guardian a beast:NarrativeFunction ;
+    rdfs:label "Guardian"@en ;
     beast:hasMeaning "The creature protects a place, treasure, or person, guarding a threshold or boundary against intruders."@en ;
     beast:relatedTo beastiary:function_apotropaic,
         beastiary:function_obstacle .
@@ -5387,7 +5387,7 @@ beastiary:creature_sphinx a beast:HybridCreature ;
 beastiary:creature_lion a beast:RealAnimal ;
     rdfs:label "Lion"@en ;
     beast:hasAbility beastiary:ability_courage,
-        beastiary:ability_strenght ;
+        beastiary:ability_strength ;
     beast:hasDiet beast:Carnivorous ;
     beast:hasEtymology beastiary:etymology_lion ;
     beast:hasHabitat beast:Terrestrial .
@@ -5532,6 +5532,13 @@ beastiary:source_monstres_prodiges a beast:Bestiary ;
         beastiary:int_mostro_paré_4,
         beastiary:int_mostro_paré_5 ;
     beast:hasBestiaryType beast:ScientificTaxonomy .
+
+beastiary:creature_human a beast:RealAnimal ;
+    rdfs:label "Human"@en ;
+    beast:hasAlternativeName "Homo sapiens"^^xsd:string ;
+    beast:hasDiet beast:Omnivorous ;
+    beast:hasEtymology beastiary:etymology_human ;
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:source_ovidius_metamorphoses a beast:LiteraryWork ;
     dcterms:created "8"^^xsd:gYear ;

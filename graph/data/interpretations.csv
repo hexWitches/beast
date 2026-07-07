@@ -152,7 +152,7 @@ int_snake_dante,creature_snake,source_dante_inferno,,,,function_punisher,,,,,,ha
 int_snake_ovid,creature_snake,source_ovidius_metamorphoses,Cadmus and Harmonia,,archetype_metamorphosis,function_transformation,,,,,,,,citation_ovid_met_9
 int_snake_ovid_2,creature_snake,source_ovidius_metamorphoses,,,archetype_chaos,function_antagonist,,,,,,,,citation_ovid_met_10
 int_sphinx_apollodoro,creature_sphinx,source_mito_edipo,,,archetype_divine_punishment;archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_mount_phicium,genesis_sphinx_apollodoro,citation_apollodorus_1
-int_sphinx_egypt,creature_sphinx,source_great_sphinx,,,archetype_strength;archetype_wisdom;archetype_protection,,,,,,,habitat_desert,,
+int_sphinx_egypt,creature_sphinx,source_great_sphinx,,,archetype_wisdom;archetype_protection,,,,,,,habitat_desert,,
 int_sphinx_ende,creature_sphinx,source_unendliche_geschichte,,,,function_guardian,part_wings,,ability_posing_riddles;ability_lethal_gaze,,,habitat_great_riddle_gate;habitat_fantastica,,citation_ende_1
 int_sphinx_flaubert,creature_sphinx,source_flaubert_tentation,,,archetype_wisdom,,,,ability_fire_breathing,,,habitat_desert,,citation_flaubert_1
 int_sphinx_ingres,creature_sphinx,source_oedipus_ingres,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,,
