@@ -135,19 +135,20 @@ def main():
                     cell_value = row[col_name]
                     if not cell_value:
                         continue
+
                     # Strip surrounding double quotes if present
                     cell_value = cell_value.strip()
                     if cell_value.startswith('"') and cell_value.endswith('"') and len(cell_value) >= 2:
                         cell_value = cell_value[1:-1]
                         
-                    if prop_config.get("predicate") in ["beast:hasPassageText", "rdfs:comment", "dcterms:title", "dcterms:language", "beast:hasMeaning"]:
+                    predicate_uri = resolve_predicate(prop_config["predicate"])
+                    prop_type = prop_config.get("type", "Literal")
+
+                    if prop_type == "Literal" and prop_config.get("predicate") != "dcterms:language":
                         values = [cell_value.strip()]
                     else:
                         cell_value = cell_value.replace(";", ",")
                         values = [v.strip() for v in cell_value.split(",") if v.strip()]
-
-                    predicate_uri = resolve_predicate(prop_config["predicate"])
-                    prop_type = prop_config.get("type", "Literal")
 
                     for val in values:
                         if prop_type == "URI":

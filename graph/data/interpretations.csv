@@ -40,8 +40,8 @@ int_dragon_chen,creature_dragon,source_nine_dragons_chen,,,archetype_divine_powe
 int_dragon_doré,creature_dragon,source_destruction_doré,,,archetype_chaos,function_antagonist,,part_wings;part_legs,,,,Aquatic,,
 int_dragon_ende,creature_dragon,source_unendliche_geschichte,Falkor,,,function_guide;function_protector,part_lower_limbs;part_lion_head,part_wings,ability_sing;ability_swim_in_air,ability_fly,,habitat_fantastica;Aerial,,citation_ende_2
 int_dragon_martin,creature_dragon,source_got_2,"Drogon, Rhaegal, Viserion","""Three individually named dragons, each with its own distinct colouring and temperament.""",archetype_power,function_weapon,,part_legs,ability_rebirth_from_fire,,,,,citation_martin_1
-int_dragon_miyazaki,creature_dragon,source_spirited_away,Haku,,archetype_spirit,function_protector;function_guide,part_barbels;part_mane,part_wings,ability_shapeshifting,fire_breathing,,habitat_river,,
-int_dragon_plinio,creature_dragon,source_naturalis_historia,,"""They fight with elephant; the battle ends with both the creatures dying, since the dragon kills the elephant, and the elephant falling dead crushes over the dragon, killing it.""",,,,part_wings;part_crest,ability_fight_elephant,fire_breathing,diet_elephant_blood,,,citation_plinio_4
+int_dragon_miyazaki,creature_dragon,source_spirited_away,Haku,,archetype_spirit,function_protector;function_guide,part_barbels;part_mane,part_wings,ability_shapeshifting,ability_fire_breathing,,habitat_river,,
+int_dragon_plinio,creature_dragon,source_naturalis_historia,,"""They fight with elephant; the battle ends with both the creatures dying, since the dragon kills the elephant, and the elephant falling dead crushes over the dragon, killing it.""",,,,part_wings;part_crest,ability_fight_elephant,ability_fire_breathing,diet_elephant_blood,,,citation_plinio_4
 int_dragon_rowling_fantastic,creature_dragon,source_fantastic_beasts,,"""A classified magical species whose hide, blood, heart, liver, and horn are prized for their magical properties. The species is said to comprise ten distinct breeds, treated in the naturalist, taxonomic manner of a wizarding textbook.""",,,part_horn,,ability_magical_powers;ability_venomous,,,,,citation_rowling_6
 int_dragon_rowling_harry,creature_dragon,source_harry_potter_book_4,,,,,,,,,,,,citation_rowling_7
 int_dragon_tolkien,creature_dragon,source_the_hobbit,Smaug,,,function_guardian;function_antagonist,part_underbelly_gems,,ability_speech;ability_hypnotic_gaze,,,habitat_subterranean,,citation_tolkien_1
@@ -66,7 +66,7 @@ int_giant_ovidius,creature_giant,source_ovidius_metamorphoses,,,archetype_chaos,
 int_giant_teogonia,creature_giant,source_teogonia,,,,,,,,,,,genesis_giant_teogonia,citation_esiodo_1
 int_goat_cantimpre,creature_goat,source_liber_de_natura_rerum,,,archetype_wisdom,,,,,,,,,citation_cantimpre_4
 int_goat_isidore,creature_goat,source_etymologies,,,,,,,,,,,,citation_isidore_2
-int_goat_plinio,creature_goat,source_naturalis_historia,,,archetype_healing;archetype_wisdom,,,,,,diet_crabs_eater,,,citation_plinio_6
+int_goat_plinio,creature_goat,source_naturalis_historia,,,archetype_wisdom,,,,,,diet_crabs_eater,,,citation_plinio_6
 int_hermaphrodite_aldrovandi,creature_hermaphrodite,source_monstrorum_historia_aldrovandi,,,,,part_female_genitals;part_breasts,,,,,,,
 int_hermaphrodite_ovidius,creature_hermaphrodite,source_ovidius_metamorphoses,Hermaphrodite,,archetype_emasculation,,,part_masculinity,,,,,genesis_hermaphrodite_ovidius,citation_ovid_met_5
 int_hermaphrodite_plato,creature_hermaphrodite,source_symposium,,,archetype_androgynous,,part_four_hands;part_four_feet;part_two_faces;part_four_ears;part_two_genitals,,,,,,,citation_plato_1
@@ -85,8 +85,8 @@ int_lion_maier,creature_lion,source_atalanta_fugiens,,,archetype_prima_materia;a
 int_lion_rubens,creature_lion,source_hercules_nemean_lion,,,,function_antagonist,,,,,,,,
 int_mandrake_aldrovandi,creature_mandrake,source_monstrorum_historia_aldrovandi,,,archetype_natural_marvel,,,,,,,,,citation_aldrovandi_3
 int_mandrake_herbal,creature_mandrake,source_tacuinum_sanitatis,,,,,part_leaves;part_fruits,,,,,habitat_subterranean,,
-int_mandrake_machiavelli,creature_mandrake,source_mandragola,,"""The mandrake appears not as a creature but purely as a botanical ingredient, used to prepare a fertility potion.""",archetype_fertility,,,,ability_fertility,deadly_scream,,,,citation_machiavelli_1
-int_mandrake_rowling,creature_mandrake,source_harry_potter_movie_2,,,archetype_healing,,,,,,,,,
+int_mandrake_machiavelli,creature_mandrake,source_mandragola,,"""The mandrake appears not as a creature but purely as a botanical ingredient, used to prepare a fertility potion.""",archetype_fertility,,,,ability_fertility,ability_deadly_scream,,,,citation_machiavelli_1
+int_mandrake_rowling,creature_mandrake,source_harry_potter_movie_2,,,,,,,ability_healing,,,,,
 int_mandrake_shakespeare,creature_mandrake,source_romeo_and_juliet,,,,,,,ability_soporific,,,,,citation_shakespeare_2
 int_manticore_flaubert,creature_manticore,source_flaubert_tentation,,,archetype_seduction,,,,ability_plague_spreading;ability_speech,,,habitat_desert,,citation_flaubert_2
 int_manticore_plinio,creature_manticore,source_naturalis_historia,,,,,,,ability_speed;ability_trumpet_voice,,,,,citation_plinio_5
@@ -153,7 +153,7 @@ int_snake_ovid,creature_snake,source_ovidius_metamorphoses,Cadmus and Harmonia,,
 int_snake_ovid_2,creature_snake,source_ovidius_metamorphoses,,,archetype_chaos,function_antagonist,,,,,,,,citation_ovid_met_10
 int_sphinx_apollodoro,creature_sphinx,source_mito_edipo,,,archetype_divine_punishment;archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_mount_phicium,genesis_sphinx_apollodoro,citation_apollodorus_1
 int_sphinx_egypt,creature_sphinx,source_great_sphinx,,,archetype_wisdom;archetype_protection,,,,,,,habitat_desert,,
-int_sphinx_ende,creature_sphinx,source_unendliche_geschichte,,,,function_guardian,part_wings,,ability_posing_riddles;ability_lethal_gaze,,,habitat_great_riddle_gate;habitat_fantastica,,citation_ende_1
+int_sphinx_ende,creature_sphinx,source_unendliche_geschichte,,,,function_guardian,part_wings,,ability_posing_riddles;ability_killing_gaze,,,habitat_great_riddle_gate;habitat_fantastica,,citation_ende_1
 int_sphinx_flaubert,creature_sphinx,source_flaubert_tentation,,,archetype_wisdom,,,,ability_fire_breathing,,,habitat_desert,,citation_flaubert_1
 int_sphinx_ingres,creature_sphinx,source_oedipus_ingres,,,archetype_seduction,,part_wings,,,,,habitat_mount_phicium,,
 int_sphinx_maier,creature_sphinx,source_atalanta_fugiens,,,archetype_enigma,,part_wings,,ability_posing_riddles,,,habitat_desert,,citation_maier_1
@@ -163,7 +163,7 @@ int_sphinx_rowling_fantastic,creature_sphinx,source_fantastic_beasts,,,,function
 int_sphinx_rowling_harry,creature_sphinx,source_harry_potter_book_4,,,,function_guardian,part_wings,,ability_posing_riddles,,,,,citation_rowling_1
 int_troll_hunter,creature_troll,source_troll_hunter,,,archetype_raw_instinct,,part_multiple_heads,,ability_sunlight_petrification,,Lithophagous;Carnivorous,,,
 int_troll_ibsen,creature_troll,source_peer_gynt,,,archetype_raw_instinct,,,,ability_manipulation,,,,,citation_ibsen_1
-int_troll_norske_folkeeventyr,creature_troll,source_norske_folkeeventyr,,,archetype_raw_instinct,,part_big_eyes,,,intellect,,,,citation_norske_folkeeventyr_1
+int_troll_norske_folkeeventyr,creature_troll,source_norske_folkeeventyr,,,archetype_raw_instinct,,part_big_eyes,,,ability_intellect,,,,citation_norske_folkeeventyr_1
 int_troll_prose_edda,creature_troll,source_prose_edda,,,archetype_guardian_hell;archetype_parasite,,,,,,,,,citation_sturluson_1
 int_troll_tolkien,creature_troll,source_lotr,,,archetype_evil,,,,ability_speak_black_speech,,,,,citation_tolkien_2
 int_unicorn_aberdeen,creature_unicorn,source_aberdeen_bestiary,,,archetype_purity,,,,,,,,,citation_aberdeen_5

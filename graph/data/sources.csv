@@ -45,7 +45,7 @@ source_hercules_nemean_lion,VisualArtwork,,Hercules Strangling the Nemean Lion,p
 source_hermafrodite_statue,VisualArtwork,,Hermaphroditus,person_polycles ,-199/-100,2nd century BCE,,source_ovidius_metamorphoses,source_ovidius_metamorphoses,int_hermaphrodite_statue,https://www.uffizi.it/en/artworks/hermaphroditus
 source_history_of_four_footed_beasts,Bestiary,ScientificTaxonomy,The History of Four-Footed Beasts,person_topsell,1658,1658,en,,,int_manticore_topsell,
 source_iliade_omero,LiteraryWork,,Iliade,person_omero,-799/-700,8th century BCE,grc,,,int_chimera_omero,
-source_indika,LiteraryWork,,Indika,person_ctesias,-499/-400,5th century BCE,gr,sourc_oral_tales,,int_unicorn_ctesias,
+source_indika,LiteraryWork,,Indika,person_ctesias,-499/-400,5th century BCE,gr,source_oral_tales,,int_unicorn_ctesias,
 source_liber_de_natura_rerum,Bestiary,ScientificTaxonomy,Liber de natura reurm ,person_cantimpre,1240,1240,la,,,int_bull_cantimpre;int_goat_cantimpre;int_pegaso_cantimpre;int_scorpion_cantimpre;int_unicorn_cantimpre,
 source_liber_monstrorum,LiteraryWork,MoralAllegory,Liber monstrorum de diversis generibus,,701/800,8th century,la,source_odissea_omero,,int_siren_anonymous,
 source_lotr,LiteraryWork,,The Lord of the Rings,person_tolkien ,1954,1954,en,,,int_troll_tolkien;int_elf_tolkien,
@@ -73,7 +73,7 @@ source_orlando_furioso,LiteraryWork,,Orlando Furioso,person_ariosto,1516,1516,it
 source_orlando_furioso_doré,VisualArtwork,,Ruggiero rescuing Angelica,person_doré,1880/1881,1880 – 1881,,source_orlando_furioso,,int_hippogriff_doré,https://upload.wikimedia.org/wikipedia/commons/f/f3/Orlando_Furioso_20.jpg
 source_ovidius_metamorphoses,LiteraryWork,,Metamorphoses,person_ovid,8,8,,,,int_bull_ovid;int_centaur_ovid;int_eagle_ovid;int_giant_ovidius;int_hermaphrodite_ovidius;int_medusa_ovid;int_minotaur_ovidius;int_phoenix_ovidius;int_siren_ovidius;int_snake_ovid;int_snake_ovid_2,
 source_peer_gynt,LiteraryWork,,Peer Gynt,person_ibsen,1867,1867,da,source_norske_folkeeventyr,,int_troll_ibsen,
-source_percival,LiteraryWork,,"Perceval, li contes del gaal ",person_chretien,1101/1200,12th century,fr,source_history_of_kings-of britain,,int_ogre_chretien,
+source_percival,LiteraryWork,,"Perceval, li contes del gaal ",person_chretien,1101/1200,12th century,fr,source_history_of_kings_of_britain,,int_ogre_chretien,
 source_peter_pan ,CinematicWork,,Peter Pan ,person_jackson,1953,1953,en ,,,int_fairy_disney,https://www.imdb.com/it/title/tt0046183/?ref_=ext_shr_lnk
 source_pharsalia,LiteraryWork,,Pharsalia (Bellum civile),person_lucano,61/65,61 – 65,la,,,int_basilisk_lucano,
 source_phoenix_and_turtle_shakespeare,LiteraryWork,,The Phoenix and the Turtle,person_shakespeare,1601,1601,en,,,int_phoenix_shakespeare,
