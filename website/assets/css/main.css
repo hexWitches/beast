@@ -391,6 +391,36 @@ section[id^="rq"] .info-section__inner {
     font-size: 0.9rem;
     line-height: 1.7;
     overflow-x: auto;
+    overflow-y: auto;
+    max-height: 420px;
+}
+
+.sparql-code-block code::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.sparql-code-block code::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin: 4px;
+}
+
+.sparql-code-block code::-webkit-scrollbar-thumb {
+    background: rgba(207, 181, 59, 0.5);
+    border-radius: 3px;
+}
+
+.sparql-code-block code::-webkit-scrollbar-thumb:hover {
+    background: rgba(207, 181, 59, 0.8);
+}
+
+.sparql-code-block code::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.table-responsive::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .sparql-code-block .keyword {
@@ -400,6 +430,26 @@ section[id^="rq"] .info-section__inner {
 
 .sparql-code-block .variable {
     color: #8fd9ff;
+}
+
+/* ── Research Question callout box ── */
+.rq-question {
+    font-family: var(--text-font);
+    font-size: 0.88rem;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.6;
+    color: var(--egg-shell);
+    background: rgba(207, 181, 59, 0.07);
+    border-left: 3px solid var(--old-gold);
+    border-radius: 0 6px 6px 0;
+    padding: 0.55rem 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Nudge the query+results column slightly right in RQ sections */
+section[id^="rq"] .row > div:last-child {
+    padding-left: 2.5rem;
 }
 
 /* Ontology module blocks - styled to match the explore page etymology block */
@@ -2082,21 +2132,23 @@ footer p, footer li {
 }
 
 .table-responsive::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
 }
 
 .table-responsive::-webkit-scrollbar-track {
-    background: rgba(21, 24, 9, 0.7);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin: 4px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-    background: var(--old-gold);
-    border-radius: 4px;
+    background: rgba(207, 181, 59, 0.5);
+    border-radius: 3px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb:hover {
-    background: #e0c850;
+    background: rgba(207, 181, 59, 0.8);
 }
 
 .rq-table {

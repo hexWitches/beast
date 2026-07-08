@@ -60,7 +60,10 @@
             <div class="explore-hero-inner">
                 <h1 class="explore-title">Knowledge Extraction</h1>
                 <p class="explore-subtitle">
-                    Query the BEAST knowledge graph to extract knowledge and uncover the hidden connections of creatures across different sources and cultures. Interpretations, divergences and symbolic mapping become queryable patterns, letting us move from describing individual creatures to observing tendencies across the whole tradition.
+                    Query the BEAST knowledge graph to extract knowledge and uncover the hidden connections of creatures
+                    across different sources and cultures. Interpretations, divergences and symbolic mapping become
+                    queryable patterns, letting us move from describing individual creatures to observing tendencies
+                    across the whole tradition.
                 </p>
             </div>
         </section>
@@ -70,7 +73,10 @@
             <div class="info-section__inner" style="display: block;">
                 <h2 class="info-section__title">SPARQL Endpoint</h2>
                 <p class="info-section__text mt-4">
-                    The knowledge graph of the BEAST project is hosted on <a href="https://triplydb.com/sararoggi/The-BEAST-Graph/" target="_blank">TriplyDB</a>, providing an open SPARQL endpoint for executing complex queries and extracting meaningful insights from our interconnected data.
+                    The knowledge graph of the BEAST project is hosted on <a
+                        href="https://triplydb.com/sararoggi/The-BEAST-Graph/" target="_blank">TriplyDB</a>, providing
+                    an open SPARQL endpoint for executing complex queries and extracting meaningful insights from our
+                    interconnected data.
                 </p>
                 <div class="mt-5" id="yasgui"></div>
                 <div class="mt-4 text-center">
@@ -87,35 +93,126 @@
             <div class="info-section__inner" style="display: block;">
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Divergence of Features across Interpretations</h3>
+                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Divergence of Features</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance for the project's analysis of mythological creatures and their representations across sources.]
+                            This question explores whether reinterpretation tends to reshape a creature’s anatomy, its abilities, its environment and sustenance, or its symbolic meaning. By measuring the degree to which each category of features varies across different interpretations of the same creature, the graph reveals <strong>where the process of reinvention most frequently occurs</strong>.
+                        </p>
+                        <p class="info-section__text mt-3">
+                            The results show that <strong>symbolic meaning</strong> is the most volatile dimension of reinterpretation. Assigning a new archetype occurs more frequently than any individual anatomical or ability-based modification, and when considered alongside shifts in Durand’s symbolic categories, symbolic transformations clearly outpace changes to both physical form and functional capacities. Where anatomical and functional traits do change, the pattern is predominantly <strong>additive</strong>: reinterpretations are far more likely to introduce new body parts and powers than to remove existing ones. This suggests that creatures tend to accumulate complexity over time, with successive interpretations layering new characteristics onto established forms rather than simplifying them. In contrast, diet emerges as the most stable and conserved trait, while habitat shows a moderate degree of variation.
+                        </p>
+                        <p class="info-section__text mt-3">
+                            These findings indicate that the reinterpretation of creatures is driven by shifts in their cultural and symbolic significance. While physical modifications contribute to the process of reinvention, they often serve to reinforce or express new meanings rather than replace the creature’s core identity. The predominance of additive change further suggests that reinterpretation operates as a <strong>cumulative process</strong>, in which existing traditions are expanded rather than discarded. Overall, the results highlight the central role of symbolism in the evolution of beings, demonstrating that what changes most across interpretations is  <strong>not what creatures are, but what they represent</strong>.
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">Which category of feature diverges most across interpretations — i.e., when a creature is reinterpreted, is it most often its anatomy, abilities, habitat, diet, or symbolic meaning that changes?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">Which category of feature diverges most across interpretations — i.e., when a creature is reinterpreted, is it most often its anatomy, abilities, habitat, diet, or symbolic meaning that changes?</div>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">SELECT</span> <span class="variable">?category</span>
+       (<span class="keyword">SUM</span>(<span class="variable">?occurrenceCount</span>) <span class="keyword">AS</span> <span class="variable">?totOccurrences</span>)
+       (<span class="keyword">SUM</span>(<span class="keyword">IF</span>(<span class="variable">?shiftType</span> = "Removed", 0, <span class="variable">?uniqueDivergenceCount</span>)) <span class="keyword">AS</span> <span class="variable">?addedFeature</span>)
+       (<span class="keyword">SUM</span>(<span class="keyword">IF</span>(<span class="variable">?shiftType</span> = "Removed", <span class="variable">?uniqueDivergenceCount</span>, 0)) <span class="keyword">AS</span> <span class="variable">?removedFeature</span>)
+       (<span class="keyword">SUM</span>(<span class="variable">?uniqueDivergenceCount</span>) <span class="keyword">AS</span> <span class="variable">?totalDivergences</span>)
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
-}</code>
+  <span class="keyword">SELECT</span> <span class="variable">?category</span> <span class="variable">?shiftType</span>
+         (<span class="keyword">COUNT</span>(<span class="variable">?uniqueCreatureFeature</span>) <span class="keyword">AS</span> <span class="variable">?occurrenceCount</span>)
+         (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?uniqueCreatureFeature</span>) <span class="keyword">AS</span> <span class="variable">?uniqueDivergenceCount</span>)
+  <span class="keyword">WHERE</span> {
+    <span class="variable">?interp</span> a beast:Interpretation ;
+            beast:ofCreature <span class="variable">?creature</span> .
+    {
+      { <span class="variable">?interp</span> beast:additionalPart <span class="variable">?feature</span> . <span class="keyword">BIND</span>("Anatomy" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Added" <span class="keyword">AS</span> <span class="variable">?shiftType</span>) }
+      <span class="keyword">UNION</span>
+      { <span class="variable">?interp</span> beast:removedPart <span class="variable">?feature</span> . <span class="keyword">BIND</span>("Anatomy" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Removed" <span class="keyword">AS</span> <span class="variable">?shiftType</span>) }
+    }
+    <span class="keyword">UNION</span>
+    {
+      { <span class="variable">?interp</span> beast:additionalAbility <span class="variable">?feature</span> . <span class="keyword">BIND</span>("Abilities" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Added" <span class="keyword">AS</span> <span class="variable">?shiftType</span>) }
+      <span class="keyword">UNION</span>
+      { <span class="variable">?interp</span> beast:removedAbility <span class="variable">?feature</span> . <span class="keyword">BIND</span>("Abilities" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Removed" <span class="keyword">AS</span> <span class="variable">?shiftType</span>) }
+    }
+    <span class="keyword">UNION</span>
+    {
+      <span class="variable">?interp</span> beast:alternativeHabitat <span class="variable">?feature</span> .
+      <span class="keyword">BIND</span>("Habitat" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Alternative" <span class="keyword">AS</span> <span class="variable">?shiftType</span>)
+    }
+    <span class="keyword">UNION</span>
+    {
+      <span class="variable">?interp</span> beast:alternativeDiet <span class="variable">?feature</span> .
+      <span class="keyword">BIND</span>("Diet" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Alternative" <span class="keyword">AS</span> <span class="variable">?shiftType</span>)
+    }
+    <span class="keyword">UNION</span>
+    {
+      <span class="variable">?interp</span> beast:embodiesImaginarySymbol <span class="variable">?feature</span> .
+      <span class="keyword">OPTIONAL</span> { <span class="variable">?creature</span> beast:embodiesImaginarySymbol <span class="variable">?baseSym</span> . }
+      <span class="keyword">FILTER</span>(!<span class="keyword">BOUND</span>(<span class="variable">?baseSym</span>) || <span class="variable">?feature</span> != <span class="variable">?baseSym</span>)
+      <span class="keyword">BIND</span>("Durand Symbol" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Symbolic Shift" <span class="keyword">AS</span> <span class="variable">?shiftType</span>)
+    }
+    <span class="keyword">UNION</span>
+    {
+      <span class="variable">?interp</span> beast:embodiesArchetype <span class="variable">?feature</span> .
+      <span class="keyword">BIND</span>("Archetype" <span class="keyword">AS</span> <span class="variable">?category</span>) <span class="keyword">BIND</span>("Symbolic Shift" <span class="keyword">AS</span> <span class="variable">?shiftType</span>)
+    }
+    <span class="keyword">BIND</span>(<span class="keyword">CONCAT</span>(<span class="keyword">STR</span>(<span class="variable">?creature</span>), "_", <span class="keyword">STR</span>(<span class="variable">?feature</span>)) <span class="keyword">AS</span> <span class="variable">?uniqueCreatureFeature</span>)
+  }
+  <span class="keyword">GROUP BY</span> <span class="variable">?category</span> <span class="variable">?shiftType</span>
+}
+<span class="keyword">GROUP BY</span> <span class="variable">?category</span>
+<span class="keyword">ORDER BY</span> <span class="keyword">DESC</span>(<span class="variable">?totalDivergences</span>)</code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">
                                 <thead>
                                     <tr>
-                                        <th>col1 title</th>
-                                        <th>col2 title</th>
+                                        <th>category</th>
+                                        <th>totalOccurrences</th>
+                                        <th>addedAltSymbolic</th>
+                                        <th>removed</th>
+                                        <th>totalDivergences</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>Archetype</td>
+                                        <td>132</td>
+                                        <td>90</td>
+                                        <td>0</td>
+                                        <td>90</td>
                                     </tr>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>Anatomy</td>
+                                        <td>86</td>
+                                        <td>46</td>
+                                        <td>18</td>
+                                        <td>64</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abilities</td>
+                                        <td>73</td>
+                                        <td>46</td>
+                                        <td>6</td>
+                                        <td>52</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Durand Symbol</td>
+                                        <td>51</td>
+                                        <td>37</td>
+                                        <td>0</td>
+                                        <td>37</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Habitat</td>
+                                        <td>38</td>
+                                        <td>32</td>
+                                        <td>0</td>
+                                        <td>32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diet</td>
+                                        <td>9</td>
+                                        <td>7</td>
+                                        <td>0</td>
+                                        <td>7</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -134,36 +231,113 @@
                     <div class="col-lg-6 mb-4 mb-lg-0">
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Real Animals in Composite Creatures</h3>
                         <p class="info-section__text mt-3">
-                           Composite and hybrid creatures are assembled from the parts of real animals. This question treats those donor animals as a network and asks which real animal recurs most often as raw material for the imagination. The answer exposes the building blocks of the monstrous: the handful of creatures - predator, raptor, reptile - whose recognizable, charged anatomies are drawn upon again and again to compose new beings. It is a question only a graph can answer, since it depends on tracing the :hasPartDerivedFrom relation across the entire population of hybrids at once.  
+                            Composite and hybrid creatures are assembled from the parts of real animals. This question
+                            treats those donor animals as a network and asks <strong>which real animal recurs most often</strong> as raw
+                            material for the imagination. The answer exposes the building blocks of the monstrous: the
+                            handful of creatures - predator, raptor, reptile - whose recognizable, charged anatomies are
+                            drawn upon again and again to compose new beings. It is a question only a graph can answer,
+                            since it depends on tracing the :hasPartDerivedFrom relation across the entire population of
+                            hybrids at once.
                         </p>
                         <p class="info-section__text mt-3">
-                           The result show how the real animal with contributes the most to the physical conformation of other imaginary creature is the human, donating his part to eleven creatures in total, with eighteen body parts borrowed from it. The prevalence of human as a donor highlights how many of the creatures documented in bestiaries had anthropomorphic characteristics. The creation of creatures somewhat similar to humans but divergent may have been a creative expedient to distort their nature and attribute the resulting bestiality to their new form, projecting onto these creatures the bestial and anomalous characteristics of humans in an amplified manner. In some way a means for humans to distance certain bestial behaviors from their nature and attribute them to fantastic beings. 
+                            The result show how the real animal with contributes the most to the physical conformation
+                            of other imaginary creature is the <strong>human</strong>, donating his part to sixteen creatures in total,
+                            with twenty-five body parts borrowed from it. The prevalence of human as a donor highlights
+                            how many of the creatures documented in bestiaries had anthropomorphic characteristics. The
+                            creation of creatures somewhat similar to humans but divergent may have been a creative
+                            expedient to distort their nature and attribute the resulting bestiality to their new form,
+                            projecting onto these creatures the bestial and anomalous characteristics of humans in an
+                            amplified manner. In some way a means for humans to distance certain bestial behaviors from
+                            their nature and attribute them to fantastic beings.
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">Which :RealAnimal most frequently contributes a body part to composite/hybrid creatures?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">Which :RealAnimal most frequently contributes a body part to composite/hybrid creatures?</div>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
+
+<span class="keyword">SELECT</span> <span class="variable">?realAnimal</span>
+       (<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?composite</span>) <span class="keyword">AS</span> <span class="variable">?numCompositeCreatures</span>)
+       (<span class="keyword">COUNT</span>(<span class="variable">?composite</span>) <span class="keyword">AS</span> <span class="variable">?totalPartAssertions</span>)
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
-}</code>
+  <span class="keyword">VALUES</span> <span class="variable">?prop</span> { beast:hasPartDerivedFrom beast:hasHeadOf beast:hasBodyOf
+                 beast:hasUpperBodyOf beast:hasLowerBodyOf beast:hasTailOf }
+  <span class="variable">?composite</span> <span class="variable">?prop</span> <span class="variable">?realAnimal</span> .
+  <span class="variable">?realAnimal</span> a beast:RealAnimal .
+}
+<span class="keyword">GROUP BY</span> <span class="variable">?realAnimal</span>
+<span class="keyword">ORDER BY</span> <span class="keyword">DESC</span>(<span class="variable">?numCompositeCreatures</span>) <span class="keyword">DESC</span>(<span class="variable">?totalPartAssertions</span>)</code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">
                                 <thead>
                                     <tr>
-                                        <th>col1 title</th>
-                                        <th>col2 title</th>
+                                        <th>realAnimal</th>
+                                        <th>numCompositeCreatures</th>
+                                        <th>totalPartAssertions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_human</td>
+                                        <td>16</td>
+                                        <td>25</td>
                                     </tr>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>beastiary:creature_horse</td>
+                                        <td>5</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_lion</td>
+                                        <td>4</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_snake</td>
+                                        <td>4</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_eagle</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_fish</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_goat</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_bull</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_onager</td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_ant</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_cow</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>beastiary:creature_scorpion</td>
+                                        <td>1</td>
+                                        <td>1</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -183,14 +357,32 @@
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Shared Symbolic
                             Structures</h3>
                         <p class="info-section__text mt-3">
-                            If a creature borrows the lion's body, does it also borrow the lion's symbolism? This question tests whether composite creatures share the symbolic structures - Durand symbols  - of the real animals from which their parts derive, by measuring the overlap between a hybrid's symbolic profile and those of its donor animals. A high overlap would suggest that symbolic meaning is inherited along with anatomy. 
+                            If a creature borrows the lion's body, does it also borrow the lion's symbolism? This
+                            question tests whether composite creatures share the symbolic structures - Durand symbols -
+                            of the real animals from which their parts derive, by measuring the <strong>overlap between a
+                            hybrid's symbolic profile and those of its donor animals</strong>. A high overlap would suggest that
+                            symbolic meaning is inherited along with anatomy.
                         </p>
                         <p class="info-section__text mt-3">
-                           By analysing the data retrieved through this query we find out that six creatures demonstrate to share a symbolic meaning with the animal they borrow body parts from. The hippogriff is one of them sharing with the eagle the ascensional symbol, which is connected to the wings, the physical feature that allows the creature to fly and elevate towards metaphysical heights. Other creatures described in the bestiary also inherit features from real animals' physicality, acquiring the symbolic meaning historically attributed to them as well. The most recurring symbol is evidently the teriomorphic, associated with agitated movement, archetype of the caos. Durand explains this symbol by referring to the uncontrollable dynamism of animals like the bull, the horse and the snake which are also the animals from which creatures such as the Minotaur, the Centaur, the Cerberus, the Chimera, and the Manticore inherit their symbolism. From this we can deduce that it is very common for composite creatures to inevitably carry with them all the symbolism of their physical donor. The physical conformation of the beast is already in itself a symptom of its character and temperament, demonstrating how it is historically established that certain characteristics carry with them a meaning that goes beyond mere physicality. 
+                            By analysing the data retrieved through this query we find out that six creatures
+                            demonstrate to share a symbolic meaning with the animal they borrow body parts from. The
+                            hippogriff is one of them sharing with the eagle the ascensional symbol, which is connected
+                            to the wings, the physical feature that allows the creature to fly and elevate towards
+                            metaphysical heights. Other creatures described in the bestiary also inherit features from
+                            real animals' physicality, acquiring the symbolic meaning historically attributed to them as
+                            well. The most recurring symbol is evidently the <strong>teriomorphic</strong>, associated with agitated
+                            movement, archetype of the caos. Durand explains this symbol by referring to the
+                            uncontrollable dynamism of animals like the bull, the horse and the snake which are also the
+                            animals from which creatures such as the Minotaur, the Centaur, the Cerberus, the Chimera,
+                            and the Manticore inherit their symbolism. From this we can deduce that it is very common
+                            for composite creatures to inevitably carry with them all the symbolism of their physical
+                            donor. The physical conformation of the beast is already in itself a symptom of its
+                            character and temperament, demonstrating how it is historically established that certain
+                            characteristics carry with them a meaning that goes beyond mere physicality.
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">Do composite creatures share symbolic structures with the real animals from which their parts derive?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">Do composite creatures share symbolic structures with the real animals from which their parts derive?</div>
                         <div class="sparql-code-block mb-4">
                             <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
 <span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
@@ -275,15 +467,16 @@
             <div class="info-section__inner" style="display: block;">
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Evolution of Modern Interpretations</h3>
+                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Evolution of
+                            Modern Interpretations</h3>
                         <p class="info-section__text mt-3">
                             [Explain the research question and context here. Detail the results and their significance
                             for the project's analysis of mythological creatures and their representations across
                             sources.]
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">How the modern interpretation of each beast has evolved from its earliest version?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">How the modern interpretation of each beast has evolved from its earliest version?</div>
                         <div class="sparql-code-block mb-4">
                             <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
 <span class="keyword">WHERE</span> {
@@ -322,16 +515,30 @@
             <div class="info-section__inner" style="display: block;">
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Physical Changes Across Time</h3>
+                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Physical
+                            Changes Across Time</h3>
                         <p class="info-section__text mt-3">
-                            Focusing on the physical appearance of the creatures represented in the bestiary graph, it's interesting to understand which of them have undergone the <strong>greatest physical changes</strong> over time and their appearance in various sources. The results of this question can help identify creatures with a more malleable physical appearance and a less deeply rooted tradition within historical sources. It also highlights on which occasions has the creative flair of the authors led to new and different interpretations of the physical characteristics of a creature.
+                            Focusing on the physical appearance of the creatures represented in the bestiary graph, it's
+                            interesting to understand which of them have undergone the <strong>greatest physical
+                                changes</strong> over time and their appearance in various sources. The results of this
+                            question can help identify creatures with a more malleable physical appearance and a less
+                            deeply rooted tradition within historical sources. It also highlights on which occasions has
+                            the creative flair of the authors led to new and different interpretations of the physical
+                            characteristics of a creature.
                         </p>
-                        <p class="info-section__text mt-3"> 
-                            The data provided by the answer shows the creatures that have undergone physical changes over time. The one that has undergone the greatest change is the <strong>chimera</strong>, which, in just five documented sources within the bestiary, demonstrates modifications in 11 aspects of its conformation. This may be due to its unique physicality, which combines body parts of many different real animals such as the lion, the goat, the snake, the dragon, and many others. The combination of multiple creatures naturally leads different authors to modify the chimera's physicality, adapting its characteristics to their own interpretations of the creature. 
+                        <p class="info-section__text mt-3">
+                            The data provided by the answer shows the creatures that have undergone physical changes
+                            over time. The one that has undergone the greatest change is the <strong>chimera</strong>,
+                            which, in just five documented sources within the bestiary, demonstrates modifications in 11
+                            aspects of its conformation. This may be due to its unique physicality, which combines body
+                            parts of many different real animals such as the lion, the goat, the snake, the dragon, and
+                            many others. The combination of multiple creatures naturally leads different authors to
+                            modify the chimera's physicality, adapting its characteristics to their own interpretations
+                            of the creature.
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">Which creatures have changed the most physically across time, sources and interpretations?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">Which creatures have changed the most physically across time, sources and interpretations?</div>
                         <div class="sparql-code-block mb-4">
                             <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
 <span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
@@ -548,16 +755,16 @@
             <div class="info-section__inner" style="display: block;">
                 <div class="row">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Origins of Harry Potter Beasts</h3>
+                        <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Origins of
+                            Harry Potter Beasts</h3>
                         <p class="info-section__text mt-3">
                             [Explain the research question and context here. Detail the results and their significance
                             for the project's analysis of mythological creatures and their representations across
                             sources.]
                         </p>
                     </div>
-                    <div class="col-lg-5 offset-lg-1">
-                        <p class="info-section__text mb-2">From all the beasts present in Harry Potter find the oldest
-                            source that narrates the origin of the beast?</p>
+                    <div class="col-lg-6">
+                        <div class="rq-question">From all the beasts present in Harry Potter find the oldest source that narrates the origin of the beast?</div>
                         <div class="sparql-code-block mb-4">
                             <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
 <span class="keyword">WHERE</span> {
@@ -600,7 +807,8 @@
                     <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/ontology">Ontology</a></li>
                     <li><a target="_blank" rel="noopener" href="https://w3id.org/beast/graph">Graph</a></li>
                     <li><a target="_blank" rel="noopener"
-                            href="https://triplydb.com/sararoggi/The-BEAST-Graph/sparql#query=select%20%2A%20where%20%7B%0A%20%20%3Fs%20%3Fp%20%3Fo.%0A%7D%20limit%2010&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2Fsararoggi%2FThe-BEAST-Graph%2Fsparql&tabTitle=Query&outputFormat=Table&outputSettings=%7B%7D">SPARQL</a></li>
+                            href="https://triplydb.com/sararoggi/The-BEAST-Graph/sparql#query=select%20%2A%20where%20%7B%0A%20%20%3Fs%20%3Fp%20%3Fo.%0A%7D%20limit%2010&endpoint=https%3A%2F%2Fapi.triplydb.com%2Fdatasets%2Fsararoggi%2FThe-BEAST-Graph%2Fsparql&tabTitle=Query&outputFormat=Table&outputSettings=%7B%7D">SPARQL</a>
+                    </li>
                 </ul>
             </div>
             <ul class="footer-links">
@@ -637,6 +845,9 @@
                 requestConfig: { endpoint: "https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql" },
                 copyEndpointOnNewTab: false,
             });
+            if (yasgui.getTab()) {
+                yasgui.getTab().setQuery("select * where {\n  ?s ?p ?o.\n} limit 10");
+            }
         });
     </script>
 </body>
