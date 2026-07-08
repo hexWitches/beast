@@ -580,5 +580,17 @@
                 "language": "en"
             }
         }
+    },
+    "anatomical_parts.csv": {
+        "primary_key": "part_id",
+        "entity_class": "beast:AnatomicalPart",
+        "properties": {
+            "label": {
+                "predicate": "rdfs:label",
+                "type": "Literal",
+                "datatype": "xsd:string",
+                "language": "en"
+            }
+        }
     }
 }
