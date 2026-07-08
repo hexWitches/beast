@@ -845,6 +845,9 @@
                 requestConfig: { endpoint: "https://api.triplydb.com/datasets/sararoggi/The-BEAST-Graph/sparql" },
                 copyEndpointOnNewTab: false,
             });
+            if (yasgui.getTab()) {
+                yasgui.getTab().setQuery("select * where {\n  ?s ?p ?o.\n} limit 10");
+            }
         });
     </script>
 </body>
