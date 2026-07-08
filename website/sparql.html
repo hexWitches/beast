@@ -470,35 +470,143 @@
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Evolution of
                             Modern Interpretations</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance
-                            for the project's analysis of mythological creatures and their representations across
-                            sources.]
+                            This question explores the historical timeline of the creatures. Historically, each creature was originally conceived to represent a specific concept,
+                            such as a moral lesson, a divine punishment or  behaviour.  However, throughout history each time these creatures were described with new interpretations, 
+                            sometimes radical changes have been made to the original symbolic meaning of each creature. Starting from each creature from its oldest recorded historical 
+                            source to its most modern representation, we can directly compare how these interpretations have transformed over time. 
+                        </p>
+                        <p class="info-section__text mt-3">
+                            This SPARQL query allows us to extract by each beast the date and interpretation of the oldest registered source alongside the most modern source. With this we 
+                            can analyse the  significant shifts in how the modern interpretation of the creatures have changed in time compared to the original source. This evolution usually 
+                            follows a significant transformation, usually detaching religious or punishment meanings to more modern symbolic meanings of empowerment,  psychological complexity 
+                            or complete exchange of traditional monster-and-hero roles. 
                         </p>
                     </div>
                     <div class="col-lg-6">
                         <div class="rq-question">How the modern interpretation of each beast has evolved from its earliest version?</div>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">PREFIX</span> rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+<span class="keyword">PREFIX</span> dcterms: &lt;http://purl.org/dc/terms/>&gt;
+<span class="keyword">PREFIX</span> xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+                                
+<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="variable">?creatureName</span> 
+       <span class="variable">?oldestTitle</span> 
+       <span class="variable">?oldestDate</span> 
+       (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?oldestArchetype</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?oldestArchetypes</span>)
+       <span class="variable">?modernTitle</span> 
+       <span class="variable">?modernDate</span> 
+       (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?modernArchetype</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?modernArchetypes</span>)
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
-}</code>
+  <span class="variable">?creature</span> a <span class="variable">?type</span> .
+  <span class="keyword">FILTER</span>(<span class="variable">?type</span> <span class="keyword">IN</span> (beast:Creature, beast:ImaginaryBeing, beast:HybridCreature))
+  <span class="variable">?creature</span> rdfs:label <span class="variable">?creatureName</span> .
+  
+  {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">MIN</span>(<span class="variable">?numericYear</span>) <span class="keyword">AS</span> <span class="variable">?minYear</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?interp_old</span> beast:ofCreature <span class="variable">?creature</span> ;
+                  beast:appearsIn <span class="variable">?source_old</span> .
+      <span class="variable">?source_old</span> dcterms:created <span class="variable">?date_raw_old</span> .
+      
+      <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="keyword">STR</span>(<span class="variable">?date_raw_old</span>), "/"), <span class="keyword">STRBEFORE</span>(<span class="keyword">STR</span>(<span class="variable">?date_raw_old</span>), "/"), <span class="keyword">STR</span>(<span class="variable">?date_raw_old</span>)) <span class="keyword">AS</span> <span class="variable">?cleanYearStr</span>)
+      <span class="keyword">BIND</span>(xsd:integer(<span class="variable">?cleanYearStr</span>) <span class="keyword">AS</span> <span class="variable">?numericYear</span>)
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+  
+  <span class="variable">?interp_old_t</span> beast:ofCreature <span class="variable">?creature</span> ;
+                beast:appearsIn <span class="variable">?source_old_t</span> .
+  <span class="variable">?source_old_t</span> dcterms:created <span class="variable">?oldestDate</span> ;
+                dcterms:title <span class="variable">?oldestTitle</span> .
+  <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="keyword">STR</span>(<span class="variable">?oldestDate</span>), "/"), <span class="keyword">STRBEFORE</span>(<span class="keyword">STR</span>(<span class="variable">?oldestDate</span>), "/"), <span class="keyword">STR</span>(<span class="variable">?oldestDate</span>)) <span class="keyword">AS</span> <span class="variable">?checkOldStr</span>)
+  <span class="keyword">FILTER</span>(xsd:integer(<span class="variable">?checkOldStr</span>) = <span class="variable">?minYear</span>)
+  
+  <span class="keyword">OPTIONAL</span> { 
+    <span class="variable">?interp_old_t</span> beast:embodiesArchetype <span class="variable">?oldArchURI</span> .
+    <span class="keyword">OPTIONAL</span> { <span class="variable">?oldArchURI</span> rdfs:label <span class="variable">?oldLabel</span> . }
+    <span class="keyword">BIND</span>(<span class="keyword">COALESCE</span>(<span class="variable">?oldLabel</span>, <span class="keyword">REPLACE</span>(<span class="keyword">STR</span>(<span class="variable">?oldArchURI</span>), "^.*[# /]", "")) <span class="keyword">AS</span> <span class="variable">?oldestArchetype</span>)
+  }
+
+  {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">MAX</span>(<span class="variable">?numericYear</span>) <span class="keyword">AS</span> <span class="variable">?maxYear</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?interp_mod</span> beast:ofCreature <span class="variable">?creature</span> ;
+                  beast:appearsIn <span class="variable">?source_mod</span> .
+      <span class="variable">?source_mod</span> dcterms:created <span class="variable">?date_raw_mod</span> .
+      
+      <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="keyword">STR</span>(<span class="variable">?date_raw_mod</span>), "/"), <span class="keyword">STRBEFORE</span>(<span class="keyword">STR</span>(<span class="variable">?date_raw_mod</span>), "/"), <span class="keyword">STR</span>(<span class="variable">?date_raw_mod</span>)) <span class="keyword">AS</span> <span class="variable">?cleanYearStr_mod</span>)
+      <span class="keyword">BIND</span>(xsd:integer(<span class="variable">?cleanYearStr_mod</span>) <span class="keyword">AS</span> <span class="variable">?numericYear</span>)
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+  
+  <span class="variable">?interp_mod_t</span> beast:ofCreature <span class="variable">?creature</span> ;
+                beast:appearsIn <span class="variable">?source_mod_t</span> .
+  <span class="variable">?source_mod_t</span> dcterms:created <span class="variable">?modernDate</span> ;
+                dcterms:title <span class="variable">?modernTitle</span> .
+  <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="keyword">STR</span>(<span class="variable">?modernDate</span>), "/"), <span class="keyword">STRBEFORE</span>(<span class="keyword">STR</span>(<span class="variable">?modernDate</span>), "/"), <span class="keyword">STR</span>(<span class="variable">?modernDate</span>)) <span class="keyword">AS</span> <span class="variable">?checkModStr</span>)
+  <span class="keyword">FILTER</span>(xsd:integer(<span class="variable">?checkModStr</span>) = <span class="variable">?maxYear</span>)
+  
+  <span class="keyword">OPTIONAL</span> { 
+    <span class="variable">?interp_mod_t</span> beast:embodiesArchetype <span class="variable">?modArchURI</span> .
+    <span class="keyword">OPTIONAL</span> { <span class="variable">?modArchURI</span> rdfs:label <span class="variable">?modLabel</span> . }
+    <span class="keyword">BIND</span>(<span class="keyword">COALESCE</span>(<span class="variable">?modLabel</span>, <span class="keyword">REPLACE</span>(<span class="keyword">STR</span>(<span class="variable">?modArchURI</span>), "^.*[# /]", "")) <span class="keyword">AS</span> <span class="variable">?modernArchetype</span>)
+  }
+}
+<span class="keyword">GROUP BY</span> <span class="variable">?creatureName</span> <span class="variable">?oldestTitle</span> <span class="variable">?oldestDate</span> <span class="variable">?modernTitle</span> <span class="variable">?modernDate</span>
+<span class="keyword">ORDER BY</span> <span class="variable">?creatureName</span>.
+</code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">
                                 <thead>
                                     <tr>
-                                        <th>col1 title</th>
-                                        <th>col2 title</th>
+                                        <th>creatureName</th>
+                                        <th>oldestTitle</th>
+                                        <th>oldestDate</th>
+                                        <th>oldestArchetypes</th>
+                                        <th>modernTitle</th>
+                                        <th>modernDate</th>
+                                        <th>modernArchetypes</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>Centaur</td>
+                                        <td>Metamorphoses</td>
+                                        <td>8</td>
+                                        <td>archetype_raw_instinct</td>
+                                        <td>Fantastic Beasts and Where to Find Them</td>
+                                        <td>2001</td>
+                                        <td>archetype_wisdom</td>
                                     </tr>
                                     <tr>
-                                        <td>[Data]</td>
-                                        <td>[Data]</td>
+                                        <td>Chimera</td>
+                                        <td>Iliade</td>
+                                        <td>8th century BCE</td>
+                                        <td>archetype_divine_punishment</td>
+                                        <td>Fullmetal Alchemist: Brotherhood</td>
+                                        <td>2009/2010</td>
+                                        <td>archetype_scientific_transgression</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fairy</td>
+                                        <td>The book of Invasions</td>
+                                        <td>11th century</td>
+                                        <td>archetype_immortality</td>
+                                        <td>Peter Pan</td>
+                                        <td>1953</td>
+                                        <td>archetype_belief</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pegasus</td>
+                                        <td>Teogonia</td>
+                                        <td>7th century BCE</td>
+                                        <td>archetype_poetic_inspiration</td>
+                                        <td>Barbie and the Magic of Pegasus</td>
+                                        <td>2005</td>
+                                        <td>archetype_resilience</td>
                                     </tr>
                                 </tbody>
                             </table>
