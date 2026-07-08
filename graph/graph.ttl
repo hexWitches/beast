@@ -6,7 +6,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
 @prefix void: <http://rdfs.org/ns/void#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
@@ -1962,17 +1961,165 @@ beastiary:myth_phorcys a beast:MythologicalFigure ;
 beastiary:myth_uranus a beast:MythologicalFigure ;
     rdfs:label "Uranus"@en .
 
+beastiary:part_barbels a beast:AnatomicalPart ;
+    rdfs:label "Barbels"@en .
+
+beastiary:part_big_eyes a beast:AnatomicalPart ;
+    rdfs:label "Big eyes"@en .
+
+beastiary:part_bronze_hands a beast:AnatomicalPart ;
+    rdfs:label "Bronze Hands"@en .
+
+beastiary:part_cock_body a beast:AnatomicalPart ;
+    rdfs:label "Cock body"@en .
+
+beastiary:part_cock_head a beast:AnatomicalPart ;
+    rdfs:label "Cock head"@en .
+
+beastiary:part_conjoined_bodies a beast:AnatomicalPart ;
+    rdfs:label "Conjoined bodies"@en .
+
+beastiary:part_curly_mane a beast:AnatomicalPart ;
+    rdfs:label "Curly mane"@en .
+
+beastiary:part_digestive_system a beast:AnatomicalPart ;
+    rdfs:label "Digestive system"@en .
+
+beastiary:part_dragon_tail a beast:AnatomicalPart ;
+    rdfs:label "Dragon tail"@en .
+
+beastiary:part_eye_knee a beast:AnatomicalPart ;
+    rdfs:label "Eye knee"@en .
+
+beastiary:part_eyes_on_temples a beast:AnatomicalPart ;
+    rdfs:label "Eyes on templates"@en .
+
+beastiary:part_fifty_dog_heads a beast:AnatomicalPart ;
+    rdfs:label "Fifty dog heads"@en .
+
+beastiary:part_fluff_skin a beast:AnatomicalPart ;
+    rdfs:label "Fluff skin"@en .
+
+beastiary:part_four_ears a beast:AnatomicalPart ;
+    rdfs:label "Four ears"@en .
+
+beastiary:part_four_feet a beast:AnatomicalPart ;
+    rdfs:label "Four feet"@en .
+
+beastiary:part_four_fingers a beast:AnatomicalPart ;
+    rdfs:label "Four fingers"@en .
+
+beastiary:part_four_hands a beast:AnatomicalPart ;
+    rdfs:label "Four hands"@en .
+
+beastiary:part_fruits a beast:AnatomicalPart ;
+    rdfs:label "Fruits"@en .
+
+beastiary:part_genitals a beast:AnatomicalPart ;
+    rdfs:label "Genitals"@en .
+
+beastiary:part_genitals_reversed a beast:AnatomicalPart ;
+    rdfs:label "Genitals reversed"@en .
+
+beastiary:part_green_skin a beast:AnatomicalPart ;
+    rdfs:label "Green skin"@en .
+
+beastiary:part_head a beast:AnatomicalPart ;
+    rdfs:label "Head"@en .
+
+beastiary:part_horse_lower_body a beast:AnatomicalPart ;
+    rdfs:label "Horse lower body"@en .
+
+beastiary:part_huge_nose a beast:AnatomicalPart ;
+    rdfs:label "Huge nose"@en .
+
+beastiary:part_human_upper_body a beast:AnatomicalPart ;
+    rdfs:label "Human upper body"@en .
+
+beastiary:part_leaves a beast:AnatomicalPart ;
+    rdfs:label "Leaves"@en .
+
+beastiary:part_lion_upper_body a beast:AnatomicalPart ;
+    rdfs:label "Lion upper body"@en .
+
+beastiary:part_lizard_lower_body a beast:AnatomicalPart ;
+    rdfs:label "Lizard lower body"@en .
+
+beastiary:part_lizard_tail a beast:AnatomicalPart ;
+    rdfs:label "Lizard tail"@en .
+
+beastiary:part_long_ears a beast:AnatomicalPart ;
+    rdfs:label "Long ears"@en .
+
+beastiary:part_male_genitals a beast:AnatomicalPart ;
+    rdfs:label "Male genitals"@en .
+
+beastiary:part_mane a beast:AnatomicalPart ;
+    rdfs:label "Mane"@en .
+
+beastiary:part_moist_body a beast:AnatomicalPart ;
+    rdfs:label "Moist body"@en .
+
+beastiary:part_multiple_dentition a beast:AnatomicalPart ;
+    rdfs:label "Multiple dentition"@en .
+
+beastiary:part_multiple_head a beast:AnatomicalPart ;
+    rdfs:label "Multiple head"@en .
+
+beastiary:part_multiple_heads a beast:AnatomicalPart ;
+    rdfs:label "Multiple Heads"@en .
+
+beastiary:part_multiple_limbs a beast:AnatomicalPart ;
+    rdfs:label "Multiple limbs"@en .
+
+beastiary:part_purple_legs a beast:AnatomicalPart ;
+    rdfs:label "Purple legs"@en .
+
+beastiary:part_red_and_gold_feathers a beast:AnatomicalPart ;
+    rdfs:label "Red and gold feather"@en .
+
+beastiary:part_rough_skin a beast:AnatomicalPart ;
+    rdfs:label "Rough skin"@en .
+
+beastiary:part_scales_dragon a beast:AnatomicalPart ;
+    rdfs:label "Scales Dragon"@en .
+
+beastiary:part_serpent_body a beast:AnatomicalPart ;
+    rdfs:label "Serpent body"@en .
+
+beastiary:part_sharp_eyes a beast:AnatomicalPart ;
+    rdfs:label "Sharp eyes"@en .
+
+beastiary:part_skin a beast:AnatomicalPart ;
+    rdfs:label "Skin"@en .
+
 beastiary:part_snake_hair a beast:AnatomicalPart ;
     rdfs:comment "The snake is a teriomorphic animal in Durand's Imaginary, and Medusa's writhing serpent-locks embed feral, biting animal terror directly into the body."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
 
+beastiary:part_snake_head a beast:AnatomicalPart ;
+    rdfs:label "Snake head"@en .
+
+beastiary:part_straight_mane a beast:AnatomicalPart ;
+    rdfs:label "Straight mane"@en .
+
 beastiary:part_three_lines_of_teeth a beast:AnatomicalPart ;
+    rdfs:label "Three lines of teeth"@en ;
     rdfs:comment "The triple rows of teeth are the paradigmatic teriomorphic image of predatory jaws 'ready to strike,' concentrating the symbol's devouring, feral chaos."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:TeriomorphicSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
+
+beastiary:part_two_faces a beast:AnatomicalPart ;
+    rdfs:label "Two faces"@en .
+
+beastiary:part_two_genitals a beast:AnatomicalPart ;
+    rdfs:label "Two genitals"@en .
+
+beastiary:part_underbelly_gems a beast:AnatomicalPart ;
+    rdfs:label "Underbelly gems"@en .
 
 beastiary:person_adamson a schema:Person ;
     rdfs:comment "1966 – present"@en ;
@@ -3961,6 +4108,30 @@ beastiary:int_unicorn_isidore a beast:Interpretation ;
     beast:hasTextualReference beastiary:citation_isidore_1 ;
     beast:ofCreature beastiary:creature_unicorn .
 
+beastiary:part_body a beast:AnatomicalPart ;
+    rdfs:label "Body"@en .
+
+beastiary:part_breasts a beast:AnatomicalPart ;
+    rdfs:label "Breasts"@en .
+
+beastiary:part_goat_head a beast:AnatomicalPart ;
+    rdfs:label "Goat head"@en .
+
+beastiary:part_goat_lower_body a beast:AnatomicalPart ;
+    rdfs:label "Goat lower body"@en .
+
+beastiary:part_legs a beast:AnatomicalPart ;
+    rdfs:label "Legs"@en .
+
+beastiary:part_lion_head a beast:AnatomicalPart ;
+    rdfs:label "Lion head"@en .
+
+beastiary:part_snakes_hair a beast:AnatomicalPart ;
+    rdfs:label "Snakes hair"@en .
+
+beastiary:part_three_heads_dog a beast:AnatomicalPart ;
+    rdfs:label "Three heads dog"@en .
+
 beastiary:person_dante a schema:Person ;
     rdfs:comment "1265 – 1321"@en ;
     foaf:familyName "Alighieri"^^xsd:string ;
@@ -4560,11 +4731,30 @@ beastiary:myth_echidna a beast:MythologicalFigure ;
 beastiary:myth_typhon a beast:MythologicalFigure ;
     rdfs:label "Typhon"@en .
 
+beastiary:part_bird_limbs a beast:AnatomicalPart ;
+    rdfs:label "Birds lims"@en .
+
+beastiary:part_bird_wings a beast:AnatomicalPart ;
+    rdfs:label "Bird wings"@en .
+
+beastiary:part_crest a beast:AnatomicalPart ;
+    rdfs:label "Crest"@en .
+
+beastiary:part_fish_tail a beast:AnatomicalPart ;
+    rdfs:label "Fish tail"@en .
+
 beastiary:part_horn a beast:AnatomicalPart ;
+    rdfs:label "Horn"@en ;
     rdfs:comment "The horn rises vertically toward the heavens, aligning with ascensional verticality and the purifying, transcendent power traditionally attached to it."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
+
+beastiary:part_masculinity a beast:AnatomicalPart ;
+    rdfs:label "Masculinity"@en .
+
+beastiary:part_snake_tail a beast:AnatomicalPart ;
+    rdfs:label "Snake tail"@en .
 
 beastiary:source_andersen a beast:LiteraryWork ;
     dcterms:created "1837"^^xsd:gYear ;
@@ -4896,6 +5086,9 @@ beastiary:habitat_mountains a beast:RealWorldPlace ;
     rdfs:comment "High altitude rocky terrain."@en ;
     beast:habitatCategory beast:Terrestrial .
 
+beastiary:part_two_horns a beast:AnatomicalPart ;
+    rdfs:label "Two horns"@en .
+
 beastiary:person_rowling a schema:Person ;
     rdfs:comment "1965 – present"@en ;
     foaf:familyName "Rowling"^^xsd:string ;
@@ -5057,9 +5250,9 @@ beastiary:creature_troll a beast:Creature,
     beast:hasHabitat beastiary:habitat_forests ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_nordic_folklore ;
-    beast:hasPart beastiary:huge_nose,
-        beastiary:part_four_fingers,
-        beastiary:rough_skin ;
+    beast:hasPart beastiary:part_four_fingers,
+        beastiary:part_huge_nose,
+        beastiary:part_rough_skin ;
     beast:hasTailOf beastiary:creature_cow ;
     beast:isGovernedBy beast:DiurnalRegime .
 
@@ -5511,6 +5704,7 @@ beastiary:source_etymologies a beast:LiteraryWork ;
         beastiary:int_unicorn_isidore .
 
 beastiary:part_wings a beast:AnatomicalPart ;
+    rdfs:label "Wings"@en ;
     rdfs:comment "Wings are the ascensional instrument par excellence: in Durand's scheme they directly contradict gravity and embody the heroic upward flight away from temporal degradation. Durand names the wing explicitly as 'the ascensional instrument that contradicts gravity,' making this the textbook case."@en ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
