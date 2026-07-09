@@ -6,6 +6,27 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+beastiary: rdf:type owl:Ontology,
+                void:Dataset ;
+    dcterms:conformsTo <https://w3id.org/beast/ontology> ;
+    dcterms:created "2026-05-01"^^xsd:date ;
+    dcterms:creator "Maria Juliana Gamboa Nivia",
+        "Miriana Pinto",
+        "Sara Roggiani",
+        "Alice Spadavecchia" ;
+    dcterms:description "A dataset describing creatures, their interpretations and biological composition, the sources in which the creatures are depicted. The BEASTiary knowledge graph is aligned with the BEAST ontology."@en ;
+    owl:imports <https://w3id.org/beast/ontology> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher <https://github.com/hexWitches> ;
+    dcterms:title "The BEAST Graph"@en ;
+    vann:preferredNamespacePrefix "beastiary" ;
+    void:dataDump <https://w3id.org/beast/graph/graph.ttl> ;
+    void:vocabulary <https://w3id.org/beast/ontology> .
 
 beastiary:ability_extinct rdfs:label "Extinct"@en ;
     rdfs:comment "The condition of having died out entirely, with no living members of the kind remaining; the creature is known only through past attestation rather than present existence."@en .

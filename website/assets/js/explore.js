@@ -191,7 +191,9 @@ document.addEventListener("DOMContentLoaded", () => {
             addTrait("beast:hasAbility", "Ability");
             addTrait("beast:hasDiet", "Diet");
             addTrait("beast:hasHabitat", "Habitat");
-            addTrait("beast:hasModificationOf", "Anomaly");
+            addTrait("beast:hasModificationOf", "Anomaly (Modification)");
+            addTrait("beast:hasAbsenceOf", "Anomaly (Absence)");
+            addTrait("beast:hasDuplicationOf", "Anomaly (Duplication)");
 
             // Etymology
             let etymology = "";

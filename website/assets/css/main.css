@@ -1393,7 +1393,8 @@ footer p, footer li {
 
 /* ── Interpretation card ────────────────────────────────────── */
 .interpretation-card {
-    height: 480px;
+    height: auto;
+    min-height: 480px;
     background: rgba(21, 24, 9, 0.55);
     border: 1px solid rgba(207, 181, 59, 0.15);
     padding: 1.5rem;
@@ -1507,6 +1508,7 @@ footer p, footer li {
 .interpretation-card:not(.expanded) .interp-body-container {
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    max-height: 240px;
 }
 
 .interp-card-body {
