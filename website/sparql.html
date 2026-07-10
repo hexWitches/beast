@@ -866,18 +866,152 @@
                         <h3 class="info-section__title" style="font-size: 1.2rem; text-transform: none;">Origins of
                             Harry Potter Beasts</h3>
                         <p class="info-section__text mt-3">
-                            [Explain the research question and context here. Detail the results and their significance
-                            for the project's analysis of mythological creatures and their representations across
-                            sources.]
+                            <i>Fantastic Beasts and Where to Find Them</i> occupies a unique position within our dataset. Unlike the other sources represented 
+                            in the knowledge graph, it is itself a <strong>modern bestiary</strong>, making J.K. Rowling's Harry Potter universe a contemporary 
+                            continuation of the classical and medieval bestiary tradition documented throughout the graph.<br>
+                            Situated at the chronological end of the corpus, often more than two millennia after the earliest attestations of its creatures, 
+                            Rowling's work provides an ideal case study for tracing mythical transmission. For each creature, we identify its earliest attested source 
+                            and compare  Rowling’s representations to their canonical forms to determine which characteristics have been preserved and which have been 
+                            modified.This query also evaluates the ontology's divergence properties, testing whether they can capture both continuity and change 
+                            across such a long temporal span, demonstrating the ontology's ability to model the evolution of mythical creatures.<br><br>
+                            The results reveal a remarkably consistent pattern across the six creatures represented in Rowling's work. Reinvention is predominantly 
+                            <strong>additive</strong> and <strong>rarely anatomical</strong>: only the Sphinx and the Dragon acquire new physical features (wings and 
+                            a horn, respectively), while the others retain their inherited morphology. Where Rowling departs from her sources, she generally enriches 
+                            the <strong>creatures' abilities</strong>, typically introducing magical powers that allow them to fulfil specific narrative functions 
+                            within the Harry Potter universe.<br>
+                            Chronological distance does not predict the degree of reinvention. The Sphinx, whose earliest attestation is the Great Sphinx of Giza 
+                            (c. 2499 BCE), is among the most reinterpreted, whereas the Hippogriff, first appearing in Orlando Furioso (1516), is reproduced almost 
+                            unchanged. This suggests that adaptation depends less on antiquity than on how central a creature's traditional form is to its identity.
+                            <br>Although based on only six creatures, the findings suggest that Rowling acts less as an inventor of monsters than as a <strong>curator 
+                            of inherited mythical traditions</strong>, preserving their canonical identities while adapting them through new abilities and narrative 
+                            contexts. 
                         </p>
                     </div>
                     <div class="col-lg-6">
-                        <div class="rq-question">From all the beasts present in Harry Potter find the oldest source that narrates the origin of the beast?</div>
+                        <div class="rq-question">Which is the earliest attested source for each Harry Potter creature represented in the knowledge graph, and to what extent does Rowling preserve or reinvent its traditional characteristics?</div>
                         <div class="sparql-code-block mb-4">
-                            <code><span class="keyword">SELECT</span> <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>
+                            <code><span class="keyword">PREFIX</span> beast: &lt;https://w3id.org/beast/ontology#&gt;
+<span class="keyword">PREFIX</span> beastiary: &lt;https://w3id.org/beast/graph/&gt;
+<span class="keyword">PREFIX</span> schema: &lt;https://schema.org/&gt;
+<span class="keyword">PREFIX</span> dcterms: &lt;http://purl.org/dc/terms/&gt;
+<span class="keyword">PREFIX</span> rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+<span class="keyword">PREFIX</span> xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+
+<span class="keyword">SELECT</span> <span class="variable">?creature</span> <span class="variable">?creatureLabel</span> <span class="variable">?oldestStartYear</span> <span class="variable">?oldestSourceTitle</span>
+       <span class="variable">?rowlingSources</span>
+       <span class="variable">?additionalParts</span> <span class="variable">?removedParts</span>
+       <span class="variable">?additionalAbilities</span> <span class="variable">?removedAbilities</span>
+       <span class="variable">?alternativeDiets</span> <span class="variable">?alternativeHabitats</span>
 <span class="keyword">WHERE</span> {
-  <span class="variable">?subject</span> <span class="variable">?predicate</span> <span class="variable">?object</span>.
-}</code>
+  {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">MIN</span>(<span class="variable">?startYearNum</span>) <span class="keyword">AS</span> <span class="variable">?oldestStartYear</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?anyInterp</span> beast:ofCreature <span class="variable">?creature</span> ;
+                 beast:appearsIn <span class="variable">?anySource</span> .
+      <span class="variable">?anySource</span> dcterms:created <span class="variable">?rawYear</span> .
+      <span class="keyword">BIND</span>(<span class="keyword">STR</span>(<span class="variable">?rawYear</span>) <span class="keyword">AS</span> <span class="variable">?yearStr</span>)
+      <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="variable">?yearStr</span>, "/"), <span class="keyword">STRBEFORE</span>(<span class="variable">?yearStr</span>, "/"), <span class="variable">?yearStr</span>) <span class="keyword">AS</span> <span class="variable">?startYearStr</span>)
+      <span class="keyword">BIND</span>(xsd:integer(<span class="variable">?startYearStr</span>) <span class="keyword">AS</span> <span class="variable">?startYearNum</span>)
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+  <span class="variable">?creature</span> rdfs:label <span class="variable">?creatureLabel</span> .
+
+  {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> <span class="variable">?startYearNum</span>
+           (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?title</span>; separator=" / ") <span class="keyword">AS</span> <span class="variable">?oldestSourceTitle</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?anyInterp</span> beast:ofCreature <span class="variable">?creature</span> ;
+                 beast:appearsIn <span class="variable">?anySource</span> .
+      <span class="variable">?anySource</span> dcterms:created <span class="variable">?rawYear</span> ;
+                 dcterms:title <span class="variable">?title</span> .
+      <span class="keyword">BIND</span>(<span class="keyword">STR</span>(<span class="variable">?rawYear</span>) <span class="keyword">AS</span> <span class="variable">?yearStr</span>)
+      <span class="keyword">BIND</span>(<span class="keyword">IF</span>(<span class="keyword">CONTAINS</span>(<span class="variable">?yearStr</span>, "/"), <span class="keyword">STRBEFORE</span>(<span class="variable">?yearStr</span>, "/"), <span class="variable">?yearStr</span>) <span class="keyword">AS</span> <span class="variable">?startYearStr</span>)
+      <span class="keyword">BIND</span>(xsd:integer(<span class="variable">?startYearStr</span>) <span class="keyword">AS</span> <span class="variable">?startYearNum</span>)
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span> <span class="variable">?startYearNum</span>
+  }
+  <span class="keyword">FILTER</span>(<span class="variable">?startYearNum</span> = <span class="variable">?oldestStartYear</span>)
+
+  {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?srcTitle</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?rowlingSources</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling ; dcterms:title <span class="variable">?srcTitle</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?additionalParts</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:additionalPart <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?removedParts</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:removedPart <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?additionalAbilities</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:additionalAbility <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?removedAbilities</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:removedAbility <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?alternativeDiets</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:alternativeDiet <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+
+  <span class="keyword">OPTIONAL</span> {
+    <span class="keyword">SELECT</span> <span class="variable">?creature</span> (<span class="keyword">GROUP_CONCAT</span>(<span class="keyword">DISTINCT</span> <span class="variable">?lbl</span>; separator=", ") <span class="keyword">AS</span> <span class="variable">?alternativeHabitats</span>)
+    <span class="keyword">WHERE</span> {
+      <span class="variable">?rInterp</span> beast:appearsIn <span class="variable">?rSource</span> ; beast:ofCreature <span class="variable">?creature</span> .
+      <span class="variable">?rSource</span> schema:creator beastiary:person_rowling .
+      <span class="variable">?rInterp</span> beast:alternativeHabitat <span class="variable">?x</span> .
+      <span class="variable">?x</span> rdfs:label <span class="variable">?lbl</span> .
+    }
+    <span class="keyword">GROUP BY</span> <span class="variable">?creature</span>
+  }
+}
+<span class="keyword">ORDER BY</span> <span class="variable">?oldestStartYear</span></code>
                         </div>
                         <div class="table-responsive">
                             <table class="rq-table">

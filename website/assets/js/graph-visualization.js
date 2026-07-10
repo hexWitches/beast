@@ -183,7 +183,7 @@
     container.innerHTML = '';
 
     const totalWidth = container.clientWidth || 560;
-    const size = Math.min(totalWidth, 600);
+    const size = Math.min(totalWidth, 1100);
     const radius = size / 2;
     const centerHole = radius * 0.28;
     // Depth 4 needed for Creature -> ImaginaryBeing -> CompositeCreature -> HybridCreature
@@ -348,7 +348,7 @@
       .attr('dy', '0.35em')
       .attr('font-family', 'Montserrat, sans-serif')
       .attr('font-weight', '500')
-      .attr('font-size', d => d.depth === 1 ? '11px' : '9.5px')
+      .attr('font-size', d => d.depth === 1 ? `${Math.max(11, Math.round(size / 48))}px` : `${Math.max(9.5, Math.round(size / 56))}px`)
       .attr('fill', d => lightSegments.has(d.data.name) ? '#151809' : '#F4EBD8')
       .attr('transform', d => {
         const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
@@ -372,7 +372,7 @@
       .attr('class', 'kg-centre-title')
       .attr('dy', '-0.3em')
       .attr('font-family', 'Cinzel, serif')
-      .attr('font-size', '14px')
+      .attr('font-size', `${Math.max(14, Math.round(size / 36))}px`)
       .attr('font-weight', '700')
       .attr('fill', '#CFB53B')
       .attr('letter-spacing', '1px')
@@ -382,7 +382,7 @@
       .attr('class', 'kg-centre-sub')
       .attr('dy', '1.1em')
       .attr('font-family', 'Montserrat, sans-serif')
-      .attr('font-size', '11px')
+      .attr('font-size', `${Math.max(11, Math.round(size / 48))}px`)
       .attr('fill', '#F4EBD8')
       .text('owl:Thing');
 

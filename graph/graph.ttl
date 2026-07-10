@@ -6,10 +6,8 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix void: <http://rdfs.org/ns/void#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 beastiary: rdf:type owl:Ontology,
                 void:Dataset ;
@@ -1539,6 +1537,11 @@ beastiary:habitat_edge_of_world a beast:ImaginaryPlace ;
     rdfs:label "Edge of the World"@en ;
     rdfs:comment "The far western limit of the cosmos in Hesiod's Theogony, beyond glorious Ocean toward Night and near the Hesperides, where the Gorgons dwell at the boundary of the known world."@en ;
     beast:hasOriginContext beastiary:source_teogonia .
+
+beastiary:habitat_forbidden_forest a beast:ImaginaryPlace ;
+    rdfs:label "Forbidden Forest"@en ;
+    rdfs:comment "The Forbidden Forest, also known as the Dark Forest, was a forest that bordered the edges of the grounds of Hogwarts School of Witchcraft and Wizardry."@en ;
+    beast:hasOriginContext beastiary:source_harry_potter_book_1 .
 
 beastiary:habitat_great_riddle_gate a beast:ImaginaryPlace ;
     rdfs:label "Great Riddle Gate"@en ;
@@ -3140,6 +3143,9 @@ beastiary:int_centaur_rowling_fantastic a beast:Interpretation ;
 
 beastiary:int_centaur_rowling_harry a beast:Interpretation ;
     rdfs:comment "Firenze and his kind read the future in the stars, positioning the centaur as a creature of celestial vision and solar clarity; their role as guides and protectors of the Forbidden Forest is grounded in this spectacular, sky-watching wisdom rather than in bestial appetite."@en ;
+    beast:additionalAbility beastiary:ability_healing,
+        beastiary:ability_magical_powers ;
+    beast:alternativeHabitat beastiary:habitat_forbidden_forest ;
     beast:appearsIn beastiary:source_harry_potter_book_1 ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesArchetype beastiary:archetype_enigma,
@@ -4278,15 +4284,6 @@ beastiary:source_great_sphinx a beast:VisualArtwork ;
 
 beastiary:source_greek_natural_history a beast:Tradition .
 
-beastiary:source_harry_potter_book_1 a beast:LiteraryWork ;
-    dcterms:created "1997"^^xsd:gYear ;
-    dcterms:language "en"^^xsd:string ;
-    dcterms:title "Harry Potter and the Philosopher's Stone"^^xsd:string ;
-    rdfs:comment "1997"^^xsd:string ;
-    schema:creator beastiary:person_rowling ;
-    beast:containsInterpretation beastiary:int_centaur_rowling_harry ;
-    beast:wasInfluencedBy beastiary:source_fantastic_beasts .
-
 beastiary:source_harry_potter_book_3 a beast:LiteraryWork ;
     dcterms:created "1999"^^xsd:gYear ;
     dcterms:language "en"^^xsd:string ;
@@ -4457,9 +4454,6 @@ beastiary:source_thaon_bestiary a beast:Bestiary ;
     beast:wasInfluencedBy beastiary:source_etymologies,
         beastiary:source_physiologus .
 
-beastiary:ability_healing rdfs:label "Healing"@en ;
-    rdfs:comment "The ability to treat wounds and diseases through knowledge of herbs plants and natural remedies."@en .
-
 beastiary:ability_immortality a beast:Ability ;
     rdfs:label "Immortality"@en ;
     rdfs:comment "Deathlessness expresses the ascensional refusal of mortality, the upward transcendence that escapes the degradation of time."@en,
@@ -4467,9 +4461,6 @@ beastiary:ability_immortality a beast:Ability ;
     beast:belongsToImaginaryStructure beast:SchizomorphicStructure ;
     beast:embodiesImaginarySymbol beast:AscensionalSymbol ;
     beast:isGovernedBy beast:DiurnalRegime .
-
-beastiary:ability_magical_powers rdfs:label "Magical powers"@en ;
-    rdfs:comment "A general capacity to perform supernatural acts beyond the laws of nature, including enchantments, transformations, or other arcane feats."@en .
 
 beastiary:ability_trumpet_voice rdfs:label "Trumpet Voice"@en ;
     rdfs:comment "The physical capacity to emit an exceptionally loud, resonant, and piercing vocalization resembling a brass instrument, used to signal danger, terrify enemies, or assert dominance over a vast territory."@en .
@@ -4765,6 +4756,15 @@ beastiary:source_dante_paradiso a beast:LiteraryWork ;
     beast:containsInterpretation beastiary:int_eagle_dante ;
     beast:wasInfluencedBy beastiary:source_ovidius_metamorphoses .
 
+beastiary:source_harry_potter_book_1 a beast:LiteraryWork ;
+    dcterms:created "1997"^^xsd:gYear ;
+    dcterms:language "en"^^xsd:string ;
+    dcterms:title "Harry Potter and the Philosopher's Stone"^^xsd:string ;
+    rdfs:comment "1997"^^xsd:string ;
+    schema:creator beastiary:person_rowling ;
+    beast:containsInterpretation beastiary:int_centaur_rowling_harry ;
+    beast:wasInfluencedBy beastiary:source_fantastic_beasts .
+
 beastiary:source_harry_potter_book_2 a beast:LiteraryWork ;
     dcterms:created "1998"^^xsd:gYear ;
     dcterms:language "en"^^xsd:string ;
@@ -4816,6 +4816,12 @@ beastiary:source_the_hobbit a beast:LiteraryWork ;
     rdfs:comment "1937"^^xsd:string ;
     schema:creator beastiary:person_tolkien ;
     beast:containsInterpretation beastiary:int_dragon_tolkien .
+
+beastiary:ability_healing rdfs:label "Healing"@en ;
+    rdfs:comment "The ability to treat wounds and diseases through knowledge of herbs plants and natural remedies."@en .
+
+beastiary:ability_magical_powers rdfs:label "Magical powers"@en ;
+    rdfs:comment "A general capacity to perform supernatural acts beyond the laws of nature, including enchantments, transformations, or other arcane feats."@en .
 
 beastiary:ability_sing a beast:Ability ;
     rdfs:label "Singing"@en ;

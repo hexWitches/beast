@@ -173,7 +173,9 @@
                             real or imaginary - as described in Bestiaries and other Sources. It distinguishes
                             <code>:RealAnimal</code> from <code>:ImaginaryBeing</code>, and further classifies the
                             latter into <code>:CompositeCreature</code> and <code>:HybridCreature</code> whose anatomy
-                            is derived from two or more real animals. For real animals it documents irregularities through a structured vocabulary of anatomical anomaly: absence of a part, duplication, and modification. For imaginary beings it records the
+                            is derived from two or more real animals. For real animals it documents irregularities
+                            through a structured vocabulary of anatomical anomaly: absence of a part, duplication, and
+                            modification. For imaginary beings it records the
                             anatomical parts they possess and the real animals, plants, or inanimate elements from which
                             those parts are derived. Across all creatures the module captures habitats - distinguishing
                             real geographic environments from mythological or imaginary spaces - diets, and abilities.
@@ -198,7 +200,8 @@
                             interlocking frameworks for the symbolic analysis of creatures and their source-specific
                             Interpretations. First, the <code>:DurandImaginary</code> scheme applies Gilbert Durand's
                             anthropological structures of the imaginary to classify creatures according to the Regime
-                            and structural logic that governs their symbolic imagery. Second, the archetype and narrative function layer - through
+                            and structural logic that governs their symbolic imagery. Second, the archetype and
+                            narrative function layer - through
                             <code>:Archetype</code>, <code>:NarrativeFunction</code>, <code>:embodiesArchetype</code>,
                             and <code>:hasNarrativeFunction</code> - distinguishes between the universal psychological
                             pattern a creature instantiates across all its manifestations and the specific contextual
@@ -220,7 +223,27 @@
                     <div class="ontology-module">
                         <span class="ontology-module-label">The Durand Scheme</span>
                         <p class="info-section__text">
-                            The Durand Scheme provides the symbolic and anthropological framework through which creatures are interpreted within the ontology. Unlike the other modules, which are implemented primarily through OWL classes and properties, the Durand Scheme is modeled as a SKOS <code>:ConceptScheme</code>, reflecting its role as a structured vocabulary of symbolic categories rather than a formal taxonomy of entities. Durand’s theory is grounded in the idea that symbolic images emerge as cultural responses to the fundamental human experience of time, mortality, and change. Within this framework, biological traits are not interpreted merely as physical characteristics but as symbolic expressions. <br> At the heart of the scheme are <strong>two symbolic regimes</strong>. The <code>:DiurnalRegime</code> is associated with light, height, separation, and opposition, expressing the heroic confrontation with time and death through images of ascent, purification, and victory. The <code>:NocturnalRegime</code>, by contrast, is associated with darkness, descent, fusion, and cyclical renewal; rather than opposing time, it seeks reconciliation with it through images of enclosure, transformation, regeneration, and return. <br> In addition, the Durand Scheme defines three fundamental <strong>structures of the imaginary</strong>: <code>:SchizomorphicStructure</code>, <code>:MysticalStructure</code>, and <code>:SyntheticStructure</code>. These operate as an intermediate layer between biological traits and cultural meaning. They describe the archetypal logic through which physical and behavioural characteristics are organized into coherent symbolic systems. Together, these structures enable the ontology to move from the description of a creature’s morphology to the interpretation of its symbolic and cultural significance.
+                            The Durand Scheme provides the symbolic and anthropological framework through which
+                            creatures are interpreted within the ontology. Unlike the other modules, which are
+                            implemented primarily through OWL classes and properties, the Durand Scheme is modeled as a
+                            SKOS <code>:ConceptScheme</code>, reflecting its role as a structured vocabulary of symbolic
+                            categories rather than a formal taxonomy of entities. Durand’s theory is grounded in the
+                            idea that symbolic images emerge as cultural responses to the fundamental human experience
+                            of time, mortality, and change. Within this framework, biological traits are not interpreted
+                            merely as physical characteristics but as symbolic expressions. <br> At the heart of the
+                            scheme are <strong>two symbolic regimes</strong>. The <code>:DiurnalRegime</code> is
+                            associated with light, height, separation, and opposition, expressing the heroic
+                            confrontation with time and death through images of ascent, purification, and victory. The
+                            <code>:NocturnalRegime</code>, by contrast, is associated with darkness, descent, fusion,
+                            and cyclical renewal; rather than opposing time, it seeks reconciliation with it through
+                            images of enclosure, transformation, regeneration, and return. <br> In addition, the Durand
+                            Scheme defines three fundamental <strong>structures of the imaginary</strong>:
+                            <code>:SchizomorphicStructure</code>, <code>:MysticalStructure</code>, and
+                            <code>:SyntheticStructure</code>. These operate as an intermediate layer between biological
+                            traits and cultural meaning. They describe the archetypal logic through which physical and
+                            behavioural characteristics are organized into coherent symbolic systems. Together, these
+                            structures enable the ontology to move from the description of a creature’s morphology to
+                            the interpretation of its symbolic and cultural significance.
                         </p>
                         <div class="ontology-module-svg-box ontology-svg-wrapper">
                             <img src="assets/images/svg_grafoo/durandScheme.svg" alt="symbolicModule" width="100%"
@@ -263,13 +286,17 @@
                         of creatures, encouraging advanced information retrieval and semantic reasoning through its
                         dedicated SPARQL endpoint.
                     </p>
-                    <div id="kg-visualization" class="kg-visualization-wrapper">
-                        <div class="kg-chart-layout">
-                            <div id="kg-chart-container" class="kg-chart-container"></div>
-                            <div id="kg-legend" class="kg-legend-container"></div>
-                        </div>
-                        <div id="kg-tooltip" class="kg-tooltip" style="display: none;"></div>
-                    </div>
+                </div>
+            </div>
+            <div id="kg-visualization" class="kg-visualization-wrapper">
+                <div class="kg-chart-layout">
+                    <div id="kg-chart-container" class="kg-chart-container"></div>
+                    <div id="kg-legend" class="kg-legend-container"></div>
+                </div>
+                <div id="kg-tooltip" class="kg-tooltip" style="display: none;"></div>
+            </div>
+            <div class="info-section__inner">
+                <div class="info-section__body">
                     <p class="info-section__text">
                         Querying the dataset it is possible to <strong>extract knowledge</strong>; the interpretations,
                         divergences, and symbolic mappings gathered here become queryable patterns, letting us move from
@@ -316,8 +343,9 @@
                             </a>
                             <a href="sparql.html#rq6" style="text-decoration: none; color: inherit;">
                                 <div class="rq-box rq-box-styled">
-                                    From all the beasts present in Harry Potter find the oldest source that narrates the
-                                    origin of the beast.
+                                    Which is the earliest attested source for each Harry Potter creature, and to what
+                                    extent does Rowling preserve or reinvent its
+                                    traditional characteristics?
                                 </div>
                             </a>
                         </div>

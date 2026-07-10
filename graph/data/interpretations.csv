@@ -23,7 +23,7 @@ int_centaur_dante2,creature_centaur,source_dante_inferno,Nesso,,archetype_guardi
 int_centaur_isidore,creature_centaur,source_etymologies,,,,,,,,,,,,citation_isidore_7
 int_centaur_ovid,creature_centaur,source_ovidius_metamorphoses,Eurytus,,archetype_raw_instinct;archetype_predatory_lust;archetype_violence,function_instigator,,,,,,,genesis_centaur_ovid,citation_ovid_met_12
 int_centaur_rowling_fantastic,creature_centaur,source_fantastic_beasts,,,archetype_enigma;archetype_wisdom,,,,ability_healing;ability_magical_powers,,,,,citation_rowling_9
-int_centaur_rowling_harry,creature_centaur,source_harry_potter_book_1,Firenze,,archetype_enigma;archetype_wisdom,function_guide;function_protector,,,,,,,,citation_rowling_10
+int_centaur_rowling_harry,creature_centaur,source_harry_potter_book_1,Firenze,,archetype_enigma;archetype_wisdom,function_guide;function_protector,,,ability_healing;ability_magical_powers,,,habitat_forbidden_forest,,citation_rowling_10
 int_cerberus_apollodorus,creature_cerberus,source_biblioteca,,,archetype_guardian_hell,function_obstacle,,,,,,,,citation_apollodorus_5
 int_cerberus_blake,creature_cerberus,source_cerberus_blake,,,,,,,,,,,,
 int_cerberus_dante,creature_cerberus,source_dante_inferno,,"""Il mostro è descritto con occhi rossi, i peli del muso sporchi e neri, il ventre largo e le zampe artigliate; emette latrati che assordano i dannati e ciò acuisce il loro tormento.""",archetype_guardian_hell,function_guardian,,,,,,habitat_hell,,citation_dante_inferno_8

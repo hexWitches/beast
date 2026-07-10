@@ -448,7 +448,7 @@ section[id^="rq"] .info-section__inner {
 }
 
 /* Nudge the query+results column slightly right in RQ sections */
-section[id^="rq"] .row > div:last-child {
+section[id^="rq"] .row>div:last-child {
     padding-left: 2.5rem;
 }
 
@@ -2893,17 +2893,20 @@ footer p, footer li {
     background-color: var(--darker-khaki);
     border: 1px solid var(--old-gold);
     border-radius: 12px;
-    padding: 2.5rem 2rem;
-    margin: 2.5rem 0;
+    padding: 2.5rem 2.5rem;
+    margin: 3rem auto;
+    width: calc(100% - 2.5rem);
+    max-width: 1660px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .kg-chart-layout {
     display: flex;
     flex-wrap: nowrap;
-    gap: 2.5rem;
+    gap: 3rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -2924,10 +2927,10 @@ footer p, footer li {
 }
 
 .kg-legend-container {
-    flex: 0 1 340px;
-    min-width: 260px;
-    max-width: 380px;
-    max-height: 580px;
+    flex: 0 1 380px;
+    min-width: 280px;
+    max-width: 440px;
+    max-height: 640px;
     overflow-y: auto;
     padding: 1.5rem;
     background: rgba(38, 42, 16, 0.7);
@@ -3052,7 +3055,9 @@ footer p, footer li {
 
 @media (max-width: 768px) {
     .kg-visualization-wrapper {
+        width: calc(100% - 1.5rem);
         padding: 1.5rem 1rem;
+        margin: 2rem auto;
     }
 
     .kg-chart-layout {
