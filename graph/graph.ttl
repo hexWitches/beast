@@ -6,8 +6,10 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix void: <http://rdfs.org/ns/void#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 beastiary: rdf:type owl:Ontology,
                 void:Dataset ;
@@ -1245,10 +1247,6 @@ beastiary:creature_bird a beast:RealAnimal ;
     beast:hasDiet beast:Herbivorous ;
     beast:hasHabitat beast:Terrestrial .
 
-beastiary:creature_carp a beast:RealAnimal ;
-    rdfs:label "Carp"@en ;
-    beast:hasDiet beast:Omnivorous .
-
 beastiary:creature_cat a beast:RealAnimal ;
     rdfs:label "Cat"@en ;
     beast:hasDiet beast:Carnivorous ;
@@ -1262,12 +1260,6 @@ beastiary:creature_human_dog a beast:HybridCreature ;
     beast:hasOriginContext beastiary:source_monstres_prodiges ;
     beast:hasTailOf beastiary:creature_dog ;
     beast:hasUpperBodyOf beastiary:creature_human .
-
-beastiary:creature_sheep a beast:RealAnimal ;
-    rdfs:label "Sheep"@en ;
-    beast:hasDiet beast:Herbivorous ;
-    beast:hasEtymology beastiary:etymology_sheep ;
-    beast:hasHabitat beast:Terrestrial .
 
 beastiary:diet_autotrophic rdfs:label "Autotrophic"@en ;
     rdfs:comment "Self-nourishing through sunlight and nutrients drawn from the soil rather than by consuming other organisms; the mode proper to plant-creatures such as the mandrake."@en .
@@ -2966,7 +2958,7 @@ beastiary:creature_haiit a beast:HybridCreature ;
     beast:hasDistinctiveTrait "It is grey in colour, with three claws on each paw and a tail only three fingers long."^^xsd:string ;
     beast:hasHabitat beastiary:habitat_africa ;
     beast:hasHeadOf beastiary:creature_human ;
-    beast:hasLowerBodyOf beastiary:creature_carp ;
+    beast:hasLowerBodyOf beastiary:creature_sheep ;
     beast:hasOriginContext beastiary:source_monstres_prodiges ;
     beast:hasUpperBodyOf beastiary:creature_bear .
 
@@ -3005,6 +2997,12 @@ beastiary:creature_polymelic_cat a beast:RealAnimal ;
     beast:hasModificationOf beastiary:part_multiple_limbs ;
     beast:hasOriginContext beastiary:source_monstrorum_historia_aldrovandi ;
     beast:isOfSpecies beastiary:creature_cat .
+
+beastiary:creature_sheep a beast:RealAnimal ;
+    rdfs:label "Sheep"@en ;
+    beast:hasDiet beast:Herbivorous ;
+    beast:hasEtymology beastiary:etymology_sheep ;
+    beast:hasHabitat beast:Terrestrial .
 
 beastiary:diet_none rdfs:label "Starvation"@en ;
     rdfs:comment "A creature physiologically incapable of sustaining itself, unable to digest any food due to its contradictory hybrid nature."@en .
@@ -5039,7 +5037,7 @@ beastiary:creature_scorpion a beast:RealAnimal ;
     beast:hasEtymology beastiary:etymology_scorpion ;
     beast:hasHabitat beast:Terrestrial .
 
-beastiary:creature_unicorn a beast:HybridCreature ;
+beastiary:creature_unicorn a beast:ImaginaryBeing ;
     rdfs:label "Unicorn"@en ;
     beast:hasAbility beastiary:ability_purify_water ;
     beast:hasAlternativeName "Monocerus"^^xsd:string ;

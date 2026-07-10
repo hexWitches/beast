@@ -406,16 +406,16 @@
     rdfs:comment "Indicates that a real animal, in a given Source or Interpretation, exhibits an anatomical part in an altered or aberrant form — neither simply absent nor duplicated, but substantially changed in shape, size, material, or function. Examples include reversed feet, crystalline horns, or scales in place of fur. Subproperty of :hasAnomaly."@en .
 
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
-    rdfs:label "has part of"@en ;
+    rdfs:label "has part derived from"@en ;
     rdfs:comment "Indicates that a composite creature possesses anatomical or morphological features derived from a specific real animal, a plant or an inanimate element."@en .
 
 :hasHeadOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -424,7 +424,7 @@
 
 :hasBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -433,7 +433,7 @@
 
 :hasUpperBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -442,7 +442,7 @@
 
 :hasLowerBodyOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
@@ -451,7 +451,7 @@
 
 :hasTailOf rdf:type owl:ObjectProperty ;
     rdfs:subPropertyOf :hasPartDerivedFrom ;
-    rdfs:domain :CompositeCreature ;
+    rdfs:domain :ImaginaryBeing ;
     rdfs:range [ rdf:type owl:Class ;
             owl:unionOf (:RealAnimal :Plant :InanimateElement) ] ;
     rdfs:isDefinedBy :BiologicalModule ;
