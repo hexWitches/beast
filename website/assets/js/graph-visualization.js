@@ -12,7 +12,7 @@
     prefix: 'owl',
     children: [
       {
-        name: 'Provenance Module',
+        name: 'Provenance',
         prefix: 'beast',
         description: 'Documents the historical and textual footprint of every creature across sources and traditions; also the module in which :Creature itself is defined.',
         children: [
@@ -31,16 +31,17 @@
                     prefix: 'beast',
                     description: 'A creature composed of disparate parts, whether those parts are from different animals or distinct materials. subClassOf ImaginaryBeing.',
                     children: [
-                      { name: 'HybridCreature', prefix: 'beast', description: 'A composite creature made of anatomical parts from two or more distinct real animals (minQualifiedCardinality 2 on hasPartDerivedFrom). subClassOf CompositeCreature.', value: 17 }
+                      { name: 'HybridCreature', prefix: 'beast', description: 'A composite creature made of anatomical parts from two or more distinct real animals (minQualifiedCardinality 2 on hasPartDerivedFrom). subClassOf CompositeCreature.', value: 16 }
                     ],
                     value: 1
                   }
-                ]
+                ],
+                value: 10
               },
-              { name: 'RealAnimal', prefix: 'beast', description: 'A scientifically recognized biological animal that exists or existed in the natural world. subClassOf Creature, disjointWith ImaginaryBeing.', value: 17 }
+              { name: 'RealAnimal', prefix: 'beast', description: 'A scientifically recognized biological animal that exists or existed in the natural world. subClassOf Creature, disjointWith ImaginaryBeing.', value: 23 }
             ]
           },
-          { name: 'Interpretation', prefix: 'beast', description: 'A source-specific manifestation or depiction of a creature by a particular author or tradition. Disjoint from both Creature and Source.', value: 172 },
+          { name: 'Interpretation', prefix: 'beast', description: 'A source-specific manifestation or depiction of a creature by a particular author or tradition. Disjoint from both Creature and Source.', value: 171 },
           {
             name: 'Source',
             prefix: 'beast',
@@ -53,7 +54,7 @@
               { name: 'CinematicWork', prefix: 'beast', description: 'A film, television show, or modern media production serving as a modern creature source. subClassOf Source.', value: 9 }
             ]
           },
-          { name: 'Citation', prefix: 'beast', description: 'A structured reference to a specific passage within a Source, linked via :extractedFrom / :hasTextualReference — NOT a subclass of Source.', value: 141 },
+          { name: 'Citation', prefix: 'beast', description: 'A structured reference to a specific passage within a Source, linked via :extractedFrom / :hasTextualReference — NOT a subclass of Source.', value: 143 },
           { name: 'Etymology', prefix: 'beast', description: 'The linguistic origin and historical derivation of a creature\'s name.', value: 39 },
           { name: 'Genesis', prefix: 'beast', description: 'A source-specific account of a creature\'s origin or birth. Disjoint from Source, Creature, and Interpretation.', value: 20 },
           { name: 'MythologicalFigure', prefix: 'beast', description: 'A deity, hero, personified force, or other agent from myth or tradition. Disjoint from Source, Creature, and Interpretation.', value: 13 },
@@ -61,12 +62,13 @@
         ]
       },
       {
-        name: 'Biological Module',
+        name: 'Biological',
         prefix: 'beast',
         description: 'Catalogs physical traits, anatomy, habitats, diets, and abilities of creatures — both real and imaginary.',
         children: [
-          { name: 'AnatomicalPart', prefix: 'beast', description: 'An anatomical component of a creature\'s body, such as a head, limb, or tail.', value: 4 },
-          { name: 'Ability', prefix: 'beast', description: 'A specific behavior, movement, or activity performed by a creature.', value: 21 },
+          { name: 'AnatomicalPart', prefix: 'beast', description: 'An anatomical component of a creature\'s body, such as a head, limb, or tail.', value: 70 },
+          { name: 'Ability', prefix: 'beast', description: 'A specific behavior, movement, or activity performed by a creature.', value: 54 },
+          { name: 'Diet', prefix: 'beast', description: 'The food or nourishment consumed by a creature.', value: 24 },
           {
             name: 'Habitat',
             prefix: 'beast',
@@ -81,18 +83,47 @@
                 ],
                 value: 9
               },
-              { name: 'ImaginaryPlace', prefix: 'beast', description: 'A conceptual, magical, or purely literary space (e.g. the Garden of Eden or Hades). subClassOf Habitat.', value: 15 }
+              { name: 'ImaginaryPlace', prefix: 'beast', description: 'A conceptual, magical, or purely literary space (e.g. the Garden of Eden or Hades). subClassOf Habitat.', value: 16 }
             ]
           }
         ]
       },
       {
-        name: 'Symbolic Module',
+        name: 'Symbolic',
         prefix: 'beast',
         description: 'The analytical and interpretive layer where depth psychology, anthropology, and myth converge — includes Durand\'s structures of the imaginary.',
         children: [
-          { name: 'Archetype', prefix: 'beast', description: 'A universal psychological pattern or symbolic figure instantiated by a creature across manifestations.', value: 55 },
-          { name: 'NarrativeFunction', prefix: 'beast', description: 'The specific contextual narrative role performed by a creature within a source (guardian, omen, etc.).', value: 13 }
+          { name: 'Archetype', prefix: 'beast', description: 'A universal psychological pattern or symbolic figure instantiated by a creature across manifestations.', value: 53 },
+          { name: 'NarrativeFunction', prefix: 'beast', description: 'The specific contextual narrative role performed by a creature within a source (guardian, omen, etc.).', value: 13 },
+          { 
+            name: 'ImaginaryRegime', prefix: 'beast', description: 'One of the two overriding regimes in Durand\'s anthropological scheme: Diurnal or Nocturnal.',
+            children: [
+              { name: 'DiurnalRegime', prefix: 'beast', description: 'The regime of light, ascension, and heroic opposition to time.', value: 68 },
+              { name: 'NocturnalRegime', prefix: 'beast', description: 'The regime of darkness, descent, and mystical or synthetic reconciliation with time.', value: 22 }
+            ]
+          },
+          { 
+            name: 'ImaginaryStructure', prefix: 'beast', description: 'One of Durand\'s three fundamental structures of the imaginary: Schizomorphic, Mystical, or Synthetic.',
+            children: [
+              { name: 'SchizomorphicStructure', prefix: 'beast', description: 'The structure of separation, heroic action, and opposition.', value: 68 },
+              { name: 'MysticalStructure', prefix: 'beast', description: 'The structure of intimacy, enclosure, and fusion.', value: 12 },
+              { name: 'SyntheticStructure', prefix: 'beast', description: 'The structure of harmonization, cyclical return, and dialectical synthesis.', value: 10 }
+            ]
+          },
+          { 
+            name: 'ImaginarySymbol', prefix: 'beast', description: 'A specific symbol embodied by a creature according to Durand\'s structures of the imaginary.',
+            children: [
+              { name: 'IntimacySymbol', prefix: 'beast', description: '', value: 6 },
+              { name: 'CatamorphicSymbol', prefix: 'beast', description: '', value: 9 },
+              { name: 'TeriomorphicSymbol', prefix: 'beast', description: '', value: 26 },
+              { name: 'SpectacularSymbol', prefix: 'beast', description: '', value: 7 },
+              { name: 'InversionSymbol', prefix: 'beast', description: '', value: 6 },
+              { name: 'CyclicalSymbol', prefix: 'beast', description: '', value: 9 },
+              { name: 'AscensionalSymbol', prefix: 'beast', description: '', value: 15 },
+              { name: 'NyctomorphicSymbol', prefix: 'beast', description: '', value: 15 },
+              { name: 'DiareticSymbol', prefix: 'beast', description: '', value: 5 }
+            ]
+          }
         ]
       },
     ]
@@ -101,8 +132,8 @@
   // 2. Curated Color Palette matching BEAST's rich aesthetic
   // Old Gold (#CFB53B), Dark Khaki (#262A10), Blood Red (#8B0000), Egg Shell (#F4EBD8)
   const colorMap = {
-    // Provenance Module — Blood Reds, Crimson, Terracotta & Warm Amber (now also hosts Creature/ImaginaryBeing/RealAnimal)
-    'Provenance Module': '#8B0000',
+    // Provenance Module — Reds, Oranges, and Yellows/Golds
+    'Provenance': '#8B0000',
     'Creature': '#DAA520',
     'ImaginaryBeing': '#CFB53B',
     'CompositeCreature': '#B8860B',
@@ -110,36 +141,54 @@
     'RealAnimal': '#8C7853',
     'Interpretation': '#A52A2A',
     'Source': '#C0392B',
-    'Tradition': '#A569BD',
+    'Tradition': '#D35400',
     'Bestiary': '#922B21',
     'LiteraryWork': '#E67E22',
     'VisualArtwork': '#CD6155',
     'CinematicWork': '#B03A2E',
-    'Citation': '#D35400',
-    'Etymology': '#8F9E5E',
+    'Citation': '#CA6F1E',
+    'Etymology': '#B9770E',
     'Genesis': '#CB4335',
     'MythologicalFigure': '#DC7633',
     'Person': '#A93226',
 
-    // Biological Module — Olive Greens & Sea Tones
-    'Biological Module': '#556B2F',
-    'AnatomicalPart': '#7A8B56',
-    'Ability': '#6E8B3D',
-    'Habitat': '#148F77',
-    'RealWorldPlace': '#16A085',
-    'GeographicPlace': '#0E6655',
-    'ImaginaryPlace': '#2471A3',
+    // Biological Module — Monochromatic Olive Green Palette
+    'Biological': '#556B2F',
+    'AnatomicalPart': '#658038',
+    'Ability': '#759442',
+    'Diet': '#6B8E23',
+    'Habitat': '#4A5D29',
+    'RealWorldPlace': '#3E4F22',
+    'GeographicPlace': '#33401C',
+    'ImaginaryPlace': '#85A34D',
 
-    // Symbolic Module — Mystic Purples, Violet & Deep Indigo
-    'Symbolic Module': '#4A235A',
-    'Archetype': '#6C3483',
-    'NarrativeFunction': '#7D3C98'
+    // Symbolic Module — Monochromatic Purple Palette
+    'Symbolic': '#4A235A',
+    'Archetype': '#5B2C6F',
+    'NarrativeFunction': '#6C3483',
+    'ImaginaryRegime': '#7D3C98',
+    'DiurnalRegime': '#7A3594',
+    'NocturnalRegime': '#843C9F',
+    'ImaginaryStructure': '#8E44AD',
+    'SchizomorphicStructure': '#8840A5',
+    'MysticalStructure': '#9346B2',
+    'SyntheticStructure': '#9D4DBD',
+    'ImaginarySymbol': '#9B59B6',
+    'IntimacySymbol': '#9153A9',
+    'CatamorphicSymbol': '#9756B1',
+    'TeriomorphicSymbol': '#9D58B8',
+    'SpectacularSymbol': '#A45BC0',
+    'InversionSymbol': '#AA5EC7',
+    'CyclicalSymbol': '#B061CE',
+    'AscensionalSymbol': '#B663D6',
+    'NyctomorphicSymbol': '#BC66DD',
+    'DiareticSymbol': '#C269E4'
   };
 
   // Light segments that require dark text for optimal contrast
   const lightSegments = new Set([
-    'ImaginaryBeing', 'HybridCreature', 'Creature', 'Etymology', 'LiteraryWork',
-    'Citation', 'Tradition', 'MythologicalFigure', 'GeographicPlace'
+    'ImaginaryBeing', 'HybridCreature', 'Creature', 'LiteraryWork', 'Citation', 'Etymology',
+    'MythologicalFigure', 'Ability', 'Diet', 'ImaginaryPlace'
   ]);
 
   // 3. Legend Groups matching the tree's top-level branches
@@ -150,11 +199,11 @@
     },
     {
       label: 'Biological Module',
-      items: ['AnatomicalPart', 'Ability', 'Habitat', 'RealWorldPlace', 'GeographicPlace', 'ImaginaryPlace']
+      items: ['AnatomicalPart', 'Ability', 'Diet', 'Habitat', 'RealWorldPlace', 'GeographicPlace', 'ImaginaryPlace']
     },
     {
       label: 'Symbolic Module',
-      items: ['Archetype', 'NarrativeFunction']
+      items: ['Archetype', 'NarrativeFunction', 'ImaginaryRegime', 'ImaginaryStructure', 'ImaginarySymbol']
     }
   ];
 
@@ -186,9 +235,9 @@
     const size = Math.min(totalWidth, 1100);
     const radius = size / 2;
     const centerHole = radius * 0.28;
-    // Depth 4 needed for Creature -> ImaginaryBeing -> CompositeCreature -> HybridCreature
+    // Depth 5 needed for Creature -> ImaginaryBeing -> CompositeCreature -> HybridCreature
     // and Habitat -> RealWorldPlace -> GeographicPlace
-    const MAX_DEPTH = 4;
+    const MAX_DEPTH = 5;
 
     function getInnerR(depth) {
       if (depth === 0) return 0;
@@ -218,8 +267,11 @@
 
     const svg = d3.select('#kg-chart-container')
       .append('svg')
-      .attr('width', size)
-      .attr('height', size)
+      .attr('width', '100%')
+      .attr('height', 'auto')
+      .style('max-width', `${size}px`)
+      .style('display', 'block')
+      .style('margin', '0 auto')
       .attr('viewBox', `${-radius} ${-radius} ${size} ${size}`)
       .attr('aria-label', 'BEAST knowledge graph class distribution sunburst chart');
 
@@ -259,13 +311,13 @@
       if (isTtLight) {
         accentColor = '#8B0000';
         subTextColor = '#262A10';
-      } else if (ancestor.data.name === 'Provenance Module') {
+      } else if (ancestor.data.name === 'Provenance') {
         accentColor = '#F39C12';
         subTextColor = '#FAD7A0';
-      } else if (ancestor.data.name === 'Biological Module') {
+      } else if (ancestor.data.name === 'Biological') {
         accentColor = '#E5C158';
         subTextColor = '#F4EBD8';
-      } else if (ancestor.data.name === 'Symbolic Module') {
+      } else if (ancestor.data.name === 'Symbolic') {
         accentColor = '#D2B4DE';
         subTextColor = '#E8DFF5';
       }
@@ -341,7 +393,8 @@
           const angleWidth = d.x1 - d.x0;
           const rMid = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
           const arcLen = rMid * angleWidth;
-          return angleWidth > labelThresholdAngle && arcLen > (d.data.name.length * charWidth * 0.65);
+          // Use a stricter multiplier to hide labels that are too long for their segment
+          return angleWidth > labelThresholdAngle && arcLen > (d.data.name.length * charWidth * 1.1);
         })
       )
       .join('text')
@@ -355,7 +408,7 @@
         const r = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
         const flip = x > 90 && x < 270;
         let rotation = flip ? -90 : 90;
-        if (d.data.name === 'Provenance Module' || d.data.name === 'Biological Module') {
+        if (d.data.name === 'Symbolic' || d.data.name === 'Provenance' || d.data.name === 'Source') {
           rotation += 180;
         }
         return `rotate(${x - 90}) translate(${r},0) rotate(${rotation})`;
