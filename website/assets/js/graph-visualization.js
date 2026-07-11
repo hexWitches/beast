@@ -382,38 +382,40 @@
     const charWidth = 6.5;
     const excludedClasses = new Set(['Person', 'Bestiary', 'CinematicWork', 'Tradition', 'CompositeCreature', 'GeographicPlace']);
 
-    svg.append('g')
-      .attr('class', 'kg-labels')
-      .attr('pointer-events', 'none')
-      .attr('text-anchor', 'middle')
-      .selectAll('text')
-      .data(
-        root.descendants().filter(d => {
-          if (d.depth === 0 || excludedClasses.has(d.data.name)) return false;
-          const angleWidth = d.x1 - d.x0;
-          const rMid = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
-          const arcLen = rMid * angleWidth;
-          // Use a stricter multiplier to hide labels that are too long for their segment
-          return angleWidth > labelThresholdAngle && arcLen > (d.data.name.length * charWidth * 1.1);
+    if (window.innerWidth > 768) {
+      svg.append('g')
+        .attr('class', 'kg-labels')
+        .attr('pointer-events', 'none')
+        .attr('text-anchor', 'middle')
+        .selectAll('text')
+        .data(
+          root.descendants().filter(d => {
+            if (d.depth === 0 || excludedClasses.has(d.data.name)) return false;
+            const angleWidth = d.x1 - d.x0;
+            const rMid = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
+            const arcLen = rMid * angleWidth;
+            // Use a stricter multiplier to hide labels that are too long for their segment
+            return angleWidth > labelThresholdAngle && arcLen > (d.data.name.length * charWidth * 1.1);
+          })
+        )
+        .join('text')
+        .attr('dy', '0.35em')
+        .attr('font-family', 'Montserrat, sans-serif')
+        .attr('font-weight', '500')
+        .attr('font-size', d => d.depth === 1 ? `${Math.max(11, Math.round(size / 48))}px` : `${Math.max(9.5, Math.round(size / 56))}px`)
+        .attr('fill', '#FFFFFF')
+        .attr('transform', d => {
+          const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+          const r = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
+          const flip = x > 90 && x < 270;
+          let rotation = flip ? -90 : 90;
+          if (d.data.name === 'Symbolic' || d.data.name === 'Provenance' || d.data.name === 'Source') {
+            rotation += 180;
+          }
+          return `rotate(${x - 90}) translate(${r},0) rotate(${rotation})`;
         })
-      )
-      .join('text')
-      .attr('dy', '0.35em')
-      .attr('font-family', 'Montserrat, sans-serif')
-      .attr('font-weight', '500')
-      .attr('font-size', d => d.depth === 1 ? `${Math.max(11, Math.round(size / 48))}px` : `${Math.max(9.5, Math.round(size / 56))}px`)
-      .attr('fill', d => lightSegments.has(d.data.name) ? '#151809' : '#F4EBD8')
-      .attr('transform', d => {
-        const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-        const r = (getInnerR(d.depth) + getOuterR(d.depth)) / 2;
-        const flip = x > 90 && x < 270;
-        let rotation = flip ? -90 : 90;
-        if (d.data.name === 'Symbolic' || d.data.name === 'Provenance' || d.data.name === 'Source') {
-          rotation += 180;
-        }
-        return `rotate(${x - 90}) translate(${r},0) rotate(${rotation})`;
-      })
-      .text(d => d.data.name);
+        .text(d => d.data.name);
+    }
 
     // Center Label
     const centre = svg.append('g')
