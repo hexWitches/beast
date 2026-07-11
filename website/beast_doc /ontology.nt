@@ -1,8 +1,4 @@
 <https://w3id.org/beast/ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/beast/ontology> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/cito> .
-<https://w3id.org/beast/ontology> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/spar/fabio> .
-<https://w3id.org/beast/ontology> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core#> .
-<https://w3id.org/beast/ontology> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/prov-o#> .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/bibliographicCitation> "Gamboa Nivia, M.J., Pinto, M., Roggiani, S., Spadavecchia, A. (2026). BEAST Ontology. https://w3id.org/beast/ontology"@en .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/created> "2026-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/creator> "Alice Spadavecchia" .
@@ -10,6 +6,7 @@
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/creator> "Miriana Pinto" .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/creator> "Sara Roggiani" .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/description> "An ontology for the description of creatures, their provenance, biological components and symbolic meanings."@en .
+<https://w3id.org/beast/ontology> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/publisher> <https://github.com/hexWitches> .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/references> "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" .
 <https://w3id.org/beast/ontology> <http://purl.org/dc/terms/title> "BEAST Ontology"@en .
@@ -25,11 +22,68 @@
 # #################################################################
 # 
 # 
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://purl.org/dc/terms/references
 <http://purl.org/dc/terms/references> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#hasTopConcept
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#topConceptOf
+<http://www.w3.org/2004/02/skos/core#topConceptOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
 # http://www.w3.org/ns/prov#wasDerivedFrom
 <http://www.w3.org/ns/prov#wasDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/codeRepository
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 
@@ -39,6 +93,12 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/spar/cito/cites
+<http://purl.org/spar/cito/cites> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/prov#wasInfluencedBy
+<http://www.w3.org/ns/prov#wasInfluencedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
 # https://w3id.org/beast/ontology#additionalAbility
 <https://w3id.org/beast/ontology#additionalAbility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -89,6 +149,7 @@
 # https://w3id.org/beast/ontology#belongsTo
 <https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#symbolizes> .
+<https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/beast/ontology#hasImaginarySymbol> .
 <https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginarySymbol> .
 <https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#ImaginaryStructure> .
 <https://w3id.org/beast/ontology#belongsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en .
@@ -198,6 +259,35 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#extractedFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
 <https://w3id.org/beast/ontology#extractedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "extracted from"@en .
 # 
+# https://w3id.org/beast/ontology#governs
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/beast/ontology#isGovernedBy> .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Regime> .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2000/01/rdf-schema#range> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginarySymbol> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of :isGovernedBy. Links a Regime to the structures, symbols, creatures, parts, abilities, or interpretations it governs."@en .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
+<https://w3id.org/beast/ontology#governs> <http://www.w3.org/2000/01/rdf-schema#label> "governs"@en .
+# 
 # https://w3id.org/beast/ontology#habitatCategory
 <https://w3id.org/beast/ontology#habitatCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#habitatCategory> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Habitat> .
@@ -242,19 +332,19 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#hasBodyOf
 <https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
-<https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid16 .
-_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the main torso or body structure of a creature. May be asserted directly for creatures with a single undivided body source, or indirectly through its subproperties hasUpperBodyOf and hasLowerBodyOf for creatures whose body is split into distinct segments."@en .
 <https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#hasBodyOf> <http://www.w3.org/2000/01/rdf-schema#label> "has body of"@en .
@@ -270,21 +360,21 @@ _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasDivergence
 <https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Interpretation> .
-<https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/2000/01/rdf-schema#range> _:genid20 .
-_:genid20 <http://www.w3.org/2002/07/owl#unionOf> _:genid24 .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Habitat> .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Diet> .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/2000/01/rdf-schema#range> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#unionOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Habitat> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Diet> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://w3id.org/beast/ontology#hasDuplicationOf
 <https://w3id.org/beast/ontology#hasDuplicationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -304,6 +394,15 @@ _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#hasEtymology> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
 <https://w3id.org/beast/ontology#hasEtymology> <http://www.w3.org/2000/01/rdf-schema#label> "has etymology"@en .
 # 
+# https://w3id.org/beast/ontology#hasGenesis
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/beast/ontology#isGenesisOf> .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Interpretation> .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#Genesis> .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a source-specific Interpretation to the account of the creature's origin or birth as told in that Source."@en .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#hasGenesis> <http://www.w3.org/2000/01/rdf-schema#label> "has genesis"@en .
+# 
 # https://w3id.org/beast/ontology#hasHabitat
 <https://w3id.org/beast/ontology#hasHabitat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#hasHabitat> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Creature> .
@@ -315,22 +414,30 @@ _:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#hasHeadOf
 <https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
-<https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid25 .
-_:genid25 <http://www.w3.org/2002/07/owl#unionOf> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#unionOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the head structure of a creature."@en .
 <https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#hasHeadOf> <http://www.w3.org/2000/01/rdf-schema#label> "has head of"@en .
+# 
+# https://w3id.org/beast/ontology#hasImaginarySymbol
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#ImaginarySymbol> .
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Inverse of :belongsTo. Links an Imaginary Structure to the imaginary symbols that belong to it."@en .
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
+<https://w3id.org/beast/ontology#hasImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "has imaginary symbol"@en .
 # 
 # https://w3id.org/beast/ontology#hasInterpretation
 <https://w3id.org/beast/ontology#hasInterpretation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -342,20 +449,20 @@ _:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasLowerBodyOf
 <https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasBodyOf> .
-<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid29 .
-_:genid29 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
+<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#unionOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the lower body, hindquarters, or posterior segment of a creature characterized by a segmented body structure."@en .
 <https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#hasLowerBodyOf> <http://www.w3.org/2000/01/rdf-schema#label> "has lower body of"@en .
@@ -372,21 +479,21 @@ _:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#hasNarrativeFunction
 <https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#symbolizes> .
-<https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid33 .
-_:genid33 <http://www.w3.org/2002/07/owl#unionOf> _:genid37 .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#unionOf> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#NarrativeFunction> .
 <https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a source-specific Interpretation to the symbolic or thematic role that the creature fulfills within that Source. Unlike :embodiesArchetype — which asserts a universal psychological identity — :hasNarrativeFunction captures the contextual, plot-level, or iconographic function the beast performs in a particular text or artwork: guardian, omen, divine messenger, embodiment of sin, etc. The same creature may carry different narrative functions across different Interpretations."@en .
 <https://w3id.org/beast/ontology#hasNarrativeFunction> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
@@ -394,15 +501,15 @@ _:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasOriginContext
 <https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid38 .
-_:genid38 <http://www.w3.org/2002/07/owl#unionOf> _:genid40 .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryPlace> .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid45 .
+_:genid45 <http://www.w3.org/2002/07/owl#unionOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryPlace> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#Source> .
 <https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a creature or an imaginary place to their earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."@en .
 <https://w3id.org/beast/ontology#hasOriginContext> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
@@ -410,7 +517,7 @@ _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasPart
 <https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Creature> .
 <https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#AnatomicalPart> .
 <https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an ImaginaryBeing to a specific AnatomicalPart that constitutes its body, without asserting the biological origin of that part. Where :hasPartDerivedFrom links a CompositeCreature to the real animal or material from which a part originates, :hasPart simply records which anatomical components are present — useful for imaginary beings whose parts have no clear real-world derivation or whose source is not documented in the available sources."@en .
 <https://w3id.org/beast/ontology#hasPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
@@ -418,39 +525,39 @@ _:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasPartDerivedFrom
 <https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> _:genid41 .
-_:genid41 <http://www.w3.org/2002/07/owl#unionOf> _:genid44 .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#range> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#unionOf> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a composite creature possesses anatomical or morphological features derived from a specific real animal, a plant or an inanimate element."@en .
 <https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
-<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "has part of"@en .
+<https://w3id.org/beast/ontology#hasPartDerivedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "has part derived from"@en .
 # 
 # https://w3id.org/beast/ontology#hasTailOf
 <https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
-<https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid45 .
-_:genid45 <http://www.w3.org/2002/07/owl#unionOf> _:genid48 .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid47 .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#unionOf> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the tail structure of a creature."@en .
 <https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#hasTailOf> <http://www.w3.org/2000/01/rdf-schema#label> "has tail of"@en .
@@ -465,23 +572,39 @@ _:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasUpperBodyOf
 <https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasBodyOf> .
-<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid49 .
-_:genid49 <http://www.w3.org/2002/07/owl#unionOf> _:genid52 .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid51 .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
+<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#ImaginaryBeing> .
+<https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#unionOf> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid57 .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the upper body, torso, or anterior segment of a creature characterized by a segmented body structure."@en .
 <https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#hasUpperBodyOf> <http://www.w3.org/2000/01/rdf-schema#label> "has upper body of"@en .
+# 
+# https://w3id.org/beast/ontology#involvesParent
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Genesis> .
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/2000/01/rdf-schema#range> _:genid60 .
+_:genid60 <http://www.w3.org/2002/07/owl#unionOf> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MythologicalFigure> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a Genesis account to a Creature or MythologicalFigure identified as a parent or progenitor within that account."@en .
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#involvesParent> <http://www.w3.org/2000/01/rdf-schema#label> "involves parent"@en .
 # 
 # https://w3id.org/beast/ontology#isEtymologyOf
 <https://w3id.org/beast/ontology#isEtymologyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -491,37 +614,59 @@ _:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#isEtymologyOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
 <https://w3id.org/beast/ontology#isEtymologyOf> <http://www.w3.org/2000/01/rdf-schema#label> "is etymology of"@en .
 # 
+# https://w3id.org/beast/ontology#isGenesisOf
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Genesis> .
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#Interpretation> .
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a Genesis account back to the Interpretation it describes the origin of."@en .
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#isGenesisOf> <http://www.w3.org/2000/01/rdf-schema#label> "is genesis of"@en .
+# 
 # https://w3id.org/beast/ontology#isGovernedBy
 <https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid53 .
-_:genid53 <http://www.w3.org/2002/07/owl#unionOf> _:genid59 .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid57 .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
-_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
-_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#unionOf> _:genid69 .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid68 .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid67 .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid64 .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginarySymbol> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/beast/ontology#Regime> .
-<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid61 .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#isGovernedBy> .
-_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2004/02/skos/core#broader> .
-_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#isGovernedBy> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#belongsTo> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#isGovernedBy> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#belongsToImaginaryStructure> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#isGovernedBy> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#embodiesImaginarySymbol> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 <https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en .
 <https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#isGovernedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is governed by"@en .
@@ -554,24 +699,24 @@ _:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1
 # https://w3id.org/beast/ontology#relatedTo
 <https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
-<https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid62 .
-_:genid62 <http://www.w3.org/2002/07/owl#unionOf> _:genid64 .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid63 .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
-_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
-_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#range> _:genid65 .
-_:genid65 <http://www.w3.org/2002/07/owl#unionOf> _:genid67 .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
-_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
-_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid76 .
+_:genid76 <http://www.w3.org/2002/07/owl#unionOf> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid77 .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#range> _:genid79 .
+_:genid79 <http://www.w3.org/2002/07/owl#unionOf> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#comment> "A symmetric associative property linking two NarrativeFunction or Archetype individuals that share thematic, structural, or symbolic overlap without one being a specialisation of the other. For example, the function of Guardian and the function of Threshold-Keeper are related but distinct; the Archetype of the Devourer and the Archetype of the Transformer share symbolic territory without subsumption. This property enables lateral navigation across the symbolic vocabulary of the ontology."@en .
 <https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#relatedTo> <http://www.w3.org/2000/01/rdf-schema#label> "related to"@en .
@@ -596,36 +741,36 @@ _:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#symbolizes
 <https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid68 .
-_:genid68 <http://www.w3.org/2002/07/owl#unionOf> _:genid72 .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid71 .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid70 .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid69 .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
-_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
-_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#range> _:genid73 .
-_:genid73 <http://www.w3.org/2002/07/owl#unionOf> _:genid77 .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid76 .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid75 .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
-_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
-_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
-_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid82 .
+_:genid82 <http://www.w3.org/2002/07/owl#unionOf> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid85 .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid84 .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#AnatomicalPart> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Ability> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#range> _:genid87 .
+_:genid87 <http://www.w3.org/2002/07/owl#unionOf> _:genid91 .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid90 .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginarySymbol> .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#comment> "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), a Creature or its Interpretation serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."@en .
 <https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#symbolizes> <http://www.w3.org/2000/01/rdf-schema#label> "symbolizes"@en .
@@ -649,6 +794,9 @@ _:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
+# http://purl.org/spar/fabio/hasSequenceIdentifier
+<http://purl.org/spar/fabio/hasSequenceIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
 # https://w3id.org/beast/ontology#hasAlternativeName
 <https://w3id.org/beast/ontology#hasAlternativeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/beast/ontology#hasAlternativeName> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Creature> .
@@ -659,38 +807,49 @@ _:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#hasDistinctiveTrait
 <https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid78 .
-_:genid78 <http://www.w3.org/2002/07/owl#unionOf> _:genid80 .
-_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid79 .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid92 .
+_:genid92 <http://www.w3.org/2002/07/owl#unionOf> _:genid94 .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid93 .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."@en .
+<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
+<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#label> "has distinctive trait"@en .
 # 
 # https://w3id.org/beast/ontology#hasDivergence
 <https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
+# https://w3id.org/beast/ontology#hasGenesisDescription
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/beast/ontology#Genesis> .
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "A free-text narrative summary of a creature's origin as told in a specific Interpretation."@en .
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#hasGenesisDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has genesis description"@en .
+# 
 # https://w3id.org/beast/ontology#hasMeaning
 <https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
-<https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid81 .
-_:genid81 <http://www.w3.org/2002/07/owl#unionOf> _:genid85 .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid84 .
-_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid83 .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid82 .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
-_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Etymology> .
-_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
-_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid95 .
+_:genid95 <http://www.w3.org/2002/07/owl#unionOf> _:genid99 .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid97 .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid96 .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#NarrativeFunction> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Etymology> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Archetype> .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
 <https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#comment> "The literal string translation or definition of a term, concept, or archetypal figure."@en .
 <https://w3id.org/beast/ontology#hasMeaning> <http://www.w3.org/2000/01/rdf-schema#label> "has meaning"@en .
@@ -737,8 +896,11 @@ _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-# http://www.w3.org/2002/07/owl#
-<http://www.w3.org/2002/07/owl#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # https://schema.org/CreativeWork
 <https://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -808,6 +970,7 @@ _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#DiurnalRegime
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#Regime> .
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/beast/ontology#NocturnalRegime> .
 # 
 # https://w3id.org/beast/ontology#Etymology
@@ -815,6 +978,18 @@ _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#Etymology> <http://www.w3.org/2000/01/rdf-schema#comment> "The documented linguistic origin of the name used to identify a Creature, capturing its root term, source language, and original meaning."@en .
 <https://w3id.org/beast/ontology#Etymology> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
 <https://w3id.org/beast/ontology#Etymology> <http://www.w3.org/2000/01/rdf-schema#label> "Etymology"@en .
+# 
+# https://w3id.org/beast/ontology#Genesis
+<https://w3id.org/beast/ontology#Genesis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#Genesis> <http://www.w3.org/2000/01/rdf-schema#comment> "A source-specific account of a creature's origin or birth, capturing the parent(s) or progenitor(s) involved, and/or a circumstantial or causal explanation. Because genealogical and origin narratives frequently vary or conflict across sources, Genesis is modelled at the level of Interpretation rather than Creature, allowing multiple, potentially divergent, origin accounts to coexist for the same universal creature concept without asserting a single canonical explanation."@en .
+<https://w3id.org/beast/ontology#Genesis> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#Genesis> <http://www.w3.org/2000/01/rdf-schema#label> "Genesis"@en .
+# 
+# https://w3id.org/beast/ontology#GeographicPlace
+<https://w3id.org/beast/ontology#GeographicPlace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#GeographicPlace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#RealWorldPlace> .
+<https://w3id.org/beast/ontology#GeographicPlace> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific, real-world named location (e.g. a country, region, or city) that serves as a creature's habitat or place of origin, as distinct from a general ecological biome type."@en .
+<https://w3id.org/beast/ontology#GeographicPlace> <http://www.w3.org/2000/01/rdf-schema#label> "Geographic place"@en .
 # 
 # https://w3id.org/beast/ontology#Habitat
 <https://w3id.org/beast/ontology#Habitat> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -825,11 +1000,11 @@ _:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#HybridCreature
 <https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#CompositeCreature> .
-<https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid86 .
-_:genid86 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid86 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid86 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
-_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid100 .
+_:genid100 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid100 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid100 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/beast/ontology#hasPartDerivedFrom> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#comment> "A specific type of imaginary being composed of anatomical parts from two or more distinct real animals."@en .
 <https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#HybridCreature> <http://www.w3.org/2000/01/rdf-schema#label> "Hybrid creature"@en .
@@ -882,10 +1057,12 @@ _:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#MysticalStructure
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid87 .
-_:genid87 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/beast/ontology#NocturnalRegime> .
-_:genid87 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/beast/ontology#isGovernedBy> .
-_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://w3id.org/beast/ontology#MythologicalFigure
+<https://w3id.org/beast/ontology#MythologicalFigure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#MythologicalFigure> <http://www.w3.org/2000/01/rdf-schema#comment> "A deity, hero, personified force, or other agent from myth or tradition."@en .
+<https://w3id.org/beast/ontology#MythologicalFigure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#ProvenanceModule> .
+<https://w3id.org/beast/ontology#MythologicalFigure> <http://www.w3.org/2000/01/rdf-schema#label> "Mythological Figure"@en .
 # 
 # https://w3id.org/beast/ontology#NarrativeFunction
 <https://w3id.org/beast/ontology#NarrativeFunction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -895,6 +1072,7 @@ _:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#NocturnalRegime
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#Regime> .
 # 
 # https://w3id.org/beast/ontology#Plant
 <https://w3id.org/beast/ontology#Plant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -921,10 +1099,6 @@ _:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#SchizomorphicStructure
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
-_:genid88 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/beast/ontology#DiurnalRegime> .
-_:genid88 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/beast/ontology#isGovernedBy> .
-_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 # 
 # https://w3id.org/beast/ontology#Source
 <https://w3id.org/beast/ontology#Source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -936,10 +1110,6 @@ _:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/beast/ontology#SyntheticStructure
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid89 .
-_:genid89 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/beast/ontology#NocturnalRegime> .
-_:genid89 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/beast/ontology#isGovernedBy> .
-_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 # 
 # https://w3id.org/beast/ontology#Tradition
 <https://w3id.org/beast/ontology#Tradition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -964,13 +1134,6 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-# https://creativecommons.org/licenses/by/4.0/
-<https://creativecommons.org/licenses/by/4.0/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-# 
-# https://w3id.org/beast/ontology
-<https://w3id.org/beast/ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-# 
 # https://w3id.org/beast/ontology#Aerial
 <https://w3id.org/beast/ontology#Aerial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#Aerial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#RealWorldPlace> .
@@ -989,14 +1152,13 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
-<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Ascensional symbol embodies heroic symbols of elevation, verticality, and transcendence. It represents the upward movement to escape the degradation of time and the symbolic refusal of death. In this structure, height is synonymous with the pure and the divine; the wing is the ascensional instrument that contradicts gravity. These symbols manifest a quest to regain lost power through movement toward metaphysical spaces (e.g., mountains), dazzling imagery (arrows, wings), and virile archetypes of celestial royalty and the warrior."@en .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Ascensional Symbol"@en .
+<https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#AscensionalSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Ascensional Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#BiologicalModule
@@ -1016,54 +1178,51 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Catamorphic symbol embodies falling, gravity, and the physical degradation of flesh. These dynamic images of transience represent the dazzling acceleration of time during a downward plunge. Catamorphic symbol captures the existential anxiety of the fall, where movement signifies the inescapable and rapid passage of time toward death."@en .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Catamorphic Symbol"@en .
+<https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#CatamorphicSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Catamorphic Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#CyclicalSymbol
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SyntheticStructure> .
-<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SyntheticStructure> .
+<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Cyclical symbol represents the archetype of the Eternal Return and time as a series of phases. Using the moon as a primary model - being the first to die and the first to be reborn - these symbols suggest that time is a series of phases where opposites (life/death, light/dark) coexist. This 'lunar optimism' does not negate death but reintegrates it as an essential stage of an incessant, evolving movement where every sunset is a prelude to a new dawn. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Cyclical Symbol"@en .
+<https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SyntheticStructure> .
+<https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#CyclicalSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Cyclical Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#DiareticSymbol
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Diaretic symbol embodies figures of cutting, weapons, and purification, derived from the Greek term 'diairesis' (division). They represent the human need for analysis, categorization, and absolute separation to overcome natural chaos. The hero's weapon is a dual symbol of power and purity; by cutting through confusion and separating the real from the imaginary, or good from evil, the hero gains mastery over the world. In this structure, the act of separation is the primary source of intellectual and spiritual power."@en .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Diaretic Symbol"@en .
+<https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#DiareticSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Diaretic Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#DiurnalRegime
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#Regime> .
-<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 # https://w3id.org/beast/ontology#DurandImaginary
+<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
-<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/beast/ontology#Regime> .
 <https://w3id.org/beast/ontology#DurandImaginary> <http://purl.org/dc/terms/title> "Durand's structures of the Imaginary"@en .
 <https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2000/01/rdf-schema#comment> "A conceptual scheme providing a framework for the symbolic and anthropological analysis of creatures within bestiaries. It acts as the theoretical pivot of the Symbolic Module, allowing for the classification of beasts and their attributes based on their relationship with human anxiety regarding time and death. By applying Gilbert Durand's regimes and structures defined in 'Les Structures Anthropologiques de l'Imaginaire', 'beast' can map how physical biological traits - such as wings - serve as archetypal responses to mortality, transforming the creature from a mere biological entity into a profound cultural symbol."@en .
 <https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
+<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://w3id.org/beast/ontology#Regime> .
 <https://w3id.org/beast/ontology#DurandImaginary> <http://www.w3.org/ns/prov#wasDerivedFrom> "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" .
 # 
 # https://w3id.org/beast/ontology#Elemental
@@ -1088,39 +1247,36 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#Herbivorous> <http://www.w3.org/2000/01/rdf-schema#label> "Herbivorous"@en .
 # 
 # https://w3id.org/beast/ontology#ImaginaryStructure
+<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
-<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 # https://w3id.org/beast/ontology#ImaginarySymbol
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 # https://w3id.org/beast/ontology#IntimacySymbol
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#MysticalStructure> .
-<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#MysticalStructure> .
+<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifying world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Intimacy Symbol"@en .
+<https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#MysticalStructure> .
+<https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#IntimacySymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Intimacy Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#InversionSymbol
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#MysticalStructure> .
-<https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#InversionSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#MysticalStructure> .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Inversion symbol exorcises the fear of time by turning negative images into positive ones. Through an involutive process, the devouring mouth of the Diurnal Regime is transmuted into a protective nest. Instead of a heroic battle against darkness, there is a mystical union with it. This defensive mechanism employs doubling and reassuring symbols of intimacy to transform a dangerous fall into a controlled descent into the secrets of becoming."@en .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Inversion Symbol"@en .
+<https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#MysticalStructure> .
+<https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#InversionSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Inversion Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#LiteraryMetafiction
@@ -1146,25 +1302,22 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#MysticalStructure
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
+<https://w3id.org/beast/ontology#MysticalStructure> <https://w3id.org/beast/ontology#isGovernedBy> <https://w3id.org/beast/ontology#NocturnalRegime> .
+<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 # 
 # https://w3id.org/beast/ontology#NocturnalRegime
-<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#Regime> .
-<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 # https://w3id.org/beast/ontology#NyctomorphicSymbol
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Nyctomorphic symbol encapsulates the temporal symbolism of darkness, blindness, and shadows. Linked to the voracity of the night, it often incorporates the element of water - viewed here not as a source of life, but as an elusive, dark surface that doubles the abyss and reflects the formless terror of the unknown."@en .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Nyctomorphic Symbol"@en .
+<https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#NyctomorphicSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Nyctomorphic Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#Omnivorous
@@ -1181,9 +1334,8 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#ProvenanceModule> <http://www.w3.org/2000/01/rdf-schema#label> "Provenance Module (the Anchor)"@en .
 # 
 # https://w3id.org/beast/ontology#Regime
+<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#Regime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
-<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 # https://w3id.org/beast/ontology#Scavenger
 <https://w3id.org/beast/ontology#Scavenger> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -1194,8 +1346,7 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#SchizomorphicStructure
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
+<https://w3id.org/beast/ontology#SchizomorphicStructure> <https://w3id.org/beast/ontology#isGovernedBy> <https://w3id.org/beast/ontology#DiurnalRegime> .
 # 
 # https://w3id.org/beast/ontology#ScientificTaxonomy
 <https://w3id.org/beast/ontology#ScientificTaxonomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -1208,12 +1359,12 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Spectacular symbol relates to intense light, vision, and the heroic gaze. Standing in direct opposition to darkness, it emphasizes the triumph of clarity and the 'solar power' that makes the world intelligible and thus controllable. Sight is the supreme sense of the hero, as clear vision allows for the differentiation of things and the definition of clear boundaries. In this context, light functions as a sword, cutting through obscurity to define reality."@en .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Spectacular Symbol"@en .
+<https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#SpectacularSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Spectacular Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#SymbolicModule
@@ -1224,19 +1375,18 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/beast/ontology#SyntheticStructure
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
-<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
+<https://w3id.org/beast/ontology#SyntheticStructure> <https://w3id.org/beast/ontology#isGovernedBy> <https://w3id.org/beast/ontology#NocturnalRegime> .
 # 
 # https://w3id.org/beast/ontology#TeriomorphicSymbol
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/beast/ontology#ImaginarySymbol> .
-<https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
-<https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <https://w3id.org/beast/ontology#belongsTo> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "Teriomorphic symbol represents the terrifying aspect of animals, embodying biting, devouring, and feral chaos. As 'enemy symbol' of anxiety and darkness, it is linked to the restlessness caused by rapid, undisciplined movement. It captures the chaos of fleeing from 'devouring time' and the archetype of the predatory jaws ready to strike."@en .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Teriomorphic Symbol"@en .
+<https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+<https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#TeriomorphicSymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Teriomorphic Symbol"@en .
 # 
 # https://w3id.org/beast/ontology#Terrestrial
@@ -1245,10 +1395,6 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#Terrestrial> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical habitat primarily located on solid ground or within the earth."@en .
 <https://w3id.org/beast/ontology#Terrestrial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
 <https://w3id.org/beast/ontology#Terrestrial> <http://www.w3.org/2000/01/rdf-schema#label> "Terrestrial"@en .
-# 
-# https://w3id.org/beast/ontology#hasDistinctiveTrait
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#> .
 # 
 # 
 # 
@@ -1262,48 +1408,60 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2000/01/rdf-schema#comment> "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time. This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."@en .
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2000/01/rdf-schema#label> "Diurnal Regime"@en .
+<https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#Regime> .
+<https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#DiurnalRegime> <http://www.w3.org/2004/02/skos/core#prefLabel> "Diurnal Regime"@en .
 # 
 <https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."@en .
 <https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Imaginary Structure"@en .
+<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2004/02/skos/core#prefLabel> "Imaginary Structure"@en .
+<https://w3id.org/beast/ontology#ImaginaryStructure> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#comment> "The shared OWL class and intermediate SKOS concept grouping all specific symbolic categories recognised by Gilbert Durand within his structures of the imaginary. As an owl:Class it provides the common type for all symbol individuals (TeriomorphicSymbol, AscensionalSymbol, CyclicalSymbol, etc.), allowing properties such as :belongsTo to range over them uniformly. As a skos:Concept it sits between :ImaginaryStructure and the specific symbol individuals in the DurandImaginary thesaurus, making the three-level hierarchy (ImaginaryStructure → ImaginarySymbol → specific symbol) navigable via skos:broader."@en .
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2000/01/rdf-schema#label> "Imaginary Symbol"@en .
+<https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#ImaginarySymbol> <http://www.w3.org/2004/02/skos/core#prefLabel> "Imaginary Symbol"@en .
 # 
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "Mystical structures include symbols of intimacy and calm, the search for light within darkness. The principles underlying mystical structures are analogy and similarity. Instead of battling against time, one enters into union with it. The mind takes images of terror and rewrites them positively, transforming them into refuge and protected space. Within this logic, opposites can coexist. In mystical structures one finds doubling and adherence rather than antithesis. It functions through inversion, doubling, and adherence, turning the devouring mouth of the diurnal regime into a protective container."@en .
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Mystical Structure (or Antiphrastic)"@en .
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#altLabel> "Antiphrastic"@en .
+<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#MysticalStructure> <http://www.w3.org/2004/02/skos/core#prefLabel> "Mystical Structure"@en .
 # 
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2000/01/rdf-schema#comment> "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures. Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en .
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2000/01/rdf-schema#label> "Nocturnal Regime"@en .
+<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#Regime> .
+<https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#NocturnalRegime> <http://www.w3.org/2004/02/skos/core#prefLabel> "Nocturnal Regime"@en .
 # 
 <https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2000/01/rdf-schema#comment> "The fundamental high-level classification of Durand, organized around sensory-motor dominants (postural, digestive, cyclic). Regimes act as organizational systems of the imagination, condensing multiple symbolic meanings into a coherent structure."@en .
 <https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2000/01/rdf-schema#label> "Regime"@en .
+<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2004/02/skos/core#prefLabel> "Regime"@en .
+<https://w3id.org/beast/ontology#Regime> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://w3id.org/beast/ontology#DurandImaginary> .
 # 
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."@en .
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Schizomorphic Structure (or Heroic)"@en .
+<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#SchizomorphicStructure> <http://www.w3.org/2004/02/skos/core#prefLabel> "Schizomorphic Structure (or Heroic)"@en .
 # 
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2000/01/rdf-schema#comment> "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."@en .
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2000/01/rdf-schema#label> "Synthetic Structure (or Dramatic)"@en .
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#altLabel> "Dramatic"@en .
+<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#broader> <https://w3id.org/beast/ontology#ImaginaryStructure> .
+<https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#inScheme> <https://w3id.org/beast/ontology#DurandImaginary> .
 <https://w3id.org/beast/ontology#SyntheticStructure> <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Structure"@en .
-# 
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#comment> "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."@en .
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#BiologicalModule> .
-<https://w3id.org/beast/ontology#hasDistinctiveTrait> <http://www.w3.org/2000/01/rdf-schema#label> "has distinctive trait"@en .
 # 
 <https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/2000/01/rdf-schema#comment> "The parent property for all divergence assertions linking a source-specific Interpretation to the biological feature — either an AnatomicalPart or an Ability — that differs from the creature's canonical description in that Source. Subproperties :additionalAbility, :removedAbility, :additionalPart, and :removedPart specialise the nature of the divergence. This structure allows the ontology to answer questions such as 'which interpretations add wings to a normally wingless creature' or 'which sources suppress a creature's canonical venom ability'."@en .
 <https://w3id.org/beast/ontology#hasDivergence> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/beast/ontology#SymbolicModule> .
@@ -1318,88 +1476,94 @@ _:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
-_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid90 <http://www.w3.org/2002/07/owl#members> _:genid93 .
-_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid92 .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid91 .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#VisualArtwork> .
-_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#LiteraryWork> .
-_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#CinematicWork> .
-_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-# 
-_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid94 <http://www.w3.org/2002/07/owl#members> _:genid97 .
-_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid96 .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid95 .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Source> .
-_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
-_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
-_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-# 
-_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid98 <http://www.w3.org/2002/07/owl#members> _:genid101 .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid100 .
-_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid99 .
-_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
-_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
-_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
-_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-# 
-_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid102 <http://www.w3.org/2002/07/owl#members> _:genid105 .
-_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid104 .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid101 <http://www.w3.org/2002/07/owl#members> _:genid104 .
 _:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid103 .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#SyntheticStructure> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid102 .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#VisualArtwork> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#LiteraryWork> .
 _:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#CinematicWork> .
 _:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MysticalStructure> .
-_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
-_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-_:genid106 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid113 .
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid112 .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid111 .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid105 <http://www.w3.org/2002/07/owl#members> _:genid110 .
 _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid109 .
 _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid108 .
 _:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid107 .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Scavenger> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid106 .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Source> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MythologicalFigure> .
 _:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Omnivorous> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Interpretation> .
 _:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Lithophagous> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Genesis> .
 _:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Herbivorous> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Creature> .
 _:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Hematophagous> .
-_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Elemental> .
-_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Carnivorous> .
-_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
-_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
-_:genid114 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid117 .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid111 <http://www.w3.org/2002/07/owl#members> _:genid114 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid113 .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid112 .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#RealAnimal> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Plant> .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#InanimateElement> .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid115 <http://www.w3.org/2002/07/owl#members> _:genid118 .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid117 .
 _:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid116 .
-_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid115 .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ScientificTaxonomy> .
-_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MoralAllegory> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#SyntheticStructure> .
 _:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#LiteraryMetafiction> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#SchizomorphicStructure> .
 _:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MysticalStructure> .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid119 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid126 .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid125 .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid124 .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid123 .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid122 .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid121 .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid120 .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Scavenger> .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Omnivorous> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Lithophagous> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Herbivorous> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Hematophagous> .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Elemental> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#Carnivorous> .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDifferent> .
+_:genid127 <http://www.w3.org/2002/07/owl#distinctMembers> _:genid130 .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid129 .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid128 .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#ScientificTaxonomy> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#MoralAllegory> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/beast/ontology#LiteraryMetafiction> .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

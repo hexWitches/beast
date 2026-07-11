@@ -7,10 +7,6 @@
 @base <https://w3id.org/beast/ontology#> .
 
 <https://w3id.org/beast/ontology> rdf:type owl:Ontology ;
-                                   owl:imports <http://purl.org/spar/cito> ,
-                                               <http://purl.org/spar/fabio> ,
-                                               <http://www.w3.org/2004/02/skos/core#> ,
-                                               <http://www.w3.org/ns/prov-o#> ;
                                    <http://purl.org/dc/terms/bibliographicCitation> "Gamboa Nivia, M.J., Pinto, M., Roggiani, S., Spadavecchia, A. (2026). BEAST Ontology. https://w3id.org/beast/ontology"@en ;
                                    <http://purl.org/dc/terms/created> "2026-05-01"^^xsd:date ;
                                    <http://purl.org/dc/terms/creator> "Alice Spadavecchia" ,
@@ -18,6 +14,7 @@
                                                                       "Miriana Pinto" ,
                                                                       "Sara Roggiani" ;
                                    <http://purl.org/dc/terms/description> "An ontology for the description of creatures, their provenance, biological components and symbolic meanings."@en ;
+                                   <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                    <http://purl.org/dc/terms/publisher> <https://github.com/hexWitches> ;
                                    <http://purl.org/dc/terms/references> "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" ;
                                    <http://purl.org/dc/terms/title> "BEAST Ontology"@en ;
@@ -29,17 +26,93 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/terms/references
 <http://purl.org/dc/terms/references> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+<http://www.w3.org/2004/02/skos/core#topConceptOf> rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/prov#wasDerivedFrom
 <http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:AnnotationProperty .
 
 
+###  https://schema.org/codeRepository
+<https://schema.org/codeRepository> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/spar/cito/cites
+<http://purl.org/spar/cito/cites> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/prov#wasInfluencedBy
+<http://www.w3.org/ns/prov#wasInfluencedBy> rdf:type owl:ObjectProperty .
+
 
 ###  https://w3id.org/beast/ontology#additionalAbility
 :additionalAbility rdf:type owl:ObjectProperty ;
@@ -94,6 +167,7 @@
 ###  https://w3id.org/beast/ontology#belongsTo
 :belongsTo rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :symbolizes ;
+           owl:inverseOf :hasImaginarySymbol ;
            rdfs:domain :ImaginarySymbol ;
            rdfs:range :ImaginaryStructure ;
            rdfs:comment "Specifically links an Imaginary Symbol to the broader Imaginary Structure."@en ;
@@ -187,6 +261,24 @@
                rdfs:label "extracted from"@en .
 
 
+###  https://w3id.org/beast/ontology#governs
+:governs rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isGovernedBy ;
+         rdfs:domain :Regime ;
+         rdfs:range [ rdf:type owl:Class ;
+                      owl:unionOf ( :Ability
+                                    :AnatomicalPart
+                                    :Creature
+                                    :ImaginaryStructure
+                                    :ImaginarySymbol
+                                    :Interpretation
+                                  )
+                    ] ;
+         rdfs:comment "Inverse of :isGovernedBy. Links a Regime to the structures, symbols, creatures, parts, abilities, or interpretations it governs."@en ;
+         rdfs:isDefinedBy :SymbolicModule ;
+         rdfs:label "governs"@en .
+
+
 ###  https://w3id.org/beast/ontology#habitatCategory
 :habitatCategory rdf:type owl:ObjectProperty ;
                  rdfs:domain :Habitat ;
@@ -236,7 +328,7 @@
 ###  https://w3id.org/beast/ontology#hasBodyOf
 :hasBodyOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasPartDerivedFrom ;
-           rdfs:domain :CompositeCreature ;
+           rdfs:domain :ImaginaryBeing ;
            rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( :InanimateElement
                                       :Plant
@@ -290,6 +382,16 @@
               rdfs:label "has etymology"@en .
 
 
+###  https://w3id.org/beast/ontology#hasGenesis
+:hasGenesis rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isGenesisOf ;
+            rdfs:domain :Interpretation ;
+            rdfs:range :Genesis ;
+            rdfs:comment "Links a source-specific Interpretation to the account of the creature's origin or birth as told in that Source."@en ;
+            rdfs:isDefinedBy :ProvenanceModule ;
+            rdfs:label "has genesis"@en .
+
+
 ###  https://w3id.org/beast/ontology#hasHabitat
 :hasHabitat rdf:type owl:ObjectProperty ;
             rdfs:domain :Creature ;
@@ -302,7 +404,7 @@
 ###  https://w3id.org/beast/ontology#hasHeadOf
 :hasHeadOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasPartDerivedFrom ;
-           rdfs:domain :CompositeCreature ;
+           rdfs:domain :ImaginaryBeing ;
            rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( :InanimateElement
                                       :Plant
@@ -312,6 +414,15 @@
            rdfs:comment "Specifies the head structure of a creature."@en ;
            rdfs:isDefinedBy :BiologicalModule ;
            rdfs:label "has head of"@en .
+
+
+###  https://w3id.org/beast/ontology#hasImaginarySymbol
+:hasImaginarySymbol rdf:type owl:ObjectProperty ;
+                    rdfs:domain :ImaginaryStructure ;
+                    rdfs:range :ImaginarySymbol ;
+                    rdfs:comment "Inverse of :belongsTo. Links an Imaginary Structure to the imaginary symbols that belong to it."@en ;
+                    rdfs:isDefinedBy :SymbolicModule ;
+                    rdfs:label "has imaginary symbol"@en .
 
 
 ###  https://w3id.org/beast/ontology#hasInterpretation
@@ -325,8 +436,8 @@
 
 ###  https://w3id.org/beast/ontology#hasLowerBodyOf
 :hasLowerBodyOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasBodyOf ;
-                rdfs:domain :CompositeCreature ;
+                rdfs:subPropertyOf :hasPartDerivedFrom ;
+                rdfs:domain :ImaginaryBeing ;
                 rdfs:range [ rdf:type owl:Class ;
                              owl:unionOf ( :InanimateElement
                                            :Plant
@@ -379,7 +490,7 @@
 
 ###  https://w3id.org/beast/ontology#hasPart
 :hasPart rdf:type owl:ObjectProperty ;
-         rdfs:domain :ImaginaryBeing ;
+         rdfs:domain :Creature ;
          rdfs:range :AnatomicalPart ;
          rdfs:comment "Links an ImaginaryBeing to a specific AnatomicalPart that constitutes its body, without asserting the biological origin of that part. Where :hasPartDerivedFrom links a CompositeCreature to the real animal or material from which a part originates, :hasPart simply records which anatomical components are present — useful for imaginary beings whose parts have no clear real-world derivation or whose source is not documented in the available sources."@en ;
          rdfs:isDefinedBy :BiologicalModule ;
@@ -388,7 +499,7 @@
 
 ###  https://w3id.org/beast/ontology#hasPartDerivedFrom
 :hasPartDerivedFrom rdf:type owl:ObjectProperty ;
-                    rdfs:domain :CompositeCreature ;
+                    rdfs:domain :ImaginaryBeing ;
                     rdfs:range [ rdf:type owl:Class ;
                                  owl:unionOf ( :InanimateElement
                                                :Plant
@@ -397,13 +508,13 @@
                                ] ;
                     rdfs:comment "Indicates that a composite creature possesses anatomical or morphological features derived from a specific real animal, a plant or an inanimate element."@en ;
                     rdfs:isDefinedBy :BiologicalModule ;
-                    rdfs:label "has part of"@en .
+                    rdfs:label "has part derived from"@en .
 
 
 ###  https://w3id.org/beast/ontology#hasTailOf
 :hasTailOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :hasPartDerivedFrom ;
-           rdfs:domain :CompositeCreature ;
+           rdfs:domain :ImaginaryBeing ;
            rdfs:range [ rdf:type owl:Class ;
                         owl:unionOf ( :InanimateElement
                                       :Plant
@@ -426,8 +537,8 @@
 
 ###  https://w3id.org/beast/ontology#hasUpperBodyOf
 :hasUpperBodyOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :hasBodyOf ;
-                rdfs:domain :CompositeCreature ;
+                rdfs:subPropertyOf :hasPartDerivedFrom ;
+                rdfs:domain :ImaginaryBeing ;
                 rdfs:range [ rdf:type owl:Class ;
                              owl:unionOf ( :InanimateElement
                                            :Plant
@@ -439,6 +550,19 @@
                 rdfs:label "has upper body of"@en .
 
 
+###  https://w3id.org/beast/ontology#involvesParent
+:involvesParent rdf:type owl:ObjectProperty ;
+                rdfs:domain :Genesis ;
+                rdfs:range [ rdf:type owl:Class ;
+                             owl:unionOf ( :Creature
+                                           :MythologicalFigure
+                                         )
+                           ] ;
+                rdfs:comment "Links a Genesis account to a Creature or MythologicalFigure identified as a parent or progenitor within that account."@en ;
+                rdfs:isDefinedBy :ProvenanceModule ;
+                rdfs:label "involves parent"@en .
+
+
 ###  https://w3id.org/beast/ontology#isEtymologyOf
 :isEtymologyOf rdf:type owl:ObjectProperty ;
                rdfs:domain :Etymology ;
@@ -446,6 +570,15 @@
                rdfs:comment "Links an etymological origin back to the modern or targeted term it resulted in."@en ;
                rdfs:isDefinedBy :ProvenanceModule ;
                rdfs:label "is etymology of"@en .
+
+
+###  https://w3id.org/beast/ontology#isGenesisOf
+:isGenesisOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Genesis ;
+             rdfs:range :Interpretation ;
+             rdfs:comment "Links a Genesis account back to the Interpretation it describes the origin of."@en ;
+             rdfs:isDefinedBy :ProvenanceModule ;
+             rdfs:label "is genesis of"@en .
 
 
 ###  https://w3id.org/beast/ontology#isGovernedBy
@@ -460,7 +593,13 @@
                                         )
                           ] ;
               rdfs:range :Regime ;
-              owl:propertyChainAxiom ( <http://www.w3.org/2004/02/skos/core#broader>
+              owl:propertyChainAxiom ( :belongsTo
+                                       :isGovernedBy
+                                     ) ,
+                                     ( :belongsToImaginaryStructure
+                                       :isGovernedBy
+                                     ) ,
+                                     ( :embodiesImaginarySymbol
                                        :isGovernedBy
                                      ) ;
               rdfs:comment "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."@en ;
@@ -570,6 +709,10 @@
 #    Data properties
 #################################################################
 
+###  http://purl.org/spar/fabio/hasSequenceIdentifier
+<http://purl.org/spar/fabio/hasSequenceIdentifier> rdf:type owl:DatatypeProperty .
+
+
 ###  https://w3id.org/beast/ontology#hasAlternativeName
 :hasAlternativeName rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Creature ;
@@ -586,11 +729,23 @@
                                                  :Interpretation
                                                )
                                  ] ;
-                     rdfs:range rdfs:Literal .
+                     rdfs:range rdfs:Literal ;
+                     rdfs:comment "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."@en ;
+                     rdfs:isDefinedBy :BiologicalModule ;
+                     rdfs:label "has distinctive trait"@en .
 
 
 ###  https://w3id.org/beast/ontology#hasDivergence
 :hasDivergence rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/beast/ontology#hasGenesisDescription
+:hasGenesisDescription rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Genesis ;
+                       rdfs:range rdfs:Literal ;
+                       rdfs:comment "A free-text narrative summary of a creature's origin as told in a specific Interpretation."@en ;
+                       rdfs:isDefinedBy :ProvenanceModule ;
+                       rdfs:label "has genesis description"@en .
 
 
 ###  https://w3id.org/beast/ontology#hasMeaning
@@ -649,8 +804,12 @@
 #    Classes
 #################################################################
 
-###  http://www.w3.org/2002/07/owl#
-owl: rdf:type owl:Class .
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
 
 
 ###  https://schema.org/CreativeWork
@@ -732,6 +891,7 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#DiurnalRegime
 :DiurnalRegime rdf:type owl:Class ;
+               rdfs:subClassOf :Regime ;
                owl:disjointWith :NocturnalRegime .
 
 
@@ -740,6 +900,20 @@ owl: rdf:type owl:Class .
            rdfs:comment "The documented linguistic origin of the name used to identify a Creature, capturing its root term, source language, and original meaning."@en ;
            rdfs:isDefinedBy :ProvenanceModule ;
            rdfs:label "Etymology"@en .
+
+
+###  https://w3id.org/beast/ontology#Genesis
+:Genesis rdf:type owl:Class ;
+         rdfs:comment "A source-specific account of a creature's origin or birth, capturing the parent(s) or progenitor(s) involved, and/or a circumstantial or causal explanation. Because genealogical and origin narratives frequently vary or conflict across sources, Genesis is modelled at the level of Interpretation rather than Creature, allowing multiple, potentially divergent, origin accounts to coexist for the same universal creature concept without asserting a single canonical explanation."@en ;
+         rdfs:isDefinedBy :ProvenanceModule ;
+         rdfs:label "Genesis"@en .
+
+
+###  https://w3id.org/beast/ontology#GeographicPlace
+:GeographicPlace rdf:type owl:Class ;
+                 rdfs:subClassOf :RealWorldPlace ;
+                 rdfs:comment "A specific, real-world named location (e.g. a country, region, or city) that serves as a creature's habitat or place of origin, as distinct from a general ecological biome type."@en ;
+                 rdfs:label "Geographic place"@en .
 
 
 ###  https://w3id.org/beast/ontology#Habitat
@@ -817,11 +991,14 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#MysticalStructure
 :MysticalStructure rdf:type owl:Class ;
-                   rdfs:subClassOf :ImaginaryStructure ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :isGovernedBy ;
-                                     owl:someValuesFrom :NocturnalRegime
-                                   ] .
+                   rdfs:subClassOf :ImaginaryStructure .
+
+
+###  https://w3id.org/beast/ontology#MythologicalFigure
+:MythologicalFigure rdf:type owl:Class ;
+                    rdfs:comment "A deity, hero, personified force, or other agent from myth or tradition."@en ;
+                    rdfs:isDefinedBy :ProvenanceModule ;
+                    rdfs:label "Mythological Figure"@en .
 
 
 ###  https://w3id.org/beast/ontology#NarrativeFunction
@@ -832,7 +1009,8 @@ owl: rdf:type owl:Class .
 
 
 ###  https://w3id.org/beast/ontology#NocturnalRegime
-:NocturnalRegime rdf:type owl:Class .
+:NocturnalRegime rdf:type owl:Class ;
+                 rdfs:subClassOf :Regime .
 
 
 ###  https://w3id.org/beast/ontology#Plant
@@ -863,11 +1041,7 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#SchizomorphicStructure
 :SchizomorphicStructure rdf:type owl:Class ;
-                        rdfs:subClassOf :ImaginaryStructure ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty :isGovernedBy ;
-                                          owl:someValuesFrom :DiurnalRegime
-                                        ] .
+                        rdfs:subClassOf :ImaginaryStructure .
 
 
 ###  https://w3id.org/beast/ontology#Source
@@ -880,11 +1054,7 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#SyntheticStructure
 :SyntheticStructure rdf:type owl:Class ;
-                    rdfs:subClassOf :ImaginaryStructure ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :isGovernedBy ;
-                                      owl:someValuesFrom :NocturnalRegime
-                                    ] .
+                    rdfs:subClassOf :ImaginaryStructure .
 
 
 ###  https://w3id.org/beast/ontology#Tradition
@@ -907,15 +1077,6 @@ owl: rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  https://creativecommons.org/licenses/by/4.0/
-<https://creativecommons.org/licenses/by/4.0/> rdf:type owl:NamedIndividual .
-
-
-###  https://w3id.org/beast/ontology
-<https://w3id.org/beast/ontology> rdf:type owl:NamedIndividual ;
-                                  <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-
-
 ###  https://w3id.org/beast/ontology#Aerial
 :Aerial rdf:type owl:NamedIndividual ,
                  :RealWorldPlace ;
@@ -936,12 +1097,12 @@ owl: rdf:type owl:Class .
 :AscensionalSymbol rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/2004/02/skos/core#Concept> ,
                             :ImaginarySymbol ;
-                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    :belongsTo :SchizomorphicStructure ;
                    rdfs:comment "Ascensional symbol embodies heroic symbols of elevation, verticality, and transcendence. It represents the upward movement to escape the degradation of time and the symbolic refusal of death. In this structure, height is synonymous with the pure and the divine; the wing is the ascensional instrument that contradicts gravity. These symbols manifest a quest to regain lost power through movement toward metaphysical spaces (e.g., mountains), dazzling imagery (arrows, wings), and virile archetypes of celestial royalty and the warrior."@en ;
                    rdfs:isDefinedBy :SymbolicModule ;
                    rdfs:label "Ascensional Symbol"@en ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Ascensional Symbol"@en .
 
 
@@ -964,12 +1125,12 @@ owl: rdf:type owl:Class .
 :CatamorphicSymbol rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/2004/02/skos/core#Concept> ,
                             :ImaginarySymbol ;
-                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    :belongsTo :SchizomorphicStructure ;
                    rdfs:comment "Catamorphic symbol embodies falling, gravity, and the physical degradation of flesh. These dynamic images of transience represent the dazzling acceleration of time during a downward plunge. Catamorphic symbol captures the existential anxiety of the fall, where movement signifies the inescapable and rapid passage of time toward death."@en ;
                    rdfs:isDefinedBy :SymbolicModule ;
                    rdfs:label "Catamorphic Symbol"@en ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Catamorphic Symbol"@en .
 
 
@@ -977,12 +1138,12 @@ owl: rdf:type owl:Class .
 :CyclicalSymbol rdf:type owl:NamedIndividual ,
                          <http://www.w3.org/2004/02/skos/core#Concept> ,
                          :ImaginarySymbol ;
-                <http://www.w3.org/2004/02/skos/core#broader> :SyntheticStructure ;
-                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 :belongsTo :SyntheticStructure ;
                 rdfs:comment "Cyclical symbol represents the archetype of the Eternal Return and time as a series of phases. Using the moon as a primary model - being the first to die and the first to be reborn - these symbols suggest that time is a series of phases where opposites (life/death, light/dark) coexist. This 'lunar optimism' does not negate death but reintegrates it as an essential stage of an incessant, evolving movement where every sunset is a prelude to a new dawn. The repetition of opposites is also linked to evolution: it is not merely a continuous repetition of the same events. Things that change may also evolve or move forward; they may progress."@en ;
                 rdfs:isDefinedBy :SymbolicModule ;
                 rdfs:label "Cyclical Symbol"@en ;
+                <http://www.w3.org/2004/02/skos/core#broader> :SyntheticStructure ;
+                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Cyclical Symbol"@en .
 
 
@@ -990,30 +1151,28 @@ owl: rdf:type owl:Class .
 :DiareticSymbol rdf:type owl:NamedIndividual ,
                          <http://www.w3.org/2004/02/skos/core#Concept> ,
                          :ImaginarySymbol ;
-                <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 :belongsTo :SchizomorphicStructure ;
                 rdfs:comment "Diaretic symbol embodies figures of cutting, weapons, and purification, derived from the Greek term 'diairesis' (division). They represent the human need for analysis, categorization, and absolute separation to overcome natural chaos. The hero's weapon is a dual symbol of power and purity; by cutting through confusion and separating the real from the imaginary, or good from evil, the hero gains mastery over the world. In this structure, the act of separation is the primary source of intellectual and spiritual power."@en ;
                 rdfs:isDefinedBy :SymbolicModule ;
                 rdfs:label "Diaretic Symbol"@en ;
+                <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Diaretic Symbol"@en .
 
 
 ###  https://w3id.org/beast/ontology#DiurnalRegime
 :DiurnalRegime rdf:type owl:NamedIndividual ,
-                        <http://www.w3.org/2004/02/skos/core#Concept> ;
-               <http://www.w3.org/2004/02/skos/core#broader> :Regime ;
-               <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                        <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  https://w3id.org/beast/ontology#DurandImaginary
 :DurandImaginary rdf:type owl:NamedIndividual ,
                           <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
-                 <http://www.w3.org/2004/02/skos/core#hasTopConcept> :ImaginaryStructure ,
-                                                                     :Regime ;
                  <http://purl.org/dc/terms/title> "Durand's structures of the Imaginary"@en ;
                  rdfs:comment "A conceptual scheme providing a framework for the symbolic and anthropological analysis of creatures within bestiaries. It acts as the theoretical pivot of the Symbolic Module, allowing for the classification of beasts and their attributes based on their relationship with human anxiety regarding time and death. By applying Gilbert Durand's regimes and structures defined in 'Les Structures Anthropologiques de l'Imaginaire', 'beast' can map how physical biological traits - such as wings - serve as archetypal responses to mortality, transforming the creature from a mere biological entity into a profound cultural symbol."@en ;
                  rdfs:isDefinedBy :SymbolicModule ;
+                 <http://www.w3.org/2004/02/skos/core#hasTopConcept> :ImaginaryStructure ,
+                                                                     :Regime ;
                  <http://www.w3.org/ns/prov#wasDerivedFrom> "Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale" .
 
 
@@ -1043,28 +1202,24 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#ImaginaryStructure
 :ImaginaryStructure rdf:type owl:NamedIndividual ,
-                             <http://www.w3.org/2004/02/skos/core#Concept> ;
-                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
-                    <http://www.w3.org/2004/02/skos/core#topConceptOf> :DurandImaginary .
+                             <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  https://w3id.org/beast/ontology#ImaginarySymbol
 :ImaginarySymbol rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/2004/02/skos/core#Concept> ;
-                 <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
-                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                          <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  https://w3id.org/beast/ontology#IntimacySymbol
 :IntimacySymbol rdf:type owl:NamedIndividual ,
                          <http://www.w3.org/2004/02/skos/core#Concept> ,
                          :ImaginarySymbol ;
-                <http://www.w3.org/2004/02/skos/core#broader> :MysticalStructure ;
-                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 :belongsTo :MysticalStructure ;
                 rdfs:comment "Intimacy symbol represents the center, the home, and the magical cradle. This symbol reduces the vast, terrifying world into a controllable, safe microcosm - such as a shell, a tomb seen as a place of rest, or a secret dwelling. It marks an inversion toward interiority and the soul, where the essence of the creature is protected within a restful and familiar space. It embodies the transition from the fear of being 'swallowed' to the comfort of being 'contained'."@en ;
                 rdfs:isDefinedBy :SymbolicModule ;
                 rdfs:label "Intimacy Symbol"@en ;
+                <http://www.w3.org/2004/02/skos/core#broader> :MysticalStructure ;
+                <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Intimacy Symbol"@en .
 
 
@@ -1072,12 +1227,12 @@ owl: rdf:type owl:Class .
 :InversionSymbol rdf:type owl:NamedIndividual ,
                           <http://www.w3.org/2004/02/skos/core#Concept> ,
                           :ImaginarySymbol ;
-                 <http://www.w3.org/2004/02/skos/core#broader> :MysticalStructure ;
-                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                  :belongsTo :MysticalStructure ;
                  rdfs:comment "Inversion symbol exorcises the fear of time by turning negative images into positive ones. Through an involutive process, the devouring mouth of the Diurnal Regime is transmuted into a protective nest. Instead of a heroic battle against darkness, there is a mystical union with it. This defensive mechanism employs doubling and reassuring symbols of intimacy to transform a dangerous fall into a controlled descent into the secrets of becoming."@en ;
                  rdfs:isDefinedBy :SymbolicModule ;
                  rdfs:label "Inversion Symbol"@en ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :MysticalStructure ;
+                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Inversion Symbol"@en .
 
 
@@ -1108,27 +1263,24 @@ owl: rdf:type owl:Class .
 ###  https://w3id.org/beast/ontology#MysticalStructure
 :MysticalStructure rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/2004/02/skos/core#Concept> ;
-                   <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
-                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                   :isGovernedBy :NocturnalRegime .
 
 
 ###  https://w3id.org/beast/ontology#NocturnalRegime
 :NocturnalRegime rdf:type owl:NamedIndividual ,
-                          <http://www.w3.org/2004/02/skos/core#Concept> ;
-                 <http://www.w3.org/2004/02/skos/core#broader> :Regime ;
-                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                          <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  https://w3id.org/beast/ontology#NyctomorphicSymbol
 :NyctomorphicSymbol rdf:type owl:NamedIndividual ,
                              <http://www.w3.org/2004/02/skos/core#Concept> ,
                              :ImaginarySymbol ;
-                    <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                     :belongsTo :SchizomorphicStructure ;
                     rdfs:comment "Nyctomorphic symbol encapsulates the temporal symbolism of darkness, blindness, and shadows. Linked to the voracity of the night, it often incorporates the element of water - viewed here not as a source of life, but as an elusive, dark surface that doubles the abyss and reflects the formless terror of the unknown."@en ;
                     rdfs:isDefinedBy :SymbolicModule ;
                     rdfs:label "Nyctomorphic Symbol"@en ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Nyctomorphic Symbol"@en .
 
 
@@ -1149,9 +1301,7 @@ owl: rdf:type owl:Class .
 
 ###  https://w3id.org/beast/ontology#Regime
 :Regime rdf:type owl:NamedIndividual ,
-                 <http://www.w3.org/2004/02/skos/core#Concept> ;
-        <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
-        <http://www.w3.org/2004/02/skos/core#topConceptOf> :DurandImaginary .
+                 <http://www.w3.org/2004/02/skos/core#Concept> .
 
 
 ###  https://w3id.org/beast/ontology#Scavenger
@@ -1165,8 +1315,7 @@ owl: rdf:type owl:Class .
 ###  https://w3id.org/beast/ontology#SchizomorphicStructure
 :SchizomorphicStructure rdf:type owl:NamedIndividual ,
                                  <http://www.w3.org/2004/02/skos/core#Concept> ;
-                        <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
-                        <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                        :isGovernedBy :DiurnalRegime .
 
 
 ###  https://w3id.org/beast/ontology#ScientificTaxonomy
@@ -1181,12 +1330,12 @@ owl: rdf:type owl:Class .
 :SpectacularSymbol rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/2004/02/skos/core#Concept> ,
                             :ImaginarySymbol ;
-                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    :belongsTo :SchizomorphicStructure ;
                    rdfs:comment "Spectacular symbol relates to intense light, vision, and the heroic gaze. Standing in direct opposition to darkness, it emphasizes the triumph of clarity and the 'solar power' that makes the world intelligible and thus controllable. Sight is the supreme sense of the hero, as clear vision allows for the differentiation of things and the definition of clear boundaries. In this context, light functions as a sword, cutting through obscurity to define reality."@en ;
                    rdfs:isDefinedBy :SymbolicModule ;
                    rdfs:label "Spectacular Symbol"@en ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Spectacular Symbol"@en .
 
 
@@ -1200,20 +1349,19 @@ owl: rdf:type owl:Class .
 ###  https://w3id.org/beast/ontology#SyntheticStructure
 :SyntheticStructure rdf:type owl:NamedIndividual ,
                              <http://www.w3.org/2004/02/skos/core#Concept> ;
-                    <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
-                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary .
+                    :isGovernedBy :NocturnalRegime .
 
 
 ###  https://w3id.org/beast/ontology#TeriomorphicSymbol
 :TeriomorphicSymbol rdf:type owl:NamedIndividual ,
                              <http://www.w3.org/2004/02/skos/core#Concept> ,
                              :ImaginarySymbol ;
-                    <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
-                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                     :belongsTo :SchizomorphicStructure ;
                     rdfs:comment "Teriomorphic symbol represents the terrifying aspect of animals, embodying biting, devouring, and feral chaos. As 'enemy symbol' of anxiety and darkness, it is linked to the restlessness caused by rapid, undisciplined movement. It captures the chaos of fleeing from 'devouring time' and the archetype of the predatory jaws ready to strike."@en ;
                     rdfs:isDefinedBy :SymbolicModule ;
                     rdfs:label "Teriomorphic Symbol"@en ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :SchizomorphicStructure ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Teriomorphic Symbol"@en .
 
 
@@ -1225,11 +1373,6 @@ owl: rdf:type owl:Class .
              rdfs:label "Terrestrial"@en .
 
 
-###  https://w3id.org/beast/ontology#hasDistinctiveTrait
-:hasDistinctiveTrait rdf:type owl:NamedIndividual ,
-                              owl: .
-
-
 #################################################################
 #    Annotations
 #################################################################
@@ -1237,18 +1380,24 @@ owl: rdf:type owl:Class .
 :DiurnalRegime rdfs:comment "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time. This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."@en ;
                rdfs:isDefinedBy :SymbolicModule ;
                rdfs:label "Diurnal Regime"@en ;
+               <http://www.w3.org/2004/02/skos/core#broader> :Regime ;
+               <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                <http://www.w3.org/2004/02/skos/core#prefLabel> "Diurnal Regime"@en .
 
 
 :ImaginaryStructure rdfs:comment "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."@en ;
                     rdfs:isDefinedBy :SymbolicModule ;
                     rdfs:label "Imaginary Structure"@en ;
-                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Imaginary Structure"@en .
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Imaginary Structure"@en ;
+                    <http://www.w3.org/2004/02/skos/core#topConceptOf> :DurandImaginary .
 
 
 :ImaginarySymbol rdfs:comment "The shared OWL class and intermediate SKOS concept grouping all specific symbolic categories recognised by Gilbert Durand within his structures of the imaginary. As an owl:Class it provides the common type for all symbol individuals (TeriomorphicSymbol, AscensionalSymbol, CyclicalSymbol, etc.), allowing properties such as :belongsTo to range over them uniformly. As a skos:Concept it sits between :ImaginaryStructure and the specific symbol individuals in the DurandImaginary thesaurus, making the three-level hierarchy (ImaginaryStructure → ImaginarySymbol → specific symbol) navigable via skos:broader."@en ;
                  rdfs:isDefinedBy :SymbolicModule ;
                  rdfs:label "Imaginary Symbol"@en ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
+                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Imaginary Symbol"@en .
 
 
@@ -1256,24 +1405,32 @@ owl: rdf:type owl:Class .
                    rdfs:isDefinedBy :SymbolicModule ;
                    rdfs:label "Mystical Structure (or Antiphrastic)"@en ;
                    <http://www.w3.org/2004/02/skos/core#altLabel> "Antiphrastic"@en ;
+                   <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
+                   <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Mystical Structure"@en .
 
 
 :NocturnalRegime rdfs:comment "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures. Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."@en ;
                  rdfs:isDefinedBy :SymbolicModule ;
                  rdfs:label "Nocturnal Regime"@en ;
+                 <http://www.w3.org/2004/02/skos/core#broader> :Regime ;
+                 <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Nocturnal Regime"@en .
 
 
 :Regime rdfs:comment "The fundamental high-level classification of Durand, organized around sensory-motor dominants (postural, digestive, cyclic). Regimes act as organizational systems of the imagination, condensing multiple symbolic meanings into a coherent structure."@en ;
         rdfs:isDefinedBy :SymbolicModule ;
         rdfs:label "Regime"@en ;
-        <http://www.w3.org/2004/02/skos/core#prefLabel> "Regime"@en .
+        <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
+        <http://www.w3.org/2004/02/skos/core#prefLabel> "Regime"@en ;
+        <http://www.w3.org/2004/02/skos/core#topConceptOf> :DurandImaginary .
 
 
 :SchizomorphicStructure rdfs:comment "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."@en ;
                         rdfs:isDefinedBy :SymbolicModule ;
                         rdfs:label "Schizomorphic Structure (or Heroic)"@en ;
+                        <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
+                        <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Schizomorphic Structure (or Heroic)"@en .
 
 
@@ -1281,12 +1438,9 @@ owl: rdf:type owl:Class .
                     rdfs:isDefinedBy :SymbolicModule ;
                     rdfs:label "Synthetic Structure (or Dramatic)"@en ;
                     <http://www.w3.org/2004/02/skos/core#altLabel> "Dramatic"@en ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :ImaginaryStructure ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :DurandImaginary ;
                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Synthetic Structure"@en .
-
-
-:hasDistinctiveTrait rdfs:comment "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."@en ;
-                     rdfs:isDefinedBy :BiologicalModule ;
-                     rdfs:label "has distinctive trait"@en .
 
 
 :hasDivergence rdfs:comment "The parent property for all divergence assertions linking a source-specific Interpretation to the biological feature — either an AnatomicalPart or an Ability — that differs from the creature's canonical description in that Source. Subproperties :additionalAbility, :removedAbility, :additionalPart, and :removedPart specialise the nature of the divergence. This structure allows the ontology to answer questions such as 'which interpretations add wings to a normally wingless creature' or 'which sources suppress a creature's canonical venom ability'."@en ;
@@ -1308,7 +1462,9 @@ owl: rdf:type owl:Class .
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Creature
+                :Genesis
                 :Interpretation
+                :MythologicalFigure
                 :Source
               )
 ] .

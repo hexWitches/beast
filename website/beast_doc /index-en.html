@@ -83,12 +83,6 @@
 
             <dt>Publisher:</dt>
             <dd><a href="https://github.com/hexWitches">https://github.com/hexWitches</a></dd>
-            <dt>Imported Ontologies:</dt>
-            <dd><a href="http://purl.org/spar/cito">cito</a></dd>
-            <dd><a href="http://purl.org/spar/fabio">fabio</a></dd>
-            <dd><a href="http://www.w3.org/2004/02/skos/core">core</a></dd>
-            <dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd>
-
             <dt>Download serialization:</dt>
             <dd><span><a href="ontology.jsonld" target="_blank"><img
                         src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a
@@ -102,7 +96,10 @@
                      src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg"
                      alt="https://creativecommons.org/licenses/by/4.0/" /></a>
             </dd>
-            <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+            <dt>Evaluation:</dt>
+            <dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img
+                     src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg"
+                     alt="Evaluate with OOPS!" /></a></dd>
             <dt>Cite as:</dt>
             <dd>Gamboa Nivia, M.J., Pinto, M., Roggiani, S., Spadavecchia, A. (2026). BEAST Ontology.
                https://w3id.org/beast/ontology</dd>
@@ -118,18 +115,14 @@
          </div>
       </div>
       <div id="abstract">
-         <h2>Abstract</h2><span class="markdown">
-            This is a placeholder text for the abstract. The abstract should contain a couple of sentences summarizing
-            the ontology and its purpose.</span>
+         <h2>Abstract</h2><span class="markdown">The BEAST ontology provides a formal representation of creatures, whether inspired by real or imaginary, focusing on their context origin, their textual attestations and their physical and symbolic evolution across different periods of time.</span>
       </div>
       <div id="toc"></div>
 
       <!--INTRODUCTION SECTION-->
       <div id="introduction">
          <h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-         <span class="markdown">
-            This is a place holder text for the introduction. The introduction should briefly describe the ontology, its
-            motivation, state of the art and goals.</span>
+         <span class="markdown">The BEAST Ontology is a formal framework designed to model, track, and analyze real and imaginary creatures across historical texts and modern media. It is structured in three interconnected modules: Provenance, Biological and Symbolic. Linking the biological aspects with the deep cultural/symbolic meaning, allowing us to understand the changes in the general collective mentality. The ontology maps a symbolic evolution of the beasts with a cross-domain reasoning, in compliance with the latest standards of the Semanti Web by utilizing OWL (Web Ontology Language).</span>
          <div id="namespacedeclarations">
             <h3 id="ns" class="list">Namespace declarations</h3>
             <div id="ns" align="center">
@@ -138,7 +131,7 @@
                   <tbody>
                      <tr>
                         <td><b>beast</b></td>
-                        <td>&lt;https://w3id.org/beast/&gt;</td>
+                        <td>&lt;https://w3id.org/beast/ontology#&gt;</td>
                      </tr>
                      <tr>
                         <td><b>cito</b></td>
@@ -199,8 +192,7 @@
       <div id="overview">
          <h2 id="overv" class="list">BEAST Ontology: Overview <span class="backlink"> back to <a
                   href="#toc">ToC</a></span></h2>
-         <span class="markdown">
-            This ontology has the following classes and properties.</span>
+         <span class="markdown">This ontology has the following classes and properties.</span>
          <h4>Classes</h4>
          <ul xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             class="hlist">
@@ -244,6 +236,12 @@
                <a href="#Etymology" title="https://w3id.org/beast/ontology#Etymology">Etymology</a>
             </li>
             <li>
+               <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a>
+            </li>
+            <li>
+               <a href="#GeographicPlace" title="https://w3id.org/beast/ontology#GeographicPlace">Geographic place</a>
+            </li>
+            <li>
                <a href="#Habitat" title="https://w3id.org/beast/ontology#Habitat">Habitat</a>
             </li>
             <li>
@@ -274,8 +272,17 @@
                </a>
             </li>
             <li>
+               <a href="#MythologicalFigure" title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological
+                  Figure</a>
+            </li>
+            <li>
                <a href="#NarrativeFunction" title="https://w3id.org/beast/ontology#NarrativeFunction">Narrative
                   Function</a>
+            </li>
+            <li>
+               <a href="#NocturnalRegime" title="https://w3id.org/beast/ontology#NocturnalRegime">
+                  <span>Nocturnal Regime</span>
+               </a>
             </li>
             <li>
                <a href="#Plant" title="https://w3id.org/beast/ontology#Plant">Plant</a>
@@ -355,6 +362,9 @@
                <a href="#extractedFrom" title="https://w3id.org/beast/ontology#extractedFrom">extracted from</a>
             </li>
             <li>
+               <a href="#governs" title="https://w3id.org/beast/ontology#governs">governs</a>
+            </li>
+            <li>
                <a href="#habitatCategory" title="https://w3id.org/beast/ontology#habitatCategory">habitat category</a>
             </li>
             <li>
@@ -385,6 +395,9 @@
                <a href="#hasEtymology" title="https://w3id.org/beast/ontology#hasEtymology">has etymology</a>
             </li>
             <li>
+               <a href="#hasGenesis" title="https://w3id.org/beast/ontology#hasGenesis">has genesis</a>
+            </li>
+            <li>
                <a href="#hasBestiaryType" title="https://w3id.org/beast/ontology#hasBestiaryType">has genre</a>
             </li>
             <li>
@@ -392,6 +405,10 @@
             </li>
             <li>
                <a href="#hasHeadOf" title="https://w3id.org/beast/ontology#hasHeadOf">has head of</a>
+            </li>
+            <li>
+               <a href="#hasImaginarySymbol" title="https://w3id.org/beast/ontology#hasImaginarySymbol">has imaginary
+                  symbol</a>
             </li>
             <li>
                <a href="#hasInterpretation" title="https://w3id.org/beast/ontology#hasInterpretation">has
@@ -416,7 +433,8 @@
                <a href="#hasPart" title="https://w3id.org/beast/ontology#hasPart">has part</a>
             </li>
             <li>
-               <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part of</a>
+               <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part derived
+                  from</a>
             </li>
             <li>
                <a href="#hasTailOf" title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a>
@@ -429,7 +447,13 @@
                <a href="#hasUpperBodyOf" title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a>
             </li>
             <li>
+               <a href="#involvesParent" title="https://w3id.org/beast/ontology#involvesParent">involves parent</a>
+            </li>
+            <li>
                <a href="#isEtymologyOf" title="https://w3id.org/beast/ontology#isEtymologyOf">is etymology of</a>
+            </li>
+            <li>
+               <a href="#isGenesisOf" title="https://w3id.org/beast/ontology#isGenesisOf">is genesis of</a>
             </li>
             <li>
                <a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
@@ -469,9 +493,12 @@
                   name</a>
             </li>
             <li>
-               <a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait">
-                  <span>has distinctive trait</span>
-               </a>
+               <a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait">has
+                  distinctive trait</a>
+            </li>
+            <li>
+               <a href="#hasGenesisDescription" title="https://w3id.org/beast/ontology#hasGenesisDescription">has
+                  genesis description</a>
             </li>
             <li>
                <a href="#hasMeaning" title="https://w3id.org/beast/ontology#hasMeaning">has meaning</a>
@@ -534,11 +561,6 @@
                <a href="#Elemental" title="https://w3id.org/beast/ontology#Elemental">Elemental</a>
             </li>
             <li>
-               <a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait">
-                  <span>has distinctive trait</span>
-               </a>
-            </li>
-            <li>
                <a href="#Hematophagous" title="https://w3id.org/beast/ontology#Hematophagous">Hematophagous</a>
             </li>
             <li>
@@ -586,11 +608,6 @@
             </li>
             <li>
                <a href="#Omnivorous" title="https://w3id.org/beast/ontology#Omnivorous">Omnivorous</a>
-            </li>
-            <li>
-               <a href="#" title="https://w3id.org/beast/ontology">
-                  <span>ontology</span>
-               </a>
             </li>
             <li>
                <a href="#ProvenanceModule" title="https://w3id.org/beast/ontology#ProvenanceModule">Provenance Module
@@ -682,6 +699,9 @@
                <li><a href="#DiurnalRegime" title="https://w3id.org/beast/ontology#DiurnalRegime"> <span>Diurnal
                         Regime</span> </a></li>
                <li><a href="#Etymology" title="https://w3id.org/beast/ontology#Etymology">Etymology</a></li>
+               <li><a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a></li>
+               <li><a href="#GeographicPlace" title="https://w3id.org/beast/ontology#GeographicPlace">Geographic
+                     place</a></li>
                <li><a href="#Habitat" title="https://w3id.org/beast/ontology#Habitat">Habitat</a></li>
                <li><a href="#HybridCreature" title="https://w3id.org/beast/ontology#HybridCreature">Hybrid creature</a>
                </li>
@@ -697,8 +717,12 @@
                <li><a href="#Module" title="https://w3id.org/beast/ontology#Module">Module</a></li>
                <li><a href="#MysticalStructure" title="https://w3id.org/beast/ontology#MysticalStructure">
                      <span>Mystical Structure (or Antiphrastic)</span> </a></li>
+               <li><a href="#MythologicalFigure" title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological
+                     Figure</a></li>
                <li><a href="#NarrativeFunction" title="https://w3id.org/beast/ontology#NarrativeFunction">Narrative
                      Function</a></li>
+               <li><a href="#NocturnalRegime" title="https://w3id.org/beast/ontology#NocturnalRegime"> <span>Nocturnal
+                        Regime</span> </a></li>
                <li><a href="#Plant" title="https://w3id.org/beast/ontology#Plant">Plant</a></li>
                <li><a href="#RealAnimal" title="https://w3id.org/beast/ontology#RealAnimal">Real animal</a></li>
                <li><a href="#RealWorldPlace" title="https://w3id.org/beast/ontology#RealWorldPlace">Real-world place</a>
@@ -753,7 +777,9 @@
                   </dt>
                   <dd>
                      <a href="#additionalAbility" title="https://w3id.org/beast/ontology#additionalAbility">additional
-                        ability</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAbility"
+                        ability</a> <sup class="type-op" title="object property">op</sup>, <a href="#governs"
+                        title="https://w3id.org/beast/ontology#governs">governs</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasAbility"
                         title="https://w3id.org/beast/ontology#hasAbility">has ability</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasDivergence"
                         title="https://w3id.org/beast/ontology#hasDivergence">has divergence</a> <sup class="type-op"
@@ -805,7 +831,9 @@
                   </dt>
                   <dd>
                      <a href="#additionalPart" title="https://w3id.org/beast/ontology#additionalPart">additional
-                        part</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasAbsenceOf"
+                        part</a> <sup class="type-op" title="object property">op</sup>, <a href="#governs"
+                        title="https://w3id.org/beast/ontology#governs">governs</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasAbsenceOf"
                         title="https://w3id.org/beast/ontology#hasAbsenceOf">has absence of</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasAnomaly"
                         title="https://w3id.org/beast/ontology#hasAnomaly">has anomaly</a> <sup class="type-op"
@@ -1046,23 +1074,6 @@
                      <a href="#HybridCreature" title="https://w3id.org/beast/ontology#HybridCreature">Hybrid
                         creature</a> <sup class="type-c" title="class">c</sup>
                   </dd>
-                  <dt>
-                     is in domain of
-                  </dt>
-                  <dd>
-                     <a href="#hasBodyOf" title="https://w3id.org/beast/ontology#hasBodyOf">has body of</a> <sup
-                        class="type-op" title="object property">op</sup>, <a href="#hasHeadOf"
-                        title="https://w3id.org/beast/ontology#hasHeadOf">has head of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasLowerBodyOf"
-                        title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
-                        class="type-op" title="object property">op</sup>, <a href="#hasPartDerivedFrom"
-                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasTailOf"
-                        title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasUpperBodyOf"
-                        title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
-                        class="type-op" title="object property">op</sup>
-                  </dd>
                </dl>
             </div>
             <div class="entity" id="Creature">
@@ -1122,7 +1133,9 @@
                         title="https://w3id.org/beast/ontology#hasNarrativeFunction">has narrative function</a> <sup
                         class="type-op" title="object property">op</sup>, <a href="#hasOriginContext"
                         title="https://w3id.org/beast/ontology#hasOriginContext">has origin context</a> <sup
-                        class="type-op" title="object property">op</sup>, <a href="#isGovernedBy"
+                        class="type-op" title="object property">op</sup>, <a href="#hasPart"
+                        title="https://w3id.org/beast/ontology#hasPart">has part</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#isGovernedBy"
                         title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#symbolizes"
                         title="https://w3id.org/beast/ontology#symbolizes">symbolizes</a> <sup class="type-op"
@@ -1132,8 +1145,12 @@
                      is in range of
                   </dt>
                   <dd>
-                     <a href="#isEtymologyOf" title="https://w3id.org/beast/ontology#isEtymologyOf">is etymology of</a>
-                     <sup class="type-op" title="object property">op</sup>, <a href="#ofCreature"
+                     <a href="#governs" title="https://w3id.org/beast/ontology#governs">governs</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#involvesParent"
+                        title="https://w3id.org/beast/ontology#involvesParent">involves parent</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#isEtymologyOf"
+                        title="https://w3id.org/beast/ontology#isEtymologyOf">is etymology of</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#ofCreature"
                         title="https://w3id.org/beast/ontology#ofCreature">of creature</a> <sup class="type-op"
                         title="object property">op</sup>
                   </dd>
@@ -1141,8 +1158,12 @@
                      is disjoint with
                   </dt>
                   <dd>
-                     <a href="#Interpretation" title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a>
-                     <sup class="type-c" title="class">c</sup>, <a href="#Source"
+                     <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#Interpretation"
+                        title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#MythologicalFigure"
+                        title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological Figure</a> <sup
+                        class="type-c" title="class">c</sup>, <a href="#Source"
                         title="https://w3id.org/beast/ontology#Source">Source</a> <sup class="type-c"
                         title="class">c</sup>
                   </dd>
@@ -1212,12 +1233,19 @@
                <p><strong>IRI:</strong> https://w3id.org/beast/ontology#DiurnalRegime</p>
                <dl class="description">
                   <dt>
+                     has super-classes
+                  </dt>
+                  <dd>
+                     <a href="https://w3id.org/beast/ontology#Regime" target="_blank"
+                        title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-c"
+                        title="class">c</sup>
+                  </dd>
+                  <dt>
                      is disjoint with
                   </dt>
                   <dd>
-                     <a href="https://w3id.org/beast/ontology#NocturnalRegime" target="_blank"
-                        title="https://w3id.org/beast/ontology#NocturnalRegime">Nocturnal Regime</a> <sup class="type-c"
-                        title="class">c</sup>
+                     <a href="#NocturnalRegime" title="https://w3id.org/beast/ontology#NocturnalRegime">Nocturnal
+                        Regime</a> <sup class="type-c" title="class">c</sup>
                   </dd>
                   <dt>
                      is also defined as
@@ -1262,6 +1290,80 @@
                   <dd>
                      <a href="#hasEtymology" title="https://w3id.org/beast/ontology#hasEtymology">has etymology</a> <sup
                         class="type-op" title="object property">op</sup>
+                  </dd>
+               </dl>
+            </div>
+            <div class="entity" id="Genesis">
+               <h3>Genesis<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#Genesis</p>
+               <div class="comment">
+                  <span class="markdown">A source-specific account of a creature's origin or birth, capturing the
+                     parent(s) or progenitor(s) involved, and/or a circumstantial or causal explanation. Because
+                     genealogical and origin narratives frequently vary or conflict across sources, Genesis is modelled
+                     at the level of Interpretation rather than Creature, allowing multiple, potentially divergent,
+                     origin accounts to coexist for the same universal creature concept without asserting a single
+                     canonical explanation.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <dl class="description">
+                  <dt>
+                     is in domain of
+                  </dt>
+                  <dd>
+                     <a href="#hasGenesisDescription" title="https://w3id.org/beast/ontology#hasGenesisDescription">has
+                        genesis description</a> <sup class="type-dp" title="data property">dp</sup>, <a
+                        href="#involvesParent" title="https://w3id.org/beast/ontology#involvesParent">involves
+                        parent</a> <sup class="type-op" title="object property">op</sup>, <a href="#isGenesisOf"
+                        title="https://w3id.org/beast/ontology#isGenesisOf">is genesis of</a> <sup class="type-op"
+                        title="object property">op</sup>
+                  </dd>
+                  <dt>
+                     is in range of
+                  </dt>
+                  <dd>
+                     <a href="#hasGenesis" title="https://w3id.org/beast/ontology#hasGenesis">has genesis</a> <sup
+                        class="type-op" title="object property">op</sup>
+                  </dd>
+                  <dt>
+                     is disjoint with
+                  </dt>
+                  <dd>
+                     <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
+                        class="type-c" title="class">c</sup>, <a href="#Interpretation"
+                        title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#MythologicalFigure"
+                        title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological Figure</a> <sup
+                        class="type-c" title="class">c</sup>, <a href="#Source"
+                        title="https://w3id.org/beast/ontology#Source">Source</a> <sup class="type-c"
+                        title="class">c</sup>
+                  </dd>
+               </dl>
+            </div>
+            <div class="entity" id="GeographicPlace">
+               <h3>Geographic place<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#GeographicPlace</p>
+               <div class="comment">
+                  <span class="markdown">A specific, real-world named location (e.g. a country, region, or city) that
+                     serves as a creature's habitat or place of origin, as distinct from a general ecological biome
+                     type.</span>
+               </div>
+               <dl class="description">
+                  <dt>
+                     has super-classes
+                  </dt>
+                  <dd>
+                     <a href="#RealWorldPlace" title="https://w3id.org/beast/ontology#RealWorldPlace">Real-world
+                        place</a> <sup class="type-c" title="class">c</sup>
                   </dd>
                </dl>
             </div>
@@ -1378,7 +1480,17 @@
                      is in domain of
                   </dt>
                   <dd>
-                     <a href="#hasPart" title="https://w3id.org/beast/ontology#hasPart">has part</a> <sup
+                     <a href="#hasBodyOf" title="https://w3id.org/beast/ontology#hasBodyOf">has body of</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasHeadOf"
+                        title="https://w3id.org/beast/ontology#hasHeadOf">has head of</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasLowerBodyOf"
+                        title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasPartDerivedFrom"
+                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part derived from</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasTailOf"
+                        title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasUpperBodyOf"
+                        title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
                         class="type-op" title="object property">op</sup>
                   </dd>
                   <dt>
@@ -1450,8 +1562,8 @@
                         title="object property">op</sup>, <a href="#hasLowerBodyOf"
                         title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
                         class="type-op" title="object property">op</sup>, <a href="#hasPartDerivedFrom"
-                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasTailOf"
+                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part derived from</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasTailOf"
                         title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasUpperBodyOf"
                         title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
@@ -1513,6 +1625,8 @@
                         title="https://w3id.org/beast/ontology#hasDistinctiveTrait">has distinctive trait</a> <sup
                         class="type-dp" title="data property">dp</sup>, <a href="#hasDivergence"
                         title="https://w3id.org/beast/ontology#hasDivergence">has divergence</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasGenesis"
+                        title="https://w3id.org/beast/ontology#hasGenesis">has genesis</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasMeaning"
                         title="https://w3id.org/beast/ontology#hasMeaning">has meaning</a> <sup class="type-dp"
                         title="data property">dp</sup>, <a href="#hasNarrativeFunction"
@@ -1539,17 +1653,25 @@
                   <dd>
                      <a href="#containsInterpretation"
                         title="https://w3id.org/beast/ontology#containsInterpretation">contains interpretation</a> <sup
-                        class="type-op" title="object property">op</sup>, <a href="#hasInterpretation"
+                        class="type-op" title="object property">op</sup>, <a href="#governs"
+                        title="https://w3id.org/beast/ontology#governs">governs</a> <sup class="type-op"
+                        title="object property">op</sup>, <a href="#hasInterpretation"
                         title="https://w3id.org/beast/ontology#hasInterpretation">has interpretation</a> <sup
                         class="type-op" title="object property">op</sup>, <a href="#isTextualReferenceOf"
                         title="https://w3id.org/beast/ontology#isTextualReferenceOf">is Textual Reference Of</a> <sup
-                        class="type-op" title="object property">op</sup>
+                        class="type-op" title="object property">op</sup>, <a href="#isGenesisOf"
+                        title="https://w3id.org/beast/ontology#isGenesisOf">is genesis of</a> <sup class="type-op"
+                        title="object property">op</sup>
                   </dd>
                   <dt>
                      is disjoint with
                   </dt>
                   <dd>
                      <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
+                        class="type-c" title="class">c</sup>, <a href="#Genesis"
+                        title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#MythologicalFigure"
+                        title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological Figure</a> <sup
                         class="type-c" title="class">c</sup>, <a href="#Source"
                         title="https://w3id.org/beast/ontology#Source">Source</a> <sup class="type-c"
                         title="class">c</sup>
@@ -1645,6 +1767,45 @@
                   </dd>
                </dl>
             </div>
+            <div class="entity" id="MythologicalFigure">
+               <h3>Mythological Figure<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#MythologicalFigure</p>
+               <div class="comment">
+                  <span class="markdown">A deity, hero, personified force, or other agent from myth or tradition.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <dl class="description">
+                  <dt>
+                     is in range of
+                  </dt>
+                  <dd>
+                     <a href="#involvesParent" title="https://w3id.org/beast/ontology#involvesParent">involves
+                        parent</a> <sup class="type-op" title="object property">op</sup>
+                  </dd>
+                  <dt>
+                     is disjoint with
+                  </dt>
+                  <dd>
+                     <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
+                        class="type-c" title="class">c</sup>, <a href="#Genesis"
+                        title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#Interpretation"
+                        title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#Source"
+                        title="https://w3id.org/beast/ontology#Source">Source</a> <sup class="type-c"
+                        title="class">c</sup>
+                  </dd>
+               </dl>
+            </div>
             <div class="entity" id="NarrativeFunction">
                <h3>Narrative Function<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a
                         href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
@@ -1689,6 +1850,34 @@
                   </dd>
                </dl>
             </div>
+            <div class="entity" id="NocturnalRegime">
+               <h3>Nocturnal Regime<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#NocturnalRegime</p>
+               <dl class="description">
+                  <dt>
+                     has super-classes
+                  </dt>
+                  <dd>
+                     <a href="https://w3id.org/beast/ontology#Regime" target="_blank"
+                        title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-c"
+                        title="class">c</sup>
+                  </dd>
+                  <dt>
+                     is disjoint with
+                  </dt>
+                  <dd>
+                     <a href="#DiurnalRegime" title="https://w3id.org/beast/ontology#DiurnalRegime">Diurnal Regime</a>
+                     <sup class="type-c" title="class">c</sup>
+                  </dd>
+                  <dt>
+                     is also defined as
+                  </dt>
+                  <dd>
+                     <a href="#NocturnalRegime">named individual</a>
+                  </dd>
+               </dl>
+            </div>
             <div class="entity" id="Plant">
                <h3>Plant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a>
                      or <a href="#classes">Class ToC</a> </span></h3>
@@ -1717,8 +1906,8 @@
                         title="object property">op</sup>, <a href="#hasLowerBodyOf"
                         title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
                         class="type-op" title="object property">op</sup>, <a href="#hasPartDerivedFrom"
-                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasTailOf"
+                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part derived from</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasTailOf"
                         title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasUpperBodyOf"
                         title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
@@ -1785,8 +1974,8 @@
                         title="object property">op</sup>, <a href="#hasLowerBodyOf"
                         title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
                         class="type-op" title="object property">op</sup>, <a href="#hasPartDerivedFrom"
-                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part of</a> <sup class="type-op"
-                        title="object property">op</sup>, <a href="#hasTailOf"
+                        title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part derived from</a> <sup
+                        class="type-op" title="object property">op</sup>, <a href="#hasTailOf"
                         title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
                         title="object property">op</sup>, <a href="#hasUpperBodyOf"
                         title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
@@ -1822,6 +2011,13 @@
                   <dd>
                      <a href="#Habitat" title="https://w3id.org/beast/ontology#Habitat">Habitat</a> <sup class="type-c"
                         title="class">c</sup>
+                  </dd>
+                  <dt>
+                     has sub-classes
+                  </dt>
+                  <dd>
+                     <a href="#GeographicPlace" title="https://w3id.org/beast/ontology#GeographicPlace">Geographic
+                        place</a> <sup class="type-c" title="class">c</sup>
                   </dd>
                   <dt>
                      has members
@@ -1945,9 +2141,13 @@
                   </dt>
                   <dd>
                      <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
-                        class="type-c" title="class">c</sup>, <a href="#Interpretation"
+                        class="type-c" title="class">c</sup>, <a href="#Genesis"
+                        title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup class="type-c"
+                        title="class">c</sup>, <a href="#Interpretation"
                         title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
-                        title="class">c</sup>
+                        title="class">c</sup>, <a href="#MythologicalFigure"
+                        title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological Figure</a> <sup
+                        class="type-c" title="class">c</sup>
                   </dd>
                </dl>
             </div>
@@ -2074,6 +2274,7 @@
                      title="https://w3id.org/beast/ontology#embodiesImaginarySymbol">embodies imaginary symbol</a></li>
                <li><a href="#extractedFrom" title="https://w3id.org/beast/ontology#extractedFrom">extracted from</a>
                </li>
+               <li><a href="#governs" title="https://w3id.org/beast/ontology#governs">governs</a></li>
                <li><a href="#habitatCategory" title="https://w3id.org/beast/ontology#habitatCategory">habitat
                      category</a></li>
                <li><a href="#hasAbility" title="https://w3id.org/beast/ontology#hasAbility">has ability</a></li>
@@ -2086,9 +2287,12 @@
                <li><a href="#hasDuplicationOf" title="https://w3id.org/beast/ontology#hasDuplicationOf">has duplication
                      of</a></li>
                <li><a href="#hasEtymology" title="https://w3id.org/beast/ontology#hasEtymology">has etymology</a></li>
+               <li><a href="#hasGenesis" title="https://w3id.org/beast/ontology#hasGenesis">has genesis</a></li>
                <li><a href="#hasBestiaryType" title="https://w3id.org/beast/ontology#hasBestiaryType">has genre</a></li>
                <li><a href="#hasHabitat" title="https://w3id.org/beast/ontology#hasHabitat">has habitat</a></li>
                <li><a href="#hasHeadOf" title="https://w3id.org/beast/ontology#hasHeadOf">has head of</a></li>
+               <li><a href="#hasImaginarySymbol" title="https://w3id.org/beast/ontology#hasImaginarySymbol">has
+                     imaginary symbol</a></li>
                <li><a href="#hasInterpretation" title="https://w3id.org/beast/ontology#hasInterpretation">has
                      interpretation</a></li>
                <li><a href="#hasLowerBodyOf" title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body
@@ -2101,14 +2305,17 @@
                      context</a></li>
                <li><a href="#hasPart" title="https://w3id.org/beast/ontology#hasPart">has part</a></li>
                <li><a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has part
-                     of</a></li>
+                     derived from</a></li>
                <li><a href="#hasTailOf" title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a></li>
                <li><a href="#hasTextualReference" title="https://w3id.org/beast/ontology#hasTextualReference">has
                      textual reference</a></li>
                <li><a href="#hasUpperBodyOf" title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body
                      of</a></li>
+               <li><a href="#involvesParent" title="https://w3id.org/beast/ontology#involvesParent">involves parent</a>
+               </li>
                <li><a href="#isEtymologyOf" title="https://w3id.org/beast/ontology#isEtymologyOf">is etymology of</a>
                </li>
+               <li><a href="#isGenesisOf" title="https://w3id.org/beast/ontology#isGenesisOf">is genesis of</a></li>
                <li><a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a></li>
                <li><a href="#isOfSpecies" title="https://w3id.org/beast/ontology#isOfSpecies">is of species</a></li>
                <li><a href="#isTextualReferenceOf" title="https://w3id.org/beast/ontology#isTextualReferenceOf">
@@ -2394,6 +2601,13 @@
                         <a href="https://w3id.org/beast/ontology#ImaginaryStructure" target="_blank"
                            title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
                            class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#hasImaginarySymbol" title="https://w3id.org/beast/ontology#hasImaginarySymbol">has
+                           imaginary symbol</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                   </dl>
                </div>
@@ -2717,6 +2931,62 @@
                   </dl>
                </div>
             </div>
+            <div class="entity" id="governs">
+               <h3>governs<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#governs</p>
+               <div class="comment">
+                  <span class="markdown">Inverse of :isGovernedBy. Links a Regime to the structures, symbols, creatures,
+                     parts, abilities, or interpretations it governs.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#SymbolicModule">https://w3id.org/beast/ontology#SymbolicModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
+                     <dt>
+                        has domain
+                     </dt>
+                     <dd>
+                        <a href="https://w3id.org/beast/ontology#Regime" target="_blank"
+                           title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-c"
+                           title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="#Ability" title="https://w3id.org/beast/ontology#Ability">Ability</a> <sup
+                           class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#AnatomicalPart"
+                           title="https://w3id.org/beast/ontology#AnatomicalPart">Anatomical part</a> <sup
+                           class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Creature"
+                           title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup class="type-c"
+                           title="class">c</sup> <span class="logic">or</span> <a
+                           href="https://w3id.org/beast/ontology#ImaginaryStructure" target="_blank"
+                           title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
+                           class="type-c" title="class">c</sup> <span class="logic">or</span> <a
+                           href="https://w3id.org/beast/ontology#ImaginarySymbol" target="_blank"
+                           title="https://w3id.org/beast/ontology#ImaginarySymbol">Imaginary Symbol</a> <sup
+                           class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#Interpretation"
+                           title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                           title="class">c</sup>
+                     </dd>
+                     <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                        <sup class="type-op" title="object property">op</sup>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
             <div class="entity" id="habitatCategory">
                <h3>habitat category<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to
                      <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -2909,23 +3179,14 @@
                      </dt>
                      <dd>
                         <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has
-                           part of</a> <sup class="type-op" title="object property">op</sup>
-                     </dd>
-                     <dt>
-                        has sub-properties
-                     </dt>
-                     <dd>
-                        <a href="#hasLowerBodyOf" title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body
-                           of</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasUpperBodyOf"
-                           title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
-                           class="type-op" title="object property">op</sup>
+                           part derived from</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3119,6 +3380,50 @@
                   </dl>
                </div>
             </div>
+            <div class="entity" id="hasGenesis">
+               <h3>has genesis<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasGenesis</p>
+               <div class="comment">
+                  <span class="markdown">Links a source-specific Interpretation to the account of the creature's origin
+                     or birth as told in that Source.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
+                     <dt>
+                        has domain
+                     </dt>
+                     <dd>
+                        <a href="#Interpretation"
+                           title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                           title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#isGenesisOf" title="https://w3id.org/beast/ontology#isGenesisOf">is genesis of</a>
+                        <sup class="type-op" title="object property">op</sup>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
             <div class="entity" id="hasBestiaryType">
                <h3>has genre<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a
                         href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
@@ -3212,14 +3517,14 @@
                      </dt>
                      <dd>
                         <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has
-                           part of</a> <sup class="type-op" title="object property">op</sup>
+                           part derived from</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3231,6 +3536,51 @@
                            title="class">c</sup> <span class="logic">or</span> <a href="#RealAnimal"
                            title="https://w3id.org/beast/ontology#RealAnimal">Real animal</a> <sup class="type-c"
                            title="class">c</sup>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="entity" id="hasImaginarySymbol">
+               <h3>has imaginary symbol<sup class="type-op" title="object property">op</sup> <span class="backlink">
+                     back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasImaginarySymbol</p>
+               <div class="comment">
+                  <span class="markdown">Inverse of :belongsTo. Links an Imaginary Structure to the imaginary symbols
+                     that belong to it.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#SymbolicModule">https://w3id.org/beast/ontology#SymbolicModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
+                     <dt>
+                        has domain
+                     </dt>
+                     <dd>
+                        <a href="https://w3id.org/beast/ontology#ImaginaryStructure" target="_blank"
+                           title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="https://w3id.org/beast/ontology#ImaginarySymbol" target="_blank"
+                           title="https://w3id.org/beast/ontology#ImaginarySymbol">Imaginary Symbol</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
+                           class="type-op" title="object property">op</sup>
                      </dd>
                   </dl>
                </div>
@@ -3302,15 +3652,15 @@
                         has super-properties
                      </dt>
                      <dd>
-                        <a href="#hasBodyOf" title="https://w3id.org/beast/ontology#hasBodyOf">has body of</a> <sup
-                           class="type-op" title="object property">op</sup>
+                        <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has
+                           part derived from</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3490,8 +3840,8 @@
                         has domain
                      </dt>
                      <dd>
-                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
-                           being</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
+                           class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3504,8 +3854,8 @@
                </div>
             </div>
             <div class="entity" id="hasPartDerivedFrom">
-               <h3>has part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a
-                        href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <h3>has part derived from<sup class="type-op" title="object property">op</sup> <span class="backlink">
+                     back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
                <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasPartDerivedFrom</p>
                <div class="comment">
                   <span class="markdown">Indicates that a composite creature possesses anatomical or morphological
@@ -3529,16 +3879,20 @@
                         <a href="#hasBodyOf" title="https://w3id.org/beast/ontology#hasBodyOf">has body of</a> <sup
                            class="type-op" title="object property">op</sup>, <a href="#hasHeadOf"
                            title="https://w3id.org/beast/ontology#hasHeadOf">has head of</a> <sup class="type-op"
-                           title="object property">op</sup>, <a href="#hasTailOf"
+                           title="object property">op</sup>, <a href="#hasLowerBodyOf"
+                           title="https://w3id.org/beast/ontology#hasLowerBodyOf">has lower body of</a> <sup
+                           class="type-op" title="object property">op</sup>, <a href="#hasTailOf"
                            title="https://w3id.org/beast/ontology#hasTailOf">has tail of</a> <sup class="type-op"
-                           title="object property">op</sup>
+                           title="object property">op</sup>, <a href="#hasUpperBodyOf"
+                           title="https://w3id.org/beast/ontology#hasUpperBodyOf">has upper body of</a> <sup
+                           class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3577,14 +3931,14 @@
                      </dt>
                      <dd>
                         <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has
-                           part of</a> <sup class="type-op" title="object property">op</sup>
+                           part derived from</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3669,15 +4023,15 @@
                         has super-properties
                      </dt>
                      <dd>
-                        <a href="#hasBodyOf" title="https://w3id.org/beast/ontology#hasBodyOf">has body of</a> <sup
-                           class="type-op" title="object property">op</sup>
+                        <a href="#hasPartDerivedFrom" title="https://w3id.org/beast/ontology#hasPartDerivedFrom">has
+                           part derived from</a> <sup class="type-op" title="object property">op</sup>
                      </dd>
                      <dt>
                         has domain
                      </dt>
                      <dd>
-                        <a href="#CompositeCreature" title="https://w3id.org/beast/ontology#CompositeCreature">Composite
-                           creature</a> <sup class="type-c" title="class">c</sup>
+                        <a href="#ImaginaryBeing" title="https://w3id.org/beast/ontology#ImaginaryBeing">Imaginary
+                           being</a> <sup class="type-c" title="class">c</sup>
                      </dd>
                      <dt>
                         has range
@@ -3689,6 +4043,45 @@
                            title="class">c</sup> <span class="logic">or</span> <a href="#RealAnimal"
                            title="https://w3id.org/beast/ontology#RealAnimal">Real animal</a> <sup class="type-c"
                            title="class">c</sup>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="entity" id="involvesParent">
+               <h3>involves parent<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to
+                     <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#involvesParent</p>
+               <div class="comment">
+                  <span class="markdown">Links a Genesis account to a Creature or MythologicalFigure identified as a
+                     parent or progenitor within that account.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
+                     <dt>
+                        has domain
+                     </dt>
+                     <dd>
+                        <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="#Creature" title="https://w3id.org/beast/ontology#Creature">Creature</a> <sup
+                           class="type-c" title="class">c</sup> <span class="logic">or</span> <a
+                           href="#MythologicalFigure"
+                           title="https://w3id.org/beast/ontology#MythologicalFigure">Mythological Figure</a> <sup
+                           class="type-c" title="class">c</sup>
                      </dd>
                   </dl>
                </div>
@@ -3732,6 +4125,50 @@
                      <dd>
                         <a href="#hasEtymology" title="https://w3id.org/beast/ontology#hasEtymology">has etymology</a>
                         <sup class="type-op" title="object property">op</sup>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="entity" id="isGenesisOf">
+               <h3>is genesis of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a
+                        href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#isGenesisOf</p>
+               <div class="comment">
+                  <span class="markdown">Links a Genesis account back to the Interpretation it describes the origin
+                     of.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
+                     <dt>
+                        has domain
+                     </dt>
+                     <dd>
+                        <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="#Interpretation"
+                           title="https://w3id.org/beast/ontology#Interpretation">Interpretation</a> <sup class="type-c"
+                           title="class">c</sup>
+                     </dd>
+                     <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#hasGenesis" title="https://w3id.org/beast/ontology#hasGenesis">has genesis</a> <sup
+                           class="type-op" title="object property">op</sup>
                      </dd>
                   </dl>
                </div>
@@ -3783,14 +4220,35 @@
                            title="class">c</sup>
                      </dd>
                      <dt>
+                        is inverse of
+                     </dt>
+                     <dd>
+                        <a href="#governs" title="https://w3id.org/beast/ontology#governs">governs</a> <sup
+                           class="type-op" title="object property">op</sup>
+                     </dd>
+                     <dt>
                         has sub-property chains
                      </dt>
                      <dd>
-                        <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                           title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                           title="object property">op</sup> <span class="logic">o</span> <a href="#isGovernedBy"
+                        <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
+                           class="type-op" title="object property">op</sup> <span class="logic">o</span> <a
+                           href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                        <sup class="type-op" title="object property">op</sup>
+                     </dd>
+                     <dd>
+                        <a href="#belongsToImaginaryStructure"
+                           title="https://w3id.org/beast/ontology#belongsToImaginaryStructure">belongs to imaginary
+                           structure</a> <sup class="type-op" title="object property">op</sup> <span
+                           class="logic">o</span> <a href="#isGovernedBy"
                            title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a> <sup class="type-op"
                            title="object property">op</sup>
+                     </dd>
+                     <dd>
+                        <a href="#embodiesImaginarySymbol"
+                           title="https://w3id.org/beast/ontology#embodiesImaginarySymbol">embodies imaginary symbol</a>
+                        <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a
+                           href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                        <sup class="type-op" title="object property">op</sup>
                      </dd>
                   </dl>
                </div>
@@ -4179,8 +4637,10 @@
             <ul class="hlist">
                <li><a href="#hasAlternativeName" title="https://w3id.org/beast/ontology#hasAlternativeName">has
                      alternative name</a></li>
-               <li><a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait"> <span>has
-                        distinctive trait</span> </a></li>
+               <li><a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait">has
+                     distinctive trait</a></li>
+               <li><a href="#hasGenesisDescription" title="https://w3id.org/beast/ontology#hasGenesisDescription">has
+                     genesis description</a></li>
                <li><a href="#hasMeaning" title="https://w3id.org/beast/ontology#hasMeaning">has meaning</a></li>
                <li><a href="#hasPassageText" title="https://w3id.org/beast/ontology#hasPassageText">has passage text</a>
                </li>
@@ -4231,6 +4691,20 @@
                <h3>has distinctive trait<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back
                      to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
                <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasDistinctiveTrait</p>
+               <div class="comment">
+                  <span class="markdown">Records a short, characterizing description of the most defining features of a
+                     creature. It captures a headline characterization rather than the structured anatomical, dietary,
+                     or symbolic data modelled elsewhere.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#BiologicalModule">https://w3id.org/beast/ontology#BiologicalModule</a>
+                  </dd>
+               </dl>
                <div class="description">
                   <dl>
                      <dt>
@@ -4249,11 +4723,41 @@
                         <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank"
                            title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
                      </dd>
+                  </dl>
+               </div>
+            </div>
+            <div class="entity" id="hasGenesisDescription">
+               <h3>has genesis description<sup class="type-dp" title="data property">dp</sup> <span class="backlink">
+                     back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasGenesisDescription</p>
+               <div class="comment">
+                  <span class="markdown">A free-text narrative summary of a creature's origin as told in a specific
+                     Interpretation.</span>
+               </div>
+               <dl class="definedBy">
+                  <dt>
+                     Is defined by
+                  </dt>
+                  <dd>
+                     <a
+                        href="https://w3id.org/beast/ontology#ProvenanceModule">https://w3id.org/beast/ontology#ProvenanceModule</a>
+                  </dd>
+               </dl>
+               <div class="description">
+                  <dl>
                      <dt>
-                        is also defined as
+                        has domain
                      </dt>
                      <dd>
-                        <a href="#hasDistinctiveTrait">named individual</a>
+                        <a href="#Genesis" title="https://w3id.org/beast/ontology#Genesis">Genesis</a> <sup
+                           class="type-c" title="class">c</sup>
+                     </dd>
+                     <dt>
+                        has range
+                     </dt>
+                     <dd>
+                        <a href="http://www.w3.org/2000/01/rdf-schema#Literal" target="_blank"
+                           title="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
                      </dd>
                   </dl>
                </div>
@@ -4439,8 +4943,8 @@
                      </dt>
                      <dd>
                         <a href="http://purl.org/spar/fabio/hasSequenceIdentifier" target="_blank"
-                           title="http://purl.org/spar/fabio/hasSequenceIdentifier">has number</a> <sup class="type-dp"
-                           title="data property">dp</sup>
+                           title="http://purl.org/spar/fabio/hasSequenceIdentifier">has Sequence Identifier</a> <sup
+                           class="type-dp" title="data property">dp</sup>
                      </dd>
                      <dt>
                         has domain
@@ -4482,8 +4986,6 @@
                <li><a href="#DurandImaginary" title="https://w3id.org/beast/ontology#DurandImaginary"> <span>Durand
                         Imaginary</span> </a></li>
                <li><a href="#Elemental" title="https://w3id.org/beast/ontology#Elemental">Elemental</a></li>
-               <li><a href="#hasDistinctiveTrait" title="https://w3id.org/beast/ontology#hasDistinctiveTrait"> <span>has
-                        distinctive trait</span> </a></li>
                <li><a href="#Hematophagous" title="https://w3id.org/beast/ontology#Hematophagous">Hematophagous</a></li>
                <li><a href="#Herbivorous" title="https://w3id.org/beast/ontology#Herbivorous">Herbivorous</a></li>
                <li><a href="#ImaginaryStructure" title="https://w3id.org/beast/ontology#ImaginaryStructure">
@@ -4506,7 +5008,6 @@
                <li><a href="#NyctomorphicSymbol" title="https://w3id.org/beast/ontology#NyctomorphicSymbol">Nyctomorphic
                      Symbol</a></li>
                <li><a href="#Omnivorous" title="https://w3id.org/beast/ontology#Omnivorous">Omnivorous</a></li>
-               <li><a href="#" title="https://w3id.org/beast/ontology"> <span>ontology</span> </a></li>
                <li><a href="#ProvenanceModule" title="https://w3id.org/beast/ontology#ProvenanceModule">Provenance
                      Module (the Anchor)</a></li>
                <li><a href="#Regime" title="https://w3id.org/beast/ontology#Regime"> <span>Regime</span> </a></li>
@@ -4617,28 +5118,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Ascensional Symbol"@en</span>
                   </dd>
                </dl>
@@ -4733,28 +5234,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Catamorphic Symbol"@en</span>
                   </dd>
                </dl>
@@ -4799,28 +5300,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SyntheticStructure"
-                        title="https://w3id.org/beast/ontology#SyntheticStructure">Synthetic Structure (or Dramatic)</a>
-                     <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SyntheticStructure"
                         title="https://w3id.org/beast/ontology#SyntheticStructure">Synthetic Structure (or Dramatic)</a>
                      <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SyntheticStructure"
+                        title="https://w3id.org/beast/ontology#SyntheticStructure">Synthetic Structure (or Dramatic)</a>
+                     <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Cyclical Symbol"@en</span>
                   </dd>
                </dl>
@@ -4864,28 +5365,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Diaretic Symbol"@en</span>
                   </dd>
                </dl>
@@ -4909,23 +5410,6 @@
                   <dd>
                      <a href="#NocturnalRegime" title="https://w3id.org/beast/ontology#NocturnalRegime">Nocturnal
                         Regime</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dt>
-                     has facts
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#Regime"
-                        title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-ni"
-                        title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
                      is also defined as
@@ -4970,29 +5454,29 @@
                      has facts
                   </dt>
                   <dd>
+                     <a href="http://purl.org/dc/terms/title" target="_blank"
+                        title="http://purl.org/dc/terms/title">title</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <span class="literal">"Durand's structures of the
+                        Imaginary"@en</span>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#hasTopConcept" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a> <sup
-                        class="type-op" title="object property">op</sup> <a href="#ImaginaryStructure"
+                        title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has Top Concept</a> <sup
+                        class="type-ap" title="annotation property">ap</sup> <a href="#ImaginaryStructure"
                         title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
                         class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#hasTopConcept" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has top concept</a> <sup
-                        class="type-op" title="object property">op</sup> <a href="#Regime"
+                        title="http://www.w3.org/2004/02/skos/core#hasTopConcept">has Top Concept</a> <sup
+                        class="type-ap" title="annotation property">ap</sup> <a href="#Regime"
                         title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-ni"
                         title="named individual">ni</sup>
                   </dd>
                   <dd>
-                     <a href="http://purl.org/dc/terms/title" target="_blank"
-                        title="http://purl.org/dc/terms/title">title</a> <sup class="type-dp"
-                        title="data property">dp</sup> <span class="literal">"Durand's structures of the
-                        Imaginary"@en</span>
-                  </dd>
-                  <dd>
                      <a href="http://www.w3.org/ns/prov#wasDerivedFrom" target="_blank"
-                        title="http://www.w3.org/ns/prov#wasDerivedFrom">was Derived From</a> <sup class="type-op"
-                        title="object property">op</sup> <span class="literal">"Durand, G. (1972). Le Strutture
+                        title="http://www.w3.org/ns/prov#wasDerivedFrom">was Derived From</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <span class="literal">"Durand, G. (1972). Le Strutture
                         Antropologiche dell'Immaginario: introduzione all'archetipologia generale"</span>
                   </dd>
                </dl>
@@ -5020,26 +5504,6 @@
                   <dd>
                      <a href="#Diet" title="https://w3id.org/beast/ontology#Diet">Diet</a> <sup class="type-c"
                         title="class">c</sup>
-                  </dd>
-               </dl>
-            </div>
-            <div class="entity" id="hasDistinctiveTrait">
-               <h3>has distinctive trait<sup class="type-ni" title="named individual">ni</sup> <span class="backlink">
-                     back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-               <p><strong>IRI:</strong> https://w3id.org/beast/ontology#hasDistinctiveTrait</p>
-               <dl class="description">
-                  <dt>
-                     belongs to
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2002/07/owl#" target="_blank"
-                        title="http://www.w3.org/2002/07/owl#">owl:</a> <sup class="type-c" title="class">c</sup>
-                  </dd>
-                  <dt>
-                     is also defined as
-                  </dt>
-                  <dd>
-                     <a href="#hasDistinctiveTrait">data property</a>
                   </dd>
                </dl>
             </div>
@@ -5109,23 +5573,6 @@
                         title="class">c</sup>
                   </dd>
                   <dt>
-                     has facts
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#topConceptOf" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup
-                        class="type-op" title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dt>
                      is also defined as
                   </dt>
                   <dd>
@@ -5145,23 +5592,6 @@
                      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank"
                         title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c"
                         title="class">c</sup>
-                  </dd>
-                  <dt>
-                     has facts
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#ImaginaryStructure"
-                        title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
                      is also defined as
@@ -5210,28 +5640,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#MysticalStructure"
-                        title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
-                        Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#MysticalStructure"
                         title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
                         Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#MysticalStructure"
+                        title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
+                        Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Intimacy Symbol"@en</span>
                   </dd>
                </dl>
@@ -5274,28 +5704,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#MysticalStructure"
-                        title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
-                        Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#MysticalStructure"
                         title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
                         Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#MysticalStructure"
+                        title="https://w3id.org/beast/ontology#MysticalStructure">Mystical Structure (or
+                        Antiphrastic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Inversion Symbol"@en</span>
                   </dd>
                </dl>
@@ -5408,17 +5838,9 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#ImaginaryStructure"
-                        title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                     <a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                     <sup class="type-op" title="object property">op</sup> <a href="#NocturnalRegime"
+                        title="https://w3id.org/beast/ontology#NocturnalRegime">Nocturnal Regime</a> <sup
                         class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
@@ -5450,27 +5872,10 @@
                      <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
-                     has facts
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#Regime"
-                        title="https://w3id.org/beast/ontology#Regime">Regime</a> <sup class="type-ni"
-                        title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dt>
                      is also defined as
                   </dt>
                   <dd>
-                     class
+                     <a href="#NocturnalRegime">class</a>
                   </dd>
                </dl>
             </div>
@@ -5511,28 +5916,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Nyctomorphic Symbol"@en</span>
                   </dd>
                </dl>
@@ -5562,11 +5967,6 @@
                         title="class">c</sup>
                   </dd>
                </dl>
-            </div>
-            <div class="entity" id="">
-               <h3>ontology<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a
-                        href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
-               <p><strong>IRI:</strong> https://w3id.org/beast/ontology</p>
             </div>
             <div class="entity" id="ProvenanceModule">
                <h3>Provenance Module (the Anchor)<sup class="type-ni" title="named individual">ni</sup> <span
@@ -5604,23 +6004,6 @@
                      <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank"
                         title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c"
                         title="class">c</sup>
-                  </dd>
-                  <dt>
-                     has facts
-                  </dt>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#topConceptOf" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#topConceptOf">is top concept in scheme</a> <sup
-                        class="type-op" title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
                      is also defined as
@@ -5683,18 +6066,10 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#ImaginaryStructure"
-                        title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
+                     <a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                     <sup class="type-op" title="object property">op</sup> <a href="#DiurnalRegime"
+                        title="https://w3id.org/beast/ontology#DiurnalRegime">Diurnal Regime</a> <sup class="type-ni"
+                        title="named individual">ni</sup>
                   </dd>
                   <dt>
                      is also defined as
@@ -5770,28 +6145,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Spectacular Symbol"@en</span>
                   </dd>
                </dl>
@@ -5854,17 +6229,9 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#ImaginaryStructure"
-                        title="https://w3id.org/beast/ontology#ImaginaryStructure">Imaginary Structure</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                     <a href="#isGovernedBy" title="https://w3id.org/beast/ontology#isGovernedBy">is governed by</a>
+                     <sup class="type-op" title="object property">op</sup> <a href="#NocturnalRegime"
+                        title="https://w3id.org/beast/ontology#NocturnalRegime">Nocturnal Regime</a> <sup
                         class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dt>
@@ -5912,28 +6279,28 @@
                      has facts
                   </dt>
                   <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#broader">has broader</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#SchizomorphicStructure"
-                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
-                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
-                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#inScheme">is in scheme</a> <sup class="type-op"
-                        title="object property">op</sup> <a href="#DurandImaginary"
-                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
-                        class="type-ni" title="named individual">ni</sup>
-                  </dd>
-                  <dd>
                      <a href="#belongsTo" title="https://w3id.org/beast/ontology#belongsTo">belongs to</a> <sup
                         class="type-op" title="object property">op</sup> <a href="#SchizomorphicStructure"
                         title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
                         Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
                   </dd>
                   <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#broader" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#broader">broader</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#SchizomorphicStructure"
+                        title="https://w3id.org/beast/ontology#SchizomorphicStructure">Schizomorphic Structure (or
+                        Heroic)</a> <sup class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
+                     <a href="http://www.w3.org/2004/02/skos/core#inScheme" target="_blank"
+                        title="http://www.w3.org/2004/02/skos/core#inScheme">in Scheme</a> <sup class="type-ap"
+                        title="annotation property">ap</sup> <a href="#DurandImaginary"
+                        title="https://w3id.org/beast/ontology#DurandImaginary">Durand Imaginary</a> <sup
+                        class="type-ni" title="named individual">ni</sup>
+                  </dd>
+                  <dd>
                      <a href="http://www.w3.org/2004/02/skos/core#prefLabel" target="_blank"
-                        title="http://www.w3.org/2004/02/skos/core#prefLabel">preferred label</a> <sup class="type-ap"
+                        title="http://www.w3.org/2004/02/skos/core#prefLabel">pref Label</a> <sup class="type-ap"
                         title="annotation property">ap</sup> <span class="literal">"Teriomorphic Symbol"@en</span>
                   </dd>
                </dl>
@@ -5981,8 +6348,9 @@
       <!--REFERENCES SECTION-->
       <div id="references">
          <h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-         <span class="markdown">
-            Add your references here. It is recommended to have them as a list.</span>
+         <ul>
+            <li>Durand, G. (1972). Le Strutture Antropologiche dell'Immaginario: introduzione all'archetipologia generale</li>
+         </ul>
 
       </div>
       <div id="acknowledgments">

@@ -13,7 +13,74 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid102",
+  "@id" : "_:genid100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "2"
+  } ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "https://w3id.org/beast/ontology#RealAnimal"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
+  } ]
+}, {
+  "@id" : "_:genid101",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#CinematicWork"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#LiteraryWork"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#VisualArtwork"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid105",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#Creature"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Genesis"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Interpretation"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#MythologicalFigure"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Source"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#Ability"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#AnatomicalPart"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Creature"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Interpretation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid111",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
+  "http://www.w3.org/2002/07/owl#members" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#InanimateElement"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Plant"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#RealAnimal"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid115",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
   "http://www.w3.org/2002/07/owl#members" : [ {
     "@list" : [ {
@@ -25,7 +92,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid106",
+  "@id" : "_:genid119",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -45,21 +112,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid11",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/beast/ontology#Ability"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#AnatomicalPart"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Creature"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Interpretation"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid114",
+  "@id" : "_:genid127",
   "@type" : [ "http://www.w3.org/2002/07/owl#AllDifferent" ],
   "http://www.w3.org/2002/07/owl#distinctMembers" : [ {
     "@list" : [ {
@@ -75,6 +128,24 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#Ability"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#AnatomicalPart"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Creature"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Interpretation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
       "@id" : "https://w3id.org/beast/ontology#InanimateElement"
     }, {
       "@id" : "https://w3id.org/beast/ontology#Plant"
@@ -83,7 +154,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid20",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -97,7 +168,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -109,7 +180,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid29",
+  "@id" : "_:genid36",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -121,7 +192,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid33",
+  "@id" : "_:genid40",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -135,7 +206,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid38",
+  "@id" : "_:genid45",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -145,7 +216,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid41",
+  "@id" : "_:genid48",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -157,7 +228,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid45",
+  "@id" : "_:genid52",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -169,7 +240,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid49",
+  "@id" : "_:genid56",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -178,24 +249,6 @@
       "@id" : "https://w3id.org/beast/ontology#Plant"
     }, {
       "@id" : "https://w3id.org/beast/ontology#RealAnimal"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid53",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/beast/ontology#Ability"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#AnatomicalPart"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Creature"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Interpretation"
     } ]
   } ]
 }, {
@@ -213,7 +266,35 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid62",
+  "@id" : "_:genid60",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#Creature"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#MythologicalFigure"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid63",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#Ability"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#AnatomicalPart"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Creature"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#Interpretation"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid76",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -223,7 +304,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid65",
+  "@id" : "_:genid79",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -233,7 +314,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid68",
+  "@id" : "_:genid82",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -247,7 +328,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid73",
+  "@id" : "_:genid87",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -261,7 +342,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid78",
+  "@id" : "_:genid92",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -271,7 +352,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid81",
+  "@id" : "_:genid95",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -285,99 +366,80 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid86",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#minQualifiedCardinality" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-    "@value" : "2"
-  } ],
-  "http://www.w3.org/2002/07/owl#onClass" : [ {
-    "@id" : "https://w3id.org/beast/ontology#RealAnimal"
-  } ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
-  } ]
+  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "_:genid87",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/beast/ontology#NocturnalRegime"
-  } ]
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "_:genid88",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/beast/ontology#DiurnalRegime"
-  } ]
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "_:genid89",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "https://w3id.org/beast/ontology#NocturnalRegime"
-  } ]
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "_:genid90",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/beast/ontology#CinematicWork"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#LiteraryWork"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#VisualArtwork"
-    } ]
-  } ]
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "_:genid94",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/beast/ontology#Creature"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Interpretation"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Source"
-    } ]
-  } ]
-}, {
-  "@id" : "_:genid98",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AllDisjointClasses" ],
-  "http://www.w3.org/2002/07/owl#members" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/beast/ontology#InanimateElement"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#Plant"
-    }, {
-      "@id" : "https://w3id.org/beast/ontology#RealAnimal"
-    } ]
-  } ]
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/references",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://www.w3.org/2002/07/owl#",
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/spar/cito/cites",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://purl.org/spar/fabio/hasSequenceIdentifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#broader",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#inScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#topConceptOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "https://creativecommons.org/licenses/by/4.0/",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+  "@id" : "http://www.w3.org/ns/prov#wasInfluencedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "https://schema.org/CreativeWork",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "https://schema.org/codeRepository",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "https://w3id.org/beast/ontology",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@language" : "en",
     "@value" : "Gamboa Nivia, M.J., Pinto, M., Roggiani, S., Spadavecchia, A. (2026). BEAST Ontology. https://w3id.org/beast/ontology"
@@ -418,15 +480,6 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The BEAST ontology is structured into three interconnected modules. The Provenance Module documents the historical and textual footprint of creatures, distinguishing between the universal concept of a beast (Creature) and its source-specific manifestations (Interpretation) across bestiaries, literary works, visual artworks, and cinematic works; it also tracks the diachronic evolution of creature terminology through Nomenclature and Etymology. The Biological Module defines the morphological and behavioural traits of both real and imaginary beings: it catalogs anatomical composition, habitats, diets, and abilities, and documents anomalies in real animals through a structured vocabulary of absence, duplication, and modification. The Symbolic Module provides a multidimensional framework for the analysis of creatures as cultural and archetypal figures. It integrates two analytical layers: Gilbert Durand's anthropological structures of the imaginary (DurandImaginary scheme) and an archetype and narrative function layer that distinguishes the universal psychological patterns creatures embody from the contextual roles they perform in specific sources. Together the three modules enable the ontology to trace a creature from its historical attestation in a primary text, through its biological description, to its deepest symbolic resonance in the collective imagination."
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://purl.org/spar/cito"
-  }, {
-    "@id" : "http://purl.org/spar/fabio"
-  }, {
-    "@id" : "http://www.w3.org/2004/02/skos/core#"
-  }, {
-    "@id" : "http://www.w3.org/ns/prov-o#"
   } ],
   "https://schema.org/codeRepository" : [ {
     "@id" : "https://github.com/hexWitches/beast"
@@ -509,8 +562,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#AscensionalSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -601,8 +656,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#CatamorphicSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -693,8 +750,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#CyclicalSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -723,8 +782,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#DiareticSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -767,7 +828,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#DiurnalRegime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Diurnal Regime is characterized by the battle against death and time. It is governed by antithesis, encompassing axiomatic images that give rise to two polarized facets: a background of darkness against which the victorious splendor of light is contrasted, and antithetical reconquest of negative values. It embodies the sharp logic of the sword and heroic battles against the passage of time. This regime is built upon schizomorphic structures, defined by separation, fall, antithesis, and scission. It is a multifaceted regime that includes theriomorphic, nyctomorphic, catamorphic, ascensional, spectacular, and diaretic symbols. Together, these symbols express both the profound anxiety in front of time and death and the heroic drive to transcend or overcome these forces."
@@ -778,6 +842,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Diurnal Regime"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Regime"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/beast/ontology#NocturnalRegime"
@@ -794,10 +861,13 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#DurandImaginary",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#ConceptScheme" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/title" : [ {
     "@language" : "en",
     "@value" : "Durand's structures of the Imaginary"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -844,6 +914,34 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Etymology"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#Genesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A source-specific account of a creature's origin or birth, capturing the parent(s) or progenitor(s) involved, and/or a circumstantial or causal explanation. Because genealogical and origin narratives frequently vary or conflict across sources, Genesis is modelled at the level of Interpretation rather than Creature, allowing multiple, potentially divergent, origin accounts to coexist for the same universal creature concept without asserting a single canonical explanation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Genesis"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#GeographicPlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A specific, real-world named location (e.g. a country, region, or city) that serves as a creature's habitat or place of origin, as distinct from a general ecological biome type."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Geographic place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#RealWorldPlace"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#Habitat",
@@ -910,7 +1008,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
   }, {
-    "@id" : "_:genid86"
+    "@id" : "_:genid100"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing",
@@ -951,7 +1049,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The structural framework of the imaginary as defined by Gilbert Durand in 'Les Structures Anthropologiques de l'Imaginaire', acting as the mediating layer between biological reflexes and symbolic expression. It represents the archetypal logic that organizes a creature's physical and behavioral attributes into a coherent symbolic system. It provides the protocol through which raw sensory data - such as a beast's fangs, its flight, or its habitat - is transformed into a structured symbolic response (Schizomorphic, Mystical, or Synthetic) to the existential anxiety of time and death."
@@ -975,7 +1076,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The shared OWL class and intermediate SKOS concept grouping all specific symbolic categories recognised by Gilbert Durand within his structures of the imaginary. As an owl:Class it provides the common type for all symbol individuals (TeriomorphicSymbol, AscensionalSymbol, CyclicalSymbol, etc.), allowing properties such as :belongsTo to range over them uniformly. As a skos:Concept it sits between :ImaginaryStructure and the specific symbol individuals in the DurandImaginary thesaurus, making the three-level hierarchy (ImaginaryStructure → ImaginarySymbol → specific symbol) navigable via skos:broader."
@@ -1027,8 +1131,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#IntimacySymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1057,8 +1163,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#InversionSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1166,7 +1274,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#MysticalStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Mystical structures include symbols of intimacy and calm, the search for light within darkness. The principles underlying mystical structures are analogy and similarity. Instead of battling against time, one enters into union with it. The mind takes images of terror and rewrites them positively, transforming them into refuge and protected space. Within this logic, opposites can coexist. In mystical structures one finds doubling and adherence rather than antithesis. It functions through inversion, doubling, and adherence, turning the devouring mouth of the diurnal regime into a protective container."
@@ -1180,8 +1291,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
-  }, {
-    "@id" : "_:genid87"
   } ],
   "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
     "@language" : "en",
@@ -1196,6 +1305,23 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Mystical Structure"
+  } ],
+  "https://w3id.org/beast/ontology#isGovernedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#NocturnalRegime"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#MythologicalFigure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A deity, hero, personified force, or other agent from myth or tradition."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Mythological Figure"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#NarrativeFunction",
@@ -1213,7 +1339,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#NocturnalRegime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Nocturnal Regime represents an attitude of reconciliation in front of the fleeting nature of time, incorporating symbols of transformation and cyclicality. The symbols belonging to the nocturnal regime exorcise fear by transforming images into reassuring figures. Unlike the diurnal regime, the antidote to the passing of time is not sought on a superhuman or transcendent level, but rather in reassuring intimacy or in the rhytmic constants that govern natural phenomena. The nocturnal regime is divided into synthetic structures and mystical structures."
@@ -1224,6 +1353,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Nocturnal Regime"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Regime"
   } ],
   "http://www.w3.org/2004/02/skos/core#broader" : [ {
     "@id" : "https://w3id.org/beast/ontology#Regime"
@@ -1237,8 +1369,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#NyctomorphicSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1343,7 +1477,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#Regime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The fundamental high-level classification of Durand, organized around sensory-motor dominants (postural, digestive, cyclic). Regimes act as organizational systems of the imagination, condensing multiple symbolic meanings into a coherent structure."
@@ -1384,7 +1521,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#SchizomorphicStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "The Schizomorphic Structure represents the mode of the imaginary governed by the Diurnal Regime. It functions through the principles of antithesis and verticality as a defensive response to the anxiety of time. It operates via 'diaresis' – the act of cutting, dividing, and establishing absolute distinctions to maintain the separation between light and dark, height and depth. This structure organizes symbols into two polarized groups: the 'symbols of the antithesis' (teriomorphic, nyctomorphic, and catamorphic), which represent the terror of the abyss and devouring time; and the 'symbols of transcendence' (ascensional, spectacular, and diaretic), which provide the tools for the heroic reconquest through verticality, solar vision, and the purifying sword."
@@ -1398,8 +1538,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
-  }, {
-    "@id" : "_:genid88"
   } ],
   "http://www.w3.org/2004/02/skos/core#broader" : [ {
     "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
@@ -1410,6 +1548,9 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Schizomorphic Structure (or Heroic)"
+  } ],
+  "https://w3id.org/beast/ontology#isGovernedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#DiurnalRegime"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#ScientificTaxonomy",
@@ -1447,8 +1588,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#SpectacularSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1491,7 +1634,10 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#SyntheticStructure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Synthetic structure operates by bringing contradictions into dialogue and includes cyclical symbols. It treats time as a series of phases, where night is a necessary prelude to dawn and death is a prelude to rebirth. It transforms the fall into a slow, controlled descent, allowing for the acceptance of change and progress through the succession of opposites."
@@ -1505,8 +1651,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
-  }, {
-    "@id" : "_:genid89"
   } ],
   "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
     "@language" : "en",
@@ -1521,11 +1665,16 @@
   "http://www.w3.org/2004/02/skos/core#prefLabel" : [ {
     "@language" : "en",
     "@value" : "Synthetic Structure"
+  } ],
+  "https://w3id.org/beast/ontology#isGovernedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#NocturnalRegime"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#TeriomorphicSymbol",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#Concept" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
     "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1737,6 +1886,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#symbolizes"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#hasImaginarySymbol"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#belongsToImaginaryStructure",
@@ -1894,6 +2046,29 @@
     "@id" : "https://w3id.org/beast/ontology#Source"
   } ]
 }, {
+  "@id" : "https://w3id.org/beast/ontology#governs",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Inverse of :isGovernedBy. Links a Regime to the structures, symbols, creatures, parts, abilities, or interpretations it governs."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Regime"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "governs"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid16"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
+  } ]
+}, {
   "@id" : "https://w3id.org/beast/ontology#habitatCategory",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2024,7 +2199,7 @@
     "@value" : "Specifies the main torso or body structure of a creature. May be asserted directly for creatures with a single undivided body source, or indirectly through its subproperties hasUpperBodyOf and hasLowerBodyOf for creatures whose body is split into distinct segments."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2034,7 +2209,7 @@
     "@value" : "has body of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid16"
+    "@id" : "_:genid23"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
@@ -2061,16 +2236,13 @@
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#hasDistinctiveTrait",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#"
-  } ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "Records a short, characterizing description of the most defining features of a creature. It captures a headline characterization rather than the structured anatomical, dietary, or symbolic data modelled elsewhere."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid78"
+    "@id" : "_:genid92"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2100,7 +2272,7 @@
     "@value" : "has divergence"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid20"
+    "@id" : "_:genid27"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#hasDuplicationOf",
@@ -2149,6 +2321,49 @@
     "@id" : "https://w3id.org/beast/ontology#isEtymologyOf"
   } ]
 }, {
+  "@id" : "https://w3id.org/beast/ontology#hasGenesis",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a source-specific Interpretation to the account of the creature's origin or birth as told in that Source."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Interpretation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has genesis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Genesis"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/beast/ontology#isGenesisOf"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#hasGenesisDescription",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A free-text narrative summary of a creature's origin as told in a specific Interpretation."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Genesis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has genesis description"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ]
+}, {
   "@id" : "https://w3id.org/beast/ontology#hasHabitat",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2176,7 +2391,7 @@
     "@value" : "Specifies the head structure of a creature."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2186,10 +2401,30 @@
     "@value" : "has head of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid25"
+    "@id" : "_:genid32"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#hasImaginarySymbol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Inverse of :belongsTo. Links an Imaginary Structure to the imaginary symbols that belong to it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryStructure"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has imaginary symbol"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ImaginarySymbol"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#hasInterpretation",
@@ -2219,7 +2454,7 @@
     "@value" : "Specifies the lower body, hindquarters, or posterior segment of a creature characterized by a segmented body structure."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2229,10 +2464,10 @@
     "@value" : "has lower body of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid29"
+    "@id" : "_:genid36"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/beast/ontology#hasBodyOf"
+    "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#hasMeaning",
@@ -2242,7 +2477,7 @@
     "@value" : "The literal string translation or definition of a term, concept, or archetypal figure."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid81"
+    "@id" : "_:genid95"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2285,7 +2520,7 @@
     "@value" : "Links a source-specific Interpretation to the symbolic or thematic role that the creature fulfills within that Source. Unlike :embodiesArchetype — which asserts a universal psychological identity — :hasNarrativeFunction captures the contextual, plot-level, or iconographic function the beast performs in a particular text or artwork: guardian, omen, divine messenger, embodiment of sin, etc. The same creature may carry different narrative functions across different Interpretations."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid33"
+    "@id" : "_:genid40"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
@@ -2308,7 +2543,7 @@
     "@value" : "Links a creature or an imaginary place to their earliest known or most culturally foundational source, whether a specific written text or a broader mythological tradition. This property acknowledges that for many creatures a single primary source cannot always be identified."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid38"
+    "@id" : "_:genid45"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
@@ -2328,7 +2563,7 @@
     "@value" : "Links an ImaginaryBeing to a specific AnatomicalPart that constitutes its body, without asserting the biological origin of that part. Where :hasPartDerivedFrom links a CompositeCreature to the real animal or material from which a part originates, :hasPart simply records which anatomical components are present — useful for imaginary beings whose parts have no clear real-world derivation or whose source is not documented in the available sources."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
+    "@id" : "https://w3id.org/beast/ontology#Creature"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2348,17 +2583,17 @@
     "@value" : "Indicates that a composite creature possesses anatomical or morphological features derived from a specific real animal, a plant or an inanimate element."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
-    "@value" : "has part of"
+    "@value" : "has part derived from"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid41"
+    "@id" : "_:genid48"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#hasPassageText",
@@ -2451,7 +2686,7 @@
     "@value" : "Specifies the tail structure of a creature."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2461,7 +2696,7 @@
     "@value" : "has tail of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid45"
+    "@id" : "_:genid52"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
@@ -2494,7 +2729,7 @@
     "@value" : "Specifies the upper body, torso, or anterior segment of a creature characterized by a segmented body structure."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/beast/ontology#CompositeCreature"
+    "@id" : "https://w3id.org/beast/ontology#ImaginaryBeing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#BiologicalModule"
@@ -2504,10 +2739,30 @@
     "@value" : "has upper body of"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid49"
+    "@id" : "_:genid56"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/beast/ontology#hasBodyOf"
+    "@id" : "https://w3id.org/beast/ontology#hasPartDerivedFrom"
+  } ]
+}, {
+  "@id" : "https://w3id.org/beast/ontology#involvesParent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Genesis account to a Creature or MythologicalFigure identified as a parent or progenitor within that account."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Genesis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "involves parent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid60"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#isEtymologyOf",
@@ -2530,6 +2785,26 @@
     "@id" : "https://w3id.org/beast/ontology#Creature"
   } ]
 }, {
+  "@id" : "https://w3id.org/beast/ontology#isGenesisOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Links a Genesis account back to the Interpretation it describes the origin of."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Genesis"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://w3id.org/beast/ontology#ProvenanceModule"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is genesis of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/beast/ontology#Interpretation"
+  } ]
+}, {
   "@id" : "https://w3id.org/beast/ontology#isGovernedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -2537,7 +2812,7 @@
     "@value" : "Links one of Durand's Imaginary Structures to its overarching Regime (Diurnal or Nocturnal)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid53"
+    "@id" : "_:genid63"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
@@ -2551,7 +2826,19 @@
   } ],
   "http://www.w3.org/2002/07/owl#propertyChainAxiom" : [ {
     "@list" : [ {
-      "@id" : "http://www.w3.org/2004/02/skos/core#broader"
+      "@id" : "https://w3id.org/beast/ontology#belongsTo"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#belongsToImaginaryStructure"
+    }, {
+      "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
+    } ]
+  }, {
+    "@list" : [ {
+      "@id" : "https://w3id.org/beast/ontology#embodiesImaginarySymbol"
     }, {
       "@id" : "https://w3id.org/beast/ontology#isGovernedBy"
     } ]
@@ -2626,7 +2913,7 @@
     "@value" : "A symmetric associative property linking two NarrativeFunction or Archetype individuals that share thematic, structural, or symbolic overlap without one being a specialisation of the other. For example, the function of Guardian and the function of Threshold-Keeper are related but distinct; the Archetype of the Devourer and the Archetype of the Transformer share symbolic territory without subsumption. This property enables lateral navigation across the symbolic vocabulary of the ontology."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid62"
+    "@id" : "_:genid76"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
@@ -2636,7 +2923,7 @@
     "@value" : "related to"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid65"
+    "@id" : "_:genid79"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#removedAbility",
@@ -2692,7 +2979,7 @@
     "@value" : "The primary semantic bridge connecting the biological domain to the symbolic domain. It asserts that a specific physical attribute (AnatomicalPart), a behavior (Ability), a Creature or its Interpretation serves as a vehicle for a broader conceptual meaning (Archetype, Structure, etc.)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid68"
+    "@id" : "_:genid82"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://w3id.org/beast/ontology#SymbolicModule"
@@ -2702,7 +2989,7 @@
     "@value" : "symbolizes"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "_:genid73"
+    "@id" : "_:genid87"
   } ]
 }, {
   "@id" : "https://w3id.org/beast/ontology#wasInfluencedBy",
