@@ -6,30 +6,6 @@
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix void: <http://rdfs.org/ns/void#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
-beastiary: rdf:type owl:Ontology,
-                void:Dataset ;
-    dcterms:conformsTo <https://w3id.org/beast/ontology> ;
-    dcterms:created "2026-05-01"^^xsd:date ;
-    dcterms:creator "Maria Juliana Gamboa Nivia",
-        "Miriana Pinto",
-        "Sara Roggiani",
-        "Alice Spadavecchia" ;
-    dcterms:description "A dataset describing creatures, their interpretations and biological composition, the sources in which the creatures are depicted. The BEASTiary knowledge graph is aligned with the BEAST ontology."@en ;
-    owl:imports <https://w3id.org/beast/ontology> ;
-    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:publisher <https://github.com/hexWitches> ;
-    dcterms:title "The BEAST Graph"@en ;
-    vann:preferredNamespacePrefix "beastiary" ;
-    void:dataDump <https://w3id.org/beast/graph/graph.ttl> ;
-    void:vocabulary <https://w3id.org/beast/ontology> .
-
-beastiary:ability_extinct rdfs:label "Extinct"@en ;
-    rdfs:comment "The condition of having died out entirely, with no living members of the kind remaining; the creature is known only through past attestation rather than present existence."@en .
 
 beastiary:genesis_anomaly_paré_1 a beast:Genesis ;
     beast:hasGenesisDescription "Paré includes the creature among his examples of monsters created by the imagination. According to his description, the hairy girl was born because her mother looked for too long at a painting."@en ;
@@ -163,15 +139,6 @@ beastiary:person_isayama a schema:Person ;
     schema:nationality "Japanese"^^xsd:string ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/171550535>,
         wd:Q3782468 .
-
-beastiary:person_ovredal a schema:Person ;
-    rdfs:comment "1973 - present"@en ;
-    foaf:familyName "Øvredal"^^xsd:string ;
-    foaf:givenName "André"^^xsd:string ;
-    schema:birthDate "1973"^^xsd:gYear ;
-    schema:nationality "Norwegian"^^xsd:string ;
-    schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/288292099>,
-        wd:Q2848912 .
 
 beastiary:ability_agility rdfs:label "Agility"@en ;
     rdfs:comment "The physical capacity for swift, nimble, and graceful movement, allowing the creature to easily evade threats, navigate hazardous terrain, or strike with exceptional speed."@en .
@@ -1250,7 +1217,6 @@ beastiary:creature_bird a beast:RealAnimal ;
 beastiary:creature_cat a beast:RealAnimal ;
     rdfs:label "Cat"@en ;
     beast:hasDiet beast:Carnivorous ;
-    beast:hasEtymology beastiary:etymology_cat ;
     beast:hasHabitat beast:Terrestrial .
 
 beastiary:creature_human_dog a beast:HybridCreature ;
@@ -2420,6 +2386,15 @@ beastiary:person_ovid a schema:Person ;
     schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/88342447>,
         wd:Q7198 .
 
+beastiary:person_ovredal a schema:Person ;
+    rdfs:comment "1973 - present"@en ;
+    foaf:familyName "Øvredal"^^xsd:string ;
+    foaf:givenName "André"^^xsd:string ;
+    schema:birthDate "1973"^^xsd:gYear ;
+    schema:nationality "Norwegian"^^xsd:string ;
+    schema:sameAs <http://viaf.org/viaf/http://viaf.org/viaf/288292099>,
+        wd:Q2848912 .
+
 beastiary:person_paré a schema:Person ;
     rdfs:comment "1510 – 1590"@en ;
     foaf:familyName "Paré"^^xsd:string ;
@@ -2623,8 +2598,6 @@ beastiary:source_abduction_ganymede a beast:VisualArtwork ;
     beast:cites beastiary:source_ovidius_metamorphoses ;
     beast:containsInterpretation beastiary:int_eagle_rembrandt .
 
-beastiary:source_ancient_egypt a beast:Tradition .
-
 beastiary:source_attack_on_titan a beast:CinematicWork ;
     dcterms:created "2013/2023"^^xsd:gYear ;
     dcterms:language "ja"^^xsd:string ;
@@ -2801,6 +2774,8 @@ beastiary:source_orlando_furioso_doré a beast:VisualArtwork ;
     beast:containsInterpretation beastiary:int_hippogriff_doré ;
     beast:wasInfluencedBy beastiary:source_orlando_furioso .
 
+beastiary:source_persian_mythology a beast:Tradition .
+
 beastiary:source_renaissance a beast:Tradition .
 
 beastiary:source_roger_délivrant_angélique a beast:VisualArtwork ;
@@ -2834,13 +2809,19 @@ beastiary:source_tacuinum_sanitatis a beast:VisualArtwork ;
     schema:url "https://upload.wikimedia.org/wikipedia/commons/6/68/Tacuinum_Sanitatis_Mandrake_Dog.jpg"^^xsd:anyURI ;
     beast:containsInterpretation beastiary:int_mandrake_herbal .
 
+beastiary:source_tentazione_brueghel a beast:VisualArtwork ;
+    dcterms:title "Tentaciones de San Antonio Abad"^^xsd:string ;
+    rdfs:comment "17th century"^^xsd:string ;
+    schema:creator beastiary:person_brueghel ;
+    schema:url "https://upload.wikimedia.org/wikipedia/commons/1/17/Jan_Brueghel_-_%22Tentaciones_de_San_Antonio_Abad%22_-_Google_Art_Project.jpg?utm_source=it.wikipedia.org&utm_campaign=index&utm_content=original"^^xsd:anyURI .
+
 beastiary:source_troll_hunter a beast:CinematicWork ;
     dcterms:created "2010"^^xsd:gYear ;
     dcterms:language "en"^^xsd:string,
         "no"^^xsd:string ;
     dcterms:title "Troll Hunter"^^xsd:string ;
     rdfs:comment "2010"^^xsd:string ;
-    schema:creator beastiary:person__ovredal ;
+    schema:creator beastiary:person_ovredal ;
     schema:url "https://www.imdb.com/it/title/tt1740707/?ref_=ext_shr_lnk"^^xsd:anyURI ;
     beast:containsInterpretation beastiary:int_troll_hunter ;
     beast:wasInfluencedBy beastiary:source_norske_folkeeventyr,
@@ -2966,7 +2947,7 @@ beastiary:creature_hairy_girl a beast:RealAnimal ;
     rdfs:label "Hairy Girl"@en ;
     beast:hasHabitat beast:Terrestrial ;
     beast:hasModificationOf beastiary:part_fluff_skin ;
-    beast:hasOriginContext beastiary:source_scientific_taxonomy ;
+    beast:hasOriginContext beastiary:source_monstres_prodiges ;
     beast:isOfSpecies beastiary:creature_human .
 
 beastiary:creature_mostro_strabiliante a beast:HybridCreature ;
@@ -3001,7 +2982,6 @@ beastiary:creature_polymelic_cat a beast:RealAnimal ;
 beastiary:creature_sheep a beast:RealAnimal ;
     rdfs:label "Sheep"@en ;
     beast:hasDiet beast:Herbivorous ;
-    beast:hasEtymology beastiary:etymology_sheep ;
     beast:hasHabitat beast:Terrestrial .
 
 beastiary:diet_none rdfs:label "Starvation"@en ;
@@ -4193,6 +4173,8 @@ beastiary:source_aeneid a beast:LiteraryWork ;
     schema:creator beastiary:person_virgil ;
     beast:containsInterpretation beastiary:int_cerberus_virgil .
 
+beastiary:source_ancient_egypt a beast:Tradition .
+
 beastiary:source_beowulf a beast:LiteraryWork ;
     dcterms:created "701/800"^^xsd:gYear ;
     dcterms:language "ang"^^xsd:string ;
@@ -4247,7 +4229,7 @@ beastiary:source_erodoto_histories a beast:LiteraryWork ;
     rdfs:comment "440 – 429 BCE"^^xsd:string ;
     schema:creator beastiary:person_erodoto ;
     beast:containsInterpretation beastiary:int_phoenix_erodoto ;
-    beast:wasInfluencedBy beastiary:AncientEgypt .
+    beast:wasInfluencedBy beastiary:source_ancient_egypt .
 
 beastiary:source_frammenti_esiodo a beast:LiteraryWork ;
     dcterms:created "-699/-600"^^xsd:gYear ;
@@ -4314,8 +4296,7 @@ beastiary:source_indika a beast:LiteraryWork ;
     dcterms:title "Indika"^^xsd:string ;
     rdfs:comment "5th century BCE"^^xsd:string ;
     schema:creator beastiary:person_ctesias ;
-    beast:containsInterpretation beastiary:int_unicorn_ctesias ;
-    beast:wasInfluencedBy beastiary:source_oral_tales .
+    beast:containsInterpretation beastiary:int_unicorn_ctesias .
 
 beastiary:source_liber_monstrorum a beast:LiteraryWork ;
     dcterms:created "701/800"^^xsd:gYear ;
@@ -5174,14 +5155,14 @@ beastiary:creature_mandrake a beast:CompositeCreature,
     beast:embodiesImaginarySymbol beast:NyctomorphicSymbol ;
     beast:hasAbility beastiary:ability_deadly_scream ;
     beast:hasAlternativeName "Mandragora"^^xsd:string ;
-    beast:hasBodyOf beastiary:Plant ;
+    beast:hasBodyOf beast:Plant ;
     beast:hasDiet beastiary:diet_autotrophic ;
     beast:hasEtymology beastiary:etymology_mandrake ;
     beast:hasHabitat beast:Terrestrial ;
     beast:hasHeadOf beastiary:creature_human ;
     beast:hasLowerBodyOf beastiary:creature_human ;
     beast:hasOriginContext beastiary:source_greek_mythology ;
-    beast:hasPartDerivedFrom beastiary:Plant ;
+    beast:hasPartDerivedFrom beast:Plant ;
     beast:isGovernedBy beast:DiurnalRegime .
 
 beastiary:creature_satyr a beast:Creature,
